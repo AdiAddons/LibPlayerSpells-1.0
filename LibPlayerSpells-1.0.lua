@@ -68,7 +68,7 @@ lib.masks = {
 		constants.ROGUE,
 		constants.SHAMAN,
 		constants.WARLOCK,
-		constants.WARRIOR,
+		constants.WARRIOR
 	),
 	SOURCE = bor(
 		constants.DEATHKNIGHT,
@@ -83,12 +83,12 @@ lib.masks = {
 		constants.WARLOCK,
 		constants.WARRIOR,
 		constants.RACIAL,
-		constants.TRADESKILL,
+		constants.TRADESKILL
 	),
 	TARGETING = bor(
 		constants.HELPFUL,
 		constants.HARMFUL,
-		constants.PERSONAL,
+		constants.PERSONAL
 	),
 }
 local masks = lib.masks
