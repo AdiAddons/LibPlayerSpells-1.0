@@ -58,7 +58,7 @@ lib.masks = {
 lib.spells = lib.spells or {
 	racials     = {},
 	tradeskills = {},
-	all         = {}
+	all         = {},
 	DEATHKNIGHT = {},
 	DRUID       = {},
 	HUNTER      = {},
@@ -74,20 +74,24 @@ lib.spells = lib.spells or {
 
 lib.versions = lib.versions or {}
 
--- Filter parsing
+-- Useful upvalues
+local C = lib.constants
+local M = lib.masks
+local S = lib.spells
+local V = lib.versions
 local bor = bit.bor
 local band = bit.band
 
 local function ParseFilter(filter)
-	local f = 0
+	local flags = 0
 	for word in filter:gmatch("%a+") do
 		local value = C[word] or M[word]
 		if not value then
-			error(format("%s: invalid filter: %q",  MAJOR, tostring(filter)), 4)
+			error(format("%s: invalid filter: %q",  MAJOR, tostring(filter)), 5)
 		end
-		f = bor(f, value)
+		flags = bor(flags, value)
 	end
-	return value
+	return flags
 end
 
 -- A weak table to memoize parsed filters
@@ -96,19 +100,15 @@ lib.__filters = setmetatable(
 	{
 		__mode = 'kv',
 		__index = function(self, key)
+			if not key then return end
 			local value = type(key) == "string" and ParseFilter(key) or tonumber(key)
 			self[key] = value
 			return value
 		end,
 	}
 )
+local F = lib.__filters
 
--- Useful upvalues
-local C = lib.constants
-local M = lib.masks
-local S = lib.spells
-local V = lib.versons
-local F = self.__filters
 
 -- Return version information about a category
 function lib:GetVersionInfo(category)
@@ -201,7 +201,7 @@ function lib:__RegisterSpells(category, interface, minor, spells)
 	if (V[category] or 0) >= version then return end
 	V[category] = version
 
-	-- Wipe existing spells for that cless
+	-- Wipe existing spells for that class
 	local all, db = S.all, S[category]
 	for id in pairs(db) do
 		db[id] = nil
@@ -211,10 +211,10 @@ function lib:__RegisterSpells(category, interface, minor, spells)
 	-- Rebuild the flags
 	local catFlags = C[category] or 0
 	for key, value in pairs(spells) do
-		if type(key) == "string" and type(v) == "table" then
+		if type(key) == "string" and type(value) == "table" then
 			-- key is a filter, value a list of spell ids
-			local flags = F[k]
-			for i, spellId in ipairs(v) do
+			local flags = F[key]
+			for i, spellId in ipairs(value) do
 				db[spellId] = bor(db[spellId] or 0, flags, catFlags)
 			end
 		elseif type(key) == "number" then
