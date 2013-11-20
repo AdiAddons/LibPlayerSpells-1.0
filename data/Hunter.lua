@@ -23,6 +23,7 @@ if not lib then return end
 lib:__RegisterSpells("HUNTER", "50400", 1, {
 	["COOLDOWN"] = {
 		   781, -- Disengage
+		 53351, -- Kill Shot
 		109259, -- Powershot
 		120360, -- Barrage
 		120679, -- Dire Beast
@@ -48,6 +49,7 @@ lib:__RegisterSpells("HUNTER", "50400", 1, {
 		 82726, -- Fervor
 		 82925, -- Ready, Set, Aim...
 		 53220, -- Steady Focus (buff)
+		 56343, -- Lock and Load
 	},
 	["HARMFUL AURA"] = {
 		  1978, -- Serpent String
@@ -67,16 +69,18 @@ lib:__RegisterSpells("HUNTER", "50400", 1, {
 	},
 	-- Special cases
 	[   136] = "PET AURA", -- Mend Pet
-	[  1130] = "HARMFUL UNIQUE_AURA AURA", -- Hunter's Mark
 	[ 19623] = "PET AURA", -- Frenzy
+	[  1130] = "HARMFUL UNIQUE_AURA AURA", -- Hunter's Mark
 	[ 34477] = "PERSONAL COOLDOWN AURA", -- Misdirection
 }, {
 	-- Map aura to provider
 	[19623] = 82692, -- Frenzy <= Focus Fire
 	[53220] = 53224, -- Steady Focus
 	[82925] = 34487, -- Ready, Set, Aim... <= Master Marksman
+	[34692] = 19574, -- The Beast Within <= Bestial Wrath
 }, {
 	-- Map aura to modified spell(s)
 	[53220] = 56641, -- Steady Focus => Steady Shot
 	[82925] = 19434, -- Ready, Set, Aim... => Aimed Shot
+	[56343] = 53301, -- Lock and Load => Explosive Shot
 })
