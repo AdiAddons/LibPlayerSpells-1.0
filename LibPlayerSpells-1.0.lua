@@ -117,10 +117,16 @@ local spells = lib.spells
 lib.versions = lib.versions or {}
 local versions = lib.versions
 
-lib.aliases = lib.aliases or {}
-local aliases = lib.aliases
+-- Buff to provider map.
+-- The provider is the spell from the spellbook than can provides the given buff.
+-- Said otherwise, a buff cannot appear on a player if the provider spell is not in his spellbook.
+lib.providers = lib.providers or {}
+local providers = lib.providers
 
--- Useful upvalues
+-- Buff to modified map.
+-- Indicate which spell is modified by a buff.
+lib.modifiers = lib.modifiers or {}
+local modifiers = lib.modifiers
 
 local function ParseFilter(filter)
 	local flags = 0
@@ -202,7 +208,7 @@ local function filterIterator(tester, index)
 	repeat
 		spellId, flags = next(spells.all, spellId)
 		if spellId and tester(flags) then
-			return spellId, flags, aliases[spellId]
+			return spellId, flags, providers[spellId], modifiers[spellId]
 		end
 	until not spellId
 end
@@ -220,19 +226,20 @@ function lib:IterateCategories()
 	return pairs(spells)
 end
 
---- Return the flags of a spell
+--- Return information about a spell.
 -- @param spellId (number) The spell identifier.
 -- @return (number) The spell flags or nil if it is unknown.
--- @return (number) The spellbook spell identifier.
+-- @return (number) The identifier of the spell that provides the given spell.
+-- @return (number) A spell modified by the given spell.
 function lib:GetSpellInfo(spellId)
 	local flags = spellId and spells.all[spellId]
 	if flags then
-		return flags, aliases[spellId]
+		return flags, providers[spellId], modifiers[spellId]
 	end
 end
 
 -- Used to register a category of spells
-function lib:__RegisterSpells(category, interface, minor, newSpells, newAliases)
+function lib:__RegisterSpells(category, interface, minor, newSpells, newProviders, newModifiers)
 	if not spells[category] then
 		error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
 	end
@@ -242,12 +249,13 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newAliases)
 	versions[category] = version
 	versions.all = max(versions.all or 0, version)
 
-	-- Wipe existing spells for that class
+	-- Wipe previous spells
 	local all, db = spells.all, spells[category]
-	for id in pairs(db) do
-		db[id] = nil
-		all[id] = nil
-		aliases[id] = nil
+	for spellId in pairs(db) do
+		db[spellId] = nil
+		all[spellId] = nil
+		providers[spellId] = nil
+		modifiers[spellId] = nil
 	end
 
 	-- Rebuild the flags
@@ -273,7 +281,8 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newAliases)
 			error(format("%s: unknown spell #%d", MAJOR, spellId), 2)
 		end
 		all[spellId] = db[spellId]
-		aliases[spellId] = newAliases and newAliases[spellId] or spellId
+		providers[spellId] = newProviders and newProviders[spellId] or spellId
+		modifiers[spellId] = newModifiers and newModifiers[spellId] or spellId
 	end
 
 end
