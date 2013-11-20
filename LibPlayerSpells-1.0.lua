@@ -79,11 +79,14 @@ lib.spells = lib.spells or {
 
 lib.versions = lib.versions or {}
 
+lib.aliases = lib.aliases or {}
+
 -- Useful upvalues
 local C = lib.constants
 local M = lib.masks
 local S = lib.spells
 local V = lib.versions
+local A = lib.aliases
 local bor = bit.bor
 local band = bit.band
 
@@ -164,7 +167,7 @@ local function filterIterator(tester, index)
 	repeat
 		spellId, flags = next(S.all, spellId)
 		if spellId and tester(flags) then
-			return spellId, flags
+			return spellId, flags, A[spellId]
 		end
 	until not spellId
 end
@@ -183,14 +186,18 @@ function lib:IterateCategories()
 end
 
 --- Return the flags of a spell
--- @param spellId (number) The spell identifier
--- @return (number) The spell flags or nil if it is unknown
-function lib:GetSpellFlags(spellId)
-	return spellId and S.all[spellId]
+-- @param spellId (number) The spell identifier.
+-- @return (number) The spell flags or nil if it is unknown.
+-- @return (number) The spellbook spell identifier.
+function lib:GetSpellInfo(spellId)
+	local flags = spellId and S.all[spellId]
+	if flags then
+		return flags, A[spellId]
+	end
 end
 
 -- Used to register a category of spells
-function lib:__RegisterSpells(category, interface, minor, spells)
+function lib:__RegisterSpells(category, interface, minor, spells, aliases)
 	if not S[category] then
 		error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
 	end
@@ -204,6 +211,7 @@ function lib:__RegisterSpells(category, interface, minor, spells)
 	for id in pairs(db) do
 		db[id] = nil
 		all[id] = nil
+		aliases[id] = nil
 	end
 
 	-- Rebuild the flags
@@ -229,5 +237,7 @@ function lib:__RegisterSpells(category, interface, minor, spells)
 			error(format("%s: unknown spell #%d", MAJOR, spellId), 2)
 		end
 		all[spellId] = db[spellId]
+		A[spellId] = aliases and aliases[spellId] or spellId
 	end
+
 end
