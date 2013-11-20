@@ -309,7 +309,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		validateSpellId(spellId, "spell")
 		all[spellId] = db[spellId]
 		providers[spellId] = newProviders and newProviders[spellId] or spellId
-		modifiers[spellId] = newModifiers and newModifiers[spellId] or spellId
+		modifiers[spellId] = newModifiers and newModifiers[spellId] or providers[spellId]
 	end
 
 end
