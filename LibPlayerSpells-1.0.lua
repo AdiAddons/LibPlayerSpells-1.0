@@ -124,71 +124,69 @@ function lib:GetVersionInfo(category)
 	return V[category] or 0
 end
 
--- Parse a mask and a optional value to compare to.
-local function BuildTestValues(mask, compare)
-	local maskValue = F[mask]
-	if not maskValue then
-		error(format("%s: invalid mask: %q", MAJOR, tostring(mask)), 3)
-	end
-	local compareValue = maskValue
-	if compare then
-		compareValue = F[compare]
-		if not compareValue then
-			error(format("%s: invalid compare: %q", MAJOR, tostring(compare)), 3)
+-- Parse filtering parameters
+local function BuildTester(anyOf, include, exclude)
+	if not anyOf and not restrict and not exclude then return end
+	local anyOfMask = anyOf and F[anyOf] or 0
+	local includeMask = include and F[include] or 0
+	local excludeMask = exclude and F[exclude] or 0
+	local mask = bor(includeMask, excludeMask)
+	local expected = bit.bxor(mask, excludeMask)
+	if mask == 0 then
+		return function(flags)
+			return flags and band(flags, anyOfMask) ~= 0
+		end
+	elseif anyOfMask == 0 then
+		return function(flags)
+			return flags and band(flags, mask) == expected
+		end
+	else
+		return function(flags)
+			return flags and band(flags, anyOfMask) ~= 0 and band(flags, mask) == expected
 		end
 	end
-	return maskValue, compareValue
 end
 
 -- Create a tester function.
 -- These function takes a spell identifier as an argument and returns true
 -- if the spell matches the given mask and compare values.
--- @param mask (string|number) Flag mask.
--- @param compare (string|number) The expected value, optional.
--- @return (function)
-function lib:GetSpellTester(mask, compare)
-	local maskValue, compareValue = BuildTestValues(mask, compare)
-	return function(spellId)
-		return band(S.all[spellId or false] or 0, maskValue) == compareValue
-	end
+-- @return (function) The tester function.
+function lib:GetSpellTester(anyOf, include, exclude)
+	local tester = BuildTester(anyOf, include, exclude)
+	return function(spellId) return tester(S.all[spellId or false] or 0) end
+end
+
+-- Filtering iterator
+local function filterIterator(tester, index)
+	local flags
+	repeat
+		spellId, flags = next(S.all, spellId)
+		if spellId and tester(flags) then
+			return spellId, flags
+		end
+	until not spellId
 end
 
 -- Iterate through spells.
--- @param category (string) The spell category to iterate through, optional.
--- @param mask (string|number) Flag mask, optional.
--- @param compare (string|number) The expected value, optional.
 -- @return An iterator suitable for for .. in .. do loops.
-function lib:IterateSpells(category, mask, compare)
-	local spells = S[category or "all"]
-	if mask then
-		local maskValue, compareValue = BuildTestValues(mask, compare)
-		return function(_, spellId)
-			local flags
-			repeat
-				spellId, flags = next(spells, spellId)
-				if spellId and band(flags, maskValue) == compareValue then
-					return spellId, flags
-				end
-			until not spellId
-		end
+function lib:IterateSpells(anyOf, include, exclude)
+	local tester = BuildTester(anyOf, include, exclude)
+	if tester then
+		return filterIterator, tester
 	else
-		return pairs(spells)
+		return pairs(S.all)
 	end
 end
 
 -- Return a list of spells.
--- @param category (string) The spell category to iterate through, optional.
--- @param mask (string|number) Flag mask, optional.
--- @param compare (string|number) The expected value, optional.
 -- @param t (table) An existing table to fill, optional.
 -- @return An list of spell identifiers.
-function lib:GetSpellList(category, mask, compare, t)
-	local spells = S[category or "all"]
+function lib:GetSpellList(anyOf, include, exclude, t)
+	local tester = BuildTester(anyOf, include, exclude)
 	t = wipe(t or {})
-	if mask then
-		local maskValue, compareValue = BuildTestValues(mask, compare)
-		for spellId, flags in pairs(spells) do
-			if band(flags, maskValue) == compareValue then
+	if tester then
+		for spellId, flags in pairs(S.all) do
+			if tester(flags) then
 				tinsert(t, spellId)
 			end
 		end
