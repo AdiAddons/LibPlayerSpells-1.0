@@ -132,7 +132,6 @@ local function BuildTestValues(mask, compare)
 			error(format("%s: invalid compare: %q", MAJOR, tostring(compare)), 3)
 		end
 	end
-	print(format("%s: %q => 0x%08x, %q => 0x%08x", MAJOR, tostring(mask), maskValue, tostring(compare), compareValue))
 	return maskValue, compareValue
 end
 
