@@ -23,7 +23,6 @@ if not lib then return end
 lib:__RegisterSpells("TRADESKILL", "50400", 1, {
 	["PERSONAL COOLDOWN AURA"] = {
 		-- Lifeblood (9 ranks)
-		 81780,
 		 55428,
 		 55480,
 		 55500,
