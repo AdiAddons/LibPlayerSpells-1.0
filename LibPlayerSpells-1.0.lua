@@ -244,12 +244,15 @@ function lib:__RegisterSpells(category, interface, minor, spells)
 			-- key is a spell id, value a flag
 			db[key] = bor(db[key] or 0, F[value], catFlags)
 		else
-			error(format("%s: invalid spell data: (%q, %q)", MAJOR, tostring(key), tostring(value)), 2 )
+			error(format("%s: invalid spell data: (%q, %q)", MAJOR, tostring(key), tostring(value)), 2)
 		end
 	end
 
 	-- Copy the new values to the merged category
 	for spellId in pairs(db) do
+		if not GetSpellLink(spellId) then
+			error(format("%s: unknown spell #%d", MAJOR, spellId), 2)
+		end
 		all[spellId] = db[spellId]
 	end
 end
