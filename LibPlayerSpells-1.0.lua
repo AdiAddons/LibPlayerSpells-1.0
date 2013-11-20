@@ -52,6 +52,7 @@ lib.constants = {
 	HELPFUL     = 0x00040000, -- Usable on allies
 	HARMFUL     = 0x00080000, -- Usable on enemies
 	PERSONAL    = 0x00100000, -- Only usable on self
+	PET         = 0x00200000, -- Only usable on pet
 }
 local constants = lib.constants
 
@@ -88,7 +89,8 @@ lib.masks = {
 	TARGETING = bor(
 		constants.HELPFUL,
 		constants.HARMFUL,
-		constants.PERSONAL
+		constants.PERSONAL,
+		constants.PET
 	),
 }
 local masks = lib.masks
