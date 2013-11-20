@@ -132,10 +132,10 @@ local modifiers = lib.modifiers
 
 local function ParseFilter(filter)
 	local flags = 0
-	for word in filter:gmatch("%a+") do
+	for word in filter:gmatch("[%a_]+") do
 		local value = constants[word] or masks[word]
 		if not value then
-			error(format("%s: invalid filter: %q",  MAJOR, tostring(filter)), 5)
+			error(format("%s: invalid filter: %q (because of %q)",  MAJOR, tostring(filter), tostring(word)), 5)
 		end
 		flags = bor(flags, value)
 	end
