@@ -238,6 +238,14 @@ function lib:GetSpellInfo(spellId)
 	end
 end
 
+local function validateSpellId(spellId, spellType)
+	if type(spellId) ~= "number" then
+		error(format("%s: invalid %s, expected number, got %s", MAJOR, spellType, tostring(spellId), type(spellId)), 3)
+	elseif not GetSpellLink(spellId) then
+		error(format("%s: unknown %s #%d", MAJOR, spellType, spellId), 3)
+	end
+end
+
 -- Used to register a category of spells
 function lib:__RegisterSpells(category, interface, minor, newSpells, newProviders, newModifiers)
 	if not spells[category] or category == 'all' then
@@ -246,27 +254,6 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	local version = tonumber(interface) * 100 + minor
 
 	if (versions[category] or 0) >= version then return end
-
-	-- Consistency checks
-	for spellId in pairs(newSpells) do
-		if not GetSpellLink(spellId) then
-			error(format("%s: unknown spell #%d", MAJOR, spellId), 2)
-		end
-	end
-	if newProviders then
-		for spellId in pairs(newProviders) do
-			if not newSpells[spellId] then
-				error(format("%s: spell listed only in providers: %d", MAJOR, v), 2)
-			end
-		end
-	end
-	if newModifiers then
-		for spellId in pairs(newModifiers) do
-			if not newSpells[spellId] then
-				error(format("%s: spell listed only in modifiers: %d", MAJOR, spellId), 2)
-			end
-		end
-	end
 
 	versions[category] = version
 	versions.all = max(versions.all or 0, version)
@@ -297,8 +284,22 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		end
 	end
 
+	-- Consistency checks
+	if newProviders then
+		for spellId, providerId in pairs(newProviders) do
+			if not db[spellId] then error(format("%s: spell listed only in providers: %d", MAJOR, v), 2) end
+			validateSpellId(spellId, "provider spell")
+		end
+	end
+	if newModifiers then
+		for spellId, modified in pairs(newModifiers) do
+			if not db[spellId] then error(format("%s: spell listed only in modifiers: %d", MAJOR, spellId), 2) end
+				validateSpellId(modified, "modified spell")
+	end
+
 	-- Copy the new values to the merged category
 	for spellId in pairs(db) do
+		validateSpellId(spellId, "spell")
 		all[spellId] = db[spellId]
 		providers[spellId] = newProviders and newProviders[spellId] or spellId
 		modifiers[spellId] = newModifiers and newModifiers[spellId] or spellId
