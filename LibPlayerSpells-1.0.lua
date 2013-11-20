@@ -240,12 +240,34 @@ end
 
 -- Used to register a category of spells
 function lib:__RegisterSpells(category, interface, minor, newSpells, newProviders, newModifiers)
-	if not spells[category] then
+	if not spells[category] or category == 'all' then
 		error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
 	end
 	local version = tonumber(interface) * 100 + minor
 
 	if (versions[category] or 0) >= version then return end
+
+	-- Consistency checks
+	for spellId in pairs(newSpells) do
+		if not GetSpellLink(spellId) then
+			error(format("%s: unknown spell #%d", MAJOR, spellId), 2)
+		end
+	end
+	if newProviders then
+		for spellId in pairs(newProviders) do
+			if not newSpells[spellId] then
+				error(format("%s: spell listed only in providers: %d", MAJOR, v), 2)
+			end
+		end
+	end
+	if newModifiers then
+		for spellId in pairs(newModifiers) do
+			if not newSpells[spellId] then
+				error(format("%s: spell listed only in modifiers: %d", MAJOR, spellId), 2)
+			end
+		end
+	end
+
 	versions[category] = version
 	versions.all = max(versions.all or 0, version)
 
@@ -277,9 +299,6 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 
 	-- Copy the new values to the merged category
 	for spellId in pairs(db) do
-		if not GetSpellLink(spellId) then
-			error(format("%s: unknown spell #%d", MAJOR, spellId), 2)
-		end
 		all[spellId] = db[spellId]
 		providers[spellId] = newProviders and newProviders[spellId] or spellId
 		modifiers[spellId] = newModifiers and newModifiers[spellId] or spellId
