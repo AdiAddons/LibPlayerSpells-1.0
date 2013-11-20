@@ -25,7 +25,7 @@ if not lib then return end
 local bor, band = bit.bor, bit.band
 
 lib.constants = {
-	-- Classes
+	-- Sources
 	DEATHKNIGHT = 0x00000001,
 	DRUID       = 0x00000002,
 	HUNTER      = 0x00000004,
@@ -37,29 +37,57 @@ lib.constants = {
 	SHAMAN      = 0x00000100,
 	WARLOCK     = 0x00000200,
 	WARRIOR     = 0x00000400,
+	RACIAL      = 0x00000800, -- Racial trait
+	TRADESKILL  = 0x00001000, -- Tradeskill bonus ability
 
 	-- Various flags
-	AURA        = 0x00000800, -- Apply an aura
-	UNIQUE_AURA = 0x00001000, -- Only one aura on a given unit
-	COOLDOWN    = 0x00002000, -- Has a cooldown
-	SURVIVAL    = 0x00004000, -- Survival
-	BURST       = 0x00008000, -- Damage/healing burst
-	PROC        = 0x00010000, -- Is a proc
+	AURA        = 0x00002000, -- Applies an aura
+	UNIQUE_AURA = 0x00004000, -- Only one aura on a given unit
+	COOLDOWN    = 0x00008000, -- Has a cooldown
+	SURVIVAL    = 0x00010000, -- Survival
+	BURST       = 0x00020000, -- Damage/healing burst
 
 	-- Targeting
-	HELPFUL     = 0x00020000, -- Usable on allies
-	HARMFUL     = 0x00040000, -- Usable on enemies
-	PERSONAL    = 0x00080000, -- Only usable on self
-
-	-- Other sources
-	RACIAL      = 0x00100000, -- Racial trait
-	TRADESKILL  = 0x00200000, -- Tradeskill bonus ability
+	HELPFUL     = 0x00040000, -- Usable on allies
+	HARMFUL     = 0x00080000, -- Usable on enemies
+	PERSONAL    = 0x00100000, -- Only usable on self
 }
 local constants = lib.constants
 
 lib.masks = {
-	CLASS       = 0x000004FF,
-	TARGETING   = 0x000E0000,
+	CLASS       = bor(
+		constants.DEATHKNIGHT,
+		constants.DRUID,
+		constants.HUNTER,
+		constants.MAGE,
+		constants.MONK,
+		constants.PALADIN,
+		constants.PRIEST,
+		constants.ROGUE,
+		constants.SHAMAN,
+		constants.WARLOCK,
+		constants.WARRIOR,
+	),
+	SOURCE      = bor(
+		constants.DEATHKNIGHT,
+		constants.DRUID,
+		constants.HUNTER,
+		constants.MAGE,
+		constants.MONK,
+		constants.PALADIN,
+		constants.PRIEST,
+		constants.ROGUE,
+		constants.SHAMAN,
+		constants.WARLOCK,
+		constants.WARRIOR,
+		constants.RACIAL,
+		constants.TRADESKILL,
+	),
+	TARGETING   = bor(
+		constants.HELPFUL,
+		constants.HARMFUL,
+		constants.PERSONAL,
+	),
 }
 local masks = lib.masks
 
