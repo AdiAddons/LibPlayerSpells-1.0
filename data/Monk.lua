@@ -72,4 +72,16 @@ lib:__RegisterSpells("MONK", "50400", 1, {
 	[116849] = "HELPFUL SURVIVAL COOLDOWN AURA", -- Life Cocoon
 	[119611] = "HELPFUL AURA" , -- Renewing Mist (buff)
 	[132120] = "HELPFUL AURA", -- Enveloping Mist (buff)
+}, {
+	-- Map auras to spellbook
+	[119611] = 115151, -- Renewing Mist
+	[132120] = 124682, -- Enveloping Mist
+	[125359] = 100787, -- Tiger Power <- Tiger Palm)
+	[123725] = 115181, -- Breath of Fire
+	[115307] = 117967, -- Shuffle <- Brewmaster Training
+	[127722] = 116645, -- Serpent's Zeal <- Teachings of the Monastery
+	[118674] = 116645, -- Vital Mists <- Teachings of the Monastery
+	[125195] = 123980, -- Tigereye Brew <- Brewing: Tigereye Brew
+	[128939] = 128938, -- Elusive Brew <- Brewing: Elusive Brew
+	[115867] = 123766, -- Mana Tea <- Brewing: Mana Tea
 })
