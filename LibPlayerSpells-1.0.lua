@@ -151,12 +151,15 @@ local filters = lib.__filters
 
 --- Return version information about a category
 -- @param category (string) The category.
--- @return (number) The version information.
+-- @return (number) A version number suitable for comparison.
+-- @return (number) The interface (i.e. patch) version.
+-- @return (number) Minor version for the given interface version.
 function lib:GetVersionInfo(category)
 	if not spells[category] then
 		error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
 	end
-	return versions[category] or 0
+	local v = versions[category] or 0
+	return v, ceil(v/100), v % 100
 end
 
 local TRUE = function() return true end
@@ -237,6 +240,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newAliases)
 
 	if (versions[category] or 0) >= version then return end
 	versions[category] = version
+	versions.all = max(versions.all or 0, version)
 
 	-- Wipe existing spells for that class
 	local all, db = spells.all, spells[category]
