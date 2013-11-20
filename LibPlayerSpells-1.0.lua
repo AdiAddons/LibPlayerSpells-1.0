@@ -24,6 +24,7 @@ if not lib then return end
 
 local bor, band = bit.bor, bit.band
 
+-- Basic constants use for the bitfields
 lib.constants = {
 	-- Sources
 	DEATHKNIGHT = 0x00000001,
@@ -54,8 +55,9 @@ lib.constants = {
 }
 local constants = lib.constants
 
+-- Convenient bitmasks
 lib.masks = {
-	CLASS       = bor(
+	CLASS = bor(
 		constants.DEATHKNIGHT,
 		constants.DRUID,
 		constants.HUNTER,
@@ -68,7 +70,7 @@ lib.masks = {
 		constants.WARLOCK,
 		constants.WARRIOR,
 	),
-	SOURCE      = bor(
+	SOURCE = bor(
 		constants.DEATHKNIGHT,
 		constants.DRUID,
 		constants.HUNTER,
@@ -83,7 +85,7 @@ lib.masks = {
 		constants.RACIAL,
 		constants.TRADESKILL,
 	),
-	TARGETING   = bor(
+	TARGETING = bor(
 		constants.HELPFUL,
 		constants.HARMFUL,
 		constants.PERSONAL,
@@ -91,6 +93,7 @@ lib.masks = {
 }
 local masks = lib.masks
 
+-- Spells by category
 lib.spells = lib.spells or {
 	all         = {},
 	RACIAL      = {},
@@ -110,6 +113,7 @@ lib.spells = lib.spells or {
 }
 local spells = lib.spells
 
+-- Versions of the different categories
 lib.versions = lib.versions or {}
 local versions = lib.versions
 
