@@ -48,6 +48,10 @@ lib.constants = {
 	HELPFUL     = 0x00020000, -- Usable on allies
 	HARMFUL     = 0x00040000, -- Usable on enemies
 	PERSONAL    = 0x00080000, -- Only usable on self
+
+	-- Other sources
+	RACIAL      = 0x00100000, -- Racial trait
+	TRADESKILL  = 0x00200000, -- Tradeskill bonus ability
 }
 
 lib.masks = {
@@ -56,9 +60,10 @@ lib.masks = {
 }
 
 lib.spells = lib.spells or {
-	racials     = {},
-	tradeskills = {},
 	all         = {},
+	RACIAL      = {},
+	TRADESKILL  = {},
+
 	DEATHKNIGHT = {},
 	DRUID       = {},
 	HUNTER      = {},

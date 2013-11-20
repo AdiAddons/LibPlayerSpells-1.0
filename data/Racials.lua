@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0", true)
 if not lib then return end
-lib:__RegisterSpells("racials", 50400, 1, {
+lib:__RegisterSpells("RACIAL", 50400, 1, {
 	["PERSONAL COOLDOWN AURA"] = {
 		[ 26297] = true, -- Berserking
 		[ 20542] = true, -- Blood Fury (attack power)
