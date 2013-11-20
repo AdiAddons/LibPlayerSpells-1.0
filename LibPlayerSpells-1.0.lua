@@ -230,7 +230,7 @@ end
 -- @param spellId (number) The spell identifier.
 -- @return (number) The spell flags or nil if it is unknown.
 -- @return (number) The identifier of the spell that provides the given spell.
--- @return (number) A spell modified by the given spell.
+-- @return (number|table) A spell modified by the given spell.
 function lib:GetSpellInfo(spellId)
 	local flags = spellId and spells.all[spellId]
 	if flags then
@@ -294,7 +294,14 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	if newModifiers then
 		for spellId, modified in pairs(newModifiers) do
 			if not db[spellId] then error(format("%s: spell listed only in modifiers: %d", MAJOR, spellId), 2) end
+			if type(modified) == "table" then
+				for i, modifiedId in pairs(modified) do
+					validateSpellId(modifiedId, "modified spell")
+				end
+			else
 				validateSpellId(modified, "modified spell")
+			end
+		end
 	end
 
 	-- Copy the new values to the merged category
