@@ -124,9 +124,11 @@ function lib:GetVersionInfo(category)
 	return V[category] or 0
 end
 
+local TRUE = function() return true end
+
 -- Parse filtering parameters
-local function BuildTester(anyOf, include, exclude)
-	if not anyOf and not restrict and not exclude then return end
+function lib:GetFlagTester(anyOf, include, exclude)
+	if not anyOf and not restrict and not exclude then return TRUE end
 	local anyOfMask = anyOf and F[anyOf] or 0
 	local includeMask = include and F[include] or 0
 	local excludeMask = exclude and F[exclude] or 0
@@ -152,7 +154,7 @@ end
 -- if the spell matches the given mask and compare values.
 -- @return (function) The tester function.
 function lib:GetSpellTester(anyOf, include, exclude)
-	local tester = BuildTester(anyOf, include, exclude)
+	local tester = lib:GetFlagTester(anyOf, include, exclude)
 	return function(spellId) return tester(S.all[spellId or false] or 0) end
 end
 
@@ -170,32 +172,7 @@ end
 -- Iterate through spells.
 -- @return An iterator suitable for for .. in .. do loops.
 function lib:IterateSpells(anyOf, include, exclude)
-	local tester = BuildTester(anyOf, include, exclude)
-	if tester then
-		return filterIterator, tester
-	else
-		return pairs(S.all)
-	end
-end
-
--- Return a list of spells.
--- @param t (table) An existing table to fill, optional.
--- @return An list of spell identifiers.
-function lib:GetSpellList(anyOf, include, exclude, t)
-	local tester = BuildTester(anyOf, include, exclude)
-	t = wipe(t or {})
-	if tester then
-		for spellId, flags in pairs(S.all) do
-			if tester(flags) then
-				tinsert(t, spellId)
-			end
-		end
-	else
-		for spellId in pairs(spells) do
-			tinsert(t, spellId)
-		end
-	end
-	return t
+	return filterIterator, lib:GetFlagTester(anyOf, include, exclude)
 end
 
 --- Iterate through spell categories.
