@@ -109,8 +109,9 @@ lib.__filters = setmetatable(
 )
 local F = lib.__filters
 
-
--- Return version information about a category
+--- Return version information about a category
+-- @param category (string) The category.
+-- @return (number) The version information.
 function lib:GetVersionInfo(category)
 	if not S[category] then
 		error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
