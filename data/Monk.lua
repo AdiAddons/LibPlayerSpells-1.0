@@ -37,7 +37,7 @@ lib:__RegisterSpells("MONK", "50400", 1, {
 		121827, -- Roll modified by Celerity
 	},
 	["PERSONAL SURVIVAL COOLDOWN AURA"] = {
-		100784, -- Guard
+		115295, -- Guard
 		115176, -- Zen Meditation
 		115203, -- Fortifying Brew
 		115213, -- Avert Harm
