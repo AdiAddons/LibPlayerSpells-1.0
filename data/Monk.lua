@@ -73,15 +73,43 @@ lib:__RegisterSpells("MONK", "50400", 1, {
 	[119611] = "HELPFUL AURA" , -- Renewing Mist (buff)
 	[132120] = "HELPFUL AURA", -- Enveloping Mist (buff)
 }, {
-	-- Map auras to spellbook
-	[119611] = 115151, -- Renewing Mist
-	[132120] = 124682, -- Enveloping Mist
-	[125359] = 100787, -- Tiger Power <- Tiger Palm)
-	[123725] = 115181, -- Breath of Fire
+	-- Map aura to provider
 	[115307] = 117967, -- Shuffle <- Brewmaster Training
-	[127722] = 116645, -- Serpent's Zeal <- Teachings of the Monastery
-	[118674] = 116645, -- Vital Mists <- Teachings of the Monastery
-	[125195] = 123980, -- Tigereye Brew <- Brewing: Tigereye Brew
-	[128939] = 128938, -- Elusive Brew <- Brewing: Elusive Brew
 	[115867] = 123766, -- Mana Tea <- Brewing: Mana Tea
+	[118674] = 116645, -- Vital Mists <- Teachings of the Monastery
+	[119611] = 115151, -- Renewing Mist
+	[123725] = 115181, -- Breath of Fire
+	[125195] = 123980, -- Tigereye Brew <- Brewing: Tigereye Brew
+	[125359] = 100787, -- Tiger Power <- Tiger Palm
+	[127722] = 116645, -- Serpent's Zeal <- Teachings of the Monastery
+	[128939] = 128938, -- Elusive Brew <- Brewing: Elusive Brew
+	[129914] = 121817, -- Power Strikes
+	[132120] = 124682, -- Enveloping Mist
+}, {
+	-- Map aura to modified spell(s)
+	[115307] = 100784, -- Shuffle -> Blackout Kick
+	[115867] = 115294, -- Mana Tea
+	[118674] = 123273, -- Vital Mists -> Surging Mist
+	[125195] = 116740, -- Tigereye Brew
+	[127722] = 100784, -- Serpent's Zeal -> Blackout Kick
+	[128939] = 115308, -- Elusive Brew
+	[129914] = { -- Power Strikes ->
+		100780, -- Jab (glyphed)
+		101546, -- Spinning Crane Kick
+		115072, -- Expel Harm
+		115175, -- Soothing Mist
+		115693, -- Jab
+		117952, -- Crackling Jade Lightning
+	},
+	[134563] = { -- Healing Elixirs ->
+		115203, -- Fortifying Brew
+		115288, -- Energizing Brew
+		115294, -- Mana Tea
+		115308, -- Elusive Brew
+		115399, -- Chi Brew
+		116680, -- Thunder Focus Tea
+		116740, -- Tigereye Brew
+		119582, -- Purifying Brew
+		137562, -- Nimble Brew
+	},
 })
