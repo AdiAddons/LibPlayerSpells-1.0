@@ -148,7 +148,7 @@ lib.__filters = setmetatable(
 	{
 		__mode = 'kv',
 		__index = function(self, key)
-			if not key then return end
+			if not key then return 0 end
 			local value = type(key) == "string" and ParseFilter(key) or tonumber(key)
 			self[key] = value
 			return value
@@ -156,6 +156,7 @@ lib.__filters = setmetatable(
 	}
 )
 local filters = lib.__filters
+filters[""] = 0
 
 --- Return version information about a category
 -- @param category (string) The category.
