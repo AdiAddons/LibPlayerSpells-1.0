@@ -122,7 +122,7 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 		 2637, -- Hibernate
 		20484, -- Rebirth
 	},
-	[16870], -- Clearcasting =>
+	[16870] = { -- Clearcasting =>
 		5221, -- Shred
 		8936, -- Regrowth
 		5176, -- Wrath
