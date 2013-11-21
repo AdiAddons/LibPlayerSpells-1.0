@@ -27,7 +27,6 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 		 18562, -- Swiftmend
 		 20484, -- Rebirth
 		 33831, -- Force of Nature (balance)
-		 50516, -- Typhoon
 		 78674, -- Starsurge
 		 78675, -- Solar Beam
 		 80964, -- Skull Bash (bear)
@@ -39,6 +38,7 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 		102706, -- Force of Nature (guardian)
 		102791, -- Wild Mushroom: Bloom
 		122288, -- Symbiosis: Cleanse
+		132469, -- Typhoon
 		145205, -- Wild Mushroom (restoration)
 	},
 	["PERSONAL SURVIVAL COOLDOWN AURA"] = {
@@ -50,7 +50,6 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 	},
 	["PERSONAL BURST COOLDOWN AURA"] = {
 		  5217, -- Tiger's Fury
-		 17116, -- Nature's Swiftness
 		 33891, -- Incarnation: Tree of Life
 		 48505, -- Starfall
 		102543, -- Incarnation: King of the Jungle
@@ -61,6 +60,7 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 		112071, -- Celestial Alignment
 		114108, -- Soul of the Forest (restoration)
 		124974, -- Nature's Vigil
+		132158, -- Nature's Swiftness
 	},
 	["PERSONAL COOLDOWN AURA"] = {
 		  1850, -- Dash
