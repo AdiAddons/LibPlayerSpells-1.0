@@ -66,7 +66,8 @@ lib:__RegisterSpells("MONK", "50400", 1, {
 	},
 	-- Special cases
 	[115098] = "HARMFUL HELPFUL COOLDOWN", -- Chi Wave
-	[115288] = "PERSONAL BURST COOLDOWN AURA", -- Energizing Brew
+	[115288] = "PERSONAL POWER_REGEN COOLDOWN AURA", -- Energizing Brew
+	[115294] = "PERSONAL MANA_REGEN AURA", -- Mana Tea
 	[115308] = "PERSONAL SURVIVAL AURA", -- Elusive Brew
 	[116740] = "PERSONAL BURST AURA", -- Tigereye Brew
 	[116849] = "HELPFUL SURVIVAL COOLDOWN AURA", -- Life Cocoon
