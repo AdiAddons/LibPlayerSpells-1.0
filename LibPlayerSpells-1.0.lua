@@ -22,7 +22,24 @@ local MAJOR, MINOR = "LibPlayerSpells-1.0", 1
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 if not lib then return end
 
-local bor, band = bit.bor, bit.band
+local _G = _G
+local ceil = _G.ceil
+local error = _G.error
+local format = _G.format
+local GetSpellLink = _G.GetSpellLink
+local ipairs = _G.ipairs
+local max = _G.max
+local next = _G.next
+local pairs = _G.pairs
+local setmetatable = _G.setmetatable
+local tonumber = _G.tonumber
+local tostring = _G.tostring
+local type = _G.type
+local wipe = _G.wipe
+
+local bor = _G.bit.bor
+local band = _G.bit.band
+local bxor = _G.bit.bxor
 
 -- Basic constants use for the bitfields
 lib.constants = {
@@ -182,7 +199,7 @@ function lib:GetFlagTester(anyOf, include, exclude)
 	if include or exclude then
 		local includeMask, excludeMask = filters[include], filters[exclude]
 		local mask = bor(includeMask, excludeMask)
-		local expected = bit.bxor(mask, excludeMask)
+		local expected = bxor(mask, excludeMask)
 		if anyOf then
 			return function(flags)
 				return flags and band(flags, anyOfMask) ~= 0 and band(flags, mask) == expected
@@ -211,7 +228,7 @@ function lib:GetSpellTester(anyOf, include, exclude)
 end
 
 -- Filtering iterator
-local function filterIterator(tester, index)
+local function filterIterator(tester, spellId)
 	local flags
 	repeat
 		spellId, flags = next(spells.all, spellId)
@@ -295,7 +312,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	-- Consistency checks
 	if newProviders then
 		for spellId, providerId in pairs(newProviders) do
-			if not db[spellId] then error(format("%s: spell listed only in providers: %d", MAJOR, v), 2) end
+			if not db[spellId] then error(format("%s: spell listed only in providers: %d", MAJOR, spellId), 2) end
 			validateSpellId(spellId, "provider spell")
 		end
 	end
