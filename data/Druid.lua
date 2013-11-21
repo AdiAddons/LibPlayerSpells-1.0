@@ -74,8 +74,9 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 		127538, -- Savage Roar (glyphed)
 	},
 	["PERSONAL IMPORTANT AURA"] = {
-		 69369, -- Predatory Swiftness (buff)
 		 16870, -- Clearcasting (buff)
+		 69369, -- Predatory Swiftness (buff)
+		100977, -- Harmony (buff)
 		145151, -- Dream of Cenarius (balance)
 		145152, -- Dream of Cenarius (feral)
 		145162, -- Dream of Cenarius (guardian)
@@ -104,6 +105,7 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 	-- Map aura to provider
 	[ 69369] =  16974, -- Predatory Swiftness
 	[ 33831] = 106737, -- Force of Nature (balance)
+	[100977] =  77495, -- Mastery: Harmony
 	[102693] = 106737, -- Force of Nature (restoration)
 	[102703] = 106737, -- Force of Nature (feral)
 	[102706] = 106737, -- Force of Nature (guardian)
