@@ -41,18 +41,20 @@ lib.constants = {
 	RACIAL      = 0x00000800, -- Racial trait
 	TRADESKILL  = 0x00001000, -- Tradeskill bonus ability
 
-	-- Various flags
-	AURA        = 0x00002000, -- Applies an aura
-	UNIQUE_AURA = 0x00004000, -- Only one aura on a given unit
-	COOLDOWN    = 0x00008000, -- Has a cooldown
-	SURVIVAL    = 0x00010000, -- Survival
-	BURST       = 0x00020000, -- Damage/healing burst
-
 	-- Targeting
-	HELPFUL     = 0x00040000, -- Usable on allies
-	HARMFUL     = 0x00080000, -- Usable on enemies
-	PERSONAL    = 0x00100000, -- Only usable on self
-	PET         = 0x00200000, -- Only usable on pet
+	HELPFUL     = 0x00002000, -- Usable on allies
+	HARMFUL     = 0x00004000, -- Usable on enemies
+	PERSONAL    = 0x00008000, -- Only usable on self
+	PET         = 0x00010000, -- Only usable on pet
+
+	-- Various flags
+	AURA        = 0x00020000, -- Applies an aura
+	UNIQUE_AURA = 0x00040000, -- Only one aura on a given unit
+	COOLDOWN    = 0x00080000, -- Has a cooldown
+	SURVIVAL    = 0x00100000, -- Survival spell
+	BURST       = 0x00200000, -- Damage/healing burst spell
+	MANA_REGEN  = 0x00400000, -- Recharge mana
+	POWER_REGEN = 0x00800000, -- Recharge any power but mana
 }
 local constants = lib.constants
 
