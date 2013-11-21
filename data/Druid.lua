@@ -73,7 +73,7 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 		 52610, -- Savage Roar
 		127538, -- Savage Roar (glyphed)
 	},
-	["PERSONAL PROC AURA"] = {
+	["PERSONAL IMPORTANT AURA"] = {
 		 69369, -- Predatory Swiftness (buff)
 		 16870, -- Clearcasting (buff)
 		145151, -- Dream of Cenarius (balance)
@@ -122,7 +122,7 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 		 2637, -- Hibernate
 		20484, -- Rebirth
 	},
-	[16870], -- Omen of Clarity =>
+	[16870], -- Clearcasting =>
 		5221, -- Shred
 		8936, -- Regrowth
 		5176, -- Wrath

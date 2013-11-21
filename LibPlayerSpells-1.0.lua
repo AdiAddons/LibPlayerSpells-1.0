@@ -55,6 +55,7 @@ lib.constants = {
 	BURST       = 0x00200000, -- Damage/healing burst spell
 	MANA_REGEN  = 0x00400000, -- Recharge mana
 	POWER_REGEN = 0x00800000, -- Recharge any power but mana
+	IMPORTANT   = 0x01000000, -- Important spell the player should react to
 }
 local constants = lib.constants
 
