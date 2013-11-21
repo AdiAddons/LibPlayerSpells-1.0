@@ -175,24 +175,26 @@ local TRUE = function() return true end
 
 -- Parse filtering parameters
 function lib:GetFlagTester(anyOf, include, exclude)
-	if not anyOf and not restrict and not exclude then return TRUE end
-	local anyOfMask = anyOf and filters[anyOf] or 0
-	local includeMask = include and filters[include] or 0
-	local excludeMask = exclude and filters[exclude] or 0
-	local mask = bor(includeMask, excludeMask)
-	local expected = bit.bxor(mask, excludeMask)
-	if mask == 0 then
+	local anyOfMask = filters[anyOf]
+	if include or exclude then
+		local includeMask, excludeMask = filters[include], filters[exclude]
+		local mask = bor(includeMask, excludeMask)
+		local expected = bit.bxor(mask, excludeMask)
+		if anyOf then
+			return function(flags)
+				return flags and band(flags, anyOfMask) ~= 0 and band(flags, mask) == expected
+			end
+		else
+			return function(flags)
+				return flags and band(flags, mask) == expected
+			end
+		end
+	elseif anyOf then
 		return function(flags)
 			return flags and band(flags, anyOfMask) ~= 0
 		end
-	elseif anyOfMask == 0 then
-		return function(flags)
-			return flags and band(flags, mask) == expected
-		end
 	else
-		return function(flags)
-			return flags and band(flags, anyOfMask) ~= 0 and band(flags, mask) == expected
-		end
+		return TRUE
 	end
 end
 
