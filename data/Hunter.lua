@@ -46,7 +46,6 @@ lib:__RegisterSpells("HUNTER", "50400", 1, {
 		 34692, -- The Beast Within
 	},
 	["PERSONAL AURA"] = {
-		 82726, -- Fervor
 		 82925, -- Ready, Set, Aim...
 		 53220, -- Steady Focus (buff)
 		 56343, -- Lock and Load
@@ -69,9 +68,10 @@ lib:__RegisterSpells("HUNTER", "50400", 1, {
 	},
 	-- Special cases
 	[   136] = "PET AURA", -- Mend Pet
-	[ 19623] = "PET AURA", -- Frenzy
 	[  1130] = "HARMFUL UNIQUE_AURA AURA", -- Hunter's Mark
-	[ 34477] = "PERSONAL COOLDOWN AURA", -- Misdirection
+	[ 19623] = "PET AURA", -- Frenzy
+	[ 34477] = "PERSONAL COOLDOWN UNIQUE_AURA AURA", -- Misdirection
+	[ 82726] = "PERSONAL POWER_REGEN COOLDOWN AURA", -- Fervor
 }, {
 	-- Map aura to provider
 	[19623] = 82692, -- Frenzy <= Focus Fire
