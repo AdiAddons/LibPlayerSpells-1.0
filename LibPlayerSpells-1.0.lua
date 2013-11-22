@@ -328,6 +328,9 @@ local function FlattenSpellData(source, target, prefix, errorLevel)
 		if valueType == "number" then
 			-- value is a spell id
 			target[value] = prefix
+		elseif keyType == "number" and value == true then
+			-- key is a spell id, value is true
+			target[key] = prefix
 		elseif keyType == "number" and valueType == "string" then
 			-- key is a spell id, value is a flag
 			target[key] = prefix.." "..value
