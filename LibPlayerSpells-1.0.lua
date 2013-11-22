@@ -272,10 +272,13 @@ function lib:GetSpellInfo(spellId)
 	end
 end
 
-local function validateSpellId(spellId, spellType, errorLevel)
+-- Validate that a spellID is valid.
+-- This can fails when the client cache is empty (e.g. after a major patch).
+-- Accept a table, in which case it is recursively validated.
+local function ValidateSpellId(spellId, spellType, errorLevel)
 	if type(spellId) == "table"  then
 		for subId in pairs(spellId) do
-			validateSpellId(subId, spellType, errorLevel+1)
+			ValidateSpellId(subId, spellType, errorLevel+1)
 		end
 	elseif type(spellId) ~= "number" then
 		error(format("%s: invalid %s, expected number, got %s", MAJOR, spellType, tostring(spellId), type(spellId)), errorLevel+1)
@@ -324,21 +327,20 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	if newProviders then
 		for spellId, providerId in pairs(newProviders) do
 			if not db[spellId] then error(format("%s: spell listed only in providers: %d", MAJOR, spellId), 2) end
-			validateSpellId(spellId, "provided spell", 2)
-			validateSpellId(providerId, "provider spell", 2)
+			ValidateSpellId(spellId, "provided spell", 2)
+			ValidateSpellId(providerId, "provider spell", 2)
 		end
 	end
 	if newModifiers then
 		for spellId, modified in pairs(newModifiers) do
 			if not db[spellId] then error(format("%s: spell listed only in modifiers: %d", MAJOR, spellId), 2) end
-			validateSpellId(spellId, "provided spell", 2)
-			validateSpellId(modified, "provider spell", 2)
+			ValidateSpellId(spellId, "modifier spell", 2)
+			ValidateSpellId(modified, "modified spell", 2)
 		end
 	end
 
 	-- Copy the new values to the merged category
 	for spellId in pairs(db) do
-		validateSpellId(spellId, "spell")
 		spells[spellId] = db[spellId]
 		providers[spellId] = newProviders and newProviders[spellId] or spellId
 		modifiers[spellId] = newModifiers and newModifiers[spellId] or providers[spellId]
