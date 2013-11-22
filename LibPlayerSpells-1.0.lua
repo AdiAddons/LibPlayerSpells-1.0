@@ -195,7 +195,12 @@ end
 
 local TRUE = function() return true end
 
--- Parse filtering parameters
+--- Create a flag tester callback.
+-- This callback takes a flag as an argument and returns true when the conditions are met.
+-- @param anyOf (string|number) The tested value should contain at least one these flags.
+-- @param include (string|number) The tested value must contain all these flags.
+-- @param exclude (string|number) The testes value must not contain any of these flags.
+-- @return (function) The tester callback.
 function lib:GetFlagTester(anyOf, include, exclude)
 	local anyOfMask = filters[anyOf]
 	if include or exclude then
@@ -220,10 +225,12 @@ function lib:GetFlagTester(anyOf, include, exclude)
 	end
 end
 
--- Create a tester function.
--- These function takes a spell identifier as an argument and returns true
--- if the spell matches the given mask and compare values.
--- @return (function) The tester function.
+--- Create a spell tester callback.
+-- This callback takes a spell identifier as an argument and returns true when the conditions are met.
+-- @param anyOf (string|number) The tested value should contain at least one these flags.
+-- @param include (string|number) The tested value must contain all these flags.
+-- @param exclude (string|number) The testes value must not contain any of these flags.
+-- @return (function) The tester callback.
 function lib:GetSpellTester(anyOf, include, exclude)
 	local tester = lib:GetFlagTester(anyOf, include, exclude)
 	return function(spellId) return tester(spells[spellId or false] or 0) end
@@ -256,8 +263,8 @@ end
 --- Return information about a spell.
 -- @param spellId (number) The spell identifier.
 -- @return (number) The spell flags or nil if it is unknown.
--- @return (number) The identifier of the spell that provides the given spell.
--- @return (number|table) A spell modified by the given spell.
+-- @return (number|table) Spell(s) providing the given spell.
+-- @return (number|table) Spell(s) modified by the given spell.
 function lib:GetSpellInfo(spellId)
 	local flags = spellId and spells[spellId]
 	if flags then
