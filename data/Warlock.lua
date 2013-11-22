@@ -56,7 +56,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 1, {
 					113861, -- Dark Soul: Knowledge
 				},
 			},
-			HEPLFUL = {
+			HELPFUL = {
 				[20707] = "UNIQUE_AURA", -- Soulstone
 			},
 			HARMFUL = {
