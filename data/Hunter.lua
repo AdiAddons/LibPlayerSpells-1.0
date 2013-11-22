@@ -66,6 +66,20 @@ lib:__RegisterSpells("HUNTER", "50400", 1, {
 		117050, -- Glaive Toss
 		131894, -- A Murder of Crows
 	},
+	RAIDBUFF = {
+		[ 19506] = "ATK_POWER", -- Trueshot Aura
+		[ 24604] = "CRITICAL",  -- Furious Howl
+		[ 90309] = "CRITICAL",  -- Terrifying Roar
+		[ 90363] = "STATS",     -- Embrace of the Shale Spider
+		[ 90364] = "STAMINA" ,  -- Qiraji Fortitude
+		[ 93435] = "MASTERY",   -- Roar of Courage
+		[126309] = "SPL_POWER CRITICAL", -- Still Water
+		[126373] = "CRITICAL",  -- Fearless Roar
+		[128432] = "ATK_SPEED", -- Cackling Howl
+		[128433] = "ATK_SPEED", -- Serpent's Swiftness
+		[128997] = "MASTERY",   -- Spirit Beast Blessing
+		[135678] = "SPL_HASTE", -- Energizing Spores
+	},
 	-- Special cases
 	[   136] = "PET AURA", -- Mend Pet
 	[  1130] = "HARMFUL UNIQUE_AURA AURA", -- Hunter's Mark
