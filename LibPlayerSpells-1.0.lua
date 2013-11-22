@@ -287,6 +287,25 @@ local function ValidateSpellId(spellId, spellType, errorLevel)
 	end
 end
 
+-- Flatten and validate the spell data.
+local function FlattenSpellData(source, target, prefix, errorLevel)
+	for key, value in pairs(source) do
+		local keyType, valueType = type(key), type(value)
+		if valueType == "number" then
+			-- value is a spell id
+			target[value] = prefix
+		elseif keyType == "number" and valueType == "string" then
+			-- key is a spell id, value is a flag
+			target[key] = prefix.." "..value
+		elseif keyType == "string" and valueType == "table" then
+			-- Value is a nested table, key indicates common flags
+			FlattenSpellData(value, target, key, errorLevel+1)
+		else
+			error(format("%s: invalid spell definition: [%q] = %q", MAJOR, tostring(key), tostring(value)), errorLevel+1)
+		end
+	end
+end
+
 -- Used to register a category of spells
 function lib:__RegisterSpells(category, interface, minor, newSpells, newProviders, newModifiers)
 	if not categories[category] then
@@ -306,21 +325,16 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		modifiers[spellId] = nil
 	end
 
-	-- Rebuild the flags
-	local catFlags = constants[category] or 0
-	for key, value in pairs(newSpells) do
-		if type(key) == "string" and type(value) == "table" then
-			-- key is a filter, value a list of spell ids
-			local flags = filters[key]
-			for i, spellId in ipairs(value) do
-				db[spellId] = bor(db[spellId] or 0, flags, catFlags)
-			end
-		elseif type(key) == "number" then
-			-- key is a spell id, value a flag
-			db[key] = bor(db[key] or 0, filters[value], catFlags)
-		else
-			error(format("%s: invalid spell data: (%q, %q)", MAJOR, tostring(key), tostring(value)), 2)
-		end
+	-- Flatten the spell definitions
+	local defs = {}
+	FlattenSpellData(newSpells, defs, "", 2)
+
+	-- Build the flags
+	local categoryFlags = constants[category] or 0
+	for spellId, flagDef in pairs(defs) do
+		ValidateSpellId(spellId, "spell", 2)
+		local flags = filters[flagDef]
+		db[spellId] = bor(db[spellId] or 0, flags, categoryFlags)
 	end
 
 	-- Consistency checks
