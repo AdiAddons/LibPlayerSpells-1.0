@@ -21,7 +21,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("HUNTER", "50400", 1, {
-	["COOLDOWN"] = {
+	COOLDOWN = {
 		   781, -- Disengage
 		 53351, -- Kill Shot
 		109259, -- Powershot
@@ -30,41 +30,52 @@ lib:__RegisterSpells("HUNTER", "50400", 1, {
 		120697, -- Lynx Rush
 		121818, -- Stampede
 		147362, -- Counter Shot
+		PERSONAL = {
+			[109304] = "SURVIVAL", -- Exhilaration
+			AURA = {
+				[34477] = "UNIQUE_AURA", -- Misdirection
+				[82726] = "POWER_REGEN", -- Fervor
+				SURVIVAL = {
+					  5384, -- Feign Death
+					 19263, -- Deterrence
+					 51753, -- Camouflage
+					 53271, -- Master's Call
+					148467, -- Deterrence (talented)
+				},
+				BURST = {
+					  3045, -- Rapid Fire
+					 34692, -- The Beast Within
+				},
+			},
+		},
+		["HARMFUL AURA"] = {
+			  1499, -- Freezing Trap
+			  3674, -- Black Arrow
+			 13813, -- Explosive Trap
+			 19386, -- Wyvern Sting
+			 19503, -- Scatter Shot
+			 19577, -- Intimidation
+			 20736, -- Distracting Shot
+			 34490, -- Silencing Shot
+			109248, -- Binding Shot
+			117050, -- Glaive Toss
+			131894, -- A Murder of Crows
+		},
 	},
-	["PERSONAL SURVIVAL COOLDOWN"] = {
-		109304, -- Exhilaration
-	},
-	["PERSONAL SURVIVAL COOLDOWN AURA"] = {
-		 53271, -- Master's Call
-		 19263, -- Deterrence
-		148467, -- Deterrence (talented)
-		 51753, -- Camouflage
-		  5384, -- Feign Death
-	},
-	["PERSONAL BURST COOLDOWN AURA"] = {
-		  3045, -- Rapid Fire
-		 34692, -- The Beast Within
-	},
-	["PERSONAL AURA"] = {
-		 82925, -- Ready, Set, Aim...
-		 53220, -- Steady Focus (buff)
-		 56343, -- Lock and Load
-	},
-	["HARMFUL AURA"] = {
-		  1978, -- Serpent String
-	},
-	["HARMFUL COOLDOWN AURA"] = {
-		  1499, -- Freezing Trap
-		  3674, -- Black Arrow
-		 13813, -- Explosive Trap
-		 19386, -- Wyvern Sting
-		 19503, -- Scatter Shot
-		 19577, -- Intimidation
-		 20736, -- Distracting Shot
-		 34490, -- Silencing Shot
-		109248, -- Binding Shot
-		117050, -- Glaive Toss
-		131894, -- A Murder of Crows
+	AURA = {
+		PERSONAL = {
+			 53220, -- Steady Focus (buff)
+			 56343, -- Lock and Load
+			 82925, -- Ready, Set, Aim...
+		},
+		HARMFUL = {
+			1978, -- Serpent String
+			[1130] = "UNIQUE_AURA", -- Hunter's Mark
+		},
+		PET = {
+			   136, -- Mend Pet
+			 19623, -- Frenzy
+		},
 	},
 	RAIDBUFF = {
 		[ 19506] = "ATK_POWER", -- Trueshot Aura
@@ -80,21 +91,15 @@ lib:__RegisterSpells("HUNTER", "50400", 1, {
 		[128997] = "MASTERY",   -- Spirit Beast Blessing
 		[135678] = "SPL_HASTE", -- Energizing Spores
 	},
-	-- Special cases
-	[   136] = "PET AURA", -- Mend Pet
-	[  1130] = "HARMFUL UNIQUE_AURA AURA", -- Hunter's Mark
-	[ 19623] = "PET AURA", -- Frenzy
-	[ 34477] = "PERSONAL COOLDOWN UNIQUE_AURA AURA", -- Misdirection
-	[ 82726] = "PERSONAL POWER_REGEN COOLDOWN AURA", -- Fervor
 }, {
 	-- Map aura to provider
 	[19623] = 82692, -- Frenzy <= Focus Fire
+	[34692] = 19574, -- The Beast Within <= Bestial Wrath
 	[53220] = 53224, -- Steady Focus
 	[82925] = 34487, -- Ready, Set, Aim... <= Master Marksman
-	[34692] = 19574, -- The Beast Within <= Bestial Wrath
 }, {
 	-- Map aura to modified spell(s)
 	[53220] = 56641, -- Steady Focus => Steady Shot
-	[82925] = 19434, -- Ready, Set, Aim... => Aimed Shot
 	[56343] = 53301, -- Lock and Load => Explosive Shot
+	[82925] = 19434, -- Ready, Set, Aim... => Aimed Shot
 })
