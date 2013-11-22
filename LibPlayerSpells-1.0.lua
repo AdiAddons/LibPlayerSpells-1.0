@@ -91,6 +91,12 @@ lib.constants = {
 }
 local constants = lib.constants
 
+local RAID_BUFF_TYPES = {
+	constants.STATS, constants.STAMINA, constants.ATK_POWER,
+	constants.ATK_SPEED, constants.SPL_POWER, constants.SPL_HASTE,
+	constants.CRITICAL, constants.MASTERY, constants.BURST_HASTE,
+}
+
 -- Convenient bitmasks
 lib.masks = {
 	CLASS = bor(
@@ -128,17 +134,7 @@ lib.masks = {
 		constants.PET
 	),
 	TYPE = constants.RAIDBUFF,
-	RAIDBUFF_TYPE = bor(
-		constants.STATS,
-		constants.STAMINA,
-		constants.ATK_POWER,
-		constants.ATK_SPEED,
-		constants.SPL_POWER,
-		constants.SPL_HASTE,
-		constants.CRITICAL,
-		constants.MASTERY,
-		constants.BURST_HASTE
-	),
+	RAIDBUFF_TYPE = bor(unpack(RAID_BUFF_TYPES)),
 }
 local masks = lib.masks
 
@@ -291,6 +287,12 @@ end
 -- @return An iterator suitable for .. in .. do loops.
 function lib:IterateCategories()
 	return pairs(categories)
+end
+
+--- Return the lsit of raid buff types.
+-- @return (table)
+function lib:GetRaidBuffTypes()
+	return RAID_BUFF_TYPES
 end
 
 --- Return information about a spell.
