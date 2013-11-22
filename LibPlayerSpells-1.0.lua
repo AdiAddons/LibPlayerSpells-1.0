@@ -70,7 +70,7 @@ lib.constants = {
 	SPL_POWER   = 0x00000010, -- +10% spell power
 	SPL_HASTE   = 0x00000020, -- +5% spell haste
 	CRITICAL    = 0x00000040, -- +5% critical strike
-	MASTER      = 0x00000080, -- Flat mastery bonus
+	MASTERY     = 0x00000080, -- Flat mastery bonus
 	BURST_HASTE = 0x00000100, -- Bloodlust/Heroism
 
 	-- Targeting
@@ -136,7 +136,7 @@ lib.masks = {
 		constants.SPL_POWER,
 		constants.SPL_HASTE,
 		constants.CRITICAL,
-		constants.MASTER,
+		constants.MASTERY,
 		constants.BURST_HASTE
 	),
 }
