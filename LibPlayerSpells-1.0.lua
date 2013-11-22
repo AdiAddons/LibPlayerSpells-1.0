@@ -40,9 +40,13 @@ local wipe = _G.wipe
 local bor = _G.bit.bor
 local band = _G.bit.band
 local bxor = _G.bit.bxor
+local bnot = _G.bit.bnot
 
 -- Basic constants use for the bitfields
 lib.constants = {
+	-- Special types -- these alters how the 13 lower bits are to be interpreted
+	RAIDBUFF = 0x80000000, -- Raid buffs
+
 	-- Sources
 	DEATHKNIGHT = 0x00000001,
 	DRUID       = 0x00000002,
@@ -57,6 +61,17 @@ lib.constants = {
 	WARRIOR     = 0x00000400,
 	RACIAL      = 0x00000800, -- Racial trait
 	TRADESKILL  = 0x00001000, -- Tradeskill bonus ability
+
+	-- Raid buff types, *requires* RAIDBUFF, else this messes up sources
+	STATS       = 0x00000001, -- +5% strengh, agility and intellect
+	STAMINA     = 0x00000002, -- +10 stamina
+	ATK_POWER   = 0x00000004, -- +10% attack power
+	ATK_SPEED   = 0x00000008, -- +10% attack speed
+	SPL_POWER   = 0x00000010, -- +10% spell power
+	SPL_HASTE   = 0x00000020, -- +5% spell haste
+	CRITICAL    = 0x00000040, -- +5% critical strike
+	MASTER      = 0x00000080, -- Flat mastery bonus
+	BURST_HASTE = 0x00000100, -- Bloodlust/Heroism
 
 	-- Targeting
 	HELPFUL     = 0x00002000, -- Usable on allies
@@ -112,6 +127,18 @@ lib.masks = {
 		constants.PERSONAL,
 		constants.PET
 	),
+	TYPE = constants.RAIDBUFF,
+	RAIDBUFF_TYPE = bor(
+		constants.STATS,
+		constants.STAMINA,
+		constants.ATK_POWER,
+		constants.ATK_SPEED,
+		constants.SPL_POWER,
+		constants.SPL_HASTE,
+		constants.CRITICAL,
+		constants.MASTER,
+		constants.BURST_HASTE
+	),
 }
 local masks = lib.masks
 
@@ -136,6 +163,12 @@ lib.__categories = lib.__categories or {
 	TRADESKILL  = {},
 }
 local categories = lib.__categories
+
+-- Special spells
+lib.__specials = lib.__specials or {
+	RAIDBUFF = {},
+}
+local specials = lib.__specials
 
 -- Versions of the different categories
 lib.__versions = lib.__versions or {}
@@ -242,7 +275,7 @@ local function FilterIterator(tester, spellId)
 	repeat
 		spellId, flags = next(spells, spellId)
 		if spellId and tester(flags) then
-			return spellId, flags, providers[spellId], modifiers[spellId]
+			return spellId, flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId]
 		end
 	until not spellId
 end
@@ -265,10 +298,11 @@ end
 -- @return (number) The spell flags or nil if it is unknown.
 -- @return (number|table) Spell(s) providing the given spell.
 -- @return (number|table) Spell(s) modified by the given spell.
+-- @return (number) Raid buff type, if the spell is a raid buff (RAIDBUFF is set in flags).
 function lib:GetSpellInfo(spellId)
 	local flags = spellId and spells[spellId]
 	if flags then
-		return flags, providers[spellId], modifiers[spellId]
+		return flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId]
 	end
 end
 
@@ -317,23 +351,39 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	versions[category] = version
 
 	-- Wipe previous spells
-	local db = categories[category]
+	local db, raidbuffs = categories[category], specials.RAIDBUFF
 	for spellId in pairs(db) do
 		db[spellId] = nil
 		spells[spellId] = nil
 		providers[spellId] = nil
 		modifiers[spellId] = nil
+		raidbuffs[spellId] = nil
 	end
 
 	-- Flatten the spell definitions
 	local defs = {}
 	FlattenSpellData(newSpells, defs, "", 2)
 
+	-- Useful constants
+	local RAIDBUFF = constants.RAIDBUFF
+	local TYPE = masks.TYPE
+	local RAIDBUFF_TYPE = masks.RAIDBUFF_TYPE
+	local NOT_RAIDBUFF_TYPE = bnot(RAIDBUFF_TYPE)
+	local RAIDBUFF_FLAGS = filters["HELPFUL UNIQUE_AURA AURA"]
+
 	-- Build the flags
 	local categoryFlags = constants[category] or 0
 	for spellId, flagDef in pairs(defs) do
 		ValidateSpellId(spellId, "spell", 2)
 		local flags = filters[flagDef]
+
+		if band(flags, TYPE) == RAIDBUFF then
+			-- Raid buff: store the buff type elsewhere
+			raidbuffs[spellId] = band(flags, RAIDBUFF_TYPE)
+			-- Remove the buff type and adds the common flags for raid buffs
+			flags = bor(band(flags, NOT_RAIDBUFF_TYPE), RAIDBUFF_FLAGS)
+		end
+
 		db[spellId] = bor(db[spellId] or 0, flags, categoryFlags)
 	end
 
