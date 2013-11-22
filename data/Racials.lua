@@ -21,40 +21,44 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 local lib = LibStub("LibPlayerSpells-1.0", true)
 if not lib then return end
 lib:__RegisterSpells("RACIAL", 50400, 1, {
-	["PERSONAL COOLDOWN AURA"] = {
-		[ 26297] = true, -- Berserking
-		[ 20542] = true, -- Blood Fury (attack power)
-		[ 33702] = true, -- Blood Fury (spell power)
-		[ 33697] = true, -- Blood Fury (both)
-		[ 20594] = true, -- Stoneform
-		[ 58984] = true, -- Shadowmeld
-		[ 68992] = true, -- Darkflight
-	},
-	["HELPFUL COOLDOWN AURA"] = {
-		[ 59545] = true, -- Gift of the Naaru
-		[ 59543] = true, -- Gift of the Naaru
-		[ 59548] = true, -- Gift of the Naaru
-		[ 59542] = true, -- Gift of the Naaru
-		[ 59544] = true, -- Gift of the Naaru
-		[ 59547] = true, -- Gift of the Naaru
-		[ 28880] = true, -- Gift of the Naaru
-	},
-	["HARMFUL COOLDOWN AURA"] = {
-		[ 28730] = true, -- Arcane Torrent (mana)
-		[ 50613] = true, -- Arcane Torrent (runic power)
-		[ 80483] = true, -- Arcane Torrent (focus)
-		[ 25046] = true, -- Arcane Torrent (energy)
-		[ 69179] = true, -- Arcane Torrent (rage)
-		[107079] = true, -- Quaking Palm
-		[ 20549] = true, -- War Stomp
-	},
-	["PERSONAL COOLDOWN"] = {
-		[ 59752] = true, -- Every Man for Himself
-		[ 20589] = true, -- Escape Artist
-		[ 69070] = true, -- Rocket Jump
-		[  7744] = true, -- Will of the Forsaken
-	},
-	["HARMFUL COOLDOWN"] = {
-		[ 69041] = true, -- Rocket Barrage
+	COOLDOWN = {
+		AURA = {
+			PERSONAL = {
+				26297, -- Berserking
+				20542, -- Blood Fury (attack power)
+				33702, -- Blood Fury (spell power)
+				33697, -- Blood Fury (both)
+				20594, -- Stoneform
+				58984, -- Shadowmeld
+				68992, -- Darkflight
+			},
+			HELPFUL = {
+				59545, -- Gift of the Naaru
+				59543, -- Gift of the Naaru
+				59548, -- Gift of the Naaru
+				59542, -- Gift of the Naaru
+				59544, -- Gift of the Naaru
+				59547, -- Gift of the Naaru
+				28880, -- Gift of the Naaru
+			},
+			HARMFUL = {
+				 28730, -- Arcane Torrent (mana)
+				 50613, -- Arcane Torrent (runic power)
+				 80483, -- Arcane Torrent (focus)
+				 25046, -- Arcane Torrent (energy)
+				 69179, -- Arcane Torrent (rage)
+				107079, -- Quaking Palm
+				 20549, -- War Stomp
+			},
+		},
+		PERSONAL = {
+			59752, -- Every Man for Himself
+			20589, -- Escape Artist
+			69070, -- Rocket Jump
+			 7744, -- Will of the Forsaken
+		},
+		HARMFUL = {
+			69041, -- Rocket Barrage
+		},
 	},
 })
