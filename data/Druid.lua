@@ -21,7 +21,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("DRUID", "50400", 1, {
-	["COOLDOWN"] = {
+	COOLDOWN = {
 		   740, -- Tranquility
 		  2782, -- Remove Corruption
 		 18562, -- Swiftmend
@@ -40,72 +40,79 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 		122288, -- Symbiosis: Cleanse
 		132469, -- Typhoon
 		145205, -- Wild Mushroom (restoration)
+		AURA = {
+			HELPFUL = {
+				48438,-- Wild Growth
+				[ 29166] = "PERSONAL MANA_REGEN", -- Innervate
+				[102342] = "SURVIVAL",-- Ironbark
+			},
+			PERSONAL = {
+				  1850, -- Dash
+				 16689, -- Nature's Grasp
+				 77761, -- Stampeding Roar (bear)
+				 77764, -- Stampeding Roar (cat)
+				106898, -- Stampeding Roar (humanoid)
+				[ 5229] = "POWER_REGEN", -- Enrage
+				SURVIVAL = {
+					 22812, -- Barkskin
+					 22842, -- Frenzied Regeneration
+					 61336, -- Survival Instincts
+					 62606, -- Savage Defense
+					106922, -- Might of Ursoc
+				},
+				BURST = {
+					  5217, -- Tiger's Fury
+					 33891, -- Incarnation: Tree of Life
+					 48505, -- Starfall
+					102543, -- Incarnation: King of the Jungle
+					102558, -- Incarnation: Son of Ursoc
+					102560, -- Incarnation: Chosen of Elune
+					106952, -- Berserk
+					108288, -- Heart of the Wild
+					112071, -- Celestial Alignment
+					114108, -- Soul of the Forest (restoration)
+					124974, -- Nature's Vigil
+					132158, -- Nature's Swiftness
+				},
+			},
+		},
 	},
-	["PERSONAL SURVIVAL COOLDOWN AURA"] = {
-		 22812, -- Barkskin
-		 22842, -- Frenzied Regeneration
-		 61336, -- Survival Instincts
-		 62606, -- Savage Defense
-		106922, -- Might of Ursoc
-	},
-	["PERSONAL BURST COOLDOWN AURA"] = {
-		  5217, -- Tiger's Fury
-		 33891, -- Incarnation: Tree of Life
-		 48505, -- Starfall
-		102543, -- Incarnation: King of the Jungle
-		102558, -- Incarnation: Son of Ursoc
-		102560, -- Incarnation: Chosen of Elune
-		106952, -- Berserk
-		108288, -- Heart of the Wild
-		112071, -- Celestial Alignment
-		114108, -- Soul of the Forest (restoration)
-		124974, -- Nature's Vigil
-		132158, -- Nature's Swiftness
-	},
-	["PERSONAL COOLDOWN AURA"] = {
-		  1850, -- Dash
-		 16689, -- Nature's Grasp
-		 77761, -- Stampeding Roar (bear)
-		 77764, -- Stampeding Roar (cat)
-		106898, -- Stampeding Roar (humanoid)
-	},
-	["PERSONAL BURST AURA"] = {
-		 52610, -- Savage Roar
-		127538, -- Savage Roar (glyphed)
-	},
-	["PERSONAL IMPORTANT AURA"] = {
-		 16870, -- Clearcasting (buff)
-		 69369, -- Predatory Swiftness (buff)
-		100977, -- Harmony (buff)
-		145151, -- Dream of Cenarius (balance)
-		145152, -- Dream of Cenarius (feral)
-		145162, -- Dream of Cenarius (guardian)
-	},
-	["HELPFUL AURA"] = {
-		   774, -- Rejuvenation
-		  8936, -- Regrowth
-		 33763, -- Lifebloom
-	},
-	["HARMFUL AURA"] = {
-		  1079, -- Rip
-		  1822, -- Rake
-		  8921, -- Moonfire
-		 33745, -- Lacerate
-		 77758, -- Thrash (guardian)
-		 93402, -- Sunfire
-		106830, -- Thrash (feral)
+	AURA = {
+		PERSONAL = {
+			[110309] = "HELPFUL UNIQUE_AURA", -- Symbiosis
+			BURST = {
+				 52610, -- Savage Roar
+				127538, -- Savage Roar (glyphed)
+			},
+			IMPORTANT = {
+				 16870, -- Clearcasting (buff)
+				 69369, -- Predatory Swiftness (buff)
+				100977, -- Harmony (buff)
+				145151, -- Dream of Cenarius (balance)
+				145152, -- Dream of Cenarius (feral)
+				145162, -- Dream of Cenarius (guardian)
+			},
+		},
+		HELPFUL = {
+			   774, -- Rejuvenation
+			  8936, -- Regrowth
+			 33763, -- Lifebloom
+		},
+		HARMFUL = {
+			  1079, -- Rip
+			  1822, -- Rake
+			  8921, -- Moonfire
+			 33745, -- Lacerate
+			 77758, -- Thrash (guardian)
+			 93402, -- Sunfire
+			106830, -- Thrash (feral)
+		},
 	},
 	RAIDBUFF = {
 		[  1126] = "STATS",     -- Mark of the Wild
 		[ 17007] = "CRITICAL",  -- Leader of the pack
 		[ 24907] = "SPL_HASTE", -- Moonkin Aura
 	},
-	-- Special cases
-	[  5229] = "PERSONAL POWER_REGEN COOLDOWN AURA", -- Enrage
-	[ 29166] = "HELPFUL PERSONAL MANA_REGEN COOLDOWN AURA", -- Innervate
-	[ 48438] = "HELPFUL COOLDOWN AURA",-- Wild Growth
-	[102342] = "HELPFUL SURVIVAL COOLDOWN AURA",-- Ironbark
-	[110309] = "HELPFUL PERSONAL UNIQUE_AURA AURA", -- Symbiosis
 }, {
 	-- Map aura to provider
 	[ 69369] =  16974, -- Predatory Swiftness
