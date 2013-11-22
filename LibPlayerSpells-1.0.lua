@@ -277,7 +277,7 @@ end
 -- Accept a table, in which case it is recursively validated.
 local function ValidateSpellId(spellId, spellType, errorLevel)
 	if type(spellId) == "table"  then
-		for subId in pairs(spellId) do
+		for i, subId in pairs(spellId) do
 			ValidateSpellId(subId, spellType, errorLevel+1)
 		end
 	elseif type(spellId) ~= "number" then
