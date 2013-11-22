@@ -323,6 +323,7 @@ end
 
 -- Flatten and validate the spell data.
 local function FlattenSpellData(source, target, prefix, errorLevel)
+	prefix = strtrim(prefix)
 	for key, value in pairs(source) do
 		local keyType, valueType = type(key), type(value)
 		if valueType == "number" then
@@ -336,7 +337,7 @@ local function FlattenSpellData(source, target, prefix, errorLevel)
 			target[key] = prefix.." "..value
 		elseif keyType == "string" and valueType == "table" then
 			-- Value is a nested table, key indicates common flags
-			FlattenSpellData(value, target, key, errorLevel+1)
+			FlattenSpellData(value, target,  prefix.." "..key, errorLevel+1)
 		else
 			error(format("%s: invalid spell definition: [%q] = %q", MAJOR, tostring(key), tostring(value)), errorLevel+1)
 		end
