@@ -115,12 +115,12 @@ lib.masks = {
 }
 local masks = lib.masks
 
--- Spells by category
-lib.spells = lib.spells or {
-	all         = {},
-	RACIAL      = {},
-	TRADESKILL  = {},
+-- Spells and their flags
+lib.spells = lib.spells or {}
+local spells = lib.spells
 
+-- Spells by categories
+lib.categories = lib.categories or {
 	DEATHKNIGHT = {},
 	DRUID       = {},
 	HUNTER      = {},
@@ -132,8 +132,10 @@ lib.spells = lib.spells or {
 	SHAMAN      = {},
 	WARLOCK     = {},
 	WARRIOR     = {},
+	RACIAL      = {},
+	TRADESKILL  = {},
 }
-local spells = lib.spells
+local categories = lib.categories
 
 -- Versions of the different categories
 lib.versions = lib.versions or {}
@@ -184,7 +186,7 @@ filters[""] = 0
 -- @return (number) The interface (i.e. patch) version.
 -- @return (number) Minor version for the given interface version.
 function lib:GetVersionInfo(category)
-	if not spells[category] then
+	if not categories[category] then
 		error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
 	end
 	local v = versions[category] or 0
@@ -224,14 +226,14 @@ end
 -- @return (function) The tester function.
 function lib:GetSpellTester(anyOf, include, exclude)
 	local tester = lib:GetFlagTester(anyOf, include, exclude)
-	return function(spellId) return tester(spells.all[spellId or false] or 0) end
+	return function(spellId) return tester(spells[spellId or false] or 0) end
 end
 
 -- Filtering iterator
 local function filterIterator(tester, spellId)
 	local flags
 	repeat
-		spellId, flags = next(spells.all, spellId)
+		spellId, flags = next(spells, spellId)
 		if spellId and tester(flags) then
 			return spellId, flags, providers[spellId], modifiers[spellId]
 		end
@@ -248,7 +250,7 @@ end
 -- The iterator returns the category name and the spells in that category.
 -- @return An iterator suitable for .. in .. do loops.
 function lib:IterateCategories()
-	return pairs(spells)
+	return pairs(categories)
 end
 
 --- Return information about a spell.
@@ -257,37 +259,39 @@ end
 -- @return (number) The identifier of the spell that provides the given spell.
 -- @return (number|table) A spell modified by the given spell.
 function lib:GetSpellInfo(spellId)
-	local flags = spellId and spells.all[spellId]
+	local flags = spellId and spells[spellId]
 	if flags then
 		return flags, providers[spellId], modifiers[spellId]
 	end
 end
 
-local function validateSpellId(spellId, spellType)
-	if type(spellId) ~= "number" then
-		error(format("%s: invalid %s, expected number, got %s", MAJOR, spellType, tostring(spellId), type(spellId)), 3)
+local function validateSpellId(spellId, spellType, errorLevel)
+	if type(spellId) == "table"  then
+		for subId in pairs(spellId) do
+			validateSpellId(subId, spellType, errorLevel+1)
+		end
+	elseif type(spellId) ~= "number" then
+		error(format("%s: invalid %s, expected number, got %s", MAJOR, spellType, tostring(spellId), type(spellId)), errorLevel+1)
 	elseif not GetSpellLink(spellId) then
-		error(format("%s: unknown %s #%d", MAJOR, spellType, spellId), 3)
+		error(format("%s: unknown %s #%d", MAJOR, spellType, spellId), errorLevel+1)
 	end
 end
 
 -- Used to register a category of spells
 function lib:__RegisterSpells(category, interface, minor, newSpells, newProviders, newModifiers)
-	if not spells[category] or category == 'all' then
+	if not categories[category] then
 		error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
 	end
 	local version = tonumber(interface) * 100 + minor
 
 	if (versions[category] or 0) >= version then return end
-
 	versions[category] = version
-	versions.all = max(versions.all or 0, version)
 
 	-- Wipe previous spells
-	local all, db = spells.all, spells[category]
+	local db = categories[category]
 	for spellId in pairs(db) do
 		db[spellId] = nil
-		all[spellId] = nil
+		spells[spellId] = nil
 		providers[spellId] = nil
 		modifiers[spellId] = nil
 	end
@@ -313,26 +317,22 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	if newProviders then
 		for spellId, providerId in pairs(newProviders) do
 			if not db[spellId] then error(format("%s: spell listed only in providers: %d", MAJOR, spellId), 2) end
-			validateSpellId(spellId, "provider spell")
+			validateSpellId(spellId, "provided spell", 2)
+			validateSpellId(providerId, "provider spell", 2)
 		end
 	end
 	if newModifiers then
 		for spellId, modified in pairs(newModifiers) do
 			if not db[spellId] then error(format("%s: spell listed only in modifiers: %d", MAJOR, spellId), 2) end
-			if type(modified) == "table" then
-				for i, modifiedId in pairs(modified) do
-					validateSpellId(modifiedId, "modified spell")
-				end
-			else
-				validateSpellId(modified, "modified spell")
-			end
+			validateSpellId(spellId, "provided spell", 2)
+			validateSpellId(modified, "provider spell", 2)
 		end
 	end
 
 	-- Copy the new values to the merged category
 	for spellId in pairs(db) do
 		validateSpellId(spellId, "spell")
-		all[spellId] = db[spellId]
+		spells[spellId] = db[spellId]
 		providers[spellId] = newProviders and newProviders[spellId] or spellId
 		modifiers[spellId] = newModifiers and newModifiers[spellId] or providers[spellId]
 	end
