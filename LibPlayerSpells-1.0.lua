@@ -116,11 +116,11 @@ lib.masks = {
 local masks = lib.masks
 
 -- Spells and their flags
-lib.spells = lib.spells or {}
-local spells = lib.spells
+lib.__spells = lib.__spells or {}
+local spells = lib.__spells
 
 -- Spells by categories
-lib.categories = lib.categories or {
+lib.__categories = lib.__categories or {
 	DEATHKNIGHT = {},
 	DRUID       = {},
 	HUNTER      = {},
@@ -135,22 +135,22 @@ lib.categories = lib.categories or {
 	RACIAL      = {},
 	TRADESKILL  = {},
 }
-local categories = lib.categories
+local categories = lib.__categories
 
 -- Versions of the different categories
-lib.versions = lib.versions or {}
-local versions = lib.versions
+lib.__versions = lib.__versions or {}
+local versions = lib.__versions
 
 -- Buff to provider map.
 -- The provider is the spell from the spellbook than can provides the given buff.
 -- Said otherwise, a buff cannot appear on a player if the provider spell is not in his spellbook.
-lib.providers = lib.providers or {}
-local providers = lib.providers
+lib.__providers = lib.__providers or {}
+local providers = lib.__providers
 
 -- Buff to modified map.
 -- Indicate which spell is modified by a buff.
-lib.modifiers = lib.modifiers or {}
-local modifiers = lib.modifiers
+lib.__modifiers = lib.__modifiers or {}
+local modifiers = lib.__modifiers
 
 local function ParseFilter(filter)
 	local flags = 0
