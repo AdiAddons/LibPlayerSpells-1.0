@@ -64,6 +64,10 @@ lib:__RegisterSpells("MONK", "50400", 1, {
 		116095, -- Disable
 		123725, -- Breath of Fire (debuff)
 	},
+	RAIDBUFF = {
+		[115921] = "STATS",    -- Legacy of the Emperor
+		[116781] = "CRITICAL", -- Legacy of the White Tiger
+	},
 	-- Special cases
 	[115098] = "HARMFUL HELPFUL COOLDOWN", -- Chi Wave
 	[115288] = "PERSONAL POWER_REGEN COOLDOWN AURA", -- Energizing Brew

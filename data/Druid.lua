@@ -95,6 +95,11 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 		 93402, -- Sunfire
 		106830, -- Thrash (feral)
 	},
+	RAIDBUFF = {
+		[  1126] = "STATS",     -- Mark of the Wild
+		[ 17007] = "CRITICAL",  -- Leader of the pack
+		[ 24907] = "SPL_HASTE", -- Moonkin Aura
+	},
 	-- Special cases
 	[  5229] = "PERSONAL POWER_REGEN COOLDOWN AURA", -- Enrage
 	[ 29166] = "HELPFUL PERSONAL MANA_REGEN COOLDOWN AURA", -- Innervate
