@@ -237,7 +237,7 @@ function lib:GetSpellTester(anyOf, include, exclude)
 end
 
 -- Filtering iterator
-local function filterIterator(tester, spellId)
+local function FilterIterator(tester, spellId)
 	local flags
 	repeat
 		spellId, flags = next(spells, spellId)
@@ -250,7 +250,7 @@ end
 -- Iterate through spells.
 -- @return An iterator suitable for for .. in .. do loops.
 function lib:IterateSpells(anyOf, include, exclude)
-	return filterIterator, lib:GetFlagTester(anyOf, include, exclude)
+	return FilterIterator, lib:GetFlagTester(anyOf, include, exclude)
 end
 
 --- Iterate through spell categories.
