@@ -41,7 +41,6 @@ lib:__RegisterSpells("WARLOCK", "50400", 1, {
 				116198, -- Aura of Enfeeblement (Metamorphosis/Dark Apotheosis)
 				SURVIVAL = {
 					  6229, -- Twilight Ward
-					 91713, -- Nether Ward (talent)
 					104773, -- Unending Resolve
 					108359, -- Dark Regeneration
 					108416, -- Sacrificial Pact
