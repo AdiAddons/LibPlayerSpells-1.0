@@ -24,17 +24,24 @@ lib:__RegisterSpells("MONK", "50400", 1, {
 	["COOLDOWN"] = {
 		109132, -- Roll
 		113656, -- Fists of Fury
+		115008, -- Chi Torpedo
 		115072, -- Expel Harm
 		115151, -- Renewing Mist
 		115310, -- Revival
 		115313, -- Summon Jade Serpent Statue
 		115315, -- Summon Black Ox Statue
+		115399, -- Chi Brew
 		115450, -- Detox
 		115451, -- Internal Medicine
 		116680, -- Thunder Focus Tea
 		116705, -- Spear Hand Strike
+		116847, -- Rushing Jade Wind
+		119381, -- Leg Sweep
+		119392, -- Charging Ox Wave
 		121253, -- Keg Smash
 		121827, -- Roll modified by Celerity
+		123761, -- Mana Tea (glyphed)
+		123904, -- Invoke Xuen, the White Tiger
 	},
 	["PERSONAL SURVIVAL COOLDOWN AURA"] = {
 		115295, -- Guard
