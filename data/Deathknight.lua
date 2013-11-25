@@ -20,3 +20,16 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
+lib:__RegisterSpells("DEATHKNIGHT", "50400", 1, {
+	['PERSONAL SURVIVAL COOLDOWN AURA']= {
+		48707, -- Anti-Magic Shell
+		48792, -- Icebound Fortitude
+		49028, -- Dancing Rune Weapon
+		49222, -- Bone Shield
+		55233, -- Vampiric Blood
+	},
+}, {
+	-- Map aura to provider
+}, {
+	-- Map aura to modified spell(s)
+})
