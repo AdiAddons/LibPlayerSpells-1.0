@@ -20,3 +20,26 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
+lib:__RegisterSpells("PRIEST", "50400", 1, {
+	COOLDOWN = {
+		AURA = {
+			PERSONAL = {
+				SURVIVAL = {
+					20711, -- Spirit of Redemption
+					47585, -- Dispersion
+				},
+				MANA_REGEN = {
+					64901, -- Hymn of Hope
+				},
+			},
+			HELPFUL = {
+				33206, -- Pain Suppression
+				47788, -- Guardian Spirit
+			},
+		},
+	},
+}, {
+	-- Map aura to provider
+}, {
+	-- Map aura to modified spell(s)
+})

@@ -20,3 +20,22 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
+lib:__RegisterSpells("PALADIN", "50400", 1, {
+	['SURVIVAL COOLDOWN AURA'] = {
+		PERSONAL = {
+			  498, -- Divine Protection
+			  642, -- Divine Shield
+			 6940, -- Hand of Sacrifice
+			31850, -- Ardent Defender
+			54428, -- Divine Plea
+			86659, -- Ancient Guardian (prot)
+		},
+		HELPFUL = {
+			 1022, -- Hand of Protection
+		},
+	}
+}, {
+	-- Map aura to provider
+}, {
+	-- Map aura to modified spell(s)
+})
