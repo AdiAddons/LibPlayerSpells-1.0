@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", "50400", 1, {
+lib:__RegisterSpells("PALADIN", "50400", 2, {
 	['SURVIVAL COOLDOWN AURA'] = {
 		PERSONAL = {
 			  498, -- Divine Protection
@@ -33,7 +33,11 @@ lib:__RegisterSpells("PALADIN", "50400", 1, {
 		HELPFUL = {
 			 1022, -- Hand of Protection
 		},
-	}
+	},
+	RAIDBUFF = {
+		[20217] = 'STATS',   -- Blessing of Kings
+		[19740] = 'MASTERY', -- Blessing of Might
+	},
 }, {
 	-- Map aura to provider
 }, {

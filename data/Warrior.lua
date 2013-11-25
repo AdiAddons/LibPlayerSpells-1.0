@@ -20,12 +20,16 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", "50400", 1, {
+lib:__RegisterSpells("WARRIOR", "50400", 2, {
 	['PERSONAL SURVIVAL COOLDOWN AURA']= {
 		 2565, -- Shield Block
 		55694, -- Enraged Regeneration
 		  871, -- Shield Wall
 		12975, -- Last Stand
+	},
+	RAIDBUFF = {
+		[ 469] = 'STAMINA',   -- Commanding Shout
+		[6673] = 'ATK_POWER', -- Battle Shout
 	},
 }, {
 	-- Map aura to provider

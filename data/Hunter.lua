@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "50400", 1, {
+lib:__RegisterSpells("HUNTER", "50400", 2, {
 	COOLDOWN = {
 		   781, -- Disengage
 		 53351, -- Kill Shot
@@ -78,18 +78,19 @@ lib:__RegisterSpells("HUNTER", "50400", 1, {
 		},
 	},
 	RAIDBUFF = {
-		[ 19506] = "ATK_POWER", -- Trueshot Aura
-		[ 24604] = "CRITICAL",  -- Furious Howl
-		[ 90309] = "CRITICAL",  -- Terrifying Roar
-		[ 90363] = "STATS",     -- Embrace of the Shale Spider
-		[ 90364] = "STAMINA" ,  -- Qiraji Fortitude
-		[ 93435] = "MASTERY",   -- Roar of Courage
+		[ 19506] = "ATK_POWER",   -- Trueshot Aura
+		[ 24604] = "CRITICAL",    -- Furious Howl
+		[ 90309] = "CRITICAL",    -- Terrifying Roar
+		[ 90355] = "BURST_HASTE", -- Ancient Hysteria
+		[ 90363] = "STATS",       -- Embrace of the Shale Spider
+		[ 90364] = "STAMINA" ,    -- Qiraji Fortitude
+		[ 93435] = "MASTERY",     -- Roar of Courage
 		[126309] = "SPL_POWER CRITICAL", -- Still Water
-		[126373] = "CRITICAL",  -- Fearless Roar
-		[128432] = "ATK_SPEED", -- Cackling Howl
-		[128433] = "ATK_SPEED", -- Serpent's Swiftness
-		[128997] = "MASTERY",   -- Spirit Beast Blessing
-		[135678] = "SPL_HASTE", -- Energizing Spores
+		[126373] = "CRITICAL",    -- Fearless Roar
+		[128432] = "ATK_SPEED",   -- Cackling Howl
+		[128433] = "ATK_SPEED",   -- Serpent's Swiftness
+		[128997] = "MASTERY",     -- Spirit Beast Blessing
+		[135678] = "SPL_HASTE",   -- Energizing Spores
 	},
 }, {
 	-- Map aura to provider

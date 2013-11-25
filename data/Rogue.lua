@@ -20,10 +20,13 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", "50400", 1, {
+lib:__RegisterSpells("ROGUE", "50400", 2, {
 	['PERSONAL SURVIVAL COOLDOWN AURA']= {
 		 5277, -- Evasion
 		31224, -- Cloak of Shadows
+	},
+	RAIDBUFF = {
+		[113742] = 'ATK_SPEED', -- Swiftblade's Cunning
 	},
 }, {
 	-- Map aura to provider

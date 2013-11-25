@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "50400", 2, {
+lib:__RegisterSpells("PRIEST", "50400", 3, {
 	COOLDOWN = {
 		   527, -- Purify
 		 19236, -- Desperate Prayer
@@ -62,6 +62,10 @@ lib:__RegisterSpells("PRIEST", "50400", 2, {
 				108920, -- Void Tendrils
 			},
 		},
+	},
+	RAIDBUFF = {
+		[21562] = 'STAMINA',   -- Power Word: Fortitude
+		[49868] = 'SPL_HASTE', -- Mind Quickening (shadow)
 	},
 }, {
 	-- Map aura to provider
