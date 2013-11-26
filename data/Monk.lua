@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "50400", 2, {
+lib:__RegisterSpells("MONK", "50400", 3, {
 	COOLDOWN = {
 		109132, -- Roll
 		113656, -- Fists of Fury
@@ -120,6 +120,7 @@ lib:__RegisterSpells("MONK", "50400", 2, {
 		115175, -- Soothing Mist
 		115693, -- Jab
 		117952, -- Crackling Jade Lightning
+		116847, -- Rushing Jade Wind
 	},
 	[134563] = { -- Healing Elixirs ->
 		115203, -- Fortifying Brew
