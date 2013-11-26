@@ -110,7 +110,7 @@ lib:__RegisterSpells("PRIEST", "50400", 5, {
 	[ 63735] = { -- Serendipity =>
 		 596, -- Prayer of Healing
 		2060, -- Greater Heal
-	}
+	},
 	[ 81662] = 81700, -- Evangelism => Archangel
 	[114255] =  2061, -- Surge of Light => Flash Heal
 })

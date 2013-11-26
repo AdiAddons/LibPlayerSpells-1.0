@@ -81,8 +81,8 @@ lib:__RegisterSpells("MONK", "50400", 3, {
 			123725, -- Breath of Fire (debuff)
 		},
 		HELPFUL = {
-			[119611], -- Renewing Mist (buff)
-			[132120], -- Enveloping Mist (buff)
+			119611, -- Renewing Mist (buff)
+			132120, -- Enveloping Mist (buff)
 		},
 	},
 	RAIDBUFF = {
