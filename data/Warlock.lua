@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "50400", 1, {
+lib:__RegisterSpells("WARLOCK", "50400", 2, {
 	COOLDOWN = {
 		   755, -- Health Funnel (glyphed)
 		  1122, -- Summon Infernal
@@ -31,7 +31,12 @@ lib:__RegisterSpells("WARLOCK", "50400", 1, {
 		108501, -- Grimoire of Service
 		114175, -- Demonic Slash (Dark Apotheosis)
 		120451, -- Flames of Xoroth
-		132411, -- Singe Magic (sacrified Imp)
+		INTERRUPT = {
+			 19647, -- Spell Lock (felhunter)
+			103967, -- Carrion Swarm (demon form)
+			119911, -- Optical Blast (observer)
+			132409, -- Spell Lock (sacrified felhunter)
+		},
 		AURA = {
 			PERSONAL = {
 				 48018, -- Demonic Circle: Summon
@@ -99,6 +104,13 @@ lib:__RegisterSpells("WARLOCK", "50400", 1, {
 	},
 	RAIDBUFF = {
 		[109773] = "SPL_POWER STAMINA", -- Dark Intent
+	},
+	DISPEL = {
+		[19505] = "HARMFUL", -- Devour Magic (Felhunter)
+		["COOLDOWN HELPFUL"] = {
+		     89808, -- Singe Magic (imp)
+			132411, -- Singe Magic (sacrified imp)
+		},
 	},
 }, {
 	-- Map aura to provider

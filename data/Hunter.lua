@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "50400", 2, {
+lib:__RegisterSpells("HUNTER", "50400", 3, {
 	COOLDOWN = {
 		   781, -- Disengage
 		 53351, -- Kill Shot
@@ -29,7 +29,13 @@ lib:__RegisterSpells("HUNTER", "50400", 2, {
 		120679, -- Dire Beast
 		120697, -- Lynx Rush
 		121818, -- Stampede
-		147362, -- Counter Shot
+		INTERRUPT = {
+			 26090, -- Pummel (Gorilla)
+			 50318, -- Serenity Dust (Moth)
+			 50479, -- Nether Shock (Nether Ray)
+			147362, -- Counter Shot
+			[34490] = "HARMFUL AURA", -- Silencing Shot
+		},
 		PERSONAL = {
 			[109304] = "SURVIVAL", -- Exhilaration
 			AURA = {
@@ -56,7 +62,6 @@ lib:__RegisterSpells("HUNTER", "50400", 2, {
 			 19503, -- Scatter Shot
 			 19577, -- Intimidation
 			 20736, -- Distracting Shot
-			 34490, -- Silencing Shot
 			109248, -- Binding Shot
 			117050, -- Glaive Toss
 			131894, -- A Murder of Crows
@@ -92,6 +97,8 @@ lib:__RegisterSpells("HUNTER", "50400", 2, {
 		[128997] = "MASTERY",     -- Spirit Beast Blessing
 		[135678] = "SPL_HASTE",   -- Energizing Spores
 	},
+	-- Special
+	[ 19801] = "HARMFUL DISPEL", -- Tranquilizing Shot
 }, {
 	-- Map aura to provider
 	[19623] = 82692, -- Frenzy <= Focus Fire

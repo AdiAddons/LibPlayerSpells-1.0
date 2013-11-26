@@ -20,13 +20,21 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", "50400", 1, {
+lib:__RegisterSpells("SHAMAN", "50400", 2, {
+	[57994] = "COOLDOWN INTERRUPT", -- Wind Shear
 	RAIDBUFF = {
 		[  2825] = 'BURST_HASTE', -- Bloodlust (Horde shaman)
 		[ 30809] = 'ATK_SPEED',   -- Unleashed Rage
 		[ 32182] = 'BURST_HASTE', -- Heroism (Alliance shaman)
 		[ 77747] = 'SPL_POWER',   -- Burning Wrath
 		[116956] = 'MASTERY',     -- Grace of Air
+	},
+	DISPEL = {
+		[370] = "HARMFUL", -- Purge
+		["HELPFUL COOLDOWN"] = {
+			77130, -- Purify Spirit
+			51886, -- Cleanse Spirit
+		},
 	},
 }, {
 	-- Map aura to provider

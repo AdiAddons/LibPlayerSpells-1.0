@@ -20,26 +20,25 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "50400", 1, {
+lib:__RegisterSpells("DRUID", "50400", 2, {
 	COOLDOWN = {
 		   740, -- Tranquility
-		  2782, -- Remove Corruption
 		 18562, -- Swiftmend
 		 20484, -- Rebirth
 		 33831, -- Force of Nature (balance)
 		 78674, -- Starsurge
-		 78675, -- Solar Beam
-		 80964, -- Skull Bash (bear)
-		 80965, -- Skull Bash (cat)
-		 88423, -- Nature's Cure
 		 88751, -- Wild Mushroom: Detonate
 		102693, -- Force of Nature (restoration)
 		102703, -- Force of Nature (feral)
 		102706, -- Force of Nature (guardian)
 		102791, -- Wild Mushroom: Bloom
-		122288, -- Symbiosis: Cleanse
 		132469, -- Typhoon
 		145205, -- Wild Mushroom (restoration)
+		INTERRUPT = {
+			 78675, -- Solar Beam
+			 80964, -- Skull Bash (bear)
+			 80965, -- Skull Bash (cat)
+		},
 		AURA = {
 			HELPFUL = {
 				48438,-- Wild Growth
@@ -112,6 +111,17 @@ lib:__RegisterSpells("DRUID", "50400", 1, {
 		[  1126] = "STATS",     -- Mark of the Wild
 		[ 17007] = "CRITICAL",  -- Leader of the pack
 		[ 24907] = "SPL_HASTE", -- Moonkin Aura
+	},
+	DISPEL = {
+		["HELPFUL COOLDOWN"] = {
+			  2782, -- Remove Corruption
+			 88423, -- Nature's Cure
+			122288, -- Symbiosis: Cleanse
+		},
+		HARMFUL = {
+			  2908, -- Soothe
+			110802, -- Symbiosis: Purge
+		},
 	},
 }, {
 	-- Map aura to provider

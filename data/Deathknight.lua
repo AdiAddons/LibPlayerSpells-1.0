@@ -28,6 +28,13 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 1, {
 		49222, -- Bone Shield
 		55233, -- Vampiric Blood
 	},
+	['INTERRUPT COOLDOWN'] = {
+		 47528, -- Mind Freeze
+		 91802, -- Shambling Rush (Ghoul)
+		["HARMFUL AURA"] = {
+			47476, -- Strangulate
+		},
+	},
 }, {
 	-- Map aura to provider
 }, {

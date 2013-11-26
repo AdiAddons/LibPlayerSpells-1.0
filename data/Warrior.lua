@@ -20,7 +20,8 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", "50400", 2, {
+lib:__RegisterSpells("WARRIOR", "50400", 3, {
+	[6552] = "COOLDOWN INTERRUPT", -- Pummel
 	['PERSONAL SURVIVAL COOLDOWN AURA']= {
 		 2565, -- Shield Block
 		55694, -- Enraged Regeneration

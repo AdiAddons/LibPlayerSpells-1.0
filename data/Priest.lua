@@ -20,9 +20,8 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "50400", 4, {
+lib:__RegisterSpells("PRIEST", "50400", 5, {
 	COOLDOWN = {
-		   527, -- Purify
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
 		 47540, -- Penance
@@ -33,6 +32,9 @@ lib:__RegisterSpells("PRIEST", "50400", 4, {
 		108968, -- Void Shift
 		126135, -- Lightwell
 		142723, -- Void Shift (shadow)
+		["HELPFUL DISPEL"] = {
+			527, -- Purify
+		},
 		AURA = {
 			PERSONAL = {
 				89485, -- Inner Focus
@@ -67,6 +69,7 @@ lib:__RegisterSpells("PRIEST", "50400", 4, {
 				 14914, -- Holy Fire
 				108920, -- Void Tendrils
 				129250, -- Power Word: Solace
+				[15487] = "INTERRUPT", -- Silence
 			},
 		},
 	},
@@ -93,6 +96,9 @@ lib:__RegisterSpells("PRIEST", "50400", 4, {
 	RAIDBUFF = {
 		[21562] = 'STAMINA',   -- Power Word: Fortitude
 		[49868] = 'SPL_HASTE', -- Mind Quickening (shadow)
+	},
+	["HARMFUL DISPEL"] = {
+		528, -- Dispel Magic
 	},
 }, {
 	-- Map aura to provider

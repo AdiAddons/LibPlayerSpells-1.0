@@ -20,8 +20,8 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "50400", 1, {
-	["COOLDOWN"] = {
+lib:__RegisterSpells("MONK", "50400", 2, {
+	COOLDOWN = {
 		109132, -- Roll
 		113656, -- Fists of Fury
 		115008, -- Chi Torpedo
@@ -31,10 +31,7 @@ lib:__RegisterSpells("MONK", "50400", 1, {
 		115313, -- Summon Jade Serpent Statue
 		115315, -- Summon Black Ox Statue
 		115399, -- Chi Brew
-		115450, -- Detox
-		115451, -- Internal Medicine
 		116680, -- Thunder Focus Tea
-		116705, -- Spear Hand Strike
 		116847, -- Rushing Jade Wind
 		119381, -- Leg Sweep
 		119392, -- Charging Ox Wave
@@ -42,6 +39,7 @@ lib:__RegisterSpells("MONK", "50400", 1, {
 		121827, -- Roll modified by Celerity
 		123761, -- Mana Tea (glyphed)
 		123904, -- Invoke Xuen, the White Tiger
+		[116705] = "INTERRUPT HARMFUL AURA", -- Spear Hand Strike
 	},
 	["PERSONAL SURVIVAL COOLDOWN AURA"] = {
 		115295, -- Guard
@@ -74,6 +72,9 @@ lib:__RegisterSpells("MONK", "50400", 1, {
 	RAIDBUFF = {
 		[115921] = "STATS",    -- Legacy of the Emperor
 		[116781] = "CRITICAL", -- Legacy of the White Tiger
+	},
+	DISPEL = {
+		[115450] = "HELPFUL COOLDOWN", -- Detox
 	},
 	-- Special cases
 	[115098] = "HARMFUL HELPFUL COOLDOWN", -- Chi Wave
