@@ -39,35 +39,51 @@ lib:__RegisterSpells("MONK", "50400", 2, {
 		121827, -- Roll modified by Celerity
 		123761, -- Mana Tea (glyphed)
 		123904, -- Invoke Xuen, the White Tiger
-		[116705] = "INTERRUPT HARMFUL AURA", -- Spear Hand Strike
+		[115098] = "HARMFUL HELPFUL" , -- Chi Wave
+		AURA = {
+			[116849] = "HELPFUL SURVIVAL", -- Life Cocoon
+			[116705] = "HARMFUL INTERRUPT", -- Spear Hand Strike
+			PERSONAL = {
+				[115288] = "POWER_REGEN", -- Energizing Brew
+				SURVIVAL = {
+					115295, -- Guard
+					115176, -- Zen Meditation
+					115203, -- Fortifying Brew
+					115213, -- Avert Harm
+					116844, -- Ring of Peace
+					122278, -- Dampen Harm
+					122470, -- Touch of Karma
+					122783, -- Diffuse Magic
+					137562, -- Nimble Brew
+				},
+			},
+		},
 	},
-	["PERSONAL SURVIVAL COOLDOWN AURA"] = {
-		115295, -- Guard
-		115176, -- Zen Meditation
-		115203, -- Fortifying Brew
-		115213, -- Avert Harm
-		116844, -- Ring of Peace
-		122278, -- Dampen Harm
-		122470, -- Touch of Karma
-		122783, -- Diffuse Magic
-		137562, -- Nimble Brew
-	},
-	["PERSONAL AURA"] = {
-		115307, -- Shuffle
-		115867, -- Mana Tea (stacking buff)
-		118674, -- Vital Mists (stacking buff)
-		125195, -- Tigereye Brew (stacking buff)
-		125359, -- Tiger Power
-		127722, -- Serpent's Zeal
-		128939, -- Elusive Brew (stacking buff)
-		129914, -- Power Strikes (buff)
-		134563, -- Healing Elixirs (buff)
-	},
-	["HARMFUL AURA"] = {
-		107428, -- Rising Sun Kick
-		115180, -- Dizzying Haze
-		116095, -- Disable
-		123725, -- Breath of Fire (debuff)
+	AURA = {
+		PERSONAL = {
+			115307, -- Shuffle
+			115867, -- Mana Tea (stacking buff)
+			118674, -- Vital Mists (stacking buff)
+			125195, -- Tigereye Brew (stacking buff)
+			125359, -- Tiger Power
+			127722, -- Serpent's Zeal
+			128939, -- Elusive Brew (stacking buff)
+			129914, -- Power Strikes (buff)
+			134563, -- Healing Elixirs (buff)
+			[115294] = "MANA_REGEN", -- Mana Tea
+			[115308] = "SURVIVAL", -- Elusive Brew
+			[116740] = "BURST", -- Tigereye Brew
+		},
+		HARMFUL = {
+			107428, -- Rising Sun Kick
+			115180, -- Dizzying Haze
+			116095, -- Disable
+			123725, -- Breath of Fire (debuff)
+		},
+		HELPFUL = {
+			[119611], -- Renewing Mist (buff)
+			[132120], -- Enveloping Mist (buff)
+		},
 	},
 	RAIDBUFF = {
 		[115921] = "STATS",    -- Legacy of the Emperor
@@ -76,15 +92,6 @@ lib:__RegisterSpells("MONK", "50400", 2, {
 	DISPEL = {
 		[115450] = "HELPFUL COOLDOWN", -- Detox
 	},
-	-- Special cases
-	[115098] = "HARMFUL HELPFUL COOLDOWN", -- Chi Wave
-	[115288] = "PERSONAL POWER_REGEN COOLDOWN AURA", -- Energizing Brew
-	[115294] = "PERSONAL MANA_REGEN AURA", -- Mana Tea
-	[115308] = "PERSONAL SURVIVAL AURA", -- Elusive Brew
-	[116740] = "PERSONAL BURST AURA", -- Tigereye Brew
-	[116849] = "HELPFUL SURVIVAL COOLDOWN AURA", -- Life Cocoon
-	[119611] = "HELPFUL AURA" , -- Renewing Mist (buff)
-	[132120] = "HELPFUL AURA", -- Enveloping Mist (buff)
 }, {
 	-- Map aura to provider
 	[115307] = 117967, -- Shuffle <- Brewmaster Training
