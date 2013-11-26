@@ -88,6 +88,7 @@ lib.constants = {
 	MANA_REGEN  = 0x00400000, -- Recharge mana
 	POWER_REGEN = 0x00800000, -- Recharge any power but mana
 	IMPORTANT   = 0x01000000, -- Important spell the player should react to
+	INVERT_AURA = 0x02000000, -- Watch this as a debuff on allies or a buff on enemies
 }
 local constants = lib.constants
 
