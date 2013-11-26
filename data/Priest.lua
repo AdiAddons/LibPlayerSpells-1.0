@@ -82,6 +82,8 @@ lib:__RegisterSpells("PRIEST", "50400", 4, {
 		HELPFUL = {
 			   139, -- Renew
 			[ 1706] = "UNIQUE_AURA", -- Levitate
+			[ 6788] = "INVERT_AURA", -- Weakened Soul
+		},
 		HARMFUL = {
 			   589, -- Shadow Word: Pain
 			  2944, -- Devouring Plague
@@ -94,6 +96,7 @@ lib:__RegisterSpells("PRIEST", "50400", 4, {
 	},
 }, {
 	-- Map aura to provider
+	[  6788] =     17, -- Weakened Soul <= Power Word: Shield
 	[ 63735] =  63733, -- Serendipity
 	[114255] = 109186, -- Surge of Light <= From Darkness, Comes Light
 }, {
