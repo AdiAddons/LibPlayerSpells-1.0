@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR = "LibPlayerSpells-1.0", 1
+local MAJOR, MINOR = "LibPlayerSpells-1.0", 2
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 if not lib then return end
 
@@ -45,7 +45,10 @@ local bnot = _G.bit.bnot
 -- Basic constants use for the bitfields
 lib.constants = {
 	-- Special types -- these alters how the 13 lower bits are to be interpreted
-	RAIDBUFF = 0x80000000, -- Raid buffs
+	RAIDBUFF    = 0x80000000, -- Raid buffs
+	CROWD_CTL   = 0x40000000, -- Crowd-control debuffs
+	INTERRUPT   = 0x20000000, -- Interrupt spells
+	DISPEL      = 0x10000000, -- Dispel spell
 
 	-- Sources
 	DEATHKNIGHT = 0x00000001,
@@ -134,7 +137,12 @@ lib.masks = {
 		constants.PERSONAL,
 		constants.PET
 	),
-	TYPE = constants.RAIDBUFF,
+	TYPE = bor(
+		constants.RAIDBUFF,
+		constants.CROWD_CTL,
+		constants.INTERRUPT,
+		constants.DISPEL
+	),
 	RAIDBUFF_TYPE = bor(unpack(RAID_BUFF_TYPES)),
 }
 local masks = lib.masks
