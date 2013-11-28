@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "50400", 3, {
+lib:__RegisterSpells("MONK", "50400", 4, {
 	COOLDOWN = {
 		109132, -- Roll
 		113656, -- Fists of Fury
@@ -87,6 +87,7 @@ lib:__RegisterSpells("MONK", "50400", 3, {
 	},
 	RAIDBUFF = {
 		[115921] = "STATS",    -- Legacy of the Emperor
+		[117666] = "STATS",    -- Legacy of the Emperor
 		[116781] = "CRITICAL", -- Legacy of the White Tiger
 	},
 	DISPEL = {
@@ -96,6 +97,7 @@ lib:__RegisterSpells("MONK", "50400", 3, {
 	-- Map aura to provider
 	[115307] = 117967, -- Shuffle <- Brewmaster Training
 	[115867] = 123766, -- Mana Tea <- Brewing: Mana Tea
+	[117666] = 115921, -- Legacy of the Emperor
 	[118674] = 116645, -- Vital Mists <- Teachings of the Monastery
 	[119611] = 115151, -- Renewing Mist
 	[123725] = 115181, -- Breath of Fire
