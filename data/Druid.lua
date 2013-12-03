@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "50400", 2, {
+lib:__RegisterSpells("DRUID", "50400", 3, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -125,6 +125,7 @@ lib:__RegisterSpells("DRUID", "50400", 2, {
 	},
 }, {
 	-- Map aura to provider
+	[ 16870] = { 16864, 113043 }, -- Clearcasting <= Omen of Clarity (feral), Omen of Clarity (restoration)
 	[ 69369] =  16974, -- Predatory Swiftness
 	[ 33831] = 106737, -- Force of Nature (balance)
 	[100977] =  77495, -- Mastery: Harmony
