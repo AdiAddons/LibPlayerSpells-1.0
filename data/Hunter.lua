@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "50400", 4, {
+lib:__RegisterSpells("HUNTER", "50400", 5, {
 	COOLDOWN = {
 		   781, -- Disengage
 		 53351, -- Kill Shot
@@ -74,7 +74,8 @@ lib:__RegisterSpells("HUNTER", "50400", 4, {
 			 82925, -- Ready, Set, Aim...
 		},
 		HARMFUL = {
-			1978, -- Serpent String
+			  1978, -- Serpent String
+			118253, -- Serpent String
 			[1130] = "UNIQUE_AURA", -- Hunter's Mark
 		},
 		PET = {
@@ -107,6 +108,7 @@ lib:__RegisterSpells("HUNTER", "50400", 4, {
 	[ 53220] =  53224, -- Steady Focus
 	[ 82925] =  34487, -- Ready, Set, Aim... <= Master Marksman
 	[118455] = 115939, -- Beast Cleave
+	[118253] =   1978, -- Serpent String
 }, {
 	-- Map aura to modified spell(s)
 	[ 53220] = 56641, -- Steady Focus => Steady Shot
