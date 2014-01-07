@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "50400", 4, {
+lib:__RegisterSpells("MONK", "50400", 5, {
 	COOLDOWN = {
 		109132, -- Roll
 		113656, -- Fists of Fury
@@ -76,9 +76,10 @@ lib:__RegisterSpells("MONK", "50400", 4, {
 		},
 		HARMFUL = {
 			107428, -- Rising Sun Kick
-			115180, -- Dizzying Haze
+			116330, -- Dizzying Haze (debuff)
 			116095, -- Disable
 			123725, -- Breath of Fire (debuff)
+			123727, -- Dizzying Haze (debuff)
 		},
 		HELPFUL = {
 			119611, -- Renewing Mist (buff)
@@ -107,6 +108,8 @@ lib:__RegisterSpells("MONK", "50400", 4, {
 	[128939] = 128938, -- Elusive Brew <- Brewing: Elusive Brew
 	[129914] = 121817, -- Power Strikes
 	[132120] = 124682, -- Enveloping Mist
+	[116330] = 115180, -- Dizzying Haze (debuff)  <- Dizzying Haze
+	[123727] = 121253, -- Dizzying Haze (debuff) <- Keg Smash
 }, {
 	-- Map aura to modified spell(s)
 	[115307] = 100784, -- Shuffle -> Blackout Kick
@@ -115,6 +118,8 @@ lib:__RegisterSpells("MONK", "50400", 4, {
 	[125195] = 116740, -- Tigereye Brew
 	[127722] = 100784, -- Serpent's Zeal -> Blackout Kick
 	[128939] = 115308, -- Elusive Brew
+	[116330] = { 115180, 121253 }, -- Dizzying Haze (debuff) -> Dizzying Haze & Keg Smash
+	[123727] = { 115180, 121253 }, -- Dizzying Haze (debuff) -> Dizzying Haze & Keg Smash
 	[129914] = { -- Power Strikes ->
 		100780, -- Jab (glyphed)
 		101546, -- Spinning Crane Kick
