@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "50400", 5, {
+lib:__RegisterSpells("MONK", "50400", 6, {
 	COOLDOWN = {
 		109132, -- Roll
 		113656, -- Fists of Fury
@@ -41,8 +41,11 @@ lib:__RegisterSpells("MONK", "50400", 5, {
 		123904, -- Invoke Xuen, the White Tiger
 		[115098] = "HARMFUL HELPFUL" , -- Chi Wave
 		AURA = {
-			[116849] = "HELPFUL SURVIVAL", -- Life Cocoon
 			[116705] = "HARMFUL INTERRUPT", -- Spear Hand Strike
+			["HELPFUL SURVIVAL"] = {
+				116844, -- Ring of Peace
+				116849, -- Life Cocoon
+			},
 			PERSONAL = {
 				[115288] = "POWER_REGEN", -- Energizing Brew
 				SURVIVAL = {
@@ -50,7 +53,6 @@ lib:__RegisterSpells("MONK", "50400", 5, {
 					115176, -- Zen Meditation
 					115203, -- Fortifying Brew
 					115213, -- Avert Harm
-					116844, -- Ring of Peace
 					122278, -- Dampen Harm
 					122470, -- Touch of Karma
 					122783, -- Diffuse Magic
@@ -76,6 +78,7 @@ lib:__RegisterSpells("MONK", "50400", 5, {
 		},
 		HARMFUL = {
 			107428, -- Rising Sun Kick
+			130320, -- Rising Sun Kick (debuff)
 			116330, -- Dizzying Haze (debuff)
 			116095, -- Disable
 			123725, -- Breath of Fire (debuff)
@@ -118,6 +121,7 @@ lib:__RegisterSpells("MONK", "50400", 5, {
 	[125195] = 116740, -- Tigereye Brew
 	[127722] = 100784, -- Serpent's Zeal -> Blackout Kick
 	[128939] = 115308, -- Elusive Brew
+	[130320] = 107428, -- Rising Sun Kick
 	[116330] = { 115180, 121253 }, -- Dizzying Haze (debuff) -> Dizzying Haze & Keg Smash
 	[123727] = { 115180, 121253 }, -- Dizzying Haze (debuff) -> Dizzying Haze & Keg Smash
 	[129914] = { -- Power Strikes ->
