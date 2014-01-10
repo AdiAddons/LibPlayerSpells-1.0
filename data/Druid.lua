@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "50400", 3, {
+lib:__RegisterSpells("DRUID", "50400", 4, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -56,8 +56,8 @@ lib:__RegisterSpells("DRUID", "50400", 3, {
 					 22812, -- Barkskin
 					 22842, -- Frenzied Regeneration
 					 61336, -- Survival Instincts
-					 62606, -- Savage Defense
 					106922, -- Might of Ursoc
+					132402, -- Savage Defense (buff)
 				},
 				BURST = {
 					  5217, -- Tiger's Fury
@@ -141,7 +141,8 @@ lib:__RegisterSpells("DRUID", "50400", 3, {
 	[145152] = 108373, -- Dream of Cenarius (feral)
 	[145162] = 108373, -- Dream of Cenarius (guardian)
 }, {
-	-- Map aura to modified spell(s)
+	-- Map aura to modified spell(s
+	[132402] = 62606, -- Savage Defense (buff)
 	[69369] = { -- Predatory Swiftness (buff) =>
 		 5185, -- Healing Touch
 		 2637, -- Hibernate
