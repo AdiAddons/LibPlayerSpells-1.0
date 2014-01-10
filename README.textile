@@ -1,0 +1,119 @@
+h1. LibPlayerSpells-1.0
+
+LibPlayerSpells-1.0 is a library providing data about the spells of the 11 character classes. It also includes data about racial and tradeskill spells. The word "spells" is used here in the general sense, it includes active skills as well as passive spells that are found in player spellbooks, but also buffs and debuffs that are not in spellbooks but are applied somehow by player characters.
+
+It provides answers to questions like these:
+* Does this spell has a cooldown ?
+* Does this spell applies one or several buff(s) or debuff(s) ? Which ?
+* Is this spell a survival cooldown, or a burst one ?
+* Does this spell regenerate mana or some other power resource ?
+* Is this spell a "raid" buff ?
+* What are the survival buffs of all classes ?
+* What are the interrupting spells of said class ?
+
+Each class has his own data file and can be upgraded separately.
+
+h2. Supported classes/specs
+
+Not all classes and specializations are fully supported yet. Most interrupts, dispels, survival cooldowns and raid buffs are in, but detailled spells are missing for several classes.
+
+*Contributions are welcome !*
+
+h2. Usage
+
+Copy the library files in your addon and list the lib.xml file in the TOC file.
+
+LibPlayerSpells-1.0 uses LibStub, so you can get the library list this:
+
+bc. local LibPlayerSpells = LibStub('LibPlayerSpells-1.0')
+
+h3. Querying spell information
+
+Then you can get information about a spell with GetSpellInfo:
+
+bc. local flags, providers, modifiedSpells[, moreFlags] = LibPlayerSpells:GetSpellinfo(spellId)
+
+Where:
+* @spellId@ is the numerical spell identifier.
+* @flags@ is a bitfield containing data about the spells (see below).
+* @providers@ is the identifier (or a table of) identifier(s) of the spell(s) to; said otherwise, if the provider is not found in the player's spellbook, the given spell is unavailable. For example, the provider spell can be a passive spell given by a talent.
+* @modifiedSpells@ is the (or a table of) identifier(s) of the spell(s) affetcted by the given spells.
+* if the given spell is a special case (see below), @moreFlags@ contains another bitfield.
+
+h3. Flags
+
+Most spell information are stored in a bitfield, in order to have a compact storage and to easily test or filter spells. The bit value constants are available in the LibPlayerSpells.constants table.
+
+The presence of a specific flag can be tested this way:
+
+bc. if bit.band(flags, LibPlayerSpells.constants.PALADIN) ~ = 0 then
+  -- This is a paladin spell, do something.
+end
+
+However, the library provides a way to easily build flag tests.
+
+h4. Special spell types
+
+These flags indicate special spells, that (will) have additional data.
+
+* @RAIDBUFF@: this is a raid buff; additional data is a bitfield indicating the provided buffs (spell haste, critical strike, ...).
+* @CROWD_CTL@: this is a crowd-control spell; no additional data yet.
+* @INTERRUPT@: this spell can interrupt spell casts; no additional data yet.
+* @DISPEL@: this spell can dispel either allies' debuffs or enemies' buffs; no additional data yet.
+
+h5. Raid buff flags
+
+These flags are used in the additional data for raids buffs.
+
+* @STATS@: strengh, agility and intellect,
+* @STAMINA@: stamina,
+* @ATK_POWER@: attack power,
+* @ATK_SPEED@: attack speed,
+* @SPL_POWER@: spell power,
+* @SPL_HASTE@: spell haste,
+* @CRITICAL@: critical strike,
+* @MASTERY@: mastery bonus,
+* @BURST_HASTE@: burst haste (e.g. Bloodlust/Heroism & al).
+
+h4. Spell sources
+
+These flags indicate the source of the spell. The constants are self-explanatory:
+
+* @DEATHKNIGHT@,
+* @DRUID@,
+* @HUNTER@,
+* @MAGE@,
+* @MONK@,
+* @PALADIN@,
+* @PRIEST@,
+* @ROGUE@,
+* @SHAMAN@,
+* @WARLOCK@,
+* @WARRIOR@,
+* @RACIAL@,
+* @TRADESKILL@.
+
+h4. Targeting
+
+These flags hints about the targeting mechanism of the spell. They are exclusive most of the time.
+
+* @HELPFUL@: The spell can be cast on any ally, including the player and his pet.
+* @HARMFUL@: The spell can be cast on any enemy.
+* @PERSONAL@: The spell automatically targets the player.
+* @PET@: The spell automatically targets the player's pet.
+
+h5. Miscellanous
+
+* @AURA@: The spell applies (or is) a buff on allies, or a debuff on enemies.
+* @UNIQUE_AURA@: A given character can have only one instance of this (de)buff at a time, even if several players cast the same spell on it, e.g. Hunter's Mark.
+* @COOLDOWN@: This spell has a meaningful cooldown, that might worths reminding the player.
+* @SURVIVAL@: This spell is considered a survival skill.
+* @BURST@: This spell is considered a burst skill (either damaging or healing).
+* @MANA_REGEN@: This spell allows it target to recharge his/her mana; e.g. Innervate.
+* @POWER_REGEN@: This spell allows it target to recharge some kind of power, but mana, e.g. Fervor, Energizing Brew, ...
+* @IMPORTANT@: Important spell the player should react to
+* @INVERT_AURA@: The aura logic of this spell is inverted: it applies a debuff on allies or a buff on enemies (this case has yet to be found), e.g. the Weakened Soul applied by Power Word: Shield.
+
+h2. License
+
+LibPlayerSpells-1.0 is licensed using GPL v3. This means that any addon using it must have a compatible license (see "there":https://www.gnu.org/licenses/quick-guide-gplv3.html).
