@@ -29,9 +29,9 @@ LibPlayerSpells-1.0 uses LibStub, so you can get the library list this:
 
 bc. local LibPlayerSpells = LibStub('LibPlayerSpells-1.0')
 
-h3. Querying spell information
+h3. Querying one spell information
 
-Then you can get information about a spell with GetSpellInfo:
+Then you can get information about a given spell with GetSpellInfo:
 
 bc. local flags, providers, modifiedSpells[, moreFlags] = LibPlayerSpells:GetSpellinfo(spellId)
 
@@ -42,14 +42,40 @@ Where:
 * @modifiedSpells@ is the (or a table of) identifier(s) of the spell(s) affetcted by the given spells.
 * if the given spell is a special case (see below), @moreFlags@ contains another bitfield.
 
+h3. Querying the spell database
+
+One can iterate the database, looking for certain spells, using IterateSpells:
+
+bc. for spellId, flags, providers, modifiedSpells, moreFlags in LibPlayerSpells:IterateSpells(oneOfFlags, requiredFlags, rejectedFlags) do
+  -- Do something with the loot
+end
+
+@flags@, @providers@, @modifiedSpells@, @moreFlags@ have the same meaning as the values returned by GetSpellinfo. @spellId@ is obviously the numerical identifier of the current spell.
+
+The three method arguments are used to build a filter. They are bitmask specifications. They can be passed as an numerical bitmask computed using @bit.bor@ and library constants, or an a string containing the flags separated by whitespaces or commas. For example, @bit.bor(LibPlayerSpells.constants.HUNTER, LibPlayerSpells.constants.BURST)@ is the same bitmask as @"HUNTER BURST"@.
+
+IterateSpells lists all spells that:
+* has *at least* one of the flags listed by @oneOfFlags@
+* and has *all* flags listed by @requiredFlags@,
+* and has *none* of the flags in @rejectedFlags@.
+
+If an bitmask is empty or not provided, the correspoding condition is ignored. With no arguments, all spells are listed.
+
+Example:
+
+bc. -- Iterate through spells that have a cooldown, are/apply an aura and are either survival or mana-regenerating skills.
+for spellId, flags, providers, modifiedSpells, moreFlags in LibPlayerSpells:IterateSpells("SURVIVAL REGEN_MANA", "AURA COOLDOWN") do
+  -- Do something with it !
+end
+
 h3. Flags
 
 Most spell information are stored in a bitfield, in order to have a compact storage and to easily test or filter spells. The bit value constants are available in the LibPlayerSpells.constants table.
 
 The presence of a specific flag can be tested this way:
 
-bc. if bit.band(flags, LibPlayerSpells.constants.PALADIN) ~ = 0 then
-  -- This is a paladin spell, do something.
+bc. if bit.band(flags, LibPlayerSpells.constants.AURA) ~= 0 then
+  -- This spell is an aura, do something meaningful with it.
 end
 
 However, the library provides a way to easily build flag tests.
@@ -79,21 +105,7 @@ These flags are used in the additional data for raids buffs.
 
 h4. Spell sources
 
-These flags indicate the source of the spell. The constants are self-explanatory:
-
-* @DEATHKNIGHT@,
-* @DRUID@,
-* @HUNTER@,
-* @MAGE@,
-* @MONK@,
-* @PALADIN@,
-* @PRIEST@,
-* @ROGUE@,
-* @SHAMAN@,
-* @WARLOCK@,
-* @WARRIOR@,
-* @RACIAL@,
-* @TRADESKILL@.
+These flags indicate the source of the spell. The constants are self-explanatory: @DEATHKNIGHT@, @DRUID@, @HUNTER@, @MAGE@, @MONK@, @PALADIN@, @PRIEST@, @ROGUE@, @SHAMAN@, @WARLOCK@, @WARRIOR@, @RACIAL@, @TRADESKILL@.
 
 h4. Targeting
 
@@ -104,7 +116,7 @@ These flags hints about the targeting mechanism of the spell. They are exclusive
 * @PERSONAL@: The spell automatically targets the player.
 * @PET@: The spell automatically targets the player's pet.
 
-h5. Miscellanous
+h4. Miscellanous
 
 * @AURA@: The spell applies (or is) a buff on allies, or a debuff on enemies.
 * @UNIQUE_AURA@: A given character can have only one instance of this (de)buff at a time, even if several players cast the same spell on it, e.g. Hunter's Mark.
