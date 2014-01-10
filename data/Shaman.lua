@@ -20,10 +20,9 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", "50400", 3, {
+lib:__RegisterSpells("SHAMAN", "50400", 4, {
 	COOLDOWN = {
-		[16190] = 'MANA_REGEN',          -- Mana Tide Totem
-		[51490] = 'PERSONAL MANA_REGEN', -- Thunderstorm
+		[ 2062] = 'SURVIVAL',   -- Earth Elemental Totem
 		  2484, -- Earthbind Totem
 		  5394, -- Healing Stream Totem
 		  8143, -- Tremor Totem
@@ -43,22 +42,29 @@ lib:__RegisterSpells("SHAMAN", "50400", 3, {
 			57994, -- Wind Shear
 			113287, -- Solar Beam (Symbiosis)
 		},
+		BURST = {
+			 2894, -- Fire Elemental Totem
+			51533, -- Feral Spirit
+		},
+		MANA_REGEN = {
+			16190, -- Mana Tide Totem
+			51490, -- Thunderstorm
+		},
 		AURA = {
-			[ 61295] = 'HELPFUL', -- Riptide
-			[120668] = 'BURST', -- Stormlash Totem
+			HELPFUL = {
+				61295, -- Riptide
+				[ 98008] = 'SURVIVAL', -- Spirit Link Totem
+				[120668] = 'BURST',    -- Stormlash Totem
+			},
 			PERSONAL = {
 				SURVIVAL = {
-					  2062, -- Earth Elemental Totem
 					 30823, -- Shamanistic Rage
-					 98008, -- Spirit Link Totem
 					108270, -- Stone Bulwark Totem (talent)
 					108271, -- Astral Shift (talent)
 					108280, -- Healing Tide Totem
 				},
 				BURST = {
-					  2894, -- Fire Elemental Totem
 					 16166, -- Elemental Mastery (talent)
-					 51533, -- Feral Spirit
 					114049, -- Ascendance
 				},
 				79206, -- Spiritwalker's Grace
