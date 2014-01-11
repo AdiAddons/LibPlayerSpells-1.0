@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "50400", 6, {
+lib:__RegisterSpells("MONK", "50400", 7, {
 	COOLDOWN = {
 		109132, -- Roll
 		113656, -- Fists of Fury
@@ -66,6 +66,7 @@ lib:__RegisterSpells("MONK", "50400", 6, {
 			115307, -- Shuffle
 			115867, -- Mana Tea (stacking buff)
 			118674, -- Vital Mists (stacking buff)
+			124458, -- Healing Sphere (buff)
 			125195, -- Tigereye Brew (stacking buff)
 			125359, -- Tiger Power
 			127722, -- Serpent's Zeal
@@ -113,6 +114,7 @@ lib:__RegisterSpells("MONK", "50400", 6, {
 	[132120] = 124682, -- Enveloping Mist
 	[116330] = 115180, -- Dizzying Haze (debuff)  <- Dizzying Haze
 	[123727] = 121253, -- Dizzying Haze (debuff) <- Keg Smash
+	[124458] = 115460, -- Healing Sphere
 }, {
 	-- Map aura to modified spell(s)
 	[115307] = 100784, -- Shuffle -> Blackout Kick
