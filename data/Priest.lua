@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "50400", 5, {
+lib:__RegisterSpells("PRIEST", "50400", 6, {
 	COOLDOWN = {
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
@@ -32,6 +32,7 @@ lib:__RegisterSpells("PRIEST", "50400", 5, {
 		108968, -- Void Shift
 		126135, -- Lightwell
 		142723, -- Void Shift (shadow)
+		108968, -- Void Shift (discipline, holy)
 		["HELPFUL DISPEL"] = {
 			527, -- Purify
 		},
@@ -44,13 +45,15 @@ lib:__RegisterSpells("PRIEST", "50400", 5, {
 					47585, -- Dispersion
 				},
 				MANA_REGEN = {
-					34433, -- Shadowfiend
-					64901, -- Hymn of Hope
+					 34433, -- Shadowfiend
+					123040, -- Mind Bender
+					 64901, -- Hymn of Hope
 				},
 				BURST = {
 					 10060, -- Power Infusion
 					 15286, -- Vampiric Embrace
 					109964, -- Spirit Shell
+					 81700, -- Archangel
 				},
 			},
 			HELPFUL = {
@@ -78,7 +81,7 @@ lib:__RegisterSpells("PRIEST", "50400", 5, {
 			   588, -- Inner Fire
 			 63735, -- Serendipity
 			 73413, -- Inner Will
-			 81662, -- Evangelism
+			 81661, -- Evangelism
 			112833, -- Spectral Guise
 			114255, -- Surge of Light
 		},
@@ -111,6 +114,6 @@ lib:__RegisterSpells("PRIEST", "50400", 5, {
 		 596, -- Prayer of Healing
 		2060, -- Greater Heal
 	},
-	[ 81662] = 81700, -- Evangelism => Archangel
+	[ 81661] =  81700, -- Evangelism => Archangel
 	[114255] =  2061, -- Surge of Light => Flash Heal
 })
