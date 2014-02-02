@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "50400", 6, {
+lib:__RegisterSpells("PRIEST", "50400", 7, {
 	COOLDOWN = {
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
@@ -107,6 +107,7 @@ lib:__RegisterSpells("PRIEST", "50400", 6, {
 	-- Map aura to provider
 	[  6788] =     17, -- Weakened Soul <= Power Word: Shield
 	[ 63735] =  63733, -- Serendipity
+	[ 81661] =  81662, -- Evangelism
 	[114255] = 109186, -- Surge of Light <= From Darkness, Comes Light
 }, {
 	-- Map aura to modified spell(s)
