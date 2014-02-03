@@ -73,17 +73,13 @@ lib:__RegisterSpells("ROGUE", "50400", 4, {
 			 84617, -- Revealing Strike
 			122233, -- Crimson Tempest
 			  1943, -- Rupture
-			   408, -- Kidney Shot
-			  1776, -- Gouge
 			 26679, -- Deadly Throw
-			  1833, -- Cheap Shot
 			   703, -- Garrote
-			  1330, -- Garrote - Silence
 			 89775, -- Hemorrhage
 			115196, -- Debilitating Poison (Shiv effect of Crippling Poison)
 			115194, -- Mind Paralysis (Shiv effect of Mind-numbling Poison)
-			115197, -- Partial Paralysis (Shiv effect of Paralytic Poison)
-			113953, -- Paralysis (4 stacks effect from Paralytic Poison)
+			115197, -- Partial Paralysis (Shiv effect of Paralytic Poison) NOTE: has a DRData entry but is not currently displayed on Shiv
+			113953, -- Paralysis (4 stacks effect from Paralytic Poison) NOTE: has a DRData entry but is not currently displayed on Shiv
 		},
 	},
 	RAIDBUFF = {
@@ -95,7 +91,6 @@ lib:__RegisterSpells("ROGUE", "50400", 4, {
 	-- Map aura to provider
 	[122233] = 121411, -- Crimson Tempest
 	[ 11327] =   1856, -- Vanish
-	[  1330] =    703, -- Garrote - Silence <= Garrote
 	[137586] = 114014, -- Shuriken Toss
 	[ 74002] =  74001, -- Combat Insight <= Combat Readiness
 	[ 88611] =  76577, -- Smoke Bomb
