@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", "50400", 4, {
+lib:__RegisterSpells("SHAMAN", "50400", 5, {
 	COOLDOWN = {
 		[ 2062] = 'SURVIVAL',   -- Earth Elemental Totem
 		  2484, -- Earthbind Totem
@@ -77,6 +77,7 @@ lib:__RegisterSpells("SHAMAN", "50400", 4, {
 			IMPORTANT = {
 				16246, -- Clearcasting (buff)
 				53390, -- Tidal Waves
+				53817, -- Maelstrom Weapon (buff)
 			},
 			UNIQUE_AURA = {
 				  324, -- Lightning Shield
@@ -131,6 +132,7 @@ lib:__RegisterSpells("SHAMAN", "50400", 4, {
 	-- Map aura to provider
 	[ 51945] =  51730, -- Earthliving
 	[ 53390] =  51564, -- Tidal Waves
+	[ 53817] =  51530, -- Maelstrom Weapon
 	[ 73683] =  73680, -- Unleash Elements (Flametongue)
 	[ 73681] =  73680, -- Unleash Elements (Windfury)
 	[ 73685] =  73680, -- Unleash Elements (Earthliving)
