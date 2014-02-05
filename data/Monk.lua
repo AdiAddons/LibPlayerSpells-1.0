@@ -115,6 +115,7 @@ lib:__RegisterSpells("MONK", "50400", 7, {
 	[116330] = 115180, -- Dizzying Haze (debuff)  <- Dizzying Haze
 	[123727] = 121253, -- Dizzying Haze (debuff) <- Keg Smash
 	[124458] = 115460, -- Healing Sphere
+	[130320] = 107428, -- Rising Sun Kick
 }, {
 	-- Map aura to modified spell(s)
 	[115307] = 100784, -- Shuffle -> Blackout Kick
@@ -123,7 +124,6 @@ lib:__RegisterSpells("MONK", "50400", 7, {
 	[125195] = 116740, -- Tigereye Brew
 	[127722] = 100784, -- Serpent's Zeal -> Blackout Kick
 	[128939] = 115308, -- Elusive Brew
-	[130320] = 107428, -- Rising Sun Kick
 	[116330] = { 115180, 121253 }, -- Dizzying Haze (debuff) -> Dizzying Haze & Keg Smash
 	[123727] = { 115180, 121253 }, -- Dizzying Haze (debuff) -> Dizzying Haze & Keg Smash
 	[129914] = { -- Power Strikes ->
