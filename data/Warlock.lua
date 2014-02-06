@@ -87,8 +87,8 @@ lib:__RegisterSpells("WARLOCK", "50400", 2, {
 			[5697] = "UNIQUE_AURA", -- Unending Breath
 		},
 		PET = {
-			   755, -- Health Funnel
-			  1098, -- Enslave Demon
+			    755, -- Health Funnel
+			  [1098] = "INVERT_AURA", -- Enslave Demon
 		},
 		HARMFUL = {
 			   172, -- Corruption
