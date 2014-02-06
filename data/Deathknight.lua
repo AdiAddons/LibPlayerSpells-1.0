@@ -69,8 +69,9 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 2, {
 			 81340, -- Sudden Doom
 		},
 		PET = {
-			91342, -- Shadow Infusion
-			63560, -- Dark Transformation -- NOTE: shadow infusion is not possible when this is active
+			  91342, -- Shadow Infusion
+			  63560, -- Dark Transformation -- NOTE: shadow infusion is not possible when this is active
+			[111673] = "INVERT_AURA" -- Control Undead
 		},
 		HELPFUL = {
 			115635, -- Death Barrier
@@ -90,9 +91,6 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 2, {
 	RAIDBUFF = {
 		[57330] = "ATK_POWER", -- Horn of Winter
 		[55610] = "ATK_SPEED", -- Unholy Aura
-	},
-	INVERT_AURA = {
-		[111673] = "PET", -- Control Undead                        -- TODO: not working
 	},
 	[45477] = "DISPEL HARMFUL",
 }, {
@@ -150,6 +148,6 @@ GLYPHS:
 			49998 - Death Strike (spell)
 
 Talents:
-	Chilblains (50041) - root effect id 96294 - not worth implementing
-	Remorseless Winter (108200) - stun effect id 15001, maybe better in DRData, don't know about DR though
+	Chilblains (50041) - root effect id 96294 (Chains of Ice)
+	Remorseless Winter (108200) - stun effect id 115001, listed only as provider in DRData?
 ]]
