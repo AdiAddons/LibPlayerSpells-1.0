@@ -128,6 +128,10 @@ h4. Miscellanous
 * @IMPORTANT@: Important spell the player should react to
 * @INVERT_AURA@: The aura logic of this spell is inverted: it applies a debuff on allies or a buff on enemies (this case has yet to be found), e.g. the Weakened Soul applied by Power Word: Shield.
 
+h2. Acknowledgment
+
+Thanks to "ckaotik":https://github.com/ckaotik and "Rainrider":https://github.com/Rainrider for testing and their contributons to class spells.
+
 h2. License
 
 LibPlayerSpells-1.0 is licensed using GPL v3. This means that any addon using it must have a compatible license (see "there":https://www.gnu.org/licenses/quick-guide-gplv3.html).
