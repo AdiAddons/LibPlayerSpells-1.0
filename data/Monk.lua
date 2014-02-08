@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "50400", 7, {
+lib:__RegisterSpells("MONK", "50400", 8, {
 	COOLDOWN = {
 		109132, -- Roll
 		113656, -- Fists of Fury
@@ -73,6 +73,7 @@ lib:__RegisterSpells("MONK", "50400", 7, {
 			128939, -- Elusive Brew (stacking buff)
 			129914, -- Power Strikes (buff)
 			134563, -- Healing Elixirs (buff)
+			137639, -- Storm, Earth, and Fire
 			[115294] = "MANA_REGEN", -- Mana Tea
 			[115308] = "SURVIVAL", -- Elusive Brew
 			[116740] = "BURST", -- Tigereye Brew
