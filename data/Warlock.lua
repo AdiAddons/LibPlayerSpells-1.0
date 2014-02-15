@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "50400", 2, {
+lib:__RegisterSpells("WARLOCK", "50400", 3, {
 	COOLDOWN = {
 		   755, -- Health Funnel (glyphed)
 		  1122, -- Summon Infernal
@@ -96,6 +96,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 2, {
 			   603, -- Metamorphosis: Doom
 			   980, -- Agony
 			 27243, -- Seed of Corruption
+			 29341, -- Shadowburn (debuff)
 			 30108, -- Unstable Affliction
 			 47960, -- Shadowflame
 			 48181, -- Haunt
@@ -114,6 +115,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 2, {
 	},
 }, {
 	-- Map aura to provider
+	[ 29341] =  17877, -- Shadowburn
 	[ 47960] = 105174, -- Shadowflame <= Hand of Gul'dan
 	[117828] = 117896, -- Backdraft
 }, {
