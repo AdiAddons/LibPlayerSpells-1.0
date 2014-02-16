@@ -20,9 +20,8 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "50400", 3, {
+lib:__RegisterSpells("WARLOCK", "50400", 4, {
 	COOLDOWN = {
-		   755, -- Health Funnel (glyphed)
 		  1122, -- Summon Infernal
 		 18540, -- Summon Doomguard
 		 29858, -- Soulshatter
@@ -30,6 +29,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 3, {
 		108482, -- Unbound Will
 		108501, -- Grimoire of Service
 		114175, -- Demonic Slash (Dark Apotheosis)
+		114189, -- Health Funnel (glyphed)
 		120451, -- Flames of Xoroth
 		INTERRUPT = {
 			 19647, -- Spell Lock (felhunter)
