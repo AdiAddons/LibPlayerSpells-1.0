@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "50400", 5, {
+lib:__RegisterSpells("DRUID", "50400", 6, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -140,7 +140,10 @@ lib:__RegisterSpells("DRUID", "50400", 5, {
 	[145151] = 108373, -- Dream of Cenarius (balance)
 	[145152] = 108373, -- Dream of Cenarius (feral)
 	[145162] = 108373, -- Dream of Cenarius (guardian)
-	[132402] = 62606, -- Savage Defense (buff)
+	[132402] =  62606, -- Savage Defense (buff)
+	-- Thrash is listed as 106832 in the spellbook
+	[ 77758] = {  77758, 106832 }, -- Thrash (guardian)
+	[106830] = { 106830, 106832 }, -- Thrash (feral)
 }, {
 	-- Map aura to modified spell(s
 	[69369] = { -- Predatory Swiftness (buff) =>
