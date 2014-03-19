@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "50400", 8, {
+lib:__RegisterSpells("MONK", "50400", 9, {
 	COOLDOWN = {
 		109132, -- Roll
 		113656, -- Fists of Fury
@@ -42,9 +42,10 @@ lib:__RegisterSpells("MONK", "50400", 8, {
 		[115098] = "HARMFUL HELPFUL" , -- Chi Wave
 		AURA = {
 			[116705] = "HARMFUL INTERRUPT", -- Spear Hand Strike
-			["HELPFUL SURVIVAL"] = {
-				116844, -- Ring of Peace
-				116849, -- Life Cocoon
+			HELPFUL = {
+				 124081, -- Zen Sphere
+				[116844] = "SURVIVAL", -- Ring of Peace
+				[116849] = "SURVIVAL", -- Life Cocoon
 			},
 			PERSONAL = {
 				[115288] = "POWER_REGEN", -- Energizing Brew
