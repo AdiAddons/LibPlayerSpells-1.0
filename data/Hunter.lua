@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "50400", 5, {
+lib:__RegisterSpells("HUNTER", "50400", 6, {
 	COOLDOWN = {
 		   781, -- Disengage
 		 53351, -- Kill Shot
@@ -44,18 +44,20 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 				SURVIVAL = {
 					  5384, -- Feign Death
 					 19263, -- Deterrence
-					 51753, -- Camouflage
-					 53271, -- Master's Call
+					 51755, -- Camouflage
 					148467, -- Deterrence (talented)
 				},
 				BURST = {
 					  3045, -- Rapid Fire
-					 34692, -- The Beast Within
+					 34471, -- The Beast Within
 				},
 			},
 		},
+		["HELPFUL AURA"] = {
+			54216, -- Master's Call
+		},
 		["HARMFUL AURA"] = {
-			  1499, -- Freezing Trap
+			  3355, -- Freezing Trap
 			  3674, -- Black Arrow
 			 13813, -- Explosive Trap
 			 19386, -- Wyvern Sting
@@ -72,6 +74,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 			 53220, -- Steady Focus (buff)
 			 56343, -- Lock and Load
 			 82925, -- Ready, Set, Aim...
+			 82692, -- Focus Fire
 		},
 		HARMFUL = {
 			  1978, -- Serpent String
@@ -80,7 +83,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 		},
 		PET = {
 			   136, -- Mend Pet
-			 19623, -- Frenzy
+			 19615, -- Frenzy
 			118455, -- Beast Cleave (buff)
 		},
 	},
@@ -103,16 +106,23 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 	[ 19801] = "HARMFUL DISPEL", -- Tranquilizing Shot
 }, {
 	-- Map aura to provider
-	[ 19623] =  82692, -- Frenzy <= Focus Fire
-	[ 34692] =  19574, -- The Beast Within <= Bestial Wrath
+	[ 19615] =  19623, -- Frenzy
+	[ 34471] =  34692, -- The Beast Within
 	[ 53220] =  53224, -- Steady Focus
 	[ 82925] =  34487, -- Ready, Set, Aim... <= Master Marksman
 	[118455] = 115939, -- Beast Cleave
 	[118253] =   1978, -- Serpent String
+	[ 51755] =  51753, -- Camouflage
+	[ 54216] =  53271, -- Master's Call
+	[  3355] = { -- Freezing Trap
+		 1499,
+		60192, -- Freezing Trap (Trap Launcher)
+	},
 }, {
 	-- Map aura to modified spell(s)
 	[ 53220] = 56641, -- Steady Focus => Steady Shot
 	[ 56343] = 53301, -- Lock and Load => Explosive Shot
 	[ 82925] = 19434, -- Ready, Set, Aim... => Aimed Shot
 	[118455] =  2643, -- Beast Cleave => Multishot
+	[ 34471] = 19574, -- The Beast Within => Bestial Wrath
 })
