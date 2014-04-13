@@ -49,7 +49,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 				},
 				BURST = {
 					  3045, -- Rapid Fire
-					 34692, -- The Beast Within
+					 34471, -- The Beast Within
 				},
 			},
 		},
@@ -107,7 +107,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 }, {
 	-- Map aura to provider
 	[ 19615] =  19623, -- Frenzy
-	[ 34692] =  19574, -- The Beast Within <= Bestial Wrath
+	[ 34471] =  34692, -- The Beast Within
 	[ 53220] =  53224, -- Steady Focus
 	[ 82925] =  34487, -- Ready, Set, Aim... <= Master Marksman
 	[118455] = 115939, -- Beast Cleave
@@ -124,4 +124,5 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 	[ 56343] = 53301, -- Lock and Load => Explosive Shot
 	[ 82925] = 19434, -- Ready, Set, Aim... => Aimed Shot
 	[118455] =  2643, -- Beast Cleave => Multishot
+	[ 34471] = 19574, -- The Beast Within => Bestial Wrath
 })
