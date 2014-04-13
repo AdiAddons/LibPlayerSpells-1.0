@@ -74,6 +74,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 			 53220, -- Steady Focus (buff)
 			 56343, -- Lock and Load
 			 82925, -- Ready, Set, Aim...
+			 82692, -- Focus Fire
 		},
 		HARMFUL = {
 			  1978, -- Serpent String
@@ -105,7 +106,6 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 	[ 19801] = "HARMFUL DISPEL", -- Tranquilizing Shot
 }, {
 	-- Map aura to provider
-	[ 19623] =  82692, -- Frenzy <= Focus Fire
 	[ 34692] =  19574, -- The Beast Within <= Bestial Wrath
 	[ 53220] =  53224, -- Steady Focus
 	[ 82925] =  34487, -- Ready, Set, Aim... <= Master Marksman
