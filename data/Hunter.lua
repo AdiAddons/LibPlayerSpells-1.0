@@ -83,7 +83,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 		},
 		PET = {
 			   136, -- Mend Pet
-			 19623, -- Frenzy
+			 19615, -- Frenzy
 			118455, -- Beast Cleave (buff)
 		},
 	},
@@ -106,6 +106,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 	[ 19801] = "HARMFUL DISPEL", -- Tranquilizing Shot
 }, {
 	-- Map aura to provider
+	[ 19615] =  19623, -- Frenzy
 	[ 34692] =  19574, -- The Beast Within <= Bestial Wrath
 	[ 53220] =  53224, -- Steady Focus
 	[ 82925] =  34487, -- Ready, Set, Aim... <= Master Marksman
