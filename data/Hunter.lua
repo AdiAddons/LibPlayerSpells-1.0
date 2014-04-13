@@ -44,7 +44,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 				SURVIVAL = {
 					  5384, -- Feign Death
 					 19263, -- Deterrence
-					 51753, -- Camouflage
+					 51755, -- Camouflage
 					 53271, -- Master's Call
 					148467, -- Deterrence (talented)
 				},
@@ -109,6 +109,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 	[ 82925] =  34487, -- Ready, Set, Aim... <= Master Marksman
 	[118455] = 115939, -- Beast Cleave
 	[118253] =   1978, -- Serpent String
+	[ 51755] =  51753, -- Camouflage
 }, {
 	-- Map aura to modified spell(s)
 	[ 53220] = 56641, -- Steady Focus => Steady Shot
