@@ -57,7 +57,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 			54216, -- Master's Call
 		},
 		["HARMFUL AURA"] = {
-			  1499, -- Freezing Trap
+			  3355, -- Freezing Trap
 			  3674, -- Black Arrow
 			 13813, -- Explosive Trap
 			 19386, -- Wyvern Sting
@@ -113,6 +113,10 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 	[118253] =   1978, -- Serpent String
 	[ 51755] =  51753, -- Camouflage
 	[ 54216] =  53271, -- Master's Call
+	[  3355] = { -- Freezing Trap
+		 1499,
+		60192, -- Freezing Trap (Trap Launcher)
+	},
 }, {
 	-- Map aura to modified spell(s)
 	[ 53220] = 56641, -- Steady Focus => Steady Shot
