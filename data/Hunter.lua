@@ -45,7 +45,6 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 					  5384, -- Feign Death
 					 19263, -- Deterrence
 					 51755, -- Camouflage
-					 53271, -- Master's Call
 					148467, -- Deterrence (talented)
 				},
 				BURST = {
@@ -53,6 +52,9 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 					 34692, -- The Beast Within
 				},
 			},
+		},
+		["HELPFUL AURA"] = {
+			54216, -- Master's Call
 		},
 		["HARMFUL AURA"] = {
 			  1499, -- Freezing Trap
@@ -110,6 +112,7 @@ lib:__RegisterSpells("HUNTER", "50400", 5, {
 	[118455] = 115939, -- Beast Cleave
 	[118253] =   1978, -- Serpent String
 	[ 51755] =  51753, -- Camouflage
+	[ 54216] =  53271, -- Master's Call
 }, {
 	-- Map aura to modified spell(s)
 	[ 53220] = 56641, -- Steady Focus => Steady Shot
