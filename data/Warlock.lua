@@ -45,6 +45,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 4, {
 				 108503, -- Grimoire of Sacrifice (talent)
 				 116198, -- Aura of Enfeeblement (Metamorphosis/Dark Apotheosis)
 				[  1454] = "INVERT_AURA", -- Life Tap
+				   1949, -- Hellfire
 				SURVIVAL = {
 					  6229, -- Twilight Ward
 					104773, -- Unending Resolve
