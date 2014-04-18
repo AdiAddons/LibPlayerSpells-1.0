@@ -39,11 +39,12 @@ lib:__RegisterSpells("WARLOCK", "50400", 4, {
 		},
 		AURA = {
 			PERSONAL = {
-				 48018, -- Demonic Circle: Summon
-				 48020, -- Demonic Circle: Teleport
-				104025, -- Immolation Aura (Metamorphosis/Dark Apotheosis)
-				108503, -- Grimoire of Sacrifice (talent)
-				116198, -- Aura of Enfeeblement (Metamorphosis/Dark Apotheosis)
+				  48018, -- Demonic Circle: Summon
+				  48020, -- Demonic Circle: Teleport
+				 104025, -- Immolation Aura (Metamorphosis/Dark Apotheosis)
+				 108503, -- Grimoire of Sacrifice (talent)
+				 116198, -- Aura of Enfeeblement (Metamorphosis/Dark Apotheosis)
+				[  1454] = "INVERT_AURA", -- Life Tap
 				SURVIVAL = {
 					  6229, -- Twilight Ward
 					104773, -- Unending Resolve
