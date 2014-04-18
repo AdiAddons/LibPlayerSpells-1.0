@@ -72,7 +72,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 4, {
 				 30283, -- Shadowfury
 				 47897, -- Demonic Breath
 				111397, -- Blood Horror
-				124917, -- Metamorphosis: Chaos Wave
+				124915, -- Chaos Wave (Metamorphosis)
 			},
 		},
 	},
@@ -120,6 +120,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 4, {
 	[ 29341] =  17877, -- Shadowburn
 	[ 47960] = 105174, -- Shadowflame <= Hand of Gul'dan
 	[117828] = 117896, -- Backdraft
+	[124915] = 124916, -- Chaos Wave (Metamorphosis)
 }, {
 	-- Map aura to modified spell(s)
 	[108563] = { -- Backlash =>
