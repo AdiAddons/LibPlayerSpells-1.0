@@ -91,7 +91,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 4, {
 			  [1098] = "INVERT_AURA", -- Enslave Demon
 		},
 		HARMFUL = {
-			   172, -- Corruption
+			146739, -- Corruption
 			   348, -- Immolate
 			   603, -- Metamorphosis: Doom
 			   980, -- Agony
@@ -115,6 +115,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 4, {
 	},
 }, {
 	-- Map aura to provider
+	[146739] =    172, -- Corruption
 	[ 29341] =  17877, -- Shadowburn
 	[ 47960] = 105174, -- Shadowflame <= Hand of Gul'dan
 	[117828] = 117896, -- Backdraft
