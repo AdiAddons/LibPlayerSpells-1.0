@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "50400", 4, {
+lib:__RegisterSpells("WARLOCK", "50400", 5, {
 	COOLDOWN = {
 		  1122, -- Summon Infernal
 		 18540, -- Summon Doomguard
@@ -39,11 +39,13 @@ lib:__RegisterSpells("WARLOCK", "50400", 4, {
 		},
 		AURA = {
 			PERSONAL = {
-				 48018, -- Demonic Circle: Summon
-				 48020, -- Demonic Circle: Teleport
-				104025, -- Immolation Aura (Metamorphosis/Dark Apotheosis)
-				108503, -- Grimoire of Sacrifice (talent)
-				116198, -- Aura of Enfeeblement (Metamorphosis/Dark Apotheosis)
+				  48018, -- Demonic Circle: Summon
+				  48020, -- Demonic Circle: Teleport
+				 104025, -- Immolation Aura (Metamorphosis/Dark Apotheosis)
+				 108503, -- Grimoire of Sacrifice (talent)
+				 116198, -- Aura of Enfeeblement (Metamorphosis/Dark Apotheosis)
+				[  1454] = "INVERT_AURA", -- Life Tap
+				   1949, -- Hellfire
 				SURVIVAL = {
 					  6229, -- Twilight Ward
 					104773, -- Unending Resolve
@@ -71,7 +73,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 4, {
 				 30283, -- Shadowfury
 				 47897, -- Demonic Breath
 				111397, -- Blood Horror
-				124917, -- Metamorphosis: Chaos Wave
+				124915, -- Chaos Wave (Metamorphosis)
 			},
 		},
 	},
@@ -91,7 +93,7 @@ lib:__RegisterSpells("WARLOCK", "50400", 4, {
 			  [1098] = "INVERT_AURA", -- Enslave Demon
 		},
 		HARMFUL = {
-			   172, -- Corruption
+			146739, -- Corruption
 			   348, -- Immolate
 			   603, -- Metamorphosis: Doom
 			   980, -- Agony
@@ -115,9 +117,11 @@ lib:__RegisterSpells("WARLOCK", "50400", 4, {
 	},
 }, {
 	-- Map aura to provider
+	[146739] =    172, -- Corruption
 	[ 29341] =  17877, -- Shadowburn
 	[ 47960] = 105174, -- Shadowflame <= Hand of Gul'dan
 	[117828] = 117896, -- Backdraft
+	[124915] = 124916, -- Chaos Wave (Metamorphosis)
 }, {
 	-- Map aura to modified spell(s)
 	[108563] = { -- Backlash =>
