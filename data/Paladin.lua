@@ -35,6 +35,11 @@ lib:__RegisterSpells("PALADIN", "50400", 3, {
 			 1022, -- Hand of Protection
 		},
 	},
+	AURA = {
+		PERSONAL = {
+			[84963] = 'HELPFUL', -- Inquisition
+		},
+	},
 	RAIDBUFF = {
 		[20217] = 'STATS',   -- Blessing of Kings
 		[19740] = 'MASTERY', -- Blessing of Might
