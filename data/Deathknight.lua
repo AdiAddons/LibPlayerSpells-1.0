@@ -116,7 +116,10 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 2, {
 }, {
 	-- Map aura to modified spell(s)
 	[ 50421] = 49998, -- Scent of Blood => Death Strike            -- NOTE: stack count covered by the default ui
-	[ 55095] = 45477, -- Frost Fever => Icy Touch
+	[ 55095] = { -- Frost Fever =>
+		45477, -- Icy Touch
+		49184, -- Howling Blast
+	},
 	[ 55078] = 45462, -- Blood Plague => Plague Strike
 	[ 81141] = { -- Crimson Scourge =>                             -- NOTE: highlight covered by the default ui
 		43265, -- Death and Decay
