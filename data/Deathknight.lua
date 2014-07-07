@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "50400", 2, {
+lib:__RegisterSpells("DEATHKNIGHT", "50400", 3, {
 	COOLDOWN = {
 		42650, -- Army of the Dead
 		61999, -- Raise Ally
@@ -33,7 +33,8 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 2, {
 		},
 		AURA = {
 			HELPFUL = {
-				49016, -- Unholy Frenzy
+				  49016, -- Unholy Frenzy
+				[145629] = 'SURVIVAL', -- Anti-Magic Zone
 			},
 			HARMFUL = {
 				49206, -- Summon Gargoyle
@@ -47,7 +48,6 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 2, {
 				SURVIVAL = {
 					 49039, -- Lichborne
 					 48707, -- Anti-Magic Shell
-					145629, -- Anti-Magic Zone
 					 48792, -- Icebound Fortitude
 					 81256, -- Dancing Rune Weapon
 					 49222, -- Bone Shield
@@ -105,13 +105,13 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 2, {
 	[ 59052] =  59057, -- Freezing Fog <= Rime
 	[ 81340] =  49530, -- Sudden Doom
 	[ 91342] =  49572, -- Shadow Infusion
-	[115635] =  63333, -- Death Barrier <= Glyph of Death Coil     -- TODO: glyph detection does not work
+	[115635] =  63333, -- Death Barrier <= Glyph of Death Coil
 	[114851] =  45529, -- Blood Charge <= Blood Tap                -- NOTE: stack count covered by the default ui
 	[ 91802] =  47482, -- Shambling Rush <= Leap (Ghoul)
 	[ 91800] =  47481, -- Gnaw (Ghoul)
 	[ 91797] =  47481, -- Monstrous Blow <= Gnaw (Ghoul)
 	-- map spell id to provider?
-	[ 45477] =  58631, -- Icy Touch <= Glyph of Icy Touch          -- TODO: glyph detection does not work
+	[ 45477] =  58631, -- Icy Touch <= Glyph of Icy Touch
 
 }, {
 	-- Map aura to modified spell(s)

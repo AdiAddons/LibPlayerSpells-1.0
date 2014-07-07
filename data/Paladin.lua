@@ -20,24 +20,27 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", "50400", 3, {
+lib:__RegisterSpells("PALADIN", "50400", 4, {
 	[96231] = "COOLDOWN INTERRUPT", -- Rebuke
 	['SURVIVAL COOLDOWN AURA'] = {
 		PERSONAL = {
 			  498, -- Divine Protection
 			  642, -- Divine Shield
-			 6940, -- Hand of Sacrifice
 			31850, -- Ardent Defender
 			54428, -- Divine Plea
 			86659, -- Ancient Guardian (prot)
 		},
 		HELPFUL = {
-			 1022, -- Hand of Protection
+			 31821, -- Devotion Aura
+			  1022, -- Hand of Protection
+			  1044, -- Hand of Freedom
+			  6940, -- Hand of Sacrifice
+			114039, -- Hand of Purity
 		},
 	},
 	AURA = {
 		PERSONAL = {
-			[84963] = 'HELPFUL', -- Inquisition
+			 84963, -- Inquisition
 		},
 	},
 	RAIDBUFF = {
