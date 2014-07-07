@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "50400", 9, {
+lib:__RegisterSpells("MONK", "50400", 10, {
 	COOLDOWN = {
 		109132, -- Roll
 		113656, -- Fists of Fury
@@ -46,14 +46,14 @@ lib:__RegisterSpells("MONK", "50400", 9, {
 				 124081, -- Zen Sphere
 				[116844] = "SURVIVAL", -- Ring of Peace
 				[116849] = "SURVIVAL", -- Life Cocoon
+				[115213] = "SURVIVAL", -- Avert Harm
+				[131523] = "SURVIVAL", -- Zen Meditation
 			},
 			PERSONAL = {
 				[115288] = "POWER_REGEN", -- Energizing Brew
 				SURVIVAL = {
 					115295, -- Guard
-					115176, -- Zen Meditation
 					115203, -- Fortifying Brew
-					115213, -- Avert Harm
 					122278, -- Dampen Harm
 					122470, -- Touch of Karma
 					122783, -- Diffuse Magic
@@ -118,6 +118,7 @@ lib:__RegisterSpells("MONK", "50400", 9, {
 	[123727] = 121253, -- Dizzying Haze (debuff) <- Keg Smash
 	[124458] = 115460, -- Healing Sphere
 	[130320] = 107428, -- Rising Sun Kick
+	[131523] = 115176, -- Zen Meditation
 }, {
 	-- Map aura to modified spell(s)
 	[115307] = 100784, -- Shuffle -> Blackout Kick

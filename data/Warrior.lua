@@ -20,13 +20,20 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", "50400", 3, {
+lib:__RegisterSpells("WARRIOR", "50400", 4, {
 	[6552] = "COOLDOWN INTERRUPT", -- Pummel
-	['PERSONAL SURVIVAL COOLDOWN AURA']= {
-		 2565, -- Shield Block
-		55694, -- Enraged Regeneration
-		  871, -- Shield Wall
-		12975, -- Last Stand
+	['SURVIVAL COOLDOWN AURA']= {
+		PERSONAL = {
+			 2565, -- Shield Block
+			55694, -- Enraged Regeneration
+			  871, -- Shield Wall
+			12975, -- Last Stand
+		},
+		HELPFUL = {
+			 97463, -- Rallying Cry
+			114028, -- Mass Spell Reflection
+			114030, -- Vigilance
+		},
 	},
 	RAIDBUFF = {
 		[ 469] = 'STAMINA',   -- Commanding Shout
@@ -34,6 +41,7 @@ lib:__RegisterSpells("WARRIOR", "50400", 3, {
 	},
 }, {
 	-- Map aura to provider
+	[97463] = 97462, -- Rallying Cry
 }, {
 	-- Map aura to modified spell(s)
 })
