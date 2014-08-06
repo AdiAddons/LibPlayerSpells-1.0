@@ -28,6 +28,7 @@ lib:__RegisterSpells("HUNTER", "60000", 1, {
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
 		  53351, -- Kill Shot
 		 157708, -- Kill Shot (with Enhanced Kill Shot 157707)
+		  53209, -- Chimaera Shot
 		AURA = {
 			HARMFUL = {
 				 1462, -- Beast Lore
@@ -56,6 +57,8 @@ lib:__RegisterSpells("HUNTER", "60000", 1, {
 				[ 19574] = "BURST", -- Bestial Wrath
 				[ 82692] = "BURST", -- Focus Fire
 				  -- 53257, -- Cobra Strikes -- FIXME: ABA freezes the client
+				[  3045] = "BURST", -- Rapid Fire
+				-- [ 82921] = "BURST", -- Bombardment -- FIXME: ABA freezes the client on aura refresh
 			},
 		},
 	},
@@ -132,6 +135,7 @@ lib:__RegisterSpells("HUNTER", "60000", 1, {
 	[ 54216] = 53271, -- Master's Call
 	[ 35079] = 34477, -- Misdirection
 	-- [ 53257] = 53260, -- Cobra Strikes -- FIXME: ABA freezes the client
+	-- [ 82921] = 35110, -- Bombardment -- FIXME: ABA freezes the client on aura refresh
 }, {
 	-- Map aura to modified spell(s)
 	-- [118253] = { -- FIXME: ABA freezes the client
@@ -139,4 +143,5 @@ lib:__RegisterSpells("HUNTER", "60000", 1, {
 	-- 	2643, -- Multi-Shot
 	-- },
 	-- [ 53257] = 3044, -- Cobra Strikes <-- Arcane Shot -- FIXME: ABA freezes the client
+	-- [ 82921] = 2643, -- Bombardment <-- Multi-Shot -- FIXME: ABA freezes the client on aura refresh
 })
