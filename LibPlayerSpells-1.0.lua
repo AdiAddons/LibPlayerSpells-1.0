@@ -67,14 +67,15 @@ lib.constants = {
 
 	-- Raid buff types, *requires* RAIDBUFF, else this messes up sources
 	STATS       = 0x00000001, -- +5% strengh, agility and intellect
-	STAMINA     = 0x00000002, -- +10 stamina
+	STAMINA     = 0x00000002, -- +10% stamina
 	ATK_POWER   = 0x00000004, -- +10% attack power
-	ATK_SPEED   = 0x00000008, -- +10% attack speed
+	MULTISTRIKE = 0x00000008, -- +5% Multistrike
 	SPL_POWER   = 0x00000010, -- +10% spell power
-	SPL_HASTE   = 0x00000020, -- +5% spell haste
+	HASTE       = 0x00000020, -- +5% haste
 	CRITICAL    = 0x00000040, -- +5% critical strike
 	MASTERY     = 0x00000080, -- Flat mastery bonus
 	BURST_HASTE = 0x00000100, -- Bloodlust/Heroism
+	VERSATILITY = 0x00000200, -- +3% Versatility
 
 	-- Targeting
 	HELPFUL     = 0x00002000, -- Usable on allies
@@ -97,8 +98,9 @@ local constants = lib.constants
 
 local RAID_BUFF_TYPES = {
 	constants.STATS, constants.STAMINA, constants.ATK_POWER,
-	constants.ATK_SPEED, constants.SPL_POWER, constants.SPL_HASTE,
-	constants.CRITICAL, constants.MASTERY, constants.BURST_HASTE,
+	constants.MULTISTRIKE, constants.SPL_POWER, constants.HASTE,
+	constants.CRITICAL, constants.MASTERY, constants.VERSATILITY,
+	constants.BURST_HASTE,
 }
 
 -- Convenient bitmasks
