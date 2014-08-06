@@ -29,6 +29,11 @@ lib:__RegisterSpells("HUNTER", "60000", 1, {
 		  53351, -- Kill Shot
 		 157708, -- Kill Shot (with Enhanced Kill Shot 157707)
 		  53209, -- Chimaera Shot
+		 109304, -- Exhilaration (talent)
+		[120679] = "POWER_REGEN", -- Dire Beast (talent)
+		 121818, -- Stampede (talent)
+		 109259, -- Power Shot (talent)
+		 120360, -- Barrage (talent)
 		AURA = {
 			HARMFUL = {
 				 1462, -- Beast Lore
@@ -40,12 +45,22 @@ lib:__RegisterSpells("HUNTER", "60000", 1, {
 				--  3355, -- Freezing Trap -- FIXME: ABA freezes the client on aura refresh
 				135299, -- Ice Trap
 				 25809, -- Crippling Poison
+				-- 136634, -- Narrow Escape (talent) -- XXX: added through DRData (root)
+				-- 117526, -- Binding Shot (talent) -- XXX: added through DRData (stun)
+				--  19386, -- Wyvern Sting (talent) -- XXX: added through DRData (incapacitate)
+				--  24394, -- Intimidation (talent) -- XXX: added through DRData (stun)
+				131894, -- A Murder of Crows (talent)
+				120761, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
+				121414, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
 			},
 			HELPFUL = {
 				 13159, -- Aspect of the Pack
 				172106, -- Aspect of the Fox
 				  1462, -- Beast Lore
 				 54216, -- Master's Call
+			},
+			PET = {
+				19577, -- Intimidation (talent)
 			},
 			PERSONAL = {
 				   5118, -- Aspect of the Cheetah
@@ -59,19 +74,27 @@ lib:__RegisterSpells("HUNTER", "60000", 1, {
 				  -- 53257, -- Cobra Strikes -- FIXME: ABA freezes the client
 				[  3045] = "BURST", -- Rapid Fire
 				-- [ 82921] = "BURST", -- Bombardment -- FIXME: ABA freezes the client on aura refresh
+				 118922, -- Posthaste (talent)
+				[ 82726] = "POWER_REGEN", -- Fervor (talent)
 			},
 		},
 	},
 	AURA = {
 		HARMFUL = {
 			-- 118253, -- Serpent Sting -- FIXME: ABA freezes the client
+			162534, -- Poisoned Ammo (Exotic Munitions talent)
+			162546, -- Frozen Ammo (Exotic Munitions talent) -- TODO: add to snares in Common in ABA
 		},
 		PET = {
 			136, -- Mend Pet -- FIXME: ABA freezes the client on aura refresh
 		},
 		PERSONAL = {
-			6197, -- Eagle Eye
-			1515, -- Tame Beast
+			  6197, -- Eagle Eye
+			  1515, -- Tame Beast
+			 -- 34720, -- Thrill of the Hunt (talent) -- FIXME: ABA freezes the client
+			162537, -- Poisoned Ammo (Exotic Munitions talent)
+			162536, -- Incendiary Ammo (Exotic Munitions talent)
+			162539, -- Frozen Ammo (Exotic Munitions talent)
 		},
 	},
 	RAIDBUFF = {
@@ -136,12 +159,29 @@ lib:__RegisterSpells("HUNTER", "60000", 1, {
 	[ 35079] = 34477, -- Misdirection
 	-- [ 53257] = 53260, -- Cobra Strikes -- FIXME: ABA freezes the client
 	-- [ 82921] = 35110, -- Bombardment -- FIXME: ABA freezes the client on aura refresh
+	[118922] = 109215, -- Posthaste (talent)
+	-- [136634] = 109298, -- Narrow Escape (talent) -- XXX: added through DRData (root)
+	-- [117526] = 109248, -- Binding Shot (talent) -- XXX: added through DRData (stun)
+	-- [ 24394] =  19577, -- Intimidation (talent) -- XXX: added through DRData (stun)
+	-- [ 34720] = 109306, -- Thrill of the Hunt (talent) -- FIXME: ABA freezes the client
+	[120761] = 117050, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
+	[121414] = 117050, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
+	[162546] = 162534, -- Frozen Ammo <-- Exotic Munitions (talent) -- TODO: add to snares in Common in ABA -- FIXME: LibSpellbook says it's unknown when it isn't
 }, {
 	-- Map aura to modified spell(s)
 	-- [118253] = { -- FIXME: ABA freezes the client
 	-- 	3044, -- Arcane Shot
 	-- 	2643, -- Multi-Shot
 	-- },
-	-- [ 53257] = 3044, -- Cobra Strikes <-- Arcane Shot -- FIXME: ABA freezes the client
-	-- [ 82921] = 2643, -- Bombardment <-- Multi-Shot -- FIXME: ABA freezes the client on aura refresh
+	-- [ 53257] = 3044, -- Cobra Strikes --> Arcane Shot -- FIXME: ABA freezes the client
+	-- [ 82921] = 2643, -- Bombardment --> Multi-Shot -- FIXME: ABA freezes the client on aura refresh
+	[118922] = 781, -- Posthaste (talent) --> Disengage
+	-- [136634] = 781, -- Narrow Escape (talent) --> Disengage -- XXX: added through DRData (root)
+	-- [ 34720] = { -- Thrill of the Hunt (talent) -- FIXME: ABA freezes the client
+	-- 	19434, -- Aimed Shot
+	-- 	 2643, -- Multi-Shot
+	-- 	 3044, -- Arcane Shot
+	-- },
+	[162534] = 75, -- Poisoned Ammo --> Auto Shot
+	[162546] = 75, -- Frozen Ammo --> Auto Shot -- TODO: add to snares in Common in ABA
 })
