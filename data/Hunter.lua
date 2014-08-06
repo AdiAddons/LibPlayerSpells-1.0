@@ -20,109 +20,46 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "50400", 6, {
-	COOLDOWN = {
-		   781, -- Disengage
-		 53351, -- Kill Shot
-		109259, -- Powershot
-		120360, -- Barrage
-		120679, -- Dire Beast
-		120697, -- Lynx Rush
-		121818, -- Stampede
-		INTERRUPT = {
-			 26090, -- Pummel (Gorilla)
-			 50318, -- Serenity Dust (Moth)
-			 50479, -- Nether Shock (Nether Ray)
-			147362, -- Counter Shot
-			[34490] = "HARMFUL AURA", -- Silencing Shot
-		},
-		PERSONAL = {
-			[109304] = "SURVIVAL", -- Exhilaration
-			AURA = {
-				[34477] = "UNIQUE_AURA", -- Misdirection
-				[82726] = "POWER_REGEN", -- Fervor
-				SURVIVAL = {
-					  5384, -- Feign Death
-					 19263, -- Deterrence
-					 51755, -- Camouflage
-					148467, -- Deterrence (talented)
-				},
-				BURST = {
-					  3045, -- Rapid Fire
-					 34471, -- The Beast Within
-				},
-			},
-		},
-		["HELPFUL AURA"] = {
-			54216, -- Master's Call
-		},
-		["HARMFUL AURA"] = {
-			  3355, -- Freezing Trap
-			  3674, -- Black Arrow
-			 13813, -- Explosive Trap
-			 19386, -- Wyvern Sting
-			 19503, -- Scatter Shot
-			 19577, -- Intimidation
-			 20736, -- Distracting Shot
-			109248, -- Binding Shot
-			117050, -- Glaive Toss
-			131894, -- A Murder of Crows
-		},
-	},
-	AURA = {
-		PERSONAL = {
-			 53220, -- Steady Focus (buff)
-			 56343, -- Lock and Load
-			 82925, -- Ready, Set, Aim...
-			 82692, -- Focus Fire
-		},
-		HARMFUL = {
-			  1978, -- Serpent String
-			118253, -- Serpent String
-			[1130] = "UNIQUE_AURA", -- Hunter's Mark
-		},
-		PET = {
-			   136, -- Mend Pet
-			 19615, -- Frenzy
-			118455, -- Beast Cleave (buff)
-		},
-	},
+lib:__RegisterSpells("HUNTER", "60000", 1, {
 	RAIDBUFF = {
-		[ 19506] = "ATK_POWER",   -- Trueshot Aura
-		[ 24604] = "CRITICAL",    -- Furious Howl
-		[ 90309] = "CRITICAL",    -- Terrifying Roar
-		[ 90355] = "BURST_HASTE", -- Ancient Hysteria
-		[ 90363] = "STATS",       -- Embrace of the Shale Spider
-		[ 90364] = "STAMINA" ,    -- Qiraji Fortitude
-		[ 93435] = "MASTERY",     -- Roar of Courage
+		[ 19506] = "ATK_POWER",          -- Trueshot Aura
+		[ 24604] = "CRITICAL",           -- Furious Howl
+		[ 24844] = "MULTISTRIKE",        -- Breath of the Winds
+		[ 34889] = "MULTISTRIKE",        -- Spry Attacks
+		[ 35290] = "VERSATILITY",        -- Indomitable
+		[ 50256] = "STAMINA",            -- Invigorating Roar
+		[ 50518] = "VERSATILITY",        -- Chitinous Armor
+		[ 50519] = "MULTISTRIKE",        -- Sonic Focus
+		[ 57386] = "MULTISTRIKE VERSATILITY", -- Wild Strength
+		[ 58604] = "MULTISTRIKE",        -- Double Bite
+		[ 90309] = "CRITICAL",           -- Terrifying Roar
+		[ 90355] = "BURST_HASTE",        -- Ancient Hysteria
+		[ 90363] = "STATS CRITICAL",     -- Embrace of the Shale Spider
+		[ 90364] = "STAMINA SPL_POWER" , -- Qiraji Fortitude
+		[ 93435] = "MASTERY",            -- Roar of Courage
 		[126309] = "SPL_POWER CRITICAL", -- Still Water
-		[126373] = "CRITICAL",    -- Fearless Roar
-		[128432] = "ATK_SPEED",   -- Cackling Howl
-		[128433] = "ATK_SPEED",   -- Serpent's Swiftness
-		[128997] = "MASTERY",     -- Spirit Beast Blessing
-		[135678] = "SPL_HASTE",   -- Energizing Spores
+		[126373] = "CRITICAL",           -- Fearless Roar
+		[128432] = "HASTE",              -- Cackling Howl
+		[128433] = "SPL_POWER",          -- Serpent's Cunning
+		[128997] = "MASTERY",            -- Spirit Beast Blessing
+		[135678] = "HASTE",              -- Energizing Spores
+		[159988] = "STATS",              -- Bark of the Wild
+		[160003] = "STAMINA HASTE",      -- Flourish
+		[160014] = "STAMINA",            -- Sturdiness
+		[160017] = "STATS",              -- Blessing of Kongs
+		[160039] = "MASTERY",            -- Keen Senses
+		[160045] = "VERSATILITY",        -- Defensive Quills
+		[160052] = "CRITICAL",           -- Strength of the Pack
+		[160073] = "MASTERY",            -- Plainswalking
+		[160074] = "HASTE",              -- Speed of the Swarm
+		[160077] = "STATS VERSATILITY",  -- Strength of the Earth
+		[173035] = "VERSATILITY",        -- Grace
 	},
-	-- Special
-	[ 19801] = "HARMFUL DISPEL", -- Tranquilizing Shot
+	DISPEL = {
+		[19801] = "HARMFUL", -- Tranquilizing Shot
+	},
 }, {
 	-- Map aura to provider
-	[ 19615] =  19623, -- Frenzy
-	[ 34471] =  34692, -- The Beast Within
-	[ 53220] =  53224, -- Steady Focus
-	[ 82925] =  34487, -- Ready, Set, Aim... <= Master Marksman
-	[118455] = 115939, -- Beast Cleave
-	[118253] =   1978, -- Serpent String
-	[ 51755] =  51753, -- Camouflage
-	[ 54216] =  53271, -- Master's Call
-	[  3355] = { -- Freezing Trap
-		 1499,
-		60192, -- Freezing Trap (Trap Launcher)
-	},
 }, {
 	-- Map aura to modified spell(s)
-	[ 53220] = 56641, -- Steady Focus => Steady Shot
-	[ 56343] = 53301, -- Lock and Load => Explosive Shot
-	[ 82925] = 19434, -- Ready, Set, Aim... => Aimed Shot
-	[118455] =  2643, -- Beast Cleave => Multishot
-	[ 34471] = 19574, -- The Beast Within => Bestial Wrath
 })
