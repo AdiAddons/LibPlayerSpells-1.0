@@ -20,16 +20,4 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0", true)
 if not lib then return end
-lib:__RegisterSpells("TRADESKILL", "50400", 1, {
-	["PERSONAL COOLDOWN AURA"] = {
-		-- Lifeblood (9 ranks)
-		 55428,
-		 55480,
-		 55500,
-		 55501,
-		 55502,
-		 55503,
-		 74497,
-		121279,
-	},
-})
+lib:__RegisterSpells("TRADESKILL", "60000", 1, {})
