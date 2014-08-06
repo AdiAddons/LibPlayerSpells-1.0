@@ -21,6 +21,51 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("HUNTER", "60000", 1, {
+	COOLDOWN = {
+		[147362] = "INTERRUPT", -- Counter Shot
+		    781, -- Disengage
+		   6991, -- Feed Pet
+		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
+		AURA = {
+			HARMFUL = {
+				 1462, -- Beast Lore
+				 3674, -- Black Arrow
+				--  5116, -- Concussive Shot -- XXX: added though Common rules in ABA
+				-- 20736, -- Distracting Shot -- XXX: added through DRData (taunt)
+				 53301, -- Explosive Shot
+				-- 13812, -- Explosive Trap -- FIXME: ABA freezes the client on aura refresh
+				--  3355, -- Freezing Trap -- FIXME: ABA freezes the client on aura refresh
+				135299, -- Ice Trap
+				 25809, -- Crippling Poison
+			},
+			HELPFUL = {
+				 13159, -- Aspect of the Pack
+				172106, -- Aspect of the Fox
+				  1462, -- Beast Lore
+				 54216, -- Master's Call
+			},
+			PERSONAL = {
+				   5118, -- Aspect of the Cheetah
+				[157760] = "SURVIVAL", -- Camouflage
+				[148467] = "SURVIVAL", -- Deterrence
+				  -- 56453, -- Lock and Load -- FIXME: ABA freezes the client
+				[  5384] = "SURVIVAL", -- Feign Death
+				  35079, -- Misdirection
+			},
+		},
+	},
+	AURA = {
+		HARMFUL = {
+			-- 118253, -- Serpent Sting -- FIXME: ABA freezes the client
+		},
+		PET = {
+			136, -- Mend Pet -- FIXME: ABA freezes the client on aura refresh
+		},
+		PERSONAL = {
+			6197, -- Eagle Eye
+			1515, -- Tame Beast
+		},
+	},
 	RAIDBUFF = {
 		[ 19506] = "ATK_POWER",          -- Trueshot Aura
 		[ 24604] = "CRITICAL",           -- Furious Howl
@@ -60,6 +105,31 @@ lib:__RegisterSpells("HUNTER", "60000", 1, {
 	},
 }, {
 	-- Map aura to provider
+	-- [118253] = 87935, -- Serpent Sting -- FIXME: ABA freezes the client
+	[157760] = 157754, -- Camouflage
+	-- [ 56453] = 53301, -- Lock and Load <- Explosive Shot -- FIXME: ABA freezes the client
+	-- [ 13812] = { -- FIXME: ABA freezes the client on aura refresh
+	-- 	13813, -- Explosive Trap
+	-- 	82939, -- Explosive Trap (Trap Launcher)
+	-- },
+	-- [  3355] = { -- FIXME: ABA freezes the client on aura refresh
+	-- 	 1499, -- Freezing Trap
+	-- 	60192, -- Freezing Trap (Trap Launcher)
+	-- },
+	[135299] = {
+		13809, -- Ice Trap
+		82941, -- Ice Trap (Trap Launcher)
+	},
+	[ 25809] = {
+		34600, -- Snake Trap
+		82948, -- Snake Trap (Trap Launcher) -- TODO: bugged on BETA currently
+	},
+	[ 54216] = 53271, -- Master's Call
+	[ 35079] = 34477, -- Misdirection
 }, {
 	-- Map aura to modified spell(s)
+	-- [118253] = { -- FIXME: ABA freezes the client
+	-- 	3044, -- Arcane Shot
+	-- 	2643, -- Multi-Shot
+	-- },
 })
