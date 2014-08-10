@@ -22,11 +22,27 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("MAGE", "50400", 4, {
 	COOLDOWN = {
-		[ 475] = "HELPFUL DISPEL", -- Remove Curse
-		[2139] = "INTERRUPT", -- Counterspell
-		['PERSONAL SURVIVAL AURA']= {
-			45438, -- Ice Block
+		INTERRUPT = {
+			2139, -- Counterspell
 		},
+		AURA = {
+			PERSONAL = {
+				BURST = {
+					 12472, -- Icy Veins
+					110909, -- Alter Time
+				},
+				SURVIVAL = {
+					 45438, -- Ice Block
+					115610, -- Temporal Shield
+					 11426, -- Ice Barrier
+				}
+			}
+		}
+	},
+	DISPEL = {
+		["COOLDOWN HELPFUL"] = {
+			475, -- Remove Curse
+		}
 	},
 	RAIDBUFF = {
 		[ 1459] = 'SPL_POWER CRITICAL', -- Arcane Brillance
@@ -38,6 +54,15 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 			 79683, -- Arcane Missles!
 			112965, -- Fingers of Frost
 			 44549, -- Brain Freeze
+			116257, -- Invoker's Energy
+			  7302, -- Frost Armor
+			  6117, -- Mage Armor
+			 30482, -- Molten Armor
+			108843, -- Blazing Speed
+			108839, -- Ice Floes
+		},
+		HELPFUL = {
+			[130] = "UNIQUE_AURA", -- Slow Fall
 		},
 		HARMFUL = {
 			 44457, -- Living Bomb
@@ -48,9 +73,11 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 	},
 }, {
 	-- Map aura to provider
+	[12472] = 131078,
 }, {
 	-- Map aura to modified spell(s)
-	[ 79683] =  5143, -- Arcane Missles! => Arcane Missles
-	[112965] = 30455, -- Fingers of Frost => Ice Lance
-	[ 44549] = 44614, -- Brain Freeze => Frostfire Bolt
+	[ 79683] =   5143, -- Arcane Missles! => Arcane Missles
+	[112965] =  30455, -- Fingers of Frost => Ice Lance
+	[ 44549] =  44614, -- Brain Freeze => Frostfire Bolt
+	[116257] =  12051, -- Invoker's Energy => Evocation
 })
