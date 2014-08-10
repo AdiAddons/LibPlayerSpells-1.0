@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", "50400", 3, {
+lib:__RegisterSpells("MAGE", "50400", 4, {
 	COOLDOWN = {
 		[ 475] = "HELPFUL DISPEL", -- Remove Curse
 		[2139] = "INTERRUPT", -- Counterspell
@@ -33,8 +33,24 @@ lib:__RegisterSpells("MAGE", "50400", 3, {
 		[61316] = 'SPL_POWER CRITICAL', -- Dalarance Brillance
 		[80353] = 'BURST_HASTE',        -- Time Warp
 	},
+	AURA = {
+		PERSONAL = {
+			 79683, -- Arcane Missles!
+			112965, -- Fingers of Frost
+			 44549, -- Brain Freeze
+		},
+		HARMFUL = {
+			 44457, -- Living Bomb
+			114923, -- Nether Tempest
+			112948, -- Frost Bomb
+			 11129, -- Combustion
+		},
+	},
 }, {
 	-- Map aura to provider
 }, {
 	-- Map aura to modified spell(s)
+	[ 79683] =  5143, -- Arcane Missles! => Arcane Missles
+	[112965] = 30455, -- Fingers of Frost => Ice Lance
+	[ 44549] = 44614, -- Brain Freeze => Frostfire Bolt
 })
