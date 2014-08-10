@@ -30,6 +30,7 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 				BURST = {
 					 12472, -- Icy Veins
 					110909, -- Alter Time
+					 12042, -- Arcane Power
 				},
 				SURVIVAL = {
 					 45438, -- Ice Block
@@ -54,12 +55,13 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 			 79683, -- Arcane Missles!
 			112965, -- Fingers of Frost
 			 44549, -- Brain Freeze
-			116257, -- Invoker's Energy
 			  7302, -- Frost Armor
 			  6117, -- Mage Armor
 			 30482, -- Molten Armor
 			108843, -- Blazing Speed
 			108839, -- Ice Floes
+			 12043, -- Presence of Mind
+			 48108, -- Pyroblast!
 		},
 		HELPFUL = {
 			[130] = "UNIQUE_AURA", -- Slow Fall
@@ -79,5 +81,5 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 	[ 79683] =   5143, -- Arcane Missles! => Arcane Missles
 	[112965] =  30455, -- Fingers of Frost => Ice Lance
 	[ 44549] =  44614, -- Brain Freeze => Frostfire Bolt
-	[116257] =  12051, -- Invoker's Energy => Evocation
+	 [48108] = 11366, -- Pyroblast! => Pyroblast
 })
