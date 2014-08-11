@@ -97,11 +97,7 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 	[131078] =  12472,
 	[ 57761] =  44614,
 	[ 44544] =  30455,
+	[79683] =   5143, -- Arcane Missles! => Arcane Missles
 }, {
 	-- Map aura to modified spell(s)
-	[79683] =   5143, -- Arcane Missles! => Arcane Missles
-	[44544] =  30455, -- Fingers of Frost => Ice Lance
-	[57761] =  44614, -- Brain Freeze => Frostfire Bolt
-	[48108] =  11366, -- Pyroblast! => Pyroblast
-	[12654] =  11129, -- Ignite => Combustion
 })
