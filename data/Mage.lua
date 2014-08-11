@@ -90,14 +90,13 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 	},
 }, {
 	-- Map aura to provider
-	[ 12472] = 131078,
 	[116257] =  12051, -- Invoker's Energy <= Invocation
-	[110960] = 110959,
+	[110960] = 110959, -- Greater Invisibility (buff) => Greater Invisibility (spellbook)
 	[ 32612] =     66, -- Invisible buff to Invisibility
-	[131078] =  12472,
-	[ 57761] =  44614,
-	[ 44544] =  30455,
-	[79683] =   5143, -- Arcane Missles! => Arcane Missles
+	[131078] =  12472, -- Icy Veins (buff) => Icy Veins (spellbook)
+	[ 57761] =  44614, -- Brain Freeze => Frostfire Bolt
+	[ 44544] =  30455, -- Fingers of Frost => Ice Lance
+	[ 79683] =   5143, -- Arcane Missles! => Arcane Missles
 }, {
 	-- Map aura to modified spell(s)
 })
