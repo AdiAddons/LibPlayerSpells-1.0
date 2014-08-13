@@ -40,8 +40,8 @@ lib:__RegisterSpells("WARRIOR", "50400", 5, {
                 23920,  -- Spell Reflect
                 114206, -- Skull Banner
                 32216,  -- Victory Rush Countdown
-                469,    -- Commanding Shout
-                6673,   -- Battle Shout
+                -- 469,    -- Commanding Shout
+                -- 6673,   -- Battle Shout
                 118038, -- Die By The Sword
                 12328,  -- Sweeping Strikes
                 46924,  -- Bladestorm
