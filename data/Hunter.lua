@@ -65,7 +65,6 @@ lib:__RegisterSpells("HUNTER", "60000", 2, {
 			PERSONAL = {
 				   5118, -- Aspect of the Cheetah
 				[ 51755] = "SURVIVAL", -- Camouflage
-				[157760] = "SURVIVAL", -- Camouflage (with Improved Camouflage)
 				[148467] = "SURVIVAL", -- Deterrence
 				  56453, -- Lock and Load
 				[  5384] = "SURVIVAL", -- Feign Death
@@ -139,7 +138,6 @@ lib:__RegisterSpells("HUNTER", "60000", 2, {
 	-- Map aura to provider
 	[118253] =   3044, -- Serpent Sting <= Arcane Shot
 	[ 51755] =  51753, -- Camouflage
-	[157760] = 157753, -- Camouflage <-- Improved Camouflage
 	[ 56453] = 53301, -- Lock and Load <- Explosive Shot
 	[ 13812] = {
 		13813, -- Explosive Trap
@@ -175,7 +173,6 @@ lib:__RegisterSpells("HUNTER", "60000", 2, {
 		3044, -- Arcane Shot
 		2643, -- Multi-Shot
 	},
-	[157760] = 157754, -- Camouflage (with Improved Camouflage)
 	[ 53257] = 3044, -- Cobra Strikes --> Arcane Shot
 	[ 82921] = 2643, -- Bombardment --> Multi-Shot
 	[118922] = 781, -- Posthaste (talent) --> Disengage
