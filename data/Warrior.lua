@@ -40,8 +40,8 @@ lib:__RegisterSpells("WARRIOR", "50400", 5, {
                 23920,  -- Spell Reflect
                 114206, -- Skull Banner
                 32216,  -- Victory Rush Countdown
-                -- 469,    -- Commanding Shout
-                -- 6673,   -- Battle Shout
+                469,    -- Commanding Shout
+                6673,   -- Battle Shout
                 118038, -- Die By The Sword
                 12328,  -- Sweeping Strikes
                 46924,  -- Bladestorm
@@ -49,6 +49,7 @@ lib:__RegisterSpells("WARRIOR", "50400", 5, {
                 1719,   -- Recklessness
                 107574, -- Avatar
                 139958, -- Sudden Execute
+				122510, -- Ultimatum
                 122286, -- Savage Defense (Symbiosis - Prot)
             },
             HELPFUL = {
@@ -74,8 +75,8 @@ lib:__RegisterSpells("WARRIOR", "50400", 5, {
         },
     },
     RAIDBUFF = {
-        [469] = 'STAMINA',    -- Commanding Shout
-        [6673] = 'ATK_POWER', -- Battle Shout
+        -- [469] = 'STAMINA',    -- Commanding Shout
+        -- [6673] = 'ATK_POWER', -- Battle Shout
     },
 }, {
     -- Map aura to provider
@@ -92,6 +93,7 @@ lib:__RegisterSpells("WARRIOR", "50400", 5, {
     [113344] = 12292,             -- Bloodbath (dot tracking)
     -- [137637] = 100,            -- Warbringer Slow (Charge)
     [105771] = 100,               -- Warbringer Root (Charge)
+	[122510] = 78,                -- Ultimatum
 	[139958] = 7384,              -- Sudden Execute
 }, {
     -- Map aura to modified spell(s)
