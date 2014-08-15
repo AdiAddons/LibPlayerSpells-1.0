@@ -120,7 +120,7 @@ lib:__RegisterSpells("HUNTER", "60000", 2, {
 		[128997] = "MASTERY",            -- Spirit Beast Blessing
 		[135678] = "HASTE",              -- Energizing Spores
 		[159988] = "STATS",              -- Bark of the Wild
-		[160003] = "STAMINA HASTE",      -- Flourish
+		[160003] = "STAMINA HASTE",      -- Savage Vigor
 		[160014] = "STAMINA",            -- Sturdiness
 		[160017] = "STATS",              -- Blessing of Kongs
 		[160039] = "MASTERY",            -- Keen Senses
@@ -129,6 +129,7 @@ lib:__RegisterSpells("HUNTER", "60000", 2, {
 		[160073] = "MASTERY",            -- Plainswalking
 		[160074] = "HASTE",              -- Speed of the Swarm
 		[160077] = "STATS VERSATILITY",  -- Strength of the Earth
+		[160452] = "BURST_HASTE",        -- Netherwinds
 		[173035] = "VERSATILITY",        -- Grace
 	},
 	DISPEL = {
