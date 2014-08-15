@@ -49,7 +49,7 @@ lib:__RegisterSpells("WARRIOR", "50400", 5, {
                 1719,   -- Recklessness
                 107574, -- Avatar
                 139958, -- Sudden Execute
-				122510, -- Ultimatum
+                122510, -- Ultimatum
                 122286, -- Savage Defense (Symbiosis - Prot)
             },
             HELPFUL = {
@@ -93,8 +93,8 @@ lib:__RegisterSpells("WARRIOR", "50400", 5, {
     [113344] = 12292,             -- Bloodbath (dot tracking)
     -- [137637] = 100,            -- Warbringer Slow (Charge)
     [105771] = 100,               -- Warbringer Root (Charge)
-	[122510] = 78,                -- Ultimatum
-	[139958] = 7384,              -- Sudden Execute
+    [122510] = 78,                -- Ultimatum
+    [139958] = 7384,              -- Sudden Execute
 }, {
     -- Map aura to modified spell(s)
 })
