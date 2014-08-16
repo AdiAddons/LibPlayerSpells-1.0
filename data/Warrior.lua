@@ -62,7 +62,6 @@ lib:__RegisterSpells("WARRIOR", "50400", 6, {
                                 -- 145672, -- Riposte
                                 --  50227, -- Sword and Board
                                 --  93098, -- Vengeance
-                                --  34428, -- Victory Rush (Melee Strike)
                         },
                         HELPFUL = {
                                   6673, -- Battle Shout
@@ -86,6 +85,7 @@ lib:__RegisterSpells("WARRIOR", "50400", 6, {
                                    355, -- Taunt
                                 105771, -- Warbringer Root
                                 137637, -- Warbringer Slow
+                                -- 676, -- Disarm
                         },
                 },
         },
@@ -102,6 +102,7 @@ lib:__RegisterSpells("WARRIOR", "50400", 6, {
                         115804, -- Mortal Wounds
                         --   1715, -- Hamstring
                         --  12323, -- Piercing Howl
+                        --  86346, -- Physical Vulnerability
                         --   6343, -- Thunder Clap
                         -- 113746, -- Weakened Armor
                         -- 115798, -- Weakened Blows
@@ -127,12 +128,15 @@ lib:__RegisterSpells("WARRIOR", "50400", 6, {
         [132168] =                   46968, -- Shockwave Stun
         [132169] =                  107570, -- Stormbolt Stun
         [139958] =                    7384, -- Sudden Execute, Execute => Free Overpower
-        [122510] =                      78, -- Ultimatum, Shield Slam => Free Heroic Strike
+        [122510] =            { 78, 845, }, -- Ultimatum, Shield Slam => Free Heroic Strike, Cleave
         [ 32216] =      { 34428, 103840, }, -- Victorius, Killing Blow => Victory Rush, Impending Victory
         [105771] =                     100, -- Warbringer Root (Charge)
+        -- [113746] =                    7386, -- Weakened Armor, Sunder
         -- [137637] =                     100, -- Warbringer Slow (Charge)
 
 }, {
     -- Map aura to modified spell(s)
-        -- [ 50227] = 23922,                 -- Sword and Board, Devastate => Shield Slam
+        -- [ 50227] =                   23922, -- Sword and Board, Devastate => Shield Slam
+        -- [ 12328] =                    1464, -- Sweeping Strikes => Slam
+        -- [ 86346] =                    1464, -- Colossus Smash => Slam
 })
