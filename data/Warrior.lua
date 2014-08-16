@@ -64,8 +64,8 @@ lib:__RegisterSpells("WARRIOR", "50400", 6, {
                                 --  93098, -- Vengeance
                         },
                         HELPFUL = {
-                                  6673, -- Battle Shout
-                                   469, -- Commanding Shout
+                                --  6673, -- Battle Shout
+                                --   469, -- Commanding Shout
                                   3411, -- Intervene
                                 114028, -- Mass Spell Reflection
                                  97463, -- Rallying Cry
@@ -109,8 +109,8 @@ lib:__RegisterSpells("WARRIOR", "50400", 6, {
                 },
         },
         RAIDBUFF = {
-                -- [6673] = 'ATK_POWER', -- Battle Shout
-                -- [ 469] = 'STAMINA',   -- Commanding Shout
+                [6673] = 'ATK_POWER', -- Battle Shout
+                [ 469] = 'STAMINA',   -- Commanding Shout
         },
 }, {
     -- Map aura to provider
