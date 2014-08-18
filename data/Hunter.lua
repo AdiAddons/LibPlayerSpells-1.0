@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 2, {
+lib:__RegisterSpells("HUNTER", "60000", 3, {
 	COOLDOWN = {
 		[147362] = "INTERRUPT", -- Counter Shot
 		    781, -- Disengage
@@ -65,7 +65,6 @@ lib:__RegisterSpells("HUNTER", "60000", 2, {
 			PERSONAL = {
 				   5118, -- Aspect of the Cheetah
 				[ 51755] = "SURVIVAL", -- Camouflage
-				[157760] = "SURVIVAL", -- Camouflage (with Improved Camouflage)
 				[148467] = "SURVIVAL", -- Deterrence
 				  56453, -- Lock and Load
 				[  5384] = "SURVIVAL", -- Feign Death
@@ -121,7 +120,7 @@ lib:__RegisterSpells("HUNTER", "60000", 2, {
 		[128997] = "MASTERY",            -- Spirit Beast Blessing
 		[135678] = "HASTE",              -- Energizing Spores
 		[159988] = "STATS",              -- Bark of the Wild
-		[160003] = "STAMINA HASTE",      -- Flourish
+		[160003] = "STAMINA HASTE",      -- Savage Vigor
 		[160014] = "STAMINA",            -- Sturdiness
 		[160017] = "STATS",              -- Blessing of Kongs
 		[160039] = "MASTERY",            -- Keen Senses
@@ -130,6 +129,7 @@ lib:__RegisterSpells("HUNTER", "60000", 2, {
 		[160073] = "MASTERY",            -- Plainswalking
 		[160074] = "HASTE",              -- Speed of the Swarm
 		[160077] = "STATS VERSATILITY",  -- Strength of the Earth
+		[160452] = "BURST_HASTE",        -- Netherwinds
 		[173035] = "VERSATILITY",        -- Grace
 	},
 	DISPEL = {
@@ -139,7 +139,6 @@ lib:__RegisterSpells("HUNTER", "60000", 2, {
 	-- Map aura to provider
 	[118253] =   3044, -- Serpent Sting <= Arcane Shot
 	[ 51755] =  51753, -- Camouflage
-	[157760] = 157753, -- Camouflage <-- Improved Camouflage
 	[ 56453] = 53301, -- Lock and Load <- Explosive Shot
 	[ 13812] = {
 		13813, -- Explosive Trap
@@ -175,7 +174,6 @@ lib:__RegisterSpells("HUNTER", "60000", 2, {
 		3044, -- Arcane Shot
 		2643, -- Multi-Shot
 	},
-	[157760] = 157754, -- Camouflage (with Improved Camouflage)
 	[ 53257] = 3044, -- Cobra Strikes --> Arcane Shot
 	[ 82921] = 2643, -- Bombardment --> Multi-Shot
 	[118922] = 781, -- Posthaste (talent) --> Disengage
