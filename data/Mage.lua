@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", "50400", 4, {
+lib:__RegisterSpells("MAGE", "50400", 5, {
 	COOLDOWN = {
 		INTERRUPT = {
 			  2139, -- Counterspell
@@ -28,18 +28,21 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 		},
 		AURA = {
 			PERSONAL = {
+				[12051] = "MANA_REGEN", -- Evocation
 				BURST = {
-					 12472, -- Icy Veins
-					110909, -- Alter Time
-					 12042, -- Arcane Power
+					12472, -- Icy Veins
+					12042, -- Arcane Power
 				},
 				SURVIVAL = {
+					[ 1463] = "MANA_REGEN", -- Incanter's Ward
 					 45438, -- Ice Block
 					115610, -- Temporal Shield
 					 11426, -- Ice Barrier
 					 86949, -- Cauterize
-					  1463, -- Incanter's Ward
+					 11958, -- Cold Snap
+					 55342, -- Mirror Image
 				},
+				110909, -- Alter Time
 				108843, -- Blazing Speed
 				108839, -- Ice Floes
 				 12043, -- Presence of Mind
@@ -47,8 +50,10 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 				 32612, -- Invisibility
 				110959, -- Greater Invisibility (spellbook)
 				110960, -- Greater Invisibility (buff)
-			}
-		}
+			},
+		},
+		84714, -- Frozen Orb
+		31687, -- Summon Water Elemental
 	},
 	DISPEL = {
 		["COOLDOWN HELPFUL"] = {
@@ -59,9 +64,9 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 		},
 	},
 	RAIDBUFF = {
-		[ 1459] = 'SPL_POWER CRITICAL', -- Arcane Brillance
-		[61316] = 'SPL_POWER CRITICAL', -- Dalarance Brillance
-		[80353] = 'BURST_HASTE',        -- Time Warp
+		[ 1459] = "SPL_POWER CRITICAL", -- Arcane Brillance
+		[61316] = "SPL_POWER CRITICAL", -- Dalaran Brillance
+		[80353] = "BURST_HASTE",        -- Time Warp
 	},
 	AURA = {
 		PERSONAL = {
@@ -71,6 +76,8 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 			  7302, -- Frost Armor
 			  6117, -- Mage Armor
 			 30482, -- Molten Armor
+			112965, -- Fingers of Frost
+			 48107, -- Heating Up
 			 48108, -- Pyroblast!
 			 12051, -- Invocation / Rune of Power
 			116257, -- Invoker's Energy
@@ -81,11 +88,21 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 			111264, -- Ice Ward
 		},
 		HARMFUL = {
+			 44572, -- Deep Freeze
+			 31589, -- Slow
 			 44457, -- Living Bomb
 			114923, -- Nether Tempest
 			112948, -- Frost Bomb
 			 11129, -- Combustion
 			 12654, -- Ignite (Fire Mastery)
+			CROWD_CTL = {
+				  118, -- Polymorph
+				28271, -- Polymorph: Pig
+				28271, -- Polymorph: Turtle
+				61305, -- Polymorph: Black Cat
+				61721, -- Polymorph: Rabbit
+				61780, -- Polymorph: Turkey
+			},
 		},
 	},
 }, {
@@ -99,4 +116,11 @@ lib:__RegisterSpells("MAGE", "50400", 4, {
 	[ 79683] =   5143, -- Arcane Missles! => Arcane Missles
 }, {
 	-- Map aura to modified spell(s)
+	[112965] = { -- Fingers of Frost =>
+		30455, -- Ice Lance
+		44572, -- Deep Freeze
+	},
+	[48107] = 108853, -- Heating Up => Inferno Blast
+	[48108] =  11366, -- Pyroblast! => Pyroblast
+	[12654] =  11129, -- Ignite => Combustion
 })
