@@ -59,13 +59,13 @@ lib:__RegisterSpells("PALADIN", "50400", 5, {
 		},
 	},
 	AURA = {
+		PERSONAL = {
+			 84963, -- Inquisition
+			 86700, -- Ancient Power
+			 31868, -- Supplication
+			114250, -- Selfless Healer
+		},
 		HELPFUL = {
-			PERSONAL = {
-				 84963, -- Inquisition
-				 86700, -- Ancient Power
-				 31868, -- Supplication
-				114250, -- Selfless Healer
-			},
 			  1044, -- Hand of Freedom
 			 20925, -- Sacred Shield
 			 53563, -- Beacon of Light
