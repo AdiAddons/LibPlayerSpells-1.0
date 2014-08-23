@@ -111,7 +111,8 @@ lib:__RegisterSpells("HUNTER", "50400", 6, {
 	[ 34471] =  34692, -- The Beast Within
 	[ 53220] =  53224, -- Steady Focus
 	[ 82925] =  34487, -- Ready, Set, Aim... <= Master Marksman
-	[ 56453] = 53301, -- Lock and Load => Explosive Shot
+	[ 56453] =  53301, -- Lock and Load => Explosive Shot
+	[ 34720] =   3044, -- Thrill of the Hunt => Arcane Shot
 	[118455] = 115939, -- Beast Cleave
 	[118253] =   1978, -- Serpent String
 	[ 51755] =  51753, -- Camouflage
