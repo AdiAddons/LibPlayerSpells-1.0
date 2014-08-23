@@ -72,9 +72,10 @@ lib:__RegisterSpells("HUNTER", "50400", 6, {
 	AURA = {
 		PERSONAL = {
 			 53220, -- Steady Focus (buff)
-			 56343, -- Lock and Load
+			 56453, -- Lock and Load
 			 82925, -- Ready, Set, Aim...
 			 82692, -- Focus Fire
+			 34720, -- Thrill of the Hunt
 		},
 		HARMFUL = {
 			  1978, -- Serpent String
@@ -110,6 +111,7 @@ lib:__RegisterSpells("HUNTER", "50400", 6, {
 	[ 34471] =  34692, -- The Beast Within
 	[ 53220] =  53224, -- Steady Focus
 	[ 82925] =  34487, -- Ready, Set, Aim... <= Master Marksman
+	[ 56453] = 53301, -- Lock and Load => Explosive Shot
 	[118455] = 115939, -- Beast Cleave
 	[118253] =   1978, -- Serpent String
 	[ 51755] =  51753, -- Camouflage
@@ -121,8 +123,9 @@ lib:__RegisterSpells("HUNTER", "50400", 6, {
 }, {
 	-- Map aura to modified spell(s)
 	[ 53220] = 56641, -- Steady Focus => Steady Shot
-	[ 56343] = 53301, -- Lock and Load => Explosive Shot
+	[ 56453] = 53301, -- Lock and Load => Explosive Shot
 	[ 82925] = 19434, -- Ready, Set, Aim... => Aimed Shot
 	[118455] =  2643, -- Beast Cleave => Multishot
 	[ 34471] = 19574, -- The Beast Within => Bestial Wrath
+	[ 34720] =  3044, -- Thrill of the Hunt => Arcane Shot
 })
