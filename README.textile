@@ -130,7 +130,7 @@ h4. Miscellanous
 
 h2. Acknowledgment
 
-Thanks to "ckaotik":https://github.com/ckaotik and "Rainrider":https://github.com/Rainrider for testing and their contributons to class spells.
+Thanks to "ckaotik":https://github.com/ckaotik, "Rainrider":https://github.com/Rainrider, "mjmurray88":https://github.com/mjmurray88, "arcadepro":https://github.com/arcadepro for testing and their contributons to class spells.
 
 h2. License
 
