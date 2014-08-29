@@ -1,6 +1,6 @@
 --[[
 LibPlayerSpells-1.0 - Additional information about player spells.
-(c) 2013 Adirelle (adirelle@gmail.com)
+(c) 2013-2014 Adirelle (adirelle@gmail.com)
 
 This file is part of LibPlayerSpells-1.0.
 
@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 3, {
+lib:__RegisterSpells("HUNTER", "60000", 4, {
 	COOLDOWN = {
 		[147362] = "INTERRUPT", -- Counter Shot
 		    781, -- Disengage
@@ -98,39 +98,65 @@ lib:__RegisterSpells("HUNTER", "60000", 3, {
 		},
 	},
 	RAIDBUFF = {
-		[ 19506] = "ATK_POWER",          -- Trueshot Aura
-		[ 24604] = "CRITICAL",           -- Furious Howl
-		[ 24844] = "MULTISTRIKE",        -- Breath of the Winds
-		[ 34889] = "MULTISTRIKE",        -- Spry Attacks
-		[ 35290] = "VERSATILITY",        -- Indomitable
-		[ 50256] = "STAMINA",            -- Invigorating Roar
-		[ 50518] = "VERSATILITY",        -- Chitinous Armor
-		[ 50519] = "MULTISTRIKE",        -- Sonic Focus
+		ATK_POWER = {
+			19506, -- Trueshot Aura
+		},
+		BURST_HASTE = {
+			 90355, -- Ancient Hysteria
+			160452, -- Netherwinds
+		},
+		CRITICAL = {
+			 24604, -- Furious Howl
+			 90309, -- Terrifying Roar
+			126373, -- Fearless Roar
+			160052, -- Strength of the Pack
+			160200, -- Lone Wolf: Ferocity of the Raptor
+		},
+		HASTE = {
+			128432, -- Cackling Howl
+			135678, -- Energizing Spores
+			160074, -- Speed of the Swarm
+			160203, -- Lone Wolf: Haste of the Hyena
+		},
+		MASTERY = {
+			 93435, -- Roar of Courage
+			128997, -- Spirit Beast Blessing
+			160039, -- Keen Senses
+			160073, -- Plainswalking
+			160198, -- Lone Wolf: Grace of the Cat
+		},
+		MULTISTRIKE = {
+			24844, -- Breath of the Winds
+			34889, -- Spry Attacks
+			50519, -- Sonic Focus
+			58604, -- Double Bite
+		},
+		SPL_POWER = {
+			128433, -- Serpent's Cunning
+			160205, -- Lone Wolf: Wisdom of the Serpent
+		},
+		STAMINA = {
+			 50256, -- Invigorating Roar
+			160014, -- Sturdiness
+			160199, -- Lone Wolf: Fortitude of the Bear
+		},
+		STATS = {
+			159988, -- Bark of the Wild
+			160017, -- Blessing of Kongs
+			160206, -- Lone Wolf: Power of the Primates
+		},
+		VERSATILITY = {
+			 35290, -- Indomitable
+			 50518, -- Chitinous Armor
+			160045, -- Defensive Quills
+			173035, -- Grace
+		},
 		[ 57386] = "MULTISTRIKE VERSATILITY", -- Wild Strength
-		[ 58604] = "MULTISTRIKE",        -- Double Bite
-		[ 90309] = "CRITICAL",           -- Terrifying Roar
-		[ 90355] = "BURST_HASTE",        -- Ancient Hysteria
 		[ 90363] = "STATS CRITICAL",     -- Embrace of the Shale Spider
 		[ 90364] = "STAMINA SPL_POWER" , -- Qiraji Fortitude
-		[ 93435] = "MASTERY",            -- Roar of Courage
 		[126309] = "SPL_POWER CRITICAL", -- Still Water
-		[126373] = "CRITICAL",           -- Fearless Roar
-		[128432] = "HASTE",              -- Cackling Howl
-		[128433] = "SPL_POWER",          -- Serpent's Cunning
-		[128997] = "MASTERY",            -- Spirit Beast Blessing
-		[135678] = "HASTE",              -- Energizing Spores
-		[159988] = "STATS",              -- Bark of the Wild
 		[160003] = "STAMINA HASTE",      -- Savage Vigor
-		[160014] = "STAMINA",            -- Sturdiness
-		[160017] = "STATS",              -- Blessing of Kongs
-		[160039] = "MASTERY",            -- Keen Senses
-		[160045] = "VERSATILITY",        -- Defensive Quills
-		[160052] = "CRITICAL",           -- Strength of the Pack
-		[160073] = "MASTERY",            -- Plainswalking
-		[160074] = "HASTE",              -- Speed of the Swarm
 		[160077] = "STATS VERSATILITY",  -- Strength of the Earth
-		[160452] = "BURST_HASTE",        -- Netherwinds
-		[173035] = "VERSATILITY",        -- Grace
 	},
 	DISPEL = {
 		[19801] = "HARMFUL", -- Tranquilizing Shot
