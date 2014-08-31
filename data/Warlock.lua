@@ -1,6 +1,6 @@
 --[[
 LibPlayerSpells-1.0 - Additional information about player spells.
-(c) 2013 Adirelle (adirelle@gmail.com)
+(c) 2013-2014 Adirelle (adirelle@gmail.com)
 
 This file is part of LibPlayerSpells-1.0.
 
@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "50400", 5, {
+lib:__RegisterSpells("WARLOCK", "50400", 6, {
 	COOLDOWN = {
 		  1122, -- Summon Infernal
 		 18540, -- Summon Doomguard
@@ -79,8 +79,10 @@ lib:__RegisterSpells("WARLOCK", "50400", 5, {
 	},
 	AURA = {
 		PERSONAL = {
+			104232, -- Rain of fire
 			108559, -- Demonic Rebirth
 			108563, -- Backlash
+			111400, -- Burning Rush (talent)
 			114635, -- Ember Tap
 			117828, -- Backdraft (buff)
 			122351, -- Molten Core

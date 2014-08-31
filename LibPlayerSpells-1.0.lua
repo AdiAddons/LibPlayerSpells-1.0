@@ -1,6 +1,6 @@
 --[[
 LibPlayerSpells-1.0 - Additional information about player spells.
-(c) 2013 Adirelle (adirelle@gmail.com)
+(c) 2013-2014 Adirelle (adirelle@gmail.com)
 
 This file is part of LibPlayerSpells-1.0.
 
@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR = "LibPlayerSpells-1.0", 2
+local MAJOR, MINOR = "LibPlayerSpells-1.0", 3
 local lib = LibStub:NewLibrary(MAJOR, MINOR)
 if not lib then return end
 
@@ -190,6 +190,11 @@ local providers = lib.__providers
 lib.__modifiers = lib.__modifiers or {}
 local modifiers = lib.__modifiers
 
+-- Spell to category map.
+-- Indicate which category defined a spell.
+lib.__sources = lib.__sources or {}
+local sources = lib.__sources
+
 local function ParseFilter(filter)
 	local flags = 0
 	for word in filter:gmatch("[%a_]+") do
@@ -280,7 +285,7 @@ local function FilterIterator(tester, spellId)
 	repeat
 		spellId, flags = next(spells, spellId)
 		if spellId and tester(flags) then
-			return spellId, flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId]
+			return spellId, flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId], sources[spellId]
 		end
 	until not spellId
 end
@@ -313,7 +318,7 @@ end
 function lib:GetSpellInfo(spellId)
 	local flags = spellId and spells[spellId]
 	if flags then
-		return flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId]
+		return flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId], sources[spellId]
 	end
 end
 
@@ -373,6 +378,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		providers[spellId] = nil
 		modifiers[spellId] = nil
 		raidbuffs[spellId] = nil
+		sources[spellId] = nil
 	end
 
 	-- Flatten the spell definitions
@@ -400,6 +406,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		end
 
 		db[spellId] = bor(db[spellId] or 0, flags, categoryFlags)
+		sources[spellId] = category
 	end
 
 	-- Consistency checks
