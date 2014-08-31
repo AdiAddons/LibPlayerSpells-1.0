@@ -102,14 +102,14 @@ lib:__RegisterSpells("ROGUE", "50400", 4, {
 }, {
 	-- Map aura to modified spell(s)
 	[51713] = 8676, -- Shadow Dance => Ambush
-	[121471] = { -- Shadow Blades =>
-		 1752, -- Sinister Strike
-		84617, -- Revealing Strike
-		51723, -- Fan of Knives
-		 1833, -- Cheap Shot
-		 8676, -- Ambush
-		  703, -- Garrote
-	},
+--	[121471] = { -- Shadow Blades =>
+--		 1752, -- Sinister Strike
+--		84617, -- Revealing Strike
+--		51723, -- Fan of Knives
+--		 1833, -- Cheap Shot
+--		 8676, -- Ambush
+--		  703, -- Garrote
+--	},
 })
 
 -- TODO: --
