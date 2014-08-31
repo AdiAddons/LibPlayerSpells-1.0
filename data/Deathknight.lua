@@ -54,6 +54,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 3, {
 					 55233, -- Vampiric Blood
 					113072, -- Might of Ursoc (Symbiosis)
 					115018, -- Desecrated Ground
+					 42650, -- Armoy of the Dead (for damage reduction while chaneling)
 				},
 			},
 		},
@@ -79,6 +80,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 3, {
 		},
 		HELPFUL = {
 			115635, -- Death Barrier
+			 77535, -- Blood Shield
 		},
 		HARMFUL = {
 			 55095, -- Frost Fever
@@ -114,6 +116,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 3, {
 	[ 91802] =  47482, -- Shambling Rush <= Leap (Ghoul)
 	[ 91800] =  47481, -- Gnaw (Ghoul)
 	[ 91797] =  47481, -- Monstrous Blow <= Gnaw (Ghoul)
+	[ 77535] =  49998, -- Blood Shield to Blood Strike
 	-- map spell id to provider?
 	[ 45477] =  58631, -- Icy Touch <= Glyph of Icy Touch
 
