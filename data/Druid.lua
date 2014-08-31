@@ -31,7 +31,7 @@ lib:__RegisterSpells("DRUID", "50400", 7, {
 		102693, -- Force of Nature (restoration)
 		102703, -- Force of Nature (feral)
 		102706, -- Force of Nature (guardian)
-                108288, -- Heart of the Wild (talent pane)
+		108288, -- Heart of the Wild (talent pane)
 		102791, -- Wild Mushroom: Bloom
 		132469, -- Typhoon
 		145205, -- Wild Mushroom (restoration)
@@ -48,10 +48,10 @@ lib:__RegisterSpells("DRUID", "50400", 7, {
 			},
 			PERSONAL = {
 				  1850, -- Dash
-                                108291, -- Heart of the Wild (Balance)
-                                108292, -- Heart of the Wild (Feral)
-                                108293, -- Heart of the Wild (Guardian)
-                                108294, -- Heart of the Wild (Resto)
+				108291, -- Heart of the Wild (Balance)
+				108292, -- Heart of the Wild (Feral)
+				108293, -- Heart of the Wild (Guardian)
+				108294, -- Heart of the Wild (Resto)
 				 16689, -- Nature's Grasp
 				 77761, -- Stampeding Roar (bear)
 				 77764, -- Stampeding Roar (cat)
@@ -140,6 +140,10 @@ lib:__RegisterSpells("DRUID", "50400", 7, {
 	[102543] = 106731, -- Incarnation: King of the Jungle
 	[102558] = 106731, -- Incarnation: Son of Ursoc
 	[102560] = 106731, -- Incarnation: Chosen of Elune
+	[108291] = 108288, -- Heart of the Wild (Balance)
+	[108292] = 108288, -- Heart of the Wild (Feral)
+	[108293] = 108288, -- Heart of the Wild (Guardian)
+	[108294] = 108288, -- Heart of the Wild (Resto)
 	[114108] = 114107, -- Soul of the Forest (restoration)
 	[145151] = 108373, -- Dream of Cenarius (balance)
 	[145152] = 108373, -- Dream of Cenarius (feral)
