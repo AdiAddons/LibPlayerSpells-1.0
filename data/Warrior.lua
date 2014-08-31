@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", "50400", 6, {
+lib:__RegisterSpells("WARRIOR", "50400", 7, {
         POWER_REGEN = {
                   2457, -- Battle Stance
                   2458, -- Berserker Stance
@@ -96,6 +96,7 @@ lib:__RegisterSpells("WARRIOR", "50400", 6, {
                         139958, -- Sudden Execute
                         122510, -- Ultimatum
                          32216, -- Victory Rush Available
+                        122016, -- Glyph of Incite
                 },
                 HARMFUL = {
                         115767, -- Deep Wounds
@@ -129,6 +130,7 @@ lib:__RegisterSpells("WARRIOR", "50400", 6, {
         [132169] =                  107570, -- Stormbolt Stun
         [139958] =                    7384, -- Sudden Execute, Execute => Free Overpower
         [122510] =            { 78, 845, }, -- Ultimatum, Shield Slam => Free Heroic Strike, Cleave
+        [122016] =            { 78, 845, }, -- Incite, Demoralizing Shout => Free Heroic Strike, Cleave
         [ 32216] =      { 34428, 103840, }, -- Victorius, Killing Blow => Victory Rush, Impending Victory
         [105771] =                     100, -- Warbringer Root (Charge)
         -- [113746] =                    7386, -- Weakened Armor, Sunder
