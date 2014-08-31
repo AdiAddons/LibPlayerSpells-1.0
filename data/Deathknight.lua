@@ -70,6 +70,10 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 4, {
 			 51124, -- Killing Machine
 			 59052, -- Freezing Fog
 			 81340, -- Sudden Doom
+			 -- Presences since there's no default highlight on which is active
+			 48263, -- Blood Presence
+			 48266, -- Frost Presence
+			 48265, -- Unholy Presence
 		},
 		PET = {
 			  91342, -- Shadow Infusion
