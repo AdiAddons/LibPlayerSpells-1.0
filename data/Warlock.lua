@@ -84,6 +84,8 @@ lib:__RegisterSpells("WARLOCK", "50400", 5, {
 			114635, -- Ember Tap
 			117828, -- Backdraft (buff)
 			122351, -- Molten Core
+			111400, -- Burning Rush (talent)
+			104232, -- Rain of Fire (destruction)
 		},
 		HELPFUL = {
 			[5697] = "UNIQUE_AURA", -- Unending Breath
