@@ -63,6 +63,9 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 3, {
 			 50421, -- Scent of Blood
 			114851, -- Blood Charge
 			  3714, -- Path of Frost
+			 48263, -- Blood Presence
+			 48265, -- Unholy Presence
+			 48266, -- Frost Presence
 			 81141, -- Crimson Scourge
 			 51124, -- Killing Machine
 			 59052, -- Freezing Fog
