@@ -192,6 +192,11 @@ local providers = lib.__providers
 lib.__modifiers = lib.__modifiers or {}
 local modifiers = lib.__modifiers
 
+-- Spell to category map.
+-- Indicate which category defined a spell.
+lib.__sources = lib.__sources or {}
+local sources = lib.__sources
+
 local function ParseFilter(filter)
 	local flags = 0
 	for word in filter:gmatch("[%a_]+") do
@@ -282,7 +287,7 @@ local function FilterIterator(tester, spellId)
 	repeat
 		spellId, flags = next(spells, spellId)
 		if spellId and tester(flags) then
-			return spellId, flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId]
+			return spellId, flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId], sources[spellId]
 		end
 	until not spellId
 end
@@ -315,7 +320,7 @@ end
 function lib:GetSpellInfo(spellId)
 	local flags = spellId and spells[spellId]
 	if flags then
-		return flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId]
+		return flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId], sources[spellId]
 	end
 end
 
@@ -382,6 +387,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		providers[spellId] = nil
 		modifiers[spellId] = nil
 		raidbuffs[spellId] = nil
+		sources[spellId] = nil
 	end
 
 	-- Flatten the spell definitions
@@ -412,6 +418,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 			end
 
 			db[spellId] = bor(db[spellId] or 0, flags, categoryFlags)
+			sources[spellId] = category
 		end
 	end
 
