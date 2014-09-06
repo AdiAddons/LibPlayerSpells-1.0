@@ -88,9 +88,9 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 			114255, -- Surge of Light
 		},
 		HELPFUL = {
-			   139, -- Renew
-			[ 1706] = "UNIQUE_AURA", -- Levitate
-			[ 6788] = "INVERT_AURA", -- Weakened Soul
+			    139, -- Renew
+			[111759] = "UNIQUE_AURA", -- Levitate
+			[  6788] = "INVERT_AURA", -- Weakened Soul
 		},
 		HARMFUL = {
 			 15407, -- Mind Flay
@@ -116,6 +116,7 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 	[129197] =  15407, -- Mind Flay (Insanity)
 	[119032] = 112833, -- Spectral Guise (Talent)
 	[121557] = 121536, -- Angelic Feather (Talent)
+	[111759] =   1706, -- Levitate
 }, {
 	-- Map aura to modified spell(s)
 	[ 63735] = { -- Serendipity =>
