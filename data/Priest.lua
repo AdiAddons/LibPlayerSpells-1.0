@@ -40,9 +40,10 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 			PERSONAL = {
 				89485, -- Inner Focus
 				SURVIVAL = {
-					  586, -- Fade
-					20711, -- Spirit of Redemption
-					47585, -- Dispersion
+					   586, -- Fade
+					 20711, -- Spirit of Redemption
+					 47585, -- Dispersion
+					119032, -- Spectral Guise
 				},
 				MANA_REGEN = {
 					 34433, -- Shadowfiend
@@ -112,6 +113,7 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 	[ 81661] =  81662, -- Evangelism
 	[114255] = 109186, -- Surge of Light <= From Darkness, Comes Light
 	[129197] =  15407, -- Mind Flay (Insanity)
+	[119032] = 112833, -- Spectral Guise (Talent)
 }, {
 	-- Map aura to modified spell(s)
 	[ 63735] = { -- Serendipity =>
