@@ -61,8 +61,9 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 				   17, -- Power Word: Shield
 				33076, -- Prayer of Mending
 				SURVIVAL = {
-					33206, -- Pain Suppression
-					47788, -- Guardian Spirit
+					 33206, -- Pain Suppression
+					 47788, -- Guardian Spirit
+					121557, -- Angelic Feather
 				},
 				UNIQUE_AURA = {
 					6346, -- Fear Ward
@@ -114,6 +115,7 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 	[114255] = 109186, -- Surge of Light <= From Darkness, Comes Light
 	[129197] =  15407, -- Mind Flay (Insanity)
 	[119032] = 112833, -- Spectral Guise (Talent)
+	[121557] = 121536, -- Angelic Feather (Talent)
 }, {
 	-- Map aura to modified spell(s)
 	[ 63735] = { -- Serendipity =>
