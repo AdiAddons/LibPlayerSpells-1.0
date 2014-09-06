@@ -91,6 +91,8 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 			[ 6788] = "INVERT_AURA", -- Weakened Soul
 		},
 		HARMFUL = {
+			 15407, -- Mind Flay
+			129197, -- Mind Flay (Insanity)
 			   589, -- Shadow Word: Pain
 			  2944, -- Devouring Plague
 			 34914, -- Vampiric Touch
@@ -109,6 +111,7 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 	[ 63735] =  63733, -- Serendipity
 	[ 81661] =  81662, -- Evangelism
 	[114255] = 109186, -- Surge of Light <= From Darkness, Comes Light
+	[129197] =  15407, -- Mind Flay (Insanity)
 }, {
 	-- Map aura to modified spell(s)
 	[ 63735] = { -- Serendipity =>
