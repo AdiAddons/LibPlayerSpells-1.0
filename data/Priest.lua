@@ -86,6 +86,7 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 			 81661, -- Evangelism
 			112833, -- Spectral Guise
 			114255, -- Surge of Light
+			 15473, -- Shadow Form
 		},
 		HELPFUL = {
 			    139, -- Renew
