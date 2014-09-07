@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "50400", 3, {
+lib:__RegisterSpells("DEATHKNIGHT", "50400", 4, {
 	COOLDOWN = {
 		42650, -- Army of the Dead
 		61999, -- Raise Ally
