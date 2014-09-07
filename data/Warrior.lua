@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", "50400", 7, {
+lib:__RegisterSpells("WARRIOR", "50400", 8, {
 	POWER_REGEN = {
 		  2457, -- Battle Stance
 		  2458, -- Berserker Stance
@@ -81,7 +81,7 @@ lib:__RegisterSpells("WARRIOR", "50400", 7, {
 				 64382, -- Shattering Throw
 				 18498, -- Silence (Glyph of Gag Order)
 				132168, -- Shockwave
-				132169, -- Stormbolt
+				132169, -- Storm Bolt
 				   355, -- Taunt
 				105771, -- Warbringer Root
 				137637, -- Warbringer Slow
@@ -115,23 +115,22 @@ lib:__RegisterSpells("WARRIOR", "50400", 7, {
 	},
 }, {
 	-- Map aura to provider
-	-- actual aura = toolbar icon (has config)
 	[113344] =                   12292, -- Bloodbath (dot tracking)
 	[114205] =                  114203, -- Demo Banner
 	[125565] =                    1160, -- Demo Shout Self Buff
 	[ 12880] =       { 18499, 55694, }, -- Enrage status on Berserker Rage, Enraged Regeneration
-	[ 18498] =        { 57755, 6552, }, -- Heroic Throw, Pummel (Gag Order) (Silence, not kick)
+	[ 18498] =        { 57755, 6552, }, -- Heroic Throw, Pummel (Gag Order) (Silence effect)
 	[115767] = { 12294, 6343, 20243, }, -- Mortal Strike, Thunder Clap, Devastate (Deep Wounds)
 	[115804] =      { 12294, 100130, }, -- Mortal Wounds, Mortal Strike, Wild Strike => Reduce Healing Taken By Target
 	[ 97463] =                   97462, -- Rallying Cry
 	[132404] =                    2565, -- Shield Block
 	[114206] =                  114207, -- Skull Banner
-	[132168] =                   46968, -- Shockwave Stun
-	[132169] =                  107570, -- Stormbolt Stun
+	[132168] =                   46968, -- Shockwave
+	[132169] =                  107570, -- Storm Bolt
 	[139958] =                    7384, -- Sudden Execute, Execute => Free Overpower
 	[122510] =            { 78, 845, }, -- Ultimatum, Shield Slam => Free Heroic Strike, Cleave
 	[122016] =            { 78, 845, }, -- Incite, Demoralizing Shout => Free Heroic Strike, Cleave
-	[ 32216] =      { 34428, 103840, }, -- Victorius, Killing Blow => Victory Rush, Impending Victory
+	[ 32216] =      { 34428, 103840, }, -- Victorious, Killing Blow => Victory Rush, Impending Victory
 	[105771] =                     100, -- Warbringer Root (Charge)
 	-- [113746] =                    7386, -- Weakened Armor, Sunder
 	-- [137637] =                     100, -- Warbringer Slow (Charge)

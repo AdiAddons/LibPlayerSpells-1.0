@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "50400", 7, {
+lib:__RegisterSpells("PRIEST", "50400", 8, {
 	COOLDOWN = {
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
@@ -40,9 +40,10 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 			PERSONAL = {
 				89485, -- Inner Focus
 				SURVIVAL = {
-					  586, -- Fade
-					20711, -- Spirit of Redemption
-					47585, -- Dispersion
+					   586, -- Fade
+					 20711, -- Spirit of Redemption
+					 47585, -- Dispersion
+					119032, -- Spectral Guise
 				},
 				MANA_REGEN = {
 					 34433, -- Shadowfiend
@@ -60,8 +61,9 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 				   17, -- Power Word: Shield
 				33076, -- Prayer of Mending
 				SURVIVAL = {
-					33206, -- Pain Suppression
-					47788, -- Guardian Spirit
+					 33206, -- Pain Suppression
+					 47788, -- Guardian Spirit
+					121557, -- Angelic Feather
 				},
 				UNIQUE_AURA = {
 					6346, -- Fear Ward
@@ -84,13 +86,16 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 			 81661, -- Evangelism
 			112833, -- Spectral Guise
 			114255, -- Surge of Light
+			 15473, -- Shadow Form
 		},
 		HELPFUL = {
-			   139, -- Renew
-			[ 1706] = "UNIQUE_AURA", -- Levitate
-			[ 6788] = "INVERT_AURA", -- Weakened Soul
+			    139, -- Renew
+			[111759] = "UNIQUE_AURA", -- Levitate
+			[  6788] = "INVERT_AURA", -- Weakened Soul
 		},
 		HARMFUL = {
+			 15407, -- Mind Flay
+			129197, -- Mind Flay (Insanity)
 			   589, -- Shadow Word: Pain
 			  2944, -- Devouring Plague
 			 34914, -- Vampiric Touch
@@ -109,6 +114,10 @@ lib:__RegisterSpells("PRIEST", "50400", 7, {
 	[ 63735] =  63733, -- Serendipity
 	[ 81661] =  81662, -- Evangelism
 	[114255] = 109186, -- Surge of Light <= From Darkness, Comes Light
+	[129197] =  15407, -- Mind Flay (Insanity)
+	[119032] = 112833, -- Spectral Guise (Talent)
+	[121557] = 121536, -- Angelic Feather (Talent)
+	[111759] =   1706, -- Levitate
 }, {
 	-- Map aura to modified spell(s)
 	[ 63735] = { -- Serendipity =>
