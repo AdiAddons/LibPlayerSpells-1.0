@@ -56,7 +56,7 @@ lib:__RegisterSpells("ROGUE", "50400", 4, {
 			  2823, -- Deadly Poison
 			  8679, -- Wound Poison
 			  3408, -- Crippling Poison
-			  5761, -- Mind-numbling Poison
+			  5761, -- Mind-numbing Poison
 			108211, -- Leeching Poison
 			108215, -- Paralytic Poison
 			  5171, -- Slice and Dice
@@ -67,7 +67,7 @@ lib:__RegisterSpells("ROGUE", "50400", 4, {
 			114842, -- Shadow Walk
 			137586, -- Shuriken Toss
 			 32645, -- Envenom
-			[1966] = "SURVIVAL", -- Feint
+			[ 1966] = "SURVIVAL", -- Feint
 		},
 		HARMFUL = {
 			 84617, -- Revealing Strike
@@ -101,14 +101,14 @@ lib:__RegisterSpells("ROGUE", "50400", 4, {
 	[113953] =   5938, -- Paralysis <= Shiv (the 4 stacks effect from Paralytic Poison is better than the Shiv effect (stun vs root), so display it on Shiv)
 }, {
 	-- Map aura to modified spell(s)
-	[51713] = 8676, -- Shadow Dance => Ambush
-	[121471] = { -- Shadow Blades =>
-		 1752, -- Sinister Strike
-		84617, -- Revealing Strike
-		51723, -- Fan of Knives
-		 1833, -- Cheap Shot
-		 8676, -- Ambush
-		  703, -- Garrote
+	[ 51713] = 8676, -- Shadow Dance => Ambush
+	[121471] = {     -- Shadow Blades =>
+		 1752,       -- Sinister Strike
+		84617,       -- Revealing Strike
+		51723,       -- Fan of Knives
+		 1833,       -- Cheap Shot
+		 8676,       -- Ambush
+		  703,       -- Garrote
 	},
 })
 
