@@ -1,5 +1,7 @@
 h1. LibPlayerSpells-1.0
 
+!https://travis-ci.org/Adirelle/LibPlayerSpells-1.0.svg?branch=master!:https://travis-ci.org/Adirelle/LibPlayerSpells-1.0
+
 LibPlayerSpells-1.0 is a library providing data about the spells of the 11 character classes. It also includes data about racial and tradeskill spells. The word "spells" is used here in the general sense, it includes active skills as well as passive spells that are found in player spellbooks, but also buffs and debuffs that are not in spellbooks but are applied somehow by player characters.
 
 This library is born from the need to centralize similar data used in several addons to reduce the maintenance cost and to have a better consistency across those addons.

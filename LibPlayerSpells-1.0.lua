@@ -18,9 +18,13 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR = "LibPlayerSpells-1.0", 3
-local lib = LibStub:NewLibrary(MAJOR, MINOR)
-if not lib then return end
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 3
+if LibStub then
+	lib = LibStub:NewLibrary(MAJOR, MINOR)
+	if not lib then return end
+else
+	lib = {}
+end
 
 local _G = _G
 local ceil = _G.ceil
@@ -143,7 +147,17 @@ lib.masks = {
 		constants.INTERRUPT,
 		constants.DISPEL
 	),
-	RAIDBUFF_TYPE = bor(unpack(RAID_BUFF_TYPES)),
+	RAIDBUFF_TYPE = bor(
+		constants.STATS,
+		constants.STAMINA,
+		constants.ATK_POWER,
+		constants.ATK_SPEED,
+		constants.SPL_POWER,
+		constants.SPL_HASTE,
+		constants.CRITICAL,
+		constants.MASTERY,
+		constants.BURST_HASTE
+	),
 }
 local masks = lib.masks
 
@@ -233,7 +247,7 @@ function lib:GetVersionInfo(category)
 		error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
 	end
 	local v = versions[category] or 0
-	return v, ceil(v/100), v % 100
+	return v, floor(v/100), v % 100
 end
 
 local TRUE = function() return true end
@@ -386,6 +400,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	FlattenSpellData(newSpells, defs, "", 2)
 
 	-- Useful constants
+	local rshift = bit.rshift
 	local RAIDBUFF = constants.RAIDBUFF
 	local TYPE = masks.TYPE
 	local RAIDBUFF_TYPE = masks.RAIDBUFF_TYPE
@@ -396,6 +411,9 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	local categoryFlags = constants[category] or 0
 	for spellId, flagDef in pairs(defs) do
 		ValidateSpellId(spellId, "spell", 2)
+		if spells[spellId] ~= nil then
+			error(format("%s: spell #%d already defined in '%s' database", MAJOR, spellId, sources[spellId]), 2)
+		end
 		local flags = filters[flagDef]
 
 		if band(flags, TYPE) == RAIDBUFF then
@@ -433,3 +451,5 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	end
 
 end
+
+return lib

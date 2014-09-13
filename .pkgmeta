@@ -1,1 +1,4 @@
 package-as: LibPlayerSpells-1.0
+
+ignore:
+  - tests/*

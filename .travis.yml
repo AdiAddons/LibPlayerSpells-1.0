@@ -1,0 +1,22 @@
+language: erlang
+
+env:
+  - LUA="lua5.1" LUAC="luac5.1"
+
+install:
+  - sudo apt-get install $LUA luarocks
+  - sudo luarocks install luaunit
+  - sudo luarocks install mockagne
+  - sudo luarocks install luabitop
+
+script:
+  - tests/lualint.sh
+  - tests/cs.sh
+  - cd tests
+  - $LUA core.lua
+  - $LUA databases.lua
+
+notifications:
+  email:
+    on_failure: always
+    on_success: change
