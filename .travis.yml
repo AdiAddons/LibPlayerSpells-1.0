@@ -10,7 +10,8 @@ install:
   - sudo luarocks install luabitop
 
 script:
-  - $LUAC -p $(find . -name "*.lua")
+  - tests/lualint.sh
+  - tests/cs.sh
   - cd tests
   - $LUA core.lua
   - $LUA databases.lua
