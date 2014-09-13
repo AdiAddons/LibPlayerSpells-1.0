@@ -18,9 +18,13 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR = "LibPlayerSpells-1.0", 3
-local lib = LibStub:NewLibrary(MAJOR, MINOR)
-if not lib then return end
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 3
+if LibStub then
+	lib = LibStub:NewLibrary(MAJOR, MINOR)
+	if not lib then return end
+else
+	lib = {}
+end
 
 local _G = _G
 local ceil = _G.ceil
@@ -386,6 +390,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	FlattenSpellData(newSpells, defs, "", 2)
 
 	-- Useful constants
+	local rshift = bit.rshift
 	local RAIDBUFF = constants.RAIDBUFF
 	local TYPE = masks.TYPE
 	local RAIDBUFF_TYPE = masks.RAIDBUFF_TYPE
@@ -433,3 +438,5 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	end
 
 end
+
+return lib
