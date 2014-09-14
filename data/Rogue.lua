@@ -33,6 +33,7 @@ lib:__RegisterSpells("ROGUE", "50400", 4, {
 				SURVIVAL = {
 					  5277, -- Evasion
 					 31224, -- Cloak of Shadows
+					 74001, -- Combat Readiness
 					 74002, -- Combat Insight (stacking buff)
 					113613, -- Symbiosis: Growl
 				},
