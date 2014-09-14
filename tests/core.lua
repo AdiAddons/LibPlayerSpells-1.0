@@ -26,6 +26,8 @@ local bit = require('bit')
 
 local when, any, verify = mockagne.when, mockagne.any, mockagne.verify
 
+local bor, tohex = bit.bor, bit.tohex
+
 local lib, G
 
 LibStub = false
@@ -36,8 +38,6 @@ local function setup()
 end
 
 testRegisterSpells = { setup = setup }
-
--- lib:__RegisterSpells(category, interface, minor, newSpells, newProviders, newModifiers)
 
 function testRegisterSpells:test_unknown_category()
 	assertEquals(pcall(lib.__RegisterSpells, lib, "foobar", 0, 0, {}), false)
@@ -118,13 +118,13 @@ end
 function testRegisterSpells:test_key_id_value_flag()
 	when(G.GetSpellLink(4)).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "AURA" })
-	assertEquals(lib.__categories.HUNTER[4], bit.bor(lib.constants.AURA, lib.constants.HUNTER))
+	assertEquals(lib.__categories.HUNTER[4], bor(lib.constants.AURA, lib.constants.HUNTER))
 end
 
 function testRegisterSpells:test_spell_list()
 	when(G.GetSpellLink(any())).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, { AURA = { 4, 5 } })
-	local db, c, bor = lib.__categories.HUNTER, lib.constants, bit.bor
+	local db, c = lib.__categories.HUNTER, lib.constants
 	assertEquals(db[4], bor(c.AURA, c.HUNTER))
 	assertEquals(db[5], bor(c.AURA, c.HUNTER))
 end
@@ -141,7 +141,7 @@ function testRegisterSpells:test_nested()
 			}
 		}
 	})
-	local db, c, bor = lib.__categories.HUNTER, lib.constants, bit.bor
+	local db, c = lib.__categories.HUNTER, lib.constants
 	assertEquals(db[4], bor(c.AURA, c.HUNTER))
 	assertEquals(db[5], bor(c.AURA, c.HUNTER, c.HARMFUL))
 	assertEquals(db[6], bor(c.AURA, c.HUNTER, c.HELPFUL))
@@ -151,7 +151,7 @@ end
 function testRegisterSpells:test_multipart_string()
 	when(G.GetSpellLink(4)).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "HELPFUL AURA" })
-	local db, c, bor = lib.__categories.HUNTER, lib.constants, bit.bor
+	local db, c = lib.__categories.HUNTER, lib.constants
 	assertEquals(db[4], bor(c.AURA, c.HELPFUL, c.HUNTER))
 end
 
@@ -167,14 +167,62 @@ function testRegisterSpells:test_database_conflict()
 	assertEquals(success, false)
 end
 
---[[ Ignored until I figure out how to workaround the luabitop issue with 0x8000000
+--[[ Ignored until I figure out how to work around luabitop using signed 32-bit integers.
+-- WoW embeds bitlib, which uses unsigned integers, whereas I only have luabitop handy.
 function testRegisterSpells:test_raidbuff()
 	when(G.GetSpellLink(any())).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "RAIDBUFF STAMINA" })
-	local c, bor = lib.constants, bit.bor
+	local c, bor = lib.constants, bor
 	assertEquals(lib.__specials.RAIDBUFF[4], c.STAMINA)
 	assertEquals(lib.__categories.HUNTER[4], bor(c.HELPFUL, c.UNIQUE_AURA, c.AURA, c.HUNTER))
 end
 ]]
+
+testFilterParsing = { setup = setup }
+
+function testFilterParsing:test_empty()
+	assertEquals(lib.__filters[""], 0)
+end
+
+function testFilterParsing:test_single_values()
+	for name, value in pairs(lib.constants) do
+		assertEquals(tohex(lib.__filters[name]), tohex(value))
+	end
+end
+
+function testFilterParsing:test_combination()
+	local c = lib.constants
+	assertEquals(lib.__filters["HUNTER AURA"], bor(c.HUNTER, c.AURA))
+	assertEquals(lib.__filters["AURA HUNTER"], bor(c.HUNTER, c.AURA))
+end
+
+testFlagTester = { setup = setup }
+
+for i, data in ipairs{
+	{ "HUNTER", "", "", "HUNTER", true },
+	{ "HUNTER", "", "", "SHAMAN", false },
+	{ "HUNTER", "", "", "HUNTER AURA", true },
+	{ "HUNTER SHAMAN", "", "", "HUNTER", true },
+	{ "HUNTER SHAMAN", "", "", "SHAMAN", true },
+	{ "HUNTER SHAMAN", "", "", "DRUID", false },
+	{ "HUNTER", "AURA", "", "HUNTER AURA", true },
+	{ "HUNTER", "AURA", "", "HUNTER", false },
+	{ "HUNTER", "AURA", "", "SHAMAN", false },
+	{ "HUNTER SHAMAN", "AURA", "", "SHAMAN AURA COOLDOWN", true },
+	{ "HUNTER", "AURA", "COOLDOWN", "HUNTER AURA", true },
+	{ "HUNTER", "AURA", "COOLDOWN", "AURA", false },
+	{ "HUNTER", "AURA", "COOLDOWN", "AURA COOLDOWN", false },
+	{ "HUNTER", "AURA", "COOLDOWN", "HUNTER COOLDOWN", false },
+	{ "HUNTER", "", "COOLDOWN", "HUNTER", true },
+	{ "HUNTER", "", "COOLDOWN", "HUNTER AURA", true },
+	{ "HUNTER", "", "COOLDOWN", "AURA", false },
+	{ "HUNTER", "", "COOLDOWN", "AURA COOLDOWN", false },
+	{ "HUNTER", "", "COOLDOWN", "HUNTER COOLDOWN", false },
+} do
+	local anyOf, include, exclude, value, expected = unpack(data)
+	testFlagTester["test_"..i] = function()
+		assertEquals(lib:GetFlagTester(anyOf, include, exclude)(lib.__filters[value]), expected)
+	end
+end
 
 os.exit(LuaUnit:Run())
