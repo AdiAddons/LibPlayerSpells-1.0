@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", "50400", 5, {
+lib:__RegisterSpells("PALADIN", "50400", 6, {
 	[4987] = 'DISPEL HELPFUL', -- Cleanse
 	INTERRUPT = {
 		96231, -- Rebuke
@@ -37,7 +37,7 @@ lib:__RegisterSpells("PALADIN", "50400", 5, {
 				113075, -- Symbiosis: Barkskin
 			},
 			HELPFUL = {
-				   603, -- Lay on Hands
+				   633, -- Lay on Hands
 				 31821, -- Devotion Aura
 				  1022, -- Hand of Protection
 				  6940, -- Hand of Sacrifice
