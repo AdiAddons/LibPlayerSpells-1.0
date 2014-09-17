@@ -25,7 +25,7 @@ lib:__RegisterSpells("RACIAL", 50400, 1, {
 		AURA = {
 			PERSONAL = {
 				26297, -- Berserking
-				20542, -- Blood Fury (attack power)
+				20572, -- Blood Fury (attack power)
 				33702, -- Blood Fury (spell power)
 				33697, -- Blood Fury (both)
 				20594, -- Stoneform
