@@ -21,23 +21,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("WARRIOR", "50400", 8, {
-	POWER_REGEN = {
-		  2457, -- Battle Stance
-		  2458, -- Berserker Stance
-			71, -- Defensive Stance
-		143268, -- Unbridled Wrath
-	},
 	COOLDOWN = {
-		POWER_REGEN = {
-				HARMFUL = {
-						23881, -- Bloodthirst
-						12294, -- Mortal Strike
-						 6572, -- Revenge
-								DISPEL = {
-										23922, -- Shield Slam (Glyphed)
-								},
-				},
-		},
 		INTERRUPT = {
 				102060, -- Disrupting Shout
 				  6552, -- Pummel
@@ -47,71 +31,62 @@ lib:__RegisterSpells("WARRIOR", "50400", 8, {
 				107574, -- Avatar
 				 18499, -- Berserker Rage
 				 46924, -- Bladestorm
-				 12292, -- Bloodbath (self buff)
-				125565, -- Demo Shout
-				118038, -- Die By The Sword
+				 12292, -- Bloodbath (Self Buff)
+				125565, -- Demoralizing Shout (Prot)
+				118038, -- Die By The Sword (Arms, Fury)
 				 55694, -- Enraged Regeneration
-				 12975, -- Last Stand
+				 12975, -- Last Stand (Prot)
 				114192, -- Mocking Banner
 				  1719, -- Recklessness
 				122286, -- Savage Defense (Symbiosis - Prot)
-				132404, -- Shield Block
+				132404, -- Shield Block (Prot)
 				   871, -- Shield Wall
 				 23920, -- Spell Reflect
-				 12328, -- Sweeping Strikes
-				-- 145672, -- Riposte
-				--  50227, -- Sword and Board
-				--  93098, -- Vengeance
+				 12328, -- Sweeping Strikes (Arms)
 			},
 			HELPFUL = {
-				--  6673, -- Battle Shout
-				--   469, -- Commanding Shout
 				  3411, -- Intervene
 				114028, -- Mass Spell Reflection
 				 97463, -- Rallying Cry
 				114029, -- Safeguard
 				114206, -- Skull Banner
-				122294, -- Stampeding Shout (Symbiosis - DPS)
+				122294, -- Stampeding Shout (Symbiosis - Arms, Fury)
 				114030, -- Vigilance
 			},
 			HARMFUL = {
 				113344, -- Bloodbath (dot)
-				 86346, -- Colossus Smash
-				114205, -- Demo Banner
+				 86346, -- Colossus Smash (Arms, Fury)
+				114205, -- Demoralizing Banner
 				 64382, -- Shattering Throw
 				 18498, -- Silence (Glyph of Gag Order)
 				132168, -- Shockwave
 				132169, -- Storm Bolt
-				   355, -- Taunt
 				105771, -- Warbringer Root
-				137637, -- Warbringer Slow
-				-- 676, -- Disarm
 			},
 		},
 	},
 	AURA = {
 		PERSONAL = {
 			 12880, -- Enrage
-			112048, -- Shield Barrier
-			139958, -- Sudden Execute
-			122510, -- Ultimatum
-			 32216, -- Victory Rush Available
 			122016, -- Glyph of Incite
+			145672, -- Riposte (Prot)
+			112048, -- Shield Barrier (Prot)
+			139958, -- Sudden Execute
+			 50227, -- Sword and Board (Prot)
+			122510, -- Ultimatum (Prot)
+			 32216, -- Victory Rush - Victorious
+			 93098, -- Vengeance (Prot)
 		},
 		HARMFUL = {
 			115767, -- Deep Wounds
-			115804, -- Mortal Wounds
-			--   1715, -- Hamstring
-			--  12323, -- Piercing Howl
-			--  86346, -- Physical Vulnerability
-			--   6343, -- Thunder Clap
-			-- 113746, -- Weakened Armor
-			-- 115798, -- Weakened Blows
 		},
 	},
 	RAIDBUFF = {
-		[6673] = 'ATK_POWER', -- Battle Shout
-		[ 469] = 'STAMINA',   -- Commanding Shout
+		[ 6673] = 'ATK_POWER', -- Battle Shout
+		[  469] = 'STAMINA',   -- Commanding Shout
+	},
+	DISPEL = {
+		[23922] = "HARMFUL",   -- Shield Slam (Glyph of Shield Slam) (Prot)
 	},
 }, {
 	-- Map aura to provider
@@ -121,7 +96,6 @@ lib:__RegisterSpells("WARRIOR", "50400", 8, {
 	[ 12880] =       { 18499, 55694, }, -- Enrage status on Berserker Rage, Enraged Regeneration
 	[ 18498] =        { 57755, 6552, }, -- Heroic Throw, Pummel (Gag Order) (Silence effect)
 	[115767] = { 12294, 6343, 20243, }, -- Mortal Strike, Thunder Clap, Devastate (Deep Wounds)
-	[115804] =      { 12294, 100130, }, -- Mortal Wounds, Mortal Strike, Wild Strike => Reduce Healing Taken By Target
 	[ 97463] =                   97462, -- Rallying Cry
 	[132404] =                    2565, -- Shield Block
 	[114206] =                  114207, -- Skull Banner
@@ -132,8 +106,6 @@ lib:__RegisterSpells("WARRIOR", "50400", 8, {
 	[122016] =            { 78, 845, }, -- Incite, Demoralizing Shout => Free Heroic Strike, Cleave
 	[ 32216] =      { 34428, 103840, }, -- Victorious, Killing Blow => Victory Rush, Impending Victory
 	[105771] =                     100, -- Warbringer Root (Charge)
-	-- [113746] =                    7386, -- Weakened Armor, Sunder
-	-- [137637] =                     100, -- Warbringer Slow (Charge)
 }, {
 	-- Map aura to modified spell(s)
 	-- [ 50227] =                   23922, -- Sword and Board, Devastate => Shield Slam
