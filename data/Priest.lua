@@ -60,6 +60,7 @@ lib:__RegisterSpells("PRIEST", "50400", 8, {
 			HELPFUL = {
 				   17, -- Power Word: Shield
 				33076, -- Prayer of Mending
+				81782, -- Power Word: Barrier
 				SURVIVAL = {
 					 33206, -- Pain Suppression
 					 47788, -- Guardian Spirit
@@ -72,7 +73,7 @@ lib:__RegisterSpells("PRIEST", "50400", 8, {
 			HARMFUL = {
 				  8122, -- Psychic Scream
 				 14914, -- Holy Fire
-				108920, -- Void Tendrils
+				114404, -- Void Tendrils
 				129250, -- Power Word: Solace
 				[15487] = "INTERRUPT", -- Silence
 			},
@@ -118,6 +119,8 @@ lib:__RegisterSpells("PRIEST", "50400", 8, {
 	[119032] = 112833, -- Spectral Guise (Talent)
 	[121557] = 121536, -- Angelic Feather (Talent)
 	[111759] =   1706, -- Levitate
+	[ 81782] =  62618, -- Power Word: Barrier
+	[114404] = 108920, -- Vod Tendrils
 }, {
 	-- Map aura to modified spell(s)
 	[ 63735] = { -- Serendipity =>
