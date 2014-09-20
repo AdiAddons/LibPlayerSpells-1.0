@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", "50400", 6, {
+lib:__RegisterSpells("PALADIN", "50400", 7, {
 	[4987] = 'DISPEL HELPFUL', -- Cleanse
 	INTERRUPT = {
 		96231, -- Rebuke
@@ -33,7 +33,9 @@ lib:__RegisterSpells("PALADIN", "50400", 6, {
 				   642, -- Divine Shield
 				 31850, -- Ardent Defender
 				 54428, -- Divine Plea
+				132403, -- Shield of the Righteous (prot)
 				 86659, -- Ancient Guardian (prot)
+				105809, -- Holy Avenger
 				113075, -- Symbiosis: Barkskin
 			},
 			HELPFUL = {
@@ -42,6 +44,7 @@ lib:__RegisterSpells("PALADIN", "50400", 6, {
 				  1022, -- Hand of Protection
 				  6940, -- Hand of Sacrifice
 				114039, -- Hand of Purity
+				  1038, -- Hands of Salvation
 			},
 		},
 		BURST = {
@@ -64,16 +67,22 @@ lib:__RegisterSpells("PALADIN", "50400", 6, {
 			 86700, -- Ancient Power
 			 31868, -- Supplication
 			114250, -- Selfless Healer
+			 25780, -- Righteous Fury
+			 85499, -- Speed of Light
 		},
 		HELPFUL = {
 			  1044, -- Hand of Freedom
 			 20925, -- Sacred Shield
 			 53563, -- Beacon of Light
 			114163, -- Eternal Flame
+			114917, -- Execution Sentence (heal)
 		},
 		HARMFUL = {
 			 31801, -- Censure
 			115798, -- Weakened Blows
+			114916, -- Execution Sentence (damage)
+			114919, -- Light's Hamer (damage)
+			 81298, -- Consecration
 		},
 	},
 	RAIDBUFF = {
@@ -86,6 +95,11 @@ lib:__RegisterSpells("PALADIN", "50400", 6, {
 		35395, -- Crusader Strike
 		53595, -- Hammer of Righteousness
 	},
+	[81298]  = 26573, -- Consecration (prot)
+	[132403] = 53600, -- Shield of the Righteous (prot)
+	[114917] = 114157,-- Execution Sentence (heal)
+	[114916] = 114157,-- Execution Sentence (damage)
+	[114919] = 114158,-- Light's Hammer (damage)
 	[114250] = 20271, -- Selfless Healer <= Judgement
 	[ 86700] = 86698, -- Ancient Power <= Guardian of Ancient Kings
 }, {
