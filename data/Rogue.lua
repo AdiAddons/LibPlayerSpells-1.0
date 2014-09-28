@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", "50400", 4, {
+lib:__RegisterSpells("ROGUE", "50400", 5, {
 	COOLDOWN = {
 		INTERRUPT = {
 			1766, -- Kick
@@ -45,8 +45,8 @@ lib:__RegisterSpells("ROGUE", "50400", 4, {
 				},
 			},
 			HARMFUL = {
-				[79140] = "BURST", -- Vendetta
-			   [137619] = "BURST", -- Marked for death
+				[ 79140] = "BURST", -- Vendetta
+				[137619] = "BURST", -- Marked for death
 			},
 			HELPFUL = {
 				[88611] = "INVERT_AURA", -- Smoke Bomb TODO: does not seem to work
