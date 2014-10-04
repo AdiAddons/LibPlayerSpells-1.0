@@ -77,6 +77,7 @@ lib:__RegisterSpells("HUNTER", "50400", 7, {
 			 82925, -- Ready, Set, Aim...
 			 82692, -- Focus Fire
 			 34720, -- Thrill of the Hunt
+			 13165, -- Aspect of the Hawk
 			109260, -- Aspect of the Iron Hawk
 			  5118, -- Aspect of the Cheetah
 			 13159, -- Aspect of the Pack
