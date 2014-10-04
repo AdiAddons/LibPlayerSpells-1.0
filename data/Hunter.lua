@@ -71,11 +71,17 @@ lib:__RegisterSpells("HUNTER", "50400", 7, {
 	},
 	AURA = {
 		PERSONAL = {
+			118922, -- Posthaste
 			 53220, -- Steady Focus (buff)
 			 56453, -- Lock and Load
 			 82925, -- Ready, Set, Aim...
 			 82692, -- Focus Fire
 			 34720, -- Thrill of the Hunt
+			109260, -- Aspect of the Iron Hawk
+			  5118, -- Aspect of the Cheetah
+			 13159, -- Aspect of the Pack
+			 61648, -- Aspect of the Beast
+			 83559, -- Glyph of Black Ice
 		},
 		HARMFUL = {
 			[ 1130] = "UNIQUE_AURA", -- Hunter's Mark
@@ -117,6 +123,8 @@ lib:__RegisterSpells("HUNTER", "50400", 7, {
 	[118253] =   1978, -- Serpent Sting
 	[ 51755] =  51753, -- Camouflage
 	[ 54216] =  53271, -- Master's Call
+	[118922] =    781, -- Posthaste
+	[ 83559] =  82941, -- Glyph of Black Ice
 	[  3355] = {       -- Freezing Trap
 		 1499,
 		60192,         -- Freezing Trap (Trap Launcher)
