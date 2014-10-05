@@ -149,8 +149,8 @@ lib:__RegisterSpells("SHAMAN", "50400", 5, {
 	[114052] = 114049, -- Ascendance (Restoration)
 }, {
 	-- Map aura to modified spell(s)
-	[114050] = { 114074, 51505 }, -- Ascendance (Elemental): Chain Lightning, Lava Burst
-	[114051] = 17364, -- Ascendance (Enhancement): Stormstrike
-	[114052] = { 61295, 73920, 1064, 8004, 77472, 331 }, -- Ascendance (Restoration): Riptide, Healing Rain, Chain Heal, Healing Surge, Greater Healing Wave, Healing Wave
+	--[114050] = { 114074, 51505 }, -- Ascendance (Elemental): Chain Lightning, Lava Burst
+	--[114051] = 17364, -- Ascendance (Enhancement): Stormstrike
+	--[114052] = { 61295, 73920, 1064, 8004, 77472, 331 }, -- Ascendance (Restoration): Riptide, Healing Rain, Chain Heal, Healing Surge, Greater Healing Wave, Healing Wave
 	[ 53390] = { 8004, 77472, 331 }, -- Tidal Waves
 })
