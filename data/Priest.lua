@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "50400", 9, {
+lib:__RegisterSpells("PRIEST", "60000", 0, {
 	COOLDOWN = {
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
@@ -103,11 +103,8 @@ lib:__RegisterSpells("PRIEST", "50400", 9, {
 		},
 	},
 	RAIDBUFF = {
-		[21562] = 'STAMINA',   -- Power Word: Fortitude
-		[49868] = 'SPL_HASTE', -- Mind Quickening (shadow)
-	},
-	["HARMFUL DISPEL"] = {
-		528, -- Dispel Magic
+		[21562] = 'STAMINA',           -- Power Word: Fortitude
+		[49868] = 'HASTE MULTISTRIKE', -- Mind Quickening (shadow)
 	},
 }, {
 	-- Map aura to provider
@@ -123,10 +120,4 @@ lib:__RegisterSpells("PRIEST", "50400", 9, {
 	[114404] = 108920, -- Vod Tendrils
 }, {
 	-- Map aura to modified spell(s)
-	[ 63735] = { -- Serendipity =>
-		 596, -- Prayer of Healing
-		2060, -- Greater Heal
-	},
-	[ 81661] =  81700, -- Evangelism => Archangel
-	[114255] =  2061, -- Surge of Light => Flash Heal
 })

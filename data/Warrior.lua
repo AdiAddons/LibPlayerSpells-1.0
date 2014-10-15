@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", "50400", 8, {
+lib:__RegisterSpells("WARRIOR", "60000", 0, {
 	COOLDOWN = {
 		INTERRUPT = {
 				102060, -- Disrupting Shout
@@ -87,6 +87,11 @@ lib:__RegisterSpells("WARRIOR", "50400", 8, {
 	},
 	DISPEL = {
 		[23922] = "HARMFUL",   -- Shield Slam (Glyph of Shield Slam) (Prot)
+	},
+	RAIDBUFF = {
+		[   469] = 'STAMINA',     -- Commanding Shout
+		[  6673] = 'ATK_POWER',   -- Battle Shout
+		[167188] = "VERSATILITY", -- Inspiring Presence
 	},
 }, {
 	-- Map aura to provider

@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", "50400", 5, {
+lib:__RegisterSpells("ROGUE", "60000", 0, {
 	COOLDOWN = {
 		INTERRUPT = {
 			1766, -- Kick
@@ -85,22 +85,10 @@ lib:__RegisterSpells("ROGUE", "50400", 5, {
 		},
 	},
 	RAIDBUFF = {
-		[113742] = 'ATK_SPEED', -- Swiftblade's Cunning
+		[113742] = "HASTE MULTISTRIKE", -- Swiftblade's Cunning
 	},
-	-- special
-	[5938] = "DISPEL HARMFUL", -- Shiv
 }, {
 	-- Map aura to provider
-	[122233] = 121411, -- Crimson Tempest
-	[ 11327] =   1856, -- Vanish
-	[137586] = 114014, -- Shuriken Toss
-	[ 74002] =  74001, -- Combat Insight <= Combat Readiness
-	[ 88611] =  76577, -- Smoke Bomb
-	[ 89775] =  16511, -- Hemorrhage
-	[115196] =   5938, -- Debilitating Poison <= Shiv
-	[115194] =   5938, -- Mind Paralysis <= Shiv
-	[115197] =   5938, -- Partial Paralysis <= Shiv
-	[113953] =   5938, -- Paralysis <= Shiv (the 4 stacks effect from Paralytic Poison is better than the Shiv effect (stun vs root), so display it on Shiv)
 }, {
 	-- Map aura to modified spell(s)
 	[ 51713] = 8676, -- Shadow Dance => Ambush
@@ -113,8 +101,3 @@ lib:__RegisterSpells("ROGUE", "50400", 5, {
 		  703,       -- Garrote
 	},
 })
-
--- TODO: --
---[[
-	Premeditation (this applies a hidden aura?)
-]]

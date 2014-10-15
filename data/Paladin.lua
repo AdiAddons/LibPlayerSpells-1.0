@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", "50400", 7, {
+lib:__RegisterSpells("PALADIN", "60000", 0, {
 	[4987] = 'DISPEL HELPFUL', -- Cleanse
 	INTERRUPT = {
 		96231, -- Rebuke
@@ -86,8 +86,9 @@ lib:__RegisterSpells("PALADIN", "50400", 7, {
 		},
 	},
 	RAIDBUFF = {
-		[20217] = 'STATS',   -- Blessing of Kings
-		[19740] = 'MASTERY', -- Blessing of Might
+		[ 20217] = 'STATS',      -- Blessing of Kings
+		[ 19740] = 'MASTERY',    -- Blessing of Might
+		[167187] = "VERSATILITY" -- Sanctity Aura
 	},
 }, {
 	-- Map aura to provider

@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "50400", 7, {
+lib:__RegisterSpells("WARLOCK", "60000", 0, {
 	COOLDOWN = {
 		  1122, -- Summon Infernal
 		 18540, -- Summon Doomguard
@@ -110,31 +110,11 @@ lib:__RegisterSpells("WARLOCK", "50400", 7, {
 		},
 	},
 	RAIDBUFF = {
-		[109773] = "SPL_POWER STAMINA", -- Dark Intent
-	},
-	DISPEL = {
-		[19505] = "HARMFUL", -- Devour Magic (Felhunter)
-		["COOLDOWN HELPFUL"] = {
-		     89808, -- Singe Magic (imp)
-			132411, -- Singe Magic (sacrified imp)
-		},
+		[109773] = "SPL_POWER MULTISTRIKE", -- Dark Intent
+		[166928] = "STAMINA",               -- Blood Pact
 	},
 }, {
 	-- Map aura to provider
-	[146739] =    172, -- Corruption
-	[ 29341] =  17877, -- Shadowburn
-	[ 47960] = 105174, -- Shadowflame <= Hand of Gul'dan
-	[117828] = 117896, -- Backdraft
-	[124915] = 124916, -- Chaos Wave (Metamorphosis)
 }, {
 	-- Map aura to modified spell(s)
-	[108563] = { -- Backlash =>
-		 29722, -- Incinerate
-		114654, -- Incinerate (Fire and Brimstone)
-	},
-	[117828] = { -- Backdraft =>
-		 29722, -- Incinerate
-		114654, -- Incinerate (Fire and Brimstone)
-	},
-	[122351] = 6353, -- Molten Core => Soul Fire
 })

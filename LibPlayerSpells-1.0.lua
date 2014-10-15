@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 3
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 4
 if LibStub then
 	lib = LibStub:NewLibrary(MAJOR, MINOR)
 	if not lib then return end
@@ -71,14 +71,15 @@ lib.constants = {
 
 	-- Raid buff types, *requires* RAIDBUFF, else this messes up sources
 	STATS       = 0x00000001, -- +5% strengh, agility and intellect
-	STAMINA     = 0x00000002, -- +10 stamina
+	STAMINA     = 0x00000002, -- +10% stamina
 	ATK_POWER   = 0x00000004, -- +10% attack power
-	ATK_SPEED   = 0x00000008, -- +10% attack speed
+	MULTISTRIKE = 0x00000008, -- +5% Multistrike
 	SPL_POWER   = 0x00000010, -- +10% spell power
-	SPL_HASTE   = 0x00000020, -- +5% spell haste
+	HASTE       = 0x00000020, -- +5% haste
 	CRITICAL    = 0x00000040, -- +5% critical strike
 	MASTERY     = 0x00000080, -- Flat mastery bonus
 	BURST_HASTE = 0x00000100, -- Bloodlust/Heroism
+	VERSATILITY = 0x00000200, -- +3% Versatility
 
 	-- Targeting
 	HELPFUL     = 0x00002000, -- Usable on allies
@@ -101,8 +102,9 @@ local constants = lib.constants
 
 local RAID_BUFF_TYPES = {
 	constants.STATS, constants.STAMINA, constants.ATK_POWER,
-	constants.ATK_SPEED, constants.SPL_POWER, constants.SPL_HASTE,
-	constants.CRITICAL, constants.MASTERY, constants.BURST_HASTE,
+	constants.MULTISTRIKE, constants.SPL_POWER, constants.HASTE,
+	constants.CRITICAL, constants.MASTERY, constants.VERSATILITY,
+	constants.BURST_HASTE,
 }
 
 -- Convenient bitmasks
@@ -151,12 +153,13 @@ lib.masks = {
 		constants.STATS,
 		constants.STAMINA,
 		constants.ATK_POWER,
-		constants.ATK_SPEED,
+		constants.MULTISTRIKE,
 		constants.SPL_POWER,
-		constants.SPL_HASTE,
+		constants.HASTE,
 		constants.CRITICAL,
 		constants.MASTERY,
-		constants.BURST_HASTE
+		constants.BURST_HASTE,
+		constants.VERSATILITY
 	),
 }
 local masks = lib.masks
@@ -336,18 +339,25 @@ function lib:GetSpellInfo(spellId)
 	end
 end
 
--- Validate that a spellID is valid.
+-- Filter valid spell ids.
 -- This can fails when the client cache is empty (e.g. after a major patch).
 -- Accept a table, in which case it is recursively validated.
-local function ValidateSpellId(spellId, spellType, errorLevel)
+local function FilterSpellId(spellId, spellType, errors)
 	if type(spellId) == "table"  then
+		local ids = {}
 		for i, subId in pairs(spellId) do
-			ValidateSpellId(subId, spellType, errorLevel+1)
+			local validated = FilterSpellId(subId, spellType, errors)
+			if validated then
+				tinsert(ids, validated)
+			end
 		end
+		return next(ids) and ids or nil
 	elseif type(spellId) ~= "number" then
-		error(format("%s: invalid %s, expected number, got %s", MAJOR, spellType, tostring(spellId), type(spellId)), errorLevel+1)
+		errors[spellId] = format("invalid %s, expected number, got %s", spellType, type(spellId))
 	elseif not GetSpellLink(spellId) then
-		error(format("%s: unknown %s #%d", MAJOR, spellType, spellId), errorLevel+1)
+		errors[spellId] = format("unknown %s #%d", spellType, spellId)
+	else
+		return spellId
 	end
 end
 
@@ -407,39 +417,54 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	local NOT_RAIDBUFF_TYPE = bnot(RAIDBUFF_TYPE)
 	local RAIDBUFF_FLAGS = filters["HELPFUL UNIQUE_AURA AURA"]
 
+	local errors = {}
+
 	-- Build the flags
 	local categoryFlags = constants[category] or 0
 	for spellId, flagDef in pairs(defs) do
-		ValidateSpellId(spellId, "spell", 2)
-		if spells[spellId] ~= nil then
-			error(format("%s: spell #%d already defined in '%s' database", MAJOR, spellId, sources[spellId]), 2)
-		end
-		local flags = filters[flagDef]
+		spellId = FilterSpellId(spellId, "spell", errors)
+		if spellId then
+			local flags = filters[flagDef]
 
-		if band(flags, TYPE) == RAIDBUFF then
-			-- Raid buff: store the buff type elsewhere
-			raidbuffs[spellId] = band(flags, RAIDBUFF_TYPE)
-			-- Remove the buff type and adds the common flags for raid buffs
-			flags = bor(band(flags, NOT_RAIDBUFF_TYPE), RAIDBUFF_FLAGS)
-		end
+			if band(flags, TYPE) == RAIDBUFF then
+				-- Raid buff: store the buff type elsewhere
+				raidbuffs[spellId] = band(flags, RAIDBUFF_TYPE)
+				-- Remove the buff type and adds the common flags for raid buffs
+				flags = bor(band(flags, NOT_RAIDBUFF_TYPE), RAIDBUFF_FLAGS)
+			end
 
-		db[spellId] = bor(db[spellId] or 0, flags, categoryFlags)
-		sources[spellId] = category
+			db[spellId] = bor(db[spellId] or 0, flags, categoryFlags)
+			sources[spellId] = category
+		end
 	end
 
 	-- Consistency checks
 	if newProviders then
 		for spellId, providerId in pairs(newProviders) do
-			if not db[spellId] then error(format("%s: spell listed only in providers: %d", MAJOR, spellId), 2) end
-			ValidateSpellId(spellId, "provided spell", 2)
-			ValidateSpellId(providerId, "provider spell", 2)
+			if not db[spellId] then
+				if not errors[spellId] then
+					errors[spellId] = format("spell listed only in providers: %d", spellId)
+				end
+				newProviders[spellId] = nil
+			else
+				local validSpellId = FilterSpellId(spellId, "provided spell", errors)
+				local validProviderId = FilterSpellId(providerId, "provider spell", errors)
+				newProviders[spellId] = validSpellId and validProviderId
+			end
 		end
 	end
 	if newModifiers then
 		for spellId, modified in pairs(newModifiers) do
-			if not db[spellId] then error(format("%s: spell listed only in modifiers: %d", MAJOR, spellId), 2) end
-			ValidateSpellId(spellId, "modifier spell", 2)
-			ValidateSpellId(modified, "modified spell", 2)
+			if not db[spellId] then
+				if not errors[spellId] then
+					errors[spellId] = format("spell listed only in modifiers: %d", spellId)
+				end
+				newModifiers[spellId] = nil
+			else
+				local validSpellId = FilterSpellId(spellId, "modifier spell", errors)
+				local validModified = FilterSpellId(modified, "modified spell", errors)
+				newModifiers[spellId] = validSpellId and validModified
+			end
 		end
 	end
 
@@ -448,6 +473,16 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		spells[spellId] = db[spellId]
 		providers[spellId] = newProviders and newProviders[spellId] or spellId
 		modifiers[spellId] = newModifiers and newModifiers[spellId] or providers[spellId]
+	end
+
+	if next(errors) then
+		for spellId, msg in pairs(errors) do
+			geterrorhandler()(format("%s(%s): %s", MAJOR, category, msg))
+		end
+		local clientInterface = select(4, GetBuildInfo())
+		if tonumber(interface) < clientInterface then
+			geterrorhandler()(format("%s(%s): data are probably outdated: data version=%5d, client version=%5d", MAJOR, category, tonumber(interface),  clientInterface))
+		end
 	end
 
 end

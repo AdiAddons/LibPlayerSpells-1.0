@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "50400", 5, {
+lib:__RegisterSpells("DEATHKNIGHT", "60000", 0, {
 	COOLDOWN = {
 		42650, -- Army of the Dead
 		61999, -- Raise Ally
@@ -94,10 +94,10 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 5, {
 		},
 	},
 	RAIDBUFF = {
-		[57330] = "ATK_POWER", -- Horn of Winter
-		[55610] = "ATK_SPEED", -- Unholy Aura
+		[ 55610] = "HASTE VERSATILITY", -- Unholy Aura
+		[ 57330] = "ATK_POWER",         -- Horn of Winter
+		[155522] = "MASTERY",           -- Power of the Grave
 	},
-	[45477] = "DISPEL HARMFUL",
 }, {
 	-- Map aura to provider
 	[ 55095] =  59921, -- Frost Fever
@@ -118,45 +118,6 @@ lib:__RegisterSpells("DEATHKNIGHT", "50400", 5, {
 	[ 77535] =  49998, -- Blood Shield to Blood Strike
 	-- map spell id to provider?
 	[ 45477] =  58631, -- Icy Touch <= Glyph of Icy Touch
-
 }, {
 	-- Map aura to modified spell(s)
-	[ 50421] = 49998, -- Scent of Blood => Death Strike            -- NOTE: stack count covered by the default ui
-	[ 55095] = { -- Frost Fever =>
-		45477, -- Icy Touch
-		49184, -- Howling Blast
-	},
-	[ 55078] = 45462, -- Blood Plague => Plague Strike
-	[ 81141] = { -- Crimson Scourge =>                             -- NOTE: highlight covered by the default ui
-		43265, -- Death and Decay
-		48721, -- Blood Boil
-	},
-	[ 51124] = { -- Killing Machine =>                             -- NOTE: highlight covered by the default ui
-		49143, -- Frost Strike
-		49020, -- Obliterate
-	},
-	[ 59052] = { -- Freezing Fog =>                                -- NOTE: highlight covered by the default ui
-		45477, -- Icy Touch                                        -- NOTE: becomes too much if we also show Frost Fever on Icy Touch
-		49184, -- Howling Blast
-	},
-	[ 81340] = 47541, -- Sudden Doom => Death Coil                 -- NOTE: highlight covered by the default ui
-	[ 91342] = 63560, -- Shadow Infusion => Dark Transformation    -- NOTE: stack count and highlight covered by the default ui
-	[115635] = 47541, -- Death Barrier => Death Coil               -- NOTE: Sudden Doom is more interesting than this
 })
-
---[[ ---- TODO ----
-ABA
-	change to not show stack count when == 1?
-
-GLYPHS:
-	Dark Succor => Death Strike
-		effect is only possible when not in Blood Presence (it still triggers in BP though)
-			show only when not in BP
-			96279 - Glyph of Dark Succor (spell id - provider)
-			101568 - Dark Succor (buff on the player)
-			49998 - Death Strike (spell)
-
-Talents:
-	Chilblains (50041) - root effect id 96294 (Chains of Ice)
-	Remorseless Winter (108200) - stun effect id 115001, listed only as provider in DRData?
-]]
