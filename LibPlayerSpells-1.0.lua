@@ -424,17 +424,21 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	for spellId, flagDef in pairs(defs) do
 		spellId = FilterSpellId(spellId, "spell", errors)
 		if spellId then
-			local flags = filters[flagDef]
+			if sources[spellId] then
+				errors[spellId] = format("already listed in the %s database", sources[spellId])
+			else
+				local flags = filters[flagDef]
 
-			if band(flags, TYPE) == RAIDBUFF then
-				-- Raid buff: store the buff type elsewhere
-				raidbuffs[spellId] = band(flags, RAIDBUFF_TYPE)
-				-- Remove the buff type and adds the common flags for raid buffs
-				flags = bor(band(flags, NOT_RAIDBUFF_TYPE), RAIDBUFF_FLAGS)
+				if band(flags, TYPE) == RAIDBUFF then
+					-- Raid buff: store the buff type elsewhere
+					raidbuffs[spellId] = band(flags, RAIDBUFF_TYPE)
+					-- Remove the buff type and adds the common flags for raid buffs
+					flags = bor(band(flags, NOT_RAIDBUFF_TYPE), RAIDBUFF_FLAGS)
+				end
+
+				db[spellId] = bor(db[spellId] or 0, flags, categoryFlags)
+				sources[spellId] = category
 			end
-
-			db[spellId] = bor(db[spellId] or 0, flags, categoryFlags)
-			sources[spellId] = category
 		end
 	end
 
