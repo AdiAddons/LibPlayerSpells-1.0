@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 4
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 5
 if LibStub then
 	lib = LibStub:NewLibrary(MAJOR, MINOR)
 	if not lib then return end
@@ -355,7 +355,7 @@ local function FilterSpellId(spellId, spellType, errors)
 	elseif type(spellId) ~= "number" then
 		errors[spellId] = format("invalid %s, expected number, got %s", spellType, type(spellId))
 	elseif not GetSpellLink(spellId) then
-		errors[spellId] = format("unknown %s #%d", spellType, spellId)
+		errors[spellId] = format("unknown %s", spellType)
 	else
 		return spellId
 	end
@@ -443,7 +443,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		for spellId, providerId in pairs(newProviders) do
 			if not db[spellId] then
 				if not errors[spellId] then
-					errors[spellId] = format("spell listed only in providers: %d", spellId)
+					errors[spellId] = "only in providers"
 				end
 				newProviders[spellId] = nil
 			else
@@ -457,7 +457,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		for spellId, modified in pairs(newModifiers) do
 			if not db[spellId] then
 				if not errors[spellId] then
-					errors[spellId] = format("spell listed only in modifiers: %d", spellId)
+					errors[spellId] = "only in modifiers"
 				end
 				newModifiers[spellId] = nil
 			else
@@ -476,13 +476,15 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	end
 
 	if next(errors) then
-		for spellId, msg in pairs(errors) do
-			geterrorhandler()(format("%s(%s): %s", MAJOR, category, msg))
-		end
+		local msgs = {}
 		local clientInterface = select(4, GetBuildInfo())
 		if tonumber(interface) < clientInterface then
-			geterrorhandler()(format("%s(%s): data are probably outdated: data version=%5d, client version=%5d", MAJOR, category, tonumber(interface),  clientInterface))
+			tinsert(msgs, format("Data are probably outdated: data version=%5d, client version=%5d", tonumber(interface), clientInterface))
 		end
+		for spellId, msg in pairs(errors) do
+			tinsert(msgs, format("Spell #%d: %s", spellId, msg))
+		end
+		geterrorhandler()(format("%s: %d errors in %s database:\n%s", MAJOR, #msgs, category, table.concat(msgs, "\n")))
 	end
 
 end
