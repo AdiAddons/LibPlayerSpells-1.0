@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "60000", 0, {
+lib:__RegisterSpells("WARLOCK", "60000", 1, {
 	COOLDOWN = {
 		  1122, -- Summon Infernal
 		 18540, -- Summon Doomguard
@@ -28,12 +28,10 @@ lib:__RegisterSpells("WARLOCK", "60000", 0, {
 		105174, -- Hand of Gul'dan
 		108482, -- Unbound Will
 		108501, -- Grimoire of Service
-		114175, -- Demonic Slash (Dark Apotheosis)
 		114189, -- Health Funnel (glyphed)
 		120451, -- Flames of Xoroth
 		INTERRUPT = {
 			 19647, -- Spell Lock (felhunter)
-			103967, -- Carrion Swarm (demon form)
 			119911, -- Optical Blast (observer)
 			132409, -- Spell Lock (sacrified felhunter)
 		},
@@ -43,16 +41,13 @@ lib:__RegisterSpells("WARLOCK", "60000", 0, {
 				  48020, -- Demonic Circle: Teleport
 				 104025, -- Immolation Aura (Metamorphosis/Dark Apotheosis)
 				 108503, -- Grimoire of Sacrifice (talent)
-				 116198, -- Aura of Enfeeblement (Metamorphosis/Dark Apotheosis)
 				[  1454] = "INVERT_AURA", -- Life Tap
 				   1949, -- Hellfire
 				SURVIVAL = {
-					  6229, -- Twilight Ward
 					104773, -- Unending Resolve
 					108359, -- Dark Regeneration
 					108416, -- Sacrificial Pact
 					110913, -- Dark Bargain
-					119839, -- Fury Ward (Dark Apotheosis)
 					132413, -- Shadow Bulwark (Grimoire of Sacrifice)
 				},
 				BURST = {
@@ -71,7 +66,6 @@ lib:__RegisterSpells("WARLOCK", "60000", 0, {
 				  6789, -- Mortal Coil
 				 17962, -- Conflagrate
 				 30283, -- Shadowfury
-				 47897, -- Demonic Breath
 				111397, -- Blood Horror
 				124915, -- Chaos Wave (Metamorphosis)
 			},
@@ -80,8 +74,6 @@ lib:__RegisterSpells("WARLOCK", "60000", 0, {
 	AURA = {
 		PERSONAL = {
 			104232, -- Rain of fire
-			108559, -- Demonic Rebirth
-			108563, -- Backlash
 			111400, -- Burning Rush (talent)
 			114635, -- Ember Tap
 			117828, -- Backdraft (buff)

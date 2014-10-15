@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", "60000", 0, {
+lib:__RegisterSpells("PALADIN", "60000", 1, {
 	[4987] = 'DISPEL HELPFUL', -- Cleanse
 	INTERRUPT = {
 		96231, -- Rebuke
@@ -32,11 +32,9 @@ lib:__RegisterSpells("PALADIN", "60000", 0, {
 				   498, -- Divine Protection
 				   642, -- Divine Shield
 				 31850, -- Ardent Defender
-				 54428, -- Divine Plea
 				132403, -- Shield of the Righteous (prot)
 				 86659, -- Ancient Guardian (prot)
 				105809, -- Holy Avenger
-				113075, -- Symbiosis: Barkskin
 			},
 			HELPFUL = {
 				   633, -- Lay on Hands
@@ -49,7 +47,6 @@ lib:__RegisterSpells("PALADIN", "60000", 0, {
 		},
 		BURST = {
 			PERSONAL = {
-				86698, -- Guardian of Ancient Kings
 				31884, -- Avenging Wrath
 			},
 			114165, -- Holy Prism
@@ -63,8 +60,6 @@ lib:__RegisterSpells("PALADIN", "60000", 0, {
 	},
 	AURA = {
 		PERSONAL = {
-			 84963, -- Inquisition
-			 86700, -- Ancient Power
 			 31868, -- Supplication
 			114250, -- Selfless Healer
 			 25780, -- Righteous Fury
@@ -79,7 +74,6 @@ lib:__RegisterSpells("PALADIN", "60000", 0, {
 		},
 		HARMFUL = {
 			 31801, -- Censure
-			115798, -- Weakened Blows
 			114916, -- Execution Sentence (damage)
 			114919, -- Light's Hamer (damage)
 			 81298, -- Consecration
@@ -92,17 +86,12 @@ lib:__RegisterSpells("PALADIN", "60000", 0, {
 	},
 }, {
 	-- Map aura to provider
-	[115798] = { -- Weakened Blows <=
-		35395, -- Crusader Strike
-		53595, -- Hammer of Righteousness
-	},
 	[81298]  = 26573, -- Consecration (prot)
 	[132403] = 53600, -- Shield of the Righteous (prot)
 	[114917] = 114157,-- Execution Sentence (heal)
 	[114916] = 114157,-- Execution Sentence (damage)
 	[114919] = 114158,-- Light's Hammer (damage)
 	[114250] = 20271, -- Selfless Healer <= Judgement
-	[ 86700] = 86698, -- Ancient Power <= Guardian of Ancient Kings
 }, {
 	-- Map aura to modified spell(s)
 	[114250] = 19750, -- Selfless Healer => Flash of Light

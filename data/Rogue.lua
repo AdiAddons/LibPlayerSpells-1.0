@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", "60000", 0, {
+lib:__RegisterSpells("ROGUE", "60000", 1, {
 	COOLDOWN = {
 		INTERRUPT = {
 			1766, -- Kick
@@ -35,12 +35,10 @@ lib:__RegisterSpells("ROGUE", "60000", 0, {
 					 31224, -- Cloak of Shadows
 					 74001, -- Combat Readiness
 					 74002, -- Combat Insight (stacking buff)
-					113613, -- Symbiosis: Growl
 				},
 				BURST = {
 					[13750] = "POWER_REGEN", -- Adrenaline Rush
 					 51690, -- Killing Spree
-					121471, -- Shadow Blades
 					 51713, -- Shadow Dance
 				},
 			},
@@ -58,15 +56,12 @@ lib:__RegisterSpells("ROGUE", "60000", 0, {
 			  2823, -- Deadly Poison
 			  8679, -- Wound Poison
 			  3408, -- Crippling Poison
-			  5761, -- Mind-numbing Poison
 			108211, -- Leeching Poison
-			108215, -- Paralytic Poison
 			  5171, -- Slice and Dice
 			  2983, -- Sprint
 			 73651, -- Recuperate
 			 36554, -- Shadow Step
 			108212, -- Burst of Speed
-			114842, -- Shadow Walk
 			137586, -- Shuriken Toss
 			 32645, -- Envenom
 			[ 1966] = "SURVIVAL", -- Feint
@@ -79,9 +74,6 @@ lib:__RegisterSpells("ROGUE", "60000", 0, {
 			   703, -- Garrote
 			 89775, -- Hemorrhage
 			115196, -- Debilitating Poison (Shiv effect of Crippling Poison)
-			115194, -- Mind Paralysis (Shiv effect of Mind-numbling Poison)
-			115197, -- Partial Paralysis (Shiv effect of Paralytic Poison) NOTE: has a DRData entry but is not currently displayed on Shiv
-			113953, -- Paralysis (4 stacks effect from Paralytic Poison) NOTE: has a DRData entry but is not currently displayed on Shiv
 		},
 	},
 	RAIDBUFF = {
@@ -92,12 +84,4 @@ lib:__RegisterSpells("ROGUE", "60000", 0, {
 }, {
 	-- Map aura to modified spell(s)
 	[ 51713] = 8676, -- Shadow Dance => Ambush
-	[121471] = {     -- Shadow Blades =>
-		 1752,       -- Sinister Strike
-		84617,       -- Revealing Strike
-		51723,       -- Fan of Knives
-		 1833,       -- Cheap Shot
-		 8676,       -- Ambush
-		  703,       -- Garrote
-	},
 })

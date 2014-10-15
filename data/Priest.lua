@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "60000", 0, {
+lib:__RegisterSpells("PRIEST", "60000", 1, {
 	COOLDOWN = {
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
@@ -28,17 +28,12 @@ lib:__RegisterSpells("PRIEST", "60000", 0, {
 		 62618, -- Power Word: Barrier
 		 64843, -- Divine Hymn
 		 73325, -- Leap of Faith
-		108921, -- Psyfiend
-		108968, -- Void Shift
 		126135, -- Lightwell
-		142723, -- Void Shift (shadow)
-		108968, -- Void Shift (discipline, holy)
 		["HELPFUL DISPEL"] = {
 			527, -- Purify
 		},
 		AURA = {
 			PERSONAL = {
-				89485, -- Inner Focus
 				SURVIVAL = {
 					   586, -- Fade
 					 20711, -- Spirit of Redemption
@@ -48,7 +43,6 @@ lib:__RegisterSpells("PRIEST", "60000", 0, {
 				MANA_REGEN = {
 					 34433, -- Shadowfiend
 					123040, -- Mind Bender
-					 64901, -- Hymn of Hope
 				},
 				BURST = {
 					 10060, -- Power Infusion
@@ -81,9 +75,7 @@ lib:__RegisterSpells("PRIEST", "60000", 0, {
 	},
 	AURA = {
 		PERSONAL = {
-			   588, -- Inner Fire
 			 63735, -- Serendipity
-			 73413, -- Inner Will
 			 81661, -- Evangelism
 			112833, -- Spectral Guise
 			114255, -- Surge of Light

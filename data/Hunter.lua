@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 4, {
+lib:__RegisterSpells("HUNTER", "60000", 5, {
 	COOLDOWN = {
 		[147362] = "INTERRUPT", -- Counter Shot
 		    781, -- Disengage
@@ -66,7 +66,6 @@ lib:__RegisterSpells("HUNTER", "60000", 4, {
 				   5118, -- Aspect of the Cheetah
 				[ 51755] = "SURVIVAL", -- Camouflage
 				[148467] = "SURVIVAL", -- Deterrence
-				  56453, -- Lock and Load
 				[  5384] = "SURVIVAL", -- Feign Death
 				  35079, -- Misdirection
 				[ 19574] = "BURST", -- Bestial Wrath
@@ -165,7 +164,6 @@ lib:__RegisterSpells("HUNTER", "60000", 4, {
 	-- Map aura to provider
 	[118253] =   3044, -- Serpent Sting <= Arcane Shot
 	[ 51755] =  51753, -- Camouflage
-	[ 56453] = 53301, -- Lock and Load <- Explosive Shot
 	[ 13812] = {
 		13813, -- Explosive Trap
 		82939, -- Explosive Trap (Trap Launcher)

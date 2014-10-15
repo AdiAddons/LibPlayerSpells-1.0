@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "60000", 0, {
+lib:__RegisterSpells("DEATHKNIGHT", "60000", 1, {
 	COOLDOWN = {
 		42650, -- Army of the Dead
 		61999, -- Raise Ally
@@ -33,7 +33,6 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 0, {
 		},
 		AURA = {
 			HELPFUL = {
-				  49016, -- Unholy Frenzy
 				[145629] = 'SURVIVAL', -- Anti-Magic Zone
 			},
 			HARMFUL = {
@@ -52,7 +51,6 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 0, {
 					 81256, -- Dancing Rune Weapon
 					 49222, -- Bone Shield
 					 55233, -- Vampiric Blood
-					113072, -- Might of Ursoc (Symbiosis)
 					115018, -- Desecrated Ground
 					 42650, -- Armoy of the Dead (for damage reduction while chaneling)
 				},
@@ -100,14 +98,11 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 0, {
 	},
 }, {
 	-- Map aura to provider
-	[ 55095] =  59921, -- Frost Fever
-	[ 55078] =  59879, -- Blood Plague
 	[ 81141] =  81136, -- Crimson Scourge
 	[ 81256] =  49028, -- Dancing Rune Weapon
 	[145629] =  51052, -- Anti-Magic Zone
 	[115018] = 108201, -- Desecrated Ground
 	[ 51124] =  51128, -- Killing Machine
-	[ 59052] =  59057, -- Freezing Fog <= Rime
 	[ 81340] =  49530, -- Sudden Doom
 	[ 91342] =  49572, -- Shadow Infusion
 	[115635] =  63333, -- Death Barrier <= Glyph of Death Coil
@@ -116,8 +111,6 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 0, {
 	[ 91800] =  47481, -- Gnaw (Ghoul)
 	[ 91797] =  47481, -- Monstrous Blow <= Gnaw (Ghoul)
 	[ 77535] =  49998, -- Blood Shield to Blood Strike
-	-- map spell id to provider?
-	[ 45477] =  58631, -- Icy Touch <= Glyph of Icy Touch
 }, {
 	-- Map aura to modified spell(s)
 })

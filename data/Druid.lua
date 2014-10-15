@@ -20,30 +20,24 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 0, {
+lib:__RegisterSpells("DRUID", "60000", 1, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
 		 20484, -- Rebirth
 		 33831, -- Force of Nature (balance)
 		 78674, -- Starsurge
-		 88751, -- Wild Mushroom: Detonate
 		102693, -- Force of Nature (restoration)
 		102703, -- Force of Nature (feral)
 		102706, -- Force of Nature (guardian)
-		108288, -- Heart of the Wild (talent pane)
-		102791, -- Wild Mushroom: Bloom
 		132469, -- Typhoon
 		145205, -- Wild Mushroom (restoration)
 		INTERRUPT = {
 			 78675, -- Solar Beam
-			 80964, -- Skull Bash (bear)
-			 80965, -- Skull Bash (cat)
 		},
 		AURA = {
 			HELPFUL = {
 				48438,-- Wild Growth
-				[ 29166] = "PERSONAL MANA_REGEN", -- Innervate
 				[102342] = "SURVIVAL",-- Ironbark
 			},
 			PERSONAL = {
@@ -52,16 +46,13 @@ lib:__RegisterSpells("DRUID", "60000", 0, {
 				108292, -- Heart of the Wild (Feral)
 				108293, -- Heart of the Wild (Guardian)
 				108294, -- Heart of the Wild (Resto)
-				 16689, -- Nature's Grasp
 				 77761, -- Stampeding Roar (bear)
 				 77764, -- Stampeding Roar (cat)
 				106898, -- Stampeding Roar (humanoid)
-				[ 5229] = "POWER_REGEN", -- Enrage
 				SURVIVAL = {
 					 22812, -- Barkskin
 					 22842, -- Frenzied Regeneration
 					 61336, -- Survival Instincts
-					106922, -- Might of Ursoc
 					132402, -- Savage Defense (buff)
 				},
 				BURST = {
@@ -85,13 +76,11 @@ lib:__RegisterSpells("DRUID", "60000", 0, {
 			[110309] = "HELPFUL UNIQUE_AURA", -- Symbiosis
 			BURST = {
 				 52610, -- Savage Roar
-				127538, -- Savage Roar (glyphed)
 			},
 			IMPORTANT = {
 				 16870, -- Clearcasting (buff)
 				 69369, -- Predatory Swiftness (buff)
 				100977, -- Harmony (buff)
-				145151, -- Dream of Cenarius (balance)
 				145152, -- Dream of Cenarius (feral)
 				145162, -- Dream of Cenarius (guardian)
 			},
