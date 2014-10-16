@@ -23,7 +23,6 @@ if not lib then return end
 lib:__RegisterSpells("WARRIOR", "60000", 1, {
 	COOLDOWN = {
 		INTERRUPT = {
-				102060, -- Disrupting Shout
 				  6552, -- Pummel
 		},
 		AURA = {
@@ -32,28 +31,31 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 				 18499, -- Berserker Rage
 				 46924, -- Bladestorm
 				 12292, -- Bloodbath (Self Buff)
-				125565, -- Demoralizing Shout (Prot)
 				118038, -- Die By The Sword (Arms, Fury)
 				 55694, -- Enraged Regeneration
 				 12975, -- Last Stand (Prot)
-				114192, -- Mocking Banner
-				  1719, -- Recklessness
+				114192, -- Mocking Banner (Prot)
+				  1719, -- Recklessness (Arms, Fury)
 				132404, -- Shield Block (Prot)
-				   871, -- Shield Wall
+				-- 156321, -- Shield Charge (Glad)
+				   871, -- Shield Wall (Prot)
 				 23920, -- Spell Reflect
 				 12328, -- Sweeping Strikes (Arms)
 			},
 			HELPFUL = {
 				  3411, -- Intervene
 				114028, -- Mass Spell Reflection
-				 97463, -- Rallying Cry
+				 97463, -- Rallying Cry (Arms, Fury)
+				152277, -- Ravager
 				114029, -- Safeguard
 				114030, -- Vigilance
 			},
 			HARMFUL = {
 				113344, -- Bloodbath (dot)
-				 86346, -- Colossus Smash (Arms, Fury)
-				 64382, -- Shattering Throw
+				167105, -- Colossus Smash (Arms)
+				  1160, -- Demoralizing Shout (Prot)
+				-- 176289, -- Siegebreaker
+				 64382, -- Shattering Throw (Glyph)
 				 18498, -- Silence (Glyph of Gag Order)
 				132168, -- Shockwave
 				132169, -- Storm Bolt
@@ -63,14 +65,21 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 	},
 	AURA = {
 		PERSONAL = {
+			  2457, -- Battle Stance
+			159362, -- Blood Craze (Prot)
+			    71, -- Defensive Stance
 			 12880, -- Enrage
 			112048, -- Shield Barrier (Prot)
+			174926, -- Shield Barrier 
 			 50227, -- Sword and Board (Prot)
 			122510, -- Ultimatum (Prot)
 			 32216, -- Victory Rush - Victorious
 		},
 		HARMFUL = {
-			115767, -- Deep Wounds
+			115767, -- Deep Wounds (Prot)
+			115804, -- Mortal Wounds		
+			   772, -- Rend
+			  6343, -- Thunder Clap Slow 
 		},
 	},
 	RAIDBUFF = {
@@ -88,15 +97,16 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 }, {
 	-- Map aura to provider
 	[113344] =                   12292, -- Bloodbath (dot tracking)
-	[125565] =                    1160, -- Demo Shout Self Buff
-	[ 12880] =       { 18499, 55694, }, -- Enrage status on Berserker Rage, Enraged Regeneration
+	[ 12880] =                   18499, -- Enrage status on Berserker Rage
 	[ 18498] =        { 57755, 6552, }, -- Heroic Throw, Pummel (Gag Order) (Silence effect)
-	[115767] = { 12294, 6343, 20243, }, -- Mortal Strike, Thunder Clap, Devastate (Deep Wounds)
-	[ 97463] =                   97462, -- Rallying Cry
-	[132404] =                    2565, -- Shield Block
+	[115804] =                   12294, -- Mortal Wounds from Mortal Strike
+	[115767] =        { 6343, 20243, }, -- Thunder Clap, Devastate (Deep Wounds)
+	[ 97463] =                   97462, -- Rallying Cry (Arms, Fury)
+	[132404] =                    2565, -- Shield Block (Prot)
+	-- [156321] =                    2565, -- Shield Charge (Glad)
 	[132168] =                   46968, -- Shockwave
 	[132169] =                  107570, -- Storm Bolt
-	[122510] =                      78, -- Ultimatum, Shield Slam => Free Heroic Strike
+	[122510] =                      78, -- Ultimatum, Shield Slam => Free Heroic Strike (Prot)
 	[ 32216] =      { 34428, 103840, }, -- Victorious, Killing Blow => Victory Rush, Impending Victory
 	[105771] =                     100, -- Warbringer Root (Charge)
 }, {
