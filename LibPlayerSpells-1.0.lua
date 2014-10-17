@@ -67,7 +67,6 @@ lib.constants = {
 	WARLOCK     = 0x00000200,
 	WARRIOR     = 0x00000400,
 	RACIAL      = 0x00000800, -- Racial trait
-	TRADESKILL  = 0x00001000, -- Tradeskill bonus ability
 
 	-- Raid buff types, *requires* RAIDBUFF, else this messes up sources
 	STATS       = 0x00000001, -- +5% strengh, agility and intellect
@@ -134,8 +133,7 @@ lib.masks = {
 		constants.SHAMAN,
 		constants.WARLOCK,
 		constants.WARRIOR,
-		constants.RACIAL,
-		constants.TRADESKILL
+		constants.RACIAL
 	),
 	TARGETING = bor(
 		constants.HELPFUL,
@@ -182,7 +180,6 @@ lib.__categories = lib.__categories or {
 	WARLOCK     = {},
 	WARRIOR     = {},
 	RACIAL      = {},
-	TRADESKILL  = {},
 }
 local categories = lib.__categories
 

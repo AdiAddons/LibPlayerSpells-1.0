@@ -49,7 +49,6 @@ local sources = {
 	"Racials",
 	"Rogue",
 	"Shaman",
-	"Tradeskills",
 	"Warlock",
 	"Warrior",
 }
