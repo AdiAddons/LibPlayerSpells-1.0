@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 5, {
+lib:__RegisterSpells("HUNTER", "60000", 6, {
 	COOLDOWN = {
 		[147362] = "INTERRUPT", -- Counter Shot
 		    781, -- Disengage
@@ -74,7 +74,6 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 				[  3045] = "BURST", -- Rapid Fire
 				[ 82921] = "BURST", -- Bombardment
 				 118922, -- Posthaste (talent)
-				[ 82726] = "POWER_REGEN", -- Fervor (talent)
 			},
 		},
 	},
@@ -94,6 +93,7 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 			162537, -- Poisoned Ammo (Exotic Munitions talent)
 			162536, -- Incendiary Ammo (Exotic Munitions talent)
 			162539, -- Frozen Ammo (Exotic Munitions talent)
+			177668, -- Steady Focus
 		},
 	},
 	RAIDBUFF = {
@@ -192,6 +192,7 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 	[120761] = 117050, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
 	[121414] = 117050, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
 	[162546] = 162534, -- Frozen Ammo <-- Exotic Munitions (talent) -- TODO: add to snares in Common in ABA -- FIXME: LibSpellbook says it's unknown when it isn't
+	[177668] = 177667, -- Steady Focus (survival)
 }, {
 	-- Map aura to modified spell(s)
 	[118253] = {
@@ -209,4 +210,8 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 	},
 	[162534] = 75, -- Poisoned Ammo --> Auto Shot
 	[162546] = 75, -- Frozen Ammo --> Auto Shot -- TODO: add to snares in Common in ABA
+	[177668] = { -- Steady Focus (talent) =>
+		56641, -- Steady Shot
+		77767, -- Cobra Shot
+	},
 })
