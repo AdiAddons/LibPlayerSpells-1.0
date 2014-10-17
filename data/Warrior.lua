@@ -70,7 +70,7 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 			    71, -- Defensive Stance
 			 12880, -- Enrage (Prot, Fury)
 			112048, -- Shield Barrier (Prot)
-			174926, -- Shield Barrier 
+			174926, -- Shield Barrier
 			 50227, -- Sword and Board (Prot)
 			122510, -- Ultimatum (Prot)
 			169686, -- Unyielding Strikes (Prot, Talent)
@@ -79,9 +79,9 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 		},
 		HARMFUL = {
 			115767, -- Deep Wounds (Prot)
-			115804, -- Mortal Wounds		
+			115804, -- Mortal Wounds
 			   772, -- Rend
-			  6343, -- Thunder Clap Slow 
+			  6343, -- Thunder Clap Slow
 		},
 	},
 	DISPEL = {
@@ -110,5 +110,4 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 	[  7922] =                     100, -- Warbringer Stun (Charge)
 }, {
 	-- Map aura to modified spell(s)
-	
 })
