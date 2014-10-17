@@ -42,6 +42,9 @@ lib:__RegisterSpells("MAGE", "60000", 2, {
 					 108978, -- Alter Time (Action Button)
 					 127140, -- Alter Time (Action Button while buffed)
 					 110909, -- Alter Time (Buff)
+					 HELPFUL = {
+						159916, -- Amplify Magic
+					 },
 				},
 				108843, -- Blazing Speed
 				108839, -- Ice Floes
