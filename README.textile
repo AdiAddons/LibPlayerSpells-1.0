@@ -98,16 +98,17 @@ These flags are used in the additional data for raids buffs.
 * @STATS@: strengh, agility and intellect,
 * @STAMINA@: stamina,
 * @ATK_POWER@: attack power,
-* @ATK_SPEED@: attack speed,
+* @MULTISTIRKE@: multistrike,
 * @SPL_POWER@: spell power,
-* @SPL_HASTE@: spell haste,
+* @HASTE@: haste,
 * @CRITICAL@: critical strike,
 * @MASTERY@: mastery bonus,
 * @BURST_HASTE@: burst haste (e.g. Bloodlust/Heroism & al).
+* @VERSATILITY@: versality.
 
 h4. Spell sources
 
-These flags indicate the source of the spell. The constants are self-explanatory: @DEATHKNIGHT@, @DRUID@, @HUNTER@, @MAGE@, @MONK@, @PALADIN@, @PRIEST@, @ROGUE@, @SHAMAN@, @WARLOCK@, @WARRIOR@, @RACIAL@, @TRADESKILL@.
+These flags indicate the source of the spell. The constants are self-explanatory: @DEATHKNIGHT@, @DRUID@, @HUNTER@, @MAGE@, @MONK@, @PALADIN@, @PRIEST@, @ROGUE@, @SHAMAN@, @WARLOCK@, @WARRIOR@, @RACIAL@.
 
 h4. Targeting
 
