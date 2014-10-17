@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 2, {
+lib:__RegisterSpells("DRUID", "60000", 3, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -92,11 +92,11 @@ lib:__RegisterSpells("DRUID", "60000", 2, {
 		HARMFUL = {
 			  1079, -- Rip
 			  1822, -- Rake
-			  8921, -- Moonfire
 			 33745, -- Lacerate
 			 77758, -- Thrash (guardian)
-			 93402, -- Sunfire
 			106830, -- Thrash (feral)
+			164812, -- Moonfire
+			164815, -- Sunfire
 		},
 	},
 	RAIDBUFF = {
@@ -106,6 +106,8 @@ lib:__RegisterSpells("DRUID", "60000", 2, {
 	},
 }, {
 	-- Map aura to provider
+	[164812] =  8921, -- Moonfire
+	[164815] = 93402, -- Sunfire
 }, {
 	-- Map aura to modified spell(s)
 })
