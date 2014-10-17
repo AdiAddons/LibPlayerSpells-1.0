@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 6, {
+lib:__RegisterSpells("HUNTER", "60000", 7, {
 	COOLDOWN = {
 		[147362] = "INTERRUPT", -- Counter Shot
 		[120679] = "POWER_REGEN", -- Dire Beast (talent)
@@ -70,7 +70,6 @@ lib:__RegisterSpells("HUNTER", "60000", 6, {
 				[ 82692] = "BURST", -- Focus Fire
 				[  3045] = "BURST", -- Rapid Fire
 				[ 82921] = "BURST", -- Bombardment
-				 118922, -- Posthaste (talent)
 			},
 		},
 	},
