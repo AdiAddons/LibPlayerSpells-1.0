@@ -23,6 +23,7 @@ if not lib then return end
 lib:__RegisterSpells("HUNTER", "60000", 5, {
 	COOLDOWN = {
 		[147362] = "INTERRUPT", -- Counter Shot
+		[120679] = "POWER_REGEN", -- Dire Beast (talent)
 		    781, -- Disengage
 		   6991, -- Feed Pet
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
@@ -30,32 +31,33 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 		 157708, -- Kill Shot (with Enhanced Kill Shot 157707)
 		  53209, -- Chimaera Shot
 		 109304, -- Exhilaration (talent)
-		[120679] = "POWER_REGEN", -- Dire Beast (talent)
 		 121818, -- Stampede (talent)
 		 109259, -- Power Shot (talent)
 		 120360, -- Barrage (talent)
 		AURA = {
 			HARMFUL = {
-				 1462, -- Beast Lore
-				 3674, -- Black Arrow
-				--  5116, -- Concussive Shot -- XXX: added through Common rules in ABA
-				-- 20736, -- Distracting Shot -- XXX: added through DRData (taunt)
+				  1462, -- Beast Lore
+				  3674, -- Black Arrow
+				117405, -- Binding Shot (afflicted)
 				 53301, -- Explosive Shot
 				 13812, -- Explosive Trap
 				  3355, -- Freezing Trap
 				135299, -- Ice Trap
 				 25809, -- Crippling Poison
+				131894, -- A Murder of Crows (talent)
+				120761, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
+				121414, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
+				--   5116, -- Concussive Shot -- XXX: added through Common rules in ABA
+				--  20736, -- Distracting Shot -- XXX: added through DRData (taunt)
 				-- 136634, -- Narrow Escape (talent) -- XXX: added through DRData (root)
 				-- 117526, -- Binding Shot (talent) -- XXX: added through DRData (stun)
 				--  19386, -- Wyvern Sting (talent) -- XXX: added through DRData (incapacitate)
 				--  24394, -- Intimidation (talent) -- XXX: added through DRData (stun)
-				131894, -- A Murder of Crows (talent)
-				120761, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
-				121414, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
 			},
 			HELPFUL = {
 				 13159, -- Aspect of the Pack
 				172106, -- Aspect of the Fox
+				 61648, -- Aspect of the Beast (Glyph)
 				  1462, -- Beast Lore
 				 54216, -- Master's Call
 			},
@@ -64,16 +66,16 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 			},
 			PERSONAL = {
 				   5118, -- Aspect of the Cheetah
-				[ 51755] = "SURVIVAL", -- Camouflage
-				[148467] = "SURVIVAL", -- Deterrence
-				[  5384] = "SURVIVAL", -- Feign Death
 				  35079, -- Misdirection
+				  53257, -- Cobra Strikes
+				 118922, -- Posthaste (talent)
+				[ 51755] = "SURVIVAL", -- Camouflage
+				[ 19263] = "SURVIVAL", -- Deterrence
+				[  5384] = "SURVIVAL", -- Feign Death
 				[ 19574] = "BURST", -- Bestial Wrath
 				[ 82692] = "BURST", -- Focus Fire
-				  53257, -- Cobra Strikes
 				[  3045] = "BURST", -- Rapid Fire
 				[ 82921] = "BURST", -- Bombardment
-				 118922, -- Posthaste (talent)
 				[ 82726] = "POWER_REGEN", -- Fervor (talent)
 			},
 		},
@@ -94,11 +96,12 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 			162537, -- Poisoned Ammo (Exotic Munitions talent)
 			162536, -- Incendiary Ammo (Exotic Munitions talent)
 			162539, -- Frozen Ammo (Exotic Munitions talent)
+			 83559, -- Black Ice (Glyph)
 		},
 	},
 	RAIDBUFF = {
 		ATK_POWER = {
-			19506, -- Trueshot Aura
+			 19506, -- Trueshot Aura
 		},
 		BURST_HASTE = {
 			 90355, -- Ancient Hysteria
@@ -125,10 +128,10 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 			160198, -- Lone Wolf: Grace of the Cat
 		},
 		MULTISTRIKE = {
-			24844, -- Breath of the Winds
-			34889, -- Spry Attacks
-			50519, -- Sonic Focus
-			58604, -- Double Bite
+			 24844, -- Breath of the Winds
+			 34889, -- Spry Attacks
+			 50519, -- Sonic Focus
+			 58604, -- Double Bite
 		},
 		SPL_POWER = {
 			128433, -- Serpent's Cunning
@@ -151,11 +154,11 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 			173035, -- Grace
 		},
 		[ 57386] = "MULTISTRIKE VERSATILITY", -- Wild Strength
-		[ 90363] = "STATS CRITICAL",     -- Embrace of the Shale Spider
-		[ 90364] = "STAMINA SPL_POWER" , -- Qiraji Fortitude
-		[126309] = "SPL_POWER CRITICAL", -- Still Water
-		[160003] = "STAMINA HASTE",      -- Savage Vigor
-		[160077] = "STATS VERSATILITY",  -- Strength of the Earth
+		[ 90363] = "STATS CRITICAL",          -- Embrace of the Shale Spider
+		[ 90364] = "STAMINA SPL_POWER" ,      -- Qiraji Fortitude
+		[126309] = "SPL_POWER CRITICAL",      -- Still Water
+		[160003] = "STAMINA HASTE",           -- Savage Vigor
+		[160077] = "STATS VERSATILITY",       -- Strength of the Earth
 	},
 	DISPEL = {
 		[19801] = "HARMFUL", -- Tranquilizing Shot
@@ -180,18 +183,20 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 		34600, -- Snake Trap
 		82948, -- Snake Trap (Trap Launcher) -- TODO: bugged on BETA currently
 	},
-	[ 54216] = 53271, -- Master's Call
-	[ 35079] = 34477, -- Misdirection
-	[ 53257] = 53260, -- Cobra Strikes
-	[ 82921] = 35110, -- Bombardment
+	[ 83559] =  13809, -- Black Ice, Ice Trap
+	[ 54216] =  53271, -- Master's Call
+	[ 35079] =  34477, -- Misdirection
+	[ 53257] =  53260, -- Cobra Strikes
+	[ 82921] =  35110, -- Bombardment
 	[118922] = 109215, -- Posthaste (talent)
-	-- [136634] = 109298, -- Narrow Escape (talent) -- XXX: added through DRData (root)
-	-- [117526] = 109248, -- Binding Shot (talent) -- XXX: added through DRData (stun)
-	-- [ 24394] =  19577, -- Intimidation (talent) -- XXX: added through DRData (stun)
+	[117405] = 109248, -- Binding Shot (afflicted)
 	[ 34720] = 109306, -- Thrill of the Hunt (talent)
 	[120761] = 117050, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
 	[121414] = 117050, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
 	[162546] = 162534, -- Frozen Ammo <-- Exotic Munitions (talent) -- TODO: add to snares in Common in ABA -- FIXME: LibSpellbook says it's unknown when it isn't
+	-- [136634] = 109298, -- Narrow Escape (talent) -- XXX: added through DRData (root)
+	-- [117526] = 109248, -- Binding Shot (talent) -- XXX: added through DRData (stun)
+	-- [ 24394] =  19577, -- Intimidation (talent) -- XXX: added through DRData (stun)
 }, {
 	-- Map aura to modified spell(s)
 	[118253] = {
@@ -200,7 +205,7 @@ lib:__RegisterSpells("HUNTER", "60000", 5, {
 	},
 	[ 53257] = 3044, -- Cobra Strikes --> Arcane Shot
 	[ 82921] = 2643, -- Bombardment --> Multi-Shot
-	[118922] = 781, -- Posthaste (talent) --> Disengage
+	[118922] =  781, -- Posthaste (talent) --> Disengage
 	-- [136634] = 781, -- Narrow Escape (talent) --> Disengage -- XXX: added through DRData (root)
 	[ 34720] = { -- Thrill of the Hunt (talent)
 		19434, -- Aimed Shot
