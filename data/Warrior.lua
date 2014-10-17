@@ -29,10 +29,10 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 			PERSONAL = {
 				107574, -- Avatar
 				 18499, -- Berserker Rage
-				 46924, -- Bladestorm
-				 12292, -- Bloodbath (Self Buff)
+				 46924, -- Bladestorm  (Talent)
+				 12292, -- Bloodbath (Self Buff ,Talent)
 				118038, -- Die By The Sword (Arms, Fury)
-				 55694, -- Enraged Regeneration
+				 55694, -- Enraged Regeneration (Talent)
 				 12975, -- Last Stand (Prot)
 				114192, -- Mocking Banner (Prot)
 				  1719, -- Recklessness (Arms, Fury)
@@ -43,23 +43,23 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 				 12328, -- Sweeping Strikes (Arms)
 			},
 			HELPFUL = {
-				  3411, -- Intervene
+				147833, -- Intervene
 				114028, -- Mass Spell Reflection
 				 97463, -- Rallying Cry (Arms, Fury)
-				152277, -- Ravager
+				-- 152277, -- Ravager (Talent)
 				114029, -- Safeguard
 				114030, -- Vigilance
 			},
 			HARMFUL = {
-				113344, -- Bloodbath (dot)
+				113344, -- Bloodbath (Dot,Talent)
 				167105, -- Colossus Smash (Arms)
 				  1160, -- Demoralizing Shout (Prot)
 				-- 176289, -- Siegebreaker
-				 64382, -- Shattering Throw (Glyph)
+				 64382, -- Shattering Throw (Arms, Fury, Glyph)
 				 18498, -- Silence (Glyph of Gag Order)
-				132168, -- Shockwave
-				132169, -- Storm Bolt
-				105771, -- Warbringer Root
+				132168, -- Shockwave (Talent)
+				132169, -- Storm Bolt (Talent)
+				  7922, -- Warbringer Stun (Talent)
 			},
 		},
 	},
@@ -68,12 +68,14 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 			  2457, -- Battle Stance
 			159362, -- Blood Craze (Prot)
 			    71, -- Defensive Stance
-			 12880, -- Enrage
+			 12880, -- Enrage (Prot, Fury)
 			112048, -- Shield Barrier (Prot)
 			174926, -- Shield Barrier 
 			 50227, -- Sword and Board (Prot)
 			122510, -- Ultimatum (Prot)
+			169686, -- Unyielding Strikes (Prot, Talent)
 			 32216, -- Victory Rush - Victorious
+			 [1464] = "INVERT_AURA", -- Slam (Arms)
 		},
 		HARMFUL = {
 			115767, -- Deep Wounds (Prot)
@@ -82,12 +84,8 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 			  6343, -- Thunder Clap Slow 
 		},
 	},
-	RAIDBUFF = {
-		[ 6673] = 'ATK_POWER', -- Battle Shout
-		[  469] = 'STAMINA',   -- Commanding Shout
-	},
 	DISPEL = {
-		[23922] = "HARMFUL",   -- Shield Slam (Glyph of Shield Slam) (Prot)
+		 [23922] = "HARMFUL",     -- Shield Slam (Glyph of Shield Slam) (Prot)
 	},
 	RAIDBUFF = {
 		[   469] = 'STAMINA',     -- Commanding Shout
@@ -107,11 +105,10 @@ lib:__RegisterSpells("WARRIOR", "60000", 1, {
 	[132168] =                   46968, -- Shockwave
 	[132169] =                  107570, -- Storm Bolt
 	[122510] =                      78, -- Ultimatum, Shield Slam => Free Heroic Strike (Prot)
+	[169686] =                      78, -- Unyielding Strikes, Devastate => Low cost Heroic Strike
 	[ 32216] =      { 34428, 103840, }, -- Victorious, Killing Blow => Victory Rush, Impending Victory
-	[105771] =                     100, -- Warbringer Root (Charge)
+	[  7922] =                     100, -- Warbringer Stun (Charge)
 }, {
 	-- Map aura to modified spell(s)
-	-- [ 50227] =                   23922, -- Sword and Board, Devastate => Shield Slam
-	-- [ 12328] =                    1464, -- Sweeping Strikes => Slam
-	-- [ 86346] =                    1464, -- Colossus Smash => Slam
+	
 })
