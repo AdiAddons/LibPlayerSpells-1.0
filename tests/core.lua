@@ -162,9 +162,14 @@ end
 
 function testRegisterSpells:test_database_conflict()
 	when(G.GetSpellLink(4)).thenAnswer("link")
+	when(G.GetBuildInfo()).thenAnswer({4,4,4,4})
 	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "AURA" })
-	local success, msg = pcall(lib.__RegisterSpells, lib, "SHAMAN", 1, 1, { [4] = "HELPFUL" })
-	assertEquals(success, false)
+	local msg
+	xpcall(
+		function() lib:__RegisterSpells("SHAMAN", 1, 1, { [4] = "HELPFUL" }) end,
+		function(m) msg = m end
+	)
+	assertEquals(msg == nil, false)
 end
 
 --[[ Ignored until I figure out how to work around luabitop using signed 32-bit integers.
