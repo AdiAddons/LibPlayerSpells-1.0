@@ -10,19 +10,19 @@ h5. It provides answers to questions like:
 
 * Does this spell have a cooldown ?
 * Does this spell apply one or several buff(s) or debuff(s) ?
-* Is this spell a survival cooldown, or use for dps ?
-* Does this spell regenerate mana or some other power resource ?
+* Is this spell a survival cooldown, or used for dps ?
+* Does this spell regenerate mana or some other resource ?
 * Is this spell a raid wide buff ?
 * What are the survival buffs of all the classes ?
 * Which spell interrupt abilities are available ?
 
-Each class has his own data file and can be updated separately from the main code.
+Each class has his own data file that can be updated separately from the main code.
 
 h2. Supported classes & specs
 
-Not all classes and specializations are 100% supported yet. Most interrupts, dispels, survival cooldowns and raid buffs are complete. 
+Not all classes and specializations are 100% supported yet. However, most interrupts, dispels, survival cooldowns and raid buffs are complete. 
 
-If the LibPlayerSpells is missing something specific from your class please file a detailed bug on Github or contribute to the project yourself if you are feeling brave!
+If LibPlayerSpells is missing something specific from your class please file a detailed bug on Github or contribute to the project yourself if you are feeling brave!
 
 h2. Usage
 
@@ -75,7 +75,7 @@ end
 
 h3. Flags
 
-Most spell information is stored in a bitfield to compact storage and to easily test or filter spells. The bit value constants are available in the LibPlayerSpells.constants table.
+Most spell information is stored in a bitfield to compact storage and easily test or filter spells. The bit value constants are available in the LibPlayerSpells.constants table.
 
 The presence of a specific flag can be tested this way:
 
@@ -136,7 +136,7 @@ h4. Miscellaneous
 
 h2. Acknowledgements
 
-Thanks to "ckaotik":https://github.com/ckaotik, "Rainrider":https://github.com/Rainrider, "mjmurray88":https://github.com/mjmurray88, "arcadepro":https://github.com/arcadepro for testing and their contributons to class spells.
+Thanks to "ckaotik":https://github.com/ckaotik, "Rainrider":https://github.com/Rainrider, "mjmurray88":https://github.com/mjmurray88, "arcadepro":https://github.com/arcadepro for their testing and contributions to the class spells.
 
 h2. License
 
