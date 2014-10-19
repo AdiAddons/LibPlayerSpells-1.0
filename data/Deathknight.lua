@@ -34,7 +34,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 1, {
 		AURA = {
 			HELPFUL = {
 				[145629] = 'SURVIVAL', -- Anti-Magic Zone
-				[171049] = 'SURVIVAL', -- Rune Tap (Blood)
+				[171049] = 'SURVIVAL', -- Blood Tap (Blood)
 			},
 			HARMFUL = {
 				49206, -- Summon Gargoyle
