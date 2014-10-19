@@ -18,9 +18,15 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
+--[[
+	TODO:
+	* Double check everything for Destro
+	* Same for other specs
+--]]
+
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "60000", 1, {
+lib:__RegisterSpells("WARLOCK", "60000", 2, {
 	COOLDOWN = {
 		  1122, -- Summon Infernal
 		 18540, -- Summon Doomguard
@@ -40,7 +46,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 				  48018, -- Demonic Circle: Summon
 				  48020, -- Demonic Circle: Teleport
 				 104025, -- Immolation Aura (Metamorphosis/Dark Apotheosis)
-				 108503, -- Grimoire of Sacrifice (talent)
+				 108503, -- Grimoire of Sacrifice (Talent)
 				[  1454] = "INVERT_AURA", -- Life Tap
 				   1949, -- Hellfire
 				SURVIVAL = {
@@ -52,7 +58,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 				},
 				BURST = {
 					 80240, -- Havoc
-					108508, -- Mannoroth's Fury (talent)
+					108508, -- Mannoroth's Fury (Talent)
 					113858, -- Dark Soul: Instability
 					113860, -- Dark Soul: Misery
 					113861, -- Dark Soul: Knowledge
@@ -74,11 +80,11 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 	AURA = {
 		PERSONAL = {
 			104232, -- Rain of fire
-			111400, -- Burning Rush (talent)
+			111400, -- Burning Rush (Talent)
 			114635, -- Ember Tap
 			117828, -- Backdraft (buff)
 			122351, -- Molten Core
-			111400, -- Burning Rush (talent)
+			111400, -- Burning Rush (Talent)
 			104232, -- Rain of Fire (destruction)
 		},
 		HELPFUL = {
@@ -89,9 +95,8 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 			  [1098] = "INVERT_AURA", -- Enslave Demon
 		},
 		HARMFUL = {
-			146739, -- Corruption
-			   348, -- Immolate
-			157736, -- Immolate (Green Fire)
+			146739, -- Corruption (Afli, Demo)
+			157736, -- Immolate (Dest)
 			   603, -- Metamorphosis: Doom
 			   980, -- Agony
 			 27243, -- Seed of Corruption
@@ -108,8 +113,9 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 	},
 }, {
 	-- Map aura to provider
-	[157736] = 348,   -- Immolate => Immolate (Green Fire)
-	[117828] = 29722, -- Backdraft => Incinerate (Green Fire)
+	[146739] = 172,   -- Corruption (Afli, Demo)
+	[157736] = 348,   -- Immolate
+	[117828] = 29722, -- Backdraft => Incinerate
 }, {
 	-- Map aura to modified spell(s)
 })
