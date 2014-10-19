@@ -100,7 +100,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 			 30108, -- Unstable Affliction
 			 47960, -- Shadowflame
 			 48181, -- Haunt
-			108686, -- Immolate (Fire and Brimstone),
+			108686, -- Immolate (Fire and Brimstone)
 			105174, -- Hand of Gul'dan
 			124916, -- Metamorphosis: Chaos Wave
 		},
