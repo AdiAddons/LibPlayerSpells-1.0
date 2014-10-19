@@ -93,12 +93,16 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 			   348, -- Immolate
 			   603, -- Metamorphosis: Doom
 			   980, -- Agony
+			   689, -- Drain Life
+			103103, -- Drain Soul
 			 27243, -- Seed of Corruption
 			 29341, -- Shadowburn (debuff)
 			 30108, -- Unstable Affliction
 			 47960, -- Shadowflame
 			 48181, -- Haunt
 			108686, -- Immolate (Fire and Brimstone)
+			105174, -- Hand of Gul'dan
+			124916, -- Metamorphosis: Chaos Wave
 		},
 	},
 	RAIDBUFF = {
@@ -107,6 +111,9 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 	},
 }, {
 	-- Map aura to provider
+	[146739] = 172,    -- Corruption
+	[ 47960] = 105174, -- Hand of Gul'dan
+	[124915] = 124916, -- Metamorphosis: Chaos Wave
 }, {
 	-- Map aura to modified spell(s)
 })
