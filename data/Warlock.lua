@@ -93,6 +93,8 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 			   348, -- Immolate
 			   603, -- Metamorphosis: Doom
 			   980, -- Agony
+			   689, -- Drain Life
+			103103, -- Drain Soul
 			 27243, -- Seed of Corruption
 			 29341, -- Shadowburn (debuff)
 			 30108, -- Unstable Affliction
@@ -107,6 +109,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 	},
 }, {
 	-- Map aura to provider
+	[146739] = 172, -- Corruption
 }, {
 	-- Map aura to modified spell(s)
 })
