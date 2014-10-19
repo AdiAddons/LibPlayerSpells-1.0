@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "60000", 1, {
+lib:__RegisterSpells("DEATHKNIGHT", "60000", 2, {
 	COOLDOWN = {
 		42650, -- Army of the Dead
 		61999, -- Raise Ally
@@ -46,75 +46,79 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 1, {
 				 96268, -- Death's Advance
 				 51271, -- Pillar of Frost
 				SURVIVAL = {
+					171049, -- Rune Tap (Blood)
 					 49039, -- Lichborne
 					 48707, -- Anti-Magic Shell
 					 48792, -- Icebound Fortitude
 					 81256, -- Dancing Rune Weapon
-					 49222, -- Bone Shield
+					 49222, -- Bone Shield (Blood)
 					 55233, -- Vampiric Blood
 					115018, -- Desecrated Ground
-					 42650, -- Armoy of the Dead (for damage reduction while chaneling)
+					 42650, -- Army of the Dead
 				},
 			},
 		},
 	},
 	AURA = {
 		PERSONAL = {
-			 50421, -- Scent of Blood
-			114851, -- Blood Charge
-			  3714, -- Path of Frost
+			114851, -- Blood Charge                                      -- NOTE: stack count covered by the default ui
 			 48263, -- Blood Presence
-			 48266, -- Frost Presence
-			 48265, -- Unholy Presence
-			 81141, -- Crimson Scourge
-			 51124, -- Killing Machine
+			 77535, -- Blood Shield (Blood)
+			 81141, -- Crimson Scourge (Blood)
 			 59052, -- Freezing Fog
+			 48266, -- Frost Presence
+			 51124, -- Killing Machine
+			  3714, -- Path of Frost
+			 50421, -- Scent of Blood (stacked(5) by casting Blood Boil) -- NOTE: stack count covered by the default ui
 			 81340, -- Sudden Doom
+			 48265, -- Unholy Presence
 		},
 		PET = {
-			  91342, -- Shadow Infusion
 			  63560, -- Dark Transformation -- NOTE: shadow infusion is not possible when this is active
+			  91342, -- Shadow Infusion
 			[111673] = "INVERT_AURA" -- Control Undead
 		},
 		HELPFUL = {
 			115635, -- Death Barrier
-			 77535, -- Blood Shield
 		},
 		HARMFUL = {
-			 55095, -- Frost Fever
 			 55078, -- Blood Plague
-			 43265, -- Death and Decay
 			 45524, -- Chains of Ice
-			-- 73975, -- Necrotic Strike -- NOTE: added twice through something else, maybe as Slow Casting debuff category and Heal Absorb category
+			 43265, -- Death and Decay
 			 77606, -- Dark Simulacrum
+			 55095, -- Frost Fever
+			-- 73975, -- Necrotic Strike -- NOTE: added twice through something else, maybe as Slow Casting debuff category and Heal Absorb category
 			114866, -- Soul Reaper (Blood)
 			130735, -- Soul Reaper (Frost)
 			130736, -- Soul Reaper (Unholy)
 		},
 	},
 	RAIDBUFF = {
-		[ 55610] = "HASTE VERSATILITY", -- Unholy Aura
 		[ 57330] = "ATK_POWER",         -- Horn of Winter
 		[155522] = "MASTERY",           -- Power of the Grave
+		[ 55610] = "HASTE VERSATILITY", -- Unholy Aura
 	},
 }, {
 	-- Map aura to provider
 	[ 55095] =  45477, -- Frost Fever
 	[ 55078] =  45462, -- Blood Plague
+	[145629] =  51052, -- Anti-Magic Zone
+	[114851] =  45529, -- Blood Charge <= Blood Tap                      -- NOTE: stack count covered by the default ui
+	[ 55078] =  45462, -- Blood Plague, Plague Strike
+	[ 77535] =  49998, -- Blood Shield, Death Strike
 	[ 81141] =  81136, -- Crimson Scourge
 	[ 81256] =  49028, -- Dancing Rune Weapon
-	[145629] =  51052, -- Anti-Magic Zone
-	[115018] = 108201, -- Desecrated Ground
-	[ 51124] =  51128, -- Killing Machine
-	[ 81340] =  49530, -- Sudden Doom
-	[ 91342] =  49572, -- Shadow Infusion
 	[115635] =  63333, -- Death Barrier <= Glyph of Death Coil
-	[114851] =  45529, -- Blood Charge <= Blood Tap                -- NOTE: stack count covered by the default ui
-	[ 91802] =  47482, -- Shambling Rush <= Leap (Ghoul)
+	[115018] = 108201, -- Desecrated Ground
 	[ 91800] =  47481, -- Gnaw (Ghoul)
+	[ 55095] =  45477, -- Icy Fever, Icy Touch
+	[ 51124] =  51128, -- Killing Machine
 	[ 91797] =  47481, -- Monstrous Blow <= Gnaw (Ghoul)
-	[ 77535] =  49998, -- Blood Shield to Blood Strike
+	[171049] =  48982, -- Rune Tap
+	[ 91342] =  49572, -- Shadow Infusion
+	[ 91802] =  47482, -- Shambling Rush <= Leap (Ghoul)
 	[171049] =  48982, -- Blood Tap
+	[ 81340] =  49530, -- Sudden Doom
 }, {
 	-- Map aura to modified spell(s)
 })
