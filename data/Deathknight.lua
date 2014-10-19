@@ -34,6 +34,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 1, {
 		AURA = {
 			HELPFUL = {
 				[145629] = 'SURVIVAL', -- Anti-Magic Zone
+				[171049] = 'SURVIVAL', -- Rune Tap (Blood)
 			},
 			HARMFUL = {
 				49206, -- Summon Gargoyle
@@ -98,6 +99,8 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 1, {
 	},
 }, {
 	-- Map aura to provider
+	[ 55095] =  45477, -- Frost Fever
+	[ 55078] =  45462, -- Blood Plague
 	[ 81141] =  81136, -- Crimson Scourge
 	[ 81256] =  49028, -- Dancing Rune Weapon
 	[145629] =  51052, -- Anti-Magic Zone
@@ -111,6 +114,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 1, {
 	[ 91800] =  47481, -- Gnaw (Ghoul)
 	[ 91797] =  47481, -- Monstrous Blow <= Gnaw (Ghoul)
 	[ 77535] =  49998, -- Blood Shield to Blood Strike
+	[171049] =  48982, -- Blood Tap
 }, {
 	-- Map aura to modified spell(s)
 })
