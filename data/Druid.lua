@@ -91,7 +91,7 @@ lib:__RegisterSpells("DRUID", "60000", 3, {
 		},
 		HARMFUL = {
 			  1079, -- Rip
-			  1822, -- Rake
+			155722, -- Rake
 			 33745, -- Lacerate
 			 77758, -- Thrash (guardian)
 			106830, -- Thrash (feral)
@@ -107,6 +107,7 @@ lib:__RegisterSpells("DRUID", "60000", 3, {
 }, {
 	-- Map aura to provider
 	[164812] =  8921, -- Moonfire
+	[155722] =  1822, -- Rake (Feral)
 	[164815] = 93402, -- Sunfire
 }, {
 	-- Map aura to modified spell(s)
