@@ -91,6 +91,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 		HARMFUL = {
 			146739, -- Corruption
 			   348, -- Immolate
+			157736, -- Immolate (Green Fire)
 			   603, -- Metamorphosis: Doom
 			   980, -- Agony
 			 27243, -- Seed of Corruption
@@ -107,6 +108,8 @@ lib:__RegisterSpells("WARLOCK", "60000", 1, {
 	},
 }, {
 	-- Map aura to provider
+	[157736] = 348,   -- Immolate => Immolate (Green Fire)
+	[117828] = 29722, -- Backdraft => Incinerate (Green Fire)
 }, {
 	-- Map aura to modified spell(s)
 })
