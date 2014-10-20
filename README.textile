@@ -22,7 +22,7 @@ h2. Supported classes & specs
 
 Not all classes and specializations are 100% supported yet. However, most interrupts, dispels, survival cooldowns and raid buffs are complete. 
 
-If LibPlayerSpells is missing something specific from your class please file a detailed bug on Github or contribute to the project yourself if you are feeling brave!
+If LibPlayerSpells is missing something specific from your class please file a detailed bug on Github or contribute to the project yourself if you are feeling brave! In the second case, be sure to read the "contribution guidelines":https://github.com/Adirelle/LibPlayerSpells-1.0/wiki/Contribution-Guidelines.
 
 h2. Usage
 

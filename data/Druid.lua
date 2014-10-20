@@ -107,9 +107,8 @@ lib:__RegisterSpells("DRUID", "60000", 4, {
 }, {
 	-- Map aura to provider
 	[164812] =  8921, -- Moonfire
-	[155722] =  1822, -- Rake (Feral)
 	[164815] = 93402, -- Sunfire
-	[155722] = 1822, -- Rake (Feral)
+	[155722] =  1822, -- Rake (Feral)
 }, {
 	-- Map aura to modified spell(s)
 })
