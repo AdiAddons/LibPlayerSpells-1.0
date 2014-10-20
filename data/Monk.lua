@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "60000", 0, {
+lib:__RegisterSpells("MONK", "60000", 1, {
 	COOLDOWN = {
 		 115072, -- Expel Harm
 		 109132, -- Roll
@@ -72,6 +72,7 @@ lib:__RegisterSpells("MONK", "60000", 0, {
 			-- 116768, -- Combo Breaker: Blackout Kick -- XXX: covered by the default ui
 			137639, -- Storm, Earth and Fire
 			116740, -- Tigereye Brew
+			127722, -- Crane's Zeal
 		},
 	},
 	RAIDBUFF = {
@@ -100,10 +101,12 @@ lib:__RegisterSpells("MONK", "60000", 0, {
 	[130320] = 107428, -- Rising Sun Kick
 	[121125] = 115080, -- Death Note <-- Touch of Death
 	[125174] = 122470, -- Touch of Karma
+	[127722] = 154436, -- Crane's Zeal <-- Stance of the Spirited Crane
 }, {
 	-- Map aura to modified spell(s)
 	[115307] = 100784, -- Shuffle --> Blackout Kick
 	[125359] = 100787, -- Tiger Power --> Tiger Palm
+	[127722] = 100784, -- Crane's Zeal --> Blackout Kick (Stance of the Spirited Crane)
 	[128531] = 100784, -- Blackout Kick (Stance of the Fierce Tiger)
 	-- [118864] = 100787, -- Combo Breaker: Tiger Palm --> Tiger Palm -- XXX: covered by the default ui
 	-- [116768] = 100784, -- Combo Breaker: Blackout Kick --> Blackout Kick -- XXX: covered by the default ui
