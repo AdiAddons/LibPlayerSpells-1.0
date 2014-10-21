@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 7, {
+lib:__RegisterSpells("HUNTER", "60000", 8, {
 	COOLDOWN = {
 		[147362] = "INTERRUPT", -- Counter Shot
 		[120679] = "POWER_REGEN", -- Dire Beast (talent)
@@ -80,7 +80,8 @@ lib:__RegisterSpells("HUNTER", "60000", 7, {
 			162546, -- Frozen Ammo (Exotic Munitions talent) -- TODO: add to snares in Common in ABA
 		},
 		PET = {
-			136, -- Mend Pet
+			   136, -- Mend Pet
+			118455, -- Beast Cleave
 		},
 		PERSONAL = {
 			  6197, -- Eagle Eye
@@ -184,6 +185,7 @@ lib:__RegisterSpells("HUNTER", "60000", 7, {
 	[ 82921] =  35110, -- Bombardment
 	[118922] = 109215, -- Posthaste (talent)
 	[117405] = 109248, -- Binding Shot (afflicted)
+	[118455] = 115939, -- Beast Cleave
 	[ 34720] = 109306, -- Thrill of the Hunt (talent)
 	[120761] = 117050, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
 	[121414] = 117050, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
@@ -191,13 +193,14 @@ lib:__RegisterSpells("HUNTER", "60000", 7, {
 	[177668] = 177667, -- Steady Focus (survival)
 }, {
 	-- Map aura to modified spell(s)
-	[118253] = {
+	[118253] = { -- Serpent Sting
 		3044, -- Arcane Shot
 		2643, -- Multi-Shot
 	},
 	[ 53257] = 3044, -- Cobra Strikes --> Arcane Shot
 	[ 82921] = 2643, -- Bombardment --> Multi-Shot
 	[118922] =  781, -- Posthaste (talent) --> Disengage
+	[118455] = 2643, -- Beast Cleave --> Multishot
 	[ 34720] = { -- Thrill of the Hunt (talent)
 		19434, -- Aimed Shot
 		 2643, -- Multi-Shot
