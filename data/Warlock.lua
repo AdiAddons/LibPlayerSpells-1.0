@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "60000", 2, {
+lib:__RegisterSpells("WARLOCK", "60000", 3, {
 	COOLDOWN = {
 		  1122, -- Summon Infernal
 		 18540, -- Summon Doomguard
@@ -68,6 +68,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 2, {
 				 30283, -- Shadowfury
 				111397, -- Blood Horror
 				124915, -- Chaos Wave (Metamorphosis)
+				157736, -- Immolate (debuff)
 			},
 		},
 	},
@@ -78,31 +79,28 @@ lib:__RegisterSpells("WARLOCK", "60000", 2, {
 			114635, -- Ember Tap
 			117828, -- Backdraft (buff)
 			122351, -- Molten Core
-			111400, -- Burning Rush (talent)
-			104232, -- Rain of Fire (destruction)
 		},
 		HELPFUL = {
 			[5697] = "UNIQUE_AURA", -- Unending Breath
 		},
 		PET = {
-			    755, -- Health Funnel
-			  [1098] = "INVERT_AURA", -- Enslave Demon
+			   755, -- Health Funnel
+			[ 1098] = "INVERT_AURA", -- Enslave Demon
 		},
 		HARMFUL = {
-			146739, -- Corruption
-			   348, -- Immolate
 			   603, -- Metamorphosis: Doom
-			   980, -- Agony
 			   689, -- Drain Life
-			103103, -- Drain Soul
+			   980, -- Agony
 			 27243, -- Seed of Corruption
 			 29341, -- Shadowburn (debuff)
 			 30108, -- Unstable Affliction
 			 47960, -- Shadowflame
 			 48181, -- Haunt
-			108686, -- Immolate (Fire and Brimstone)
+			103103, -- Drain Soul
 			105174, -- Hand of Gul'dan
 			124916, -- Metamorphosis: Chaos Wave
+			146739, -- Corruption
+			157736, -- Immolate (debuff)
 		},
 	},
 	RAIDBUFF = {
@@ -111,9 +109,22 @@ lib:__RegisterSpells("WARLOCK", "60000", 2, {
 	},
 }, {
 	-- Map aura to provider
-	[146739] = 172,    -- Corruption
+	[ 17962] = { -- Conflagrate
+		 17962, -- Conflagrate
+		108685, -- Conflagrate (Fire and Brimstone)
+	},
 	[ 47960] = 105174, -- Hand of Gul'dan
+	[117828] = 117896, -- Backdraft (buff) <- Backdraft (passive)
 	[124915] = 124916, -- Metamorphosis: Chaos Wave
+	[146739] =    172, -- Corruption
+	[157736] = { -- Immolate (debuff)
+		   348, -- Immolate
+		108686, -- Immolate (Fire and Brimstone)
+	},
 }, {
 	-- Map aura to modified spell(s)
+	[117828] = { -- Backdraft (buff)
+		29722,  -- Incinerate
+		114654, -- Incinerate (Fire and Brimstone)
+	},
 })
