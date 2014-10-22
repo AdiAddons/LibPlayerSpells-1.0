@@ -20,40 +20,40 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 7, {
+lib:__RegisterSpells("HUNTER", "60000", 8, {
 	COOLDOWN = {
-		[147362] = "INTERRUPT", -- Counter Shot
-		[120679] = "POWER_REGEN", -- Dire Beast (talent)
 		    781, -- Disengage
-		   6991, -- Feed Pet
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
-		  53351, -- Kill Shot
-		 157708, -- Kill Shot (with Enhanced Kill Shot 157707)
+		   6991, -- Feed Pet
 		  53209, -- Chimaera Shot
-		 109304, -- Exhilaration (talent)
-		 121818, -- Stampede (talent)
+		  53351, -- Kill Shot
 		 109259, -- Power Shot (talent)
+		 109304, -- Exhilaration (talent)
 		 120360, -- Barrage (talent)
-		AURA = {
+		[120679] = "POWER_REGEN", -- Dire Beast (talent)
+		 121818, -- Stampede (talent)
+		[147362] = "INTERRUPT", -- Counter Shot
+		 157708, -- Kill Shot (with Enhanced Kill Shot 157707)
+	    AURA = {
 			HARMFUL = {
 				  1462, -- Beast Lore
-				  3674, -- Black Arrow
-				117405, -- Binding Shot (afflicted)
-				 53301, -- Explosive Shot
-				 13812, -- Explosive Trap
 				  3355, -- Freezing Trap
-				135299, -- Ice Trap
+				  3674, -- Black Arrow
+				 13812, -- Explosive Trap
 				 25809, -- Crippling Poison
-				131894, -- A Murder of Crows (talent)
+				 53301, -- Explosive Shot
+				117405, -- Binding Shot (afflicted)
 				120761, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
 				121414, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
+				131894, -- A Murder of Crows (talent)
+				135299, -- Ice Trap
 			},
 			HELPFUL = {
-				 13159, -- Aspect of the Pack
-				172106, -- Aspect of the Fox
-				 61648, -- Aspect of the Beast (Glyph)
 				  1462, -- Beast Lore
+				 13159, -- Aspect of the Pack
 				 54216, -- Master's Call
+				 61648, -- Aspect of the Beast (Glyph)
+				172106, -- Aspect of the Fox
 			},
 			PET = {
 				19577, -- Intimidation (talent)
@@ -63,12 +63,12 @@ lib:__RegisterSpells("HUNTER", "60000", 7, {
 				  35079, -- Misdirection
 				  53257, -- Cobra Strikes
 				 118922, -- Posthaste (talent)
-				[ 51755] = "SURVIVAL", -- Camouflage
-				[ 19263] = "SURVIVAL", -- Deterrence
-				[  5384] = "SURVIVAL", -- Feign Death
-				[ 19574] = "BURST", -- Bestial Wrath
-				[ 82692] = "BURST", -- Focus Fire
 				[  3045] = "BURST", -- Rapid Fire
+				[  5384] = "SURVIVAL", -- Feign Death
+				[ 19263] = "SURVIVAL", -- Deterrence
+				[ 19574] = "BURST", -- Bestial Wrath
+				[ 51755] = "SURVIVAL", -- Camouflage
+				[ 82692] = "BURST", -- Focus Fire
 				[ 82921] = "BURST", -- Bombardment
 			},
 		},
@@ -80,11 +80,12 @@ lib:__RegisterSpells("HUNTER", "60000", 7, {
 			162546, -- Frozen Ammo (Exotic Munitions talent) -- TODO: add to snares in Common in ABA
 		},
 		PET = {
-			136, -- Mend Pet
+			   136, -- Mend Pet
+			118455, -- Beast Cleave
 		},
 		PERSONAL = {
-			  6197, -- Eagle Eye
 			  1515, -- Tame Beast
+			  6197, -- Eagle Eye
 			 34720, -- Thrill of the Hunt (talent)
 			 83559, -- Black Ice (Glyph)
 			162537, -- Poisoned Ammo (Exotic Munitions talent)
@@ -159,50 +160,52 @@ lib:__RegisterSpells("HUNTER", "60000", 7, {
 	},
 }, {
 	-- Map aura to provider
-	[118253] =   3044, -- Serpent Sting <= Arcane Shot
-	[ 51755] =  51753, -- Camouflage
-	[ 13812] = {
-		13813, -- Explosive Trap
-		82939, -- Explosive Trap (Trap Launcher)
-	},
-	[  3355] = {
+	[  3355] = { -- Freezing Trap
 		 1499, -- Freezing Trap
 		60192, -- Freezing Trap (Trap Launcher)
 	},
-	[135299] = {
-		13809, -- Ice Trap
-		82941, -- Ice Trap (Trap Launcher)
+	[ 13812] = { -- Explosive Trap
+		13813, -- Explosive Trap
+		82939, -- Explosive Trap (Trap Launcher)
 	},
-	[ 25809] = {
+	[ 25809] = { -- Crippling Poison
 		34600, -- Snake Trap
 		82948, -- Snake Trap (Trap Launcher) -- TODO: bugged on BETA currently
 	},
-	[ 83559] =  13809, -- Black Ice, Ice Trap
-	[ 54216] =  53271, -- Master's Call
-	[ 35079] =  34477, -- Misdirection
-	[ 53257] =  53260, -- Cobra Strikes
-	[ 82921] =  35110, -- Bombardment
-	[118922] = 109215, -- Posthaste (talent)
-	[117405] = 109248, -- Binding Shot (afflicted)
 	[ 34720] = 109306, -- Thrill of the Hunt (talent)
+	[ 35079] =  34477, -- Misdirection
+	[ 51755] =  51753, -- Camouflage
+	[ 53257] =  53260, -- Cobra Strikes
+	[ 54216] =  53271, -- Master's Call
+	[ 82921] =  35110, -- Bombardment
+	[ 83559] =  13809, -- Black Ice, Ice Trap
+	[117405] = 109248, -- Binding Shot (afflicted)
+	[118253] =   3044, -- Serpent Sting <= Arcane Shot
+	[118455] = 115939, -- Beast Cleave
+	[118922] = 109215, -- Posthaste (talent)
 	[120761] = 117050, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
 	[121414] = 117050, -- Glaive Toss (talent) -- TODO: 2 ids same effect; add to snares in Common rules in ABA
+	[135299] = { -- Ice Trap
+		13809, -- Ice Trap
+		82941, -- Ice Trap (Trap Launcher)
+	},
 	[162546] = 162534, -- Frozen Ammo <-- Exotic Munitions (talent) -- TODO: add to snares in Common in ABA -- FIXME: LibSpellbook says it's unknown when it isn't
 	[177668] = 177667, -- Steady Focus (survival)
 }, {
 	-- Map aura to modified spell(s)
-	[118253] = {
-		3044, -- Arcane Shot
-		2643, -- Multi-Shot
+	[ 34720] = { -- Thrill of the Hunt (talent)
+		 2643, -- Multi-Shot
+		 3044, -- Arcane Shot
+		19434, -- Aimed Shot
 	},
 	[ 53257] = 3044, -- Cobra Strikes --> Arcane Shot
 	[ 82921] = 2643, -- Bombardment --> Multi-Shot
-	[118922] =  781, -- Posthaste (talent) --> Disengage
-	[ 34720] = { -- Thrill of the Hunt (talent)
-		19434, -- Aimed Shot
-		 2643, -- Multi-Shot
-		 3044, -- Arcane Shot
+	[118253] = { -- Serpent Sting
+		2643, -- Multi-Shot
+		3044, -- Arcane Shot
 	},
+	[118455] = 2643, -- Beast Cleave --> Multishot
+	[118922] =  781, -- Posthaste (talent) --> Disengage
 	[162534] = 75, -- Poisoned Ammo --> Auto Shot
 	[162546] = 75, -- Frozen Ammo --> Auto Shot -- TODO: add to snares in Common in ABA
 	[177668] = { -- Steady Focus (talent) =>
