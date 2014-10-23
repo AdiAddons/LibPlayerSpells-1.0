@@ -111,6 +111,8 @@ lib:__RegisterSpells("MAGE", "60000", 2, {
 	[ 44544] =  30455, -- Fingers of Frost => Ice Lance
 	[ 79683] =   5143, -- Arcane Missles! => Arcane Missles
 	[110909] = 127140, -- Alter Time => Alter Time (Return)
+	[ 48107] =  11366, -- Heating Up <- Pyroblast
+	[ 48108] =  11366, -- Pyroblast! <- Pyroblast
 }, {
 	-- Map aura to modified spell(s)
 	[112965] = { -- Fingers of Frost =>
@@ -121,7 +123,5 @@ lib:__RegisterSpells("MAGE", "60000", 2, {
 	--	108978, -- Alter Time (Action Button)
 	--	127140, -- Alter Time (Action Button while buffed)
 	--},
-	[48107] = 108853, -- Heating Up => Inferno Blast
-	[48108] =  11366, -- Pyroblast! => Pyroblast
 	[12654] =  11129, -- Ignite => Combustion
 })
