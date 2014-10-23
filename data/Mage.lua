@@ -91,12 +91,17 @@ lib:__RegisterSpells("MAGE", "60000", 2, {
 			112948, -- Frost Bomb
 			114923, -- Nether Tempest
 			CROWD_CTL = {
-				  118, -- Polymorph
-				28271, -- Polymorph: Pig
-				28271, -- Polymorph: Turtle
-				61305, -- Polymorph: Black Cat
-				61721, -- Polymorph: Rabbit
-				61780, -- Polymorph: Turkey
+				   118, -- Polymorph
+				 28271, -- Polymorph: Turtle
+				 28272, -- Polymorph: Pig
+				 61305, -- Polymorph: Black Cat
+				 61721, -- Polymorph: Rabbit
+				 61780, -- Polymorph: Turkey
+				126819, -- Polymorph: Pig (porcupine)
+				161353, -- Polymorph: Polar Bear Cub
+				161354, -- Polymorph: Monkey
+				161355, -- Polymorph: Penguin
+				161372, -- Polymorph: Monkey
 			},
 		},
 	},
