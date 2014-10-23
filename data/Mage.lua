@@ -39,8 +39,6 @@ lib:__RegisterSpells("MAGE", "60000", 2, {
 					  11426, -- Ice Barrier
 					  86949, -- Cauterize
 					  11958, -- Cold Snap
-					 108978, -- Alter Time (Action Button)
-					 127140, -- Alter Time (Action Button while buffed)
 					 110909, -- Alter Time (Buff)
 					 HELPFUL = {
 						159916, -- Amplify Magic
@@ -110,18 +108,18 @@ lib:__RegisterSpells("MAGE", "60000", 2, {
 	[ 57761] =  44614, -- Brain Freeze => Frostfire Bolt
 	[ 44544] =  30455, -- Fingers of Frost => Ice Lance
 	[ 79683] =   5143, -- Arcane Missles! => Arcane Missles
-	[110909] = 127140, -- Alter Time => Alter Time (Return)
 	[ 48107] =  11366, -- Heating Up <- Pyroblast
 	[ 48108] =  11366, -- Pyroblast! <- Pyroblast
+	[110909] = 108978, -- Alter Time (buff) <- Alter Time (talent)
 }, {
 	-- Map aura to modified spell(s)
+	[110909]= { -- Alter Time (Buff)
+		108978, -- Alter Time
+		127140, -- Alter Time (while buffed)
+	},
 	[112965] = { -- Fingers of Frost =>
 		30455, -- Ice Lance
 		44572, -- Deep Freeze
 	},
-	--[110909] = {
-	--	108978, -- Alter Time (Action Button)
-	--	127140, -- Alter Time (Action Button while buffed)
-	--},
 	[12654] =  11129, -- Ignite => Combustion
 })
