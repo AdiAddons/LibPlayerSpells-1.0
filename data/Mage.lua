@@ -20,43 +20,40 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", "60000", 2, {
+lib:__RegisterSpells("MAGE", "60000", 3, {
 	COOLDOWN = {
+		31687, -- Summon Water Elemental
+		84714, -- Frozen Orb
 		INTERRUPT = {
 			  2139, -- Counterspell
 			102051, -- Frostjaw
 		},
 		AURA = {
 			PERSONAL = {
-				[12051] = "MANA_REGEN", -- Evocation
+				     66, -- Invisibility (Fading) and Spellbook
+				  12043, -- Presence of Mind
+				  32612, -- Invisibility
+				 108839, -- Ice Floes
+				 108843, -- Blazing Speed
+				 110960, -- Greater Invisibility (buff)
+				[ 12051] = "MANA_REGEN", -- Evocation
 				BURST = {
-					12472, -- Icy Veins
 					12042, -- Arcane Power
+					12472, -- Icy Veins
 					55342, -- Mirror Image
 				},
 				SURVIVAL = {
-					  45438, -- Ice Block
-					  11426, -- Ice Barrier
-					  86949, -- Cauterize
-					  11958, -- Cold Snap
-					 108978, -- Alter Time (Action Button)
-					 127140, -- Alter Time (Action Button while buffed)
-					 110909, -- Alter Time (Buff)
-					 HELPFUL = {
+					 11426, -- Ice Barrier
+					 11958, -- Cold Snap
+					 45438, -- Ice Block
+					 86949, -- Cauterize
+					110909, -- Alter Time (Buff)
+					HELPFUL = {
 						159916, -- Amplify Magic
-					 },
+					},
 				},
-				108843, -- Blazing Speed
-				108839, -- Ice Floes
-				 12043, -- Presence of Mind
-				    66, -- Invisibility (Fading) and Spellbook
-				 32612, -- Invisibility
-				110959, -- Greater Invisibility (spellbook)
-				110960, -- Greater Invisibility (buff)
 			},
 		},
-		84714, -- Frozen Orb
-		31687, -- Summon Water Elemental
 	},
 	DISPEL = {
 		["COOLDOWN HELPFUL"] = {
@@ -73,55 +70,60 @@ lib:__RegisterSpells("MAGE", "60000", 2, {
 	},
 	AURA = {
 		PERSONAL = {
-			 79683, -- Arcane Missles!
+			 12051, -- Evocation
 			 44544, -- Fingers of Frost
-			 57761, -- Brain Freeze
-			112965, -- Fingers of Frost
 			 48107, -- Heating Up
 			 48108, -- Pyroblast!
-			 12051, -- Evocation
+			 57761, -- Brain Freeze
+			 79683, -- Arcane Missles!
+			112965, -- Fingers of Frost
 		},
 		HELPFUL = {
 			   130, -- Slow Fall
 			111264, -- Ice Ward
 		},
 		HARMFUL = {
-			 44572, -- Deep Freeze
-			 31589, -- Slow
-			 44457, -- Living Bomb
-			114923, -- Nether Tempest
-			112948, -- Frost Bomb
 			 11129, -- Combustion
 			 12654, -- Ignite (Fire Mastery)
+			 31589, -- Slow
+			 44457, -- Living Bomb
+			 44572, -- Deep Freeze
+			112948, -- Frost Bomb
+			114923, -- Nether Tempest
 			CROWD_CTL = {
-				  118, -- Polymorph
-				28271, -- Polymorph: Pig
-				28271, -- Polymorph: Turtle
-				61305, -- Polymorph: Black Cat
-				61721, -- Polymorph: Rabbit
-				61780, -- Polymorph: Turkey
+				   118, -- Polymorph
+				 28271, -- Polymorph: Turtle
+				 28272, -- Polymorph: Pig
+				 61305, -- Polymorph: Black Cat
+				 61721, -- Polymorph: Rabbit
+				 61780, -- Polymorph: Turkey
+				126819, -- Polymorph: Pig (porcupine)
+				161353, -- Polymorph: Polar Bear Cub
+				161354, -- Polymorph: Monkey
+				161355, -- Polymorph: Penguin
+				161372, -- Polymorph: Monkey
 			},
 		},
 	},
 }, {
 	-- Map aura to provider
-	[110960] = 110959, -- Greater Invisibility (buff) => Greater Invisibility (spellbook)
-	[ 32612] =     66, -- Invisible buff to Invisibility
-	[ 57761] =  44614, -- Brain Freeze => Frostfire Bolt
-	[ 44544] =  30455, -- Fingers of Frost => Ice Lance
-	[ 79683] =   5143, -- Arcane Missles! => Arcane Missles
-	[110909] = 127140, -- Alter Time => Alter Time (Return)
+	[ 32612] =     66, -- Invisibility (buff) <- Invisibility (spellbook)
+	[ 44544] =  30455, -- Fingers of Frost <- Ice Lance
+	[ 48107] =  11366, -- Heating Up <- Pyroblast
+	[ 48108] =  11366, -- Pyroblast! <- Pyroblast
+	[ 57761] =  44614, -- Brain Freeze <- Frostfire Bolt
+	[ 79683] =   5143, -- Arcane Missles! <- Arcane Missles
+	[110909] = 108978, -- Alter Time (buff) <- Alter Time (talent)
+	[110960] = 110959, -- Greater Invisibility (buff) <- Greater Invisibility (spellbook)
 }, {
 	-- Map aura to modified spell(s)
+	[ 12654] =  11129, -- Ignite => Combustion
+	[110909]= { -- Alter Time (Buff)
+		108978, -- Alter Time
+		127140, -- Alter Time (while buffed)
+	},
 	[112965] = { -- Fingers of Frost =>
 		30455, -- Ice Lance
 		44572, -- Deep Freeze
 	},
-	--[110909] = {
-	--	108978, -- Alter Time (Action Button)
-	--	127140, -- Alter Time (Action Button while buffed)
-	--},
-	[48107] = 108853, -- Heating Up => Inferno Blast
-	[48108] =  11366, -- Pyroblast! => Pyroblast
-	[12654] =  11129, -- Ignite => Combustion
 })
