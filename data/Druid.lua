@@ -75,6 +75,7 @@ lib:__RegisterSpells("DRUID", "60000", 4, {
 		PERSONAL = {
 			BURST = {
 				 52610, -- Savage Roar
+				174544, -- Savage Roar (Glyph of Savage Roar)
 			},
 			IMPORTANT = {
 				 16870, -- Clearcasting (buff)
@@ -109,6 +110,7 @@ lib:__RegisterSpells("DRUID", "60000", 4, {
 	[164812] =  8921, -- Moonfire
 	[155722] =  1822, -- Rake (Feral)
 	[164815] = 93402, -- Sunfire
+	[174544] = 52610, -- Savage Roar (Glyph of Savage Roar)
 }, {
 	-- Map aura to modified spell(s)
 })
