@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 5, {
+lib:__RegisterSpells("DRUID", "60000", 6, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -34,21 +34,30 @@ lib:__RegisterSpells("DRUID", "60000", 5, {
 		145205, -- Wild Mushroom (restoration)
 		INTERRUPT = {
 			 78675, -- Solar Beam
+			106839, -- Skull Bash
 		},
 		AURA = {
 			HELPFUL = {
-				48438,-- Wild Growth
+				  48438, -- Wild Growth
 				[102342] = "SURVIVAL",-- Ironbark
+			},
+			HARMFUL = {
+				   770, -- Faerie Fire
+				  5211, -- Mighty Bash
+				 16914, -- Hurricane
+				127797, -- Ursols Vortex
 			},
 			PERSONAL = {
 				  1850, -- Dash
+				  5215, -- Prowl
+				 77761, -- Stampeding Roar (Bear)
+				 77764, -- Stampeding Roar (Cat)
+				106898, -- Stampeding Roar (Humanoid)
 				108291, -- Heart of the Wild (Balance)
 				108292, -- Heart of the Wild (Feral)
 				108293, -- Heart of the Wild (Guardian)
 				108294, -- Heart of the Wild (Resto)
-				 77761, -- Stampeding Roar (bear)
-				 77764, -- Stampeding Roar (cat)
-				106898, -- Stampeding Roar (humanoid)
+				117679, -- Incarnation: Tree of Life
 				SURVIVAL = {
 					 22812, -- Barkskin
 					 22842, -- Frenzied Regeneration
@@ -57,14 +66,14 @@ lib:__RegisterSpells("DRUID", "60000", 5, {
 				},
 				BURST = {
 					  5217, -- Tiger's Fury
-					 33891, -- Incarnation: Tree of Life
 					 48505, -- Starfall
+					 50334, -- Berserk (Bear)
 					102543, -- Incarnation: King of the Jungle
 					102558, -- Incarnation: Son of Ursoc
 					102560, -- Incarnation: Chosen of Elune
-					106952, -- Berserk
+					106951, -- Berserk (Cat)
 					112071, -- Celestial Alignment
-					114108, -- Soul of the Forest (restoration)
+					114108, -- Soul of the Forest (Restoration)
 					124974, -- Nature's Vigil
 					132158, -- Nature's Swiftness
 				},
@@ -73,16 +82,19 @@ lib:__RegisterSpells("DRUID", "60000", 5, {
 	},
 	AURA = {
 		PERSONAL = {
+			 768, -- Cat Form
+			 783, -- Travel Form
+			 5487, -- Bear Form
 			BURST = {
 				 52610, -- Savage Roar
 				174544, -- Savage Roar (Glyph of Savage Roar)
 			},
 			IMPORTANT = {
-				 16870, -- Clearcasting (buff)
-				 69369, -- Predatory Swiftness (buff)
-				100977, -- Harmony (buff)
-				145152, -- Dream of Cenarius (feral)
-				145162, -- Dream of Cenarius (guardian)
+				 16870, -- Clearcasting (Buff)
+				 69369, -- Predatory Swiftness (Buff)
+				100977, -- Harmony (Buff)
+				145152, -- Dream of Cenarius (Feral)
+				145162, -- Dream of Cenarius (Guardian)
 			},
 		},
 		HELPFUL = {
@@ -92,25 +104,34 @@ lib:__RegisterSpells("DRUID", "60000", 5, {
 		},
 		HARMFUL = {
 			  1079, -- Rip
-			155722, -- Rake
 			 33745, -- Lacerate
-			 77758, -- Thrash (guardian)
-			106830, -- Thrash (feral)
+			 58180, -- Infected Wounds (Slow)
+			 77758, -- Thrash (Guardian)
+			106830, -- Thrash (Feral)
+			155722, -- Rake
 			164812, -- Moonfire
 			164815, -- Sunfire
 		},
 	},
 	RAIDBUFF = {
 		[  1126] = "STATS VERSATILITY", -- Mark of the Wild
-		[ 17007] = "CRITICAL",          -- Leader of the pack
 		[ 24907] = "MASTERY",           -- Moonkin Aura
+		[ 17007] = "CRITICAL",          -- Leader of the pack
 	},
 }, {
 	-- Map aura to provider
-	[164812] =  8921, -- Moonfire
-	[155722] =  1822, -- Rake (Feral)
-	[164815] = 93402, -- Sunfire
-	[174544] = 52610, -- Savage Roar (Glyph of Savage Roar)
+	[ 50334] =       { 106951, 50334, }, -- Berserk (Bear)
+	[ 58180] =                     5221, -- Infected Wounds (Slow) (should be in common)
+	[ 77761] = {106898, 77761, 77764, }, -- Stampeding Roar (Bear)
+	[ 77764] = {106898, 77761, 77764, }, -- Stampeding Roar (Cat)
+	[106898] = {106898, 77761, 77764, }, -- Stampeding Roar (Humanoid)
+	[106951] =       { 106951, 50334, }, -- Berserk (Cat)
+	[117679] =                    33891, -- Incarnation, Tree of Life Form
+	[127797] =                   102793, -- Ursols Vortex
+	[155722] =                     1822, -- Rake (Feral)
+	[164812] =                     8921, -- Moonfire
+	[164815] =                    93402, -- Sunfire
+	[174544] =                    52610, -- Savage Roar (Glyph of Savage Roar)
 }, {
 	-- Map aura to modified spell(s)
 })
