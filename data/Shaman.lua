@@ -21,12 +21,13 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --[[
 	ISSUES:
 	* Stone Bulwark and other totem buff/debuffs are ovewriten by ABA totem duration tracking
-	* Malestrom weapon doesn't show stacks on player (ABA job i guess)
+	* map auras to modifiers doesn't work, only on auras to providers
+	* Echos of elements should hint the button instead of highlight it
+	* Malestrom weapon should only flash flash at 5 stacks
 	* Frozen power aura doesn't work (not enough diference in duration?)
-	* Echo of elements aura doesn't apply to affected spells
-		
+
 	TODO:
-	* All Restoration specific spells and talents
+	* Level 100 talents
 	* remove "useless" commented spells or uncomment them back in
 --]]
 
@@ -54,8 +55,8 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 		},
 		AURA = {
 			HELPFUL = {
-				61295, -- Riptide (Restoration)
---				[ 98008] = 'SURVIVAL', -- Spirit Link Totem (Restoration)
+				[ 98008] = 'SURVIVAL', -- Spirit Link Totem (Restoration)
+				114896, -- Windwalker Totem (Talent)
 			},
 			PERSONAL = {
 				SURVIVAL = {
@@ -84,11 +85,14 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 			},
 			UNIQUE_AURA = {
 				  324, -- Lightning Shield
+				52127, -- Water Shield
 			},
 			 73920, -- Healing Rain (Self Indicator)
 			 73681, -- Unleash Wind (Enhancement) NOTE: Buff not tracked to not cause confusion wiht Unleash Flame
 			 73683, -- Unleash Flame (Enhancement)
+			 73685, -- Unleash Life (Restoration)
 			165462, -- Unleash Flame (Elemental)
+			 53390, -- Tidal Wave (Restoration)
 			118522, -- Elemental Blast: Critical (Talent)
 			173183, -- Elemental Blast: Haste (Talent)
 			173184, -- Elemental Blast: Mastery (Talent)
@@ -98,11 +102,13 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 			118472, -- Unleashed Fury (Talent)
 			159101, -- Echo of Elements (Talent, Elemental)
 			159103, -- Echo of Elements (Talent, Enhancement)
+			159105, -- Echo of Elements (Talent, Restoration)
 		},
 		HELPFUL = {
 			[  974] = 'UNIQUE_AURA', -- Earth Shield
 			   546, -- Water Walking
 			  8178, -- Grounding Totem
+			 61295, -- Riptide (Restoration)
 		},
 		HARMFUL = {
 			  8050, -- Flame Shock
@@ -145,9 +151,18 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 	[118472] =  73680, -- Unleashed Fury (Talent)
 	[ 63685] =   8056, -- Frozen Power => Frost Shock (Talent)
 	[ 64695] =  51485, -- Earthgrab Totem Root (Talent)
+	[114896] = 108273, -- Windwalker Totem (Talent)
+	
+	[ 53817] = {403, 421, 8004, 73920, }, -- Maelstrom Weapon => Lightning, Chain Lighting, Healing Surge, Healing Rain (Enhancement)
+	[ 53390] = {77472, 8004, },			  -- Tidal Wave => Healing Wave, Healing Surge (Restoration)
+	[159103] = {17364, 60103, 1535 },     -- Echo of Elements => Stormstrike, Lava Lash, Fire Nova (Talent, Enhancement)
+	[159101] = {17364, 60103, 1535 },     -- Echo of Elements => Lava Burst, Frost Shock, Earthquake (Talent, Elemental)
+	[159105] = {61295, 73685, 51886 },    -- Echo of Elements => Riptide, Unleash Life, Purify Spirit (Talent, Restoration)
 }, {
 	-- Map aura to modified spell(s)
-	[ 53817] = {403, 421, 8004, 73920, }, -- Maelstrom Weapon => Lightning, Chain Lighting, Healing Surge, Healing Rain (Enhancement)
-	[159103] = {17364, 60103, 1535 },     -- Echo of Elements => Stormstrike, Lava Lash, Fire Nova (Enhancement)
-	[159101] = {17364, 60103, 1535 },     -- Echo of Elements => Lava Burst, Frost Shock, Earthquake (Elemental)
+--	[ 53817] = {403, 421, 8004, 73920, }, -- Maelstrom Weapon => Lightning, Chain Lighting, Healing Surge, Healing Rain (Enhancement)
+--	[ 53390] = {77472, 8004, },			  -- Tidal Wave => Healing Wave, Healing Surge (Restoration)
+--	[159103] = {17364, 60103, 1535 },     -- Echo of Elements => Stormstrike, Lava Lash, Fire Nova (Talent, Enhancement)
+--	[159101] = {17364, 60103, 1535 },     -- Echo of Elements => Lava Burst, Frost Shock, Earthquake (Talent, Elemental)
+--	[159105] = {61295, 73685, 51886 },    -- Echo of Elements => Riptide, Unleash Life, Purify Spirit (Talent, Restoration)
 })
