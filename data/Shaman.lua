@@ -102,13 +102,17 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 		HELPFUL = {
 			[  974] = 'UNIQUE_AURA', -- Earth Shield
 			   546, -- Water Walking
+			  8178, -- Grounding Totem
 		},
 		HARMFUL = {
 			  8050, -- Flame Shock
 			  8056, -- Frost Shock
+			  3600, -- Earbinding Totem
+			118905, -- Capacitor Totem Stun
 			 17364, -- Stormstrike (Enhancement)
 			 61882, -- Earthquake (Elemental)
 			 63685, -- Frozen Power (Talent)
+			 64695, -- Earthgab Totem Root(Talent)
 		},
 	},
 	RAIDBUFF = {
@@ -125,6 +129,9 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 	},
 }, {
 	-- Map aura to provider
+	[  3600] = {2484, 51485, }, -- Earthbind => Earthbinding Totem, Earthgrab Totem
+	[  8178] =   8177, -- Grounding Totem
+	[118905] = 108269, -- Capacitor Totem
 	[114050] = 165339, -- Ascendance (Elemental)
 	[114051] = 165341, -- Ascendance (Enhancement)
 	[114052] = 165344, -- Ascendance (Restoration)
@@ -137,6 +144,7 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 	[173187] = 117014, -- Elemental Blast: Spirit (Talent)
 	[118472] =  73680, -- Unleashed Fury (Talent)
 	[ 63685] =   8056, -- Frozen Power => Frost Shock (Talent)
+	[ 64695] =  51485, -- Earthgrab Totem Root (Talent)
 }, {
 	-- Map aura to modified spell(s)
 	[ 53817] = {403, 421, 8004, 73920, }, -- Maelstrom Weapon => Lightning, Chain Lighting, Healing Surge, Healing Rain (Enhancement)
