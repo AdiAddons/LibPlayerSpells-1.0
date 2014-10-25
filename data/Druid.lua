@@ -45,7 +45,7 @@ lib:__RegisterSpells("DRUID", "60000", 6, {
 				   770, -- Faerie Fire
 				  5211, -- Mighty Bash
 				 16914, -- Hurricane
-				127797, -- Ursols Vortex
+				127797, -- Ursol's Vortex
 			},
 			PERSONAL = {
 				  1850, -- Dash
@@ -127,7 +127,7 @@ lib:__RegisterSpells("DRUID", "60000", 6, {
 	[106898] = {106898, 77761, 77764, }, -- Stampeding Roar (Humanoid)
 	[106951] =       { 106951, 50334, }, -- Berserk (Cat)
 	[117679] =                    33891, -- Incarnation, Tree of Life Form
-	[127797] =                   102793, -- Ursols Vortex
+	[127797] =                   102793, -- Ursol's Vortex (should be in common)
 	[155722] =                     1822, -- Rake (Feral)
 	[164812] =                     8921, -- Moonfire
 	[164815] =                    93402, -- Sunfire
