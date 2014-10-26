@@ -126,5 +126,6 @@ lib:__RegisterSpells("WARLOCK", "60000", 3, {
 	[117828] = { -- Backdraft (buff)
 		29722,  -- Incinerate
 		114654, -- Incinerate (Fire and Brimstone)
+		116858, -- Chaos Bolt
 	},
 })
