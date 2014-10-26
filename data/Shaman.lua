@@ -35,29 +35,20 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("SHAMAN", "60000", 2, {
 	COOLDOWN = {
---		[ 2062] = 'SURVIVAL',   -- Earth Elemental Totem
---		  2484, -- Earthbind Totem
---		  5394, -- Healing Stream Totem
---		  8143, -- Tremor Totem
---		  8177, -- Grounding Totem
---		108269, -- Capacitator Totem
---		 20608, -- Reincarnation
---		 73680, -- Unleash Elements
---		 51485, -- Earthgrab Totem (Talent)
---		108285, -- Call of the Elements (Talent)
---
+		[ 2062] = 'SURVIVAL', -- Earth Elemental Totem
+		  5394, -- Healing Stream Totem
+		  8143, -- Tremor Totem
+		 20608, -- Reincarnation
+		 73680, -- Unleash Elements
+		108285, -- Call of the Elements (Talent)
 		INTERRUPT = {
 			57994, -- Wind Shear
 		},
 		BURST = {
---			 2894, -- Fire Elemental Totem
---			51533, -- Feral Spirit (Enhancement)
+			 2894, -- Fire Elemental Totem
+			51533, -- Feral Spirit (Enhancement)
 		},
 		AURA = {
-			HELPFUL = {
-				[ 98008] = 'SURVIVAL', -- Spirit Link Totem (Restoration)
-				114896, -- Windwalker Totem (Talent)
-			},
 			PERSONAL = {
 				SURVIVAL = {
 					 30823, -- Shamanistic Rage (Elemental, Enhancement)
@@ -75,6 +66,16 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 				79206, -- Spiritwalker's Grace (Elemental, Restoration)
 			    16188, -- Ancestral Swiftness (Talent)
 			   108281, -- Ancestral Guidance (Talent)
+			},
+			HELPFUL = {
+				[ 98008] = 'SURVIVAL', -- Spirit Link Totem (Restoration)
+				  8178, -- Grounding Totem
+				114896, -- Windwalker Totem (Talent)
+			},
+			HARMFUL = {
+				  2484, -- Earthbind Totem
+				108269, -- Capacitator Totem
+				 51485, -- Earthgrab Totem (Talent)
 			},
 		},
 	},
@@ -107,7 +108,6 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 		HELPFUL = {
 			[  974] = 'UNIQUE_AURA', -- Earth Shield
 			   546, -- Water Walking
-			  8178, -- Grounding Totem
 			 61295, -- Riptide (Restoration)
 		},
 		HARMFUL = {
@@ -154,7 +154,7 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 }, {
 	-- Map aura to modified spell(s)
 --	[ 53817] = {403, 421, 8004, 73920, }, -- Maelstrom Weapon => Lightning, Chain Lighting, Healing Surge, Healing Rain (Enhancement)
---	[ 53390] = {77472, 8004, },			  -- Tidal Wave => Healing Wave, Healing Surge (Restoration)
+--	[ 53390] = {77472, 8004, },           -- Tidal Wave => Healing Wave, Healing Surge (Restoration)
 --	[159103] = {17364, 60103, 1535 },     -- Echo of Elements => Stormstrike, Lava Lash, Fire Nova (Talent, Enhancement)
 --	[159101] = {17364, 60103, 1535 },     -- Echo of Elements => Lava Burst, Frost Shock, Earthquake (Talent, Elemental)
 --	[159105] = {61295, 73685, 51886 },    -- Echo of Elements => Riptide, Unleash Life, Purify Spirit (Talent, Restoration)
