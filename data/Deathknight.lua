@@ -34,6 +34,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 3, {
 		AURA = {
 			HELPFUL = {
 				[145629] = 'SURVIVAL', -- Anti-Magic Zone
+				[171049] = 'SURVIVAL', -- Blood Tap (Blood)
 			},
 			HARMFUL = {
 				49206, -- Summon Gargoyle
@@ -114,6 +115,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 3, {
 	[115635] =             63333, -- Death Barrier <= Glyph of Death Coil
 	[145629] =             51052, -- Anti-Magic Zone
 	[171049] =             48982, -- Rune Tap
+	[171049] =             48982, -- Blood Tap
 }, {
 	-- Map aura to modified spell(s)
 })

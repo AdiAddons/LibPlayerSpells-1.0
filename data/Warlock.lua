@@ -18,6 +18,12 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
+--[[
+	TODO:
+	* Double check everything for Destro
+	* Same for other specs
+--]]
+
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("WARLOCK", "60000", 3, {
@@ -40,7 +46,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 3, {
 				  48018, -- Demonic Circle: Summon
 				  48020, -- Demonic Circle: Teleport
 				 104025, -- Immolation Aura (Metamorphosis/Dark Apotheosis)
-				 108503, -- Grimoire of Sacrifice (talent)
+				 108503, -- Grimoire of Sacrifice (Talent)
 				[  1454] = "INVERT_AURA", -- Life Tap
 				   1949, -- Hellfire
 				SURVIVAL = {
@@ -52,7 +58,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 3, {
 				},
 				BURST = {
 					 80240, -- Havoc
-					108508, -- Mannoroth's Fury (talent)
+					108508, -- Mannoroth's Fury (Talent)
 					113858, -- Dark Soul: Instability
 					113860, -- Dark Soul: Misery
 					113861, -- Dark Soul: Knowledge
@@ -75,7 +81,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 3, {
 	AURA = {
 		PERSONAL = {
 			104232, -- Rain of fire
-			111400, -- Burning Rush (talent)
+			111400, -- Burning Rush (Talent)
 			114635, -- Ember Tap
 			117828, -- Backdraft (buff)
 			122351, -- Molten Core
@@ -109,6 +115,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 3, {
 	},
 }, {
 	-- Map aura to provider
+	[117828] = 29722, -- Backdraft => Incinerate
 	[ 17962] = { -- Conflagrate
 		 17962, -- Conflagrate
 		108685, -- Conflagrate (Fire and Brimstone)
