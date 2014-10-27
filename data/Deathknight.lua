@@ -20,15 +20,15 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "60000", 3, {
+lib:__RegisterSpells("DEATHKNIGHT", "60000", 4, {
 	COOLDOWN = {
 		 42650, -- Army of the Dead
 		 47568, -- Empower Rune Weapon
 		[48734] = "SURVIVAL", -- Death Pact
 		 61999, -- Raise Ally
 		INTERRUPT = {
-			 47528, -- Mind Freeze
 			[47476] = "HARMFUL AURA", -- Strangulate
+			 47528, -- Mind Freeze
 			[91802] = "HARMFUL AURA", -- Shambling Rush (Ghoul) -- NOTE: 2 sec root. Inclusion in DRData?
 		},
 		AURA = {
@@ -44,6 +44,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 3, {
 				 51271, -- Pillar of Frost
 				 96268, -- Death's Advance
 				115989, -- Unholy Blight
+				152279, -- Breath of Sindragosa
 				SURVIVAL = {
 					 42650, -- Army of the Dead
 					 48707, -- Anti-Magic Shell
@@ -64,13 +65,13 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 3, {
 			 48263, -- Blood Presence
 			 48265, -- Unholy Presence
 			 48266, -- Frost Presence
-			 50421, -- Scent of Blood (stacked(5) by casting Blood Boil) -- NOTE: stack count covered by the default ui
+			 50421, -- Scent of Blood (stacked(5) by casting Blood Boil)
 			 51124, -- Killing Machine
 			 59052, -- Freezing Fog
 			 77535, -- Blood Shield (Blood)
 			 81141, -- Crimson Scourge (Blood)
 			 81340, -- Sudden Doom
-			114851, -- Blood Charge -- NOTE: stack count covered by the default ui
+			114851, -- Blood Charge
 		},
 		PET = {
 			  63560, -- Dark Transformation -- NOTE: shadow infusion is not possible when this is active
@@ -89,6 +90,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 3, {
 			114866, -- Soul Reaper (Blood)
 			130735, -- Soul Reaper (Frost)
 			130736, -- Soul Reaper (Unholy)
+			155159, -- Necrotic Plague
 		},
 	},
 	RAIDBUFF = {
@@ -98,22 +100,23 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 3, {
 	},
 }, {
 	-- Map aura to provider
-	[ 51124] =             51128, -- Killing Machine
-	[ 55078] =             45462, -- Blood Plague, Plague Strike
-	[ 55095] = { 45477, 49184, }, -- Icy Fever, Icy Touch, Howling Blast
-	[ 77535] =             49998, -- Blood Shield, Death Strike
-	[ 81141] =             81136, -- Crimson Scourge
-	[ 81256] =             49028, -- Dancing Rune Weapon
-	[ 81340] =             49530, -- Sudden Doom
-	[ 91342] =             49572, -- Shadow Infusion
-	[ 91797] =             47481, -- Monstrous Blow <= Gnaw (Ghoul)
-	[ 91800] =             47481, -- Gnaw (Ghoul)
-	[ 91802] =             47482, -- Shambling Rush <= Leap (Ghoul)
-	[114851] =             45529, -- Blood Charge <= Blood Tap -- NOTE: stack count covered by the default ui
-	[115018] =            108201, -- Desecrated Ground
-	[115635] =             63333, -- Death Barrier <= Glyph of Death Coil
-	[145629] =             51052, -- Anti-Magic Zone
-	[171049] =             48982, -- Rune Tap
+	[ 51124] =                    51128, -- Killing Machine
+	[ 55078] =                    45462, -- Blood Plague <= Plague Strike
+	[ 55095] =        { 45477, 49184, }, -- Icy Fever <= Icy Touch, Howling Blast
+	[ 77535] =                    49998, -- Blood Shield <= Death Strike
+	[ 81141] =                    81136, -- Crimson Scourge
+	[ 81256] =                    49028, -- Dancing Rune Weapon
+	[ 81340] =                    49530, -- Sudden Doom
+	[ 91342] =                    49572, -- Shadow Infusion
+	[ 91797] =                    47481, -- Monstrous Blow <= Gnaw (Ghoul)
+	[ 91802] =                    47482, -- Shambling Rush <= Leap (Ghoul)
+	[ 91800] =                    47481, -- Gnaw (Ghoul)
+	[114851] =                    45529, -- Blood Charge <= Blood Tap
+	[115635] =                    63333, -- Death Barrier <= Glyph of Death Coil
+	[115018] =                   108201, -- Desecrated Ground
+	[145629] =                    51052, -- Anti-Magic Zone
+	[155159] = { 45462, 45477, 49184, }, -- Necrotic Plague <= Plague Strike, Icy Touch, Howling Blast -- Might be better with a custom rule for stacks.
+	[171049] =                    48982, -- Rune Tap
 }, {
 	-- Map aura to modified spell(s)
 })
