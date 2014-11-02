@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", "60000", 3, {
+lib:__RegisterSpells("WARRIOR", "60000", 4, {
 	COOLDOWN = {
 		INTERRUPT = {
 				  6552, -- Pummel
@@ -75,10 +75,13 @@ lib:__RegisterSpells("WARRIOR", "60000", 3, {
 			 32216, -- Victory Rush (Talent 45)
 			 50227, -- Sword and Board (Prot)
 			 52437, -- Sudden Death (Talent 45)
+			 85739, -- Meat Cleaver (Fury)
 			112048, -- Shield Barrier (Prot)
 			122510, -- Ultimatum (Prot)
+			131116, -- Raging Blow! (Fury)
 			156291, -- Gladiator Stance (Talent 100)
 			159362, -- Blood Craze (Prot)
+			159740, -- Glyph of Raging Blow
 			169686, -- Unyielding Strikes (Prot, Talent 45)
 			174926, -- Shield Barrier (Arms, Fury)
 		},
@@ -87,6 +90,7 @@ lib:__RegisterSpells("WARRIOR", "60000", 3, {
 			  6343, -- Thunder Clap (Slow)
 			115767, -- Deep Wounds (Prot)
 			115804, -- Mortal Wounds (Reduced Healing)
+			129923, -- Sluggish (Glyph of Hindering Strikes)
 		},
 	},
 	DISPEL = {
@@ -104,17 +108,20 @@ lib:__RegisterSpells("WARRIOR", "60000", 3, {
 	[ 18498] =   { 57755, 6552, }, -- Heroic Throw, Pummel (Gag Order) (Silence effect)
 	[ 32216] = { 34428, 103840, }, -- Victorious, Killing Blow => Victory Rush, Impending Victory
 	[ 46947] =             114029, -- Safeguard
-	[ 52437] =               5308, -- Sudden Death Buff
+	[ 52437] =   {5308, 163201, }, -- Sudden Death
+	[ 85739] =               1680, -- Meat Cleaver Stacks
 	[ 97463] =              97462, -- Rallying Cry (Arms, Fury)
 	[113344] =              12292, -- Bloodbath (dot tracking)
 	[115767] =   { 6343, 20243, }, -- Thunder Clap, Devastate (Deep Wounds)
-	[115804] =              12294, -- Mortal Wounds from Mortal Strike
+	-- [115804] = { 12294, 100130, }, -- Mortal Wounds from Mortal Strike, Wild Strike -- should be off by default, it's mostly pointless
 	[122510] =                 78, -- Ultimatum, Shield Slam => Free Heroic Strike (Prot)
+	[131116] =              85288, -- Raging Blow
 	[132168] =              46968, -- Shockwave
 	[132169] =             107570, -- Storm Bolt
 	[132404] =               2565, -- Shield Block (Prot)
 	[147833] =               3411, -- Intervene
 	[156321] =               2565, -- Shield Charge (Glad)
+	[159740] =              23881, -- Glyph of Raging Blow
 	[159708] =               6544, -- Glyph of Heroic Leap
 	[169686] =                 78, -- Unyielding Strikes, Devastate => Low cost Heroic Strike
 }, {
