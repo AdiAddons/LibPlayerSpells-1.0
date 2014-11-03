@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", "60000", 1, {
+lib:__RegisterSpells("ROGUE", "60000", 2, {
 	COOLDOWN = {
 		INTERRUPT = {
 			1766, -- Kick
@@ -81,6 +81,7 @@ lib:__RegisterSpells("ROGUE", "60000", 1, {
 	},
 }, {
 	-- Map aura to provider
+	[89775] = 16511, -- Hemorrhage
 }, {
 	-- Map aura to modified spell(s)
 	[ 51713] = 8676, -- Shadow Dance => Ambush
