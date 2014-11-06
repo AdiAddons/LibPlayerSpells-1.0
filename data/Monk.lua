@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "60000", 3, {
+lib:__RegisterSpells("MONK", "60000", 4, {
 	COOLDOWN = {
 		 101643, -- Transcendence
 		 109132, -- Roll
@@ -30,6 +30,9 @@ lib:__RegisterSpells("MONK", "60000", 3, {
 		[116705] = "HARMFUL INTERRUPT",
 		 119996, -- Transcendence: Transfer
 		AURA = {
+			HELPFUL = {
+				124081, -- Zen Sphere
+			},
 			HARMFUL = {
 				115078, -- Paralysis
 				118585, -- Leer of the Ox
@@ -63,7 +66,6 @@ lib:__RegisterSpells("MONK", "60000", 3, {
 			117952, -- Crackling Jade Lightning
 			121125, -- Death Note
 			123725, -- Breath of Fire
-			124081, -- Zen Sphere
 			128531, -- Blackout Kick (Stance of the Fierce Tiger)
 		},
 		PERSONAL = {
@@ -89,6 +91,7 @@ lib:__RegisterSpells("MONK", "60000", 3, {
 	[115307] = 115069, -- Shuffle <-- Stance of the Sturdy Ox
 	[116330] = 115180, -- Dizzying Haze
 	[118585] = 115543, -- Leer of the Ox
+	[119085] = 109132, -- Momentum --> Roll
 	[120954] = 115203, -- Fortifying Brew
 	[121125] = 115080, -- Death Note <-- Touch of Death
 	[127722] = 154436, -- Crane's Zeal <-- Stance of the Spirited Crane
@@ -104,7 +107,6 @@ lib:__RegisterSpells("MONK", "60000", 3, {
 }, {
 	-- Map aura to modified spell(s)
 	[115307] = 100784, -- Shuffle --> Blackout Kick (Stance of the Sturdy Ox)
-	[119085] = 109132, -- Momentum --> Roll
 	[125359] = 100787, -- Tiger Power --> Tiger Palm
 	[127722] = 100784, -- Crane's Zeal --> Blackout Kick (Stance of the Spirited Crane)
 	[128531] = 100784, -- Blackout Kick --> Blackout Kick (Stance of the Fierce Tiger)
