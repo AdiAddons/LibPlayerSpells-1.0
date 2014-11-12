@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 7, {
+lib:__RegisterSpells("DRUID", "60000", 8, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -93,6 +93,7 @@ lib:__RegisterSpells("DRUID", "60000", 7, {
 				 16870, -- Clearcasting (Buff)
 				 69369, -- Predatory Swiftness (Buff)
 				100977, -- Harmony (Buff)
+				135286, -- Tooth and Claw
 				145152, -- Dream of Cenarius (Feral)
 				145162, -- Dream of Cenarius (Guardian)
 			},
@@ -135,4 +136,5 @@ lib:__RegisterSpells("DRUID", "60000", 7, {
 	[174544] =                    52610, -- Savage Roar (Glyph of Savage Roar)
 }, {
 	-- Map aura to modified spell(s)
+	[135286] = 6807, -- Tooth and Claw -> Maul
 })
