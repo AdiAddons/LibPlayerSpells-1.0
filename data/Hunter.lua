@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 8, {
+lib:__RegisterSpells("HUNTER", "60000", 9, {
 	COOLDOWN = {
 		    781, -- Disengage
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
@@ -35,8 +35,8 @@ lib:__RegisterSpells("HUNTER", "60000", 8, {
 		[147362] = "INTERRUPT", -- Counter Shot
 		 157708, -- Kill Shot (with Enhanced Kill Shot 157707)
 	    AURA = {
+			[1462] = "HELPFUL HARMFUL", -- Beast Lore
 			HARMFUL = {
-				  1462, -- Beast Lore
 				  3355, -- Freezing Trap
 				  3674, -- Black Arrow
 				 13812, -- Explosive Trap
@@ -49,10 +49,9 @@ lib:__RegisterSpells("HUNTER", "60000", 8, {
 				135299, -- Ice Trap
 			},
 			HELPFUL = {
-				  1462, -- Beast Lore
 				 13159, -- Aspect of the Pack
+				 34477, -- Misdirection
 				 54216, -- Master's Call
-				 61648, -- Aspect of the Beast (Glyph)
 				172106, -- Aspect of the Fox
 			},
 			PET = {
@@ -62,6 +61,7 @@ lib:__RegisterSpells("HUNTER", "60000", 8, {
 				   5118, -- Aspect of the Cheetah
 				  35079, -- Misdirection
 				  53257, -- Cobra Strikes
+				  61648, -- Aspect of the Beast (Glyph)
 				 118922, -- Posthaste (talent)
 				[  3045] = "BURST", -- Rapid Fire
 				[  5384] = "SURVIVAL", -- Feign Death
