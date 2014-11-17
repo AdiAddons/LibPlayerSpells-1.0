@@ -147,15 +147,10 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 	[114896] = 108273, -- Windwalker Totem (Talent)
 
 	[ 53817] = {403, 421, 8004, 73920, }, -- Maelstrom Weapon => Lightning, Chain Lighting, Healing Surge, Healing Rain (Enhancement)
-	[ 53390] = {77472, 8004, },			  -- Tidal Wave => Healing Wave, Healing Surge (Restoration)
+	[ 53390] = {77472, 8004, },           -- Tidal Wave => Healing Wave, Healing Surge (Restoration)
 	[159103] = {17364, 60103, 1535 },     -- Echo of Elements => Stormstrike, Lava Lash, Fire Nova (Talent, Enhancement)
 	[159101] = {17364, 60103, 1535 },     -- Echo of Elements => Lava Burst, Frost Shock, Earthquake (Talent, Elemental)
 	[159105] = {61295, 73685, 51886 },    -- Echo of Elements => Riptide, Unleash Life, Purify Spirit (Talent, Restoration)
 }, {
 	-- Map aura to modified spell(s)
---	[ 53817] = {403, 421, 8004, 73920, }, -- Maelstrom Weapon => Lightning, Chain Lighting, Healing Surge, Healing Rain (Enhancement)
---	[ 53390] = {77472, 8004, },           -- Tidal Wave => Healing Wave, Healing Surge (Restoration)
---	[159103] = {17364, 60103, 1535 },     -- Echo of Elements => Stormstrike, Lava Lash, Fire Nova (Talent, Enhancement)
---	[159101] = {17364, 60103, 1535 },     -- Echo of Elements => Lava Burst, Frost Shock, Earthquake (Talent, Elemental)
---	[159105] = {61295, 73685, 51886 },    -- Echo of Elements => Riptide, Unleash Life, Purify Spirit (Talent, Restoration)
 })
