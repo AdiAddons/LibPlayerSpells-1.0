@@ -40,7 +40,7 @@ lib:__RegisterSpells("WARRIOR", "60000", 4, {
 				114192, -- Mocking Banner (Prot)
 				118038, -- Die By The Sword (Arms, Fury)
 				132404, -- Shield Block (Prot)
-				156321, -- Shield Charge (Glad)
+				169667, -- Shield Charge (Glad)
 				158300, -- Resolve (Prot)
 				159708, -- Glyph of Heroic Leap (Speed)
 			},
@@ -120,7 +120,7 @@ lib:__RegisterSpells("WARRIOR", "60000", 4, {
 	[132169] =             107570, -- Storm Bolt
 	[132404] =               2565, -- Shield Block (Prot)
 	[147833] =               3411, -- Intervene
-	[156321] =               2565, -- Shield Charge (Glad)
+	[169667] =             156321, -- Shield Charge (Glad)
 	[159740] =              23881, -- Glyph of Raging Blow
 	[159708] =               6544, -- Glyph of Heroic Leap
 	[169686] =                 78, -- Unyielding Strikes, Devastate => Low cost Heroic Strike
