@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 9, {
+lib:__RegisterSpells("DRUID", "60000", 10, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -104,6 +104,7 @@ lib:__RegisterSpells("DRUID", "60000", 9, {
 			   774, -- Rejuvenation
 			  8936, -- Regrowth
 			 33763, -- Lifebloom
+			155777, -- Rejuvenation (Germination)
 		},
 		HARMFUL = {
 			  1079, -- Rip
@@ -133,6 +134,7 @@ lib:__RegisterSpells("DRUID", "60000", 9, {
 	[127797] =                   102793, -- Ursol's Vortex (should be in common)
 	[132402] =                    62606, -- Savage Defense
 	[155722] =                     1822, -- Rake (Feral)
+	[155777] =                   155675, -- Germination (talent)
 	[158792] =                    80313, -- Pulverize
 	[164812] =                     8921, -- Moonfire
 	[164815] =                    93402, -- Sunfire
