@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "60000", 4, {
+lib:__RegisterSpells("MONK", "60000", 5, {
 	COOLDOWN = {
 		 101643, -- Transcendence
 		 109132, -- Roll
@@ -106,7 +106,10 @@ lib:__RegisterSpells("MONK", "60000", 4, {
 	[130320] = 107428, -- Rising Sun Kick
 }, {
 	-- Map aura to modified spell(s)
-	[115307] = 100784, -- Shuffle --> Blackout Kick (Stance of the Sturdy Ox)
+	[115307] = { -- Shuffle -->
+		100784, -- Blackout Kick (Stance of the Sturdy Ox)
+		157676, -- Chi Explosion (Brewmaster)
+	},
 	[125359] = 100787, -- Tiger Power --> Tiger Palm
 	[127722] = 100784, -- Crane's Zeal --> Blackout Kick (Stance of the Spirited Crane)
 	[128531] = 100784, -- Blackout Kick --> Blackout Kick (Stance of the Fierce Tiger)
