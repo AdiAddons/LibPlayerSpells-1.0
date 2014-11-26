@@ -34,6 +34,8 @@ function testDatabases:setup()
 	G.LibStub = false
 	lib = wowmock("../LibPlayerSpells-1.0.lua", G)
 	G.LibStub = nil
+	when(G.geterrorhandler()).thenAnswer(error)
+	when(G.GetBuildInfo()).thenAnswer(0, 0, 0, 0)
 	when(G.LibStub("LibPlayerSpells-1.0")).thenAnswer(lib)
 	when(G.GetSpellLink(any())).thenAnswer(true)
 end
