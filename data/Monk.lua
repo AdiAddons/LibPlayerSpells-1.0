@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "60000", 6, {
+lib:__RegisterSpells("MONK", "60000", 7, {
 	COOLDOWN = {
 		 101643, -- Transcendence
 		 109132, -- Roll
@@ -37,7 +37,6 @@ lib:__RegisterSpells("MONK", "60000", 6, {
 				115078, -- Paralysis
 				118585, -- Leer of the Ox
 				120086, -- Fists of Fury -- XXX: added through DRData (stuns)
-				121253, -- Keg Smash -- XXX: seems to be the same as dizzying haze
 				123586, -- Flying Serpent Kick -- TODO: add to snares in Common in ABA
 				130320, -- Rising Sun Kick
 			},
@@ -108,7 +107,7 @@ lib:__RegisterSpells("MONK", "60000", 6, {
 	[130320] = 107428, -- Rising Sun Kick
 }, {
 	-- Map aura to modified spell(s)
-	[115180] = { 115180, 121253 }, -- Dizzying Haze --> Dizzying Haze & Keg Smash
+	[116330] = { 115180, 121253 }, -- Dizzying Haze --> Dizzying Haze & Keg Smash
 	[115307] = { -- Shuffle -->
 		100784, -- Blackout Kick (Stance of the Sturdy Ox)
 		157676, -- Chi Explosion (Brewmaster)
