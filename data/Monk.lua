@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "60000", 5, {
+lib:__RegisterSpells("MONK", "60000", 6, {
 	COOLDOWN = {
 		 101643, -- Transcendence
 		 109132, -- Roll
@@ -72,6 +72,7 @@ lib:__RegisterSpells("MONK", "60000", 5, {
 			101546, -- Spinning Crane Kick
 			115307, -- Shuffle
 			116740, -- Tigereye Brew
+			118674, -- Vital Mists
 			119085, -- Momentum, should be seen on 109132, -- Roll
 			125359, -- Tiger Power
 			127722, -- Crane's Zeal
@@ -91,6 +92,7 @@ lib:__RegisterSpells("MONK", "60000", 5, {
 	[115307] = 115069, -- Shuffle <-- Stance of the Sturdy Ox
 	[116330] = 115180, -- Dizzying Haze
 	[118585] = 115543, -- Leer of the Ox
+	[118674] = 139598, -- Vital Mists <-- Crane Style Techniques
 	[119085] = 109132, -- Momentum --> Roll
 	[120954] = 115203, -- Fortifying Brew
 	[121125] = 115080, -- Death Note <-- Touch of Death
@@ -106,10 +108,12 @@ lib:__RegisterSpells("MONK", "60000", 5, {
 	[130320] = 107428, -- Rising Sun Kick
 }, {
 	-- Map aura to modified spell(s)
+	[115180] = { 115180, 121253 }, -- Dizzying Haze --> Dizzying Haze & Keg Smash
 	[115307] = { -- Shuffle -->
 		100784, -- Blackout Kick (Stance of the Sturdy Ox)
 		157676, -- Chi Explosion (Brewmaster)
 	},
+	[118674] = 123273, -- Vital Mists --> Surging Mist
 	[125359] = 100787, -- Tiger Power --> Tiger Palm
 	[127722] = 100784, -- Crane's Zeal --> Blackout Kick (Stance of the Spirited Crane)
 	[128531] = 100784, -- Blackout Kick --> Blackout Kick (Stance of the Fierce Tiger)
