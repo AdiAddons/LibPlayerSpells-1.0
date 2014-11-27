@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 10, {
+lib:__RegisterSpells("DRUID", "60000", 11, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -98,6 +98,8 @@ lib:__RegisterSpells("DRUID", "60000", 10, {
 				135286, -- Tooth and Claw
 				145152, -- Dream of Cenarius (Feral)
 				145162, -- Dream of Cenarius (Guardian)
+				164545, -- Solar Empowerment
+				164547, -- Lunar Empowerment
 			},
 		},
 		HELPFUL = {
@@ -136,10 +138,14 @@ lib:__RegisterSpells("DRUID", "60000", 10, {
 	[155722] =                     1822, -- Rake (Feral)
 	[155777] =                   155675, -- Germination (talent)
 	[158792] =                    80313, -- Pulverize
-	[164812] =                     8921, -- Moonfire
-	[164815] =                    93402, -- Sunfire
+	[164545] =                    78674, -- Solar Empowerment <== Starsurge
+	[164547] =                    78674, -- Lunar Empowerment <== Starsurge
+	[164812] =                     8921, -- Moonfire <== Moonfire
+	[164815] =                     8921, -- Moonfire <== Sunfire (the spell id as actually the one of Moonfire)
 	[174544] =                    52610, -- Savage Roar (Glyph of Savage Roar)
 }, {
 	-- Map aura to modified spell(s)
 	[135286] = 6807, -- Tooth and Claw -> Maul
+	[164545] = 5176, -- Solar Empowerment --> Wrath
+	[164547] = 2912, -- Lunar Empowerment --> Starfire
 })
