@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "60000", 1, {
+lib:__RegisterSpells("PRIEST", "60000", 2, {
 	COOLDOWN = {
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
@@ -29,9 +29,10 @@ lib:__RegisterSpells("PRIEST", "60000", 1, {
 		 64843, -- Divine Hymn
 		 73325, -- Leap of Faith
 		126135, -- Lightwell
-		["HELPFUL DISPEL"] = {
-			527, -- Purify
+		DISPEL = {
+			[527] = "HELPFUL", -- Purify
 		},
+			[528] = "HARMFUL", -- Dispel Magic
 		AURA = {
 			PERSONAL = {
 				SURVIVAL = {
