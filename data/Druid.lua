@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 11, {
+lib:__RegisterSpells("DRUID", "60000", 12, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -86,6 +86,7 @@ lib:__RegisterSpells("DRUID", "60000", 11, {
 			   768, -- Cat Form
 			   783, -- Travel Form
 			  5487, -- Bear Form
+			 24858, -- Moonkin Form
 			158792, -- Pulverize (buff)
 			BURST = {
 				 52610, -- Savage Roar
