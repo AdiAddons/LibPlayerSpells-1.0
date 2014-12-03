@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", "60000", 5, {
+lib:__RegisterSpells("WARRIOR", "60000", 4, {
 	COOLDOWN = {
 		INTERRUPT = {
 				  6552, -- Pummel
@@ -84,13 +84,11 @@ lib:__RegisterSpells("WARRIOR", "60000", 5, {
 			159740, -- Glyph of Raging Blow
 			169686, -- Unyielding Strikes (Prot, Talent 45)
 			174926, -- Shield Barrier (Arms, Fury)
-			HARMFUL = {
-				772, -- Rend (Arms)
-				115767, -- Deep Wounds (Prot)
-			},
 		},
 		HARMFUL = {
+			   772, -- Rend (Arms)
 			  6343, -- Thunder Clap (Slow)
+			115767, -- Deep Wounds (Prot)
 			115804, -- Mortal Wounds (Reduced Healing)
 			129923, -- Sluggish (Glyph of Hindering Strikes)
 		},
