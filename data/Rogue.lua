@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", "60000", 2, {
+lib:__RegisterSpells("ROGUE", "60000", 3, {
 	COOLDOWN = {
 		INTERRUPT = {
 			1766, -- Kick
@@ -72,7 +72,7 @@ lib:__RegisterSpells("ROGUE", "60000", 2, {
 			  1943, -- Rupture
 			 26679, -- Deadly Throw
 			   703, -- Garrote
-			 89775, -- Hemorrhage
+			 16511, -- Hemorrhage
 			115196, -- Debilitating Poison (Shiv effect of Crippling Poison)
 		},
 	},
@@ -81,7 +81,7 @@ lib:__RegisterSpells("ROGUE", "60000", 2, {
 	},
 }, {
 	-- Map aura to provider
-	[89775] = 16511, -- Hemorrhage
+	[122233] = 121411, -- Crimson Tempest
 }, {
 	-- Map aura to modified spell(s)
 	[ 51713] = 8676, -- Shadow Dance => Ambush
