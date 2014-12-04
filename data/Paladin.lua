@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", "60000", 1, {
+lib:__RegisterSpells("PALADIN", "60000", 2, {
 	[4987] = 'DISPEL HELPFUL', -- Cleanse
 	INTERRUPT = {
 		96231, -- Rebuke
@@ -71,6 +71,7 @@ lib:__RegisterSpells("PALADIN", "60000", 1, {
 			 53563, -- Beacon of Light
 			114163, -- Eternal Flame
 			114917, -- Execution Sentence (heal)
+			156910, -- Beacon of Faith
 		},
 		HARMFUL = {
 			 31801, -- Censure
