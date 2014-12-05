@@ -49,8 +49,8 @@ lib:__RegisterSpells("PRIEST", "60000", 3, {
 				BURST = {
 					 10060, -- Power Infusion
 					 15286, -- Vampiric Embrace
-					109964, -- Spirit Shell
 					 81700, -- Archangel
+					109964, -- Spirit Shell
 				},
 			},
 			HELPFUL = {
