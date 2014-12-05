@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "60000", 2, {
+lib:__RegisterSpells("PRIEST", "60000", 3, {
 	COOLDOWN = {
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
@@ -35,6 +35,7 @@ lib:__RegisterSpells("PRIEST", "60000", 2, {
 			[528] = "HARMFUL", -- Dispel Magic
 		AURA = {
 			PERSONAL = {
+				132573, -- Shadow Word: Insanity
 				SURVIVAL = {
 					   586, -- Fade
 					 20711, -- Spirit of Redemption
@@ -114,4 +115,5 @@ lib:__RegisterSpells("PRIEST", "60000", 2, {
 	[114404] = 108920, -- Vod Tendrils
 }, {
 	-- Map aura to modified spell(s)
+	[132573] = 129197, -- Shadow Word: Insanity -> Insanity
 })
