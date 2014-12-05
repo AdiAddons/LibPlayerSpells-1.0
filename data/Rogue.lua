@@ -20,16 +20,17 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", "60000", 3, {
+lib:__RegisterSpells("ROGUE", "60000", 4, {
 	COOLDOWN = {
 		INTERRUPT = {
 			1766, -- Kick
 		},
 		AURA = {
 			PERSONAL = {
+				 11327, -- Vanish
 				 57934, -- Tricks of the Trade
 				114018, -- Shroud of Concealment
-				 11327, -- Vanish
+
 				SURVIVAL = {
 					  5277, -- Evasion
 					 31224, -- Cloak of Shadows
@@ -47,33 +48,34 @@ lib:__RegisterSpells("ROGUE", "60000", 3, {
 				[137619] = "BURST", -- Marked for death
 			},
 			HELPFUL = {
-				[88611] = "INVERT_AURA", -- Smoke Bomb TODO: does not seem to work
+				[88611] = "INVERT_AURA SURVIVAL", -- Smoke Bomb
 			},
 		},
 	},
 	AURA = {
 		PERSONAL = {
-			  2823, -- Deadly Poison
-			  8679, -- Wound Poison
-			  3408, -- Crippling Poison
-			108211, -- Leeching Poison
-			  5171, -- Slice and Dice
-			  2983, -- Sprint
-			 73651, -- Recuperate
-			 36554, -- Shadow Step
-			108212, -- Burst of Speed
-			137586, -- Shuriken Toss
-			 32645, -- Envenom
 			[ 1966] = "SURVIVAL", -- Feint
+			  2823, -- Deadly Poison
+			  2983, -- Sprint
+			  3408, -- Crippling Poison
+			  5171, -- Slice and Dice
+			  8679, -- Wound Poison
+			 32645, -- Envenom
+			 36554, -- Shadow Step
+			 73651, -- Recuperate
+			108211, -- Leeching Poison
+			108212, -- Burst of Speed
+			137573, -- Burst of Speed (talent)
+			137586, -- Shuriken Toss
 		},
 		HARMFUL = {
-			 84617, -- Revealing Strike
-			122233, -- Crimson Tempest
-			  1943, -- Rupture
-			 26679, -- Deadly Throw
 			   703, -- Garrote
+			  1943, -- Rupture
 			 16511, -- Hemorrhage
+			 26679, -- Deadly Throw
+			 84617, -- Revealing Strike
 			115196, -- Debilitating Poison (Shiv effect of Crippling Poison)
+			122233, -- Crimson Tempest
 		},
 	},
 	RAIDBUFF = {
@@ -81,7 +83,9 @@ lib:__RegisterSpells("ROGUE", "60000", 3, {
 	},
 }, {
 	-- Map aura to provider
+	[ 88611] =  76577, -- Smoke Bomb
 	[122233] = 121411, -- Crimson Tempest
+	[137573] = 108212, -- Burst of Speed (talent)
 }, {
 	-- Map aura to modified spell(s)
 	[ 51713] = 8676, -- Shadow Dance => Ambush
