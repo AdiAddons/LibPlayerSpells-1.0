@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "60000", 7, {
+lib:__RegisterSpells("MONK", "60000", 8, {
 	COOLDOWN = {
 		 101643, -- Transcendence
 		 109132, -- Roll
@@ -31,6 +31,7 @@ lib:__RegisterSpells("MONK", "60000", 7, {
 		 119996, -- Transcendence: Transfer
 		AURA = {
 			HELPFUL = {
+				115151, -- Renewing Mist
 				124081, -- Zen Sphere
 			},
 			HARMFUL = {
