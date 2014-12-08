@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 12, {
+lib:__RegisterSpells("DRUID", "60000", 13, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -141,8 +141,8 @@ lib:__RegisterSpells("DRUID", "60000", 12, {
 	[158792] =                    80313, -- Pulverize
 	[164545] =                    78674, -- Solar Empowerment <== Starsurge
 	[164547] =                    78674, -- Lunar Empowerment <== Starsurge
-	[164812] =                     8921, -- Moonfire <== Moonfire
-	[164815] =                     8921, -- Moonfire <== Sunfire (the spell id as actually the one of Moonfire)
+	[164812] =                     8921, -- Moonfire
+	[164815] =                    93402, -- Sunfire
 	[174544] =                    52610, -- Savage Roar (Glyph of Savage Roar)
 }, {
 	-- Map aura to modified spell(s)
