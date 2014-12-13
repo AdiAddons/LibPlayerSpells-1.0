@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 13, {
+lib:__RegisterSpells("DRUID", "60000", 14, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -87,7 +87,6 @@ lib:__RegisterSpells("DRUID", "60000", 13, {
 			   783, -- Travel Form
 			  5487, -- Bear Form
 			 24858, -- Moonkin Form
-			158792, -- Pulverize (buff)
 			BURST = {
 				 52610, -- Savage Roar
 				174544, -- Savage Roar (Glyph of Savage Roar)
@@ -99,6 +98,7 @@ lib:__RegisterSpells("DRUID", "60000", 13, {
 				135286, -- Tooth and Claw
 				145152, -- Dream of Cenarius (Feral)
 				145162, -- Dream of Cenarius (Guardian)
+				158792, -- Pulverize (buff)
 				164545, -- Solar Empowerment
 				164547, -- Lunar Empowerment
 			},
