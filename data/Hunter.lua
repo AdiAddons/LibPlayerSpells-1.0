@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 10, {
+lib:__RegisterSpells("HUNTER", "60000", 11, {
 	COOLDOWN = {
 		    781, -- Disengage
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
@@ -91,7 +91,10 @@ lib:__RegisterSpells("HUNTER", "60000", 10, {
 			162537, -- Poisoned Ammo (Exotic Munitions talent)
 			162536, -- Incendiary Ammo (Exotic Munitions talent)
 			162539, -- Frozen Ammo (Exotic Munitions talent)
-			177668, -- Steady Focus
+			IMPORTANT = {
+				168811, -- Sniper Training
+				177668, -- Steady Focus
+			},
 		},
 	},
 	RAIDBUFF = {
@@ -192,6 +195,7 @@ lib:__RegisterSpells("HUNTER", "60000", 10, {
 		82941, -- Ice Trap (Trap Launcher)
 	},
 	[162546] = 162534, -- Frozen Ammo <-- Exotic Munitions (talent) -- TODO: add to snares in Common in ABA -- FIXME: LibSpellbook says it's unknown when it isn't
+	[168811] =  76659, -- Sniper Training <- Mastery: Sniper Training
 	[177668] = 177667, -- Steady Focus (survival)
 }, {
 	-- Map aura to modified spell(s)
