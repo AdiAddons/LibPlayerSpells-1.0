@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 14, {
+lib:__RegisterSpells("DRUID", "60000", 15, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -116,6 +116,7 @@ lib:__RegisterSpells("DRUID", "60000", 14, {
 			 77758, -- Thrash (Guardian)
 			106830, -- Thrash (Feral)
 			155722, -- Rake
+			155625, -- Moonfire from Lunar Inspiration
 			164812, -- Moonfire
 			164815, -- Sunfire
 		},
@@ -136,6 +137,7 @@ lib:__RegisterSpells("DRUID", "60000", 14, {
 	[117679] =                    33891, -- Incarnation, Tree of Life Form
 	[127797] =                   102793, -- Ursol's Vortex (should be in common)
 	[132402] =                    62606, -- Savage Defense
+	[155625] =                   155580, -- Lunar Inspiration
 	[155722] =                     1822, -- Rake (Feral)
 	[155777] =                   155675, -- Germination (talent)
 	[158792] =                    80313, -- Pulverize
@@ -146,7 +148,8 @@ lib:__RegisterSpells("DRUID", "60000", 14, {
 	[174544] =                    52610, -- Savage Roar (Glyph of Savage Roar)
 }, {
 	-- Map aura to modified spell(s)
-	[135286] = 6807, -- Tooth and Claw -> Maul
-	[164545] = 5176, -- Solar Empowerment --> Wrath
-	[164547] = 2912, -- Lunar Empowerment --> Starfire
+	[135286] =   6807, -- Tooth and Claw -> Maul
+	[155625] = 155625, -- Moonfire from Lunar Inspiration
+	[164545] =   5176, -- Solar Empowerment --> Wrath
+	[164547] =   2912, -- Lunar Empowerment --> Starfire
 })
