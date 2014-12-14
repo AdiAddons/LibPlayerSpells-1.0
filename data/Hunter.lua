@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 9, {
+lib:__RegisterSpells("HUNTER", "60000", 10, {
 	COOLDOWN = {
 		    781, -- Disengage
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
@@ -127,6 +127,7 @@ lib:__RegisterSpells("HUNTER", "60000", 9, {
 			 34889, -- Spry Attacks
 			 50519, -- Sonic Focus
 			 58604, -- Double Bite
+			172968, -- Lone Wolf: Quickness of the Dragonhawk
 		},
 		SPL_POWER = {
 			128433, -- Serpent's Cunning
@@ -147,6 +148,7 @@ lib:__RegisterSpells("HUNTER", "60000", 9, {
 			 50518, -- Chitinous Armor
 			160045, -- Defensive Quills
 			173035, -- Grace
+			172967, -- Lone Wolf: Versatility of the Ravager
 		},
 		[ 57386] = "MULTISTRIKE VERSATILITY", -- Wild Strength
 		[ 90363] = "STATS CRITICAL",          -- Embrace of the Shale Spider
