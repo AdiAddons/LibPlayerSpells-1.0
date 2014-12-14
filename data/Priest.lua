@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "60000", 4, {
+lib:__RegisterSpells("PRIEST", "60000", 5, {
 	COOLDOWN = {
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
@@ -92,7 +92,7 @@ lib:__RegisterSpells("PRIEST", "60000", 4, {
 			 15407, -- Mind Flay
 			129197, -- Mind Flay (Insanity)
 			   589, -- Shadow Word: Pain
-			  2944, -- Devouring Plague
+			158831, -- Devouring Plague
 			 34914, -- Vampiric Touch
 			155361, -- Void Entropy
 		},
@@ -113,6 +113,7 @@ lib:__RegisterSpells("PRIEST", "60000", 4, {
 	[111759] =   1706, -- Levitate
 	[ 81782] =  62618, -- Power Word: Barrier
 	[114404] = 108920, -- Vod Tendrils
+	[158831] =   2944, -- Devouring Plague
 }, {
 	-- Map aura to modified spell(s)
 	[132573] = 129197, -- Shadow Word: Insanity -> Insanity
