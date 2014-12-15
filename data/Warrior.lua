@@ -42,7 +42,7 @@ lib:__RegisterSpells("WARRIOR", "60000", 4, {
 				132404, -- Shield Block (Prot)
 				169667, -- Shield Charge (Glad)
 				158300, -- Resolve (Prot)
-				159708, -- Glyph of Heroic Leap (Speed)
+				133278, -- Glyph of Heroic Leap (Speed)
 			},
 			HELPFUL = {
 				 46947, -- Safeguard (Talent 75)
@@ -122,7 +122,7 @@ lib:__RegisterSpells("WARRIOR", "60000", 4, {
 	[147833] =               3411, -- Intervene
 	[169667] =             156321, -- Shield Charge (Glad)
 	[159740] =              23881, -- Glyph of Raging Blow
-	[159708] =               6544, -- Glyph of Heroic Leap
+	[133278] =               6544, -- Glyph of Heroic Leap
 	[169686] =                 78, -- Unyielding Strikes, Devastate => Low cost Heroic Strike
 }, {
 	-- Map aura to modified spell(s)
