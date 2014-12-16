@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "60000", 8, {
+lib:__RegisterSpells("MONK", "60000", 9, {
 	COOLDOWN = {
 		 101643, -- Transcendence
 		 109132, -- Roll
@@ -31,7 +31,7 @@ lib:__RegisterSpells("MONK", "60000", 8, {
 		 119996, -- Transcendence: Transfer
 		AURA = {
 			HELPFUL = {
-				115151, -- Renewing Mist
+				119611, -- Renewing Mist
 				124081, -- Zen Sphere
 			},
 			HARMFUL = {
@@ -78,6 +78,9 @@ lib:__RegisterSpells("MONK", "60000", 8, {
 			127722, -- Crane's Zeal
 			137639, -- Storm, Earth and Fire
 		},
+		HELPFUL = {
+			132120, -- Enveloping Mist
+		},
 	},
 	RAIDBUFF = {
 		[115921] = "STATS",          -- Legacy of the Emperor
@@ -94,6 +97,7 @@ lib:__RegisterSpells("MONK", "60000", 8, {
 	[118585] = 115543, -- Leer of the Ox
 	[118674] = 139598, -- Vital Mists <-- Crane Style Techniques
 	[119085] = 109132, -- Momentum --> Roll
+	[119611] = 115151, -- Renewing Mist
 	[120954] = 115203, -- Fortifying Brew
 	[121125] = 115080, -- Death Note <-- Touch of Death
 	[127722] = 154436, -- Crane's Zeal <-- Stance of the Spirited Crane
@@ -106,6 +110,7 @@ lib:__RegisterSpells("MONK", "60000", 8, {
 	},
 	[128531] = 103985, -- Blackout Kick <-- Stance of the Fierce Tiger
 	[130320] = 107428, -- Rising Sun Kick
+	[132120] = 112682, -- Enveloping Mist
 }, {
 	-- Map aura to modified spell(s)
 	[116330] = { 115180, 121253 }, -- Dizzying Haze --> Dizzying Haze & Keg Smash
