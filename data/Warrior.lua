@@ -20,14 +20,13 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", "60000", 4, {
+lib:__RegisterSpells("WARRIOR", "60000", 5, {
 	COOLDOWN = {
 		INTERRUPT = {
 				  6552, -- Pummel
 		},
 		AURA = {
 			PERSONAL = {
-				   871, -- Shield Wall (Prot)
 				  1719, -- Recklessness (Arms, Fury)
 				 12292, -- Bloodbath (Self Buff ,Talent 90)
 				 12328, -- Sweeping Strikes (Arms)
@@ -43,6 +42,7 @@ lib:__RegisterSpells("WARRIOR", "60000", 4, {
 				169667, -- Shield Charge (Glad)
 				158300, -- Resolve (Prot)
 				159708, -- Glyph of Heroic Leap (Speed)
+				[   871] = "SURVIVAL", -- Shield Wall (Prot)
 			},
 			HELPFUL = {
 				 46947, -- Safeguard (Talent 75)
