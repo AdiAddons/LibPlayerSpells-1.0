@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "60000", 9, {
+lib:__RegisterSpells("MONK", "60000", 10, {
 	COOLDOWN = {
 		 101643, -- Transcendence
 		 109132, -- Roll
@@ -110,7 +110,7 @@ lib:__RegisterSpells("MONK", "60000", 9, {
 	},
 	[128531] = 103985, -- Blackout Kick <-- Stance of the Fierce Tiger
 	[130320] = 107428, -- Rising Sun Kick
-	[132120] = 112682, -- Enveloping Mist
+	[132120] = 124682, -- Enveloping Mist
 }, {
 	-- Map aura to modified spell(s)
 	[116330] = { 115180, 121253 }, -- Dizzying Haze --> Dizzying Haze & Keg Smash
