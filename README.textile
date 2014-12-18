@@ -1,6 +1,6 @@
 h1. LibPlayerSpells-1.0
 
-!https://travis-ci.org/Adirelle/LibPlayerSpells-1.0.svg?branch=master!:https://travis-ci.org/Adirelle/LibPlayerSpells-1.0
+!https://travis-ci.org/Adirelle/LibPlayerSpells-1.0.svg?branch=master!:https://travis-ci.org/Adirelle/LibPlayerSpells-1.0 !https://badges.gitter.im/Join%20Chat.svg!:https://gitter.im/Adirelle/LibPlayerSpells-1.0
 
 LibPlayerSpells-1.0 is a library providing data about the spells of the eleven character classes in World of Warcraft. It also includes additional spells derived from racial traits and other sources. The word "spells" is used here in the general sense; it includes active skills as well as passive spells that are found in the players' spellbook. Buffs and debuffs that are applied by the player from other sources are also covered.
 
