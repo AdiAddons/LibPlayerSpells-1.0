@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 11, {
+lib:__RegisterSpells("HUNTER", "60000", 12, {
 	COOLDOWN = {
 		    781, -- Disengage
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
@@ -70,6 +70,7 @@ lib:__RegisterSpells("HUNTER", "60000", 11, {
 				[ 51755] = "SURVIVAL", -- Camouflage
 				[ 82692] = "BURST", -- Focus Fire
 				[ 82921] = "BURST", -- Bombardment
+				[168980] = "BURST", -- Lock and Load
 			},
 		},
 	},
@@ -196,6 +197,7 @@ lib:__RegisterSpells("HUNTER", "60000", 11, {
 	},
 	[162546] = 162534, -- Frozen Ammo <-- Exotic Munitions (talent) -- TODO: add to snares in Common in ABA -- FIXME: LibSpellbook says it's unknown when it isn't
 	[168811] =  76659, -- Sniper Training <- Mastery: Sniper Training
+	[168980] =  53301, -- Explosive Shot <- Lock and Load
 	[177668] = 177667, -- Steady Focus (survival)
 }, {
 	-- Map aura to modified spell(s)
@@ -214,6 +216,7 @@ lib:__RegisterSpells("HUNTER", "60000", 11, {
 	[118922] =  781, -- Posthaste (talent) --> Disengage
 	[162534] = 75, -- Poisoned Ammo --> Auto Shot
 	[162546] = 75, -- Frozen Ammo --> Auto Shot -- TODO: add to snares in Common in ABA
+	[168980] =  53301, -- Explosive Shot <- Lock and Load
 	[177668] = { -- Steady Focus (talent) =>
 		56641, -- Steady Shot
 		77767, -- Cobra Shot
