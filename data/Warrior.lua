@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", "60000", 5, {
+lib:__RegisterSpells("WARRIOR", "60000", 6, {
 	COOLDOWN = {
 		INTERRUPT = {
 				  6552, -- Pummel
@@ -113,7 +113,7 @@ lib:__RegisterSpells("WARRIOR", "60000", 5, {
 	[ 97463] =              97462, -- Rallying Cry (Arms, Fury)
 	[113344] =              12292, -- Bloodbath (dot tracking)
 	[115767] =   { 6343, 20243, }, -- Thunder Clap, Devastate (Deep Wounds)
-	-- [115804] = { 12294, 100130, }, -- Mortal Wounds from Mortal Strike, Wild Strike -- should be off by default, it's mostly pointless
+	[115804] = { 12294, 100130, }, -- Mortal Wounds from Mortal Strike, Wild Strike -- should be off by default, it's mostly pointless
 	[122510] =                 78, -- Ultimatum, Shield Slam => Free Heroic Strike (Prot)
 	[131116] =              85288, -- Raging Blow
 	[132168] =              46968, -- Shockwave
