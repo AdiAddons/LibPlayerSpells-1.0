@@ -33,7 +33,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", "60000", 3, {
+lib:__RegisterSpells("SHAMAN", "60000", 4, {
 	COOLDOWN = {
 		[ 2062] = "SURVIVAL", -- Earth Elemental Totem
 		  5394, -- Healing Stream Totem
@@ -164,17 +164,17 @@ lib:__RegisterSpells("SHAMAN", "60000", 3, {
 		 8004, -- Healing Surge
 		73920, -- Healing Rain (Enhancement)
 	},
-	[159101] = { -- Echo of Elements (Elemental)
-		 1535, -- Earthquake (Talent, Elemental)
-		17364, -- Lava Burst
-		60103, -- Frost Shock
+	[159101] = { -- Echo of the Elements (Elemental)
+		 8056, -- Frost Shock
+		51505, -- Lava Burst
+		61882, -- Earthquake (Talent, Elemental)
 	},
-	[159103] = { -- Echo of Elements (Enhancement)
+	[159103] = { -- Echo of the Elements (Enhancement)
 		 1535, -- Fire Nova (Talent, Enhancement)
 		17364, -- Stormstrike
 		60103, -- Lava Lash
 	},
-	[159105] = { -- Echo of Elements (Restoration)
+	[159105] = { -- Echo of the Elements (Restoration)
 		61295, -- Riptide
 		73685, -- Unleash Life
 		51886, -- Purify Spirit (Talent, Restoration)
