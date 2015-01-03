@@ -33,7 +33,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", "60000", 2, {
+lib:__RegisterSpells("SHAMAN", "60000", 3, {
 	COOLDOWN = {
 		[ 2062] = 'SURVIVAL', -- Earth Elemental Totem
 		  5394, -- Healing Stream Totem
@@ -120,6 +120,13 @@ lib:__RegisterSpells("SHAMAN", "60000", 2, {
 			 63685, -- Frozen Power (Talent)
 			 64695, -- Earthgab Totem Root(Talent)
 		},
+	},
+	DISPEL = {
+		[370] = "HARMFUL COOLDOWN", -- Purge
+		["HELPFUL COOLDOWN"] = {
+			51886, -- Cleanse Spirit
+			77130, -- Purify Spirit
+		}
 	},
 	RAIDBUFF = {
 		[  2825] = 'BURST_HASTE',   -- Bloodlust (Horde shaman)
