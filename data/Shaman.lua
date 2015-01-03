@@ -35,7 +35,7 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("SHAMAN", "60000", 3, {
 	COOLDOWN = {
-		[ 2062] = 'SURVIVAL', -- Earth Elemental Totem
+		[ 2062] = "SURVIVAL", -- Earth Elemental Totem
 		  5394, -- Healing Stream Totem
 		  8143, -- Tremor Totem
 		 20608, -- Reincarnation
@@ -68,7 +68,7 @@ lib:__RegisterSpells("SHAMAN", "60000", 3, {
 			   108281, -- Ancestral Guidance (Talent)
 			},
 			HELPFUL = {
-				[ 98008] = 'SURVIVAL', -- Spirit Link Totem (Restoration)
+				[ 98008] = "SURVIVAL", -- Spirit Link Totem (Restoration)
 				  8178, -- Grounding Totem
 				114896, -- Windwalker Totem (Talent)
 			},
@@ -106,7 +106,7 @@ lib:__RegisterSpells("SHAMAN", "60000", 3, {
 			159105, -- Echo of Elements (Talent, Restoration)
 		},
 		HELPFUL = {
-			[  974] = 'UNIQUE_AURA', -- Earth Shield
+			[  974] = "UNIQUE_AURA", -- Earth Shield
 			   546, -- Water Walking
 			 61295, -- Riptide (Restoration)
 		},
@@ -129,8 +129,8 @@ lib:__RegisterSpells("SHAMAN", "60000", 3, {
 		}
 	},
 	RAIDBUFF = {
-		[  2825] = 'BURST_HASTE',   -- Bloodlust (Horde shaman)
-		[ 32182] = 'BURST_HASTE',   -- Heroism (Alliance shaman)
+		[  2825] = "BURST_HASTE",   -- Bloodlust (Horde shaman)
+		[ 32182] = "BURST_HASTE",   -- Heroism (Alliance shaman)
 		[116956] = "MASTERY HASTE", -- Grace of Air
 	},
 }, {
