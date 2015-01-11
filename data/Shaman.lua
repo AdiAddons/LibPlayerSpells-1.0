@@ -114,11 +114,11 @@ lib:__RegisterSpells("SHAMAN", "60000", 5, {
 			  8050, -- Flame Shock
 			  8056, -- Frost Shock
 			  3600, -- Earbinding Totem
-			118905, -- Capacitor Totem Stun
 			 17364, -- Stormstrike (Enhancement)
 			 61882, -- Earthquake (Elemental)
 			 63685, -- Frozen Power (Talent)
 			 64695, -- Earthgab Totem Root(Talent)
+			118905, -- Capacitor Totem Stun
 		},
 	},
 	DISPEL = {
@@ -146,6 +146,9 @@ lib:__RegisterSpells("SHAMAN", "60000", 5, {
 	[114051] = 165341, -- Ascendance (Enhancement)
 	[114052] = 165344, -- Ascendance (Restoration)
 	[114896] = 108273, -- Windwalker Totem (Talent)
+	[118472] =  73680, -- Unleashed Fury (Talent)
+	[118522] = 117014, -- Elemental Blast: Critical (Talent)
+	[118905] = 108269, -- Capacitor Totem
 	[159101] = 108283, -- Echo of the Elements (Elemental buff) <- Echo of the Elements (Talent)
 	[159103] = 108283, -- Echo of the Elements (Enhancement buff) <- Echo of the Elements (Talent)
 	[159105] = 108283, -- Echo of the Elements (Restoration buff) <- Echo of the Elements (Talent)
@@ -154,9 +157,6 @@ lib:__RegisterSpells("SHAMAN", "60000", 5, {
 	[173185] = 117014, -- Elemental Blast: Multistrike (Talent)
 	[173186] = 117014, -- Elemental Blast: Agility (Talent)
 	[173187] = 117014, -- Elemental Blast: Spirit (Talent)
-	[118472] =  73680, -- Unleashed Fury (Talent)
-	[118522] = 117014, -- Elemental Blast: Critical (Talent)
-	[118905] = 108269, -- Capacitor Totem
 }, {
 	-- Map aura to modified spell(s)
 	[ 53390] = { -- Tidal Wave
