@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 11, {
+lib:__RegisterSpells("HUNTER", "60000", 12, {
 	COOLDOWN = {
 		    781, -- Disengage
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
@@ -70,6 +70,7 @@ lib:__RegisterSpells("HUNTER", "60000", 11, {
 				[ 51755] = "SURVIVAL", -- Camouflage
 				[ 82692] = "BURST", -- Focus Fire
 				[ 82921] = "BURST", -- Bombardment
+				[148467] = "SURVIVAL", -- Deterrence with Crouching Tiger, Hidden Chimaera (Talent)
 			},
 		},
 	},
