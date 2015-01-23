@@ -20,9 +20,8 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "60000", 10, {
+lib:__RegisterSpells("MONK", "60000", 11, {
 	COOLDOWN = {
-		 101643, -- Transcendence
 		 109132, -- Roll
 		 115072, -- Expel Harm
 		 115080, -- Touch of Death
@@ -31,8 +30,9 @@ lib:__RegisterSpells("MONK", "60000", 10, {
 		 119996, -- Transcendence: Transfer
 		AURA = {
 			HELPFUL = {
-				119611, -- Renewing Mist
-				124081, -- Zen Sphere
+				[116849] = "SURVIVAL", -- Life Cocoon
+				 119611, -- Renewing Mist
+				 124081, -- Zen Sphere
 			},
 			HARMFUL = {
 				115078, -- Paralysis
@@ -42,6 +42,7 @@ lib:__RegisterSpells("MONK", "60000", 10, {
 				130320, -- Rising Sun Kick
 			},
 			PERSONAL = {
+				 101643, -- Transcendence
 				 116841, -- Tiger's Lust
 				 116847, -- Rushing Jade Wind
 				[115288] = "POWER_REGEN", -- Energizing Brew
