@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", "60000", 4, {
+lib:__RegisterSpells("ROGUE", "60000", 5, {
 	COOLDOWN = {
 		INTERRUPT = {
 			1766, -- Kick
@@ -30,7 +30,6 @@ lib:__RegisterSpells("ROGUE", "60000", 4, {
 				 11327, -- Vanish
 				 57934, -- Tricks of the Trade
 				114018, -- Shroud of Concealment
-
 				SURVIVAL = {
 					  5277, -- Evasion
 					 31224, -- Cloak of Shadows
@@ -83,6 +82,7 @@ lib:__RegisterSpells("ROGUE", "60000", 4, {
 	},
 }, {
 	-- Map aura to provider
+	[ 11327] =   1856, -- Vanish
 	[ 88611] =  76577, -- Smoke Bomb
 	[122233] = 121411, -- Crimson Tempest
 	[137573] = 108212, -- Burst of Speed (talent)
