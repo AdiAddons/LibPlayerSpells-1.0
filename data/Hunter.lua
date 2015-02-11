@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 12, {
+lib:__RegisterSpells("HUNTER", "60000", 13, {
 	COOLDOWN = {
 		    781, -- Disengage
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
@@ -70,6 +70,7 @@ lib:__RegisterSpells("HUNTER", "60000", 12, {
 				[ 51755] = "SURVIVAL", -- Camouflage
 				[ 82692] = "BURST", -- Focus Fire
 				[ 82921] = "BURST", -- Bombardment
+				[148467] = "SURVIVAL", -- Deterrence with Crouching Tiger, Hidden Chimaera (Talent)
 				[168980] = "BURST", -- Lock and Load
 			},
 		},
@@ -77,7 +78,7 @@ lib:__RegisterSpells("HUNTER", "60000", 12, {
 	AURA = {
 		HARMFUL = {
 			118253, -- Serpent Sting
-			162534, -- Poisoned Ammo (Exotic Munitions talent)
+			162543, -- Poisoned Ammo (Exotic Munitions talent)
 			162546, -- Frozen Ammo (Exotic Munitions talent) -- TODO: add to snares in Common in ABA
 		},
 		PET = {
@@ -89,12 +90,12 @@ lib:__RegisterSpells("HUNTER", "60000", 12, {
 			  6197, -- Eagle Eye
 			 34720, -- Thrill of the Hunt (talent)
 			 83559, -- Black Ice (Glyph)
-			162537, -- Poisoned Ammo (Exotic Munitions talent)
 			162536, -- Incendiary Ammo (Exotic Munitions talent)
+			162537, -- Poisoned Ammo (Exotic Munitions talent)
 			162539, -- Frozen Ammo (Exotic Munitions talent)
+			177668, -- Steady Focus
 			IMPORTANT = {
 				168811, -- Sniper Training
-				177668, -- Steady Focus
 			},
 		},
 	},
@@ -176,7 +177,7 @@ lib:__RegisterSpells("HUNTER", "60000", 12, {
 	},
 	[ 25809] = { -- Crippling Poison
 		34600, -- Snake Trap
-		82948, -- Snake Trap (Trap Launcher) -- TODO: bugged on BETA currently
+		82948, -- Snake Trap (Trap Launcher)
 	},
 	[ 34720] = 109306, -- Thrill of the Hunt (talent)
 	[ 35079] =  34477, -- Misdirection
@@ -195,7 +196,8 @@ lib:__RegisterSpells("HUNTER", "60000", 12, {
 		13809, -- Ice Trap
 		82941, -- Ice Trap (Trap Launcher)
 	},
-	[162546] = 162534, -- Frozen Ammo <-- Exotic Munitions (talent) -- TODO: add to snares in Common in ABA -- FIXME: LibSpellbook says it's unknown when it isn't
+	[162543] = 162537, -- Poisoned Ammo <-- Poisoned Ammo (Exotic Munitions Talent)
+	[162546] = 162539, -- Frozen Ammo <-- Frozen Ammo (Exotic Munitions Talent)
 	[168811] =  76659, -- Sniper Training <- Mastery: Sniper Training
 	[168980] =  53301, -- Explosive Shot <- Lock and Load
 	[177668] = 177667, -- Steady Focus (survival)
@@ -214,11 +216,12 @@ lib:__RegisterSpells("HUNTER", "60000", 12, {
 	},
 	[118455] = 2643, -- Beast Cleave --> Multishot
 	[118922] =  781, -- Posthaste (talent) --> Disengage
-	[162534] = 75, -- Poisoned Ammo --> Auto Shot
+	[162543] = 75, -- Poisoned Ammo --> Auto Shot
 	[162546] = 75, -- Frozen Ammo --> Auto Shot -- TODO: add to snares in Common in ABA
 	[168980] =  53301, -- Explosive Shot <- Lock and Load
 	[177668] = { -- Steady Focus (talent) =>
-		56641, -- Steady Shot
-		77767, -- Cobra Shot
+		 56641, -- Steady Shot
+		 77767, -- Cobra Shot
+		152245, -- Focusing Shot
 	},
 })

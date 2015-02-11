@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "60000", 4, {
+lib:__RegisterSpells("DEATHKNIGHT", "60000", 5, {
 	COOLDOWN = {
 		 42650, -- Army of the Dead
 		 47568, -- Empower Rune Weapon
@@ -43,6 +43,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 4, {
 			PERSONAL = {
 				 51271, -- Pillar of Frost
 				 96268, -- Death's Advance
+				108200, -- Remorseless Winter
 				115989, -- Unholy Blight
 				152279, -- Breath of Sindragosa
 				SURVIVAL = {
@@ -72,6 +73,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 4, {
 			 81141, -- Crimson Scourge (Blood)
 			 81340, -- Sudden Doom
 			114851, -- Blood Charge
+			119975, -- Conversion
 		},
 		PET = {
 			  63560, -- Dark Transformation -- NOTE: shadow infusion is not possible when this is active

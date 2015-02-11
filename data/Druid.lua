@@ -20,17 +20,17 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 15, {
+lib:__RegisterSpells("DRUID", "60000", 16, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
 		 20484, -- Rebirth
 		 33831, -- Force of Nature (balance)
+		 61391, -- Typhoon
 		 78674, -- Starsurge
 		102693, -- Force of Nature (restoration)
 		102703, -- Force of Nature (feral)
 		102706, -- Force of Nature (guardian)
-		132469, -- Typhoon
 		145205, -- Wild Mushroom (restoration)
 		INTERRUPT = {
 			 78675, -- Solar Beam
@@ -87,6 +87,7 @@ lib:__RegisterSpells("DRUID", "60000", 15, {
 			   783, -- Travel Form
 			  5487, -- Bear Form
 			 24858, -- Moonkin Form
+			 88747, -- Wild Mushroom
 			BURST = {
 				 52610, -- Savage Roar
 				174544, -- Savage Roar (Glyph of Savage Roar)
@@ -129,7 +130,8 @@ lib:__RegisterSpells("DRUID", "60000", 15, {
 }, {
 	-- Map aura to provider
 	[ 50334] =       { 106951, 50334, }, -- Berserk (Bear)
-	[ 58180] =                     5221, -- Infected Wounds (Slow) (should be in common)
+	[ 58180] =          { 5221, 33917 }, -- Infected Wounds (Slow) (should be in common)
+	[ 61391] =                   132469, -- Typhoon (should be in common)
 	[ 77761] = {106898, 77761, 77764, }, -- Stampeding Roar (Bear)
 	[ 77764] = {106898, 77761, 77764, }, -- Stampeding Roar (Cat)
 	[106898] = {106898, 77761, 77764, }, -- Stampeding Roar (Humanoid)

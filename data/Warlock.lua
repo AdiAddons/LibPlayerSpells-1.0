@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "60000", 3, {
+lib:__RegisterSpells("WARLOCK", "60000", 4, {
 	COOLDOWN = {
 		  1122, -- Summon Infernal
 		 18540, -- Summon Doomguard
@@ -41,6 +41,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 3, {
 				  48020, -- Demonic Circle: Teleport
 				 104025, -- Immolation Aura (Metamorphosis/Dark Apotheosis)
 				 108503, -- Grimoire of Sacrifice (talent)
+				 137587, -- Kil'jaeden's Cunning
 				[  1454] = "INVERT_AURA", -- Life Tap
 				   1949, -- Hellfire
 				SURVIVAL = {
@@ -74,6 +75,8 @@ lib:__RegisterSpells("WARLOCK", "60000", 3, {
 	},
 	AURA = {
 		PERSONAL = {
+			   126, -- Eye of Kilrogg
+			 74434, -- Soulburn
 			104232, -- Rain of fire
 			111400, -- Burning Rush (talent)
 			114635, -- Ember Tap
