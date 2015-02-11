@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60000", 13, {
+lib:__RegisterSpells("HUNTER", "60000", 14, {
 	COOLDOWN = {
 		    781, -- Disengage
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
