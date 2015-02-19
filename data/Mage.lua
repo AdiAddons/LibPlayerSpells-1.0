@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", "60000", 3, {
+lib:__RegisterSpells("MAGE", "60000", 4, {
 	COOLDOWN = {
 		31687, -- Summon Water Elemental
 		84714, -- Frozen Orb
@@ -70,13 +70,13 @@ lib:__RegisterSpells("MAGE", "60000", 3, {
 	},
 	AURA = {
 		PERSONAL = {
-			 12051, -- Evocation
-			 44544, -- Fingers of Frost
-			 48107, -- Heating Up
-			 48108, -- Pyroblast!
-			 57761, -- Brain Freeze
-			 79683, -- Arcane Missles!
-			112965, -- Fingers of Frost
+			  44544, -- Fingers of Frost
+			  48107, -- Heating Up
+			  48108, -- Pyroblast!
+			  57761, -- Brain Freeze
+			  79683, -- Arcane Missles!
+			 112965, -- Fingers of Frost
+			[ 36032] = "INVERT_AURA", -- Arcane Charge
 		},
 		HELPFUL = {
 			   130, -- Slow Fall
@@ -108,6 +108,13 @@ lib:__RegisterSpells("MAGE", "60000", 3, {
 }, {
 	-- Map aura to provider
 	[ 32612] =     66, -- Invisibility (buff) <- Invisibility (spellbook)
+	[ 36032] = { -- Arcane Charge
+		 1449, -- Arcane Explosion
+		 5143, -- Arcane Missiles
+		12051, -- Evocation (consumer)
+		30451, -- Arcane Blast
+		44425, -- Arcane Barrage (consumer)
+	},
 	[ 44544] =  30455, -- Fingers of Frost <- Ice Lance
 	[ 48107] =  11366, -- Heating Up <- Pyroblast
 	[ 48108] =  11366, -- Pyroblast! <- Pyroblast
