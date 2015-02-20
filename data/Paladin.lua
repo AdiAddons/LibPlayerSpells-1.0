@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", "60000", 2, {
+lib:__RegisterSpells("PALADIN", "60000", 3, {
 	[4987] = 'DISPEL HELPFUL', -- Cleanse
 	INTERRUPT = {
 		96231, -- Rebuke
@@ -64,6 +64,10 @@ lib:__RegisterSpells("PALADIN", "60000", 2, {
 			114250, -- Selfless Healer
 			 25780, -- Righteous Fury
 			 85499, -- Speed of Light
+			156987, -- Turalyon's Justice (Empowered Seal talent)
+			156988, -- Uther's Insight (Empowered Seal talent)
+			156989, -- Liadrin's Righteousness (Empowered Seal talent)
+			156990, -- Maraad's Truth (Empowered Seal talent)
 		},
 		HELPFUL = {
 			  1044, -- Hand of Freedom
@@ -74,7 +78,7 @@ lib:__RegisterSpells("PALADIN", "60000", 2, {
 			156910, -- Beacon of Faith
 		},
 		HARMFUL = {
-			 31801, -- Censure
+			 31803, -- Censure
 			114916, -- Execution Sentence (damage)
 			114919, -- Light's Hamer (damage)
 			 81298, -- Consecration
@@ -87,14 +91,23 @@ lib:__RegisterSpells("PALADIN", "60000", 2, {
 	},
 }, {
 	-- Map aura to provider
+	[31803]  = 31801, -- Censure <= Seal of Truth
 	[81298]  = 26573, -- Consecration (prot)
 	[132403] = 53600, -- Shield of the Righteous (prot)
 	[114917] = 114157,-- Execution Sentence (heal)
 	[114916] = 114157,-- Execution Sentence (damage)
 	[114919] = 114158,-- Light's Hammer (damage)
 	[114250] = 20271, -- Selfless Healer <= Judgement
+	[156987] = 152263, -- Turalyon's Justice <= Empowered Seal talent
+	[156988] = 152263, -- Uther's Insight <= Empowered Seal talent
+	[156989] = 152263, -- Liadrin's Righteousness <= Empowered Seal talent
+	[156990] = 152263, -- Maraad's Truth <= Empowered Seals talent
 }, {
 	-- Map aura to modified spell(s)
 	[114250] = 19750, -- Selfless Healer => Flash of Light
 	[ 31868] = 19750, -- Supplication => Flash of Light
+	[156987] = 20164, -- Turalyon's Justice => Seal of Justice
+	[156988] = 20165, -- Uther's Insight => Seal of Insight
+	[156989] = 20154, -- Liadrin's Righteousness => Seal of Righteousness
+	[156990] = 31801, -- Maraad's Truth => Seal of Truth
 })
