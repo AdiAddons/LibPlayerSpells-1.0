@@ -88,6 +88,7 @@ lib:__RegisterSpells("DRUID", "60000", 16, {
 			  5487, -- Bear Form
 			 24858, -- Moonkin Form
 			 88747, -- Wild Mushroom
+			145162, -- Dream of Cenarius (Guardian)
 			BURST = {
 				 52610, -- Savage Roar
 				174544, -- Savage Roar (Glyph of Savage Roar)
@@ -98,7 +99,6 @@ lib:__RegisterSpells("DRUID", "60000", 16, {
 				100977, -- Harmony (Buff)
 				135286, -- Tooth and Claw
 				145152, -- Dream of Cenarius (Feral)
-				145162, -- Dream of Cenarius (Guardian)
 				158792, -- Pulverize (buff)
 				164545, -- Solar Empowerment
 				164547, -- Lunar Empowerment
@@ -139,6 +139,7 @@ lib:__RegisterSpells("DRUID", "60000", 16, {
 	[117679] =                    33891, -- Incarnation, Tree of Life Form
 	[127797] =                   102793, -- Ursol's Vortex (should be in common)
 	[132402] =                    62606, -- Savage Defense
+	[145162] = 158501, -- Dream of Cenarius
 	[155625] =                   155580, -- Lunar Inspiration
 	[155722] =                     1822, -- Rake (Feral)
 	[155777] =                   155675, -- Germination (talent)
@@ -151,6 +152,10 @@ lib:__RegisterSpells("DRUID", "60000", 16, {
 }, {
 	-- Map aura to modified spell(s)
 	[135286] =   6807, -- Tooth and Claw -> Maul
+	[145162] = { -- Dream of Cenarius
+		 5185, -- Healing Touch
+		20484, -- Rebirth
+	},
 	[155625] = 155625, -- Moonfire from Lunar Inspiration
 	[164545] =   5176, -- Solar Empowerment --> Wrath
 	[164547] =   2912, -- Lunar Empowerment --> Starfire
