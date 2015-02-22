@@ -129,32 +129,53 @@ lib:__RegisterSpells("DRUID", "60000", 16, {
 	},
 }, {
 	-- Map aura to provider
-	[ 50334] =       { 106951, 50334, }, -- Berserk (Bear)
-	[ 58180] =          { 5221, 33917 }, -- Infected Wounds (Slow) (should be in common)
-	[ 61391] =                   132469, -- Typhoon (should be in common)
-	[ 77761] = {106898, 77761, 77764, }, -- Stampeding Roar (Bear)
-	[ 77764] = {106898, 77761, 77764, }, -- Stampeding Roar (Cat)
-	[106898] = {106898, 77761, 77764, }, -- Stampeding Roar (Humanoid)
-	[106951] =       { 106951, 50334, }, -- Berserk (Cat)
-	[117679] =                    33891, -- Incarnation, Tree of Life Form
-	[127797] =                   102793, -- Ursol's Vortex (should be in common)
-	[132402] =                    62606, -- Savage Defense
+	[ 50334] = { -- Berserk (Bear)
+		 50334, -- (Bear)
+		106951, -- (Cat)
+	},
+	[ 58180] = { -- Infected Wounds (Slow) (should be in common)
+		 5221, -- Shred (Cat)
+		33917, -- Mangle (Bear)
+	},
+	[ 61391] = 132469, -- Typhoon (should be in common)
+	[ 77761] = { -- Stampeding Roar (Bear)
+		 77761, -- (Bear)
+		 77764, -- (Cat)
+		106898, -- (Humanoid)
+	},
+	[ 77764] = { -- Stampeding Roar (Cat)
+		 77761, -- (Bear)
+		 77764, -- (Cat)
+		106898, -- (Humanoid)
+	},
+	[106898] = { -- Stampeding Roar (Humanoid)
+		 77761, -- (Bear)
+		 77764, -- (Cat)
+		106898, -- (Humanoid)
+	},
+	[106951] = { -- Berserk (Cat)
+		 50334, -- (Bear)
+		106951, -- (Cat)
+	},
+	[117679] =  33891, -- Incarnation, Tree of Life Form
+	[127797] = 102793, -- Ursol's Vortex (should be in common)
+	[132402] =  62606, -- Savage Defense
 	[145152] = 155672, -- Bloodtalons (Feral talent)
-	[145162] = 158501, -- Dream of Cenarius
-	[155625] =                   155580, -- Lunar Inspiration
-	[155722] =                     1822, -- Rake (Feral)
-	[155777] =                   155675, -- Germination (talent)
-	[158792] =                    80313, -- Pulverize
-	[164545] =                    78674, -- Solar Empowerment <== Starsurge
-	[164547] =                    78674, -- Lunar Empowerment <== Starsurge
-	[164812] =                     8921, -- Moonfire
-	[164815] =                    93402, -- Sunfire
-	[174544] =                    52610, -- Savage Roar (Glyph of Savage Roar)
+	[145162] = 158501, -- Dream of Cenarius (Guardian talent)
+	[155625] = 155580, -- Lunar Inspiration
+	[155722] =   1822, -- Rake (Feral)
+	[155777] = 155675, -- Germination (talent)
+	[158792] =  80313, -- Pulverize
+	[164545] =  78674, -- Solar Empowerment <== Starsurge
+	[164547] =  78674, -- Lunar Empowerment <== Starsurge
+	[164812] =   8921, -- Moonfire
+	[164815] =  93402, -- Sunfire
+	[174544] =  52610, -- Savage Roar (Glyph of Savage Roar)
 }, {
 	-- Map aura to modified spell(s)
 	[135286] =   6807, -- Tooth and Claw -> Maul
 	[145152] =   5185, -- Bloodtalons (Feral talent) -> Healing Touch
-	[145162] = { -- Dream of Cenarius
+	[145162] = { -- Dream of Cenarius (Guardian talent)
 		 5185, -- Healing Touch
 		20484, -- Rebirth
 	},
