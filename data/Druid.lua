@@ -129,10 +129,6 @@ lib:__RegisterSpells("DRUID", "60000", 16, {
 	},
 }, {
 	-- Map aura to provider
-	[ 50334] = { -- Berserk (Bear)
-		 50334, -- (Bear)
-		106951, -- (Cat)
-	},
 	[ 58180] = { -- Infected Wounds (Slow) (should be in common)
 		 5221, -- Shred (Cat)
 		33917, -- Mangle (Bear)
@@ -152,10 +148,6 @@ lib:__RegisterSpells("DRUID", "60000", 16, {
 		 77761, -- (Bear)
 		 77764, -- (Cat)
 		106898, -- (Humanoid)
-	},
-	[106951] = { -- Berserk (Cat)
-		 50334, -- (Bear)
-		106951, -- (Cat)
 	},
 	[117679] =  33891, -- Incarnation, Tree of Life Form
 	[127797] = 102793, -- Ursol's Vortex (should be in common)
