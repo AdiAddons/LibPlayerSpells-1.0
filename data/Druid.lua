@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 17, {
+lib:__RegisterSpells("DRUID", "60000", 18, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -83,25 +83,25 @@ lib:__RegisterSpells("DRUID", "60000", 17, {
 	},
 	AURA = {
 		PERSONAL = {
-			   768, -- Cat Form
-			   783, -- Travel Form
-			  5487, -- Bear Form
-			 24858, -- Moonkin Form
-			 88747, -- Wild Mushroom
-			145152, -- Bloodtalons (Feral talent)
-			145162, -- Dream of Cenarius (Guardian)
+			    768, -- Cat Form
+			    783, -- Travel Form
+			   5487, -- Bear Form
+			  24858, -- Moonkin Form
+			  69369, -- Predatory Swiftness
+			  88747, -- Wild Mushroom
+			 100977, -- Harmony
+			 135286, -- Tooth and Claw
+			 145152, -- Bloodtalons (Feral talent)
+			 145162, -- Dream of Cenarius (Guardian)
+			 164545, -- Solar Empowerment
+			 164547, -- Lunar Empowerment
+			[158792] = "SURVIVAL", -- Pulverize
 			BURST = {
 				 52610, -- Savage Roar
 				174544, -- Savage Roar (Glyph of Savage Roar)
 			},
 			IMPORTANT = {
-				 16870, -- Clearcasting (Buff)
-				 69369, -- Predatory Swiftness (Buff)
-				100977, -- Harmony (Buff)
-				135286, -- Tooth and Claw
-				158792, -- Pulverize (buff)
-				164545, -- Solar Empowerment
-				164547, -- Lunar Empowerment
+				 16870, -- Clearcasting
 			},
 		},
 		HELPFUL = {
@@ -129,11 +129,13 @@ lib:__RegisterSpells("DRUID", "60000", 17, {
 	},
 }, {
 	-- Map aura to provider
+	[ 16870] = 113043, -- Clearcasting <-- Omen of Clarity
 	[ 58180] = { -- Infected Wounds (Slow) (should be in common)
 		 5221, -- Shred (Cat)
 		33917, -- Mangle (Bear)
 	},
 	[ 61391] = 132469, -- Typhoon (should be in common)
+	[ 69369] =  16974, -- Predatory Swiftness
 	[ 77761] = { -- Stampeding Roar (Bear)
 		 77761, -- (Bear)
 		 77764, -- (Cat)
@@ -158,15 +160,21 @@ lib:__RegisterSpells("DRUID", "60000", 17, {
 	[155722] =   1822, -- Rake (Feral)
 	[155777] = 155675, -- Germination (talent)
 	[158792] =  80313, -- Pulverize
-	[164545] =  78674, -- Solar Empowerment <== Starsurge
-	[164547] =  78674, -- Lunar Empowerment <== Starsurge
+	[164545] =  78674, -- Solar Empowerment <-- Starsurge
+	[164547] =  78674, -- Lunar Empowerment <-- Starsurge
 	[164812] =   8921, -- Moonfire
 	[164815] =  93402, -- Sunfire
 	[174544] =  52610, -- Savage Roar (Glyph of Savage Roar)
 }, {
 	-- Map aura to modified spell(s)
-	[135286] =   6807, -- Tooth and Claw -> Maul
-	[145152] =   5185, -- Bloodtalons (Feral talent) -> Healing Touch
+	[ 16870] =   8936, -- Clearcasting --> Regrowth
+	[ 69369] = { -- Predatory Swiftness
+		  339, -- Entangling Roots
+		 5185, -- Healing Touch
+		20484, -- Rebirth
+	},
+	[135286] =   6807, -- Tooth and Claw --> Maul
+	[145152] =   5185, -- Bloodtalons (Feral talent) --> Healing Touch
 	[145162] = { -- Dream of Cenarius (Guardian talent)
 		 5185, -- Healing Touch
 		20484, -- Rebirth
