@@ -20,15 +20,15 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "60000", 5, {
+lib:__RegisterSpells("DEATHKNIGHT", "60100", 6, {
 	COOLDOWN = {
 		 42650, -- Army of the Dead
 		 47568, -- Empower Rune Weapon
-		[48734] = "SURVIVAL", -- Death Pact
 		 61999, -- Raise Ally
+		[48734] = "SURVIVAL", -- Death Pact
 		INTERRUPT = {
-			[47476] = "HARMFUL AURA", -- Strangulate
 			 47528, -- Mind Freeze
+			[47476] = "HARMFUL AURA", -- Strangulate
 			[91802] = "HARMFUL AURA", -- Shambling Rush (Ghoul) -- NOTE: 2 sec root. Inclusion in DRData?
 		},
 		AURA = {
@@ -102,23 +102,34 @@ lib:__RegisterSpells("DEATHKNIGHT", "60000", 5, {
 	},
 }, {
 	-- Map aura to provider
-	[ 51124] =                    51128, -- Killing Machine
-	[ 55078] =                    45462, -- Blood Plague <= Plague Strike
-	[ 55095] =        { 45477, 49184, }, -- Icy Fever <= Icy Touch, Howling Blast
-	[ 77535] =                    49998, -- Blood Shield <= Death Strike
-	[ 81141] =                    81136, -- Crimson Scourge
-	[ 81256] =                    49028, -- Dancing Rune Weapon
-	[ 81340] =                    49530, -- Sudden Doom
-	[ 91342] =                    49572, -- Shadow Infusion
-	[ 91797] =                    47481, -- Monstrous Blow <= Gnaw (Ghoul)
-	[ 91802] =                    47482, -- Shambling Rush <= Leap (Ghoul)
-	[ 91800] =                    47481, -- Gnaw (Ghoul)
-	[114851] =                    45529, -- Blood Charge <= Blood Tap
-	[115635] =                    63333, -- Death Barrier <= Glyph of Death Coil
-	[115018] =                   108201, -- Desecrated Ground
-	[145629] =                    51052, -- Anti-Magic Zone
-	[155159] = { 45462, 45477, 49184, }, -- Necrotic Plague <= Plague Strike, Icy Touch, Howling Blast -- Might be better with a custom rule for stacks.
-	[171049] =                    48982, -- Rune Tap
+	[ 51124] =  51128, -- Killing Machine
+	[ 55078] =  45462, -- Blood Plague <= Plague Strike
+	[ 55095] = { -- Icy Fever
+		45477, -- Icy Touch
+		49184, -- Howling Blast
+	},
+	[ 77535] =  49998, -- Blood Shield <= Death Strike
+	[ 81141] =  81136, -- Crimson Scourge
+	[ 81256] =  49028, -- Dancing Rune Weapon
+	[ 81340] =  49530, -- Sudden Doom
+	[ 91342] =  49572, -- Shadow Infusion
+	[ 91797] =  47481, -- Monstrous Blow <= Gnaw (Ghoul)
+	[ 91802] =  47482, -- Shambling Rush <= Leap (Ghoul)
+	[ 91800] =  47481, -- Gnaw (Ghoul)
+	[114851] =  45529, -- Blood Charge <= Blood Tap
+	[115635] =  63333, -- Death Barrier <= Glyph of Death Coil
+	[115018] = 108201, -- Desecrated Ground
+	[145629] =  51052, -- Anti-Magic Zone
+	[155159] = { -- Necrotic Plague -- TODO: Might be better with a custom rule for stacks.
+		45462, -- Plague Strike
+		45477, -- Icy Touch
+		49184, -- Howling Blast
+	},
+	[171049] =  48982, -- Rune Tap
 }, {
 	-- Map aura to modified spell(s)
+	[51124] = { -- Killing Machine
+		49020, -- Obliterate
+		49143, -- Frost Strike
+	},
 })

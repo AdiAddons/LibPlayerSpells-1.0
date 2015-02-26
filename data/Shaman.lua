@@ -33,7 +33,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", "60000", 6, {
+lib:__RegisterSpells("SHAMAN", "60100", 7, {
 	COOLDOWN = {
 		[ 2062] = "SURVIVAL", -- Earth Elemental Totem
 		  5394, -- Healing Stream Totem
@@ -88,9 +88,6 @@ lib:__RegisterSpells("SHAMAN", "60000", 6, {
 			 73920, -- Healing Rain (Self Indicator)
 			118472, -- Unleashed Fury (Talent)
 			118522, -- Elemental Blast: Critical (Talent)
-			159101, -- Echo of the Elements (Elemental buff)
-			159103, -- Echo of the Elements (Enhancement buff)
-			159105, -- Echo of the Elements (Restoration buff)
 			165462, -- Unleash Flame (Elemental)
 			173183, -- Elemental Blast: Haste (Talent)
 			173184, -- Elemental Blast: Mastery (Talent)
@@ -142,16 +139,13 @@ lib:__RegisterSpells("SHAMAN", "60000", 6, {
 	[ 63685] =   8056, -- Frozen Power => Frost Shock (Talent)
 	[ 64695] =  51485, -- Earthgrab Totem Root (Talent)
 	[ 73683] =  73680, -- Unleash Flame => Unleash Elements (Enhancement)
-	[114050] = 165339, -- Ascendance (Elemental)
-	[114051] = 165341, -- Ascendance (Enhancement)
-	[114052] = 165344, -- Ascendance (Restoration)
+	[114050] = 114049, -- Ascendance (Elemental)
+	[114051] = 114049, -- Ascendance (Enhancement)
+	[114052] = 114049, -- Ascendance (Restoration)
 	[114896] = 108273, -- Windwalker Totem (Talent)
 	[118472] =  73680, -- Unleashed Fury (Talent)
 	[118522] = 117014, -- Elemental Blast: Critical (Talent)
 	[118905] = 108269, -- Capacitor Totem
-	[159101] = 108283, -- Echo of the Elements (Elemental buff) <- Echo of the Elements (Talent)
-	[159103] = 108283, -- Echo of the Elements (Enhancement buff) <- Echo of the Elements (Talent)
-	[159105] = 108283, -- Echo of the Elements (Restoration buff) <- Echo of the Elements (Talent)
 	[173183] = 117014, -- Elemental Blast: Haste (Talent)
 	[173184] = 117014, -- Elemental Blast: Mastery (Talent)
 	[173185] = 117014, -- Elemental Blast: Multistrike (Talent)
@@ -168,20 +162,5 @@ lib:__RegisterSpells("SHAMAN", "60000", 6, {
 		  421, -- Chain Lighting
 		 8004, -- Healing Surge
 		73920, -- Healing Rain (Enhancement)
-	},
-	[159101] = { -- Echo of the Elements (Elemental buff)
-		 8056, -- Frost Shock
-		51505, -- Lava Burst
-		61882, -- Earthquake
-	},
-	[159103] = { -- Echo of the Elements (Enhancement buff)
-		 1535, -- Fire Nova
-		17364, -- Stormstrike
-		60103, -- Lava Lash
-	},
-	[159105] = { -- Echo of the Elements (Restoration buff)
-		61295, -- Riptide
-		73685, -- Unleash Life
-		77130, -- Purify Spirit
 	},
 })

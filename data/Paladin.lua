@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", "60000", 3, {
+lib:__RegisterSpells("PALADIN", "60100", 3, {
 	[4987] = 'DISPEL HELPFUL', -- Cleanse
 	INTERRUPT = {
 		96231, -- Rebuke
@@ -91,13 +91,13 @@ lib:__RegisterSpells("PALADIN", "60000", 3, {
 	},
 }, {
 	-- Map aura to provider
-	[ 31803]  = 31801, -- Censure <= Seal of Truth
-	[ 81298]  = 26573, -- Consecration (prot)
-	[114250] = 20271, -- Selfless Healer <= Judgement
+	[ 31803] =  31801, -- Censure <= Seal of Truth
+	[ 81298] =  26573, -- Consecration (prot)
+	[114250] =  20271, -- Selfless Healer <= Judgement
 	[114916] = 114157,-- Execution Sentence (damage)
 	[114917] = 114157,-- Execution Sentence (heal)
 	[114919] = 114158,-- Light's Hammer (damage)
-	[132403] = 53600, -- Shield of the Righteous (prot)
+	[132403] =  53600, -- Shield of the Righteous (prot)
 	[156987] = 152263, -- Turalyon's Justice <= Empowered Seal talent
 	[156988] = 152263, -- Uther's Insight <= Empowered Seal talent
 	[156989] = 152263, -- Liadrin's Righteousness <= Empowered Seal talent
