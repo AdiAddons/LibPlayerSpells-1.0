@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "60000", 5, {
+lib:__RegisterSpells("PRIEST", "60100", 5, {
 	COOLDOWN = {
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
@@ -67,11 +67,11 @@ lib:__RegisterSpells("PRIEST", "60000", 5, {
 				},
 			},
 			HARMFUL = {
-				  8122, -- Psychic Scream
-				 14914, -- Holy Fire
-				114404, -- Void Tendrils
-				129250, -- Power Word: Solace
-				[15487] = "INTERRUPT", -- Silence
+				   8122, -- Psychic Scream
+				  14914, -- Holy Fire
+				 114404, -- Void Tendrils
+				 129250, -- Power Word: Solace
+				[ 15487] = "INTERRUPT", -- Silence
 			},
 		},
 	},
@@ -85,16 +85,16 @@ lib:__RegisterSpells("PRIEST", "60000", 5, {
 		},
 		HELPFUL = {
 			    139, -- Renew
-			[111759] = "UNIQUE_AURA", -- Levitate
 			[  6788] = "INVERT_AURA", -- Weakened Soul
+			[111759] = "UNIQUE_AURA", -- Levitate
 		},
 		HARMFUL = {
-			 15407, -- Mind Flay
-			129197, -- Mind Flay (Insanity)
 			   589, -- Shadow Word: Pain
-			158831, -- Devouring Plague
+			 15407, -- Mind Flay
 			 34914, -- Vampiric Touch
+			129197, -- Mind Flay (Insanity)
 			155361, -- Void Entropy
+			158831, -- Devouring Plague
 		},
 	},
 	RAIDBUFF = {
@@ -103,16 +103,16 @@ lib:__RegisterSpells("PRIEST", "60000", 5, {
 	},
 }, {
 	-- Map aura to provider
-	[  6788] =     17, -- Weakened Soul <= Power Word: Shield
+	[  6788] =     17, -- Weakened Soul <- Power Word: Shield
 	[ 63735] =  63733, -- Serendipity
 	[ 81661] =  81662, -- Evangelism
-	[114255] = 109186, -- Surge of Light <= From Darkness, Comes Light
-	[129197] =  15407, -- Mind Flay (Insanity)
+	[ 81782] =  62618, -- Power Word: Barrier
+	[111759] =   1706, -- Levitate
+	[114255] = 109186, -- Surge of Light <- From Darkness, Comes Light
+	[114404] = 108920, -- Vod Tendrils
 	[119032] = 112833, -- Spectral Guise (Talent)
 	[121557] = 121536, -- Angelic Feather (Talent)
-	[111759] =   1706, -- Levitate
-	[ 81782] =  62618, -- Power Word: Barrier
-	[114404] = 108920, -- Vod Tendrils
+	[129197] =  15407, -- Mind Flay (Insanity)
 	[158831] =   2944, -- Devouring Plague
 }, {
 	-- Map aura to modified spell(s)

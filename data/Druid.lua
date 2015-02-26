@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60000", 18, {
+lib:__RegisterSpells("DRUID", "60100", 18, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend

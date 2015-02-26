@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "60000", 4, {
+lib:__RegisterSpells("WARLOCK", "60100", 4, {
 	COOLDOWN = {
 		  1122, -- Summon Infernal
 		 18540, -- Summon Doomguard
@@ -33,7 +33,7 @@ lib:__RegisterSpells("WARLOCK", "60000", 4, {
 		INTERRUPT = {
 			 19647, -- Spell Lock (felhunter)
 			119911, -- Optical Blast (observer)
-			132409, -- Spell Lock (sacrified felhunter)
+			132409, -- Spell Lock (sacrificed felhunter)
 		},
 		AURA = {
 			PERSONAL = {
