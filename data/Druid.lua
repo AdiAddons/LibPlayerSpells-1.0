@@ -116,6 +116,7 @@ lib:__RegisterSpells("DRUID", "60100", 18, {
 			 58180, -- Infected Wounds (Slow)
 			 77758, -- Thrash (Guardian)
 			106830, -- Thrash (Feral)
+			152221, -- Stellar Flare
 			155722, -- Rake
 			155625, -- Moonfire from Lunar Inspiration
 			164812, -- Moonfire
