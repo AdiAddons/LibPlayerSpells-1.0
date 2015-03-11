@@ -20,20 +20,18 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60100", 19, {
+lib:__RegisterSpells("DRUID", "60100", 20, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
 		 20484, -- Rebirth
 		 33831, -- Force of Nature (balance)
-		 61391, -- Typhoon
 		 78674, -- Starsurge
 		102693, -- Force of Nature (restoration)
 		102703, -- Force of Nature (feral)
 		102706, -- Force of Nature (guardian)
 		145205, -- Wild Mushroom (restoration)
 		INTERRUPT = {
-			 78675, -- Solar Beam
 			106839, -- Skull Bash
 		},
 		AURA = {
@@ -43,10 +41,14 @@ lib:__RegisterSpells("DRUID", "60100", 19, {
 				[102342] = "SURVIVAL",-- Ironbark
 			},
 			HARMFUL = {
-				   770, -- Faerie Fire
-				  5211, -- Mighty Bash
-				 16914, -- Hurricane
-				127797, -- Ursol's Vortex
+				    770, -- Faerie Fire
+				   5211, -- Mighty Bash
+				  16914, -- Hurricane
+				  45334, -- Immobilized -- TODO: should be in common?
+				  50259, -- Dazed -- TODO: should be in common
+				  61391, -- Typhoon -- TODO: should be in common
+				 127797, -- Ursol's Vortex -- TODO: should be in common
+				[ 81261] = "INTERRUPT", -- Solar Beam
 			},
 			PERSONAL = {
 				  1850, -- Dash
@@ -88,7 +90,6 @@ lib:__RegisterSpells("DRUID", "60100", 19, {
 			   5487, -- Bear Form
 			  24858, -- Moonkin Form
 			  69369, -- Predatory Swiftness
-			  88747, -- Wild Mushroom
 			 100977, -- Harmony
 			 135286, -- Tooth and Claw
 			 145152, -- Bloodtalons (Feral talent)
@@ -115,6 +116,7 @@ lib:__RegisterSpells("DRUID", "60100", 19, {
 			 33745, -- Lacerate
 			 58180, -- Infected Wounds (Slow)
 			 77758, -- Thrash (Guardian)
+			 81281, -- Fungal Growth -- TODO: should be in common
 			106830, -- Thrash (Feral)
 			152221, -- Stellar Flare
 			155722, -- Rake
@@ -131,11 +133,13 @@ lib:__RegisterSpells("DRUID", "60100", 19, {
 }, {
 	-- Map aura to provider
 	[ 16870] = 113043, -- Clearcasting <-- Omen of Clarity
+	[ 45334] =  16979, -- Immobilized <-- Wild Charge (bear) (talent) -- TODO: should be in common?
+	[ 50259] =  49736, -- Dazed <-- Wild Charge (cat) (talent) -- TODO: should be in common
 	[ 58180] = { -- Infected Wounds (Slow) (should be in common)
 		 5221, -- Shred (Cat)
 		33917, -- Mangle (Bear)
 	},
-	[ 61391] = 132469, -- Typhoon (should be in common)
+	[ 61391] = 132469, -- Typhoon -- TODO: should be in common
 	[ 69369] =  16974, -- Predatory Swiftness
 	[ 77761] = { -- Stampeding Roar (Bear)
 		 77761, -- (Bear)
@@ -147,6 +151,8 @@ lib:__RegisterSpells("DRUID", "60100", 19, {
 		 77764, -- (Cat)
 		106898, -- (Humanoid)
 	},
+	[ 81261] =  78675, -- Solar Beam
+	[ 81281] =  88747, -- Fungal Growth <-- Wild Mushroom -- TODO: should be in common
 	[106898] = { -- Stampeding Roar (Humanoid)
 		 77761, -- (Bear)
 		 77764, -- (Cat)
