@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", "60100", 5, {
+lib:__RegisterSpells("PRIEST", "60100", 6, {
 	COOLDOWN = {
 		 19236, -- Desperate Prayer
 		 32375, -- Mass Dispel
@@ -35,7 +35,6 @@ lib:__RegisterSpells("PRIEST", "60100", 5, {
 		},
 		AURA = {
 			PERSONAL = {
-				132573, -- Shadow Word: Insanity
 				SURVIVAL = {
 					   586, -- Fade
 					 20711, -- Spirit of Redemption
@@ -92,9 +91,11 @@ lib:__RegisterSpells("PRIEST", "60100", 5, {
 			   589, -- Shadow Word: Pain
 			 15407, -- Mind Flay
 			 34914, -- Vampiric Touch
-			129197, -- Mind Flay (Insanity)
+			 48045, -- Mind Sear
+			129197, -- Insanity
 			155361, -- Void Entropy
 			158831, -- Devouring Plague
+			179338, -- Searing Insanity
 		},
 	},
 	RAIDBUFF = {
@@ -112,9 +113,11 @@ lib:__RegisterSpells("PRIEST", "60100", 5, {
 	[114404] = 108920, -- Vod Tendrils
 	[119032] = 112833, -- Spectral Guise (Talent)
 	[121557] = 121536, -- Angelic Feather (Talent)
-	[129197] =  15407, -- Mind Flay (Insanity)
+	[129197] = 139139, -- Insanity <- Insanity (Shadow Talent)
 	[158831] =   2944, -- Devouring Plague
+	[179338] = 139139, -- Searing Insanity <- Insanity (Shadow Talent)
 }, {
 	-- Map aura to modified spell(s)
-	[132573] = 129197, -- Shadow Word: Insanity -> Insanity
+	[129197] = 129197, -- Insanity
+	[179338] = 179338, -- Searing Insanity
 })
