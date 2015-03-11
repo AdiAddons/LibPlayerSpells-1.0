@@ -81,6 +81,7 @@ lib:__RegisterSpells("PRIEST", "60100", 6, {
 			112833, -- Spectral Guise
 			114255, -- Surge of Light
 			 15473, -- Shadow Form
+			120587, -- Glyph of Mind Flay
 		},
 		HELPFUL = {
 			    139, -- Renew
@@ -112,12 +113,17 @@ lib:__RegisterSpells("PRIEST", "60100", 6, {
 	[114255] = 109186, -- Surge of Light <- From Darkness, Comes Light
 	[114404] = 108920, -- Vod Tendrils
 	[119032] = 112833, -- Spectral Guise (Talent)
+	[120587] = 120585, -- Glyph of Mind Flay
 	[121557] = 121536, -- Angelic Feather (Talent)
 	[129197] = 139139, -- Insanity <- Insanity (Shadow Talent)
 	[158831] =   2944, -- Devouring Plague
 	[179338] = 139139, -- Searing Insanity <- Insanity (Shadow Talent)
 }, {
 	-- Map aura to modified spell(s)
+	[120587] = { -- Glyph of Mind Flay
+		 15407, -- Mind Flay
+		129197, -- Insanity
+	},
 	[129197] = 129197, -- Insanity
 	[179338] = 179338, -- Searing Insanity
 })
