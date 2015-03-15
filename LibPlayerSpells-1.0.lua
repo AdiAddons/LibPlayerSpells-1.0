@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 5
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 6
 if LibStub then
 	lib = LibStub:NewLibrary(MAJOR, MINOR)
 	if not lib then return end
@@ -30,7 +30,7 @@ local _G = _G
 local ceil = _G.ceil
 local error = _G.error
 local format = _G.format
-local GetSpellLink = _G.GetSpellLink
+local GetSpellInfo = _G.GetSpellInfo
 local ipairs = _G.ipairs
 local max = _G.max
 local next = _G.next
@@ -351,7 +351,7 @@ local function FilterSpellId(spellId, spellType, errors)
 		return next(ids) and ids or nil
 	elseif type(spellId) ~= "number" then
 		errors[spellId] = format("invalid %s, expected number, got %s", spellType, type(spellId))
-	elseif not GetSpellLink(spellId) then
+	elseif not GetSpellInfo(spellId) then
 		errors[spellId] = format("unknown %s", spellType)
 	else
 		return spellId
