@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", "60100", 12, {
+lib:__RegisterSpells("MONK", "60100", 13, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115072, -- Expel Harm
@@ -35,9 +35,7 @@ lib:__RegisterSpells("MONK", "60100", 12, {
 				 124081, -- Zen Sphere
 			},
 			HARMFUL = {
-				115078, -- Paralysis
 				118585, -- Leer of the Ox
-				120086, -- Fists of Fury -- XXX: added through DRData (stuns)
 				121253, -- Keg Smash -- TODO: add to snares in Common in ABA
 				123586, -- Flying Serpent Kick -- TODO: add to snares in Common in ABA
 				130320, -- Rising Sun Kick
@@ -49,7 +47,6 @@ lib:__RegisterSpells("MONK", "60100", 12, {
 				[115288] = "POWER_REGEN", -- Energizing Brew
 				 123402, -- Guard with Glyph
 				SURVIVAL = {
-					115176, -- Zen Meditation -- FIXME: buff currently unvisible. move to cooldowns if not resolved by blizz
 					115295, -- Guard
 					115308, -- Elusive Brew
 					120954, -- Fortifying Brew
