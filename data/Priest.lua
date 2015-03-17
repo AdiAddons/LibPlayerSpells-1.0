@@ -53,9 +53,10 @@ lib:__RegisterSpells("PRIEST", "60100", 6, {
 				},
 			},
 			HELPFUL = {
-				   17, -- Power Word: Shield
-				33076, -- Prayer of Mending
-				81782, -- Power Word: Barrier
+				    17, -- Power Word: Shield
+				 33076, -- Prayer of Mending
+				 81782, -- Power Word: Barrier
+				152118, -- Clarity of Will
 				SURVIVAL = {
 					 33206, -- Pain Suppression
 					 47788, -- Guardian Spirit
