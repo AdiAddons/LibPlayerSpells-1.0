@@ -20,12 +20,11 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "60100", 6, {
+lib:__RegisterSpells("DEATHKNIGHT", "60100", 7, {
 	COOLDOWN = {
 		 42650, -- Army of the Dead
 		 47568, -- Empower Rune Weapon
 		 61999, -- Raise Ally
-		[48734] = "SURVIVAL", -- Death Pact
 		INTERRUPT = {
 			 47528, -- Mind Freeze
 			[47476] = "HARMFUL AURA", -- Strangulate
@@ -49,6 +48,7 @@ lib:__RegisterSpells("DEATHKNIGHT", "60100", 6, {
 				SURVIVAL = {
 					 42650, -- Army of the Dead
 					 48707, -- Anti-Magic Shell
+					[48743] = "INVERT_AURA", -- Death Pact
 					 48792, -- Icebound Fortitude
 					 49039, -- Lichborne
 					 49222, -- Bone Shield (Blood)
