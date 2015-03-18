@@ -22,7 +22,6 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("DEATHKNIGHT", "60100", 7, {
 	COOLDOWN = {
-		 42650, -- Army of the Dead
 		 47568, -- Empower Rune Weapon
 		 61999, -- Raise Ally
 		INTERRUPT = {
