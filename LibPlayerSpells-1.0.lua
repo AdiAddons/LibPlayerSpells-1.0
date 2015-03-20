@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 6
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 7
 if LibStub then
 	lib = LibStub:NewLibrary(MAJOR, MINOR)
 	if not lib then return end
@@ -104,6 +104,18 @@ local RAID_BUFF_TYPES = {
 	constants.MULTISTRIKE, constants.SPL_POWER, constants.HASTE,
 	constants.CRITICAL, constants.MASTERY, constants.VERSATILITY,
 	constants.BURST_HASTE,
+}
+
+local RAIDBUFF_CATEGORY_NAMES = {
+	[constants.STATS]       = RAID_BUFF_1,
+	[constants.STAMINA]     = RAID_BUFF_2,
+	[constants.ATK_POWER]   = RAID_BUFF_3,
+	[constants.HASTE]       = RAID_BUFF_4,
+	[constants.SPL_POWER]   = RAID_BUFF_5,
+	[constants.CRITICAL]    = RAID_BUFF_6,
+	[constants.MASTERY]     = RAID_BUFF_7,
+	[constants.MULTISTRIKE] = RAID_BUFF_8,
+	[constants.VERSATILITY] = RAID_BUFF_9,
 }
 
 -- Convenient bitmasks
@@ -321,6 +333,25 @@ end
 -- @return (table)
 function lib:GetRaidBuffTypes()
 	return RAID_BUFF_TYPES
+end
+
+--- Return a table containing the localized names of the categories a raid buff belongs to.
+-- Can be called with either a bitmask or a spellId.
+-- @param buffMask (number) a bitmask for the buff
+-- @param spellId (number) spell identifier of the buff
+-- @return (table|nil) A table of localized category names or nil
+function lib:GetRaidBuffCategoryNames(buffMask, spellId)
+	buffMask = buffMask or spellId and specials.RAIDBUFF[spellId]
+
+	if not buffMask then return end
+
+	local categories = {}
+	for mask, name in pairs(RAIDBUFF_CATEGORY_NAMES) do
+		if band(buffMask, mask) > 0 then
+			categories[#categories + 1] = name
+		end
+	end
+	return #categories > 0 and categories or nil
 end
 
 --- Return information about a spell.
