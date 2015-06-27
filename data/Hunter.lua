@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", "60100", 13, {
+lib:__RegisterSpells("HUNTER", "60200", 1, {
 	COOLDOWN = {
 		    781, -- Disengage
 		   1543, -- Flare -- NOTE: debuff handling unneeded due to spell mechanics
@@ -52,7 +52,6 @@ lib:__RegisterSpells("HUNTER", "60100", 13, {
 				 13159, -- Aspect of the Pack
 				 34477, -- Misdirection
 				 54216, -- Master's Call
-				172106, -- Aspect of the Fox
 			},
 			PET = {
 				19577, -- Intimidation (talent)
