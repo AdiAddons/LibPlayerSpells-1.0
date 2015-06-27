@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", "60100", 4, {
+lib:__RegisterSpells("MAGE", "60200", 1, {
 	COOLDOWN = {
 		31687, -- Summon Water Elemental
 		84714, -- Frozen Orb
@@ -48,9 +48,6 @@ lib:__RegisterSpells("MAGE", "60100", 4, {
 					 45438, -- Ice Block
 					 86949, -- Cauterize
 					110909, -- Alter Time (Buff)
-					HELPFUL = {
-						159916, -- Amplify Magic
-					},
 				},
 			},
 		},
