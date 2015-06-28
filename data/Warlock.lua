@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", "60100", 4, {
+lib:__RegisterSpells("WARLOCK", "60200", 1, {
 	COOLDOWN = {
 		  1122, -- Summon Infernal
 		 18540, -- Summon Doomguard
