@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", "60200", 1, {
+lib:__RegisterSpells("DRUID", "60200", 2, {
 	COOLDOWN = {
 		   740, -- Tranquility
 		 18562, -- Swiftmend
@@ -161,6 +161,7 @@ lib:__RegisterSpells("DRUID", "60200", 1, {
 	[117679] =  33891, -- Incarnation, Tree of Life Form
 	[127797] = 102793, -- Ursol's Vortex (should be in common)
 	[132402] =  62606, -- Savage Defense
+	[135286] = 135288, -- Tooth and Claw
 	[145152] = 155672, -- Bloodtalons (Feral talent)
 	[145162] = 158501, -- Dream of Cenarius (Guardian talent)
 	[155625] = 155580, -- Lunar Inspiration
