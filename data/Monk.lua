@@ -46,7 +46,7 @@ lib:__RegisterSpells("MONK", "60200", 1, {
 				 116847, -- Rushing Jade Wind
 				[115288] = "POWER_REGEN", -- Energizing Brew
 				 123402, -- Guard with Glyph
-				[152173] = "POWER_REGEN", -- Serenity 
+				[152173] = "POWER_REGEN", -- Serenity
 				SURVIVAL = {
 					115295, -- Guard
 					115308, -- Elusive Brew
