@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", "60200", 1, {
+lib:__RegisterSpells("ROGUE", "60200", 2, {
 	COOLDOWN = {
 		INTERRUPT = {
 			1766, -- Kick
@@ -59,6 +59,7 @@ lib:__RegisterSpells("ROGUE", "60200", 1, {
 			  3408, -- Crippling Poison
 			  5171, -- Slice and Dice
 			  8679, -- Wound Poison
+			 13877, -- Blade Fury
 			 32645, -- Envenom
 			 36554, -- Shadow Step
 			 73651, -- Recuperate
