@@ -20,4 +20,38 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", "70000", 1, {})
+lib:__RegisterSpells("DEMONHUNTER", "70000", 1, {
+    COOLDOWN = {
+        AURA = {
+            HELPFUL = {
+                [209426] = "SURVIVAL", -- Darkness
+            },
+            HARMFUL = {
+                 204598, -- Sigil of Flame
+                 204843, -- Sigil of Chains
+                 207407, -- Soul Carver (tank artifact)
+                 217832, -- Imprison CROWD_CONTROL
+                [204490] = "INTERRUPT", -- Sigil of Silence
+                [207744] = "SURVIVAL", -- Fiery Brand
+            },
+            PERSONAL = {
+                178740, -- Immolation Aura
+                SURVIVAL = {
+                    187827, -- Metamorphosis
+                    203819, -- Demon Spikes
+                    218256, -- Empower Wards
+                },
+            },
+        },
+    },
+}, {
+    -- map aura to provider
+    [203819] = 203720, -- Demon Spikes
+    [204490] = 202137, -- Sigil of Silence
+    [204598] = 204596, -- Sigil of Flame
+    [204843] = 202138, -- Sigil of Chains
+    [207744] = 204021, -- Fiery Brand
+    [209426] = 196718, -- Darkness
+}, {
+
+})
