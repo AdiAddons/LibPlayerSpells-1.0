@@ -40,6 +40,7 @@ lib:__RegisterSpells("HUNTER", "70000", 1, {
                  120694, -- Dire Beast
                 [ 19574] = "BURST", -- Bestial Wrath
                 [186265] = "SURVIVAL", -- Aspect of the Turtle
+                [193526] = "BURST", -- Trueshot
 
             },
             PET = {
@@ -51,14 +52,39 @@ lib:__RegisterSpells("HUNTER", "70000", 1, {
     AURA = {
         [1462] = "HARMFUL", -- Beast Lore (NOTE: HELPFUL on player controlled pets, HARMFUL else)
         [1515] = "HARMFUL", -- Tame Beast
-        [6197] = "PERSONAL", -- Eagle Eye
+        HARMFUL = {
+            187131, -- Vulnurable
+        },
+        PERSONAL = {
+              6197, -- Eagle Eye
+            185365, -- Hunter's Mark
+            223138, -- Marking Targets
+        },
     },
 }, {
     -- map aura to provider(s)
     [ 35079] = 34477, -- Misdirection
     [118455] = 2643, -- Beast Cleave
     [120694] = 120679, -- Dire Beast
+    [185365] = { -- Hunter's Mark
+          2643, -- Multi-Shot
+        185358, -- Arcane Shot
+    },
     [186258] = 186257, -- Aspect of the Cheetah
+    [187131] = 185901, -- Vulnurable <- Marked Shot
+    [223138] = 75, -- Marking Targets <- Auto Shot
 }, {
     -- map aura to modified spell(s)
+    [187131] = { -- Vulnurable
+         19434, -- Aimed Shot
+        185901, -- Marked Shot
+    },
+    [193526] = { -- Trueshot
+          2643, -- Multi-Shot
+        185358, -- Arcane Shot
+    },
+    [223138] = { -- Marking Targets
+          2643, -- Multi-Shot
+        185358, -- Arcane Shot
+    },
 })
