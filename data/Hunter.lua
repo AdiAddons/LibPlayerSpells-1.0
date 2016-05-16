@@ -29,7 +29,8 @@ lib:__RegisterSpells("HUNTER", "70000", 1, {
         [147362] = "INTERRUPT", -- Counter Shot
         AURA = {
             HARMFUL = {
-                5116, -- Concussive Shot
+                  5116, -- Concussive Shot
+                224729, -- Bursting Shot
             },
             PERSONAL = {
                    5384, -- Feign Death
@@ -50,9 +51,9 @@ lib:__RegisterSpells("HUNTER", "70000", 1, {
         },
     },
     AURA = {
-        [1462] = "HARMFUL", -- Beast Lore (NOTE: HELPFUL on player controlled pets, HARMFUL else)
-        [1515] = "HARMFUL", -- Tame Beast
         HARMFUL = {
+              1462, -- Beast Lore (NOTE: HELPFUL on player controlled pets, HARMFUL else)
+              1515, -- Tame Beast
             187131, -- Vulnurable
         },
         PERSONAL = {
@@ -73,6 +74,7 @@ lib:__RegisterSpells("HUNTER", "70000", 1, {
     [186258] = 186257, -- Aspect of the Cheetah
     [187131] = 185901, -- Vulnurable <- Marked Shot
     [223138] = 75, -- Marking Targets <- Auto Shot
+    [224729] = 186387, -- Bursting Shot
 }, {
     -- map aura to modified spell(s)
     [187131] = { -- Vulnurable
