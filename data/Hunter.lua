@@ -26,21 +26,32 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		   1543, -- Flare
 		  34026, -- Kill Command
 		 109304, -- Exhilaration
-		[147362] = "INTERRUPT", -- Counter Shot
+		INTERRUPT = {
+			147362, -- Counter Shot
+			187707, -- Muzzle
+		},
 		AURA = {
 			HARMFUL = {
 				  5116, -- Concussive Shot
+				 13812, -- Explosive Trap
+				135299, -- Tar Trap
+				185855, -- Lacerate
+				190927, -- Harpoon
+				195645, -- Wing Clip
 				224729, -- Bursting Shot
+				[ 3355] = "CROWD_CTL", -- Freezing Trap
 			},
 			PERSONAL = {
 				   5384, -- Feign Death
 				  35079, -- Misdirection
+				 120694, -- Dire Beast
 				 186257, -- Aspect of the Cheetah (90%)
 				 186258, -- Aspect of the Cheetah (30%)
+				 190931, -- Mongoose Fury
 				 193530, -- Aspect of the Wild
-				 120694, -- Dire Beast
 				[ 19574] = "BURST", -- Bestial Wrath
 				[186265] = "SURVIVAL", -- Aspect of the Turtle
+				[186289] = "BURST", -- Aspect of the Eagle
 				[193526] = "BURST", -- Trueshot
 
 			},
@@ -64,15 +75,20 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	},
 }, {
 	-- map aura to provider(s)
+	[  3355] = 187650, -- Freezing Trap
 	[ 35079] = 34477, -- Misdirection
+	[ 13812] = 191433, -- Explosive Trap
 	[118455] = 2643, -- Beast Cleave
 	[120694] = 120679, -- Dire Beast
+	[135299] = 187698, -- Tar Trap
 	[185365] = { -- Hunter's Mark
 		  2643, -- Multi-Shot
 		185358, -- Arcane Shot
 	},
 	[186258] = 186257, -- Aspect of the Cheetah
 	[187131] = 185901, -- Vulnurable <- Marked Shot
+	[190927] = 190925, -- Harpoon
+	[190931] = 190928, -- Mongoose Fury <- Mongoose Bite
 	[223138] = 75, -- Marking Targets <- Auto Shot
 	[224729] = 186387, -- Bursting Shot
 }, {
