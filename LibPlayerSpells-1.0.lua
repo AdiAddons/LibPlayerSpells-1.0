@@ -67,6 +67,7 @@ lib.constants = {
 	WARLOCK     = 0x00000200,
 	WARRIOR     = 0x00000400,
 	RACIAL      = 0x00000800, -- Racial trait
+	DEMONHUNTER = 0x00001000,
 
 	-- Raid buff types, *requires* RAIDBUFF, else this messes up sources
 	STATS       = 0x00000001, -- +5% strengh, agility and intellect
@@ -122,6 +123,7 @@ local RAIDBUFF_CATEGORY_NAMES = {
 lib.masks = {
 	CLASS = bor(
 		constants.DEATHKNIGHT,
+		constants.DEMONHUNTER,
 		constants.DRUID,
 		constants.HUNTER,
 		constants.MAGE,
@@ -135,6 +137,7 @@ lib.masks = {
 	),
 	SOURCE = bor(
 		constants.DEATHKNIGHT,
+		constants.DEMONHUNTER,
 		constants.DRUID,
 		constants.HUNTER,
 		constants.MAGE,
@@ -181,6 +184,7 @@ local spells = lib.__spells
 -- Spells by categories
 lib.__categories = lib.__categories or {
 	DEATHKNIGHT = {},
+	DEMONHUNTER = {},
 	DRUID       = {},
 	HUNTER      = {},
 	MAGE        = {},
