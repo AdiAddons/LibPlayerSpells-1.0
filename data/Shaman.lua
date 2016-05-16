@@ -33,4 +33,4 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", "70000", 1, {})
+lib:__RegisterSpells("SHAMAN", 70000, 1, {})
