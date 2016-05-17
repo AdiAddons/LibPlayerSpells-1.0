@@ -25,11 +25,13 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		   781, -- Disengage
 		  1543, -- Flare
 		 34026, -- Kill Command
+		 53209, -- Chimaera Shot
 		109304, -- Exhilaration
 		120360, -- Barrage
 		198670, -- Head Shot
 		200163, -- Throwing Axes
 		201078, -- Snake Hunter
+		201413, -- Stampede (FIXME: currently no duration buff)
 		212431, -- Explosive Shot
 		212436, -- Butchery
 		INTERRUPT = {
@@ -40,9 +42,10 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 			HARMFUL = {
 				  5116, -- Concussive Shot
 				 13812, -- Explosive Trap
+				 24394, -- Intimidation (stun)
 				117405, -- Binding Shot
 				117526, -- Binding Shot (stun)
-				131894, -- A Murder of Crows (Marksmanship)
+				131894, -- A Murder of Crows (Beast Master/Marksmanship)
 				135299, -- Tar Trap
 				162480, -- Steel Trap (root)
 				162487, -- Steel Trap (bleed)
@@ -83,8 +86,9 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 			},
 			PET = {
 				   136, -- Mend Pet
-				118455, -- Beast Cleave
+				 19577, -- Intimidation
 				191414, -- Bestial Tenacity
+				217200, -- Dire Frenzy
 			},
 		},
 	},
@@ -103,6 +107,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		PERSONAL = {
 			  6197, -- Eagle Eye
 			185365, -- Hunter's Mark
+			185791, -- Wild Call
 			193534, -- Steady Focus
 			194594, -- Lock and Load
 			201081, -- Mok'Nathal Tactics
@@ -111,17 +116,21 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 			204333, -- Instincts of the Mongoose
 			223138, -- Marking Targets
 		},
+		PET = {
+			118455, -- Beast Cleave
+		},
 	},
 }, {
 	-- map aura to provider(s)
 	[  3355] = 187650, -- Freezing Trap
 	[ 35079] = 34477, -- Misdirection
 	[ 13812] = 191433, -- Explosive Trap
+	[ 24394] = 19577, -- Intimidation (stun)
 	[ 63468] = 53238, -- Careful Aim
 	[117405] = 109248, -- Binding Shot
 	[117526] = 109248, -- Binding Shot (stun)
 	[118253] = 87935, -- Serpent Sting
-	[118455] = 2643, -- Beast Cleave
+	[118455] = 115939, -- Beast Cleave
 	[118922] = 109215, -- Posthaste
 	[120694] = 120679, -- Dire Beast
 	[135299] = 187698, -- Tar Trap
@@ -132,6 +141,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		185358, -- Arcane Shot
 		214579, -- Sidewinders
 	},
+	[185791] = 185789, -- Wild Call
 	[186258] = 186257, -- Aspect of the Cheetah
 	[187131] = 185901, -- Vulnurable <- Marked Shot
 	[190927] = 190925, -- Harpoon
@@ -167,17 +177,31 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		186270, -- Raptor Strike
 		187708, -- Carve
 	},
+	[118455] = 2643, -- Beast Cleave -> Multi-Shot
 	[118922] = { -- Posthaste
 		   781, -- Disengage
 		190925, -- Harpoon
+	},
+	[185791] = { -- Wild Call
+		120679, -- Dire Beast
+		217200, -- Dire Frenzy
 	},
 	[187131] = { -- Vulnurable
 		 19434, -- Aimed Shot
 		185901, -- Marked Shot
 	},
-	[191397] = 202800, -- Bestial Cunning -> Flanking Strike
-	[191413] = 202800, -- Bestial Ferocity -> Flanking Strike
-	[191414] = 202800, -- Bestial Tenacity -> Flanking Strike
+	[191397] = { -- Bestial Cunning
+		 34026, -- Kill Command
+		202800, -- Flanking Strike
+	},
+	[191413] = { -- Bestial Ferocity
+		 34026, -- Kill Command
+		202800, -- Flanking Strike
+	},
+	[191414] = { -- Bestial Tenacity
+		 34026, -- Kill Command
+		202800, -- Flanking Strike
+	},
 	[193526] = { -- Trueshot
 		  2643, -- Multi-Shot
 		185358, -- Arcane Shot
