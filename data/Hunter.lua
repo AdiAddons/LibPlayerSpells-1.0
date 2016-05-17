@@ -26,6 +26,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		  1543, -- Flare
 		 34026, -- Kill Command
 		 53209, -- Chimaera Shot
+		 63900, -- Thunderstomp (Tenacity)
 		109304, -- Exhilaration
 		120360, -- Barrage
 		198670, -- Head Shot
@@ -39,10 +40,15 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 			187707, -- Muzzle
 		},
 		AURA = {
+			HELPFUL = {
+				 53480, -- Roar of Sacrifice (Cunning)
+			},
 			HARMFUL = {
+				  2649, -- Growl (pet)
 				  5116, -- Concussive Shot
 				 13812, -- Explosive Trap
 				 24394, -- Intimidation (stun)
+				 53148, -- Charge (stun) (pet)
 				117405, -- Binding Shot
 				117526, -- Binding Shot (stun)
 				131894, -- A Murder of Crows (Beast Master/Marksmanship)
@@ -87,6 +93,10 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 			PET = {
 				   136, -- Mend Pet
 				 19577, -- Intimidation
+				 53478, -- Last Stand (Tenacity)
+				 61684, -- Dash (Ferocity/Cunning)
+				 61685, -- Charge (Tenacity)
+				 63896, -- Bullheaded (Cunning)
 				191414, -- Bestial Tenacity
 				217200, -- Dire Frenzy
 			},
@@ -126,7 +136,9 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[ 35079] = 34477, -- Misdirection
 	[ 13812] = 191433, -- Explosive Trap
 	[ 24394] = 19577, -- Intimidation (stun)
+	[ 53148] = 61685, -- Charge (stun)
 	[ 63468] = 53238, -- Careful Aim
+	[ 63896] = 53490, -- Bullheaded (Cunning)
 	[117405] = 109248, -- Binding Shot
 	[117526] = 109248, -- Binding Shot (stun)
 	[118253] = 87935, -- Serpent Sting
