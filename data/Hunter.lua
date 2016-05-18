@@ -29,6 +29,8 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		 63900, -- Thunderstomp (Tenacity)
 		109304, -- Exhilaration
 		120360, -- Barrage
+		126393, -- Eternal Guardian (Quillen) (exotic)
+		159931, -- Gift of Chi-Ji (Crane)
 		198670, -- Head Shot
 		200163, -- Throwing Axes
 		201078, -- Snake Hunter
@@ -48,11 +50,19 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 				  5116, -- Concussive Shot
 				 13812, -- Explosive Trap
 				 24394, -- Intimidation (stun)
+				 35346, -- Warp Time (Warp Stalker) (slow)
+				 50433, -- Ankle Crack (Crocolisk) (slow)
 				 53148, -- Charge (stun) (pet)
+				 54644, -- Frost Breath (Chimaera) (slow)
+				 95809, -- Insanity (Core Hound)
+				115804, -- Mortal Wounds (pet)
 				117405, -- Binding Shot
 				117526, -- Binding Shot (stun)
 				131894, -- A Murder of Crows (Beast Master/Marksmanship)
 				135299, -- Tar Trap
+				160065, -- Tendon Rip (Silithid) (exotic) (slow)
+				160067, -- Web Spray (Spider)
+				160455, -- Fatigued (Nether Ray)
 				162480, -- Steel Trap (root)
 				162487, -- Steel Trap (bleed)
 				185855, -- Lacerate
@@ -76,6 +86,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 				  35079, -- Misdirection
 				 118922, -- Posthaste
 				 120694, -- Dire Beast
+				 160007, -- Updraft (Rylak)
 				 186257, -- Aspect of the Cheetah (90%)
 				 186258, -- Aspect of the Cheetah (30%)
 				 190931, -- Mongoose Fury
@@ -91,14 +102,28 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 
 			},
 			PET = {
-				   136, -- Mend Pet
-				 19577, -- Intimidation
-				 53478, -- Last Stand (Tenacity)
-				 61684, -- Dash (Ferocity/Cunning)
-				 61685, -- Charge (Tenacity)
-				 63896, -- Bullheaded (Cunning)
-				191414, -- Bestial Tenacity
-				217200, -- Dire Frenzy
+				    136, -- Mend Pet
+				  19577, -- Intimidation
+				  24450, -- Prowl (Cat)
+				  26064, -- Shell Shield (Turtle)
+				  53478, -- Last Stand (Tenacity)
+				  54680, -- Monstrous Bite (Devilsaur) (exotic)
+				  61684, -- Dash (Ferocity/Cunning)
+				  61685, -- Charge (Tenacity)
+				  63896, -- Bullheaded (Cunning)
+				  90328, -- Spirit Walk (Spirit Beast) (exotic)
+				  90339, -- Harden Carapace (Beetle)
+				  93433, -- Burrow Attack (Worm) (exotic)
+				 137798, -- Reflective Armor Plating (Direhorn)
+				 159733, -- Stone Scales (Basilisk)
+				 159926, -- Harden Shell (Crab)
+				 159954, -- Feast (Devilsaur) (exotic)
+				 160011, -- Agile Reflexes (Fox)
+				 160044, -- Primal Agility (Monkey)
+				 160063, -- Solid Shell (Shale Spider) (exotic)
+				 191414, -- Bestial Tenacity
+				 217200, -- Dire Frenzy
+				[ 90361] = "HELPFUL", -- Spirit Mend (Spirit Beast) (exotic)
 			},
 		},
 	},
@@ -127,7 +152,18 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 			223138, -- Marking Targets
 		},
 		PET = {
+			 90347, -- Play (Fox)
+			 92380, -- Froststorm Breath (Chimaera) (exotic)
+			 94019, -- Rest (Bear)
 			118455, -- Beast Cleave
+			126311, -- Surface Trot (Water Strider) (exotic)
+			126364, -- Rest (Porcupine)
+		},
+	},
+	RAIDBUFF = {
+		BURST_HASTE = {
+			 90355, -- Ancient Hysteria (Core Hound)
+			160452, -- Netherwinds (Nether Ray)
 		},
 	},
 }, {
@@ -139,6 +175,11 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[ 53148] = 61685, -- Charge (stun)
 	[ 63468] = 53238, -- Careful Aim
 	[ 63896] = 53490, -- Bullheaded (Cunning)
+	[115804] = { -- Mortal Wounds
+		 24423, -- Bloody Screech (Carrion Bird)
+		160018, -- Gruesome Bite (Riverbeast)
+		160060, -- Deadly Sting (Skorpid)
+	},
 	[117405] = 109248, -- Binding Shot
 	[117526] = 109248, -- Binding Shot (stun)
 	[118253] = 87935, -- Serpent Sting
@@ -146,6 +187,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[118922] = 109215, -- Posthaste
 	[120694] = 120679, -- Dire Beast
 	[135299] = 187698, -- Tar Trap
+	[159954] = 159953, -- Feast (Devilsaur) (exotic)
 	[162480] = 162488, -- Steel Trap (root)
 	[162487] = 162488, -- Steel Trap (bleed)
 	[185365] = { -- Hunter's Mark
