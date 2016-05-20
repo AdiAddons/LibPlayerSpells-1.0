@@ -95,6 +95,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 				 198783, -- Camouflage (Marksmanship)
 				 199483, -- Camouflage (Survival)
 				 206817, -- Heightened Vulnerability
+				 209997, -- Play Dead
 				[ 19574] = "BURST", -- Bestial Wrath
 				[186265] = "SURVIVAL", -- Aspect of the Turtle
 				[186289] = "BURST", -- Aspect of the Eagle
@@ -278,6 +279,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[204321] = 202800, -- Instincts of the Raptor -> Flanking Strike
 	[204324] = 202800, -- Instincts of the Cheetah -> Flanking Strike
 	[204333] = 202800, -- Instincts of the Mongoose -> Flanking Strike
+	[209997] = 210000, -- Play Dead -> Wake Up
 	[213424]= { -- Deadeye
 		 19434, -- Aimed Shot
 		185901, -- Marked Shot
