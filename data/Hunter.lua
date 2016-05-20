@@ -217,7 +217,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[204324] = 204315, -- Instincts of the Cheetah <- Animal Instincts
 	[204333] = 204315, -- Instincts of the Mongoose <- Animal Instincts
 	[213424] = 213423, -- Deadeye <- Patient Sniper
-	[223138] = 75, -- Marking Targets <- Auto Shot
+	[223138] = 185987, -- Marking Targets <- Hunter's Mark (passive)
 	[224729] = 186387, -- Bursting Shot
 }, {
 	-- map aura to modified spell(s)
