@@ -35,6 +35,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		200163, -- Throwing Axes
 		201078, -- Snake Hunter
 		201413, -- Stampede (FIXME: currently no duration buff)
+		204147, -- Windburst (Marksmanship artifact)
 		212431, -- Explosive Shot
 		212436, -- Butchery
 		INTERRUPT = {
