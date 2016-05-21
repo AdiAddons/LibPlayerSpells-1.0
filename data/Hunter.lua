@@ -143,6 +143,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		},
 		PERSONAL = {
 			  6197, -- Eagle Eye
+			 82921, -- Bombardment
 			185365, -- Hunter's Mark
 			185791, -- Wild Call
 			193534, -- Steady Focus
@@ -177,6 +178,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[ 53148] = 61685, -- Charge (stun)
 	[ 63468] = 53238, -- Careful Aim
 	[ 63896] = 53490, -- Bullheaded (Cunning)
+	[ 82921] = 35110, -- Bombardment
 	[115804] = { -- Mortal Wounds
 		 24423, -- Bloody Screech (Carrion Bird)
 		160018, -- Gruesome Bite (Riverbeast)
@@ -229,6 +231,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		185901, -- Marked Shot
 		214579, -- Sidewinders ??
 	},
+	[ 82921] = 2643, -- Bombardment -> Multi-Shot
 	[118253] = { -- Serpent Sting
 		186270, -- Raptor Strike
 		187708, -- Carve
