@@ -45,6 +45,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 		AURA = {
 			HELPFUL = {
 				 53480, -- Roar of Sacrifice (Cunning)
+				204477, -- Windburst (MM artifact)
 			},
 			HARMFUL = {
 				  2649, -- Growl (pet)
@@ -95,6 +96,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 				 194407, -- Spitting Cobra
 				 198783, -- Camouflage (Marksmanship)
 				 199483, -- Camouflage (Survival)
+				 203924, -- Healing Shell (MM artifact)
 				 206817, -- Heightened Vulnerability
 				 209997, -- Play Dead
 				[ 19574] = "BURST", -- Bestial Wrath
@@ -216,9 +218,11 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[201158] = 199543, -- Super Sticky Tar <- Expert Trapper
 	[206755] = 200108, -- Ranger's Net (slow)
 	[201081] = 201082, -- Mok'Nathal Tactics <- Way of the Mok'Nathal
+	[203924] = 190503, -- Healing Shell (MM artifact)
 	[204321] = 204315, -- Instincts of the Raptor <- Animal Instincts
 	[204324] = 204315, -- Instincts of the Cheetah <- Animal Instincts
 	[204333] = 204315, -- Instincts of the Mongoose <- Animal Instincts
+	[204477] = 204147, -- Windburst (MM artifact)
 	[213424] = 213423, -- Deadeye <- Patient Sniper
 	[223138] = 185987, -- Marking Targets <- Hunter's Mark (passive)
 	[224729] = 186387, -- Bursting Shot
@@ -280,6 +284,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[201081] = 186270, -- Mok'Nathal Tactics -> Raptor Strike
 	[201142] = 187650, -- Frozen Wake -> Freezing Trap
 	[201158] = 187698, -- Super Sticky Tar -> Tar Trap
+	[203924] = 186265, -- Healing Shell (MM artifact) -> Aspect of the Turtle
 	[204321] = 202800, -- Instincts of the Raptor -> Flanking Strike
 	[204324] = 202800, -- Instincts of the Cheetah -> Flanking Strike
 	[204333] = 202800, -- Instincts of the Mongoose -> Flanking Strike
