@@ -33,4 +33,48 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70000, 1, {})
+lib:__RegisterSpells("SHAMAN", 70000, 1, {
+	COOLDOWN = {
+		198067, -- Fire Elemental
+		198103, -- Earth Elemental
+		INTERRUPT = {
+			57994, -- Wind Shear
+		},
+		AURA = {
+			HELPFUL = {},
+			HARMFUL = {
+				 51490, -- Thunderstorm (slow)
+				[51514] = "CROWD_CTL", -- Hex
+			},
+			PERSONAL = {
+				[108271] = "SURVIVAL", -- Astral Shift
+			},
+		},
+	},
+	AURA = {
+		HELPFUL = {
+			546, -- Water Walking
+		},
+		HARMFUL = {
+			182387, -- Earthquake
+			188389, -- Flame Shock
+			196840, -- Frost Shock (slow)
+		},
+		PERSONAL = {
+			 2645, -- Ghost Wolf
+			 6196, -- Far Sight
+			77762, -- Lava Surge
+		},
+	},
+	DISPEL = {
+		[  370] = "HARMFUL", -- Purge
+		[51866] = "HELPFUL COOLDOWN", -- Cleanse Spirit
+	},
+}, {
+	-- map aura to provider(s)
+	[ 77762] = 77756, -- Lava Surge
+	[182387] = 61882, -- Earthquake <- Earthquake Totem
+}, {
+	-- map aura to modified spell(s)
+	[77762] = 51505, -- Lava Surge -> Lava Burst
+})
