@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70000, 1, {
+lib:__RegisterSpells("HUNTER", 70000, 21863, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -97,7 +97,6 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 				 198783, -- Camouflage (Marksmanship)
 				 199483, -- Camouflage (Survival)
 				 203924, -- Healing Shell (MM artifact)
-				 206817, -- Heightened Vulnerability
 				 209997, -- Play Dead
 				[ 19574] = "BURST", -- Bestial Wrath
 				[186265] = "SURVIVAL", -- Aspect of the Turtle
@@ -137,16 +136,15 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 			  1515, -- Tame Beast
 			 63468, -- Careful Aim
 			118253, -- Serpent Sting
+			185365, -- Hunter's Mark
 			187131, -- Vulnurable
 			199803, -- True Aim
 			200108, -- Ranger's Net (root)
 			206755, -- Ranger's Net (slow)
-			213424, -- Deadeye
 		},
 		PERSONAL = {
 			  6197, -- Eagle Eye
 			 82921, -- Bombardment
-			185365, -- Hunter's Mark
 			185791, -- Wild Call
 			193534, -- Steady Focus
 			194594, -- Lock and Load
@@ -155,6 +153,7 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 			204324, -- Instincts of the Cheetah
 			204333, -- Instincts of the Mongoose
 			223138, -- Marking Targets
+			227272, -- Trick Shot
 		},
 		PET = {
 			 90347, -- Play (Fox)
@@ -197,9 +196,8 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[162480] = 162488, -- Steel Trap (root)
 	[162487] = 162488, -- Steel Trap (bleed)
 	[185365] = { -- Hunter's Mark
-		  2643, -- Multi-Shot
-		185358, -- Arcane Shot
-		214579, -- Sidewinders
+		185987, -- Hunter's Mark (passive)
+		206817, -- Sentinel
 	},
 	[185791] = 185789, -- Wild Call
 	[186258] = 186257, -- Aspect of the Cheetah
@@ -223,9 +221,9 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[204324] = 204315, -- Instincts of the Cheetah <- Animal Instincts
 	[204333] = 204315, -- Instincts of the Mongoose <- Animal Instincts
 	[204477] = 204147, -- Windburst (MM artifact)
-	[213424] = 213423, -- Deadeye <- Patient Sniper
 	[223138] = 185987, -- Marking Targets <- Hunter's Mark (passive)
 	[224729] = 186387, -- Bursting Shot
+	[227272] = 199522, -- Trick Shot
 }, {
 	-- map aura to modified spell(s)
 	[ 63468] = { -- Careful Aim
@@ -244,6 +242,10 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[118922] = { -- Posthaste
 		   781, -- Disengage
 		190925, -- Harpoon
+	},
+	[185365] = { -- Hunter's Mark
+		185901, -- Marked Shot
+		206817, -- Sentinel
 	},
 	[185791] = { -- Wild Call
 		120679, -- Dire Beast
@@ -289,13 +291,10 @@ lib:__RegisterSpells("HUNTER", 70000, 1, {
 	[204324] = 202800, -- Instincts of the Cheetah -> Flanking Strike
 	[204333] = 202800, -- Instincts of the Mongoose -> Flanking Strike
 	[209997] = 210000, -- Play Dead -> Wake Up
-	[213424]= { -- Deadeye
-		 19434, -- Aimed Shot
-		185901, -- Marked Shot
-	},
 	[223138] = { -- Marking Targets
 		  2643, -- Multi-Shot
 		185358, -- Arcane Shot
 		214579, -- Sidewinders
 	},
+	[227272] = 19434, -- Trick Shot -> Aimed Shot
 })
