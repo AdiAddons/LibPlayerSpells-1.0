@@ -35,6 +35,7 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 		200163, -- Throwing Axes
 		201078, -- Snake Hunter
 		201413, -- Stampede (FIXME: currently no duration buff)
+		203415, -- Fury of the Eagle (SV artifact)
 		204147, -- Windburst (Marksmanship artifact)
 		212431, -- Explosive Shot
 		212436, -- Butchery
@@ -78,6 +79,7 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 				195645, -- Wing Clip
 				201142, -- Frozen Wake
 				201158, -- Super Sticky Tar
+				204081, -- On the Trail
 				206505, -- A Murder of Crows (Survival)
 				224729, -- Bursting Shot
 				[ 3355] = "CROWD_CTL", -- Freezing Trap
@@ -91,9 +93,11 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 				 160007, -- Updraft (Rylak)
 				 186257, -- Aspect of the Cheetah (90%)
 				 186258, -- Aspect of the Cheetah (30%)
+				 190515, -- Survival of the Fittest (MM artifact)
 				 190931, -- Mongoose Fury
 				 193530, -- Aspect of the Wild
 				 194407, -- Spitting Cobra
+				 197161, -- Mimiron's Shell (BM artifact)
 				 198783, -- Camouflage (Marksmanship)
 				 199483, -- Camouflage (Survival)
 				 203924, -- Healing Shell (MM artifact)
@@ -125,6 +129,8 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 				 160044, -- Primal Agility (Monkey)
 				 160063, -- Solid Shell (Shale Spider) (exotic)
 				 191414, -- Bestial Tenacity
+				 207094, -- Titan's Thunder (BM artifact)
+				 211138, -- Hunter's Advantage (BM artifact)
 				 217200, -- Dire Frenzy
 				[ 90361] = "HELPFUL", -- Spirit Mend (Spirit Beast) (exotic)
 			},
@@ -202,6 +208,7 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 	[185791] = 185789, -- Wild Call
 	[186258] = 186257, -- Aspect of the Cheetah
 	[187131] = 185901, -- Vulnurable <- Marked Shot
+	[190515] = 190514, -- Survival of the Fittest (MM artifact)
 	[190927] = 190925, -- Harpoon
 	[190931] = 190928, -- Mongoose Fury <- Mongoose Bite
 	[191397] = 191384, -- Bestial Cunning <- Aspect of the Beast
@@ -211,9 +218,11 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 	[194279] = 194277, -- Caltrops
 	[194594] = 194595, -- Lock and Load
 	[194858] = 194855, -- Dragonsfire Grenade
+	[197161] = 197160, -- Mimiron's Shell (BM artifact)
 	[199803] = 199527, -- True Aim
 	[201142] = 199543, -- Frozen Wake <- Expert Trapper
 	[201158] = 199543, -- Super Sticky Tar <- Expert Trapper
+	[204081] = 203757, -- On the Trail <- Eagle's Bite (SV artifact)
 	[206755] = 200108, -- Ranger's Net (slow)
 	[201081] = 201082, -- Mok'Nathal Tactics <- Way of the Mok'Nathal
 	[203924] = 190503, -- Healing Shell (MM artifact)
@@ -221,6 +230,8 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 	[204324] = 204315, -- Instincts of the Cheetah <- Animal Instincts
 	[204333] = 204315, -- Instincts of the Mongoose <- Animal Instincts
 	[204477] = 204147, -- Windburst (MM artifact)
+	[207094] = 207068, -- Titan's Thunder (BM artifact)
+	[211138] = 197178, -- Hunter's Advantage (BM artifact)
 	[223138] = 185987, -- Marking Targets <- Hunter's Mark (passive)
 	[224729] = 186387, -- Bursting Shot
 	[227272] = 199522, -- Trick Shot
@@ -255,6 +266,7 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 		 19434, -- Aimed Shot
 		185901, -- Marked Shot
 	},
+	[190515] = 781, -- Survival of the Fittest (MM artifact) -> Disengage
 	[191397] = { -- Bestial Cunning
 		 34026, -- Kill Command
 		202800, -- Flanking Strike
@@ -279,6 +291,7 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 		214579, -- Sidewinders
 	},
 	[194594] = 19434, -- Lock and Load -> Aimed Shot
+	[197161] = 186265, -- Mimiron's Shell (BM artifact) -> Aspect of the Turtle
 	[199803] = { -- True Aim
 		 19434, -- Aimed Shot
 		185358, -- Arcane Shot
@@ -287,10 +300,15 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 	[201142] = 187650, -- Frozen Wake -> Freezing Trap
 	[201158] = 187698, -- Super Sticky Tar -> Tar Trap
 	[203924] = 186265, -- Healing Shell (MM artifact) -> Aspect of the Turtle
+	[204081] = { -- On the Trail
+		  6603, -- Auto Attack
+		190925, -- Harpoon
+	},
 	[204321] = 202800, -- Instincts of the Raptor -> Flanking Strike
 	[204324] = 202800, -- Instincts of the Cheetah -> Flanking Strike
 	[204333] = 202800, -- Instincts of the Mongoose -> Flanking Strike
 	[209997] = 210000, -- Play Dead -> Wake Up
+	[211138] = 34477, -- Hunter's Advantage (BM artifact) -> Misdirection
 	[223138] = { -- Marking Targets
 		  2643, -- Multi-Shot
 		185358, -- Arcane Shot
