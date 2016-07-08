@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70000, 21863, {
+lib:__RegisterSpells("HUNTER", 70000, 4, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -36,7 +36,7 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 		201078, -- Snake Hunter
 		201413, -- Stampede (FIXME: currently no duration buff)
 		203415, -- Fury of the Eagle (SV artifact)
-		204147, -- Windburst (Marksmanship artifact)
+		204147, -- Windburst (MM artifact)
 		212431, -- Explosive Shot
 		212436, -- Butchery
 		INTERRUPT = {
@@ -79,11 +79,17 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 				195645, -- Wing Clip
 				201142, -- Frozen Wake
 				201158, -- Super Sticky Tar
+				202914, -- Spider Sting (PvP)
+				202933, -- Spider Sting (Silenced debuff) (PvP)
 				204081, -- On the Trail
 				206505, -- A Murder of Crows (Survival)
 				224729, -- Bursting Shot
-				[ 3355] = "CROWD_CTL", -- Freezing Trap
-				[19386] = "CROWD_CTL", -- Wyvern Sting
+				CROWD_CTL = {
+					  3355, -- Freezing Trap (Incapacitate)
+					 19386, -- Wyvern Sting (Incapacitate)
+					209790, -- Freezing Arrow (Incapacitate) (PvP)
+					213691, -- Scatter Shot (Disorient) (PvP)
+				},
 			},
 			PERSONAL = {
 				   5384, -- Feign Death
@@ -100,6 +106,8 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 				 197161, -- Mimiron's Shell (BM artifact)
 				 198783, -- Camouflage (Marksmanship)
 				 199483, -- Camouflage (Survival)
+				 202748, -- Survival Tactics (PvP)
+				 203155, -- Sniper Shot (PvP)
 				 203924, -- Healing Shell (MM artifact)
 				 209997, -- Play Dead
 				[ 19574] = "BURST", -- Bestial Wrath
@@ -146,6 +154,8 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 			187131, -- Vulnurable
 			199803, -- True Aim
 			200108, -- Ranger's Net (root)
+			202797, -- Viper Sting (PvP)
+			202900, -- Scorpid Sting (PvP)
 			206755, -- Ranger's Net (slow)
 		},
 		PERSONAL = {
@@ -222,15 +232,20 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 	[199803] = 199527, -- True Aim
 	[201142] = 199543, -- Frozen Wake <- Expert Trapper
 	[201158] = 199543, -- Super Sticky Tar <- Expert Trapper
-	[204081] = 203757, -- On the Trail <- Eagle's Bite (SV artifact)
-	[206755] = 200108, -- Ranger's Net (slow)
 	[201081] = 201082, -- Mok'Nathal Tactics <- Way of the Mok'Nathal
+	[202748] = 202746, -- Survival Tactics (PvP)
+	[202797] = 202793, -- Viper Sting (PvP)
+	[202900] = 202901, -- Scorpid Sting (PvP)
 	[203924] = 190503, -- Healing Shell (MM artifact)
+	[202933] = 202914, -- Spider Sting (Silenced debuff) (PvP)
+	[204081] = 203757, -- On the Trail <- Eagle's Bite (SV artifact)
 	[204321] = 204315, -- Instincts of the Raptor <- Animal Instincts
 	[204324] = 204315, -- Instincts of the Cheetah <- Animal Instincts
 	[204333] = 204315, -- Instincts of the Mongoose <- Animal Instincts
 	[204477] = 204147, -- Windburst (MM artifact)
+	[206755] = 200108, -- Ranger's Net (slow)
 	[207094] = 207068, -- Titan's Thunder (BM artifact)
+	[209790] = 209789, -- Freezing Arrow (Incapacitate) (PvP)
 	[211138] = 197178, -- Hunter's Advantage (BM artifact)
 	[223138] = 185987, -- Marking Targets <- Hunter's Mark (passive)
 	[224729] = 186387, -- Bursting Shot
@@ -299,6 +314,17 @@ lib:__RegisterSpells("HUNTER", 70000, 21863, {
 	[201081] = 186270, -- Mok'Nathal Tactics -> Raptor Strike
 	[201142] = 187650, -- Frozen Wake -> Freezing Trap
 	[201158] = 187698, -- Super Sticky Tar -> Tar Trap
+	[202748] = 5384, -- Survival Tactics -> Feign Death
+	[202797] = { -- Viper Sting (PvP)
+		 19434, -- Aimed Shot
+		186270, -- Raptor Strike
+		193455, -- Cobra Shot
+	},
+	[202900] = { -- Scorpid Sting (PvP)
+		 19434, -- Aimed Shot
+		186270, -- Raptor Strike
+		193455, -- Cobra Shot
+	},
 	[203924] = 186265, -- Healing Shell (MM artifact) -> Aspect of the Turtle
 	[204081] = { -- On the Trail
 		  6603, -- Auto Attack
