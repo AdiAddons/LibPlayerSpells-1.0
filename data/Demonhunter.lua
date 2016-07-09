@@ -31,6 +31,8 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 1, {
 				[209426] = "SURVIVAL", -- Darkness
 			},
 			HARMFUL = {
+				 179057, -- Chaos Nova
+				 198813, -- Vengeful Retreat (slow)
 				 204598, -- Sigil of Flame
 				 204843, -- Sigil of Chains
 				 207407, -- Soul Carver (Vengeance artifact)
@@ -54,9 +56,15 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 1, {
 			},
 		},
 	},
+	AURA = {
+		PERSONAL = {
+			131347, -- Glide
+		},
+	}
 }, {
 	-- map aura to provider
 	[162264] = 191427, -- Metamorphosis (Havoc)
+	[198813] = 198793, -- Vengeful Retreat (slow)
 	[200166] = 191427, -- Metamorphosis (Havoc) (stun)
 	[203819] = 203720, -- Demon Spikes
 	[204490] = 202137, -- Sigil of Silence
