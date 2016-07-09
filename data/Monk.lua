@@ -20,4 +20,35 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70000, 1, {})
+lib:__RegisterSpells("MONK", 70000, 1, {
+	COOLDOWN = {
+		 109132, -- Roll
+		 119582, -- Purifying Brew
+		 119996, -- Transcendance: Transfer
+		[115176] = "SURVIVAL", -- Zen Meditation
+		[116705] = "INTERRUPT", -- Spear Hand Strike
+		[218164] = "HELPFUL DISPEL", -- Detox (BM and WW)
+		AURA = {
+			HARMFUL = {
+				 116189, -- Provoke (taunt)
+				 117952, -- Crackling Jade Lightning
+				 121253, -- Keg Smash (slow)
+				 123725, -- Breath of Fire
+				[115078] = "CROWD_CTL", -- Paralysis (Incapacitate)
+			},
+			PERSONAL = {
+				101643, -- Transcendance
+				SURVIVAL = {
+					120954, -- Fortifying Brew
+					215479, -- Ironskin Brew
+				},
+			},
+		},
+	},
+}, {
+	-- map aura to provider(s)
+	[116189] = 115546, -- Provoke (taunt)
+	[120954] = 115203, -- Fortifying Brew
+	[123725] = 115181, -- Breath of Fire
+	[215479] = 115308, -- Ironskin Brew
+})
