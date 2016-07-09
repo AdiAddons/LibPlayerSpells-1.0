@@ -25,6 +25,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 1, {
 		185123, -- Throw Glaive (Havoc)
 		189110, -- Infernal Strike
 		195072, -- Fel Rush
+		201467, -- Fury of the Illidari (Havon artifact)
 		[183752] = "INTERRUPT", -- Consume Magic
 		AURA = {
 			HELPFUL = {
@@ -33,6 +34,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 1, {
 			HARMFUL = {
 				 179057, -- Chaos Nova
 				 198813, -- Vengeful Retreat (slow)
+				 202443, -- Anguish (Havoc artifact)
 				 204598, -- Sigil of Flame
 				 204843, -- Sigil of Chains
 				 207407, -- Soul Carver (Vengeance artifact)
@@ -66,6 +68,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 1, {
 	[162264] = 191427, -- Metamorphosis (Havoc)
 	[198813] = 198793, -- Vengeful Retreat (slow)
 	[200166] = 191427, -- Metamorphosis (Havoc) (stun)
+	[202443] = 201473, -- Anguish <- Anguish of the Deceiver (Havoc artifact)
 	[203819] = 203720, -- Demon Spikes
 	[204490] = 202137, -- Sigil of Silence
 	[204598] = 204596, -- Sigil of Flame
@@ -75,4 +78,5 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 1, {
 	[212800] = 198589, -- Blur
 }, {
 	-- map aura to modified spell(s)
+	[202443] = 198013, -- Anguish (Havoc artifact) -> Eyebeam
 })
