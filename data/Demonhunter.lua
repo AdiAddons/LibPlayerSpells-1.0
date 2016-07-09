@@ -44,11 +44,11 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 1, {
 				[217832] = "CROWD_CTL", -- Imprison
 			},
 			PERSONAL = {
-				162264, -- Metamorphosis (Havoc)
-				178740, -- Immolation Aura
-				188499, -- Blade Dance
-				188501, -- Spectral Sight
-				210152, -- Death Sweep
+				 178740, -- Immolation Aura
+				 188499, -- Blade Dance
+				 188501, -- Spectral Sight
+				 210152, -- Death Sweep
+				[162264] = "BURST", -- Metamorphosis (Havoc)
 				SURVIVAL = {
 					187827, -- Metamorphosis (Vengeance)
 					203819, -- Demon Spikes
