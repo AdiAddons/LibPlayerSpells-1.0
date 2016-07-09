@@ -33,13 +33,17 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 				 116189, -- Provoke (taunt)
 				 117952, -- Crackling Jade Lightning
 				 121253, -- Keg Smash (slow)
-				 123725, -- Breath of Fire
+				 123725, -- Breath of Fire -- TODO: check without artifact
+				 213063, -- Dark Side of the Moon (BM artifact)
+				 214326, -- Exploding Keg (BM artifact)
 				[115078] = "CROWD_CTL", -- Paralysis (Incapacitate)
 			},
 			PERSONAL = {
 				101643, -- Transcendance
+				213177, -- Swift as a Coursing River (BM artifact)
 				SURVIVAL = {
 					120954, -- Fortifying Brew
+					213341, -- Fortification (BM artifact)
 					215479, -- Ironskin Brew
 				},
 			},
@@ -50,5 +54,17 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 	[116189] = 115546, -- Provoke (taunt)
 	[120954] = 115203, -- Fortifying Brew
 	[123725] = 115181, -- Breath of Fire
+	[213063] = 227689, -- Dark Side of the Moon (BM artifact)
+	[213341] = 213340, -- Fortification (BM artifact)
+	[213177] = 213161, -- Swift as a Coursing River (BM artifact)
 	[215479] = 115308, -- Ironskin Brew
+}, {
+	-- map aura to modified spell(s)
+	[213063] = 205523, -- Dark Side of the Moon (BM artifact) -> Blackout Strike
+	[213177] = { -- Swift as a Coursing River (BM artifact)
+		115203, -- Fortifying Brew
+		119582, -- Purifying Brew
+		215308, -- Ironskin Brew
+	},
+	[213341] = 115203, -- Fortification (BM artifact) -> Fortifying Brew
 })
