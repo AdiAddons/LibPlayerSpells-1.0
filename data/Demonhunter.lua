@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
+lib:__RegisterSpells("DEMONHUNTER", 70000, 3, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike
@@ -30,7 +30,10 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 		[183752] = "INTERRUPT", -- Consume Magic
 		AURA = {
 			HELPFUL = {
-				[209426] = "SURVIVAL", -- Darkness
+				SURVIVAL = {
+					207810, -- Nether Bond
+					209426, -- Darkness
+				},
 			},
 			HARMFUL = {
 				 179057, -- Chaos Nova
@@ -44,6 +47,8 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 				 206491, -- Nemesis
 				 207685, -- Sigil of Misery (disorient)
 				 207690, -- Bloodlet
+				 207771, -- Fiery Brand
+				 210003, -- Razor Spikes (slow)
 				 211053, -- Fel Barrage
 				 211881, -- Fel Eruption
 				 212818, -- Fiery Demise (Vengeance artifact)
@@ -56,7 +61,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 				178740, -- Immolation Aura
 				188499, -- Blade Dance
 				188501, -- Spectral Sight
-				210155, -- Death Sweep
+				207709, -- Blade Turning
 				208579, -- Nemesis (Demons)
 				208605, -- Nemesis (Humanoids)
 				208607, -- Nemesis (Aberrations)
@@ -67,7 +72,9 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 				208613, -- Nemesis (Mechanicals)
 				208614, -- Nemesis (Undead)
 				208628, -- Momentum
+				210155, -- Death Sweep
 				218561, -- Siphoned Power (Vengeance artifact)
+				227330, -- Gluttony
 				BURST = {
 					162264, -- Metamorphosis (Havoc)
 					211048, -- Chaos Blades
@@ -76,15 +83,19 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 					187827, -- Metamorphosis (Vengeance)
 					196555, -- Netherwalk
 					203819, -- Demon Spikes
+					207811, -- Nether Bond
 					212800, -- Blur
 					218256, -- Empower Wards
+					227225, -- Soul Barrier
 				},
 			},
 		},
 	},
 	AURA = {
+		[224509] = "HARMFUL", -- Frailty
 		PERSONAL = {
 			 131347, -- Glide
+			 207693, -- Feast of Souls
 			[212988] = "SURVIVAL", -- Painbringer (Vengeance artifact)
 		},
 	}
@@ -100,7 +111,11 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 	[204843] = 202138, -- Sigil of Chains (slow)
 	[207685] = 207684, -- Sigil of Misery (disorient)
 	[207690] = 206473, -- Bloodlet
+	[207693] = 207697, -- Feast of Souls
+	[207709] = 203753, -- Blade Turning
 	[207744] = 204021, -- Fiery Brand
+	[207771] = 207739, -- Fiery Brand <- Burning Alive
+	[207811] = 207810, -- Nether Bond
 	[208579] = 206491, -- Nemesis (Demons)
 	[208605] = 206491, -- Nemesis (Humanoids)
 	[208607] = 206491, -- Nemesis (Aberrations)
@@ -112,6 +127,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 	[208614] = 206491, -- Nemesis (Undead)
 	[208628] = 206476, -- Momentum
 	[209426] = 196718, -- Darkness
+	[210003] = 209400, -- Razor Spikes (slow)
 	[210155] = 210152, -- Death Sweep
 	[212800] = {
 		198589, -- Blur
@@ -121,16 +137,23 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 	[212988] = 207387, -- Painbringer (Vengeance artifact)
 	[213405] = 203556, -- Master of the Glaive
 	[218561] = 218910, -- Siphoned Power <- Siphon Power (Vengeance artifact)
+	[224509] = 218679, -- Frailty <- Spirit Bomb
+	[227330] = 227327, -- Gluttony
 }, {
 	-- map aura to modified spell(s)
 	[202443] = 198013, -- Anguish (Havoc artifact) -> Eyebeam
 	[207690] = 185123, -- Bloodlet -> Throw Glaive
+	[207693] = 228477, -- Feast of Souls -> Soul Cleave
+	[207709] = 203782, -- Blade Turning -> Shear
+	[207771] = 204021, -- Fiery Brand
 	[208628] = { -- Momentum
 		195072, -- Fel Rush
 		198793, -- Vengeful Retreat
 	},
+	[210003] = 6603, -- Razor Spikes (slow) -> Auto Attack
 	[212818] = 204021, -- Fiery Demise (Vengeance artifact) -> Fiery Brand
 	[212988] = 228477, -- Painbringer (Vengeance artifact) -> Soul Cleave
 	[213405] = 185123, -- Master of the Glaive -> Throw Glaive
 	[218561] = 218256, -- Siphoned Power (Vengeance artifact) -> Empower Wards
+	[227330] = 228477, -- Gluttony
 })
