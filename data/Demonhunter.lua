@@ -46,6 +46,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 				 207690, -- Bloodlet
 				 211053, -- Fel Barrage
 				 211881, -- Fel Eruption
+				 212818, -- Fiery Demise (Vengeance artifact)
 				 213405, -- Master of the Glaive
 				[204490] = "INTERRUPT", -- Sigil of Silence
 				[207744] = "SURVIVAL", -- Fiery Brand
@@ -66,6 +67,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 				208613, -- Nemesis (Mechanicals)
 				208614, -- Nemesis (Undead)
 				208628, -- Momentum
+				218561, -- Siphoned Power (Vengeance artifact)
 				BURST = {
 					162264, -- Metamorphosis (Havoc)
 					211048, -- Chaos Blades
@@ -82,7 +84,8 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 	},
 	AURA = {
 		PERSONAL = {
-			131347, -- Glide
+			 131347, -- Glide
+			[212988] = "SURVIVAL", -- Painbringer (Vengeance artifact)
 		},
 	}
 }, {
@@ -114,7 +117,10 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 		198589, -- Blur
 		205411, -- Desperate Instincts
 	},
+	[212818] = 212817, -- Fiery Demise (Vengeance artifact)
+	[212988] = 207387, -- Painbringer (Vengeance artifact)
 	[213405] = 203556, -- Master of the Glaive
+	[218561] = 218910, -- Siphoned Power <- Siphon Power (Vengeance artifact)
 }, {
 	-- map aura to modified spell(s)
 	[202443] = 198013, -- Anguish (Havoc artifact) -> Eyebeam
@@ -123,5 +129,8 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 		195072, -- Fel Rush
 		198793, -- Vengeful Retreat
 	},
+	[212818] = 204021, -- Fiery Demise (Vengeance artifact) -> Fiery Brand
+	[212988] = 228477, -- Painbringer (Vengeance artifact) -> Soul Cleave
 	[213405] = 185123, -- Master of the Glaive -> Throw Glaive
+	[218561] = 218256, -- Siphoned Power (Vengeance artifact) -> Empower Wards
 })
