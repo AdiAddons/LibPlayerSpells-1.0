@@ -34,13 +34,15 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 			},
 			HARMFUL = {
 				 179057, -- Chaos Nova
+				 185245, -- Torment (taunt)
 				 198813, -- Vengeful Retreat (slow)
 				 202443, -- Anguish (Havoc artifact)
 				 204598, -- Sigil of Flame
-				 204843, -- Sigil of Chains
+				 204843, -- Sigil of Chains (slow)
 				 207407, -- Soul Carver (Vengeance artifact)
 				 200166, -- Metamorphosis (Havoc) (stun)
 				 206491, -- Nemesis
+				 207685, -- Sigil of Misery (disorient)
 				 207690, -- Bloodlet
 				 211053, -- Fel Barrage
 				 211881, -- Fel Eruption
@@ -92,7 +94,8 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 2, {
 	[203819] = 203720, -- Demon Spikes
 	[204490] = 202137, -- Sigil of Silence
 	[204598] = 204596, -- Sigil of Flame
-	[204843] = 202138, -- Sigil of Chains
+	[204843] = 202138, -- Sigil of Chains (slow)
+	[207685] = 207684, -- Sigil of Misery (disorient)
 	[207690] = 206473, -- Bloodlet
 	[207744] = 204021, -- Fiery Brand
 	[208579] = 206491, -- Nemesis (Demons)
