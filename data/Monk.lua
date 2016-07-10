@@ -23,48 +23,99 @@ if not lib then return end
 lib:__RegisterSpells("MONK", 70000, 1, {
 	COOLDOWN = {
 		 109132, -- Roll
+		 115098, -- Chi Wave
+		 115399, -- Black Ox Brew
 		 119582, -- Purifying Brew
 		 119996, -- Transcendance: Transfer
+		 122281, -- Healing Elixir
+		 123986, -- Chi Burst
 		[115176] = "SURVIVAL", -- Zen Meditation
 		[116705] = "INTERRUPT", -- Spear Hand Strike
 		[218164] = "HELPFUL DISPEL", -- Detox (BM and WW)
 		AURA = {
+			HELPFUL = {
+				116841, -- Tiger's Lust
+			},
 			HARMFUL = {
 				 116189, -- Provoke (taunt)
 				 117952, -- Crackling Jade Lightning
+				 118635, -- Provoke
+				 119381, -- Leg Sweep (stun)
 				 121253, -- Keg Smash (slow)
 				 123725, -- Breath of Fire -- TODO: check without artifact
+				 196727, -- Provoke
+				 196733, -- Special Delivery (slow)
 				 213063, -- Dark Side of the Moon (BM artifact)
 				 214326, -- Exploding Keg (BM artifact)
 				[115078] = "CROWD_CTL", -- Paralysis (Incapacitate)
 			},
 			PERSONAL = {
 				101643, -- Transcendance
+				116844, -- Ring of Peace
+				116847, -- Rushing Jade Wind
+				119085, -- Chi Torpedo
+				196739, -- Elusive Dance
 				213177, -- Swift as a Coursing River (BM artifact)
+				214373, -- Brew-Stache (BM artifact)
+				228563, -- Blackout Combo
 				SURVIVAL = {
 					120954, -- Fortifying Brew
+					122278, -- Dampen Harm
+					122783, -- Diffuse Magic
 					213341, -- Fortification (BM artifact)
 					215479, -- Ironskin Brew
 				},
 			},
 		},
 	},
+	AURA = {
+		HARMFUL = {
+			196608, -- Eye of the Tiger
+		},
+	},
 }, {
 	-- map aura to provider(s)
 	[116189] = 115546, -- Provoke (taunt)
+	[118635] = 115315, -- Provoke <- Summon Black Ox Statue
+	[119085] = 115008, -- Chi Torpedo
 	[120954] = 115203, -- Fortifying Brew
 	[123725] = 115181, -- Breath of Fire
+	[196608] = 196607, -- Eye of the Tiger
+	[196727] = 132578, -- Provoke <- Invoke Niuzao, the Black Ox
+	[196733] = 196730, -- Special Delivery (slow)
+	[196739] = 196738, -- Elusive Dance
 	[213063] = 227689, -- Dark Side of the Moon (BM artifact)
 	[213341] = 213340, -- Fortification (BM artifact)
 	[213177] = 213161, -- Swift as a Coursing River (BM artifact)
+	[214373] = 214372, -- Brew-Stache (BM artifact)
 	[215479] = 115308, -- Ironskin Brew
+	[228563] = 196736, -- Blackout Combo
 }, {
 	-- map aura to modified spell(s)
+	[118635] = 115546, -- Provoke
+	[196608] = 100780, -- Eye of the Tiger
+	[196733] = { -- Special Delivery (slow)
+		115308, -- Ironskin Brew
+		119582, -- Purifying Brew
+	},
+	[196739] = 119582, -- Elusive Dance -> Purifying Brew
 	[213063] = 205523, -- Dark Side of the Moon (BM artifact) -> Blackout Strike
 	[213177] = { -- Swift as a Coursing River (BM artifact)
 		115203, -- Fortifying Brew
+		115308, -- Ironskin Brew
 		119582, -- Purifying Brew
-		215308, -- Ironskin Brew
 	},
 	[213341] = 115203, -- Fortification (BM artifact) -> Fortifying Brew
+	[214373] = { -- Brew-Stache (BM artifact)
+		115308, -- Ironskin Brew
+		119582, -- Purifying Brew
+	},
+	[228563] = { -- Blackout Combo
+		100780, -- Tiger Palm
+		115181, -- Beath of Fire
+		115308, -- Ironskin Brew
+		119582, -- Purifying Brew
+		121253, -- Keg Smash
+		205523, -- Blacout Strike
+	},
 })
