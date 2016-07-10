@@ -20,15 +20,18 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70000, 1, {
+lib:__RegisterSpells("MONK", 70000, 2, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
+		 115288, -- Energizing Elixir
 		 115399, -- Black Ox Brew
 		 119582, -- Purifying Brew
 		 119996, -- Transcendance: Transfer
 		 122281, -- Healing Elixir
+		 123904, -- Invoke Xuen, the White Tiger
 		 123986, -- Chi Burst
+		 152175, -- Whirling Dragon Punch
 		[115176] = "SURVIVAL", -- Zen Meditation
 		[116705] = "INTERRUPT", -- Spear Hand Strike
 		[218164] = "HELPFUL DISPEL", -- Detox (BM and WW)
@@ -55,17 +58,18 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 				[115078] = "CROWD_CTL", -- Paralysis (Incapacitate)
 			},
 			PERSONAL = {
-				101643, -- Transcendance
-				116844, -- Ring of Peace
-				116847, -- Rushing Jade Wind
-				119085, -- Chi Torpedo
-				125174, -- Touch of Karma
-				137639, -- Storm, Earth and Fire
-				195381, -- Healing Winds (WW artifact)
-				196739, -- Elusive Dance
-				213177, -- Swift as a Coursing River (BM artifact)
-				214373, -- Brew-Stache (BM artifact)
-				228563, -- Blackout Combo
+				 101643, -- Transcendance
+				 116844, -- Ring of Peace
+				 116847, -- Rushing Jade Wind
+				 119085, -- Chi Torpedo
+				 125174, -- Touch of Karma
+				 137639, -- Storm, Earth and Fire
+				 195381, -- Healing Winds (WW artifact)
+				 196739, -- Elusive Dance
+				 213177, -- Swift as a Coursing River (BM artifact)
+				 214373, -- Brew-Stache (BM artifact)
+				 228563, -- Blackout Combo
+				[152173] = "BURST", -- Serenity
 				SURVIVAL = {
 					120954, -- Fortifying Brew
 					122278, -- Dampen Harm
@@ -81,7 +85,8 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 			116095, -- Disable (slow)
 			116706, -- Disable (root)
 			117952, -- Crackling Jade Lightning
-			196608, -- Eye of the Tiger
+			196608, -- Eye of the Tiger -- NOTE: the buff id for the HoT is the same
+			196723, -- Dizzying Kicks
 			228287, -- Mark of the Crane
 		},
 		PERSONAL = {
@@ -106,6 +111,7 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 	[195321] = 195300, -- Transfer of Power (WW artifact) <- Transfer the Power
 	[195381] = 195380, -- Healing Winds (WW artifact)
 	[196608] = 196607, -- Eye of the Tiger
+	[196723] = 196722, -- Dizzying Kicks
 	[196727] = 132578, -- Provoke <- Invoke Niuzao, the Black Ox
 	[196733] = 196730, -- Special Delivery (slow)
 	[196739] = 196738, -- Elusive Dance
@@ -125,6 +131,14 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 	[116768] = 100784, -- Blackout Kick! -> Blackout Kick
 	[118635] = 115546, -- Provoke
 	[137639] = 221771, -- Storm, Earth and Fire -> Storm, Earth and Fire: Fixate
+	[152173] = { -- Serenity
+		100784, -- Blackout Kick
+		101546, -- Spinning Crane Kick
+		107428, -- Rising Sun Kick
+		113656, -- Fists of Fury
+		116847, -- Rushing Jade Wind
+		205320, -- Strike of the Windlord (WW artifact)
+	},
 	[195321] = { -- Transfer of Power (WW artifact)
 		100784, -- Blackout Kick (provider)
 		107428, -- Rising Sun Kick (provider)
@@ -132,6 +146,7 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 	},
 	[195381] = 119996, -- Healing Winds (WW artifact) -> Transcendance: Transfer
 	[196608] = 100780, -- Eye of the Tiger
+	[196723] = 100784, -- Dizzying Kicks -> Blackout Kick
 	[196733] = { -- Special Delivery (slow)
 		115308, -- Ironskin Brew
 		119582, -- Purifying Brew
