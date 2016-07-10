@@ -41,6 +41,7 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 				116841, -- Tiger's Lust
 				116849, -- Life Cocoon
 				119611, -- Renewing Mist
+				199668, -- Blessings of Yu'lon (MW artifact)
 			},
 			HARMFUL = {
 				 115080, -- Touch of Death
@@ -55,6 +56,7 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 				 124280, -- Touch of Karma (dmg dot)
 				 196727, -- Provoke
 				 196733, -- Special Delivery (slow)
+				 199387, -- Spirit Tether (MW artifact) (slow)
 				 205320, -- Strike of the Windlord (WW artifact) (slow)
 				 213063, -- Dark Side of the Moon (BM artifact)
 				 214326, -- Exploding Keg (BM artifact)
@@ -70,6 +72,7 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 				 137639, -- Storm, Earth and Fire
 				 195381, -- Healing Winds (WW artifact)
 				 196739, -- Elusive Dance
+				 199407, -- Light on Your Feet (MW artifact)
 				 213177, -- Swift as a Coursing River (BM artifact)
 				 214373, -- Brew-Stache (BM artifact)
 				 228563, -- Blackout Combo
@@ -128,6 +131,9 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 	[196727] = 132578, -- Provoke <- Invoke Niuzao, the Black Ox
 	[196733] = 196730, -- Special Delivery (slow)
 	[196739] = 196738, -- Elusive Dance
+	[199387] = 199384, -- Spirit Tether (MW artifact) (slow)
+	[199407] = 199401, -- Light on Your Feet (MW artifact)
+	[199668] = 199665, -- Blessings of Yu'lon (MW artifact)
 	[202090] = 116645, -- Teachings of the Monastery (MW mastery)
 	[213063] = 227689, -- Dark Side of the Moon (BM artifact)
 	[213341] = 213340, -- Fortification (BM artifact)
@@ -172,6 +178,9 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 		119582, -- Purifying Brew
 	},
 	[196739] = 119582, -- Elusive Dance -> Purifying Brew
+	[199387] = 101643, -- Spirit Tether (MW artifact) (slow) -> Transcendance
+	[199407] = 191837, -- Light on Your Feet (MW artifact) -> Essence Font
+	[199668] = 115310, -- Blessings of Yu'lon (MW artifact) -> Revival
 	[202090] = { -- Teachings of the Monastery (MW mastery)
 		100780, -- Tiger Palm (provider)
 		100784, -- Blackout Kick (consumer)
