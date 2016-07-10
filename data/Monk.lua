@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70000, 2, {
+lib:__RegisterSpells("MONK", 70000, 3, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
@@ -96,7 +96,6 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 	},
 	AURA = {
 		HELPFUL = {
-			115175, -- Soothing Mist
 			124682, -- Enveloping Mist
 			191840, -- Essence Font
 			198533, -- Soothing Mist
@@ -120,7 +119,6 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 	},
 }, {
 	-- map aura to provider(s)
-	[115175] = 193884, -- Soothing Mist
 	-- [115804] = 107428, -- Mortal Wounds <- Rising Sun Kick FIXME: see LibPlayerSpells-1.0#83
 	[116189] = 115546, -- Provoke (taunt)
 	[116706] = 116095, -- Disable (root)
@@ -163,12 +161,6 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 	[228563] = 196736, -- Blackout Combo
 }, {
 	-- map aura to modified spell(s)
-	[115175] = { -- Soothing Mist
-		116670, -- Vivify
-		116694, -- Effuse
-		116849, -- Life Cocoon
-		124682, -- Enveloping Mist
-	},
 	[116768] = 100784, -- Blackout Kick! -> Blackout Kick
 	[118635] = 115546, -- Provoke
 	[137639] = 221771, -- Storm, Earth and Fire -> Storm, Earth and Fire: Fixate
