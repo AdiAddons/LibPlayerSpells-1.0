@@ -25,6 +25,7 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 		 109132, -- Roll
 		 115098, -- Chi Wave
 		 115288, -- Energizing Elixir
+		 115310, -- Revival
 		 115399, -- Black Ox Brew
 		 119582, -- Purifying Brew
 		 119996, -- Transcendance: Transfer
@@ -38,6 +39,8 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 		AURA = {
 			HELPFUL = {
 				116841, -- Tiger's Lust
+				116849, -- Life Cocoon
+				119611, -- Renewing Mist
 			},
 			HARMFUL = {
 				 115080, -- Touch of Death
@@ -59,6 +62,7 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 			},
 			PERSONAL = {
 				 101643, -- Transcendance
+				 116680, -- Thunder Focus Tea
 				 116844, -- Ring of Peace
 				 116847, -- Rushing Jade Wind
 				 119085, -- Chi Torpedo
@@ -81,6 +85,11 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 		},
 	},
 	AURA = {
+		HELPFUL = {
+			115175, -- Soothing Mists
+			124682, -- Enveloping Mist
+			191840, -- Essence Font
+		},
 		HARMFUL = {
 			116095, -- Disable (slow)
 			116706, -- Disable (root)
@@ -93,21 +102,25 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 			101546, -- Spinning Crane Kick
 			116768, -- Blackout Kick!
 			195321, -- Transfer of Power (WW artifact)
+			202090, -- Teachings of the Monastery (MW mastery)
 		},
 	},
 }, {
 	-- map aura to provider(s)
+	[115175] = 193884, -- Soothing Mists
 	-- [115804] = 107428, -- Mortal Wounds <- Rising Sun Kick FIXME: see LibPlayerSpells-1.0#83
 	[116189] = 115546, -- Provoke (taunt)
 	[116706] = 116095, -- Disable (root)
 	[116768] = 100780, -- Blackout Kick! <- Tiger Palm
 	[118635] = 115315, -- Provoke <- Summon Black Ox Statue
 	[119085] = 115008, -- Chi Torpedo
+	[119611] = 115151, -- Renewing Mist
 	[120954] = 115203, -- Fortifying Brew
 	[123586] = 101545, -- Flying Serpent Kick (slow)
 	[123725] = 115181, -- Breath of Fire
 	[124280] = 122470, -- Touch of Karma (dmg dot)
 	[125174] = 122470, -- Touch of Karma
+	[191840] = 191837, -- Essence Font
 	[195321] = 195300, -- Transfer of Power (WW artifact) <- Transfer the Power
 	[195381] = 195380, -- Healing Winds (WW artifact)
 	[196608] = 196607, -- Eye of the Tiger
@@ -115,6 +128,7 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 	[196727] = 132578, -- Provoke <- Invoke Niuzao, the Black Ox
 	[196733] = 196730, -- Special Delivery (slow)
 	[196739] = 196738, -- Elusive Dance
+	[202090] = 116645, -- Teachings of the Monastery (MW mastery)
 	[213063] = 227689, -- Dark Side of the Moon (BM artifact)
 	[213341] = 213340, -- Fortification (BM artifact)
 	[213177] = 213161, -- Swift as a Coursing River (BM artifact)
@@ -128,6 +142,12 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 	[228563] = 196736, -- Blackout Combo
 }, {
 	-- map aura to modified spell(s)
+	[115175] = { -- Soothing Mists
+		116670, -- Vivify
+		116694, -- Effuse
+		116849, -- Life Cocoon
+		124682, -- Enveloping Mist
+	},
 	[116768] = 100784, -- Blackout Kick! -> Blackout Kick
 	[118635] = 115546, -- Provoke
 	[137639] = 221771, -- Storm, Earth and Fire -> Storm, Earth and Fire: Fixate
@@ -152,6 +172,10 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 		119582, -- Purifying Brew
 	},
 	[196739] = 119582, -- Elusive Dance -> Purifying Brew
+	[202090] = { -- Teachings of the Monastery (MW mastery)
+		100780, -- Tiger Palm (provider)
+		100784, -- Blackout Kick (consumer)
+	},
 	[213063] = 205523, -- Dark Side of the Moon (BM artifact) -> Blackout Strike
 	[213177] = { -- Swift as a Coursing River (BM artifact)
 		115203, -- Fortifying Brew
