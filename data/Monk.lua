@@ -49,6 +49,7 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 				 124280, -- Touch of Karma (dmg dot)
 				 196727, -- Provoke
 				 196733, -- Special Delivery (slow)
+				 205320, -- Strike of the Windlord (WW artifact) (slow)
 				 213063, -- Dark Side of the Moon (BM artifact)
 				 214326, -- Exploding Keg (BM artifact)
 				[115078] = "CROWD_CTL", -- Paralysis (Incapacitate)
@@ -60,6 +61,7 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 				119085, -- Chi Torpedo
 				125174, -- Touch of Karma
 				137639, -- Storm, Earth and Fire
+				195381, -- Healing Winds (WW artifact)
 				196739, -- Elusive Dance
 				213177, -- Swift as a Coursing River (BM artifact)
 				214373, -- Brew-Stache (BM artifact)
@@ -85,6 +87,7 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 		PERSONAL = {
 			101546, -- Spinning Crane Kick
 			116768, -- Blackout Kick!
+			195321, -- Transfer of Power (WW artifact)
 		},
 	},
 }, {
@@ -100,6 +103,8 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 	[123725] = 115181, -- Breath of Fire
 	[124280] = 122470, -- Touch of Karma (dmg dot)
 	[125174] = 122470, -- Touch of Karma
+	[195321] = 195300, -- Transfer of Power (WW artifact) <- Transfer the Power
+	[195381] = 195380, -- Healing Winds (WW artifact)
 	[196608] = 196607, -- Eye of the Tiger
 	[196727] = 132578, -- Provoke <- Invoke Niuzao, the Black Ox
 	[196733] = 196730, -- Special Delivery (slow)
@@ -110,9 +115,9 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 	[214373] = 214372, -- Brew-Stache (BM artifact)
 	[215479] = 115308, -- Ironskin Brew
 	[228287] = { -- Mark of the Crane
-		100780, -- Tiger Palm
-		100784, -- Blacout Kick
-		107428, -- Rising Sun Kick
+		100780, -- Tiger Palm (provider)
+		100784, -- Blackout Kick (provider)
+		107428, -- Rising Sun Kick (consumer)
 	},
 	[228563] = 196736, -- Blackout Combo
 }, {
@@ -120,6 +125,12 @@ lib:__RegisterSpells("MONK", 70000, 1, {
 	[116768] = 100784, -- Blackout Kick! -> Blackout Kick
 	[118635] = 115546, -- Provoke
 	[137639] = 221771, -- Storm, Earth and Fire -> Storm, Earth and Fire: Fixate
+	[195321] = { -- Transfer of Power (WW artifact)
+		100784, -- Blackout Kick (provider)
+		107428, -- Rising Sun Kick (provider)
+		113656, -- Fists of Fury (consumer)
+	},
+	[195381] = 119996, -- Healing Winds (WW artifact) -> Transcendance: Transfer
 	[196608] = 100780, -- Eye of the Tiger
 	[196733] = { -- Special Delivery (slow)
 		115308, -- Ironskin Brew
