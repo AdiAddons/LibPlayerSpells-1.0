@@ -32,7 +32,10 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 		 122281, -- Healing Elixir
 		 123904, -- Invoke Xuen, the White Tiger
 		 123986, -- Chi Burst
+		 124081, -- Zen Pulse
 		 152175, -- Whirling Dragon Punch
+		 197945, -- Mistwalk
+		 198664, -- Invoke Chi-Ji, the Red Crane
 		[115176] = "SURVIVAL", -- Zen Meditation
 		[116705] = "INTERRUPT", -- Spear Hand Strike
 		[218164] = "HELPFUL DISPEL", -- Detox (BM and WW)
@@ -56,6 +59,7 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 				 124280, -- Touch of Karma (dmg dot)
 				 196727, -- Provoke
 				 196733, -- Special Delivery (slow)
+				 198909, -- Song of Chi-Ji (Disorient)
 				 199387, -- Spirit Tether (MW artifact) (slow)
 				 205320, -- Strike of the Windlord (WW artifact) (slow)
 				 213063, -- Dark Side of the Moon (BM artifact)
@@ -71,7 +75,10 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 				 125174, -- Touch of Karma
 				 137639, -- Storm, Earth and Fire
 				 195381, -- Healing Winds (WW artifact)
+				 196725, -- Refreshing Jade Wind
 				 196739, -- Elusive Dance
+				 197206, -- Uplifting Trance
+				 197908, -- Mana Tea
 				 199407, -- Light on Your Feet (MW artifact)
 				 213177, -- Swift as a Coursing River (BM artifact)
 				 214373, -- Brew-Stache (BM artifact)
@@ -89,9 +96,10 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 	},
 	AURA = {
 		HELPFUL = {
-			115175, -- Soothing Mists
+			115175, -- Soothing Mist
 			124682, -- Enveloping Mist
 			191840, -- Essence Font
+			198533, -- Soothing Mist
 		},
 		HARMFUL = {
 			116095, -- Disable (slow)
@@ -105,12 +113,14 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 			101546, -- Spinning Crane Kick
 			116768, -- Blackout Kick!
 			195321, -- Transfer of Power (WW artifact)
+			197916, -- Lifecycles (Vivify)
+			197919, -- Lifecycles (Enveloping Mist)
 			202090, -- Teachings of the Monastery (MW mastery)
 		},
 	},
 }, {
 	-- map aura to provider(s)
-	[115175] = 193884, -- Soothing Mists
+	[115175] = 193884, -- Soothing Mist
 	-- [115804] = 107428, -- Mortal Wounds <- Rising Sun Kick FIXME: see LibPlayerSpells-1.0#83
 	[116189] = 115546, -- Provoke (taunt)
 	[116706] = 116095, -- Disable (root)
@@ -131,6 +141,11 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 	[196727] = 132578, -- Provoke <- Invoke Niuzao, the Black Ox
 	[196733] = 196730, -- Special Delivery (slow)
 	[196739] = 196738, -- Elusive Dance
+	[197206] = 115151, -- Uplifting Trance <- Renewing Mist
+	[197916] = 197915, -- Lifecycles (Vivify) <- Lifecycles
+	[197919] = 197915, -- Lifecycles (Enveloping Mist) <- Lifecycles
+	[198533] = 115313, -- Soothing Mist <- Summon Jade Serpent Statue
+	[198909] = 198898, -- Song of Chi-Ji (Disorient)
 	[199387] = 199384, -- Spirit Tether (MW artifact) (slow)
 	[199407] = 199401, -- Light on Your Feet (MW artifact)
 	[199668] = 199665, -- Blessings of Yu'lon (MW artifact)
@@ -148,7 +163,7 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 	[228563] = 196736, -- Blackout Combo
 }, {
 	-- map aura to modified spell(s)
-	[115175] = { -- Soothing Mists
+	[115175] = { -- Soothing Mist
 		116670, -- Vivify
 		116694, -- Effuse
 		116849, -- Life Cocoon
@@ -178,6 +193,9 @@ lib:__RegisterSpells("MONK", 70000, 2, {
 		119582, -- Purifying Brew
 	},
 	[196739] = 119582, -- Elusive Dance -> Purifying Brew
+	[197206] = 116670, -- Uplifting Trance -> Vivify
+	[197916] = 116670, -- Lifecycles (Vivify) -> Vivify
+	[197919] = 124682, -- Lifecycles (Enveloping Mist) -> Enveloping Mist
 	[199387] = 101643, -- Spirit Tether (MW artifact) (slow) -> Transcendance
 	[199407] = 191837, -- Light on Your Feet (MW artifact) -> Essence Font
 	[199668] = 115310, -- Blessings of Yu'lon (MW artifact) -> Revival
