@@ -38,13 +38,16 @@ lib:__RegisterSpells("MONK", 70000, 3, {
 		 198664, -- Invoke Chi-Ji, the Red Crane
 		[115176] = "SURVIVAL", -- Zen Meditation
 		[116705] = "INTERRUPT", -- Spear Hand Strike
-		[218164] = "HELPFUL DISPEL", -- Detox (BM and WW)
 		AURA = {
 			HELPFUL = {
 				116841, -- Tiger's Lust
 				116849, -- Life Cocoon
 				119611, -- Renewing Mist
 				199668, -- Blessings of Yu'lon (MW artifact)
+				DISPEL = {
+					115450, -- Detox (MW)
+					218164, -- Detox (BM and WW)
+				},
 			},
 			HARMFUL = {
 				 115080, -- Touch of Death
