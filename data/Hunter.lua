@@ -47,6 +47,7 @@ lib:__RegisterSpells("HUNTER", 70000, 4, {
 			HELPFUL = {
 				 53480, -- Roar of Sacrifice (Cunning)
 				204477, -- Windburst (MM artifact)
+				212640, -- Mending Bandage (PvP)
 			},
 			HARMFUL = {
 				  2649, -- Growl (pet)
@@ -61,34 +62,36 @@ lib:__RegisterSpells("HUNTER", 70000, 4, {
 				115804, -- Mortal Wounds (pet)
 				117405, -- Binding Shot
 				117526, -- Binding Shot (stun)
-				131894, -- A Murder of Crows (Beast Master/Marksmanship)
+				131894, -- A Murder of Crows (BM/MM)
 				135299, -- Tar Trap
 				160065, -- Tendon Rip (Silithid) (exotic) (slow)
 				160067, -- Web Spray (Spider)
 				160455, -- Fatigued (Nether Ray)
-				162480, -- Steel Trap (root)
 				162487, -- Steel Trap (bleed)
 				185855, -- Lacerate
 				190927, -- Harpoon
-				191241, -- Sticky Bomb
 				191397, -- Bestial Cunning
 				191413, -- Bestial Ferocity
+				191241, -- Sticky Bomb
 				194279, -- Caltrops
 				194599, -- Black Arrow
 				194858, -- Dragonsfire Grenade
 				195645, -- Wing Clip
 				201142, -- Frozen Wake
-				201158, -- Super Sticky Tar
 				202914, -- Spider Sting (PvP)
 				202933, -- Spider Sting (Silenced debuff) (PvP)
 				204081, -- On the Trail
-				206505, -- A Murder of Crows (Survival)
-				224729, -- Bursting Shot
+				206505, -- A Murder of Crows (SV)
 				CROWD_CTL = {
-					  3355, -- Freezing Trap (Incapacitate)
-					 19386, -- Wyvern Sting (Incapacitate)
-					209790, -- Freezing Arrow (Incapacitate) (PvP)
-					213691, -- Scatter Shot (Disorient) (PvP)
+					  3355, -- Freezing Trap (incapacitate)
+					 19386, -- Wyvern Sting (incapacitate)
+					162480, -- Steel Trap (root)
+					191244, -- Sticky Bomb (knockback)
+					201158, -- Super Sticky Tar (root)
+					209790, -- Freezing Arrow (incapacitate) (PvP)
+					212638, -- Tracker's Net (root) (PvP)
+					213691, -- Scatter Shot (disorient) (PvP)
+					224729, -- Bursting Shot (disorient)
 				},
 			},
 			PERSONAL = {
@@ -146,17 +149,17 @@ lib:__RegisterSpells("HUNTER", 70000, 4, {
 	},
 	AURA = {
 		HARMFUL = {
-			  1462, -- Beast Lore (NOTE: HELPFUL on player controlled pets, HARMFUL else)
-			  1515, -- Tame Beast
-			 63468, -- Careful Aim
-			118253, -- Serpent Sting
-			185365, -- Hunter's Mark
-			187131, -- Vulnurable
-			199803, -- True Aim
-			200108, -- Ranger's Net (root)
-			202797, -- Viper Sting (PvP)
-			202900, -- Scorpid Sting (PvP)
-			206755, -- Ranger's Net (slow)
+			   1462, -- Beast Lore (NOTE: HELPFUL on player controlled pets, HARMFUL else)
+			   1515, -- Tame Beast
+			  63468, -- Careful Aim
+			 118253, -- Serpent Sting
+			 185365, -- Hunter's Mark
+			 187131, -- Vulnurable
+			 199803, -- True Aim
+			 202797, -- Viper Sting (PvP)
+			 202900, -- Scorpid Sting (PvP)
+			 206755, -- Ranger's Net (slow)
+			[200108] = "CROWD_CTL", -- Ranger's Net (root)
 		},
 		PERSONAL = {
 			  6197, -- Eagle Eye
@@ -221,6 +224,7 @@ lib:__RegisterSpells("HUNTER", 70000, 4, {
 	[190515] = 190514, -- Survival of the Fittest (MM artifact)
 	[190927] = 190925, -- Harpoon
 	[190931] = 190928, -- Mongoose Fury <- Mongoose Bite
+	[191244] = 191241, -- Sticky Bomb (knockback)
 	[191397] = 191384, -- Bestial Cunning <- Aspect of the Beast
 	[191413] = 191384, -- Bestial Ferocity <- Aspect of the Beast
 	[191414] = 191384, -- Bestial Tenacity <- Aspect of the Beast
