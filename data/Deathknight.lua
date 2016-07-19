@@ -23,21 +23,31 @@ if not lib then return end
 lib:__RegisterSpells("DEATHKNIGHT", 70000, 1, {
 	COOLDOWN = {
 		  61999, -- Raise Ally
+		 221699, -- Blood Tap
 		[ 47528] = "INTERRUPT", -- Mind Freeze
 		[108199] = "CROWD_CTL", -- Gorefiend's Grasp (knockback)
 		AURA = {
 			HARMFUL = {
 				  51399, -- Death Grip (taunt)
 				  56222, -- Dark Command (taunt)
-				[221562] = "CROWD_CTL", -- Asphyxiate (stun)
+				 206931, -- Blooddrinker
+				[206977] = "SURVIVAL", -- Blood Mirror
+				CROWD_CTL = {
+					206961, -- Tremble Before Me (disorient)
+					221562, -- Asphyxiate (stun)
+				},
 			},
 			PERSONAL = {
 				188290, -- Death and Decay
 				212552, -- Wraith Walk
 				SURVIVAL = {
-					48707, -- Anti-Magic Shield
-					55233, -- Vampiric Blood
-					81256, -- Dancing Rune Weapon
+					 48707, -- Anti-Magic Shield
+					 55233, -- Vampiric Blood
+					 81256, -- Dancing Rune Weapon
+					194679, -- Rune Tap
+					194844, -- Bonestorm
+					205725, -- Anti-Magic Barrier
+					219809, -- Tombstone
 				},
 			},
 		},
@@ -49,11 +59,13 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 1, {
 		HARMFUL = {
 			 55078, -- Blood Plague
 			206930, -- Hearth Strike (slow)
+			206940, -- Mark of Blood
 		},
 		PERSONAL = {
 			 77535, -- Blood Shield
 			 81141, -- Crimson Scourge
 			195181, -- Bone Shield
+			213003, -- Soulgorge
 		},
 		PET = {
 			[111673] = "INVERT_AURA", -- Control Undead
@@ -73,10 +85,15 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 1, {
 	[ 81141] = 81136, -- Crimson Scourge
 	[188290] = 43265, -- Death and Decay
 	[195181] = 195182, -- Bone Shield <- Marrowrend
+	[205725] = 205727, -- Anti-Magic Barrier
+	[206961] = 206960, -- Tremble Before Me (disorient)
+	[213003] = 212744, -- Soulgorge
 }, {
 	-- map aura to modified spell(s)
-	[77535] = { -- Blood Shield
+	[ 77535] = { -- Blood Shield
 		49998, -- Death Strike
 	},
-	[81141] = 43265, -- Crimson Scourge -> Death and Decay
+	[ 81141] = 43265, -- Crimson Scourge -> Death and Decay
+	[205725] = 48707, -- Anti-Magic Barrier -> Anti-Magic Shell
+	[206961] = 43265, -- Tremble Before Me (disorient) -> Death and Decay
 })
