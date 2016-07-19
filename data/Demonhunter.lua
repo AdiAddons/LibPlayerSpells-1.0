@@ -36,31 +36,34 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 3, {
 				},
 			},
 			HARMFUL = {
-				 179057, -- Chaos Nova
 				 185245, -- Torment (taunt)
 				 198813, -- Vengeful Retreat (slow)
 				 202443, -- Anguish (Havoc artifact)
 				 204598, -- Sigil of Flame
 				 204843, -- Sigil of Chains (slow)
 				 207407, -- Soul Carver (Vengeance artifact)
-				 200166, -- Metamorphosis (Havoc) (stun)
 				 206491, -- Nemesis
-				 207685, -- Sigil of Misery (disorient)
 				 207690, -- Bloodlet
 				 207771, -- Fiery Brand
 				 210003, -- Razor Spikes (slow)
 				 211053, -- Fel Barrage
-				 211881, -- Fel Eruption
 				 212818, -- Fiery Demise (Vengeance artifact)
 				 213405, -- Master of the Glaive
 				[204490] = "INTERRUPT", -- Sigil of Silence
 				[207744] = "SURVIVAL", -- Fiery Brand
-				[217832] = "CROWD_CTL", -- Imprison
+				CROWD_CTL = {
+					179057, -- Chaos Nova (stun)
+					200166, -- Metamorphosis (Havoc) (stun)
+					207685, -- Sigil of Misery (disorient)
+					211881, -- Fel Eruption (stun)
+					217832, -- Imprison
+				},
 			},
 			PERSONAL = {
 				178740, -- Immolation Aura
 				188499, -- Blade Dance
 				188501, -- Spectral Sight
+				203650, -- Prepared
 				207709, -- Blade Turning
 				208579, -- Nemesis (Demons)
 				208605, -- Nemesis (Humanoids)
@@ -105,6 +108,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 3, {
 	[198813] = 198793, -- Vengeful Retreat (slow)
 	[200166] = 191427, -- Metamorphosis (Havoc) (stun)
 	[202443] = 201473, -- Anguish <- Anguish of the Deceiver (Havoc artifact)
+	[203650] = 203551, -- Prepared
 	[203819] = 203720, -- Demon Spikes
 	[204490] = 202137, -- Sigil of Silence
 	[204598] = 204596, -- Sigil of Flame
@@ -142,6 +146,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 3, {
 }, {
 	-- map aura to modified spell(s)
 	[202443] = 198013, -- Anguish (Havoc artifact) -> Eyebeam
+	[203650] = 198793, -- Prepared -> Vengeful Retreat
 	[207690] = 185123, -- Bloodlet -> Throw Glaive
 	[207693] = 228477, -- Feast of Souls -> Soul Cleave
 	[207709] = 203782, -- Blade Turning -> Shear
