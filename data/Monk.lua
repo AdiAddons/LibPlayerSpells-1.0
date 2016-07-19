@@ -54,20 +54,23 @@ lib:__RegisterSpells("MONK", 70000, 3, {
 				 --115804, -- Mortal Wounds FIXME: see LibPlayerSpells-1.0#83
 				 116189, -- Provoke (taunt)
 				 118635, -- Provoke
-				 119381, -- Leg Sweep (stun)
 				 121253, -- Keg Smash (slow)
 				 122470, -- Touch of Karma
 				 123586, -- Flying Serpent Kick (slow)
 				 123725, -- Breath of Fire -- TODO: check without artifact
 				 124280, -- Touch of Karma (dmg dot)
+				 140023, -- Ring of Peace
 				 196727, -- Provoke
 				 196733, -- Special Delivery (slow)
-				 198909, -- Song of Chi-Ji (Disorient)
 				 199387, -- Spirit Tether (MW artifact) (slow)
 				 205320, -- Strike of the Windlord (WW artifact) (slow)
 				 213063, -- Dark Side of the Moon (BM artifact)
 				 214326, -- Exploding Keg (BM artifact)
-				[115078] = "CROWD_CTL", -- Paralysis (Incapacitate)
+				CROWD_CTL = {
+					115078, -- Paralysis (Incapacitate)
+					119381, -- Leg Sweep (stun)
+					198909, -- Song of Chi-Ji (Disorient)
+				},
 			},
 			PERSONAL = {
 				 101643, -- Transcendance
@@ -104,12 +107,12 @@ lib:__RegisterSpells("MONK", 70000, 3, {
 			198533, -- Soothing Mist
 		},
 		HARMFUL = {
-			116095, -- Disable (slow)
-			116706, -- Disable (root)
-			117952, -- Crackling Jade Lightning
-			196608, -- Eye of the Tiger -- NOTE: the buff id for the HoT is the same
-			196723, -- Dizzying Kicks
-			228287, -- Mark of the Crane
+			 116095, -- Disable (slow)
+			 117952, -- Crackling Jade Lightning
+			 196608, -- Eye of the Tiger -- NOTE: the buff id for the HoT is the same
+			 196723, -- Dizzying Kicks
+			 228287, -- Mark of the Crane
+			[116706] = "CROWD_CTL", -- Disable (root)
 		},
 		PERSONAL = {
 			101546, -- Spinning Crane Kick
@@ -134,6 +137,7 @@ lib:__RegisterSpells("MONK", 70000, 3, {
 	[123725] = 115181, -- Breath of Fire
 	[124280] = 122470, -- Touch of Karma (dmg dot)
 	[125174] = 122470, -- Touch of Karma
+	[140023] = 116844, -- Ring of Peace
 	[191840] = 191837, -- Essence Font
 	[195321] = 195300, -- Transfer of Power (WW artifact) <- Transfer the Power
 	[195381] = 195380, -- Healing Winds (WW artifact)
