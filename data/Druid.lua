@@ -36,6 +36,8 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 				 61391, -- Typhoon (slow) (knockback)
 				192090, -- Thrash (bear)
 				106830, -- Thrash (cat)
+				214995, -- Bloody Paws (slow) (Guardian artifact)
+				214998, -- Roar of the Crowd (Guardian artifact)
 				CROWD_CTL = {
 					    99, -- Incapacitating Roar (incapacitate)
 					  5211, -- Mighty Bash (stun)
@@ -59,10 +61,12 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 				155835, -- Bristling Fur
 				164545, -- Solar Empowerment
 				164547, -- Lunar Empowerment
+				201671, -- Gory Fur (Guardian artifact)
 				SURVIVAL = {
 					 22812, -- Barkskin
 					 61336, -- Survival Instincts
 					158792, -- Pulverize
+					200851, -- Rage of the Sleeper (Guardian artifact)
 				},
 			},
 		},
@@ -107,8 +111,11 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 	[164812] = 8921, -- Moonfire
 	[164815] = 197488, -- Sunfire (from Balance Affinity talent)
 	[192090] = 77758, -- Thrash
+	[201671] = 200854, -- Gory Fur (Guardian artifact)
 	[213680] = 155578, -- Guardian of Elune
 	[213708] = 203964, -- Galactic Guardian
+	[214995] = 200515, -- Bloody Paws (slow) (Guardian artifact)
+	[214998] = 214996, -- Roar of the Crowd (Guardian artifact)
 }, {
 	-- map aura to modified spell(s)
 	[ 45334] = 16979, -- Immobilized (root) -> Wild Charge (bear)
@@ -117,6 +124,15 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 	[164545] = 197629, -- Solar Empowerment -> Solar Wrath (from Balance Affinity talent)
 	[164547] = 197628, -- Lunar Empowerment -> Lunar Strike (from Balance Affinity talent)
 	[164815] = 197630, -- Sunfire (from Balance Affinity talent)
+	[201671] = { -- Gory Fur (Guardian artifact)
+		192081, -- Ironfur
+		192083, -- Mark of Ursol
+	},
 	[213680] = 33917, -- Guardian of Elune -> Mangle
 	[213708] = 8921, -- Galactic Guardian -> Moonfire
+	[214995] = 77758, -- Bloody Paws (slow) (Guardian artifact) -> Thrash
+	[214998] = { -- Roar of the Crowd (Guardian artifact)
+		77761, -- Stampeding Roar (bear)
+		77764, -- Stampeding Roar (cat)
+	},
 })
