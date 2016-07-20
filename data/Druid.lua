@@ -27,9 +27,12 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 		  33917, -- Mangle
 		 102401, -- Wild Charge (caster)
 		 102417, -- Wild Charge (travel form)
+		 108238, -- Renewal
 		 197626, -- Starsurge (from Balance Affinity talent)
+		 202028, -- Brutal Slash
 		 204066, -- Lunar Beam
 		[106839] = "INTERRUPT", -- Skull Bash
+		[202060] = "BURST", -- Elune's Guidance
 		AURA = {
 			HARMFUL = {
 				  6795, -- Growl (taunt)
@@ -66,6 +69,7 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 				BURST = {
 					  5217, -- Tiger's Fury
 					106951, -- Berserk
+					102543, -- Incarnation: King of the Jungle
 				},
 				SURVIVAL = {
 					 22812, -- Barkskin
@@ -81,6 +85,7 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 		HARMFUL = {
 			  1079, -- Rip
 			 58180, -- Infected Wounds (slow)
+			155625, -- Moonfire (from Lunar Inspiration)
 			155722, -- Rake (from Feral Affinity)
 			164812, -- Moonfire
 			164815, -- Sunfire (from Balance Affinity talent)
@@ -94,8 +99,10 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 			8936, -- Regrowth
 		},
 		PERSONAL = {
+			 52610, -- Savage Roar
 			 69369, -- Predatory Swiftness
 			 93622, -- Mangle!
+			145152, -- Bloodtalons
 			213680, -- Guardian of Elune
 			213708, -- Galactic Guardian
 			SURVIVAL = {
@@ -113,12 +120,17 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 	[ 69369] = 16974, -- Predatory Swiftness
 	[ 93622] = 210706, -- Mangle! <- Gore
 	[137452] = 102280, -- Displacer Beast
+	[145152] = 155672, -- Bloodtalons
+	[155625] = 155580, -- Moonfire <- Lunar Inspiration
 	[155722] = 202155, -- Rake <- Feral Affinity
 	[158792] = 80313, -- Pulverize
 	[163505] = 1822, -- Rake (stun)
 	[164545] = 197626, -- Solar Empowerment <- Starsurge (from Balance Affinity talent)
 	[164547] = 197626, -- Lunar Empowerment <- Starsurge (from Balance Affinity talent)
-	[164812] = 8921, -- Moonfire
+	[164812] = { -- Moonfire
+		  8921, -- Moonfire
+		155625, -- Moonfire (from Lunar Inspiration)
+	},
 	[164815] = 197488, -- Sunfire (from Balance Affinity talent)
 	[192090] = 77758, -- Thrash
 	[201671] = 200854, -- Gory Fur (Guardian artifact)
@@ -138,6 +150,11 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 		20484, -- Rebirth
 	},
 	[ 93622] = 33917, -- Mangle! -> Mangle
+	[145152] = 5185, -- Bloodtalons -> Healing Touch
+	[155625] = { -- Moonfire (from Lunar Inspiration)
+		  8921, -- Moonfire
+		155625, -- Moonfire (from Lunar Inspiration)
+	},
 	[155722] = 1822, -- Rake
 	[164545] = 197629, -- Solar Empowerment -> Solar Wrath (from Balance Affinity talent)
 	[164547] = 197628, -- Lunar Empowerment -> Lunar Strike (from Balance Affinity talent)
