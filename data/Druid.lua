@@ -23,6 +23,7 @@ if not lib then return end
 lib:__RegisterSpells("DRUID", 70000, 2, {
 	COOLDOWN = {
 		  18562, -- Swiftmend
+		  20484, -- Rebirth (brezz)
 		  33917, -- Mangle
 		 102401, -- Wild Charge (caster)
 		 102417, -- Wild Charge (travel form)
@@ -62,6 +63,10 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 				164545, -- Solar Empowerment
 				164547, -- Lunar Empowerment
 				201671, -- Gory Fur (Guardian artifact)
+				BURST = {
+					  5217, -- Tiger's Fury
+					106951, -- Berserk
+				},
 				SURVIVAL = {
 					 22812, -- Barkskin
 					 61336, -- Survival Instincts
@@ -75,11 +80,13 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 		[339] = "CROWD_CTL", -- Entagling Roots (root)
 		HARMFUL = {
 			  1079, -- Rip
-			155722, -- Rake
+			 58180, -- Infected Wounds (slow)
+			155722, -- Rake (from Feral Affinity)
 			164812, -- Moonfire
 			164815, -- Sunfire (from Balance Affinity talent)
 			CROWD_CTL = {
 				163505, -- Rake (stun)
+				203123, -- Maim (stun)
 			},
 		},
 		HELPFUL = {
@@ -87,6 +94,7 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 			8936, -- Regrowth
 		},
 		PERSONAL = {
+			 69369, -- Predatory Swiftness
 			 93622, -- Mangle!
 			213680, -- Guardian of Elune
 			213708, -- Galactic Guardian
@@ -100,10 +108,12 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 	-- map aura to provider(s)
 	[ 45334] = 102401, -- Immobilized (root) <- Wild Charge
 	[ 50259] = 102401, -- Dazed <- Wild Charge
+	[ 58180] = 48484, -- Infected Wounds (slow)
 	[ 61391] = 132469, -- Typhoon (slow) (knockback)
+	[ 69369] = 16974, -- Predatory Swiftness
 	[ 93622] = 210706, -- Mangle! <- Gore
 	[137452] = 102280, -- Displacer Beast
-	[155722] = 1822, -- Rake
+	[155722] = 202155, -- Rake <- Feral Affinity
 	[158792] = 80313, -- Pulverize
 	[163505] = 1822, -- Rake (stun)
 	[164545] = 197626, -- Solar Empowerment <- Starsurge (from Balance Affinity talent)
@@ -112,6 +122,7 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 	[164815] = 197488, -- Sunfire (from Balance Affinity talent)
 	[192090] = 77758, -- Thrash
 	[201671] = 200854, -- Gory Fur (Guardian artifact)
+	[203123] = 22570, -- Maim (stun)
 	[213680] = 155578, -- Guardian of Elune
 	[213708] = 203964, -- Galactic Guardian
 	[214995] = 200515, -- Bloody Paws (slow) (Guardian artifact)
@@ -120,7 +131,14 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 	-- map aura to modified spell(s)
 	[ 45334] = 16979, -- Immobilized (root) -> Wild Charge (bear)
 	[ 50259] = 49376, -- Dazed -> Wild Charge (cat)
+	[ 58180] = 1822, -- Infected Wounds (slow) -> Rake
+	[ 69369] = { -- Predatory Swiftness
+		  339, -- Entagling Roots
+		 5185, -- Healing Touch
+		20484, -- Rebirth
+	},
 	[ 93622] = 33917, -- Mangle! -> Mangle
+	[155722] = 1822, -- Rake
 	[164545] = 197629, -- Solar Empowerment -> Solar Wrath (from Balance Affinity talent)
 	[164547] = 197628, -- Lunar Empowerment -> Lunar Strike (from Balance Affinity talent)
 	[164815] = 197630, -- Sunfire (from Balance Affinity talent)
