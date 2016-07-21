@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70000, 2, {
+lib:__RegisterSpells("DRUID", 70000, 3, {
 	COOLDOWN = {
 		  18562, -- Swiftmend
 		  20484, -- Rebirth (brezz)
@@ -35,14 +35,15 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 		[202060] = "BURST", -- Elune's Guidance
 		AURA = {
 			HARMFUL = {
-				  6795, -- Growl (taunt)
-				 50259, -- Dazed
-				 61391, -- Typhoon (slow) (knockback)
-				192090, -- Thrash (bear)
-				106830, -- Thrash (cat)
-				210723, -- Ashamane's Frenzy (Feral artifact)
-				214995, -- Bloody Paws (slow) (Guardian artifact)
-				214998, -- Roar of the Crowd (Guardian artifact)
+				   6795, -- Growl (taunt)
+				  50259, -- Dazed
+				  61391, -- Typhoon (slow) (knockback)
+				 192090, -- Thrash (bear)
+				 106830, -- Thrash (cat)
+				 210723, -- Ashamane's Frenzy (Feral artifact)
+				 214995, -- Bloody Paws (slow) (Guardian artifact)
+				 214998, -- Roar of the Crowd (Guardian artifact)
+				[ 81261] = "INTERRUPT", -- Solar Beam
 				CROWD_CTL = {
 					    99, -- Incapacitating Roar (incapacitate)
 					  5211, -- Mighty Bash (stun)
@@ -53,6 +54,7 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 			HELPFUL = {
 				77761, -- Stampeding Roar (bear)
 				77764, -- Stampeding Roar (cat)
+				29166, -- Innervate
 				DISPEL = {
 					2782, -- Remove Corruption
 				},
@@ -72,6 +74,7 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 					  5217, -- Tiger's Fury
 					106951, -- Berserk
 					102543, -- Incarnation: King of the Jungle
+					194223, -- Celestial Alignment
 					210649, -- Feral Instinct (Feral artifact)
 				},
 				SURVIVAL = {
@@ -91,7 +94,8 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 			155625, -- Moonfire (from Lunar Inspiration)
 			155722, -- Rake (from Feral Affinity)
 			164812, -- Moonfire
-			164815, -- Sunfire (from Balance Affinity talent)
+			164815, -- Sunfire
+			197637, -- Stellar Empowerment
 			CROWD_CTL = {
 				163505, -- Rake (stun)
 				203123, -- Maim (stun)
@@ -121,6 +125,7 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 	[ 58180] = 48484, -- Infected Wounds (slow)
 	[ 61391] = 132469, -- Typhoon (slow) (knockback)
 	[ 69369] = 16974, -- Predatory Swiftness
+	[ 81261] = 78675, -- Solar Beam
 	[ 93622] = 210706, -- Mangle! <- Gore
 	[137452] = 102280, -- Displacer Beast
 	[145152] = 155672, -- Bloodtalons
@@ -128,14 +133,24 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 	[155722] = 202155, -- Rake <- Feral Affinity
 	[158792] = 80313, -- Pulverize
 	[163505] = 1822, -- Rake (stun)
-	[164545] = 197626, -- Solar Empowerment <- Starsurge (from Balance Affinity talent)
-	[164547] = 197626, -- Lunar Empowerment <- Starsurge (from Balance Affinity talent)
+	[164545] = { -- Solar Empowerment
+		 78674, -- Starsurge (Balance)
+		197626, -- Starsurge (from Balance Affinity talent)
+	},
+	[164547] = { -- Lunar Empowerment
+		 78674, -- Starsurge (Balance)
+		197626, -- Starsurge (from Balance Affinity talent)
+	},
 	[164812] = { -- Moonfire
 		  8921, -- Moonfire
 		155625, -- Moonfire (from Lunar Inspiration)
 	},
-	[164815] = 197488, -- Sunfire (from Balance Affinity talent)
+	[164815] = { -- Sunfire
+		 93402, -- Sunfire (Balance)
+		197488, -- Sunfire (from Balance Affinity talent)
+	},
 	[192090] = 77758, -- Thrash
+	[197637] = 191034, -- Stellar Empowerment <- Starfall
 	[201671] = 200854, -- Gory Fur (Guardian artifact)
 	[203123] = 22570, -- Maim (stun)
 	[210583] = 210579, -- Ashamane's Energy (Feral artifact)
@@ -162,9 +177,18 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 		155625, -- Moonfire (from Lunar Inspiration)
 	},
 	[155722] = 1822, -- Rake
-	[164545] = 197629, -- Solar Empowerment -> Solar Wrath (from Balance Affinity talent)
-	[164547] = 197628, -- Lunar Empowerment -> Lunar Strike (from Balance Affinity talent)
-	[164815] = 197630, -- Sunfire (from Balance Affinity talent)
+	[164545] = { -- Solar Empowerment
+		190984, -- Solar Wrath (Balance)
+		197629, -- Solar Wrath (from Balance Affinity talent)
+	},
+	[164547] = { -- Lunar Empowerment
+		194153, -- Lunar Strike (Balance)
+		197628, -- Lunar Strike (from Balance Affinity talent)
+	},
+	[164815] = {
+		 93402, -- Sunfire (Balance)
+		197630, -- Sunfire (from Balance Affinity talent)
+	},
 	[201671] = { -- Gory Fur (Guardian artifact)
 		192081, -- Ironfur
 		192083, -- Mark of Ursol
