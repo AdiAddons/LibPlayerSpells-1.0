@@ -40,6 +40,7 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 				 61391, -- Typhoon (slow) (knockback)
 				192090, -- Thrash (bear)
 				106830, -- Thrash (cat)
+				210723, -- Ashamane's Frenzy (Feral artifact)
 				214995, -- Bloody Paws (slow) (Guardian artifact)
 				214998, -- Roar of the Crowd (Guardian artifact)
 				CROWD_CTL = {
@@ -66,10 +67,12 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 				164545, -- Solar Empowerment
 				164547, -- Lunar Empowerment
 				201671, -- Gory Fur (Guardian artifact)
+				210583, -- Ashamane's Energy (Feral artifact)
 				BURST = {
 					  5217, -- Tiger's Fury
 					106951, -- Berserk
 					102543, -- Incarnation: King of the Jungle
+					210649, -- Feral Instinct (Feral artifact)
 				},
 				SURVIVAL = {
 					 22812, -- Barkskin
@@ -135,6 +138,9 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 	[192090] = 77758, -- Thrash
 	[201671] = 200854, -- Gory Fur (Guardian artifact)
 	[203123] = 22570, -- Maim (stun)
+	[210583] = 210579, -- Ashamane's Energy (Feral artifact)
+	[210649] = 210631, -- Feral Instinct (Feral artifact)
+	[210723] = 210722, -- Ashamane's Frenzy (Feral artifact)
 	[213680] = 155578, -- Guardian of Elune
 	[213708] = 203964, -- Galactic Guardian
 	[214995] = 200515, -- Bloody Paws (slow) (Guardian artifact)
@@ -162,6 +168,11 @@ lib:__RegisterSpells("DRUID", 70000, 2, {
 	[201671] = { -- Gory Fur (Guardian artifact)
 		192081, -- Ironfur
 		192083, -- Mark of Ursol
+	},
+	[210583] = 5217, -- Ashamane's Energy (Feral artifact) -> Tiger's Fury
+	[210649] = { -- Feral Instinct (Feral artifact)
+		106951, -- Berserk
+		102543, -- Incarnation: King of the Jungle
 	},
 	[213680] = 33917, -- Guardian of Elune -> Mangle
 	[213708] = 8921, -- Galactic Guardian -> Moonfire
