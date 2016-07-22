@@ -138,6 +138,7 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 			 69369, -- Predatory Swiftness
 			 93622, -- Mangle!
 			145152, -- Bloodtalons
+			189877, -- Power of the Archdruid (Restoration artifact)
 			213680, -- Guardian of Elune
 			213708, -- Galactic Guardian
 			SURVIVAL = {
@@ -186,6 +187,7 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 		 93402, -- Sunfire (Balance)
 		197488, -- Sunfire (from Balance Affinity talent)
 	},
+	[189877] = 189870, -- Power of the Archdruid (Restoration artifact)
 	[192090] = 77758, -- Thrash
 	[197637] = 191034, -- Stellar Empowerment <- Starfall
 	[200389] = 200390, -- Cultivation
@@ -234,6 +236,10 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 	[164815] = {
 		 93402, -- Sunfire (Balance)
 		197630, -- Sunfire (from Balance Affinity talent)
+	},
+	[189877] = { -- Power of the Archdruid (Restoration artifact)
+		 774, -- Rejuvenation
+		8936, -- Regrowth
 	},
 	[200389] = 774, -- Cultivation -> Rejuvenation
 	[201671] = { -- Gory Fur (Guardian artifact)
