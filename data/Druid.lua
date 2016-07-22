@@ -31,6 +31,7 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 		 102417, -- Wild Charge (travel form)
 		 108238, -- Renewal
 		 197626, -- Starsurge (from Balance Affinity talent)
+		 197721, -- Flourish
 		 202028, -- Brutal Slash
 		 202359, -- Astral Communion
 		 202767, -- New Moon (Moonkin artifact)
@@ -71,12 +72,14 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 				 77764, -- Stampeding Roar (cat)
 				 29166, -- Innervate
 				102342, -- Ironbark
+				102351, -- Cenarion Ward
 			},
 			PERSONAL = {
 				  1850, -- Dash
 				  5215, -- Prowl
 				 22842, -- Frenzied Regeneration
 				102558, -- Incarnation: Guardian of Ursoc
+				114108, -- Soul of the Forest
 				137452, -- Displacer Beast
 				155835, -- Bristling Fur
 				164545, -- Solar Empowerment
@@ -92,6 +95,7 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 					106951, -- Berserk
 					102543, -- Incarnation: King of the Jungle
 					102560, -- Incarnation: Chosen of Elune
+					117679, -- Incarnation: Tree of Life
 					194223, -- Celestial Alignment
 					210649, -- Feral Instinct (Feral artifact)
 				},
@@ -121,9 +125,12 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 			},
 		},
 		HELPFUL = {
-			  774, -- Rejuvenation
-			 8936, -- Regrowth
-			33763, -- Lifebloom
+			   774, -- Rejuvenation
+			  8936, -- Regrowth
+			 33763, -- Lifebloom
+			155777, -- Rejuvenation (Germination)
+			200389, -- Cultivation
+			207386, -- Spring Blossoms
 		},
 		PERSONAL = {
 			 16870, -- Clearcasting (Restoration)
@@ -149,6 +156,8 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 	[ 69369] = 16974, -- Predatory Swiftness
 	[ 81261] = 78675, -- Solar Beam
 	[ 93622] = 210706, -- Mangle! <- Gore
+	[114108] = 158478, -- Soul of the Forest
+	[117679] = 33891, -- Incarnation: Tree of Life
 	[127797] = 102793, -- Ursol's Vortex (slow) (knockback)
 	[137452] = 102280, -- Displacer Beast
 	[145152] = 155672, -- Bloodtalons
@@ -158,6 +167,7 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 		202155, -- Feral Affinity (Guardian)
 		202157, -- Feral Affinity (Balance)
 	},
+	[155777] = 155675, -- Rejuvenation (Germination) <- Germination
 	[158792] = 80313, -- Pulverize
 	[163505] = 1822, -- Rake (stun)
 	[164545] = { -- Solar Empowerment
@@ -178,11 +188,13 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 	},
 	[192090] = 77758, -- Thrash
 	[197637] = 191034, -- Stellar Empowerment <- Starfall
+	[200389] = 200390, -- Cultivation
 	[201671] = 200854, -- Gory Fur (Guardian artifact)
 	[202737] = 202360, -- Blessing of Elune <- Blessing of the Ancients
 	[202739] = 202360, -- Blessing of An'she <- Blessing of the Ancients
 	[203123] = 22570, -- Maim (stun)
 	[205644] = 205636, -- Force of Nature
+	[207386] = 207385, -- Spring Blossoms
 	[210583] = 210579, -- Ashamane's Energy (Feral artifact)
 	[210649] = 210631, -- Feral Instinct (Feral artifact)
 	[210723] = 210722, -- Ashamane's Frenzy (Feral artifact)
@@ -202,13 +214,16 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 		20484, -- Rebirth
 	},
 	[ 93622] = 33917, -- Mangle! -> Mangle
+	[114108] = 18562, -- Soul of the Forest -> Swiftmend
 	[145152] = 5185, -- Bloodtalons -> Healing Touch
 	[155625] = { -- Moonfire (from Lunar Inspiration)
 		  8921, -- Moonfire
 		155625, -- Moonfire (from Lunar Inspiration)
 	},
 	[155722] = 1822, -- Rake
+	[155777] = 774, -- Rejuvenation (Germination) -> Rejuvenation
 	[164545] = { -- Solar Empowerment
+		  5176, -- Solar Wrath (Restoration)
 		190984, -- Solar Wrath (Balance)
 		197629, -- Solar Wrath (from Balance Affinity talent)
 	},
@@ -220,11 +235,13 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 		 93402, -- Sunfire (Balance)
 		197630, -- Sunfire (from Balance Affinity talent)
 	},
+	[200389] = 774, -- Cultivation -> Rejuvenation
 	[201671] = { -- Gory Fur (Guardian artifact)
 		192081, -- Ironfur
 		192083, -- Mark of Ursol
 	},
 	[202425] = 194153, -- Warrior of Elune -> Lunar Strike
+	[207386] = 145205, -- Spring Blossoms -> Efflorescence
 	[210583] = 5217, -- Ashamane's Energy (Feral artifact) -> Tiger's Fury
 	[210649] = { -- Feral Instinct (Feral artifact)
 		106951, -- Berserk
