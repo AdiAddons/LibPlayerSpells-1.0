@@ -25,11 +25,13 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 		  18562, -- Swiftmend
 		  20484, -- Rebirth (brezz)
 		  33917, -- Mangle
+		 102383, -- Wild Charge (Moonkin)
 		 102401, -- Wild Charge (caster)
 		 102417, -- Wild Charge (travel form)
 		 108238, -- Renewal
 		 197626, -- Starsurge (from Balance Affinity talent)
 		 202028, -- Brutal Slash
+		 202359, -- Astral Communion
 		 204066, -- Lunar Beam
 		[106839] = "INTERRUPT", -- Skull Bash
 		[202060] = "BURST", -- Elune's Guidance
@@ -40,6 +42,7 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 				  61391, -- Typhoon (slow) (knockback)
 				 192090, -- Thrash (bear)
 				 106830, -- Thrash (cat)
+				 205644, -- Force of Nature
 				 210723, -- Ashamane's Frenzy (Feral artifact)
 				 214995, -- Bloody Paws (slow) (Guardian artifact)
 				 214998, -- Roar of the Crowd (Guardian artifact)
@@ -69,11 +72,16 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 				164545, -- Solar Empowerment
 				164547, -- Lunar Empowerment
 				201671, -- Gory Fur (Guardian artifact)
+				202737, -- Blessing of Elune
+				202739, -- Blessing of An'she
 				210583, -- Ashamane's Energy (Feral artifact)
+				202425, -- Warrior of Elune
+				202770, -- Fury of Elune
 				BURST = {
 					  5217, -- Tiger's Fury
 					106951, -- Berserk
 					102543, -- Incarnation: King of the Jungle
+					102560, -- Incarnation: Chosen of Elune
 					194223, -- Celestial Alignment
 					210649, -- Feral Instinct (Feral artifact)
 				},
@@ -92,10 +100,11 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 			  1079, -- Rip
 			 58180, -- Infected Wounds (slow)
 			155625, -- Moonfire (from Lunar Inspiration)
-			155722, -- Rake (from Feral Affinity)
+			155722, -- Rake
 			164812, -- Moonfire
 			164815, -- Sunfire
 			197637, -- Stellar Empowerment
+			202374, -- Stellar Flare
 			CROWD_CTL = {
 				163505, -- Rake (stun)
 				203123, -- Maim (stun)
@@ -130,7 +139,11 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 	[137452] = 102280, -- Displacer Beast
 	[145152] = 155672, -- Bloodtalons
 	[155625] = 155580, -- Moonfire <- Lunar Inspiration
-	[155722] = 202155, -- Rake <- Feral Affinity
+	[155722] = { -- Rake
+		  1822, -- Rake (Feral)
+		202155, -- Feral Affinity (Guardian)
+		202157, -- Feral Affinity (Balance)
+	},
 	[158792] = 80313, -- Pulverize
 	[163505] = 1822, -- Rake (stun)
 	[164545] = { -- Solar Empowerment
@@ -152,7 +165,10 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 	[192090] = 77758, -- Thrash
 	[197637] = 191034, -- Stellar Empowerment <- Starfall
 	[201671] = 200854, -- Gory Fur (Guardian artifact)
+	[202737] = 202360, -- Blessing of Elune <- Blessing of the Ancients
+	[202739] = 202360, -- Blessing of An'she <- Blessing of the Ancients
 	[203123] = 22570, -- Maim (stun)
+	[205644] = 205636, -- Force of Nature
 	[210583] = 210579, -- Ashamane's Energy (Feral artifact)
 	[210649] = 210631, -- Feral Instinct (Feral artifact)
 	[210723] = 210722, -- Ashamane's Frenzy (Feral artifact)
@@ -193,6 +209,7 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 		192081, -- Ironfur
 		192083, -- Mark of Ursol
 	},
+	[202425] = 194153, -- Warrior of Elune -> Lunar Strike
 	[210583] = 5217, -- Ashamane's Energy (Feral artifact) -> Tiger's Fury
 	[210649] = { -- Feral Instinct (Feral artifact)
 		106951, -- Berserk
