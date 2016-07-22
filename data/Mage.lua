@@ -20,4 +20,57 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", 70000, 1, {})
+lib:__RegisterSpells("MAGE", 70000, 2, {
+	COOLDOWN = {
+		INTERRUPT = {
+			2139, -- Counterspell
+		},
+		AURA = {
+			PERSONAL = {
+				205025, -- Presence of Mind (Arcane Talent)
+				 12042, -- Arcane Power (Arcane)
+				 55342, -- Mirror Image (Arcane Talent) NOTE: No Aura
+				212799, -- Displacement (Arcane)
+				 12051, -- Evocation (Arcane)
+				116014, -- Rune of Power (Arcane Talent)
+				SURVIVAL = {
+					 45438, -- Ice Block
+					 11426, -- Ice Barrier
+					110960, -- Greater Invisibility
+				},
+			},
+			HELPFUL = {
+
+			},
+			HARMFUL = {
+				CROWD_CTL = {
+					122, -- Frost Nova (root)
+				}
+
+			},
+		},
+	},
+	AURA = {
+		HELPFUL = {
+			130, -- Slow Fall
+		},
+		HARMFUL = {
+			CROWD_CTL = {
+				  118, -- Polymorph (sheep)
+				31589, -- Slow (slow) (Arcane)
+			}
+		},
+		PERSONAL = {
+			210126, -- Arcane Familiar (Arcane Talent)
+		},
+	},
+}, {
+	-- map aura to provider(s)
+	[110960] = 110959, -- Greater Invisibility
+	[212799] = 195676, -- Displacement
+	[210126] = 205022, -- Arcane Familiar
+	[116014] = 116011, -- Rune of Power
+}, {
+	-- map aura to modified spell(s)
+	[205025] = 30451, -- Presence of Mind -> Arcane Blast
+})
