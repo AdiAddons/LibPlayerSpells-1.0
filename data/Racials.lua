@@ -20,12 +20,12 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0", true)
 if not lib then return end
-lib:__RegisterSpells("RACIAL", 60200, 1, {
+lib:__RegisterSpells("RACIAL", 70000, 1, {
 	COOLDOWN = {
 		AURA = {
 			PERSONAL = {
 				26297, -- Berserking (Troll)
-				20542, -- Blood Fury (Orc attack power)
+				20572, -- Blood Fury (Orc attack power)
 				33702, -- Blood Fury (Orc spell power)
 				33697, -- Blood Fury (Orc both)
 				65116, -- Stoneform (Dwarf)

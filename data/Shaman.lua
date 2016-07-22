@@ -33,7 +33,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70000, 1, {
+lib:__RegisterSpells("SHAMAN", 70000, 2, {
 	COOLDOWN = {
 		198067, -- Fire Elemental
 		198103, -- Earth Elemental
@@ -48,6 +48,8 @@ lib:__RegisterSpells("SHAMAN", 70000, 1, {
 			},
 			PERSONAL = {
 				[108271] = "SURVIVAL", -- Astral Shift
+				  58875, -- Spirit Walk (Enhancement)
+				 114051, -- Ascendance (Enhancement)
 			},
 		},
 	},
@@ -64,6 +66,10 @@ lib:__RegisterSpells("SHAMAN", 70000, 1, {
 			 2645, -- Ghost Wolf
 			 6196, -- Far Sight
 			77762, -- Lava Surge
+		   194084, -- Flametongue (Enhancement)
+		   196834, -- Frostbrand (Enhancement)
+		   187878, -- Crash Lightning (Enhancement)
+		   215785, -- Hot Hand (Enhancement)
 		},
 	},
 	DISPEL = {
@@ -74,7 +80,14 @@ lib:__RegisterSpells("SHAMAN", 70000, 1, {
 	-- map aura to provider(s)
 	[ 77762] = 77756, -- Lava Surge
 	[182387] = 61882, -- Earthquake <- Earthquake Totem
+	[194084] = 193796, -- Flametounge (Enhancement)
+	[187878] = 187874, -- Crash Lightning (Enhancement)
+	[215785] = 60103, -- Hot Hands <- Lava Lash (Enhancement)
 }, {
 	-- map aura to modified spell(s)
 	[77762] = 51505, -- Lava Surge -> Lava Burst
+--	[187878] = { -- Crash Lightning (Enhancement)
+--		60103, -- Lava Lash (Enhancement)
+--		17364, -- Stormstrike (Enhancement)
+--	},
 })
