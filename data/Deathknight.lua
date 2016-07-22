@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", 70000, 1, {
+lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 	COOLDOWN = {
 		  61999, -- Raise Ally
 		 205233, -- Consumption (Blood artifact)
@@ -36,11 +36,16 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 1, {
 				CROWD_CTL = {
 					206961, -- Tremble Before Me (disorient)
 					221562, -- Asphyxiate (stun)
+					207167, -- Blinding Sleet (disorient) (Frost Talent)
 				},
 			},
 			PERSONAL = {
 				188290, -- Death and Decay
 				212552, -- Wraith Walk
+				 51271, -- Pillar of Frost (Frost)
+				207256, -- Obliteration (Frost Talent)
+				207127, -- Hungering Rune Weapon (Frost Talent)
+				152279, -- Breath of Sindragosa (Frost Talent)
 				SURVIVAL = {
 					 48707, -- Anti-Magic Shield
 					 55233, -- Vampiric Blood
@@ -50,6 +55,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 1, {
 					194844, -- Bonestorm
 					205725, -- Anti-Magic Barrier
 					219809, -- Tombstone
+					 48792, -- Icebound Fortitude (Frost)
 				},
 			},
 		},
@@ -62,12 +68,15 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 1, {
 			 55078, -- Blood Plague
 			206930, -- Hearth Strike (slow)
 			206940, -- Mark of Blood
+			 55095, -- Frost Fever (Frost)
+			 51714, -- Razorice (Frost)
 		},
 		PERSONAL = {
 			 77535, -- Blood Shield
 			 81141, -- Crimson Scourge
 			195181, -- Bone Shield
 			213003, -- Soulgorge
+			196770, -- Remorseless Winter (Frost)
 		},
 		PET = {
 			[111673] = "INVERT_AURA", -- Control Undead
@@ -91,6 +100,8 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 1, {
 	[205725] = 205727, -- Anti-Magic Barrier
 	[206961] = 206960, -- Tremble Before Me (disorient)
 	[213003] = 212744, -- Soulgorge
+	[ 55095] = 49184, -- Frost Ferver -> Howling Blast
+	[ 51714] = 49143, -- Razorice -> Frost Strike
 }, {
 	-- map aura to modified spell(s)
 	[ 77535] = { -- Blood Shield
