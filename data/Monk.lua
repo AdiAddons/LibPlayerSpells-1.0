@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70000, 3, {
+lib:__RegisterSpells("MONK", 70000, 4, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
@@ -38,16 +38,18 @@ lib:__RegisterSpells("MONK", 70000, 3, {
 		 198664, -- Invoke Chi-Ji, the Red Crane
 		[115176] = "SURVIVAL", -- Zen Meditation
 		[116705] = "INTERRUPT", -- Spear Hand Strike
+		DISPEL = {
+			HELPFUL = {
+				115450, -- Detox (MW)
+				218164, -- Detox (BM and WW)
+			},
+		},
 		AURA = {
 			HELPFUL = {
 				116841, -- Tiger's Lust
 				116849, -- Life Cocoon
 				119611, -- Renewing Mist
 				199668, -- Blessings of Yu'lon (MW artifact)
-				DISPEL = {
-					115450, -- Detox (MW)
-					218164, -- Detox (BM and WW)
-				},
 			},
 			HARMFUL = {
 				 115080, -- Touch of Death
