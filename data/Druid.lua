@@ -20,8 +20,9 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70000, 3, {
+lib:__RegisterSpells("DRUID", 70000, 4, {
 	COOLDOWN = {
+		    740, -- Tranquility
 		  18562, -- Swiftmend
 		  20484, -- Rebirth (brezz)
 		  33917, -- Mangle
@@ -38,11 +39,18 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 		 204066, -- Lunar Beam
 		[106839] = "INTERRUPT", -- Skull Bash
 		[202060] = "BURST", -- Elune's Guidance
+		DISPEL = {
+			HELPFUL = {
+				 2782, -- Remove Corruption
+				88423, -- Nature's Cure
+			},
+		},
 		AURA = {
 			HARMFUL = {
 				   6795, -- Growl (taunt)
 				  50259, -- Dazed
 				  61391, -- Typhoon (slow) (knockback)
+				 127797, -- Ursol's Vortex (slow) (knockback)
 				 192090, -- Thrash (bear)
 				 106830, -- Thrash (cat)
 				 205644, -- Force of Nature
@@ -58,12 +66,11 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 				},
 			},
 			HELPFUL = {
-				77761, -- Stampeding Roar (bear)
-				77764, -- Stampeding Roar (cat)
-				29166, -- Innervate
-				DISPEL = {
-					2782, -- Remove Corruption
-				},
+				 48438, -- Wild Growth
+				 77761, -- Stampeding Roar (bear)
+				 77764, -- Stampeding Roar (cat)
+				 29166, -- Innervate
+				102342, -- Ironbark
 			},
 			PERSONAL = {
 				  1850, -- Dash
@@ -114,10 +121,12 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 			},
 		},
 		HELPFUL = {
-			 774, -- Rejuvenation
-			8936, -- Regrowth
+			  774, -- Rejuvenation
+			 8936, -- Regrowth
+			33763, -- Lifebloom
 		},
 		PERSONAL = {
+			 16870, -- Clearcasting (Restoration)
 			 52610, -- Savage Roar
 			 69369, -- Predatory Swiftness
 			 93622, -- Mangle!
@@ -132,6 +141,7 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 	},
 }, {
 	-- map aura to provider(s)
+	[ 16870] = 113043, -- Clearcasting (Restoration) <- Omen of Clarity
 	[ 45334] = 102401, -- Immobilized (root) <- Wild Charge
 	[ 50259] = 102401, -- Dazed <- Wild Charge
 	[ 58180] = 48484, -- Infected Wounds (slow)
@@ -139,6 +149,7 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 	[ 69369] = 16974, -- Predatory Swiftness
 	[ 81261] = 78675, -- Solar Beam
 	[ 93622] = 210706, -- Mangle! <- Gore
+	[127797] = 102793, -- Ursol's Vortex (slow) (knockback)
 	[137452] = 102280, -- Displacer Beast
 	[145152] = 155672, -- Bloodtalons
 	[155625] = 155580, -- Moonfire <- Lunar Inspiration
@@ -181,6 +192,7 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 	[214998] = 214996, -- Roar of the Crowd (Guardian artifact)
 }, {
 	-- map aura to modified spell(s)
+	[ 16870] = 8936, -- Clearcasting (Restoration) -> Regrowth
 	[ 45334] = 16979, -- Immobilized (root) -> Wild Charge (bear)
 	[ 50259] = 49376, -- Dazed -> Wild Charge (cat)
 	[ 58180] = 1822, -- Infected Wounds (slow) -> Rake
