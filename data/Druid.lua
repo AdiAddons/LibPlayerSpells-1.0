@@ -32,6 +32,9 @@ lib:__RegisterSpells("DRUID", 70000, 3, {
 		 197626, -- Starsurge (from Balance Affinity talent)
 		 202028, -- Brutal Slash
 		 202359, -- Astral Communion
+		 202767, -- New Moon (Moonkin artifact)
+		 202768, -- Half Moon (Moonkin artifact)
+		 202771, -- Full Moon (Moonkin artifact)
 		 204066, -- Lunar Beam
 		[106839] = "INTERRUPT", -- Skull Bash
 		[202060] = "BURST", -- Elune's Guidance
