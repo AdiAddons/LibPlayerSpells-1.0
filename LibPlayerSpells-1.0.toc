@@ -1,9 +1,9 @@
-## Interface: 60000
+## Interface: 70000
 ## Title: Lib: PlayerSpells-1.0
 ## Notes: Additional information about player spells.
 ## Author: Adirelle
 ## Version: @project-version@
-#-# LoadOnDemand: 1
+## LoadOnDemand: 1
 ## X-Date: @project-date-iso@
 ## X-Category: Library
 ## X-License: GPL v3

@@ -33,155 +33,61 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", "60000", 6, {
+lib:__RegisterSpells("SHAMAN", 70000, 2, {
 	COOLDOWN = {
-		[ 2062] = "SURVIVAL", -- Earth Elemental Totem
-		  5394, -- Healing Stream Totem
-		  8143, -- Tremor Totem
-		 20608, -- Reincarnation
-		 73680, -- Unleash Elements
-		108285, -- Call of the Elements (Talent)
+		198067, -- Fire Elemental
+		198103, -- Earth Elemental
 		INTERRUPT = {
 			57994, -- Wind Shear
 		},
-		BURST = {
-			 2894, -- Fire Elemental Totem
-			51533, -- Feral Spirit (Enhancement)
-		},
 		AURA = {
-			PERSONAL = {
-				 16188, -- Ancestral Swiftness (Talent)
-				 58875, -- Spirit Walk (Enhancement)
-				 79206, -- Spiritwalker's Grace (Elemental, Restoration)
-				108281, -- Ancestral Guidance (Talent)
-				SURVIVAL = {
-					 30823, -- Shamanistic Rage (Elemental, Enhancement)
-					108270, -- Stone Bulwark Totem (Talent)
-					108271, -- Astral Shift (Talent)
-					108280, -- Healing Tide Totem (Restoration)
-				},
-				BURST = {
-					 16166, -- Elemental Mastery (Talent)
-					114050, -- Ascendance (Elemental)
-					114051, -- Ascendance (Enhancement)
-					114052, -- Ascendance (Restoration)
-				},
-			},
-			HELPFUL = {
-				   8178, -- Grounding Totem
-				[ 98008] = "SURVIVAL", -- Spirit Link Totem (Restoration)
-				 114896, -- Windwalker Totem (Talent)
-			},
+			HELPFUL = {},
 			HARMFUL = {
-				  2484, -- Earthbind Totem
-				108269, -- Capacitator Totem
-				 51485, -- Earthgrab Totem (Talent)
+				 51490, -- Thunderstorm (slow)
+				[51514] = "CROWD_CTL", -- Hex
+			},
+			PERSONAL = {
+				[108271] = "SURVIVAL", -- Astral Shift
+				  58875, -- Spirit Walk (Enhancement)
+				 114051, -- Ascendance (Enhancement)
 			},
 		},
 	},
 	AURA = {
-		PERSONAL = {
-			 53390, -- Tidal Wave (Restoration)
-			 73681, -- Unleash Wind (Enhancement) NOTE: Buff not tracked to not cause confusion wiht Unleash Flame
-			 73683, -- Unleash Flame (Enhancement)
-			 73685, -- Unleash Life (Restoration)
-			 73920, -- Healing Rain (Self Indicator)
-			118472, -- Unleashed Fury (Talent)
-			118522, -- Elemental Blast: Critical (Talent)
-			159101, -- Echo of the Elements (Elemental buff)
-			159103, -- Echo of the Elements (Enhancement buff)
-			159105, -- Echo of the Elements (Restoration buff)
-			165462, -- Unleash Flame (Elemental)
-			173183, -- Elemental Blast: Haste (Talent)
-			173184, -- Elemental Blast: Mastery (Talent)
-			173185, -- Elemental Blast: Multistrike (Talent)
-			173186, -- Elemental Blast: Agility (Talent)
-			173187, -- Elemental Blast: Spirit (Talent)
-			IMPORTANT = {
-				53817, -- Maelstrom Weapon (Enchancement)
-			},
-			UNIQUE_AURA = {
-				  324, -- Lightning Shield
-				52127, -- Water Shield
-			},
-		},
 		HELPFUL = {
-			[  974] = "UNIQUE_AURA", -- Earth Shield
-			   546, -- Water Walking
-			 61295, -- Riptide (Restoration)
+			546, -- Water Walking
 		},
 		HARMFUL = {
-			  8050, -- Flame Shock
-			  8056, -- Frost Shock
-			  3600, -- Earbinding Totem
-			 17364, -- Stormstrike (Enhancement)
-			 61882, -- Earthquake (Elemental)
-			 63685, -- Frozen Power (Talent)
-			 64695, -- Earthgab Totem Root(Talent)
-			118905, -- Capacitor Totem Stun
+			182387, -- Earthquake
+			188389, -- Flame Shock
+			196840, -- Frost Shock (slow)
+		},
+		PERSONAL = {
+			 2645, -- Ghost Wolf
+			 6196, -- Far Sight
+			77762, -- Lava Surge
+		   194084, -- Flametongue (Enhancement)
+		   196834, -- Frostbrand (Enhancement)
+		   187878, -- Crash Lightning (Enhancement)
+		   215785, -- Hot Hand (Enhancement)
 		},
 	},
 	DISPEL = {
-		[370] = "HARMFUL COOLDOWN", -- Purge
-		["HELPFUL COOLDOWN"] = {
-			51886, -- Cleanse Spirit
-			77130, -- Purify Spirit
-		}
-	},
-	RAIDBUFF = {
-		[  2825] = "BURST_HASTE",   -- Bloodlust (Horde shaman)
-		[ 32182] = "BURST_HASTE",   -- Heroism (Alliance shaman)
-		[116956] = "MASTERY HASTE", -- Grace of Air
+		[  370] = "HARMFUL", -- Purge
+		[51866] = "HELPFUL COOLDOWN", -- Cleanse Spirit
 	},
 }, {
-	-- Map aura to provider
-	[  3600] = {2484, 51485}, -- Earthbind <= Earthbinding Totem, Earthgrab Totem
-	[  8178] =   8177, -- Grounding Totem
-	[ 53390] =  51564, -- Tidal Wave
-	[ 53817] =  51530, -- Maelstrom Weapon
-	[ 63685] =   8056, -- Frozen Power => Frost Shock (Talent)
-	[ 64695] =  51485, -- Earthgrab Totem Root (Talent)
-	[ 73683] =  73680, -- Unleash Flame => Unleash Elements (Enhancement)
-	[114050] = 165339, -- Ascendance (Elemental)
-	[114051] = 165341, -- Ascendance (Enhancement)
-	[114052] = 165344, -- Ascendance (Restoration)
-	[114896] = 108273, -- Windwalker Totem (Talent)
-	[118472] =  73680, -- Unleashed Fury (Talent)
-	[118522] = 117014, -- Elemental Blast: Critical (Talent)
-	[118905] = 108269, -- Capacitor Totem
-	[159101] = 108283, -- Echo of the Elements (Elemental buff) <- Echo of the Elements (Talent)
-	[159103] = 108283, -- Echo of the Elements (Enhancement buff) <- Echo of the Elements (Talent)
-	[159105] = 108283, -- Echo of the Elements (Restoration buff) <- Echo of the Elements (Talent)
-	[173183] = 117014, -- Elemental Blast: Haste (Talent)
-	[173184] = 117014, -- Elemental Blast: Mastery (Talent)
-	[173185] = 117014, -- Elemental Blast: Multistrike (Talent)
-	[173186] = 117014, -- Elemental Blast: Agility (Talent)
-	[173187] = 117014, -- Elemental Blast: Spirit (Talent)
+	-- map aura to provider(s)
+	[ 77762] = 77756, -- Lava Surge
+	[182387] = 61882, -- Earthquake <- Earthquake Totem
+	[194084] = 193796, -- Flametounge (Enhancement)
+	[187878] = 187874, -- Crash Lightning (Enhancement)
+	[215785] = 60103, -- Hot Hands <- Lava Lash (Enhancement)
 }, {
-	-- Map aura to modified spell(s)
-	[ 53390] = { -- Tidal Wave
-		 8004, -- Healing Surge (Restoration)
-		77472, -- Healing Wave
-	},
-	[ 53817] = { -- Maelstrom Weapon
-		  403, -- Lightning
-		  421, -- Chain Lighting
-		 8004, -- Healing Surge
-		73920, -- Healing Rain (Enhancement)
-	},
-	[159101] = { -- Echo of the Elements (Elemental buff)
-		 8056, -- Frost Shock
-		51505, -- Lava Burst
-		61882, -- Earthquake
-	},
-	[159103] = { -- Echo of the Elements (Enhancement buff)
-		 1535, -- Fire Nova
-		17364, -- Stormstrike
-		60103, -- Lava Lash
-	},
-	[159105] = { -- Echo of the Elements (Restoration buff)
-		61295, -- Riptide
-		73685, -- Unleash Life
-		77130, -- Purify Spirit
-	},
+	-- map aura to modified spell(s)
+	[77762] = 51505, -- Lava Surge -> Lava Burst
+--	[187878] = { -- Crash Lightning (Enhancement)
+--		60103, -- Lava Lash (Enhancement)
+--		17364, -- Stormstrike (Enhancement)
+--	},
 })

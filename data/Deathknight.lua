@@ -20,105 +20,130 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", "60000", 5, {
+lib:__RegisterSpells("DEATHKNIGHT", 70000, 4, {
 	COOLDOWN = {
-		 42650, -- Army of the Dead
-		 47568, -- Empower Rune Weapon
-		[48734] = "SURVIVAL", -- Death Pact
-		 61999, -- Raise Ally
-		INTERRUPT = {
-			[47476] = "HARMFUL AURA", -- Strangulate
-			 47528, -- Mind Freeze
-			[91802] = "HARMFUL AURA", -- Shambling Rush (Ghoul) -- NOTE: 2 sec root. Inclusion in DRData?
-		},
+		  47568, -- Empower Rune Weapon
+		  50997, -- Death Gate
+		  57330, -- Horn of Winter
+		  61999, -- Raise Ally
+		 194913, -- Glacial Advance
+		 205233, -- Consumption (Blood artifact)
+		 221699, -- Blood Tap
+		[ 47528] = "INTERRUPT", -- Mind Freeze
+		[108199] = "CROWD_CTL", -- Gorefiend's Grasp (knockback)
 		AURA = {
-			HELPFUL = {
-				[145629] = 'SURVIVAL', -- Anti-Magic Zone
-			},
 			HARMFUL = {
-				49206, -- Summon Gargoyle
-				91797, -- Monstrous Blow (Ghoul) -- NOTE: listed only as provider in DRData?
-				91800, -- Gnaw (Ghoul) -- NOTE: listed only as provider in DRData?
+				  51399, -- Death Grip (taunt)
+				  56222, -- Dark Command (taunt)
+				 190780, -- Frost Breath (Frost artifact) (slow)
+				 206931, -- Blooddrinker
+				 211793, -- Remorseless Winter (slow)
+				 212764, -- White Walker (slow)
+				[206977] = "SURVIVAL", -- Blood Mirror
+				CROWD_CTL = {
+					206961, -- Tremble Before Me (disorient)
+					207167, -- Blinding Sleet (disorient)
+					221562, -- Asphyxiate (stun)
+				},
 			},
 			PERSONAL = {
 				 51271, -- Pillar of Frost
-				 96268, -- Death's Advance
-				108200, -- Remorseless Winter
-				115989, -- Unholy Blight
 				152279, -- Breath of Sindragosa
+				196770, -- Remorseless Winter
+				188290, -- Death and Decay
+				207127, -- Hungering Rune Weapon
+				207256, -- Obliteration
+				212552, -- Wraith Walk
 				SURVIVAL = {
-					 42650, -- Army of the Dead
-					 48707, -- Anti-Magic Shell
+					 48707, -- Anti-Magic Shield
 					 48792, -- Icebound Fortitude
-					 49039, -- Lichborne
-					 49222, -- Bone Shield (Blood)
 					 55233, -- Vampiric Blood
 					 81256, -- Dancing Rune Weapon
-					115018, -- Desecrated Ground
-					171049, -- Rune Tap (Blood)
+					193320, -- Umbilicus Eternus (Blood artifact)
+					194679, -- Rune Tap
+					194844, -- Bonestorm
+					205725, -- Anti-Magic Barrier
+					219809, -- Tombstone
 				},
 			},
 		},
 	},
 	AURA = {
-		PERSONAL = {
-			  3714, -- Path of Frost
-			 48263, -- Blood Presence
-			 48265, -- Unholy Presence
-			 48266, -- Frost Presence
-			 50421, -- Scent of Blood (stacked(5) by casting Blood Boil)
-			 51124, -- Killing Machine
-			 59052, -- Freezing Fog
-			 77535, -- Blood Shield (Blood)
-			 81141, -- Crimson Scourge (Blood)
-			 81340, -- Sudden Doom
-			114851, -- Blood Charge
-			119975, -- Conversion
-		},
-		PET = {
-			  63560, -- Dark Transformation -- NOTE: shadow infusion is not possible when this is active
-			  91342, -- Shadow Infusion
-			[111673] = "INVERT_AURA" -- Control Undead
-		},
 		HELPFUL = {
-			115635, -- Death Barrier
+			3714, -- Path of Frost
 		},
 		HARMFUL = {
-			 43265, -- Death and Decay
-			 45524, -- Chains of Ice
+			 45524, -- Chains of Ice (slow)
 			 55078, -- Blood Plague
 			 55095, -- Frost Fever
-			 77606, -- Dark Simulacrum
-			114866, -- Soul Reaper (Blood)
-			130735, -- Soul Reaper (Frost)
-			130736, -- Soul Reaper (Unholy)
-			155159, -- Necrotic Plague
+			206930, -- Hearth Strike (slow)
+			206940, -- Mark of Blood
+			211794, -- Winter is Coming
+			211831, -- Abomination's Might (slow)
+			CROWD_CTL = {
+				207165, -- Abomination's Might (stun)
+				207171, -- Winter is Coming (stun)
+			},
+		},
+		PERSONAL = {
+			 51124, -- Killing Machine
+			 59052, -- Rime
+			 77535, -- Blood Shield
+			 81141, -- Crimson Scourge
+			194879, -- Icy Talons
+			195181, -- Bone Shield
+			207203, -- Frost Shield
+			213003, -- Soulgorge
+		},
+		PET = {
+			[111673] = "INVERT_AURA", -- Control Undead
 		},
 	},
-	RAIDBUFF = {
-		[ 55610] = "HASTE VERSATILITY", -- Unholy Aura
-		[ 57330] = "ATK_POWER",         -- Horn of Winter
-		[155522] = "MASTERY",           -- Power of the Grave
+}, {
+	-- map aura to provider(s)
+	[ 51124] = 51128, -- Killing Machine
+	[ 51399] = 49576, -- Death Grip (taunt)
+	[ 55078] = { -- Blood Plague
+		 50842, -- Blood Boil
+		195292, -- Death's Caress
 	},
+	[ 55095] = 49184, -- Frost Ferver -> Howling Blast
+	[ 59052] = 59057, -- Rime
+	[ 77535] = 77513, -- Blood Shield <- Mastery: Blood Shield
+	[ 81256] = 49028, -- Dancing Rune Weapon
+	[ 81141] = 81136, -- Crimson Scourge
+	[188290] = 43265, -- Death and Decay
+	[190780] = 190778, -- Frost Breath (Frost artifact) (slow)
+	[193320] = 193213, -- Umbilicus Eternus (Blood artifact)
+	[194879] = 194878, -- Icy Talons
+	[195181] = 195182, -- Bone Shield <- Marrowrend
+	[205725] = 205727, -- Anti-Magic Barrier
+	[206961] = 206960, -- Tremble Before Me (disorient)
+	[207165] = 207161, -- Abomination's Might (stun)
+	[207171] = 207170, -- Winter is Coming (stun)
+	[207203] = 207200, -- Frost Shield <- Permafrost
+	[211793] = 196770, -- Remorseless Winter (slow)
+	[211794] = 207170, -- Winter is Coming
+	[211831] = 207161, -- Abomination's Might (slow)
+	[212764] = 212765, -- White Walker (slow)
+	[213003] = 212744, -- Soulgorge
 }, {
-	-- Map aura to provider
-	[ 51124] =                    51128, -- Killing Machine
-	[ 55078] =                    45462, -- Blood Plague <= Plague Strike
-	[ 55095] =        { 45477, 49184, }, -- Icy Fever <= Icy Touch, Howling Blast
-	[ 77535] =                    49998, -- Blood Shield <= Death Strike
-	[ 81141] =                    81136, -- Crimson Scourge
-	[ 81256] =                    49028, -- Dancing Rune Weapon
-	[ 81340] =                    49530, -- Sudden Doom
-	[ 91342] =                    49572, -- Shadow Infusion
-	[ 91797] =                    47481, -- Monstrous Blow <= Gnaw (Ghoul)
-	[ 91802] =                    47482, -- Shambling Rush <= Leap (Ghoul)
-	[ 91800] =                    47481, -- Gnaw (Ghoul)
-	[114851] =                    45529, -- Blood Charge <= Blood Tap
-	[115635] =                    63333, -- Death Barrier <= Glyph of Death Coil
-	[115018] =                   108201, -- Desecrated Ground
-	[145629] =                    51052, -- Anti-Magic Zone
-	[155159] = { 45462, 45477, 49184, }, -- Necrotic Plague <= Plague Strike, Icy Touch, Howling Blast -- Might be better with a custom rule for stacks.
-	[171049] =                    48982, -- Rune Tap
-}, {
-	-- Map aura to modified spell(s)
+	-- map aura to modified spell(s)
+	[ 51124] = { -- Killing Machine
+		 49020, -- Obliterate
+		207230, -- Frostscythe
+	},
+	[ 59052] = 49184, -- Rime -> Howling Blast
+	[ 77535] = 49998, -- Blood Shield -> Death Strike
+	[ 81141] = 43265, -- Crimson Scourge -> Death and Decay
+	[193320] = 55233, -- Umbilicus Eternus (Blood artifact) -> Vampiric Blood
+	[194879] = 49143, -- Icy Talons -> Frost Strike
+	[205725] = 48707, -- Anti-Magic Barrier -> Anti-Magic Shell
+	[206961] = 43265, -- Tremble Before Me (disorient) -> Death and Decay
+	[207165] = 49020, -- Abomination's Might (stun) -> Obliterate
+	[207171] = 196770, -- Winter is Coming (stun) -> Remorseless Winter
+	[207203] = 6603, -- Frost Shield -> Auto Attack
+	[211794] = 196770, -- Winter is Coming -> Remorseless Winter
+	[211831] = 49020, -- Abomination's Might (slow) -> Obliterate
+	[212764] = 212552, -- White Walker (slow) -> Wraith Walk
 })

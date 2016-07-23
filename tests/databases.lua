@@ -37,7 +37,7 @@ function testDatabases:setup()
 	when(G.geterrorhandler()).thenAnswer(error)
 	when(G.GetBuildInfo()).thenAnswer(0, 0, 0, 0)
 	when(G.LibStub("LibPlayerSpells-1.0")).thenAnswer(lib)
-	when(G.GetSpellLink(any())).thenAnswer(true)
+	when(G.GetSpellInfo(any())).thenAnswer(true)
 end
 
 local sources = {

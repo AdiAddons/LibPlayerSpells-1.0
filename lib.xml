@@ -3,6 +3,7 @@
 	<Script file="LibPlayerSpells-1.0.lua"/>
 	<Script file="data\Racials.lua"/>
 	<Script file="data\Deathknight.lua"/>
+	<Script file="data\Demonhunter.lua"/>
 	<Script file="data\Druid.lua"/>
 	<Script file="data\Hunter.lua"/>
 	<Script file="data\Mage.lua"/>

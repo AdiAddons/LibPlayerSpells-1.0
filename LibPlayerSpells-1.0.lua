@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 5
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 7
 if LibStub then
 	lib = LibStub:NewLibrary(MAJOR, MINOR)
 	if not lib then return end
@@ -30,7 +30,7 @@ local _G = _G
 local ceil = _G.ceil
 local error = _G.error
 local format = _G.format
-local GetSpellLink = _G.GetSpellLink
+local GetSpellInfo = _G.GetSpellInfo
 local ipairs = _G.ipairs
 local max = _G.max
 local next = _G.next
@@ -67,6 +67,7 @@ lib.constants = {
 	WARLOCK     = 0x00000200,
 	WARRIOR     = 0x00000400,
 	RACIAL      = 0x00000800, -- Racial trait
+	DEMONHUNTER = 0x00001000,
 
 	-- Raid buff types, *requires* RAIDBUFF, else this messes up sources
 	STATS       = 0x00000001, -- +5% strengh, agility and intellect
@@ -106,10 +107,23 @@ local RAID_BUFF_TYPES = {
 	constants.BURST_HASTE,
 }
 
+local RAIDBUFF_CATEGORY_NAMES = {
+	[constants.STATS]       = RAID_BUFF_1,
+	[constants.STAMINA]     = RAID_BUFF_2,
+	[constants.ATK_POWER]   = RAID_BUFF_3,
+	[constants.HASTE]       = RAID_BUFF_4,
+	[constants.SPL_POWER]   = RAID_BUFF_5,
+	[constants.CRITICAL]    = RAID_BUFF_6,
+	[constants.MASTERY]     = RAID_BUFF_7,
+	[constants.MULTISTRIKE] = RAID_BUFF_8,
+	[constants.VERSATILITY] = RAID_BUFF_9,
+}
+
 -- Convenient bitmasks
 lib.masks = {
 	CLASS = bor(
 		constants.DEATHKNIGHT,
+		constants.DEMONHUNTER,
 		constants.DRUID,
 		constants.HUNTER,
 		constants.MAGE,
@@ -123,6 +137,7 @@ lib.masks = {
 	),
 	SOURCE = bor(
 		constants.DEATHKNIGHT,
+		constants.DEMONHUNTER,
 		constants.DRUID,
 		constants.HUNTER,
 		constants.MAGE,
@@ -169,6 +184,7 @@ local spells = lib.__spells
 -- Spells by categories
 lib.__categories = lib.__categories or {
 	DEATHKNIGHT = {},
+	DEMONHUNTER = {},
 	DRUID       = {},
 	HUNTER      = {},
 	MAGE        = {},
@@ -323,6 +339,25 @@ function lib:GetRaidBuffTypes()
 	return RAID_BUFF_TYPES
 end
 
+--- Return a table containing the localized names of the categories a raid buff belongs to.
+-- Can be called with either a bitmask or a spellId.
+-- @param buffMask (number) a bitmask for the buff
+-- @param spellId (number) spell identifier of the buff
+-- @return (table|nil) A table of localized category names or nil
+function lib:GetRaidBuffCategoryNames(buffMask, spellId)
+	buffMask = buffMask or spellId and specials.RAIDBUFF[spellId]
+
+	if not buffMask then return end
+
+	local categories = {}
+	for mask, name in pairs(RAIDBUFF_CATEGORY_NAMES) do
+		if band(buffMask, mask) > 0 then
+			categories[#categories + 1] = name
+		end
+	end
+	return #categories > 0 and categories or nil
+end
+
 --- Return information about a spell.
 -- @param spellId (number) The spell identifier.
 -- @return (number) The spell flags or nil if it is unknown.
@@ -351,7 +386,7 @@ local function FilterSpellId(spellId, spellType, errors)
 		return next(ids) and ids or nil
 	elseif type(spellId) ~= "number" then
 		errors[spellId] = format("invalid %s, expected number, got %s", spellType, type(spellId))
-	elseif not GetSpellLink(spellId) then
+	elseif not GetSpellInfo(spellId) then
 		errors[spellId] = format("unknown %s", spellType)
 	else
 		return spellId
