@@ -24,7 +24,9 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 	COOLDOWN = {
 		  47568, -- Empower Rune Weapon
 		  50997, -- Death Gate
+		  57330, -- Horn of Winter
 		  61999, -- Raise Ally
+		 194913, -- Glacial Advance
 		 205233, -- Consumption (Blood artifact)
 		 221699, -- Blood Tap
 		[ 47528] = "INTERRUPT", -- Mind Freeze
@@ -35,20 +37,21 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 				  56222, -- Dark Command (taunt)
 				 206931, -- Blooddrinker
 				 211793, -- Remorseless Winter (slow)
+				 212764, -- White Walker (slow)
 				[206977] = "SURVIVAL", -- Blood Mirror
 				CROWD_CTL = {
 					206961, -- Tremble Before Me (disorient)
-					207167, -- Blinding Sleet (disorient) (Frost Talent)
+					207167, -- Blinding Sleet (disorient)
 					221562, -- Asphyxiate (stun)
 				},
 			},
 			PERSONAL = {
 				 51271, -- Pillar of Frost
-				152279, -- Breath of Sindragosa (Frost Talent)
+				152279, -- Breath of Sindragosa
 				196770, -- Remorseless Winter
 				188290, -- Death and Decay
-				207127, -- Hungering Rune Weapon (Frost Talent)
-				207256, -- Obliteration (Frost Talent)
+				207127, -- Hungering Rune Weapon
+				207256, -- Obliteration
 				212552, -- Wraith Walk
 				SURVIVAL = {
 					 48707, -- Anti-Magic Shield
@@ -74,13 +77,21 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 			 55095, -- Frost Fever
 			206930, -- Hearth Strike (slow)
 			206940, -- Mark of Blood
+			211794, -- Winter is Coming
+			211831, -- Abomination's Might (slow)
+			CROWD_CTL = {
+				207165, -- Abomination's Might (stun)
+				207171, -- Winter is Coming (stun)
+			},
 		},
 		PERSONAL = {
 			 51124, -- Killing Machine
 			 59052, -- Rime
 			 77535, -- Blood Shield
 			 81141, -- Crimson Scourge
+			194879, -- Icy Talons
 			195181, -- Bone Shield
+			207203, -- Frost Shield
 			213003, -- Soulgorge
 		},
 		PET = {
@@ -102,18 +113,35 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 	[ 81141] = 81136, -- Crimson Scourge
 	[188290] = 43265, -- Death and Decay
 	[193320] = 193213, -- Umbilicus Eternus (Blood artifact)
+	[194879] = 194878, -- Icy Talons
 	[195181] = 195182, -- Bone Shield <- Marrowrend
 	[205725] = 205727, -- Anti-Magic Barrier
 	[206961] = 206960, -- Tremble Before Me (disorient)
+	[207165] = 207161, -- Abomination's Might (stun)
+	[207171] = 207170, -- Winter is Coming (stun)
+	[207203] = 207200, -- Frost Shield <- Permafrost
 	[211793] = 196770, -- Remorseless Winter (slow)
+	[211794] = 207170, -- Winter is Coming
+	[211831] = 207161, -- Abomination's Might (slow)
+	[212764] = 212765, -- White Walker (slow)
 	[213003] = 212744, -- Soulgorge
 }, {
 	-- map aura to modified spell(s)
-	[ 51124] = 49020, -- Killing Machine -> Obliterate
+	[ 51124] = { -- Killing Machine
+		 49020, -- Obliterate
+		207230, -- Frostscythe
+	},
 	[ 59052] = 49184, -- Rime -> Howling Blast
 	[ 77535] = 49998, -- Blood Shield -> Death Strike
 	[ 81141] = 43265, -- Crimson Scourge -> Death and Decay
 	[193320] = 55233, -- Umbilicus Eternus (Blood artifact) -> Vampiric Blood
+	[194879] = 49143, -- Icy Talons -> Frost Strike
 	[205725] = 48707, -- Anti-Magic Barrier -> Anti-Magic Shell
 	[206961] = 43265, -- Tremble Before Me (disorient) -> Death and Decay
+	[207165] = 49020, -- Abomination's Might (stun) -> Obliterate
+	[207171] = 196770, -- Winter is Coming (stun) -> Remorseless Winter
+	[207203] = 6603, -- Frost Shield -> Auto Attack
+	[211794] = 196770, -- Winter is Coming -> Remorseless Winter
+	[211831] = 49020, -- Abomination's Might (slow) -> Obliterate
+	[212764] = 212552, -- White Walker (slow) -> Wraith Walk
 })
