@@ -24,7 +24,7 @@ script:
 
 deploy:
   provider: script
-  script: .travis-deploy.sh
+  script: push-to-wowace.sh
   on:
     branch: wowace-push
 
