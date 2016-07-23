@@ -22,6 +22,12 @@ script:
   - $LUA core.lua
   - $LUA databases.lua
 
+deploy:
+  provider: script
+  script: sh -c "cd $TRAVIS_BUILD_DIR && ./push-to-wowace.sh"
+  on:
+    branch: master
+
 notifications:
   email:
     on_failure: always

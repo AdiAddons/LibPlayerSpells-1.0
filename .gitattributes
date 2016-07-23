@@ -1,3 +1,4 @@
+*.enc binary
 [attr]source    text whitespace=trailing-space,space-before-tab
 
 *.lua   source
