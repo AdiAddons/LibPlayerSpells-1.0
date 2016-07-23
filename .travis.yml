@@ -16,11 +16,10 @@ install:
   - luarocks install --local mockagne 1.0
 
 script:
-  - cd tests
-  - ./lualint.sh
-  - ./cs.sh
-  - $LUA core.lua
-  - $LUA databases.lua
+  - tests/lualint.sh
+  - tests/cs.sh
+  - $LUA tests/core.lua
+  - $LUA tests/databases.lua
 
 deploy:
   provider: script
