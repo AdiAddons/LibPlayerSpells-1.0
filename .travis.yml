@@ -16,7 +16,6 @@ install:
   - luarocks install --local mockagne 1.0
 
 script:
-  - pwd
   - cd tests
   - ./lualint.sh
   - ./cs.sh
@@ -25,7 +24,7 @@ script:
 
 deploy:
   provider: script
-  script: sh -c "pwd && ./push-to-wowace.sh"
+  script: $TRAVIS_BUILD_DIR/push-to-wowace.sh
   on:
     branch: wowace-push
 
