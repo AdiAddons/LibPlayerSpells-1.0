@@ -24,7 +24,7 @@ script:
 
 deploy:
   provider: script
-  script: sh -c "cd $TRAVIS_BUILD_DIR && ./push-to-wowace.sh"
+  script: $TRAVIS_BUILD_DIR/deploy/deploy.sh libplayerspells-1-0
   on:
     branch: master
 
