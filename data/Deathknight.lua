@@ -22,6 +22,8 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 	COOLDOWN = {
+		  47568, -- Empower Rune Weapon
+		  50997, -- Death Gate
 		  61999, -- Raise Ally
 		 205233, -- Consumption (Blood artifact)
 		 221699, -- Blood Tap
@@ -32,22 +34,25 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 				  51399, -- Death Grip (taunt)
 				  56222, -- Dark Command (taunt)
 				 206931, -- Blooddrinker
+				 211793, -- Remorseless Winter (slow)
 				[206977] = "SURVIVAL", -- Blood Mirror
 				CROWD_CTL = {
 					206961, -- Tremble Before Me (disorient)
-					221562, -- Asphyxiate (stun)
 					207167, -- Blinding Sleet (disorient) (Frost Talent)
+					221562, -- Asphyxiate (stun)
 				},
 			},
 			PERSONAL = {
-				188290, -- Death and Decay
-				212552, -- Wraith Walk
-				 51271, -- Pillar of Frost (Frost)
-				207256, -- Obliteration (Frost Talent)
-				207127, -- Hungering Rune Weapon (Frost Talent)
+				 51271, -- Pillar of Frost
 				152279, -- Breath of Sindragosa (Frost Talent)
+				196770, -- Remorseless Winter
+				188290, -- Death and Decay
+				207127, -- Hungering Rune Weapon (Frost Talent)
+				207256, -- Obliteration (Frost Talent)
+				212552, -- Wraith Walk
 				SURVIVAL = {
 					 48707, -- Anti-Magic Shield
+					 48792, -- Icebound Fortitude
 					 55233, -- Vampiric Blood
 					 81256, -- Dancing Rune Weapon
 					193320, -- Umbilicus Eternus (Blood artifact)
@@ -55,7 +60,6 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 					194844, -- Bonestorm
 					205725, -- Anti-Magic Barrier
 					219809, -- Tombstone
-					 48792, -- Icebound Fortitude (Frost)
 				},
 			},
 		},
@@ -65,18 +69,19 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 			3714, -- Path of Frost
 		},
 		HARMFUL = {
+			 45524, -- Chains of Ice (slow)
 			 55078, -- Blood Plague
+			 55095, -- Frost Fever
 			206930, -- Hearth Strike (slow)
 			206940, -- Mark of Blood
-			 55095, -- Frost Fever (Frost)
-			 51714, -- Razorice (Frost)
 		},
 		PERSONAL = {
+			 51124, -- Killing Machine
+			 59052, -- Rime
 			 77535, -- Blood Shield
 			 81141, -- Crimson Scourge
 			195181, -- Bone Shield
 			213003, -- Soulgorge
-			196770, -- Remorseless Winter (Frost)
 		},
 		PET = {
 			[111673] = "INVERT_AURA", -- Control Undead
@@ -84,14 +89,15 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 	},
 }, {
 	-- map aura to provider(s)
-	[51399] = 49576, -- Death Grip (taunt)
-	[55078] = { -- Blood Plague
+	[ 51124] = 51128, -- Killing Machine
+	[ 51399] = 49576, -- Death Grip (taunt)
+	[ 55078] = { -- Blood Plague
 		 50842, -- Blood Boil
 		195292, -- Death's Caress
 	},
-	[77535] = { -- Blood Shield
-		77513, -- Mastery: Blood Shield
-	},
+	[ 55095] = 49184, -- Frost Ferver -> Howling Blast
+	[ 59052] = 59057, -- Rime
+	[ 77535] = 77513, -- Blood Shield <- Mastery: Blood Shield
 	[ 81256] = 49028, -- Dancing Rune Weapon
 	[ 81141] = 81136, -- Crimson Scourge
 	[188290] = 43265, -- Death and Decay
@@ -99,14 +105,13 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 	[195181] = 195182, -- Bone Shield <- Marrowrend
 	[205725] = 205727, -- Anti-Magic Barrier
 	[206961] = 206960, -- Tremble Before Me (disorient)
+	[211793] = 196770, -- Remorseless Winter (slow)
 	[213003] = 212744, -- Soulgorge
-	[ 55095] = 49184, -- Frost Ferver -> Howling Blast
-	[ 51714] = 49143, -- Razorice -> Frost Strike
 }, {
 	-- map aura to modified spell(s)
-	[ 77535] = { -- Blood Shield
-		49998, -- Death Strike
-	},
+	[ 51124] = 49020, -- Killing Machine -> Obliterate
+	[ 59052] = 49184, -- Rime -> Howling Blast
+	[ 77535] = 49998, -- Blood Shield -> Death Strike
 	[ 81141] = 43265, -- Crimson Scourge -> Death and Decay
 	[193320] = 55233, -- Umbilicus Eternus (Blood artifact) -> Vampiric Blood
 	[205725] = 48707, -- Anti-Magic Barrier -> Anti-Magic Shell
