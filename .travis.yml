@@ -1,18 +1,24 @@
-language: erlang
+sudo: false
 
 env:
   - LUA="lua5.1" LUAC="luac5.1"
 
+addons:
+  apt:
+    packages:
+      - lua5.1
+      - luarocks
+      - liblua5.1-bitop0
+
 install:
-  - sudo apt-get install $LUA luarocks
-  - sudo luarocks install luaunit
-  - sudo luarocks install mockagne
-  - sudo luarocks install luabitop
+  - eval $(luarocks path --bin)
+  - luarocks install --local luaunit 2.1
+  - luarocks install --local mockagne 1.0
 
 script:
-  - tests/lualint.sh
-  - tests/cs.sh
   - cd tests
+  - ./lualint.sh
+  - ./cs.sh
   - $LUA core.lua
   - $LUA databases.lua
 
@@ -25,3 +31,8 @@ notifications:
       - https://webhooks.gitter.im/e/a9437daaf311c6276dc3
     on_success: change
     on_failure: always
+
+cache:
+  apt: true
+  directories:
+    - $HOME/.luarocks
