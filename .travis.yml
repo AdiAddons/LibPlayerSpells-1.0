@@ -23,7 +23,7 @@ script:
 
 deploy:
   provider: script
-  script: push-to-wowace.sh
+  script: ./push-to-wowace.sh
   on:
     branch: wowace-push
 
