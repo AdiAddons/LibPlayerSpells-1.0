@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
+lib:__RegisterSpells("DEATHKNIGHT", 70000, 4, {
 	COOLDOWN = {
 		  47568, -- Empower Rune Weapon
 		  50997, -- Death Gate
@@ -35,6 +35,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 			HARMFUL = {
 				  51399, -- Death Grip (taunt)
 				  56222, -- Dark Command (taunt)
+				 190780, -- Frost Breath (Frost artifact) (slow)
 				 206931, -- Blooddrinker
 				 211793, -- Remorseless Winter (slow)
 				 212764, -- White Walker (slow)
@@ -112,6 +113,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 3, {
 	[ 81256] = 49028, -- Dancing Rune Weapon
 	[ 81141] = 81136, -- Crimson Scourge
 	[188290] = 43265, -- Death and Decay
+	[190780] = 190778, -- Frost Breath (Frost artifact) (slow)
 	[193320] = 193213, -- Umbilicus Eternus (Blood artifact)
 	[194879] = 194878, -- Icy Talons
 	[195181] = 195182, -- Bone Shield <- Marrowrend
