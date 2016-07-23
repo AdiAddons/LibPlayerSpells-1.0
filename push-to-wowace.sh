@@ -7,7 +7,7 @@ git.wowace.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAx0NSV8f5wXfwlBTO5GqJ3XyojSjdb
 git.wowace.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGITEnmV6uhzmQdEgvpsJs8ZMEA5gqP1iIE/xEIqKnkZtoCPd6NONuOx4Q1zM+lijWTNCqV/ZajT02DW+9ECdBQ=
 KEYS
 openssl aes-256-cbc -K $encrypted_bfcd8b8ecc98_key -iv $encrypted_bfcd8b8ecc98_iv -in wowace.key.enc -out $HOME/.ssh/id_rsa -d
-chmod -r og= $HOME/.ssh
+chmod -R og= $HOME/.ssh
 
 # Do push
 git push git@git.wowace.com:wow/libplayerspells-1-0/mainline.git $TRAVIS_BRANCH $TRAVIS_TAG
