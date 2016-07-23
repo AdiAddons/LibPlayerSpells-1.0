@@ -1,4 +1,5 @@
 #!/bin/bash
+openssl aes-256-cbc -K $encrypted_bfcd8b8ecc98_key -iv $encrypted_bfcd8b8ecc98_iv -in wowace.key.enc -out wowace.key -d
 set -x
 env
 which git
