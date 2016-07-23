@@ -22,6 +22,12 @@ script:
   - $LUA core.lua
   - $LUA databases.lua
 
+deploy:
+  provider: script
+  script: .travis-deploy.sh
+  on:
+    branch: wowace-push
+
 notifications:
   email:
     on_failure: always
