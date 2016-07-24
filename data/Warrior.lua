@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", 70000, 3, {
+lib:__RegisterSpells("WARRIOR", 70000, 4, {
 	COOLDOWN = {
 		   6544, -- Heroic Leap
 		 202168, -- Impending Victory
@@ -33,12 +33,14 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 				107574, -- Avatar
 				122510, -- Ultimatum
 				132404, -- Shield Block
+				188783, -- Might of the Vrykul (Protection artifact)
 				202164, -- Bounding Stride
 				227847, -- Bladestorm (Arms)
 				SURVIVAL = {
 					   871, -- Shield Wall
 					 12975, -- Last Stand
 					118038, -- Die by the Sword (Arms, Fury)
+					203524, -- Neltharion's Fury (Protection artifact)
 					227744, -- Ravager
 				},
 			},
@@ -75,6 +77,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 			202289, -- Renewed Fury
 			202573, -- Vengeance: Focused Rage
 			202574, -- Vengeance: Ignore Pain
+			203581, -- Dragon Scales (Protection artifact)
 			204488, -- Focused Rage
 			SURVIVAL = {
 				190456, -- Ignore Pain
@@ -99,11 +102,13 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 	[132169] = 107570, -- Storm Bolt (stun)
 	[132404] = 2565, -- Shield Block
 	[147833] = 198304, -- Intervene <- Intercept
+	[188783] = 188778, -- Might of the Vrykul (Protection artifact)
 	[188923] = 845, -- Cleave
 	[202164] = 202163, -- Bounding Stride
 	[202289] = 202288, -- Renewed Fury
 	[202573] = 202572, -- Vengeance: Focused Rage <- Vengeance
 	[202574] = 202572, -- Vengeance: Ignore Pain <- Vengeance
+	[203581] = 203576, -- Dragon Scales (Protection artifact)
 	[208086] = 167105, -- Colossus Smash
 	[227744] = 228920, -- Ravager
 	[223658] = 198304, -- Safeguard <- Intercept
@@ -115,9 +120,14 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 		20243, -- Devastate
 	},
 	[122510] = 204488, -- Ultimatum -> Focused Rage
+	[188783] = { -- Might of the Vrykul (Protection artifact)
+		 6572, -- Revenge
+		23922, -- Shield Slam
+	},
 	[188923] = 1680, -- Cleave to Whirlwind
 	[202164] = 6544, -- Bounding Stride -> Heroic Leap
 	[202289] = 190456, -- Renewed Fury -> Ignore Pain
 	[202573] = 204488, -- Vengeance: Focused Rage -> Focused Rage
 	[202574] = 190456, -- Vengeance: Ignore Pain -> Ignore Pain
+	[203581] = 190456, -- Dragon Scales (Protection artifact) -> Ignore Pain
 })
