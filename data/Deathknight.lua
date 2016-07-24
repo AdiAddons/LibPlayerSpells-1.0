@@ -117,6 +117,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 			 77535, -- Blood Shield
 			 81141, -- Crimson Scourge
 			 81340, -- Sudden Doom
+			101568, -- Dark Succor
 			194879, -- Icy Talons
 			195181, -- Bone Shield
 			207203, -- Frost Shield
@@ -145,6 +146,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 	[ 91807] = 63560, -- Shambling Rush (ghoul) (root) <- Dark Transformation
 	[ 91837] = 63560, -- Putrid Bullwark <- Dark Transformation
 	[ 91838] = 47484, -- Huddle
+	[101568] = 178819, -- Dark Succor
 	[188290] = { -- Death and Decay
 		 43265, -- Death and Decay
 		152280, -- Defile
@@ -188,6 +190,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 	[ 91797] = 47481, -- Monstrous Blow (ghoul) (stun) -> Gnaw (with Dark Transformation)
 	[ 91807] = 47482, -- Shambling Rush (ghoul) (root) -> Leap (with Dark Transformation)
 	[ 91837] = 47484, -- Putrid Bullwark -> Huddle (with Dark Transformation)
+	[101568] = 49998, -- Dark Succor -> Death Strike
 	[188290] = { -- Death and Decay
 		 55090, -- Scourge Strike
 		207311, -- Clawing Shadows
