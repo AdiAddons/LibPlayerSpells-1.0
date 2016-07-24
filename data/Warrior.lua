@@ -24,6 +24,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 	COOLDOWN = {
 		   6544, -- Heroic Leap
 		 202168, -- Impending Victory
+		 209577, -- Warbreaker (Arms artifact)
 		[  6552] = "INTERRUPT", -- Pummel
 		AURA = {
 			PERSONAL = {
@@ -34,6 +35,8 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 				 188783, -- Might of the Vrykul (Protection artifact)
 				 188923, -- Cleave
 				 202164, -- Bounding Stride
+				 209484, -- Tactical Advance (Arms artifact)
+				 209706, -- Shattered Defenses (Arms artifact)
 				 227847, -- Bladestorm
 				BURST = {
 					  1719, -- Battle Cry
@@ -123,7 +126,12 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 	[202573] = 202572, -- Vengeance: Focused Rage <- Vengeance
 	[202574] = 202572, -- Vengeance: Ignore Pain <- Vengeance
 	[203581] = 203576, -- Dragon Scales (Protection artifact)
-	[208086] = 167105, -- Colossus Smash
+	[208086] = { -- Colossus Smash
+		167105, -- Colossus Smash
+		209577, -- Warbreaker (Arms artifact)
+	},
+	[209484] = 209483, -- Tactical Advance (Arms artifact)
+	[209706] = 209574, -- Shattered Defenses (Arms artifact)
 	[227744] = 228920, -- Ravager
 	[223658] = 198304, -- Safeguard <- Intercept
 }, {
@@ -150,4 +158,9 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 	[203581] = 190456, -- Dragon Scales (Protection artifact) -> Ignore Pain
 	[204488] = 23922, -- Focused Rage (Protection) -> Shield Slam
 	[207982] = 12294, -- Focused Rage (Arms) -> Mortal Strike
+	[209484] = 6544, -- Tactical Advance -> Heroic Leap (Arms artifact)
+	[209706] = { -- Shattered Defenses (Arms artifact)
+		 12294, -- Mortal Strike
+		163201, -- Execute
+	},
 })
