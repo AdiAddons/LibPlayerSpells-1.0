@@ -20,9 +20,10 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", 70000, 4, {
+lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 	COOLDOWN = {
 		  47568, -- Empower Rune Weapon
+		  49206, -- Summon Gargoyle
 		  50997, -- Death Gate
 		  57330, -- Horn of Winter
 		  61999, -- Raise Ally
@@ -41,6 +42,9 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 4, {
 				 212764, -- White Walker (slow)
 				[206977] = "SURVIVAL", -- Blood Mirror
 				CROWD_CTL = {
+					 91797, -- Monstrous Blow (ghoul) (stun)
+					 91800, -- Gnaw (ghoul) (stun)
+					 91807, -- Shambling Rush (ghoul) (root)
 					206961, -- Tremble Before Me (disorient)
 					207167, -- Blinding Sleet (disorient)
 					221562, -- Asphyxiate (stun)
@@ -54,6 +58,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 4, {
 				207127, -- Hungering Rune Weapon
 				207256, -- Obliteration
 				212552, -- Wraith Walk
+				[42650] = "BURST", -- Army of the Dead
 				SURVIVAL = {
 					 48707, -- Anti-Magic Shield
 					 48792, -- Icebound Fortitude
@@ -66,6 +71,11 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 4, {
 					219809, -- Tombstone
 				},
 			},
+			PET = {
+				63560, -- Dark Transformation
+				91837, -- Putrid Bullwark
+				91838, -- Huddle
+			},
 		},
 	},
 	AURA = {
@@ -76,6 +86,9 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 4, {
 			 45524, -- Chains of Ice (slow)
 			 55078, -- Blood Plague
 			 55095, -- Frost Fever
+			191587, -- Virulent Plague
+			194310, -- Festering Wound
+			196782, -- Outbreak
 			206930, -- Hearth Strike (slow)
 			206940, -- Mark of Blood
 			211794, -- Winter is Coming
@@ -90,6 +103,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 4, {
 			 59052, -- Rime
 			 77535, -- Blood Shield
 			 81141, -- Crimson Scourge
+			 81340, -- Sudden Doom
 			194879, -- Icy Talons
 			195181, -- Bone Shield
 			207203, -- Frost Shield
@@ -111,12 +125,21 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 4, {
 	[ 59052] = 59057, -- Rime
 	[ 77535] = 77513, -- Blood Shield <- Mastery: Blood Shield
 	[ 81256] = 49028, -- Dancing Rune Weapon
+	[ 81340] = 49530, -- Sudden Doom
 	[ 81141] = 81136, -- Crimson Scourge
+	[ 91797] = 63560, -- Monstrous Blow (ghoul) (stun) <- Dark Transformation
+	[ 91800] = 47481, -- Gnaw (ghoul) (stun)
+	[ 91807] = 63560, -- Shambling Rush (ghoul) (root) <- Dark Transformation
+	[ 91837] = 63560, -- Putrid Bullwark <- Dark Transformation
+	[ 91838] = 47484, -- Huddle
 	[188290] = 43265, -- Death and Decay
 	[190780] = 190778, -- Frost Breath (Frost artifact) (slow)
+	[191587] = 77575, -- Virulent Plague <- Outbreak
 	[193320] = 193213, -- Umbilicus Eternus (Blood artifact)
+	[194310] = 85948, -- Festering Wound <- Festering Strike
 	[194879] = 194878, -- Icy Talons
 	[195181] = 195182, -- Bone Shield <- Marrowrend
+	[196782] = 77575, -- Outbreak
 	[205725] = 205727, -- Anti-Magic Barrier
 	[206961] = 206960, -- Tremble Before Me (disorient)
 	[207165] = 207161, -- Abomination's Might (stun)
@@ -136,6 +159,10 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 4, {
 	[ 59052] = 49184, -- Rime -> Howling Blast
 	[ 77535] = 49998, -- Blood Shield -> Death Strike
 	[ 81141] = 43265, -- Crimson Scourge -> Death and Decay
+	[ 81340] = 47541, -- Sudden Doom -> Death Coil
+	[ 91797] = 47481, -- Monstrous Blow (ghoul) (stun) -> Gnaw (with Dark Transformation)
+	[ 91807] = 47482, -- Shambling Rush (ghoul) (root) -> Leap (with Dark Transformation)
+	[ 91837] = 47484, -- Putrid Bullwark -> Huddle (with Dark Transformation)
 	[193320] = 55233, -- Umbilicus Eternus (Blood artifact) -> Vampiric Blood
 	[194879] = 49143, -- Icy Talons -> Frost Strike
 	[205725] = 48707, -- Anti-Magic Barrier -> Anti-Magic Shell
