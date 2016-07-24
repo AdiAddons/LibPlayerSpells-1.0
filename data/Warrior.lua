@@ -22,37 +22,40 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("WARRIOR", 70000, 3, {
 	COOLDOWN = {
-		 6544, -- Heroic Leap
-		[6552] = "INTERRUPT", -- Pummel
+		   6544, -- Heroic Leap
+		 202168, -- Impending Victory
+		[  6552] = "INTERRUPT", -- Pummel
 		AURA = {
 			PERSONAL = {
 				  1719, -- Battle Cry
 				 18499, -- Berserker Rage
 				 23920, -- Spell Reflection
-				107574, -- Avatar (Talent 45)
+				107574, -- Avatar
+				122510, -- Ultimatum
 				132404, -- Shield Block
-				202289, -- Renewed Fury (Talent 45)
-				202164, -- Bounding Stride (Talent 60)
-				227744, -- Ravager (Talent 100)
+				202164, -- Bounding Stride
 				227847, -- Bladestorm (Arms)
 				SURVIVAL = {
 					   871, -- Shield Wall
 					 12975, -- Last Stand
 					118038, -- Die by the Sword (Arms, Fury)
+					227744, -- Ravager
 				},
 			},
 			HELPFUL = {
 				 97463, -- Commanding Shout
-				223658, -- Safeguard (Talent 30)
+				223658, -- Safeguard
 			},
 			HARMFUL = {
 				   355, -- Taunt (taunt)
 				  1160, -- Demoralizing Shout
 				  6343, -- Thunder Clap (slow)
-				  7922, -- Warbringer Stun (Talent 15)
-				132168, -- Shockwave (Talent 15)
-				132169, -- Storm Bolt (Talent 15)
 				208086, -- Colossus Smash (Arms)
+				CROWD_CTL = {
+					  7922, -- Warbringer Stun (stun)
+					132168, -- Shockwave (stun)
+					132169, -- Storm Bolt (stun)
+				},
 			},
 		},
 	},
@@ -69,7 +72,9 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 		PERSONAL = {
 			 32216, -- Victorious
 			188923, -- Cleave Whirlwind
-			122510, -- Ultimatum (Prot)(Talent 45)
+			202289, -- Renewed Fury
+			202573, -- Vengeance: Focused Rage
+			202574, -- Vengeance: Ignore Pain
 			204488, -- Focused Rage
 			SURVIVAL = {
 				190456, -- Ignore Pain
@@ -78,7 +83,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 	},
 }, {
 	-- Map aura to provider(s)
-	[  7922] = 198304, -- Warbringer Stun (Charge)
+	[  7922] = 103828, -- Warbringer (stun)
 	[ 32216] = { -- Victorious
 		 34428, -- Victory Rush
 		202168, -- Impending Victory
@@ -89,21 +94,30 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 		198304, -- Intercept
 	},
 	[115767] = 115768, -- Deep Wounds
-	[122510] = 204488, -- Ultimatum
-	[132168] = 46968, -- Shockwave
-	[132169] = 107570, -- Storm Bolt
+	[122510] = 122509, -- Ultimatum
+	[132168] = 46968, -- Shockwave (stun)
+	[132169] = 107570, -- Storm Bolt (stun)
 	[132404] = 2565, -- Shield Block
 	[147833] = 198304, -- Intervene <- Intercept
 	[188923] = 845, -- Cleave
-	[202164] = 6544, -- Bounding Stride
+	[202164] = 202163, -- Bounding Stride
+	[202289] = 202288, -- Renewed Fury
+	[202573] = 202572, -- Vengeance: Focused Rage <- Vengeance
+	[202574] = 202572, -- Vengeance: Ignore Pain <- Vengeance
 	[208086] = 167105, -- Colossus Smash
 	[227744] = 228920, -- Ravager
-	[223658] = 198304, -- Safeguard
+	[223658] = 198304, -- Safeguard <- Intercept
 }, {
 	-- map aura to modified spell(s)
+	[  7922] = 198304, -- Warbringer (stun) -> Intercept
 	[115767] = { -- Deep Wounds
 		 6572, -- Revenge
 		20243, -- Devastate
 	},
+	[122510] = 204488, -- Ultimatum -> Focused Rage
 	[188923] = 1680, -- Cleave to Whirlwind
+	[202164] = 6544, -- Bounding Stride -> Heroic Leap
+	[202289] = 190456, -- Renewed Fury -> Ignore Pain
+	[202573] = 204488, -- Vengeance: Focused Rage -> Focused Rage
+	[202574] = 190456, -- Vengeance: Ignore Pain -> Ignore Pain
 })
