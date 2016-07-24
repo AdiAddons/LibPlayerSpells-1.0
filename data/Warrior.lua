@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", 70000, 4, {
+lib:__RegisterSpells("WARRIOR", 70000, 5, {
 	COOLDOWN = {
 		   6544, -- Heroic Leap
 		 202168, -- Impending Victory
@@ -46,6 +46,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 					   871, -- Shield Wall
 					 12975, -- Last Stand
 					118038, -- Die by the Sword
+					184364, -- Enraged Regeneration
 					197690, -- Defensive Stance
 					203524, -- Neltharion's Fury (Protection artifact)
 					227744, -- Ravager
@@ -77,6 +78,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 		HARMFUL = {
 			   772, -- Rend
 			  1715, -- Hamstring (slow)
+			 12323, -- Piercing Howl (slow)
 			115767, -- Deep Wounds
 			215537, -- Trauma
 			CROWD_CTL = {
@@ -86,11 +88,14 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 		PERSONAL = {
 			 32216, -- Victorious
 			 60503, -- Overpower!
+			 85739, -- Meat Cleaver
+			184362, -- Enrage
 			202289, -- Renewed Fury
 			202573, -- Vengeance: Focused Rage
 			202574, -- Vengeance: Ignore Pain
 			203581, -- Dragon Scales (Protection artifact)
 			204488, -- Focused Rage (Protection)
+			206333, -- Taste for Blood
 			207982, -- Focused Rage (Arms)
 			SURVIVAL = {
 				190456, -- Ignore Pain
@@ -105,6 +110,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 		202168, -- Impending Victory
 	},
 	[ 60503] = 7384, -- Overpower! <- Overpower
+	[ 85739] = 190411, -- Meat Cleaver <- Whirlwind (Fury)
 	[ 97463] = 97462, -- Commanding Shout
 	[105771] = { -- Charge (root)
 		   100, -- Charge
@@ -117,6 +123,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 	[132169] = 107570, -- Storm Bolt (stun)
 	[132404] = 2565, -- Shield Block
 	[147833] = 198304, -- Intervene <- Intercept
+	[184362] = 184361, -- Enrage
 	[188783] = 188778, -- Might of the Vrykul (Protection artifact)
 	[188923] = 845, -- Cleave
 	[197690] = 212520, -- Defensive Stance
@@ -126,6 +133,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 	[202573] = 202572, -- Vengeance: Focused Rage <- Vengeance
 	[202574] = 202572, -- Vengeance: Ignore Pain <- Vengeance
 	[203581] = 203576, -- Dragon Scales (Protection artifact)
+	[206333] = 100130, -- Taste for Blood <- Furious Slash
 	[208086] = { -- Colossus Smash
 		167105, -- Colossus Smash
 		209577, -- Warbreaker (Arms artifact)
@@ -137,11 +145,16 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 }, {
 	-- map aura to modified spell(s)
 	[  7922] = 198304, -- Warbringer (stun) -> Intercept
+	[ 85739] = { -- Meat Cleaver
+		 23881, -- Bloodthirst
+		184367, -- Rampage
+	},
 	[115767] = { -- Deep Wounds
 		 6572, -- Revenge
 		20243, -- Devastate
 	},
 	[122510] = 204488, -- Ultimatum -> Focused Rage
+	[184362] = 85288, -- Enrage -> Raging Blow
 	[188783] = { -- Might of the Vrykul (Protection artifact)
 		 6572, -- Revenge
 		23922, -- Shield Slam
@@ -157,10 +170,11 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 	[202574] = 190456, -- Vengeance: Ignore Pain -> Ignore Pain
 	[203581] = 190456, -- Dragon Scales (Protection artifact) -> Ignore Pain
 	[204488] = 23922, -- Focused Rage (Protection) -> Shield Slam
+	[206333] = 23881, -- Taste for Blood -> Bloodthirst
 	[207982] = 12294, -- Focused Rage (Arms) -> Mortal Strike
 	[209484] = 6544, -- Tactical Advance -> Heroic Leap (Arms artifact)
 	[209706] = { -- Shattered Defenses (Arms artifact)
 		 12294, -- Mortal Strike
-		163201, -- Execute
+		163201, -- Execute (Arms)
 	},
 })
