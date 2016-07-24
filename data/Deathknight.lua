@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
+lib:__RegisterSpells("DEATHKNIGHT", 70000, 6, {
 	COOLDOWN = {
 		  47568, -- Empower Rune Weapon
 		  49206, -- Summon Gargoyle
@@ -29,6 +29,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 		  61999, -- Raise Ally
 		 194913, -- Glacial Advance
 		 205233, -- Consumption (Blood artifact)
+		 220143, -- Apocalypse (Unholy artifact)
 		 221699, -- Blood Tap
 		[ 47528] = "INTERRUPT", -- Mind Freeze
 		[108199] = "CROWD_CTL", -- Gorefiend's Grasp (knockback)
@@ -38,6 +39,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 				  56222, -- Dark Command (taunt)
 				 130736, -- Soul Reaper
 				 190780, -- Frost Breath (Frost artifact) (slow)
+				 191719, -- Gravitational Pull (Unholy artifact) (slow)
 				 206931, -- Blooddrinker
 				 211793, -- Remorseless Winter (slow)
 				 212764, -- White Walker (slow)
@@ -153,6 +155,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 	},
 	[190780] = 190778, -- Frost Breath (Frost artifact) (slow)
 	[191587] = 77575, -- Virulent Plague <- Outbreak
+	[191719] = 191721, -- Gravitational Pull (Unholy artifact) (slow)
 	[193320] = 193213, -- Umbilicus Eternus (Blood artifact)
 	[194310] = 85948, -- Festering Wound <- Festering Strike
 	[194879] = 194878, -- Icy Talons
@@ -195,6 +198,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 		 55090, -- Scourge Strike
 		207311, -- Clawing Shadows
 	},
+	[191719] = 49576, -- Gravitational Pull (Unholy artifact) (slow) -> Death Grip
 	[193320] = 55233, -- Umbilicus Eternus (Blood artifact) -> Vampiric Blood
 	[194879] = 49143, -- Icy Talons -> Frost Strike
 	[205725] = 48707, -- Anti-Magic Barrier -> Anti-Magic Shell
