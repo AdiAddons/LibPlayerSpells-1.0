@@ -59,7 +59,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 		HARMFUL = {
 			  6343, -- Thunder Clap (Slow)
 			105771, -- Charge Root
-			115767, -- Deep Wounds (Prot)
+			115767, -- Deep Wounds
 		},
 		PERSONAL = {
 			 32216, -- Victory Rush
@@ -71,21 +71,24 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 	},
 }, {
 	-- Map [aura] to provider (button)
-	[  7922] =             198304, -- Warbringer Stun (Charge)
-	[ 32216] = { 34428, 202168, }, -- Victorious, Killing Blow => Victory Rush, Impending Victory
-	[ 97463] =              97462, -- Commanding Shout
-	[105771] =                100, -- Charge Root
-	[115767] =              20243, -- Devastate (Deep Wounds)
-	[122510] =             204488, -- Ultimatum
-	[132168] =              46968, -- Shockwave
-	[132169] =             107570, -- Storm Bolt
-	[132404] =               2565, -- Shield Block (Prot)
-	[188923] =                845, -- Cleave
-	[202164] =               6544, -- Bounding Stride
-	[208086] =             167105, -- Colossus Smash
-	[227744] =             228920, -- Ravager
-	[223658] =             198304, -- Safeguard
+	[  7922] = 198304, -- Warbringer Stun (Charge)
+	[ 32216] = { -- Victorious
+		 34428, -- Victory Rush
+		202168, -- Impending Victory
+	},
+	[ 97463] = 97462, -- Commanding Shout
+	[105771] = 100, -- Charge Root
+	[115767] = 20243, -- Devastate (Deep Wounds)
+	[122510] = 204488, -- Ultimatum
+	[132168] = 46968, -- Shockwave
+	[132169] = 107570, -- Storm Bolt
+	[132404] = 2565, -- Shield Block (Prot)
+	[188923] = 845, -- Cleave
+	[202164] = 6544, -- Bounding Stride
+	[208086] = 167105, -- Colossus Smash
+	[227744] = 228920, -- Ravager
+	[223658] = 198304, -- Safeguard
 }, {
 	-- map aura to modified spell(s)
-	[188923] =               1680, -- Cleave to Whirlwind
+	[188923] = 1680, -- Cleave to Whirlwind
 })
