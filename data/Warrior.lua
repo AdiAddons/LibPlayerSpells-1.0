@@ -22,23 +22,22 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("WARRIOR", 70000, 3, {
 	COOLDOWN = {
-		INTERRUPT = {
-			6552, -- Pummel
-		},
+		 6544, -- Heroic Leap
+		[6552] = "INTERRUPT", -- Pummel
 		AURA = {
 			PERSONAL = {
 				  1719, -- Battle Cry
 				 18499, -- Berserker Rage
-				 23920, -- Spell Reflect
+				 23920, -- Spell Reflection
 				107574, -- Avatar (Talent 45)
-				132404, -- Shield Block (Prot)
+				132404, -- Shield Block
 				202289, -- Renewed Fury (Talent 45)
 				202164, -- Bounding Stride (Talent 60)
 				227744, -- Ravager (Talent 100)
 				227847, -- Bladestorm (Arms)
 				SURVIVAL = {
-					   871, -- Shield Wall (Prot)
-					 12975, -- Last Stand (Prot)
+					   871, -- Shield Wall
+					 12975, -- Last Stand
 					118038, -- Die by the Sword (Arms, Fury)
 				},
 			},
@@ -47,7 +46,9 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 				223658, -- Safeguard (Talent 30)
 			},
 			HARMFUL = {
-				  1160, -- Demoralizing Shout (Prot)
+				   355, -- Taunt (taunt)
+				  1160, -- Demoralizing Shout
+				  6343, -- Thunder Clap (slow)
 				  7922, -- Warbringer Stun (Talent 15)
 				132168, -- Shockwave (Talent 15)
 				132169, -- Storm Bolt (Talent 15)
@@ -56,33 +57,43 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 		},
 	},
 	AURA = {
+		HELPFUL = {
+			147833, -- Intervene
+		},
 		HARMFUL = {
-			  6343, -- Thunder Clap (Slow)
-			105771, -- Charge Root
 			115767, -- Deep Wounds
+			CROWD_CTL = {
+				105771, -- Charge (root)
+			},
 		},
 		PERSONAL = {
-			 32216, -- Victory Rush
+			 32216, -- Victorious
 			188923, -- Cleave Whirlwind
 			122510, -- Ultimatum (Prot)(Talent 45)
-			190456, -- Ignore Pain (Prot)
 			204488, -- Focused Rage
+			SURVIVAL = {
+				190456, -- Ignore Pain
+			},
 		},
 	},
 }, {
-	-- Map [aura] to provider (button)
+	-- Map aura to provider(s)
 	[  7922] = 198304, -- Warbringer Stun (Charge)
 	[ 32216] = { -- Victorious
 		 34428, -- Victory Rush
 		202168, -- Impending Victory
 	},
 	[ 97463] = 97462, -- Commanding Shout
-	[105771] = 100, -- Charge Root
-	[115767] = 20243, -- Devastate (Deep Wounds)
+	[105771] = { -- Charge (root)
+		   100, -- Charge
+		198304, -- Intercept
+	},
+	[115767] = 115768, -- Deep Wounds
 	[122510] = 204488, -- Ultimatum
 	[132168] = 46968, -- Shockwave
 	[132169] = 107570, -- Storm Bolt
-	[132404] = 2565, -- Shield Block (Prot)
+	[132404] = 2565, -- Shield Block
+	[147833] = 198304, -- Intervene <- Intercept
 	[188923] = 845, -- Cleave
 	[202164] = 6544, -- Bounding Stride
 	[208086] = 167105, -- Colossus Smash
@@ -90,5 +101,9 @@ lib:__RegisterSpells("WARRIOR", 70000, 3, {
 	[223658] = 198304, -- Safeguard
 }, {
 	-- map aura to modified spell(s)
+	[115767] = { -- Deep Wounds
+		 6572, -- Revenge
+		20243, -- Devastate
+	},
 	[188923] = 1680, -- Cleave to Whirlwind
 })
