@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", 70000, 5, {
+lib:__RegisterSpells("WARRIOR", 70000, 6, {
 	COOLDOWN = {
 		   6544, -- Heroic Leap
 		 202168, -- Impending Victory
@@ -65,6 +65,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 				  1160, -- Demoralizing Shout
 				  6343, -- Thunder Clap (slow)
 				--115804, -- Mortal Wounds -- FIXME: see LibPlayerSpells-1.0/issues/83
+				205546, -- Odyn's Fury (Fury artifact)
 				208086, -- Colossus Smash
 				CROWD_CTL = {
 					  5246, -- Intimidating Shout (disorient)
@@ -94,6 +95,8 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 			 60503, -- Overpower!
 			 85739, -- Meat Cleaver
 			184362, -- Enrage
+			200979, -- Sense Death (Fury artifact)
+			201009, -- Juggernaut (Fury artifact)
 			202289, -- Renewed Fury
 			202539, -- Frenzy
 			202573, -- Vengeance: Focused Rage
@@ -134,7 +137,8 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 	[188783] = 188778, -- Might of the Vrykul (Protection artifact)
 	[188923] = 845, -- Cleave
 	[197690] = 212520, -- Defensive Stance
-	[215537] = 215538, -- Trauma
+	[200979] = 200863, -- Sense Death (Fury artifact)
+	[201009] = 200875, -- Juggernaut (Fury artifact)
 	[202164] = 202163, -- Bounding Stride
 	[202225] = 202224, -- Furious Charge
 	[202289] = 202288, -- Renewed Fury
@@ -142,6 +146,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 	[202573] = 202572, -- Vengeance: Focused Rage <- Vengeance
 	[202574] = 202572, -- Vengeance: Ignore Pain <- Vengeance
 	[203581] = 203576, -- Dragon Scales (Protection artifact)
+	[205546] = 205545, -- Odyn's Fury (Fury artifact)
 	[206316] = 206315, -- Massacre
 	[206333] = 100130, -- Taste for Blood <- Furious Slash
 	[208086] = { -- Colossus Smash
@@ -150,6 +155,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 	},
 	[209484] = 209483, -- Tactical Advance (Arms artifact)
 	[209706] = 209574, -- Shattered Defenses (Arms artifact)
+	[215537] = 215538, -- Trauma
 	[215570] = 215569, -- Wrecking Ball
 	[227744] = 228920, -- Ravager
 	[223658] = 198304, -- Safeguard <- Intercept
@@ -171,6 +177,8 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 		23922, -- Shield Slam
 	},
 	[188923] = 1680, -- Cleave -> Whirlwind
+	[200979] = 5308, -- Sense Death (Fury artifact) -> Execute
+	[201009] = 5308, -- Juggernaut (Fury artifact) -> Execute
 	[202164] = 6544, -- Bounding Stride -> Heroic Leap
 	[202225] = 23881, -- Furious Charge -> Bloodthirst
 	[202289] = 190456, -- Renewed Fury -> Ignore Pain
