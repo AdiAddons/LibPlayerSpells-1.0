@@ -28,16 +28,20 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 		[  6552] = "INTERRUPT", -- Pummel
 		AURA = {
 			PERSONAL = {
+				  12292, -- Bloodbath
 				  18499, -- Berserker Rage
 				  23920, -- Spell Reflection
+				  46924, -- Bladestorm (Fury)
+				 118000, -- Dragon Roar
 				 122510, -- Ultimatum
 				 132404, -- Shield Block
 				 188783, -- Might of the Vrykul (Protection artifact)
 				 188923, -- Cleave
 				 202164, -- Bounding Stride
+				 202225, -- Furious Charge
 				 209484, -- Tactical Advance (Arms artifact)
 				 209706, -- Shattered Defenses (Arms artifact)
-				 227847, -- Bladestorm
+				 227847, -- Bladestorm (Arms)
 				BURST = {
 					  1719, -- Battle Cry
 					107574, -- Avatar
@@ -91,12 +95,15 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 			 85739, -- Meat Cleaver
 			184362, -- Enrage
 			202289, -- Renewed Fury
+			202539, -- Frenzy
 			202573, -- Vengeance: Focused Rage
 			202574, -- Vengeance: Ignore Pain
 			203581, -- Dragon Scales (Protection artifact)
 			204488, -- Focused Rage (Protection)
+			206316, -- Massacre
 			206333, -- Taste for Blood
 			207982, -- Focused Rage (Arms)
+			215570, -- Wrecking Ball
 			SURVIVAL = {
 				190456, -- Ignore Pain
 			},
@@ -129,10 +136,13 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 	[197690] = 212520, -- Defensive Stance
 	[215537] = 215538, -- Trauma
 	[202164] = 202163, -- Bounding Stride
+	[202225] = 202224, -- Furious Charge
 	[202289] = 202288, -- Renewed Fury
+	[202539] = 206313, -- Frenzy
 	[202573] = 202572, -- Vengeance: Focused Rage <- Vengeance
 	[202574] = 202572, -- Vengeance: Ignore Pain <- Vengeance
 	[203581] = 203576, -- Dragon Scales (Protection artifact)
+	[206316] = 206315, -- Massacre
 	[206333] = 100130, -- Taste for Blood <- Furious Slash
 	[208086] = { -- Colossus Smash
 		167105, -- Colossus Smash
@@ -140,6 +150,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 	},
 	[209484] = 209483, -- Tactical Advance (Arms artifact)
 	[209706] = 209574, -- Shattered Defenses (Arms artifact)
+	[215570] = 215569, -- Wrecking Ball
 	[227744] = 228920, -- Ravager
 	[223658] = 198304, -- Safeguard <- Intercept
 }, {
@@ -160,16 +171,15 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 		23922, -- Shield Slam
 	},
 	[188923] = 1680, -- Cleave -> Whirlwind
-	[215537] = { -- Trauma
-		1464, -- Slam
-		1680, -- Whirlwind
-	},
 	[202164] = 6544, -- Bounding Stride -> Heroic Leap
+	[202225] = 23881, -- Furious Charge -> Bloodthirst
 	[202289] = 190456, -- Renewed Fury -> Ignore Pain
+	[202539] = 100130, -- Frenzy -> Furious Slash
 	[202573] = 204488, -- Vengeance: Focused Rage -> Focused Rage
 	[202574] = 190456, -- Vengeance: Ignore Pain -> Ignore Pain
 	[203581] = 190456, -- Dragon Scales (Protection artifact) -> Ignore Pain
 	[204488] = 23922, -- Focused Rage (Protection) -> Shield Slam
+	[206316] = 184367, -- Massacre -> Rampage
 	[206333] = 23881, -- Taste for Blood -> Bloodthirst
 	[207982] = 12294, -- Focused Rage (Arms) -> Mortal Strike
 	[209484] = 6544, -- Tactical Advance -> Heroic Leap (Arms artifact)
@@ -177,4 +187,9 @@ lib:__RegisterSpells("WARRIOR", 70000, 5, {
 		 12294, -- Mortal Strike
 		163201, -- Execute (Arms)
 	},
+	[215537] = { -- Trauma
+		1464, -- Slam
+		1680, -- Whirlwind
+	},
+	[215570] = 190411, -- Wrecking Ball -> Whirlwind
 })
