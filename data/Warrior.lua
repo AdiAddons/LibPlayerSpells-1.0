@@ -27,20 +27,23 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 		[  6552] = "INTERRUPT", -- Pummel
 		AURA = {
 			PERSONAL = {
-				  1719, -- Battle Cry
-				 18499, -- Berserker Rage
-				 23920, -- Spell Reflection
-				107574, -- Avatar
-				122510, -- Ultimatum
-				132404, -- Shield Block
-				188783, -- Might of the Vrykul (Protection artifact)
-				188923, -- Cleave
-				202164, -- Bounding Stride
-				227847, -- Bladestorm
+				  18499, -- Berserker Rage
+				  23920, -- Spell Reflection
+				 122510, -- Ultimatum
+				 132404, -- Shield Block
+				 188783, -- Might of the Vrykul (Protection artifact)
+				 188923, -- Cleave
+				 202164, -- Bounding Stride
+				 227847, -- Bladestorm
+				BURST = {
+					  1719, -- Battle Cry
+					107574, -- Avatar
+				},
 				SURVIVAL = {
 					   871, -- Shield Wall
 					 12975, -- Last Stand
 					118038, -- Die by the Sword
+					197690, -- Defensive Stance
 					203524, -- Neltharion's Fury (Protection artifact)
 					227744, -- Ravager
 				},
@@ -69,19 +72,23 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 			147833, -- Intervene
 		},
 		HARMFUL = {
+			   772, -- Rend
 			  1715, -- Hamstring (slow)
 			115767, -- Deep Wounds
+			215537, -- Trauma
 			CROWD_CTL = {
 				105771, -- Charge (root)
 			},
 		},
 		PERSONAL = {
 			 32216, -- Victorious
+			 60503, -- Overpower!
 			202289, -- Renewed Fury
 			202573, -- Vengeance: Focused Rage
 			202574, -- Vengeance: Ignore Pain
 			203581, -- Dragon Scales (Protection artifact)
-			204488, -- Focused Rage
+			204488, -- Focused Rage (Protection)
+			207982, -- Focused Rage (Arms)
 			SURVIVAL = {
 				190456, -- Ignore Pain
 			},
@@ -94,6 +101,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 		 34428, -- Victory Rush
 		202168, -- Impending Victory
 	},
+	[ 60503] = 7384, -- Overpower! <- Overpower
 	[ 97463] = 97462, -- Commanding Shout
 	[105771] = { -- Charge (root)
 		   100, -- Charge
@@ -108,6 +116,8 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 	[147833] = 198304, -- Intervene <- Intercept
 	[188783] = 188778, -- Might of the Vrykul (Protection artifact)
 	[188923] = 845, -- Cleave
+	[197690] = 212520, -- Defensive Stance
+	[215537] = 215538, -- Trauma
 	[202164] = 202163, -- Bounding Stride
 	[202289] = 202288, -- Renewed Fury
 	[202573] = 202572, -- Vengeance: Focused Rage <- Vengeance
@@ -129,9 +139,15 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 		23922, -- Shield Slam
 	},
 	[188923] = 1680, -- Cleave -> Whirlwind
+	[215537] = { -- Trauma
+		1464, -- Slam
+		1680, -- Whirlwind
+	},
 	[202164] = 6544, -- Bounding Stride -> Heroic Leap
 	[202289] = 190456, -- Renewed Fury -> Ignore Pain
 	[202573] = 204488, -- Vengeance: Focused Rage -> Focused Rage
 	[202574] = 190456, -- Vengeance: Ignore Pain -> Ignore Pain
 	[203581] = 190456, -- Dragon Scales (Protection artifact) -> Ignore Pain
+	[204488] = 23922, -- Focused Rage (Protection) -> Shield Slam
+	[207982] = 12294, -- Focused Rage (Arms) -> Mortal Strike
 })
