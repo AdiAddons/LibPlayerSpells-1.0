@@ -34,12 +34,13 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 				122510, -- Ultimatum
 				132404, -- Shield Block
 				188783, -- Might of the Vrykul (Protection artifact)
+				188923, -- Cleave
 				202164, -- Bounding Stride
-				227847, -- Bladestorm (Arms)
+				227847, -- Bladestorm
 				SURVIVAL = {
 					   871, -- Shield Wall
 					 12975, -- Last Stand
-					118038, -- Die by the Sword (Arms, Fury)
+					118038, -- Die by the Sword
 					203524, -- Neltharion's Fury (Protection artifact)
 					227744, -- Ravager
 				},
@@ -52,8 +53,10 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 				   355, -- Taunt (taunt)
 				  1160, -- Demoralizing Shout
 				  6343, -- Thunder Clap (slow)
-				208086, -- Colossus Smash (Arms)
+				--115804, -- Mortal Wounds -- FIXME: see LibPlayerSpells-1.0/issues/83
+				208086, -- Colossus Smash
 				CROWD_CTL = {
+					  5246, -- Intimidating Shout (disorient)
 					  7922, -- Warbringer Stun (stun)
 					132168, -- Shockwave (stun)
 					132169, -- Storm Bolt (stun)
@@ -66,6 +69,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 			147833, -- Intervene
 		},
 		HARMFUL = {
+			  1715, -- Hamstring (slow)
 			115767, -- Deep Wounds
 			CROWD_CTL = {
 				105771, -- Charge (root)
@@ -73,7 +77,6 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 		},
 		PERSONAL = {
 			 32216, -- Victorious
-			188923, -- Cleave Whirlwind
 			202289, -- Renewed Fury
 			202573, -- Vengeance: Focused Rage
 			202574, -- Vengeance: Ignore Pain
@@ -97,6 +100,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 		198304, -- Intercept
 	},
 	[115767] = 115768, -- Deep Wounds
+	-- [115804] = 12294, -- Mortal Wounds <- Mortal Strike -- FIXME: see LibPlayerSpells-1.0/issues/83
 	[122510] = 122509, -- Ultimatum
 	[132168] = 46968, -- Shockwave (stun)
 	[132169] = 107570, -- Storm Bolt (stun)
@@ -124,7 +128,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 4, {
 		 6572, -- Revenge
 		23922, -- Shield Slam
 	},
-	[188923] = 1680, -- Cleave to Whirlwind
+	[188923] = 1680, -- Cleave -> Whirlwind
 	[202164] = 6544, -- Bounding Stride -> Heroic Leap
 	[202289] = 190456, -- Renewed Fury -> Ignore Pain
 	[202573] = 204488, -- Vengeance: Focused Rage -> Focused Rage
