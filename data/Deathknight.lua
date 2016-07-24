@@ -36,6 +36,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 			HARMFUL = {
 				  51399, -- Death Grip (taunt)
 				  56222, -- Dark Command (taunt)
+				 130736, -- Soul Reaper
 				 190780, -- Frost Breath (Frost artifact) (slow)
 				 206931, -- Blooddrinker
 				 211793, -- Remorseless Winter (slow)
@@ -45,9 +46,13 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 					 91797, -- Monstrous Blow (ghoul) (stun)
 					 91800, -- Gnaw (ghoul) (stun)
 					 91807, -- Shambling Rush (ghoul) (root)
+					108194, -- Asphyxiate (Unholy talent) (stun)
 					206961, -- Tremble Before Me (disorient)
 					207167, -- Blinding Sleet (disorient)
-					221562, -- Asphyxiate (stun)
+					212332, -- Smash (abomination) (stun)
+					212337, -- Powerful Smash (abomination) (stun)
+					212540, -- Flesh Hook (abomination) (root)
+					221562, -- Asphyxiate (Blood) (stun)
 				},
 			},
 			PERSONAL = {
@@ -55,9 +60,13 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 				152279, -- Breath of Sindragosa
 				196770, -- Remorseless Winter
 				188290, -- Death and Decay
+				194918, -- Blighted Rune Weapon
 				207127, -- Hungering Rune Weapon
 				207256, -- Obliteration
 				212552, -- Wraith Walk
+				215711, -- Soul Reaper
+				216974, -- Necrosis
+				218100, -- Defile
 				[42650] = "BURST", -- Army of the Dead
 				SURVIVAL = {
 					 48707, -- Anti-Magic Shield
@@ -68,13 +77,16 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 					194679, -- Rune Tap
 					194844, -- Bonestorm
 					205725, -- Anti-Magic Barrier
+					207319, -- Corpse Shield
 					219809, -- Tombstone
 				},
 			},
 			PET = {
-				63560, -- Dark Transformation
-				91837, -- Putrid Bullwark
-				91838, -- Huddle
+				 63560, -- Dark Transformation
+				 91837, -- Putrid Bullwark (ghoul)
+				 91838, -- Huddle (ghoul)
+				212383, -- Gastric Bloat (abomination)
+				212385, -- Protective Bile (abomination)
 			},
 		},
 	},
@@ -91,6 +103,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 			196782, -- Outbreak
 			206930, -- Hearth Strike (slow)
 			206940, -- Mark of Blood
+			208278, -- Debilitating Infestation
 			211794, -- Winter is Coming
 			211831, -- Abomination's Might (slow)
 			CROWD_CTL = {
@@ -132,7 +145,10 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 	[ 91807] = 63560, -- Shambling Rush (ghoul) (root) <- Dark Transformation
 	[ 91837] = 63560, -- Putrid Bullwark <- Dark Transformation
 	[ 91838] = 47484, -- Huddle
-	[188290] = 43265, -- Death and Decay
+	[188290] = { -- Death and Decay
+		 43265, -- Death and Decay
+		152280, -- Defile
+	},
 	[190780] = 190778, -- Frost Breath (Frost artifact) (slow)
 	[191587] = 77575, -- Virulent Plague <- Outbreak
 	[193320] = 193213, -- Umbilicus Eternus (Blood artifact)
@@ -145,11 +161,20 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 	[207165] = 207161, -- Abomination's Might (stun)
 	[207171] = 207170, -- Winter is Coming (stun)
 	[207203] = 207200, -- Frost Shield <- Permafrost
+	[208278] = 207316, -- Debilitating Infestation
 	[211793] = 196770, -- Remorseless Winter (slow)
 	[211794] = 207170, -- Winter is Coming
 	[211831] = 207161, -- Abomination's Might (slow)
+	[212332] = 212336, -- Smash (abomination) (stun)
+	[212337] = 63560, -- Powerful Smash (abomination) (stun) <- Dark Transformation
+	[212383] = 63560, -- Gastric Bloat (abomination) <- Dark Transformation
+	[212385] = 212384, -- Protective Bile (abomination)
+	[212540] = 63560, -- Flesh Hook (abomination) (root) <- Dark Transformation
 	[212764] = 212765, -- White Walker (slow)
 	[213003] = 212744, -- Soulgorge
+	[215711] = 130736, -- Soul Reaper
+	[216974] = 207346, -- Necrosis
+	[218100] = 152280, -- Defile
 }, {
 	-- map aura to modified spell(s)
 	[ 51124] = { -- Killing Machine
@@ -163,6 +188,10 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 	[ 91797] = 47481, -- Monstrous Blow (ghoul) (stun) -> Gnaw (with Dark Transformation)
 	[ 91807] = 47482, -- Shambling Rush (ghoul) (root) -> Leap (with Dark Transformation)
 	[ 91837] = 47484, -- Putrid Bullwark -> Huddle (with Dark Transformation)
+	[188290] = { -- Death and Decay
+		 55090, -- Scourge Strike
+		207311, -- Clawing Shadows
+	},
 	[193320] = 55233, -- Umbilicus Eternus (Blood artifact) -> Vampiric Blood
 	[194879] = 49143, -- Icy Talons -> Frost Strike
 	[205725] = 48707, -- Anti-Magic Barrier -> Anti-Magic Shell
@@ -170,7 +199,15 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 5, {
 	[207165] = 49020, -- Abomination's Might (stun) -> Obliterate
 	[207171] = 196770, -- Winter is Coming (stun) -> Remorseless Winter
 	[207203] = 6603, -- Frost Shield -> Auto Attack
+	[208278] = 77575, -- Debilitating Infestation -> Outbreak
 	[211794] = 196770, -- Winter is Coming -> Remorseless Winter
 	[211831] = 49020, -- Abomination's Might (slow) -> Obliterate
+	[212337] = 212336, -- Powerful Smash (abomination) (stun) -> Smash (with Dark Transformation)
+	[212383] = 212384, -- Gastric Bloat (abomination) -> Protective Bile (with Dark Transformation)
+	[212540] = 212468, -- Flesh Hook (abomination) (root) -> Hook (with Dark Transformation)
 	[212764] = 212552, -- White Walker (slow) -> Wraith Walk
+	[216974] = { -- Necrosis
+		 55090, -- Scourge Strike
+		207311, -- Clawing Shadows
+	},
 })
