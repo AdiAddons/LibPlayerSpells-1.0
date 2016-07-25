@@ -36,6 +36,8 @@ if not lib then return end
 lib:__RegisterSpells("SHAMAN", 70000, 2, {
 	COOLDOWN = {
 		    556, -- Astral Recall
+		  17364, -- Stormstrike
+		  51533, -- Feral Spirit
 		 198067, -- Fire Elemental
 		 198103, -- Earth Elemental
 		[ 57994] = "INTERRUPT", -- Wind Shear
@@ -48,8 +50,8 @@ lib:__RegisterSpells("SHAMAN", 70000, 2, {
 			},
 			PERSONAL = {
 				[108271] = "SURVIVAL", -- Astral Shift
-				  58875, -- Spirit Walk (Enhancement)
-				 114051, -- Ascendance (Enhancement)
+				  58875, -- Spirit Walk
+				 187878, -- Crash Lightning
 			},
 		},
 	},
@@ -68,10 +70,9 @@ lib:__RegisterSpells("SHAMAN", 70000, 2, {
 			 2645, -- Ghost Wolf
 			 6196, -- Far Sight
 			77762, -- Lava Surge
-		   194084, -- Flametongue (Enhancement)
-		   196834, -- Frostbrand (Enhancement)
-		   187878, -- Crash Lightning (Enhancement)
-		   215785, -- Hot Hand (Enhancement)
+		   194084, -- Flametongue
+		   196834, -- Frostbrand
+		   201846, -- Stormbringer
 		},
 	},
 	DISPEL = {
@@ -82,14 +83,11 @@ lib:__RegisterSpells("SHAMAN", 70000, 2, {
 	-- map aura to provider(s)
 	[ 77762] = 77756, -- Lava Surge
 	[182387] = 61882, -- Earthquake (knockback) <- Earthquake Totem
-	[194084] = 193796, -- Flametounge (Enhancement)
-	[187878] = 187874, -- Crash Lightning (Enhancement)
-	[215785] = 60103, -- Hot Hands <- Lava Lash (Enhancement)
+	[194084] = 193796, -- Flametounge
+	[187878] = 187874, -- Crash Lightning
+	[201846] = 201845, -- Stormbringer
 }, {
 	-- map aura to modified spell(s)
-	[77762] = 51505, -- Lava Surge -> Lava Burst
---	[187878] = { -- Crash Lightning (Enhancement)
---		60103, -- Lava Lash (Enhancement)
---		17364, -- Stormstrike (Enhancement)
---	},
+	[ 77762] = 51505, -- Lava Surge -> Lava Burst
+	[201846] = 17364, -- Stormbringer -> Stormstrike
 })
