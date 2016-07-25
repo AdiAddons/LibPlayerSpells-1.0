@@ -9,11 +9,11 @@ addons:
       - lua5.1
       - luarocks
       - liblua5.1-bitop0
-    ssh_known_hosts:
-      - git.wowace.com
-      - repos.curseforge.com.
-      - 52.203.198.193
-      - 52.203.147.62
+  ssh_known_hosts:
+    - git.wowace.com
+    - repos.curseforge.com.
+    - 52.203.198.193
+    - 52.203.147.62
 
 install:
   - eval $(luarocks path --bin)
