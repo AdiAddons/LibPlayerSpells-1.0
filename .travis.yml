@@ -32,6 +32,7 @@ deploy:
   script: $TRAVIS_BUILD_DIR/deploy/deploy.sh libplayerspells-1-0
   on:
     branch: master
+    repo: AdiAddons/LibPlayerSpells-1.0
 
 notifications:
   email:
