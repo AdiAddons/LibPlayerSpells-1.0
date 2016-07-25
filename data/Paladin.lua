@@ -53,7 +53,7 @@ lib:__RegisterSpells("PALADIN", 70000, 2, {
 					 20066, -- Repentance (incapacitate)
 					105421, -- Blinding Light (disorient)
 					205290, -- Wake of Ashes (Retribution artifact) (stun)
-				}
+				},
 			},
 			PERSONAL = {
 				217020, -- Zeal -- NOTE: the buff charges overlay the spell charges

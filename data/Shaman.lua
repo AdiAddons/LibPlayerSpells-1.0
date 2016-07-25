@@ -35,16 +35,16 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("SHAMAN", 70000, 2, {
 	COOLDOWN = {
-		198067, -- Fire Elemental
-		198103, -- Earth Elemental
-		INTERRUPT = {
-			57994, -- Wind Shear
-		},
+		    556, -- Astral Recall
+		 198067, -- Fire Elemental
+		 198103, -- Earth Elemental
+		[ 57994] = "INTERRUPT", -- Wind Shear
 		AURA = {
-			HELPFUL = {},
 			HARMFUL = {
-				 51490, -- Thunderstorm (slow)
-				[51514] = "CROWD_CTL", -- Hex
+				CROWD_CTL = {
+					51490, -- Thunderstorm (slow) (knockback)
+					51514, -- Hex (incapacitate)
+				},
 			},
 			PERSONAL = {
 				[108271] = "SURVIVAL", -- Astral Shift
@@ -58,9 +58,11 @@ lib:__RegisterSpells("SHAMAN", 70000, 2, {
 			546, -- Water Walking
 		},
 		HARMFUL = {
-			182387, -- Earthquake
 			188389, -- Flame Shock
 			196840, -- Frost Shock (slow)
+			CROWD_CTL = {
+				182387, -- Earthquake (knockback)
+			},
 		},
 		PERSONAL = {
 			 2645, -- Ghost Wolf
@@ -79,7 +81,7 @@ lib:__RegisterSpells("SHAMAN", 70000, 2, {
 }, {
 	-- map aura to provider(s)
 	[ 77762] = 77756, -- Lava Surge
-	[182387] = 61882, -- Earthquake <- Earthquake Totem
+	[182387] = 61882, -- Earthquake (knockback) <- Earthquake Totem
 	[194084] = 193796, -- Flametounge (Enhancement)
 	[187878] = 187874, -- Crash Lightning (Enhancement)
 	[215785] = 60103, -- Hot Hands <- Lava Lash (Enhancement)
