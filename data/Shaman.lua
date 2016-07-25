@@ -49,9 +49,9 @@ lib:__RegisterSpells("SHAMAN", 70000, 2, {
 				},
 			},
 			PERSONAL = {
-				[108271] = "SURVIVAL", -- Astral Shift
-				  58875, -- Spirit Walk
-				 187878, -- Crash Lightning
+				   58875, -- Spirit Walk
+				  187878, -- Crash Lightning
+				 [108271] = "SURVIVAL", -- Astral Shift
 			},
 		},
 	},
@@ -83,8 +83,8 @@ lib:__RegisterSpells("SHAMAN", 70000, 2, {
 	-- map aura to provider(s)
 	[ 77762] = 77756, -- Lava Surge
 	[182387] = 61882, -- Earthquake (knockback) <- Earthquake Totem
-	[194084] = 193796, -- Flametounge
 	[187878] = 187874, -- Crash Lightning
+	[194084] = 193796, -- Flametounge
 	[201846] = 201845, -- Stormbringer
 }, {
 	-- map aura to modified spell(s)
