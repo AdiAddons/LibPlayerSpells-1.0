@@ -22,22 +22,28 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("MAGE", 70000, 3, {
 	COOLDOWN = {
-		 1953, -- Blink
-		44425, -- Arcane Barrage
-		55342, -- Mirror Image
-		[ 2139] = "INTERRUPT", -- Counterspell
-		[30449] = "DISPEL HARMFUL", -- Spellsteal
+		   1953, -- Blink
+		  44425, -- Arcane Barrage
+		  55342, -- Mirror Image
+		 153626, -- Arcane Orb
+		 157980, -- Supernova (knockback)
+		 205032, -- Charged Up
+		 212653, -- Shimmer
+		[  2139] = "INTERRUPT", -- Counterspell
+		[ 30449] = "DISPEL HARMFUL", -- Spellsteal
 		AURA = {
 			HARMFUL = {
 				CROWD_CTL = {
-					122, -- Frost Nova (root)
+					  122, -- Frost Nova (root)
+					82691, -- Ring of Frost (incapacitate)
 				},
 			},
 			PERSONAL = {
-				 108839, -- Ice Floes (Arcane Talent)
+				 108839, -- Ice Floes
 				 113862, -- Greater Invisibility (dmg reduction)
- 				 116014, -- Rune of Power (Arcane Talent)
-				 205025, -- Presence of Mind (Arcane Talent)
+ 				 116014, -- Rune of Power
+				 205025, -- Presence of Mind
+				 210126, -- Arcane Familiar
 				 212799, -- Displacement
 				[ 12042] = "BURST", -- Arcane Power
 				[ 12051] = "MANA_REGEN", -- Evocation
@@ -55,7 +61,8 @@ lib:__RegisterSpells("MAGE", 70000, 3, {
 			130, -- Slow Fall
 		},
 		HARMFUL = {
-			31589, -- Slow (slow)
+			 31589, -- Slow (slow)
+			114923, -- Nether Tempest
 			CROWD_CTL = {
 				   118, -- Polymorph (incapacitate)
 				 28271, -- Polymorph: Turtle (incapacitate)
@@ -63,7 +70,6 @@ lib:__RegisterSpells("MAGE", 70000, 3, {
 				 61305, -- Polymorph: Black Cat (incapacitate)
 				 61721, -- Polymorph: Rabbit (incapacitate)
 				 61780, -- Polymorph: Turkey
-				 82691, -- Ring of Frost (incapacitate) (Arcane Talent)
 				126819, -- Polymorph: Pig (porcupine) (incapacitate)
 				161353, -- Polymorph: Polar Bear Cub (incapacitate)
 				161354, -- Polymorph: Monkey (incapacitate)
@@ -72,8 +78,8 @@ lib:__RegisterSpells("MAGE", 70000, 3, {
 			},
 		},
 		PERSONAL = {
-			 79683, -- Arcane Missiles! (Arcane)
-			210126, -- Arcane Familiar (Arcane Talent)
+			  79683, -- Arcane Missiles! (Arcane)
+			 198924, -- Quickening
 		},
 	},
 }, {
@@ -84,9 +90,15 @@ lib:__RegisterSpells("MAGE", 70000, 3, {
 	[110960] = 110959, -- Greater Invisibility
 	[113862] = 110959, -- Greater Invisibility (dmg reduction)
 	[116014] = 116011, -- Rune of Power
+	[198924] = 198923, -- Quickening
 	[210126] = 205022, -- Arcane Familiar
 	[212799] = 195676, -- Displacement
 }, {
 	-- map aura to modified spell(s)
+	[198924] = { -- Quickening
+		 1449, -- Arcane Explosion
+		 5143, -- Arcane Missiles
+		30451, -- Arcane Blast
+	},
 	[205025] = 30451, -- Presence of Mind -> Arcane Blast
 })
