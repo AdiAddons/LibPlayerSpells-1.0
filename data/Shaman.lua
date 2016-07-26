@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70000, 4, {
+lib:__RegisterSpells("SHAMAN", 70000, 5, {
 	COOLDOWN = {
 		    556, -- Astral Recall
 		  17364, -- Stormstrike
@@ -76,11 +76,12 @@ lib:__RegisterSpells("SHAMAN", 70000, 4, {
 			546, -- Water Walking
 		},
 		HARMFUL = {
+			182387, -- Earthquake
 			188389, -- Flame Shock
 			196840, -- Frost Shock (slow)
 			197209, -- Lightning Rod
 			CROWD_CTL = {
-				182387, -- Earthquake (knockback)
+				 77505, -- Earthquake (stun)
 			},
 		},
 		PERSONAL = {
@@ -103,6 +104,7 @@ lib:__RegisterSpells("SHAMAN", 70000, 4, {
 }, {
 	-- map aura to provider(s)
 	[ 64695] = 51485, -- Earthgrab (root) <- Earthgrab Totem
+	[ 77505] = 61882, -- Earthquake (stun) <- Earthquake Totem
 	[ 77762] = 77756, -- Lava Surge
 	[116947] = 51485, -- Earthbind (slow) <- Earthgrab Totem
 	[118522] = 117014, -- Elemental Blast: Critical Strike <- Elemental Blast
