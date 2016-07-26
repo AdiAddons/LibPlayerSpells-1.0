@@ -22,7 +22,9 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("MAGE", 70000, 3, {
 	COOLDOWN = {
-		 55342, -- Mirror Image (Arcane Talent)
+		 1953, -- Blink
+		44425, -- Arcane Barrage
+		55342, -- Mirror Image
 		[ 2139] = "INTERRUPT", -- Counterspell
 		[30449] = "DISPEL HARMFUL", -- Spellsteal
 		AURA = {
@@ -32,12 +34,14 @@ lib:__RegisterSpells("MAGE", 70000, 3, {
 				},
 			},
 			PERSONAL = {
-				  12042, -- Arcane Power (Arcane)
 				 108839, -- Ice Floes (Arcane Talent)
+				 113862, -- Greater Invisibility (dmg reduction)
  				 116014, -- Rune of Power (Arcane Talent)
 				 205025, -- Presence of Mind (Arcane Talent)
-				 212799, -- Displacement (Arcane)
-				[ 12051] = "MANA_REGEN", -- Evocation (Arcane)
+				 212799, -- Displacement
+				[ 12042] = "BURST", -- Arcane Power
+				[ 12051] = "MANA_REGEN", -- Evocation
+				[ 41425] = "INVERT_AURA", -- Hypothermia
 				SURVIVAL = {
 					 11426, -- Ice Barrier
 					 45438, -- Ice Block
@@ -51,7 +55,7 @@ lib:__RegisterSpells("MAGE", 70000, 3, {
 			130, -- Slow Fall
 		},
 		HARMFUL = {
-			31589, -- Slow (slow) (Arcane)
+			31589, -- Slow (slow)
 			CROWD_CTL = {
 				   118, -- Polymorph (incapacitate)
 				 28271, -- Polymorph: Turtle (incapacitate)
@@ -74,20 +78,15 @@ lib:__RegisterSpells("MAGE", 70000, 3, {
 	},
 }, {
 	-- map aura to provider(s)
-	[ 79683] = { -- Arcane Missiles!
-		   122, -- Frost Nova
-		  1449, -- Arcane Explosion
-		 30451, -- Arcane Blast
-		 44425, -- Arcane Barrage
-		157980, -- Supernova
-	},
+	[ 41425] = 45438, -- Hypothermia <- Ice Block
+	[ 79683] = 5143, -- Arcane Missiles! -> Arcane Missiles
 	[ 82691] = 113724, -- Ring of Frost
 	[110960] = 110959, -- Greater Invisibility
+	[113862] = 110959, -- Greater Invisibility (dmg reduction)
 	[116014] = 116011, -- Rune of Power
 	[210126] = 205022, -- Arcane Familiar
 	[212799] = 195676, -- Displacement
 }, {
 	-- map aura to modified spell(s)
-	[ 79683] = 5143, -- Arcane Missiles! -> Arcane Missiles
 	[205025] = 30451, -- Presence of Mind -> Arcane Blast
 })
