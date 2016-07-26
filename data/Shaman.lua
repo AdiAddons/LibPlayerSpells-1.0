@@ -44,6 +44,7 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 				116947, -- Earthbind (slow)
 				118297, -- Immolate (Primal Fire Elemental)
 				188089, -- Earthen Spike
+				224126, -- Frozen Bite (Enhancement artifact) (slow)
 				CROWD_CTL = {
 					 51514, -- Hex (incapacitate)
 					 64695, -- Earthgrab (root)
@@ -61,7 +62,10 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 				  173184, -- Elemental Blast: Mastery
 				  187878, -- Crash Lightning
 				  191877, -- Power of Maelstrom (Elemental artifact)
+				  198249, -- Elemental Healing (Enhancement artifact)
+				  198300, -- Gathering Storms (Enhancement artifact)
 				  202004, -- Landslide
+				  204945, -- Doom Winds (Enhancement artifact)
 				  205495, -- Stormkeeper (Elemental artifact)
 				  210714, -- Icefury
 				  215785, -- Hot Hand
@@ -132,6 +136,8 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 	[196942] = 196932, -- Hex (incapacitate) <- Voodoo Totem
 	[197209] = 210689, -- Lightning Rod
 	[197385] = 197211, -- Fury of Air (slow)
+	[198249] = 198248, -- Elemental Healing (Enhancement artifact)
+	[198300] = 198299, -- Gathering Storms (Enhancement artifact)
 	[201846] = 201845, -- Stormbringer
 	[202004] = 197992, -- Landslide
 	[202192] = 210643, -- Resonance Totem <- Totem Mastery
@@ -140,6 +146,7 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 	[210659] = 210643, -- Tailwind Totem <- Totem Mastery
 	[215785] = 201900, -- Hot Hand
 	[218825] = 201897, -- Boulderfist
+	[224126] = 198505, -- Frozen Bite (Enhancement artifact) (slow) <- Doom Wolves
 }, {
 	-- map aura to modified spell(s)
 	[ 77762] = 51505, -- Lava Surge -> Lava Burst
@@ -151,6 +158,11 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 	[197209] = { -- Lightning Rod
 		188196, -- Lightning Bolt
 		188443, -- Lightning Chain
+	},
+	[198249] = 108271, -- Elemental Healing (Enhancement artifact) -> Astral Shift
+	[198300] = { -- Gathering Storms (Enhancement artifact)
+		 17364, -- Stormstrike
+		115356, -- Windstrike
 	},
 	[201846] = { -- Stormbringer
 		 17364, -- Stormstrike
@@ -166,4 +178,5 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 	},
 	[210714] = 196840, -- Icefury -> Frost Shock
 	[215785] = 60103, -- Hot Hand -> Lava Lash
+	[224126] = 51533, -- Frozen Bite (Enhancement artifact) (slow) -> Feral Spirit
 })
