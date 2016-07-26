@@ -20,4 +20,81 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", 70000, 1, {})
+lib:__RegisterSpells("PRIEST", 70000, 1, {
+	COOLDOWN = {
+		 19236, -- Desperate Prayer
+		 32375, -- Mass Dispel
+		 47540, -- Penance
+		 62618, -- Power Word: Barrier
+		 64843, -- Divine Hymn
+		 73325, -- Leap of Faith
+		DISPEL = {
+			[527] = "HELPFUL", -- Purify
+			[528] = "HARMFUL", -- Dispel Magic
+		},
+		AURA = {
+			PERSONAL = {
+				SURVIVAL = {
+					   586, -- Fade
+					 20711, -- Spirit of Redemption
+					 47585, -- Dispersion
+				},
+				MANA_REGEN = {
+					 34433, -- Shadowfiend
+					123040, -- Mindbender
+				},
+				BURST = {
+					 10060, -- Power Infusion
+					 15286, -- Vampiric Embrace
+				},
+			},
+			HELPFUL = {
+				    17, -- Power Word: Shield
+				 33076, -- Prayer of Mending
+				 81782, -- Power Word: Barrier
+				152118, -- Clarity of Will
+				SURVIVAL = {
+					 33206, -- Pain Suppression
+					 47788, -- Guardian Spirit
+					121557, -- Angelic Feather
+				},
+				UNIQUE_AURA = {
+					
+				},
+			},
+			HARMFUL = {
+				   8122, -- Psychic Scream
+				  14914, -- Holy Fire
+				 129250, -- Power Word: Solace
+				 [15487] = "INTERRUPT", -- Silence
+			},
+		},
+	},
+	AURA = {
+		PERSONAL = {
+			114255, -- Surge of Light
+			228264, -- Void Form
+		},
+		HELPFUL = {
+			    139, -- Renew
+			 194384, -- Atonement
+			[111759] = "UNIQUE_AURA", -- Levitate
+		},
+		HARMFUL = {
+			   589, -- Shadow Word: Pain
+			204197, -- Purge the Wicked
+			 15407, -- Mind Flay
+			 34914, -- Vampiric Touch
+			 48045, -- Mind Sear
+		},
+	},
+}, {
+	-- Map aura to provider
+	[ 81782] =  62618, -- Power Word: Barrier
+	[111759] =   1706, -- Levitate
+	[114255] = 109186, -- Surge of Light
+	[121557] = 121536, -- Angelic Feather (Talent)
+}, {
+	-- Map aura to modified spell(s)
+	--[129197] = 129197, -- Insanity
+})
