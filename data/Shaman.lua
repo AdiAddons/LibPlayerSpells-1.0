@@ -18,40 +18,54 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
---[[
-	ISSUES:
-	* Stone Bulwark and other totem buff/debuffs are ovewriten by ABA totem duration tracking
-	* map auras to modifiers doesn't work, only on auras to providers
-	* Echos of elements should hint the button instead of highlight it
-	* Malestrom weapon should only flash flash at 5 stacks
-	* Frozen power aura doesn't work (not enough diference in duration?)
-
-	TODO:
-	* Level 100 talents
-	* remove "useless" commented spells or uncomment them back in
---]]
-
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70000, 2, {
+lib:__RegisterSpells("SHAMAN", 70000, 3, {
 	COOLDOWN = {
 		    556, -- Astral Recall
 		  17364, -- Stormstrike
 		  51533, -- Feral Spirit
+		 157375, -- Gale Force (from Primal Stone Elemental) (knockback)
+		 192063, -- Gust of Wind
+		 192222, -- Liquid Magma Totem
+		 192249, -- Stone Elemental
 		 198067, -- Fire Elemental
 		 198103, -- Earth Elemental
 		[ 57994] = "INTERRUPT", -- Wind Shear
 		AURA = {
+			HELPFUL = {
+				157384, -- Eye of the Storm (Primal Stone Elemental)
+				192082, -- Wind Rush
+			},
 			HARMFUL = {
+				 51490, -- Thunderstorm (slow) (knockback)
+				116947, -- Earthbind (slow)
+				118297, -- Immolate (Primal Fire Elemental)
 				CROWD_CTL = {
-					51490, -- Thunderstorm (slow) (knockback)
-					51514, -- Hex (incapacitate)
+					 51514, -- Hex (incapacitate)
+					 64695, -- Earthgrab (root)
+					118345, -- Pulverize (Primal Earth Elemental) (stun)
+					118905, -- Static Charge (stun)
+					196942, -- Hex (Voodoo Totem) (incapacitate)
 				},
 			},
 			PERSONAL = {
 				   58875, -- Spirit Walk
+				  108281, -- Ancestral Guidance
+				  118522, -- Elemental Blast: Critical Strike
+				  173183, -- Elemental Blast: Haste
+				  173184, -- Elemental Blast: Mastery
 				  187878, -- Crash Lightning
+				  210714, -- Icefury
 				 [108271] = "SURVIVAL", -- Astral Shift
+				 BURST = {
+					 16166, -- Elemental Mastery
+					114050, -- Ascendance
+				 },
+			},
+			PET = {
+				118337, -- Harden Skin (Primal Earth Elemental)
+				157348. -- Call Lightning (Primal Stone Elemental)
 			},
 		},
 	},
@@ -62,6 +76,7 @@ lib:__RegisterSpells("SHAMAN", 70000, 2, {
 		HARMFUL = {
 			188389, -- Flame Shock
 			196840, -- Frost Shock (slow)
+			197209, -- Lightning Rod
 			CROWD_CTL = {
 				182387, -- Earthquake (knockback)
 			},
@@ -73,6 +88,10 @@ lib:__RegisterSpells("SHAMAN", 70000, 2, {
 		   194084, -- Flametongue
 		   196834, -- Frostbrand
 		   201846, -- Stormbringer
+		   202192, -- Resonance Totem
+		   210652, -- Storm Totem
+		   210658, -- Ember Totem
+		   210659, -- Tailwind Totem
 		},
 	},
 	DISPEL = {
@@ -81,13 +100,36 @@ lib:__RegisterSpells("SHAMAN", 70000, 2, {
 	},
 }, {
 	-- map aura to provider(s)
+	[ 64695] = 51485, -- Earthgrab (root) <- Earthgrab Totem
 	[ 77762] = 77756, -- Lava Surge
+	[116947] = 51485, -- Earthbind (slow) <- Earthgrab Totem
+	[118522] = 117014, -- Elemental Blast: Critical Strike <- Elemental Blast
+	[118905] = 192058, -- Static Charge (stun) <- Lightning Surge Totem
+	[157384] = 157382, -- Eye of the Storm (Primal Stone Elemental)
+	[173183] = 117014, -- Elemental Blast: Haste <- Elemental Blast
+	[173184] = 117014, -- Elemental Blast: Mastery <- Elemental Blast
 	[182387] = 61882, -- Earthquake (knockback) <- Earthquake Totem
 	[187878] = 187874, -- Crash Lightning
+	[192082] = 192077, -- Wind Rush
 	[194084] = 193796, -- Flametounge
+	[196942] = 196932, -- Hex (incapacitate) <- Voodoo Totem
+	[197209] = 210689, -- Lightning Rod
 	[201846] = 201845, -- Stormbringer
+	[202192] = 210643, -- Resonance Totem <- Totem Mastery
+	[210652] = 210643, -- Storm Totem <- Totem Mastery
+	[210658] = 210643, -- Ember Totem <- Totem Mastery
+	[210659] = 210643, -- Tailwind Totem <- Totem Mastery
 }, {
 	-- map aura to modified spell(s)
 	[ 77762] = 51505, -- Lava Surge -> Lava Burst
+	[114050] = { -- Ascendance
+		 51505, -- Lava Burst
+		114074, -- Lava Beam
+	},
+	[197209] = { -- Lightning Rod
+		188196, -- Lightning Bolt
+		188443, -- Lightning Chain
+	},
 	[201846] = 17364, -- Stormbringer -> Stormstrike
+	[210714] = 196840, -- Icefury -> Frost Shock
 })
