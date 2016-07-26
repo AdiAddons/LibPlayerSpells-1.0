@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70000, 3, {
+lib:__RegisterSpells("SHAMAN", 70000, 4, {
 	COOLDOWN = {
 		    556, -- Astral Recall
 		  17364, -- Stormstrike
@@ -56,6 +56,8 @@ lib:__RegisterSpells("SHAMAN", 70000, 3, {
 				  173183, -- Elemental Blast: Haste
 				  173184, -- Elemental Blast: Mastery
 				  187878, -- Crash Lightning
+				  191877, -- Power of Maelstrom (Elemental artifact)
+				  205495, -- Stormkeeper (Elemental artifact)
 				  210714, -- Icefury
 				 [108271] = "SURVIVAL", -- Astral Shift
 				 BURST = {
@@ -110,6 +112,7 @@ lib:__RegisterSpells("SHAMAN", 70000, 3, {
 	[173184] = 117014, -- Elemental Blast: Mastery <- Elemental Blast
 	[182387] = 61882, -- Earthquake (knockback) <- Earthquake Totem
 	[187878] = 187874, -- Crash Lightning
+	[191877] = 191861, -- Power of Maelstrom (Elemental artifact)
 	[192082] = 192077, -- Wind Rush
 	[194084] = 193796, -- Flametounge
 	[196942] = 196932, -- Hex (incapacitate) <- Voodoo Totem
@@ -126,10 +129,15 @@ lib:__RegisterSpells("SHAMAN", 70000, 3, {
 		 51505, -- Lava Burst
 		114074, -- Lava Beam
 	},
+	[191877] = 188196, -- Power of Maelstrom (Elemental artifact) -> Lightning Bolt
 	[197209] = { -- Lightning Rod
 		188196, -- Lightning Bolt
 		188443, -- Lightning Chain
 	},
 	[201846] = 17364, -- Stormbringer -> Stormstrike
+	[205495] = { -- Stormkeeper (Elemental artifact)
+		188196, -- Lightning Bolt
+		188443, -- Chain Lightning
+	},
 	[210714] = 196840, -- Icefury -> Frost Shock
 })
