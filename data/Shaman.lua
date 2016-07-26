@@ -20,16 +20,18 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70000, 5, {
+lib:__RegisterSpells("SHAMAN", 70000, 6, {
 	COOLDOWN = {
 		    556, -- Astral Recall
 		  17364, -- Stormstrike
 		  51533, -- Feral Spirit
+		 115356, -- Windstrike
 		 157375, -- Gale Force (from Primal Stone Elemental) (knockback)
 		 192063, -- Gust of Wind
 		 192222, -- Liquid Magma Totem
 		 192249, -- Stone Elemental
 		 198067, -- Fire Elemental
+		 196884, -- Feral Lunge
 		 198103, -- Earth Elemental
 		[ 57994] = "INTERRUPT", -- Wind Shear
 		AURA = {
@@ -41,12 +43,14 @@ lib:__RegisterSpells("SHAMAN", 70000, 5, {
 				 51490, -- Thunderstorm (slow) (knockback)
 				116947, -- Earthbind (slow)
 				118297, -- Immolate (Primal Fire Elemental)
+				188089, -- Earthen Spike
 				CROWD_CTL = {
 					 51514, -- Hex (incapacitate)
 					 64695, -- Earthgrab (root)
 					118345, -- Pulverize (Primal Earth Elemental) (stun)
 					118905, -- Static Charge (stun)
 					196942, -- Hex (Voodoo Totem) (incapacitate)
+					197214, -- Sundering (root)
 				},
 			},
 			PERSONAL = {
@@ -57,12 +61,18 @@ lib:__RegisterSpells("SHAMAN", 70000, 5, {
 				  173184, -- Elemental Blast: Mastery
 				  187878, -- Crash Lightning
 				  191877, -- Power of Maelstrom (Elemental artifact)
+				  202004, -- Landslide
 				  205495, -- Stormkeeper (Elemental artifact)
 				  210714, -- Icefury
+				  215785, -- Hot Hand
+				  215864, -- Rainfall
+				  218825, -- Boulderfist
 				 [108271] = "SURVIVAL", -- Astral Shift
 				 BURST = {
 					 16166, -- Elemental Mastery
-					114050, -- Ascendance
+					114050, -- Ascendance (Elemental)
+					114051, -- Ascendance (Enhancement)
+					201898, -- Windsong
 				 },
 			},
 			PET = {
@@ -80,21 +90,23 @@ lib:__RegisterSpells("SHAMAN", 70000, 5, {
 			188389, -- Flame Shock
 			196840, -- Frost Shock (slow)
 			197209, -- Lightning Rod
+			197385, -- Fury of Air (slow)
 			CROWD_CTL = {
 				 77505, -- Earthquake (stun)
 			},
 		},
 		PERSONAL = {
-			 2645, -- Ghost Wolf
-			 6196, -- Far Sight
-			77762, -- Lava Surge
-		   194084, -- Flametongue
-		   196834, -- Frostbrand
-		   201846, -- Stormbringer
-		   202192, -- Resonance Totem
-		   210652, -- Storm Totem
-		   210658, -- Ember Totem
-		   210659, -- Tailwind Totem
+			  2645, -- Ghost Wolf
+			  6196, -- Far Sight
+			 77762, -- Lava Surge
+			192106, -- Lightning Shield
+			194084, -- Flametongue
+			196834, -- Frostbrand
+			201846, -- Stormbringer
+			202192, -- Resonance Totem
+			210652, -- Storm Totem
+			210658, -- Ember Totem
+			210659, -- Tailwind Totem
 		},
 	},
 	DISPEL = {
@@ -119,11 +131,15 @@ lib:__RegisterSpells("SHAMAN", 70000, 5, {
 	[194084] = 193796, -- Flametounge
 	[196942] = 196932, -- Hex (incapacitate) <- Voodoo Totem
 	[197209] = 210689, -- Lightning Rod
+	[197385] = 197211, -- Fury of Air (slow)
 	[201846] = 201845, -- Stormbringer
+	[202004] = 197992, -- Landslide
 	[202192] = 210643, -- Resonance Totem <- Totem Mastery
 	[210652] = 210643, -- Storm Totem <- Totem Mastery
 	[210658] = 210643, -- Ember Totem <- Totem Mastery
 	[210659] = 210643, -- Tailwind Totem <- Totem Mastery
+	[215785] = 201900, -- Hot Hand
+	[218825] = 201897, -- Boulderfist
 }, {
 	-- map aura to modified spell(s)
 	[ 77762] = 51505, -- Lava Surge -> Lava Burst
@@ -136,10 +152,18 @@ lib:__RegisterSpells("SHAMAN", 70000, 5, {
 		188196, -- Lightning Bolt
 		188443, -- Lightning Chain
 	},
-	[201846] = 17364, -- Stormbringer -> Stormstrike
+	[201846] = { -- Stormbringer
+		 17364, -- Stormstrike
+		115356, -- Windstrike
+	},
+	[202004] = { -- Landslide
+		193786, -- Rockbiter
+		201897, -- Boulderfist
+	},
 	[205495] = { -- Stormkeeper (Elemental artifact)
 		188196, -- Lightning Bolt
 		188443, -- Chain Lightning
 	},
 	[210714] = 196840, -- Icefury -> Frost Shock
+	[215785] = 60103, -- Hot Hand -> Lava Lash
 })
