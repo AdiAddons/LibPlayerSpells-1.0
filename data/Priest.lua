@@ -22,11 +22,13 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("PRIEST", 70000, 1, {
   COOLDOWN = {
+      2050, -- Holy Word: Serenity
      32375, -- Mass Dispel
      34433, -- Shadowfiend
+     34861, -- Holy Word: Sanctify
      47540, -- Penance
-     62618, -- Power Word: Barrier
      73325, -- Leap of Faith
+     64843, -- Divine Hymn
     DISPEL = {
       [527] = "HELPFUL", -- Purify
       [528] = "HARMFUL", -- Dispel Magic
@@ -39,26 +41,39 @@ lib:__RegisterSpells("PRIEST", 70000, 1, {
         BURST = {
            47536, -- Rapture
         },
-        186478, -- Reparation
       },
       HELPFUL = {
-            17,   -- Power Word: Shield
-         81782,   -- Power Word: Barrier
+            17, -- Power Word: Shield
+         33076, -- Prayer of Mending
+         47788, -- Guardian Spirit
+         62618, -- Power Word: Barrier
         SURVIVAL = {
-           33206,   -- Pain Suppression
+           33206, -- Pain Suppression
         },
       },
       HARMFUL = {
+         14914, -- Holy Fire
         CROWD_CTL = {
-            8122,   -- Psychic Scream (disorient)        
+            8122, -- Psychic Scream (disorient)
+           88625, -- Holy Word: Chastise (incapacitate)       
         },
       },
     },
   },
   AURA = {
+    PERSONAL = {
+       45242, -- Focused Will
+      186478, -- Reparation
+    },
     HELPFUL = {
-      194384, -- Atonement
+         139, -- Renew
         2096, -- Mind Vision
+       41635, -- Prayer of Mending
+       64844, -- Divine Hymn
+       77489, -- Echo of Light
+       81782, -- Power Word: Barrier
+      186367, -- Prayer's Reprise
+      194384, -- Atonement
       UNIQUE_AURA = {
         111759, -- Levitate
       },
@@ -67,23 +82,41 @@ lib:__RegisterSpells("PRIEST", 70000, 1, {
          589, -- Shadow Word: Pain
       187464, -- Shadow Mend
       CROWD_CTL = {
-          9484, -- Shackle Undead (incapacitate)
            605, -- Mind Control (incapacitate)
+          9484, -- Shackle Undead (incapacitate)
+        200196, -- Holy Word: Chastise (incapacitate)
       },
     },
   },
 }, 
 { -- map aura to provider(s)
-  [194384] =  81749, -- Atonement
+  -- aura = provider
+  [ 41635] =  33076, -- Prayer of Mending
+  [ 45242] =  45243, -- Focused Will
+  [ 64844] =  64843, -- Divine Hymn
+  [ 77489] =  77485, -- Echo of Light
   [ 81782] =  62618, -- Power Word: Barrier
   [111759] =   1706, -- Levitate
   [186478] =  47540, -- Reparation <- Penance
+  [186367] =  33076, -- Prayer's Reprise <- Prayer of Mending
   [187464] = 186263, -- Shadow Mend
+  [194384] =  81749, -- Atonement
+  [200196] =  88625, -- Holy Word: Chastise
 },
 { -- map aura(s) to modified spell(s)
+  -- aura = spells
+  [ 77489] = { -- Echo of Light
+       139, -- Renew
+       596, -- Prayer of Healing
+      2050, -- Holy Word: Serenity
+      2060, -- Heal
+      2061, -- Flash Heal
+     34861, -- Holy Word: Sanctify
+     64843, -- Divine Hymn
+  },
   [194384] = { -- Atonement
-        200829, -- Plea
-        186263, -- Shadow Mend
-        194509, -- Power Word: Radiance
+    186263, -- Shadow Mend
+    194509, -- Power Word: Radiance
+    200829, -- Plea
   },
 })
