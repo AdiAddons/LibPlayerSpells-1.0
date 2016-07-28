@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70000, 6, {
+lib:__RegisterSpells("SHAMAN", 70000, 7, {
 	COOLDOWN = {
 		    556, -- Astral Recall
 		  17364, -- Stormstrike
@@ -36,6 +36,8 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 		[ 57994] = "INTERRUPT", -- Wind Shear
 		AURA = {
 			HELPFUL = {
+				 61295, -- Riptide
+				 98007, -- Spirit Link Totem
 				157384, -- Eye of the Storm (Primal Stone Elemental)
 				192082, -- Wind Rush
 			},
@@ -56,6 +58,8 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 			},
 			PERSONAL = {
 				   58875, -- Spirit Walk
+				   73920, -- Healing Rain
+				   79206, -- Spiritwalker's Grace
 				  108281, -- Ancestral Guidance
 				  118522, -- Elemental Blast: Critical Strike
 				  173183, -- Elemental Blast: Haste
@@ -102,6 +106,7 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 		PERSONAL = {
 			  2645, -- Ghost Wolf
 			  6196, -- Far Sight
+			 53390, -- Tidal Waves
 			 77762, -- Lava Surge
 			192106, -- Lightning Shield
 			194084, -- Flametongue
@@ -119,9 +124,11 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 	},
 }, {
 	-- map aura to provider(s)
+	[ 53390] = 51564, -- Tidal Waves
 	[ 64695] = 51485, -- Earthgrab (root) <- Earthgrab Totem
 	[ 77505] = 61882, -- Earthquake (stun) <- Earthquake Totem
 	[ 77762] = 77756, -- Lava Surge
+	[ 98007] = 98008, -- Spirit Link Totem
 	[116947] = 51485, -- Earthbind (slow) <- Earthgrab Totem
 	[118522] = 117014, -- Elemental Blast: Critical Strike <- Elemental Blast
 	[118905] = 192058, -- Static Charge (stun) <- Lightning Surge Totem
@@ -149,6 +156,10 @@ lib:__RegisterSpells("SHAMAN", 70000, 6, {
 	[224126] = 198505, -- Frozen Bite (Enhancement artifact) (slow) <- Doom Wolves
 }, {
 	-- map aura to modified spell(s)
+	[ 53390] = { -- Tidal Waves
+		 8004, -- Healing Surge
+		77472, -- Healing Wave
+	},
 	[ 77762] = 51505, -- Lava Surge -> Lava Burst
 	[114050] = { -- Ascendance
 		 51505, -- Lava Burst
