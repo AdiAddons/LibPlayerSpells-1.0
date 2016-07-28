@@ -53,7 +53,7 @@ lib:__RegisterSpells("MONK", 70000, 4, {
 			},
 			HARMFUL = {
 				 115080, -- Touch of Death
-				 --115804, -- Mortal Wounds FIXME: see LibPlayerSpells-1.0#83
+				 115804, -- Mortal Wounds FIXME: see LibPlayerSpells-1.0#83
 				 116189, -- Provoke (taunt)
 				 118635, -- Provoke
 				 121253, -- Keg Smash (slow)
@@ -127,7 +127,7 @@ lib:__RegisterSpells("MONK", 70000, 4, {
 	},
 }, {
 	-- map aura to provider(s)
-	-- [115804] = 107428, -- Mortal Wounds <- Rising Sun Kick FIXME: see LibPlayerSpells-1.0#83
+	[115804] = 107428, -- Mortal Wounds <- Rising Sun Kick FIXME: see LibPlayerSpells-1.0#83
 	[116189] = 115546, -- Provoke (taunt)
 	[116706] = 116095, -- Disable (root)
 	[116768] = 100780, -- Blackout Kick! <- Tiger Palm

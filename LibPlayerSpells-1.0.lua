@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 7
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 8
 if LibStub then
 	lib = LibStub:NewLibrary(MAJOR, MINOR)
 	if not lib then return end
@@ -31,6 +31,7 @@ local ceil = _G.ceil
 local error = _G.error
 local format = _G.format
 local GetSpellInfo = _G.GetSpellInfo
+local gsub = _G.string.gsub
 local ipairs = _G.ipairs
 local max = _G.max
 local next = _G.next
@@ -416,7 +417,29 @@ local function FlattenSpellData(source, target, prefix, errorLevel)
 	end
 end
 
--- Used to register a category of spells
+-- either a or b is not nil
+-- a and b are either a number or a table
+local function Merge(a, b)
+	if not a then return b end
+	if not b then return a end
+
+	local hash = {}
+
+	if type(a) == "number" then hash[a] = true
+	else for i = 1, #a do hash[a[i]] = true end end
+
+	if type(b) == "number" then hash[b] = true
+	else for i = 1, #b do hash[b[i]] = true end end
+
+	local merged = {}
+	for k in pairs(hash) do merged[#merged + 1] = k end
+
+	if #merged == 1 then return merged[1] end
+
+	table.sort(merged)
+	return merged
+end
+
 function lib:__RegisterSpells(category, interface, minor, newSpells, newProviders, newModifiers)
 	if not categories[category] then
 		error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
@@ -426,15 +449,29 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	if (versions[category] or 0) >= version then return end
 	versions[category] = version
 
+	local categoryFlag = constants[category] or 0
+
 	-- Wipe previous spells
 	local db, raidbuffs = categories[category], specials.RAIDBUFF
 	for spellId in pairs(db) do
 		db[spellId] = nil
-		spells[spellId] = nil
-		providers[spellId] = nil
-		modifiers[spellId] = nil
-		raidbuffs[spellId] = nil
-		sources[spellId] = nil
+		-- wipe the rest only if the current category is the only source
+		if sources[spellId] == category then
+			spells[spellId] = nil
+			providers[spellId] = nil
+			modifiers[spellId] = nil
+			raidbuffs[spellId] = nil
+			sources[spellId] = nil
+		end
+
+		if spells[spellId] then -- there are other sources
+			-- remove current category from source flags
+			spells[spellId] = bxor(spells[spellId], categoryFlag)
+			-- can't remove old providers -> slight performance hit but no problem
+			-- can't remove old modifiers -> slight performance hit but no problem
+			-- raidbuffs contain no source information
+			sources[spellId] = strtrim(gsub(sources[spellId], category, ""))
+		end
 	end
 
 	-- Flatten the spell definitions
@@ -442,7 +479,6 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	FlattenSpellData(newSpells, defs, "", 2)
 
 	-- Useful constants
-	local rshift = bit.rshift
 	local RAIDBUFF = constants.RAIDBUFF
 	local TYPE = masks.TYPE
 	local RAIDBUFF_TYPE = masks.RAIDBUFF_TYPE
@@ -452,25 +488,25 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	local errors = {}
 
 	-- Build the flags
-	local categoryFlags = constants[category] or 0
 	for spellId, flagDef in pairs(defs) do
 		spellId = FilterSpellId(spellId, "spell", errors)
 		if spellId then
-			if sources[spellId] then
-				errors[spellId] = format("already listed in the %s database", sources[spellId])
-			else
-				local flags = filters[flagDef]
+			-- if sources[spellId] then
+			-- 	errors[spellId] = format("already listed in the %s database", sources[spellId])
+			-- end
 
-				if band(flags, TYPE) == RAIDBUFF then
-					-- Raid buff: store the buff type elsewhere
-					raidbuffs[spellId] = band(flags, RAIDBUFF_TYPE)
-					-- Remove the buff type and adds the common flags for raid buffs
-					flags = bor(band(flags, NOT_RAIDBUFF_TYPE), RAIDBUFF_FLAGS)
-				end
+			local flags = filters[flagDef]
 
-				db[spellId] = bor(db[spellId] or 0, flags, categoryFlags)
-				sources[spellId] = category
+			if band(flags, TYPE) == RAIDBUFF then
+				-- Raid buff: store the buff type elsewhere
+				raidbuffs[spellId] = band(flags, RAIDBUFF_TYPE)
+				-- Remove the buff type and adds the common flags for raid buffs
+				flags = bor(band(flags, NOT_RAIDBUFF_TYPE), RAIDBUFF_FLAGS)
 			end
+
+			db[spellId] = bor(db[spellId] or 0, flags, categoryFlag) -- TODO: db[spellId] can't be present?
+			--sources[spellId] = format("%s%s", sources[spellId] and sources[spellId].." " or "", category)
+			sources[spellId] = category
 		end
 	end
 
@@ -506,9 +542,9 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 
 	-- Copy the new values to the merged category
 	for spellId in pairs(db) do
-		spells[spellId] = db[spellId]
-		providers[spellId] = newProviders and newProviders[spellId] or spellId
-		modifiers[spellId] = newModifiers and newModifiers[spellId] or providers[spellId]
+		spells[spellId] = bor(spells[spellId] or 0, db[spellId])
+		providers[spellId] = Merge(newProviders and newProviders[spellId] or spellId, providers[spellId])
+		modifiers[spellId] = Merge(newModifiers and newModifiers[spellId] or providers[spellId], modifiers[spellId])
 	end
 
 	if next(errors) then
@@ -522,7 +558,6 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		end
 		geterrorhandler()(format("%s: %d errors in %s database:\n%s", MAJOR, #msgs, category, table.concat(msgs, "\n")))
 	end
-
 end
 
 return lib
