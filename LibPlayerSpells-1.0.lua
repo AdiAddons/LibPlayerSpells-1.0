@@ -496,10 +496,6 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	for spellId, flagDef in pairs(defs) do
 		spellId = FilterSpellId(spellId, "spell", errors)
 		if spellId then
-			-- if sources[spellId] then
-			-- 	errors[spellId] = format("already listed in the %s database", sources[spellId])
-			-- end
-
 			local flags = filters[flagDef]
 
 			if band(flags, TYPE) == RAIDBUFF then
