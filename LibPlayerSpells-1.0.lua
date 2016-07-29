@@ -260,10 +260,14 @@ filters[""] = 0
 -- @return (number) The interface (i.e. patch) version.
 -- @return (number) Minor version for the given interface version.
 function lib:GetVersionInfo(category)
-	if not categories[category] then
-		error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
+	local cats = { strsplit(" ", category) }
+	local v
+	for i = 1, #cats do
+		if not categories[cats[i]] then
+			error(format("%s: invalid category: %q", MAJOR, tostring(category)), 2)
+		end
+		v = versions[cats[i]] or 0
 	end
-	local v = versions[category] or 0
 	return v, floor(v/100), v % 100
 end
 
@@ -506,8 +510,6 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 			end
 
 			db[spellId] = bor(db[spellId] or 0, flags, categoryFlag) -- TODO: db[spellId] can't be present?
-			--sources[spellId] = format("%s%s", sources[spellId] and sources[spellId].." " or "", category)
-			sources[spellId] = category
 		end
 	end
 
@@ -541,11 +543,12 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		end
 	end
 
-	-- Copy the new values to the merged category
+	-- Copy the new values to the merged categories
 	for spellId in pairs(db) do
 		spells[spellId] = bor(spells[spellId] or 0, db[spellId])
 		providers[spellId] = Merge(newProviders and newProviders[spellId] or spellId, providers[spellId])
 		modifiers[spellId] = Merge(newModifiers and newModifiers[spellId] or providers[spellId], modifiers[spellId])
+		sources[spellId] = format("%s%s", sources[spellId] and sources[spellId].." " or "", category)
 	end
 
 	if next(errors) then
