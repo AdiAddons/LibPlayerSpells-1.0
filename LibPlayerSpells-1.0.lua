@@ -456,7 +456,8 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	for spellId in pairs(db) do
 		db[spellId] = nil
 		-- wipe the rest only if the current category is the only source
-		if sources[spellId] == category then
+		local sourceFlags = band(spells[spellId], masks.SOURCE)
+		if bxor(sourceFlags, categoryFlag) == 0 then
 			spells[spellId] = nil
 			providers[spellId] = nil
 			modifiers[spellId] = nil
