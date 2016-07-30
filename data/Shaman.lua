@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70000, 8, {
+lib:__RegisterSpells("SHAMAN", 70000, 9, {
 	COOLDOWN = {
 		    556, -- Astral Recall
 		  17364, -- Stormstrike
@@ -42,6 +42,8 @@ lib:__RegisterSpells("SHAMAN", 70000, 8, {
 				157384, -- Eye of the Storm (Primal Stone Elemental)
 				192082, -- Wind Rush
 				201633, -- Earthen Shield
+				207778, -- Gift of the Queen (Restoration artifact)
+				208899, -- Queen's Decree (Restoration artifact)
 			},
 			HARMFUL = {
 				 51490, -- Thunderstorm (slow) (knockback)
@@ -59,34 +61,37 @@ lib:__RegisterSpells("SHAMAN", 70000, 8, {
 				},
 			},
 			PERSONAL = {
-				   58875, -- Spirit Walk
-				   73685, -- Unleash Life
-				   73920, -- Healing Rain
-				   79206, -- Spiritwalker's Grace
-				  108281, -- Ancestral Guidance
-				  114052, -- Ascendance (Restoration)
-				  118522, -- Elemental Blast: Critical Strike
-				  157504, -- Cloudburst Totem
-				  173183, -- Elemental Blast: Haste
-				  173184, -- Elemental Blast: Mastery
-				  187878, -- Crash Lightning
-				  191877, -- Power of Maelstrom (Elemental artifact)
-				  198249, -- Elemental Healing (Enhancement artifact)
-				  198300, -- Gathering Storms (Enhancement artifact)
-				  202004, -- Landslide
-				  204945, -- Doom Winds (Enhancement artifact)
-				  205495, -- Stormkeeper (Elemental artifact)
-				  210714, -- Icefury
-				  215785, -- Hot Hand
-				  215864, -- Rainfall
-				  218825, -- Boulderfist
-				 [108271] = "SURVIVAL", -- Astral Shift
-				 BURST = {
+				 58875, -- Spirit Walk
+				 73685, -- Unleash Life
+				 73920, -- Healing Rain
+				 79206, -- Spiritwalker's Grace
+				108281, -- Ancestral Guidance
+				114052, -- Ascendance (Restoration)
+				118522, -- Elemental Blast: Critical Strike
+				157504, -- Cloudburst Totem
+				173183, -- Elemental Blast: Haste
+				173184, -- Elemental Blast: Mastery
+				187878, -- Crash Lightning
+				191877, -- Power of Maelstrom (Elemental artifact)
+				198249, -- Elemental Healing (Enhancement artifact)
+				198300, -- Gathering Storms (Enhancement artifact)
+				202004, -- Landslide
+				204945, -- Doom Winds (Enhancement artifact)
+				205495, -- Stormkeeper (Elemental artifact)
+				210714, -- Icefury
+				215785, -- Hot Hand
+				215864, -- Rainfall
+				218825, -- Boulderfist
+				SURVIVAL = {
+					108271, -- Astral Shift
+					209950, -- Caress of the Tidemother (Restoration artifact)
+				},
+				BURST = {
 					 16166, -- Elemental Mastery
 					114050, -- Ascendance (Elemental)
 					114051, -- Ascendance (Enhancement)
 					201898, -- Windsong
-				 },
+				},
 			},
 			PET = {
 				118337, -- Harden Skin (Primal Earth Elemental)
@@ -110,18 +115,19 @@ lib:__RegisterSpells("SHAMAN", 70000, 8, {
 			},
 		},
 		PERSONAL = {
-			  2645, -- Ghost Wolf
-			  6196, -- Far Sight
-			 53390, -- Tidal Waves
-			 77762, -- Lava Surge
-			192106, -- Lightning Shield
-			194084, -- Flametongue
-			196834, -- Frostbrand
-			201846, -- Stormbringer
-			202192, -- Resonance Totem
-			210652, -- Storm Totem
-			210658, -- Ember Totem
-			210659, -- Tailwind Totem
+			   2645, -- Ghost Wolf
+			   6196, -- Far Sight
+			  53390, -- Tidal Waves
+			  77762, -- Lava Surge
+			 192106, -- Lightning Shield
+			 194084, -- Flametongue
+			 196834, -- Frostbrand
+			 201846, -- Stormbringer
+			 202192, -- Resonance Totem
+			 210652, -- Storm Totem
+			 210658, -- Ember Totem
+			 210659, -- Tailwind Totem
+			[207527] = "SURVIVAL", -- Ghost in the Mist (Restoration artifact)
 		},
 	},
 	DISPEL = {
@@ -157,6 +163,9 @@ lib:__RegisterSpells("SHAMAN", 70000, 8, {
 	[202004] = 197992, -- Landslide
 	[202192] = 210643, -- Resonance Totem <- Totem Mastery
 	[207400] = 207401, -- Ancestral Vigor
+	[207527] = 207351, -- Ghost in the Mist (Restoration artifact)
+	[208899] = 207360, -- Queen's Decree (Restoration artifact)
+	[209950] = 207354, -- Caress of the Tidemother (Restoration artifact)
 	[210652] = 210643, -- Storm Totem <- Totem Mastery
 	[210658] = 210643, -- Ember Totem <- Totem Mastery
 	[210659] = 210643, -- Tailwind Totem <- Totem Mastery
@@ -205,6 +214,9 @@ lib:__RegisterSpells("SHAMAN", 70000, 8, {
 		61295, -- Riptide
 		77472, -- Healing Wave
 	},
+	[207527] = 2645, -- Ghost in the Mist (Restoration artifact) -> Ghost Wolf
+	[208899] = 5394, -- Queen's Decree (Restoration artifact) -> Healing Stream Totem
+	[209950] = 5394, -- Caress of the Tidemother (Restoration artifact) -> Healing Strem Totem
 	[210714] = 196840, -- Icefury -> Frost Shock
 	[215785] = 60103, -- Hot Hand -> Lava Lash
 	[224126] = 51533, -- Frozen Bite (Enhancement artifact) (slow) -> Feral Spirit
