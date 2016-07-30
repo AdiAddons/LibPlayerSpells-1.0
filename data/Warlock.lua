@@ -26,7 +26,6 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
             HARMFUL = {
                  48181, -- Haunt
                 205179, -- Phantom Singularity
-                
             },
             PERSONAL = {
                 104773, -- Unending Resolve
