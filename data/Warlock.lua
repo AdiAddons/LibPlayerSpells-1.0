@@ -75,6 +75,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 				 196099, -- Demonic Power
 				 196674, -- Planeswalker (Destruction artifact)
 				 215165, -- Devourer of Life (Destruction artifact)
+				 216708, -- Deadwind Harvester (Affliction artifact)
 				[196098] = "BURST", -- Soul Harvest
 				SURVIVAL = {
 					104773, -- Unending Resolve
@@ -111,6 +112,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 			    126, -- Eye of Kilrogg
 			 111400, -- Burning Rush
 			 196304, -- Eternal Struggle (Destruction artifact)
+			 199281, -- Compounding Horror (Affliction  artifact)
 			[196104] = "BURST", -- Mana Tap
 		},
 		PET = {
@@ -150,7 +152,9 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 	[196414] = 196412, -- Eradication
 	[196546] = 219195, -- Conflagration of Chaos (Destruction artifact)
 	[196674] = 196675, -- Planeswalker (Destruction artifact)
+	[199281] = 199282, -- Compounding Horror (Affliction artifact)
 	[215165] = 196301, -- Devourer of Life (Destruction artifact)
+	[216708] = 216698, -- Deadwind Harvester (Affliction artifact) <- Reap Souls
 }, {
 	-- map aura to modified spell(s)
 	[ 48018] = 48020, -- Demonic Circle -> Demonic Circle (Teleport)
@@ -162,5 +166,6 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 	[196414] = 116858, -- Eradication -> Chaos Bolt
 	[196546] = 17962, -- Conflagration of Chaos (Destruction artifact) -> Conflagration
 	[196674] = 111771, -- Planeswalker (Destruction artifact) -> Demonic Gateway
+	[199281] = 30108, -- Compounding Horror (Affliction artifact) -> Unstable Affliction
 	[215165] = 689, -- Devourer of Life (Destruction artifact) -> Drain Life
 })
