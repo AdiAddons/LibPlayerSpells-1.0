@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", 70000, 2, {
+lib:__RegisterSpells("WARLOCK", 70000, 3, {
 	COOLDOWN = {
 		    698, -- Ritual of Summoning
 		   1122, -- Summon Infernal
@@ -29,6 +29,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 		  18540, -- Summon Doomguard
 		  29893, -- Create Soulwell
 		  89792, -- Flee (Imp)
+		 104316, -- Call Dreadstalkers
 		 119909, -- Whiplash (Command Demon with Succubus) (knockback)
 		 152108, -- Cataclysm
 		 196586, -- Dimensional Rift (Destruction artifact)
@@ -64,6 +65,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 					  6789, -- Mortal Coil (incapacitate)
 					 22703, -- Infernal Awakening (Infernal) (stun)
 					 30283, -- Shadowfury (stun)
+					 89766, -- Axe Toss (Felguard) (stun)
 					171017, -- Meteor Strike (stun) (Infernal with Grimoire of Supremacy)
 				},
 			},
@@ -85,6 +87,8 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 			PET = {
 				  755, -- Health Funnel
 				17767, -- Shadow Bulwark (Voidwalker)
+				30151, -- Pursuit (Felguard)
+				89751, -- Felstorm (Felguard)
 			},
 		},
 	},
@@ -93,10 +97,12 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 			5697, -- Unending Breath
 		},
 		HARMFUL = {
+			   603, -- Doom
 			   689, -- Drain Life
 			   980, -- Agony
 			 27243, -- Seed of Corruption
 			 30108, -- Unstable Affliction
+			 30213, -- Legion Strike (Felguard)
 			 63106, -- Siphon Life
 			146739, -- Curruption
 			157736, -- Immolate
@@ -111,6 +117,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 		PERSONAL = {
 			    126, -- Eye of Kilrogg
 			 111400, -- Burning Rush
+			 193440, -- Demonwrath
 			 196304, -- Eternal Struggle (Destruction artifact)
 			 199281, -- Compounding Horror (Affliction  artifact)
 			[196104] = "BURST", -- Mana Tap
@@ -118,7 +125,9 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 		PET = {
 			   7870, -- Lesser Invisibility (Succubus)
 			 112042, -- Threatening Presence (Voidwalker)
+			 134477, -- Threatening Presence (Felguard)
 			 171011, -- Burning Presence (Infernal with Grimoire of Supremacy)
+			 193396, -- Demonic Empowerment
 			[  1098] = "INVERT_AURA", -- Enslave Demon
 		},
 	},
@@ -134,6 +143,10 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 		119907, -- Suffering (Command Demon with Voidwalker)
 	},
 	[ 22703] = 1122, -- Infernal Awakening (stun) <- Summon Infernal
+	[ 89751] = { -- Felstorm (Felguard)
+		 89751, -- Felstorm (Felguard)
+		119914, -- Felstorm (Command Demon with Felguard)
+	},
 	[113942] = 111771, -- Demonic Gateway
 	[117828] = 196406, -- Backdraft
 	[118699] = 5782, -- Fear (disorient)
