@@ -29,6 +29,7 @@ lib:__RegisterSpells("ROGUE", 70000, 1, {
 
 			},
 			HARMFUL = {
+				[137619] = "BURST", -- Marked for Death
 				CROWD_CTL = {
 					 408, -- Kidney Shot (stun)
 					2094, -- Blind (disorient)
@@ -38,6 +39,7 @@ lib:__RegisterSpells("ROGUE", 70000, 1, {
 				  2983, -- Sprint
 				 36554, -- Shadowstep
 				 57934, -- Tricks of the Trade
+				152150, -- Death from Above
 				185311, -- Crimson Vial
 				185422, -- Shadow Dance
 				212283, -- Symbols of Death
@@ -60,22 +62,37 @@ lib:__RegisterSpells("ROGUE", 70000, 1, {
 		HARMFUL = {
 			195452, -- Nightblade
 			206760, -- Night Terrors (slow)
+			222775, -- Strike from the Shadows (slow)
 			CROWD_CTL = {
-				1833, -- Cheap Shot (stun)
-				6770, -- Sap (incapacitate)
+				  1833, -- Cheap Shot (stun)
+				  6770, -- Sap (incapacitate)
+				196958, -- Strike from the Shadows (stun)
 			},
 		},
 		PERSONAL = {
-			1966, -- Feint
+			  1966, -- Feint
+			193538, -- Alacity
+			206237, -- Enveloping Shadows
 		},
 	},
 }, {
 	-- map aura to provider(s)
 	[ 11327] = 1856, -- Vanish
 	[185422] = 185313, -- Shadow Dance
+	[193538] = 193539, -- Alacity
+	[196958] = 196951, -- Strike from the Shadows (stun)
 	[206760] = 195452, -- Night Terrors (slow) <- Nightblade
+	[222775] = 196951, -- Strike from the Shadows (slow)
 	[227151] = 212283, -- Death <- Symbols of Death
 }, {
 	-- map aura to modified spell(s)
+	[193538] = { -- Alacity
+		   408, -- Kidney Shot
+		152150, -- Death from Above
+		195452, -- Nightblade
+		196819, -- Eviscerate
+	},
+	[196958] = 185438, -- Strike from the Shadows (stun) -> Shadowstrike
+	[222775] = 185438, -- Strike from the Shadows (slow) -> Shadowstrike
 	[227151] = 185438, -- Death -> Shadowstrike
 })
