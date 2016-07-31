@@ -53,10 +53,13 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 			},
 			HARMFUL = {
 				 17735, -- Suffering (Voidwalker)
+				 48181, -- Haunt
 				 80240, -- Havoc
 				170995, -- Criple (Doomguard with Grimoire of Supremacy) (slow)
 				171014, -- Seeth (Infernal with Grimoire of Supremacy)
+				205179, -- Phantom Singularity
 				CROWD_CTL = {
+					  5484, -- Howl of Terror (disorient)
 					  6358, -- Seduction (Succubus) (disorient)
 					  6789, -- Mortal Coil (incapacitate)
 					 22703, -- Infernal Awakening (Infernal) (stun)
@@ -93,9 +96,12 @@ lib:__RegisterSpells("WARLOCK", 70000, 2, {
 			   980, -- Agony
 			 27243, -- Seed of Corruption
 			 30108, -- Unstable Affliction
+			 63106, -- Siphon Life
 			146739, -- Curruption
 			157736, -- Immolate
 			196414, -- Eradication
+			198590, -- Drain Soul
+			205178, -- Soul Effigy
 			CROWD_CTL = {
 				   710, -- Banish (incapacitate)
 				118699, -- Fear (disorient)
