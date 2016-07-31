@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", 70000, 1, {
+lib:__RegisterSpells("WARLOCK", 70000, 2, {
 	COOLDOWN = {
 		    698, -- Ritual of Summoning
 		   1122, -- Summon Infernal
@@ -90,6 +90,10 @@ lib:__RegisterSpells("WARLOCK", 70000, 1, {
 		},
 		HARMFUL = {
 			   689, -- Drain Life
+			   980, -- Agony
+			 27243, -- Seed of Corruption
+			 30108, -- Unstable Affliction
+			146739, -- Curruption
 			157736, -- Immolate
 			196414, -- Eradication
 			CROWD_CTL = {
@@ -129,6 +133,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 1, {
 		119899, -- Cauterize Master (Imp)
 		119905, -- Cauterize Master (Command Demon with Imp)
 	},
+	[146739] = 172, -- Curruption
 	[157736] = 348, -- Immolate
 	[171017] = { -- Meteor Strike (stun) (Infernal with Grimoire of Supremacy)
 		171017, -- Meteor Strike (Infernal with Grimoire of Supremacy)
