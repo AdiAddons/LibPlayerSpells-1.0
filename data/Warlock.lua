@@ -31,6 +31,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 1, {
 		  89792, -- Flee (Imp)
 		 119909, -- Whiplash (Command Demon with Succubus) (knockback)
 		 152108, -- Cataclysm
+		 196586, -- Dimensional Rift (Destruction artifact)
 		DISPEL = {
 			[171021] = "HARMFUL", -- Torch Magic (Infernal with Grimoire of Supremacy)
 			HELPFUL = {
@@ -67,7 +68,10 @@ lib:__RegisterSpells("WARLOCK", 70000, 1, {
 				  48018, -- Demonic Circle
 				 117828, -- Backdraft
 				 119899, -- Cauterize Master (Imp)
+				 196546, -- Conflagration of Chaos (Destruction artifact)
 				 196099, -- Demonic Power
+				 196674, -- Planeswalker (Destruction artifact)
+				 215165, -- Devourer of Life (Destruction artifact)
 				[196098] = "BURST", -- Soul Harvest
 				SURVIVAL = {
 					104773, -- Unending Resolve
@@ -96,6 +100,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 1, {
 		PERSONAL = {
 			    126, -- Eye of Kilrogg
 			 111400, -- Burning Rush
+			 196304, -- Eternal Struggle (Destruction artifact)
 			[196104] = "BURST", -- Mana Tap
 		},
 		PET = {
@@ -130,7 +135,11 @@ lib:__RegisterSpells("WARLOCK", 70000, 1, {
 		171152, -- Meteor Strike (Command Demon with Infernal)
 	},
 	[196099] = 108503, -- Demonic Power <- Grimoire of Sacrifice
+	[196304] = 196305, -- Eternal Struggle (Destruction artifact)
 	[196414] = 196412, -- Eradication
+	[196546] = 219195, -- Conflagration of Chaos (Destruction artifact)
+	[196674] = 196675, -- Planeswalker (Destruction artifact)
+	[215165] = 196301, -- Devourer of Life (Destruction artifact)
 }, {
 	-- map aura to modified spell(s)
 	[ 48018] = 48020, -- Demonic Circle -> Demonic Circle (Teleport)
@@ -138,5 +147,9 @@ lib:__RegisterSpells("WARLOCK", 70000, 1, {
 		 29722, -- Incinerate
 		116858, -- Chaos Bolt
 	},
+	[196304] = 1454, -- Eternal Struggle (Destruction artifact) -> Life Tap
 	[196414] = 116858, -- Eradication -> Chaos Bolt
+	[196546] = 17962, -- Conflagration of Chaos (Destruction artifact) -> Conflagration
+	[196674] = 111771, -- Planeswalker (Destruction artifact) -> Demonic Gateway
+	[215165] = 689, -- Devourer of Life (Destruction artifact) -> Drain Life
 })
