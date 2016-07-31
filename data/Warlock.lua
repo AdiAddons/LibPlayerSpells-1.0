@@ -33,6 +33,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 		 119909, -- Whiplash (Command Demon with Succubus) (knockback)
 		 152108, -- Cataclysm
 		 196586, -- Dimensional Rift (Destruction artifact)
+		 205180, -- Summon Darkglare
 		DISPEL = {
 			[171021] = "HARMFUL", -- Torch Magic (Infernal with Grimoire of Supremacy)
 			HELPFUL = {
@@ -59,6 +60,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 				170995, -- Criple (Doomguard with Grimoire of Supremacy) (slow)
 				171014, -- Seeth (Infernal with Grimoire of Supremacy)
 				205179, -- Phantom Singularity
+				205181, -- Shadowflame
 				CROWD_CTL = {
 					  5484, -- Howl of Terror (disorient)
 					  6358, -- Seduction (Succubus) (disorient)
@@ -119,7 +121,9 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 			 111400, -- Burning Rush
 			 193440, -- Demonwrath
 			 196304, -- Eternal Struggle (Destruction artifact)
+			 196606, -- Shadowy Inspiration
 			 199281, -- Compounding Horror (Affliction  artifact)
+			 205146, -- Demonic Calling
 			[196104] = "BURST", -- Mana Tap
 		},
 		PET = {
@@ -147,6 +151,10 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 		 89751, -- Felstorm (Felguard)
 		119914, -- Felstorm (Command Demon with Felguard)
 	},
+	[89766] = { -- Axe Toss (Felguard) (stun)
+		 89766, -- Axe Toss (Felguard)
+		111898, -- Grimoire: Felguard
+	},
 	[113942] = 111771, -- Demonic Gateway
 	[117828] = 196406, -- Backdraft
 	[118699] = 5782, -- Fear (disorient)
@@ -164,8 +172,10 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 	[196304] = 196305, -- Eternal Struggle (Destruction artifact)
 	[196414] = 196412, -- Eradication
 	[196546] = 219195, -- Conflagration of Chaos (Destruction artifact)
+	[196606] = 196269, -- Shadowy Inspiration
 	[196674] = 196675, -- Planeswalker (Destruction artifact)
 	[199281] = 199282, -- Compounding Horror (Affliction artifact)
+	[205146] = 205145, -- Demonic Calling
 	[215165] = 196301, -- Devourer of Life (Destruction artifact)
 	[216708] = 216698, -- Deadwind Harvester (Affliction artifact) <- Reap Souls
 }, {
@@ -178,7 +188,12 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 	[196304] = 1454, -- Eternal Struggle (Destruction artifact) -> Life Tap
 	[196414] = 116858, -- Eradication -> Chaos Bolt
 	[196546] = 17962, -- Conflagration of Chaos (Destruction artifact) -> Conflagration
+	[196606] = { -- Shadowy Inspiration
+		   686, -- Shadow Bolt
+		157695, -- Demonbolt
+	},
 	[196674] = 111771, -- Planeswalker (Destruction artifact) -> Demonic Gateway
 	[199281] = 30108, -- Compounding Horror (Affliction artifact) -> Unstable Affliction
+	[205146] = 104316, -- Demonic Calling -> Call Dreadstalkers
 	[215165] = 689, -- Devourer of Life (Destruction artifact) -> Drain Life
 })
