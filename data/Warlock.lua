@@ -34,6 +34,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 		 152108, -- Cataclysm
 		 196586, -- Dimensional Rift (Destruction artifact)
 		 205180, -- Summon Darkglare
+		 211714, -- Thal'kiel's Consumption (Demonology artifact)
 		DISPEL = {
 			[171021] = "HARMFUL", -- Torch Magic (Infernal with Grimoire of Supremacy)
 			HELPFUL = {
@@ -124,6 +125,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 			 196606, -- Shadowy Inspiration
 			 199281, -- Compounding Horror (Affliction  artifact)
 			 205146, -- Demonic Calling
+			 211583, -- Stolen Power (Demonology artifact)
 			[196104] = "BURST", -- Mana Tap
 		},
 		PET = {
@@ -176,6 +178,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 	[196674] = 196675, -- Planeswalker (Destruction artifact)
 	[199281] = 199282, -- Compounding Horror (Affliction artifact)
 	[205146] = 205145, -- Demonic Calling
+	[211583] = 211530, -- Stolen Power (Demonology artifact)
 	[215165] = 196301, -- Devourer of Life (Destruction artifact)
 	[216708] = 216698, -- Deadwind Harvester (Affliction artifact) <- Reap Souls
 }, {
@@ -195,5 +198,9 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 	[196674] = 111771, -- Planeswalker (Destruction artifact) -> Demonic Gateway
 	[199281] = 30108, -- Compounding Horror (Affliction artifact) -> Unstable Affliction
 	[205146] = 104316, -- Demonic Calling -> Call Dreadstalkers
+	[211583] = { -- Stolen Power (Demonology artifact)
+		   686, -- Shadow Bolt
+		157695, -- Demonbolt
+	},
 	[215165] = 689, -- Devourer of Life (Destruction artifact) -> Drain Life
 })
