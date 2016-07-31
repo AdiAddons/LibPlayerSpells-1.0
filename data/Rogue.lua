@@ -29,6 +29,7 @@ lib:__RegisterSpells("ROGUE", 70000, 1, {
 
 			},
 			HARMFUL = {
+				 209786, -- Goremaw's Bite (Subtlety artifact) (slow)
 				[137619] = "BURST", -- Marked for Death
 				CROWD_CTL = {
 					 408, -- Kidney Shot (stun)
@@ -36,18 +37,20 @@ lib:__RegisterSpells("ROGUE", 70000, 1, {
 				},
 			},
 			PERSONAL = {
-				  2983, -- Sprint
-				 36554, -- Shadowstep
-				 57934, -- Tricks of the Trade
-				152150, -- Death from Above
-				185311, -- Crimson Vial
-				185422, -- Shadow Dance
-				212283, -- Symbols of Death
-				227151, -- Death
+				   2983, -- Sprint
+				  36554, -- Shadowstep
+				  57934, -- Tricks of the Trade
+				 152150, -- Death from Above
+				 185311, -- Crimson Vial
+				 185422, -- Shadow Dance
+				 212283, -- Symbols of Death
+				 227151, -- Death
+				[220901] = "POWER_REGEN", -- Goremaw's Bite (Subtlety artifact)
 				SURVIVAL = {
-					 5277, -- Evasion
-					11327, -- Vanish
-					31224, -- Cload of Shadows
+					  5277, -- Evasion
+					 11327, -- Vanish
+					 31224, -- Cload of Shadows
+					197603, -- Embrace of Darkness (Subtlety artifact)
 				},
 				BURST = {
 					121471, -- Shadow Blades
@@ -72,6 +75,8 @@ lib:__RegisterSpells("ROGUE", 70000, 1, {
 		PERSONAL = {
 			  1966, -- Feint
 			193538, -- Alacity
+			197496, -- Finality: Eviscerate (Subtlety artifact)
+			197498, -- Finality: Nightblade (Subtlety artifact)
 			206237, -- Enveloping Shadows
 		},
 	},
@@ -81,7 +86,12 @@ lib:__RegisterSpells("ROGUE", 70000, 1, {
 	[185422] = 185313, -- Shadow Dance
 	[193538] = 193539, -- Alacity
 	[196958] = 196951, -- Strike from the Shadows (stun)
+	[197496] = 197406, -- Finality: Eviscerate (Subtlety artifact) <- Finality (Subtlety artifact)
+	[197498] = 197406, -- Finality: Nightblade (Subtlety artifact) <- Finality (Subtlety artifact)
+	[197603] = 197604, -- Embrace of Darkness (Subtlety artifact)
 	[206760] = 195452, -- Night Terrors (slow) <- Nightblade
+	[209786] = 209782, -- Goremaw's Bite (Subtlety artifact) (slow)
+	[220901] = 209782, -- Goremaw's Bite (Subtlety artifact)
 	[222775] = 196951, -- Strike from the Shadows (slow)
 	[227151] = 212283, -- Death <- Symbols of Death
 }, {
@@ -93,6 +103,9 @@ lib:__RegisterSpells("ROGUE", 70000, 1, {
 		196819, -- Eviscerate
 	},
 	[196958] = 185438, -- Strike from the Shadows (stun) -> Shadowstrike
+	[197496] = 196819, -- Finality: Eviscerate (Subtlety artifact) -> Eviscerate
+	[197498] = 195452, -- Finality: Nightblade (Subtlety artifact) -> Nightblade
+	[197603] = 1784, -- Embrace of Darkness (Subtlety artifact) -> Stealth
 	[222775] = 185438, -- Strike from the Shadows (slow) -> Shadowstrike
 	[227151] = 185438, -- Death -> Shadowstrike
 })
