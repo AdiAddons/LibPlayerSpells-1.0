@@ -20,21 +20,23 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", 70000, 2, {
+lib:__RegisterSpells("ROGUE", 70000, 3, {
 	COOLDOWN = {
-		 1725, -- Distract
-		[1766] = "INTERRUPT", -- Kick
+		   1725, -- Distract
+		 195457, -- Grappling Hook
+		[  1766] = "INTERRUPT", -- Kick
 		AURA = {
-			HELPFUL = {
-
-			},
+			[ 57934] = "HELPFUL", -- Tricks of the Trade
+			[199740] = "PET INVERT_AURA", -- Bribe
 			HARMFUL = {
+				 185778, -- Shellshocked (slow)
 				 209786, -- Goremaw's Bite (Subtlety artifact) (slow)
 				[137619] = "BURST", -- Marked for Death
 				CROWD_CTL = {
 					   408, -- Kidney Shot (stun)
 					  1776, -- Gouge (incapacitate)
 					  2094, -- Blind (disorient)
+					199743, -- Parley (incapacitate)
 					199804, -- Between the Eyes (stun)
 				},
 			},
@@ -42,7 +44,6 @@ lib:__RegisterSpells("ROGUE", 70000, 2, {
 				   2983, -- Sprint
 				  13877, -- Blade Flurry
 				  36554, -- Shadowstep
-				  57934, -- Tricks of the Trade
 				 152150, -- Death from Above
 				 185311, -- Crimson Vial
 				 185422, -- Shadow Dance
@@ -58,18 +59,17 @@ lib:__RegisterSpells("ROGUE", 70000, 2, {
 				},
 				BURST = {
 					 13750, -- Adrenaline Rush
+					 51690, -- Killing Spree
 					121471, -- Shadow Blades
 				}
 			},
 		},
 	},
 	AURA = {
-		HELPFUL = {
-
-		},
 		HARMFUL = {
 			185763, -- Pistol Shot (slow)
 			195452, -- Nightblade
+			196937, -- Ghostly Strike
 			206760, -- Night Terrors (slow)
 			222775, -- Strike from the Shadows (slow)
 			CROWD_CTL = {
@@ -80,6 +80,7 @@ lib:__RegisterSpells("ROGUE", 70000, 2, {
 		},
 		PERSONAL = {
 			  1966, -- Feint
+			  5171, -- Slice and Dice
 			193356, -- Broadsides
 			193357, -- Shark Infested Waters
 			193358, -- Grand Melee
@@ -97,6 +98,7 @@ lib:__RegisterSpells("ROGUE", 70000, 2, {
 	-- map aura to provider(s)
 	[ 11327] = 1856, -- Vanish
 	[185422] = 185313, -- Shadow Dance
+	[185778] = 185767, -- Shellshocked (slow) <- Cannonball Barrage
 	[193356] = 193316, -- Broadsides <- Roll the Bones
 	[193357] = 193316, -- Shark Infested Waters <- Roll the Bones
 	[193358] = 193316, -- Grand Melee <- Roll the Bones
@@ -118,9 +120,13 @@ lib:__RegisterSpells("ROGUE", 70000, 2, {
 	-- map aura to modified spell(s)
 	[193538] = { -- Alacity
 		   408, -- Kidney Shot
+		  2098, -- Run Through
+		  5171, -- Slice and Dice
 		152150, -- Death from Above
+		193316, -- Roll the Bones
 		195452, -- Nightblade
 		196819, -- Eviscerate
+		199804, -- Between the Eyes
 	},
 	[195627] = 185763, -- Oportunity -> Pistol Shot
 	[196958] = 185438, -- Strike from the Shadows (stun) -> Shadowstrike
