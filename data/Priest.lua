@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", 70000, 2, {
+lib:__RegisterSpells("PRIEST", 70000, 3, {
 	[528] = "HARMFUL DISPEL", -- Dispel Magic
 	COOLDOWN = {
 		   2050, -- Holy Word: Serenity
@@ -41,12 +41,15 @@ lib:__RegisterSpells("PRIEST", 70000, 2, {
 		},
 		AURA = {
 			HELPFUL = {
-				    17, -- Power Word: Shield
-				 33076, -- Prayer of Mending
-				 47788, -- Guardian Spirit
-				 62618, -- Power Word: Barrier
-				 65081, -- Body and Soul
-				[33206] = "SURVIVAL", -- Pain Suppression
+				   17, -- Power Word: Shield
+				33076, -- Prayer of Mending
+				47788, -- Guardian Spirit
+				62618, -- Power Word: Barrier
+				65081, -- Body and Soul
+				SURVIVAL = {
+					33206, -- Pain Suppression
+					81782, -- Power Word: Barrier
+				},
 			},
 			HARMFUL = {
 				 14914, -- Holy Fire
@@ -79,13 +82,12 @@ lib:__RegisterSpells("PRIEST", 70000, 2, {
 	AURA = {
 		HELPFUL = {
 			    139, -- Renew
-			   2096, -- Mind Vision
 			  41635, -- Prayer of Mending
 			  64844, -- Divine Hymn
 			  77489, -- Echo of Light
-			  81782, -- Power Word: Barrier
 			 186367, -- Prayer's Reprise
 			 194384, -- Atonement
+			 208772, -- Smite
 			[187464] = "INVERT_AURA", -- Shadow Mend
 			[111759] = "UNIQUE_AURA", -- Levitate
 		},
@@ -130,6 +132,7 @@ lib:__RegisterSpells("PRIEST", 70000, 2, {
 	[194384] =  81749, -- Atonement
 	[200196] =  88625, -- Holy Word: Chastise
 	[205372] = 205371, -- Void Ray
+	[208772] = 585, -- Smite
 	[212570] = 193223, -- Surrendered Soul <- Surrender to Madness
 	[217673] = 73510, -- Mind Spike
 	[226943] = 205369, -- Mind Bomb (stun)
@@ -149,6 +152,7 @@ lib:__RegisterSpells("PRIEST", 70000, 2, {
 	[194022] = 34914, -- Mental Fortitude (Shadow artifact) -> Vampiric Touch
 	[194025] = 47585, -- Thrive in the Shadows (Shadow artifact) -> Dispersion
 	[194384] = { -- Atonement
+		    17, -- Power Word: Shield
 		186263, -- Shadow Mend
 		194509, -- Power Word: Radiance
 		200829, -- Plea
