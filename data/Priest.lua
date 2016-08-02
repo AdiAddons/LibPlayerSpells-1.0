@@ -51,6 +51,7 @@ lib:__RegisterSpells("PRIEST", 70000, 2, {
 			HARMFUL = {
 				 14914, -- Holy Fire
 				 15487, -- Silence -- NOTE: non-players only INTERRUPT, special case
+				205065, -- Void Torrent (Shadow artifact)
 				205369, -- Mind Bomb
 				CROWD_CTL = {
 					  8122, -- Psychic Scream (disorient)
@@ -60,6 +61,8 @@ lib:__RegisterSpells("PRIEST", 70000, 2, {
 			},
 			PERSONAL = {
 				  15286, -- Vampiric Embrace
+				 194022, -- Mental Fortitude (Shadow artifact)
+				 194025, -- Thrive in the Shadows (Shadow artifact)
 				[212570] = "INVERT_AURA", -- Surrendered Soul
 				SURVIVAL = {
 					  586, -- Fade
@@ -122,6 +125,8 @@ lib:__RegisterSpells("PRIEST", 70000, 2, {
 	[186478] =  47540, -- Reparation <- Penance
 	[187464] = 186263, -- Shadow Mend
 	[193065] = 193063, -- Masochism
+	[194022] = 194018, -- Mental Fortitude (Shadow artifact)
+	[194025] = 194024, -- Thrive in the Shadows (Shadow artifact)
 	[194384] =  81749, -- Atonement
 	[200196] =  88625, -- Holy Word: Chastise
 	[205372] = 205371, -- Void Ray
@@ -141,6 +146,8 @@ lib:__RegisterSpells("PRIEST", 70000, 2, {
 	},
 	[124430] = 8092, -- Shadowy Insight -> Mind Blast
 	[193065] = 186263, -- Masochism -> Shadow Mend
+	[194022] = 34914, -- Mental Fortitude (Shadow artifact) -> Vampiric Touch
+	[194025] = 47585, -- Thrive in the Shadows (Shadow artifact) -> Dispersion
 	[194384] = { -- Atonement
 		186263, -- Shadow Mend
 		194509, -- Power Word: Radiance
