@@ -25,12 +25,14 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 		   1725, -- Distract
 		 195457, -- Grappling Hook
 		[  1766] = "INTERRUPT", -- Kick
+		[200806] = "BURST", -- Exsanguinate
 		AURA = {
 			[ 57934] = "HELPFUL", -- Tricks of the Trade
 			[199740] = "PET INVERT_AURA", -- Bribe
 			HARMFUL = {
 				   703, -- Garrote
 				  1330, -- Garrote - Silence
+				154953, -- Internal Bleeding
 				185778, -- Shellshocked (slow)
 				209786, -- Goremaw's Bite (Subtlety artifact) (slow)
 				BURST = {
@@ -49,6 +51,7 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 				   2983, -- Sprint
 				  13877, -- Blade Flurry
 				  36554, -- Shadowstep
+				 115192, -- Subterfuge
 				 152150, -- Death from Above
 				 185311, -- Crimson Vial
 				 185422, -- Shadow Dance
@@ -77,9 +80,11 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 			  2818, -- Deadly Poison
 			  3409, -- Crippling Poison
 			  8680, -- Wound Poison
+			 16511, -- Hemorrhage
 			185763, -- Pistol Shot (slow)
 			195452, -- Nightblade
 			196937, -- Ghostly Strike
+			200803, -- Agonizing Poison
 			206760, -- Night Terrors (slow)
 			222775, -- Strike from the Shadows (slow)
 			CROWD_CTL = {
@@ -95,6 +100,7 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 			  5171, -- Slice and Dice
 			  8679, -- Wound Poison
 			 32645, -- Envenom
+			108211, -- Leeching Poison
 			193356, -- Broadsides
 			193357, -- Shark Infested Waters
 			193358, -- Grand Melee
@@ -105,6 +111,7 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 			197498, -- Finality: Nightblade (Subtlety artifact)
 			199600, -- Buried Treasure
 			199603, -- Jolly Rogger
+			200802, -- Agonizing Poison
 			202754, -- Hidden Blade (Outlaw artifact)
 			206237, -- Enveloping Shadows
 		},
@@ -116,6 +123,12 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 	[  3409] = 185565, -- Crippling Poison <- Poisoned Knife
 	[  8680] = 185565, -- Wound Poison <- Poisoned Knife
 	[ 11327] = 1856, -- Vanish
+	[ 32645] = { -- Envenom
+		 32645, -- Envenom
+		152150, -- Death from Above
+	},
+	[115192] = 108208, -- Subterfuge
+	[154953] = 154904, -- Internal Bleeding
 	[185422] = 185313, -- Shadow Dance
 	[185778] = 185767, -- Shellshocked (slow) <- Cannonball Barrage
 	[193356] = 193316, -- Broadsides <- Roll the Bones
@@ -130,6 +143,7 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 	[197603] = 197604, -- Embrace of Darkness (Subtlety artifact)
 	[199600] = 193316, -- Buried Treasure <- Roll the Bones
 	[199603] = 193316, -- Jolly Rogger <- Roll the Bones
+	[200803] = 200802, -- Agonizing Poison
 	[202754] = 202753, -- Hidden Blade (Outlaw artifact)
 	[206760] = 195452, -- Night Terrors (slow) <- Nightblade
 	[209786] = 209782, -- Goremaw's Bite (Subtlety artifact) (slow)
@@ -138,10 +152,14 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 	[227151] = 212283, -- Death <- Symbols of Death
 }, {
 	-- map aura to modified spell(s)
+	[115192] = 115191, -- Subterfuge -> Stealth
+	[154953] = 408, -- Internal Bleeding -> Kidney Shot
 	[193538] = { -- Alacity
 		   408, -- Kidney Shot
+		  1943, -- Rupture
 		  2098, -- Run Through
 		  5171, -- Slice and Dice
+		 32645, -- Envenom
 		152150, -- Death from Above
 		193316, -- Roll the Bones
 		195452, -- Nightblade
@@ -160,6 +178,7 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 		193315, -- Saber Slash
 		193316, -- Roll the Bones
 	},
+	[200803] = 185565, -- Agonizing Poison -> Poisoned Knife
 	[202754] = 193315, -- Hidden Blade (Outlaw artifact) -> Saber Slash
 	[222775] = 185438, -- Strike from the Shadows (slow) -> Shadowstrike
 	[227151] = 185438, -- Death -> Shadowstrike
