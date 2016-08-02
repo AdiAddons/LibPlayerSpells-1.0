@@ -34,6 +34,7 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 				  1330, -- Garrote - Silence
 				154953, -- Internal Bleeding
 				185778, -- Shellshocked (slow)
+				192759, -- Kingsbane (Assassination artifact)
 				209786, -- Goremaw's Bite (Subtlety artifact) (slow)
 				BURST = {
 					 79140, -- Vendetta
@@ -55,7 +56,9 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 				 152150, -- Death from Above
 				 185311, -- Crimson Vial
 				 185422, -- Shadow Dance
+				 192432, -- From the Shadows (Assassination artifact)
 				 212283, -- Symbols of Death
+				 226364, -- Evasion (Assassination artifact)
 				 227151, -- Death
 				[202665] = "INVERT_AURA", -- Curse of the Dreadblades (Outlaw artifact)
 				[220901] = "POWER_REGEN", -- Goremaw's Bite (Subtlety artifact)
@@ -82,6 +85,8 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 			  8680, -- Wound Poison
 			 16511, -- Hemorrhage
 			185763, -- Pistol Shot (slow)
+			192425, -- Surge of Toxins (Assassination artifact)
+			192925, -- Blood of the Assassinated (Assassination artifact)
 			195452, -- Nightblade
 			196937, -- Ghostly Strike
 			200803, -- Agonizing Poison
@@ -131,6 +136,9 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 	[154953] = 154904, -- Internal Bleeding
 	[185422] = 185313, -- Shadow Dance
 	[185778] = 185767, -- Shellshocked (slow) <- Cannonball Barrage
+	[192425] = 192424, -- Surge of Toxins (Assassination artifact)
+	[192432] = 192428, -- From the Shadows (Assassination artifact)
+	[192925] = 192923, -- Blood of the Assassinated (Assassination artifact)
 	[193356] = 193316, -- Broadsides <- Roll the Bones
 	[193357] = 193316, -- Shark Infested Waters <- Roll the Bones
 	[193358] = 193316, -- Grand Melee <- Roll the Bones
@@ -149,11 +157,20 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 	[209786] = 209782, -- Goremaw's Bite (Subtlety artifact) (slow)
 	[220901] = 209782, -- Goremaw's Bite (Subtlety artifact)
 	[222775] = 196951, -- Strike from the Shadows (slow)
+	[226364] = 192422, -- Evasion (Assassination artifact) <- Shadow Swiftness (Assassination artifact)
 	[227151] = 212283, -- Death <- Symbols of Death
 }, {
 	-- map aura to modified spell(s)
 	[115192] = 115191, -- Subterfuge -> Stealth
 	[154953] = 408, -- Internal Bleeding -> Kidney Shot
+	[192425] = { -- Surge of Toxins (Assassination artifact)
+		   408, -- Kidney Shot
+		  1943, -- Rupture
+		 32645, -- Envenom
+		152150, -- Death from Above
+	},
+	[192432] = 79140, -- From the Shadows (Assassination artifact) -> Vendetta
+	[192925] = 1943, -- Blood of the Assassinated (Assassination artifact) -> Rupture
 	[193538] = { -- Alacity
 		   408, -- Kidney Shot
 		  1943, -- Rupture
@@ -181,5 +198,6 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 	[200803] = 185565, -- Agonizing Poison -> Poisoned Knife
 	[202754] = 193315, -- Hidden Blade (Outlaw artifact) -> Saber Slash
 	[222775] = 185438, -- Strike from the Shadows (slow) -> Shadowstrike
+	[226364] = 5277, -- Evasion (Assassination artifact) <- Evasion
 	[227151] = 185438, -- Death -> Shadowstrike
 })
