@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", 70000, 3, {
+lib:__RegisterSpells("PRIEST", 70000, 4, {
 	[528] = "HARMFUL DISPEL", -- Dispel Magic
 	COOLDOWN = {
 		   2050, -- Holy Word: Serenity
@@ -29,7 +29,6 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 		  34433, -- Shadowfiend
 		  34861, -- Holy Word: Sanctify
 		  47540, -- Penance
-		  64843, -- Divine Hymn
 		  73325, -- Leap of Faith
 		 110744, -- Divine Star
 		 120517, -- Halo
@@ -37,7 +36,7 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 		 205351, -- Shadow Word: Void
 		 205385, -- Shadow Clash
 		 207946, -- Light's Wrath (Discipline artifact)
-		[123040] = "MANA_REGEN", -- Mindbender
+		[123040] = "MANA_REGEN", -- Mindbender (Discipline)
 		[200174] = "POWER_REGEN", -- Mindbender (Shadow)
 		DISPEL = {
 			[   527] = "HELPFUL", -- Purify
@@ -48,12 +47,14 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 			HELPFUL = {
 				    17, -- Power Word: Shield
 				 33076, -- Prayer of Mending
-				 47788, -- Guardian Spirit
 				 62618, -- Power Word: Barrier
+				 64843, -- Divine Hymn (hot)
+				 64844, -- Divine Hymn (heal increase)
 				 65081, -- Body and Soul
 				121557, -- Angelic Feather
 				SURVIVAL = {
 					33206, -- Pain Suppression
+					47788, -- Guardian Spirit
 					81782, -- Power Word: Barrier
 				},
 			},
@@ -66,7 +67,7 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 				214621, -- Schism
 				CROWD_CTL = {
 					  8122, -- Psychic Scream (disorient)
-					 88625, -- Holy Word: Chastise (incapacitate)
+					200196, -- Holy Word: Chastise (incapacitate)
 					226943, -- Mind Bomb (stun)
 				},
 			},
@@ -94,7 +95,6 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 		HELPFUL = {
 			    139, -- Renew
 			  41635, -- Prayer of Mending
-			  64844, -- Divine Hymn
 			  77489, -- Echo of Light
 			 152118, -- Clarity of Will
 			 186367, -- Prayer's Reprise
@@ -115,7 +115,6 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 			217673, -- Mind Spike
 			CROWD_CTL = {
 				  9484, -- Shackle Undead (incapacitate)
-				200196, -- Holy Word: Chastise (incapacitate)
 			},
 		},
 		PERSONAL = {
