@@ -29,9 +29,14 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 			[ 57934] = "HELPFUL", -- Tricks of the Trade
 			[199740] = "PET INVERT_AURA", -- Bribe
 			HARMFUL = {
-				 185778, -- Shellshocked (slow)
-				 209786, -- Goremaw's Bite (Subtlety artifact) (slow)
-				[137619] = "BURST", -- Marked for Death
+				   703, -- Garrote
+				  1330, -- Garrote - Silence
+				185778, -- Shellshocked (slow)
+				209786, -- Goremaw's Bite (Subtlety artifact) (slow)
+				BURST = {
+					 79140, -- Vendetta
+					137619, -- Marked for Death
+				},
 				CROWD_CTL = {
 					   408, -- Kidney Shot (stun)
 					  1776, -- Gouge (incapacitate)
@@ -68,6 +73,10 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 	},
 	AURA = {
 		HARMFUL = {
+			  1943, -- Rupture
+			  2818, -- Deadly Poison
+			  3409, -- Crippling Poison
+			  8680, -- Wound Poison
 			185763, -- Pistol Shot (slow)
 			195452, -- Nightblade
 			196937, -- Ghostly Strike
@@ -81,7 +90,11 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 		},
 		PERSONAL = {
 			  1966, -- Feint
+			  2823, -- Deadly Poison
+			  3408, -- Crippling Poison
 			  5171, -- Slice and Dice
+			  8679, -- Wound Poison
+			 32645, -- Envenom
 			193356, -- Broadsides
 			193357, -- Shark Infested Waters
 			193358, -- Grand Melee
@@ -98,6 +111,10 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 	},
 }, {
 	-- map aura to provider(s)
+	[  1330] = 703, -- Garrote - Silence <- Garrote
+	[  2818] = 185565, -- Deadly Poison <- Poisoned Knife
+	[  3409] = 185565, -- Crippling Poison <- Poisoned Knife
+	[  8680] = 185565, -- Wound Poison <- Poisoned Knife
 	[ 11327] = 1856, -- Vanish
 	[185422] = 185313, -- Shadow Dance
 	[185778] = 185767, -- Shellshocked (slow) <- Cannonball Barrage
