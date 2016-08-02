@@ -36,6 +36,7 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 		 129250, -- Power Word: Solace
 		 205351, -- Shadow Word: Void
 		 205385, -- Shadow Clash
+		 207946, -- Light's Wrath (Discipline artifact)
 		[123040] = "MANA_REGEN", -- Mindbender
 		[200174] = "POWER_REGEN", -- Mindbender (Shadow)
 		DISPEL = {
@@ -73,10 +74,13 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 				  15286, -- Vampiric Embrace
 				 194022, -- Mental Fortitude (Shadow artifact)
 				 194025, -- Thrive in the Shadows (Shadow artifact)
+				 197767, -- Speed of the Pious (Discipline artifact)
+				 210027, -- Share in the Light (Discipline artifact)
 				[212570] = "INVERT_AURA", -- Surrendered Soul
 				SURVIVAL = {
-					  586, -- Fade
-					47585, -- Dispersion
+					   586, -- Fade
+					 47585, -- Dispersion
+					216135, -- Vestments of Discipline (Discipline artifact)
 				},
 				BURST = {
 					 10060, -- Power Infusion
@@ -120,6 +124,8 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 			124430, -- Shadowy Insight
 			186478, -- Reparation
 			193065, -- Masochism
+			197763, -- Borrowed Time (Discipline artifact)
+			198069, -- Power of the Dark Side (Discipline artifact)
 			205372, -- Void Ray
 		},
 		PET = {
@@ -143,11 +149,16 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 	[194022] = 194018, -- Mental Fortitude (Shadow artifact)
 	[194025] = 194024, -- Thrive in the Shadows (Shadow artifact)
 	[194384] =  81749, -- Atonement
+	[197763] = 197762, -- Borrowed Time (Discipline artifact)
+	[197767] = 197766, -- Speed of the Pious (Discipline artifact)
+	[198069] = 198068, -- Power of the Dark Side (Discipline artifact)
 	[200196] =  88625, -- Holy Word: Chastise
 	[204213] = 204197, -- Purge the Wicked
 	[205372] = 205371, -- Void Ray
 	[208772] = 585, -- Smite
+	[210027] = 197781, -- Share in the Light (Discipline artifact)
 	[212570] = 193223, -- Surrendered Soul <- Surrender to Madness
+	[216135] = 197711, -- Vestments of Discipline (Discipline artifact)
 	[217673] = 73510, -- Mind Spike
 	[219521] = 204065, -- Shadow Covenant
 	[226943] = 205369, -- Mind Bomb (stun)
@@ -175,10 +186,19 @@ lib:__RegisterSpells("PRIEST", 70000, 3, {
 		194509, -- Power Word: Radiance
 		200829, -- Plea
 	},
+	[197763] = { -- Borrowed Time (Discipline artifact)
+		   585, -- Smite
+		 47540, -- Penance
+		207946, -- Light's Wrath
+	},
+	[197767] = 47540, -- Speed of the Pious (Discipline artifact) -> Penance
+	[198069] = 47540, -- Power of the Dark Side (Discipline artifact) -> Penance
 	[205372] = { -- Void Ray
 		15407, -- Mind Flay
 		48045, -- Mind Sear
 		73510, -- Mind Spike
 	},
+	[210027] = 17, -- Share in the Light (Discipline artifact) -> Power Word: Shield
+	[216135] = 586, -- Vestments of Discipline (Discipline artifact) -> Fade
 	[217673] = 8092, -- Mind Spike -> Mind Blast
 })
