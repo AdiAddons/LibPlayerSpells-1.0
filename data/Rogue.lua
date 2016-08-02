@@ -49,6 +49,7 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 				 185422, -- Shadow Dance
 				 212283, -- Symbols of Death
 				 227151, -- Death
+				[202665] = "INVERT_AURA", -- Curse of the Dreadblades (Outlaw artifact)
 				[220901] = "POWER_REGEN", -- Goremaw's Bite (Subtlety artifact)
 				SURVIVAL = {
 					  5277, -- Evasion
@@ -91,6 +92,7 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 			197498, -- Finality: Nightblade (Subtlety artifact)
 			199600, -- Buried Treasure
 			199603, -- Jolly Rogger
+			202754, -- Hidden Blade (Outlaw artifact)
 			206237, -- Enveloping Shadows
 		},
 	},
@@ -111,6 +113,7 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 	[197603] = 197604, -- Embrace of Darkness (Subtlety artifact)
 	[199600] = 193316, -- Buried Treasure <- Roll the Bones
 	[199603] = 193316, -- Jolly Rogger <- Roll the Bones
+	[202754] = 202753, -- Hidden Blade (Outlaw artifact)
 	[206760] = 195452, -- Night Terrors (slow) <- Nightblade
 	[209786] = 209782, -- Goremaw's Bite (Subtlety artifact) (slow)
 	[220901] = 209782, -- Goremaw's Bite (Subtlety artifact)
@@ -128,7 +131,10 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 		196819, -- Eviscerate
 		199804, -- Between the Eyes
 	},
-	[195627] = 185763, -- Oportunity -> Pistol Shot
+	[195627] = { -- Oportunity
+		185763, -- Pistol Shot
+		202895, -- Blunderbuss (Outlaw artifact)
+	},
 	[196958] = 185438, -- Strike from the Shadows (stun) -> Shadowstrike
 	[197496] = 196819, -- Finality: Eviscerate (Subtlety artifact) -> Eviscerate
 	[197498] = 195452, -- Finality: Nightblade (Subtlety artifact) -> Nightblade
@@ -137,6 +143,7 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 		193315, -- Saber Slash
 		193316, -- Roll the Bones
 	},
+	[202754] = 193315, -- Hidden Blade (Outlaw artifact) -> Saber Slash
 	[222775] = 185438, -- Strike from the Shadows (slow) -> Shadowstrike
 	[227151] = 185438, -- Death -> Shadowstrike
 })
