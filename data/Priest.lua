@@ -20,9 +20,11 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", 70000, 1, {
+lib:__RegisterSpells("PRIEST", 70000, 2, {
+	[528] = "HARMFUL DISPEL", -- Dispel Magic
 	COOLDOWN = {
 		 2050, -- Holy Word: Serenity
+		 8092, -- Mind Blast
 		32375, -- Mass Dispel
 		34433, -- Shadowfiend
 		34861, -- Holy Word: Sanctify
@@ -30,8 +32,9 @@ lib:__RegisterSpells("PRIEST", 70000, 1, {
 		64843, -- Divine Hymn
 		73325, -- Leap of Faith
 		DISPEL = {
-			[527] = "HELPFUL", -- Purify
-			[528] = "HARMFUL", -- Dispel Magic
+			[   527] = "HELPFUL", -- Purify
+			[ 32375] = "HARMFUL HELPFUL", -- Mass Dispel
+			[213634] = "HELPFUL", -- Purify Disease
 		},
 		AURA = {
 			HELPFUL = {
@@ -43,13 +46,18 @@ lib:__RegisterSpells("PRIEST", 70000, 1, {
 			},
 			HARMFUL = {
 				14914, -- Holy Fire
+				15487, -- Silence -- NOTE: non-players only INTERRUPT, special case
 				CROWD_CTL = {
 					 8122, -- Psychic Scream (disorient)
 					88625, -- Holy Word: Chastise (incapacitate)
 				},
 			},
 			PERSONAL = {
-				[  586] = "SURVIVAL", -- Fade
+				15286, -- Vampiric Embrace
+				SURVIVAL = {
+					  586, -- Fade
+					47585, -- Dispersion
+				},
 				[47536] = "BURST", -- Rapture
 			},
 		},
@@ -64,20 +72,26 @@ lib:__RegisterSpells("PRIEST", 70000, 1, {
 			  81782, -- Power Word: Barrier
 			 186367, -- Prayer's Reprise
 			 194384, -- Atonement
+			[187464] = "INVERT_AURA", -- Shadow Mend
 			[111759] = "UNIQUE_AURA", -- Levitate
 		},
 		HARMFUL = {
 			   589, -- Shadow Word: Pain
-			187464, -- Shadow Mend
+			 15407, -- Mind Flay
+			 34914, -- Void Touch
+			 48045, -- Mind Sear
 			CROWD_CTL = {
-				   605, -- Mind Control (incapacitate)
 				  9484, -- Shackle Undead (incapacitate)
 				200196, -- Holy Word: Chastise (incapacitate)
 			},
 		},
 		PERSONAL = {
+			  2096, -- Mind Vision
 			 45242, -- Focused Will
 			186478, -- Reparation
+		},
+		PET = {
+			[   605] = "CROWD_CTL INVERT_AURA", -- Mind Control (disorient)
 		},
 	},
 }, { -- map aura to provider(s)
