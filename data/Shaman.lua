@@ -107,6 +107,7 @@ lib:__RegisterSpells("SHAMAN", 70000, 9, {
 		HARMFUL = {
 			182387, -- Earthquake
 			188389, -- Flame Shock
+			188838, -- Flame Shock (Restoration)
 			196840, -- Frost Shock (slow)
 			197209, -- Lightning Rod
 			197385, -- Fury of Air (slow)
