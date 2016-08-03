@@ -33,22 +33,22 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 		[ 30449] = "DISPEL HARMFUL", -- Spellsteal
 		AURA = {
 			HARMFUL = {
-				224968, -- Mark of Aluneth (Arcane artifact)
 				157981, -- Blast Wave (slow) (Fire Talent)
+				224968, -- Mark of Aluneth (Arcane artifact)
 				CROWD_CTL = {
 					  122, -- Frost Nova (root)
 					82691, -- Ring of Frost (incapacitate)
 				},
 			},
 			PERSONAL = {
+				  32612, -- Invisibility (Fire)
 				 108839, -- Ice Floes
 				 113862, -- Greater Invisibility (dmg reduction)
-				  32612, -- Invisibility (Fire)
  				 116014, -- Rune of Power
+				 190319, -- Combustion (Fire)
 				 205025, -- Presence of Mind
 				 210126, -- Arcane Familiar
 				 212799, -- Displacement
-				 190319, -- Combustion (Fire)
 				[ 12042] = "BURST", -- Arcane Power
 				[ 12051] = "MANA_REGEN", -- Evocation
 				[ 41425] = "INVERT_AURA", -- Hypothermia
@@ -65,13 +65,13 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 			130, -- Slow Fall
 		},
 		HARMFUL = {
+			  2120, -- Flamestrike (Fire)
 			 31589, -- Slow (slow)
 			114923, -- Nether Tempest
+			155158, -- Meteor (Fire Talent)
 			210824, -- Touch of the Magi (Arcane artifact)
-			  2120, -- Flamestrike (Fire)
-			226757, -- Conflagration (Fire Talent)
 			217694, -- Living Bomb (Fire Talent)
-			155158, -- Meteor
+			226757, -- Conflagration (Fire Talent)
 			CROWD_CTL = {
 				   118, -- Polymorph (incapacitate)
 				 28271, -- Polymorph: Turtle (incapacitate)
@@ -87,29 +87,17 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 			},
 		},
 		PERSONAL = {
-			  79683, -- Arcane Missiles! (Arcane)
-			 198924, -- Quickening
-			 157644, -- Enhanced Pyrotechnics (Fire)
-			  48108, -- Hot Streak (Fire)
 			  48107, -- Heating Up! (Fire)
+			  48108, -- Hot Streak (Fire)
+			  79683, -- Arcane Missiles! (Arcane)
+			 157644, -- Enhanced Pyrotechnics (Fire)
+			 198924, -- Quickening
 		},
 	},
 }, {
 	-- map aura to provider(s)
-	[ 41425] = 45438, -- Hypothermia <- Ice Block
-	[ 79683] = 5143, -- Arcane Missiles! -> Arcane Missiles
-	[ 82691] = 113724, -- Ring of Frost
-	[110960] = 110959, -- Greater Invisibility
-	[113862] = 110959, -- Greater Invisibility (dmg reduction)
-	[116014] = 116011, -- Rune of Power
-	[198924] = 198923, -- Quickening
-	[210126] = 205022, -- Arcane Familiar
-	[210824] = 210725, -- Touch of the Magi
-	[212799] = 195676, -- Displacement
-	[157644] = 133, -- Enhanced Pyrotechnics -> Fireball
 	[ 32612] = 66, -- Invisibilty
-	[217694] = 44457, -- Living Bomb
-	[155158] = 153561, -- Meteor
+	[ 41425] = 45438, -- Hypothermia <- Ice Block
 	[ 48107] = { -- Heating Up
 		   133, -- Fireball
 		 11366, -- Pyroblast
@@ -120,9 +108,28 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 		 11366, -- Pyroblast
 		108853, -- Fire Blast
 	},
+	[ 79683] = 5143, -- Arcane Missiles! -> Arcane Missiles
+	[ 82691] = 113724, -- Ring of Frost
+	[110960] = 110959, -- Greater Invisibility
+	[113862] = 110959, -- Greater Invisibility (dmg reduction)
+	[116014] = 116011, -- Rune of Power
+	[155158] = 153561, -- Meteor
+	[157644] = 133, -- Enhanced Pyrotechnics -> Fireball
+	[198924] = 198923, -- Quickening
+	[210126] = 205022, -- Arcane Familiar
+	[210824] = 210725, -- Touch of the Magi
+	[212799] = 195676, -- Displacement
+	[217694] = 44457, -- Living Bomb
 	[226757] = 133, -- Conflagration -> Fireball
 }, {
 	-- map aura to modified spell(s)
+	[ 48107] = { -- Heating Up
+		108853, -- Fire Blast
+	},
+	[ 48108] = { -- Hot Streak
+		11366, -- Pyroblast
+		 2120, -- Flamestrike
+	},
 	[198924] = { -- Quickening
 		 1449, -- Arcane Explosion
 		 5143, -- Arcane Missiles
@@ -130,11 +137,4 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 	},
 	[205025] = 30451, -- Presence of Mind -> Arcane Blast
 	[210824] = 30451, -- Touch of the Magi (Arcane artifact)
-	[ 48108] = { -- Hot Streak
-		11366, -- Pyroblast
-		 2120, -- Flamestrike
-	},
-	[ 48107] = { -- Heating Up
-		108853, -- Fire Blast
-	},
 })
