@@ -23,7 +23,6 @@ if not lib then return end
 lib:__RegisterSpells("PALADIN", 70000, 3, {
 	COOLDOWN = {
 		  20271, -- Judgement
-		  31935, -- Avenger's Shield -- NOTE: non-player only INTERRUPT
 		  35395, -- Crusader Strike
 		  53595, -- Hammer of the Righteous
 		 184575, -- Blade of Justice
@@ -41,6 +40,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 			HELPFUL = {
 				   1044, -- Blessing of Freedom
 				 204018, -- Blessing of Spellwarding
+				 209540, -- Light of the Titans (Protection artifact)
 				[ 25771] = "INVERT_AURA", -- Forbearance
 				SURVIVAL = {
 					  1022, -- Blessing of Protection
@@ -48,6 +48,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 				},
 			},
 			HARMFUL = {
+				 31935, -- Avenger's Shield -- NOTE: non-player only INTERRUPT and silence
 				 62124, -- Hand of Reckoning (taunt)
 				183218, -- Hand of Hindrance (slow)
 				196941, -- Judgement of Light
@@ -57,6 +58,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 				204242, -- Consecration
 				204301, -- Blessed Hammer
 				205273, -- Wake of Ashes (Retribution artifact) (slow)
+				209202, -- Eye of Tyr (Protection artifact)
 				213757, -- Execution Sentence
 				CROWD_CTL = {
 					   853, -- Hammer of Justice (stun)
@@ -68,6 +70,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 			PERSONAL = {
 				152262, -- Seraphim
 				188370, -- Consecration (Protection)
+				209388, -- Bulwark of Order (Protection artifact)
 				217020, -- Zeal -- NOTE: the buff charges overlay the spell charges
 				221883, -- Divine Steed
 				BURST = {
@@ -116,6 +119,8 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 	},
 	[204301] = 204019, -- Blessed Hammer
 	[205290] = 205273, -- Wake of Ashes (Retribution artifact) (stun)
+	[209388] = 209389, -- Bulwark of Order (Protection artifact)
+	[209540] = 209539, -- Light of the Titans (Protection artifact)
 	[221883] = { -- Divine Steed
 		190784, -- Divine Steed (Protection)
 		205656, -- Divine Steed (Retribution)
@@ -125,6 +130,11 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 	-- map aura to modified spell(s)
 	[196941] = 20271, -- Judgement of Light -> Judgement
 	[204077] = 642, -- Final Stand (taunt) -> Divine Shield
+	[209388] = 31935, -- Bulwark of Order (Protection artifact) -> Avenger's Shield
+	[209540] = { -- Light of the Titans (Protection artifact)
+		184092, -- Light of the Protector
+		213652, -- Hand of the Protector
+	},
 	[223819] = { -- Divine Purpose
 		 53385, -- Divine Storm
 		 85256, -- Templar's Verdict
