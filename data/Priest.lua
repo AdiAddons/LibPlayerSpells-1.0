@@ -52,7 +52,10 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 				 64843, -- Divine Hymn (hot)
 				 64844, -- Divine Hymn (heal increase)
 				 65081, -- Body and Soul
+				 73325, -- Leap of Faith
 				121557, -- Angelic Feather
+				196356, -- Trust in the Light (Holy artifact)
+				208065, -- Light of T'uure (Holy artifact)
 				214121, -- Body and Mind
 				SURVIVAL = {
 					33206, -- Pain Suppression
@@ -79,6 +82,7 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 				  64901, -- Symbol of Hope
 				 194022, -- Mental Fortitude (Shadow artifact)
 				 194025, -- Thrive in the Shadows (Shadow artifact)
+				 196490, -- Power of the Naaru (Holy artifact)
 				 197030, -- Divinity
 				 197767, -- Speed of the Pious (Discipline artifact)
 				 200183, -- Apotheosis
@@ -118,6 +122,7 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 			 34914, -- Void Touch
 			 48045, -- Mind Sear
 			204213, -- Purge the Wicked
+			210979, -- Focus in the Light (Holy artifact) (slow)
 			217673, -- Mind Spike
 			CROWD_CTL = {
 				  9484, -- Shackle Undead (incapacitate)
@@ -133,6 +138,7 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 			197763, -- Borrowed Time (Discipline artifact)
 			198069, -- Power of the Dark Side (Discipline artifact)
 			205372, -- Void Ray
+			210980, -- Focus in the Light (Holy artifact)
 		},
 		PET = {
 			[   605] = "CROWD_CTL INVERT_AURA", -- Mind Control (disorient)
@@ -155,6 +161,8 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 	[194022] = 194018, -- Mental Fortitude (Shadow artifact)
 	[194025] = 194024, -- Thrive in the Shadows (Shadow artifact)
 	[194384] =  81749, -- Atonement
+	[196356] = 196355, -- Trust in the Light (Holy artifact)
+	[196490] = 196489, -- Power of the Naaru (Holy artifact)
 	[197030] = 197031, -- Divinity
 	[197763] = 197762, -- Borrowed Time (Discipline artifact)
 	[197767] = 197766, -- Speed of the Pious (Discipline artifact)
@@ -165,6 +173,8 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 	[205372] = 205371, -- Void Ray
 	[208772] = 585, -- Smite
 	[210027] = 197781, -- Share in the Light (Discipline artifact)
+	[210979] = 196419, -- Focus in the Light (Holy artifact) (slow)
+	[210980] = 196419, -- Focus in the Light (Holy artifact)
 	[212570] = 193223, -- Surrendered Soul <- Surrender to Madness
 	[216135] = 197711, -- Vestments of Discipline (Discipline artifact)
 	[217673] = 73510, -- Mind Spike
@@ -186,6 +196,8 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 		194509, -- Power Word: Radiance
 		200829, -- Plea
 	},
+	[196356] = 73325, -- Trust in the Light (Holy artifact) -> Leap of Faith
+	[196490] = 596, -- Power of the Naaru (Holy artifact) -> Prayer of Healing
 	[197030] = { -- Divinity
 		 2050, -- Holy Word: Serenity
 		34861, -- Holy Word: Sanctify
@@ -204,6 +216,14 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 		73510, -- Mind Spike
 	},
 	[210027] = 17, -- Share in the Light (Discipline artifact) -> Power Word: Shield
+	[210979] = { -- Focus in the Light (Holy artifact) (slow)
+		14914, -- Holy Fire
+		88625, -- Holy Word: Chastise
+	},
+	[210980] = { -- Focus in the Light (Holy artifact)
+		14914, -- Holy Fire
+		88625, -- Holy Word: Chastise
+	},
 	[216135] = 586, -- Vestments of Discipline (Discipline artifact) -> Fade
 	[217673] = 8092, -- Mind Spike -> Mind Blast
 })
