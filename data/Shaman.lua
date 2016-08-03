@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70000, 9, {
+lib:__RegisterSpells("SHAMAN", 70000, 10, {
 	COOLDOWN = {
 		    556, -- Astral Recall
 		  17364, -- Stormstrike
@@ -50,6 +50,7 @@ lib:__RegisterSpells("SHAMAN", 70000, 9, {
 				116947, -- Earthbind (slow)
 				118297, -- Immolate (Primal Fire Elemental)
 				188089, -- Earthen Spike
+				188838, -- Flame Shock (Restoration)
 				224126, -- Frozen Bite (Enhancement artifact) (slow)
 				CROWD_CTL = {
 					 51514, -- Hex (incapacitate)
@@ -106,8 +107,7 @@ lib:__RegisterSpells("SHAMAN", 70000, 9, {
 		},
 		HARMFUL = {
 			182387, -- Earthquake
-			188389, -- Flame Shock
-			188838, -- Flame Shock (Restoration)
+			188389, -- Flame Shock (Elemental)
 			196840, -- Frost Shock (slow)
 			197209, -- Lightning Rod
 			197385, -- Fury of Air (slow)
