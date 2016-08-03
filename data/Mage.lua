@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", 70000, 4, {
+lib:__RegisterSpells("MAGE", 70000, 5, {
 	COOLDOWN = {
 		   1953, -- Blink
 		  44425, -- Arcane Barrage
@@ -34,6 +34,7 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 		AURA = {
 			HARMFUL = {
 				224968, -- Mark of Aluneth (Arcane artifact)
+				157981, -- Blast Wave (slow) (Fire Talent)
 				CROWD_CTL = {
 					  122, -- Frost Nova (root)
 					82691, -- Ring of Frost (incapacitate)
@@ -42,10 +43,12 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 			PERSONAL = {
 				 108839, -- Ice Floes
 				 113862, -- Greater Invisibility (dmg reduction)
+				  32612, -- Invisibility (Fire)
  				 116014, -- Rune of Power
 				 205025, -- Presence of Mind
 				 210126, -- Arcane Familiar
 				 212799, -- Displacement
+				 190319, -- Combustion (Fire)
 				[ 12042] = "BURST", -- Arcane Power
 				[ 12051] = "MANA_REGEN", -- Evocation
 				[ 41425] = "INVERT_AURA", -- Hypothermia
@@ -65,13 +68,17 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 			 31589, -- Slow (slow)
 			114923, -- Nether Tempest
 			210824, -- Touch of the Magi (Arcane artifact)
+			  2120, -- Flamestrike (Fire)
+			226757, -- Conflagration (Fire Talent)
+			217694, -- Living Bomb (Fire Talent)
+			155158, -- Meteor
 			CROWD_CTL = {
 				   118, -- Polymorph (incapacitate)
 				 28271, -- Polymorph: Turtle (incapacitate)
 				 28272, -- Polymorph: Pig (incapacitate)
 				 61305, -- Polymorph: Black Cat (incapacitate)
 				 61721, -- Polymorph: Rabbit (incapacitate)
-				 61780, -- Polymorph: Turkey
+				 61780, -- Polymorph: Turkey (incapacitate)
 				126819, -- Polymorph: Pig (porcupine) (incapacitate)
 				161353, -- Polymorph: Polar Bear Cub (incapacitate)
 				161354, -- Polymorph: Monkey (incapacitate)
@@ -82,6 +89,9 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 		PERSONAL = {
 			  79683, -- Arcane Missiles! (Arcane)
 			 198924, -- Quickening
+			 157644, -- Enhanced Pyrotechnics (Fire)
+			  48108, -- Hot Streak (Fire)
+			  48107, -- Heating Up! (Fire)
 		},
 	},
 }, {
@@ -96,6 +106,21 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 	[210126] = 205022, -- Arcane Familiar
 	[210824] = 210725, -- Touch of the Magi
 	[212799] = 195676, -- Displacement
+	[157644] = 133, -- Enhanced Pyrotechnics -> Fireball
+	[ 32612] = 66, -- Invisibilty
+	[217694] = 44457, -- Living Bomb
+	[155158] = 153561, -- Meteor
+	[ 48107] = { -- Heating Up
+		   133, -- Fireball
+		 11366, -- Pyroblast
+		108853, -- Fire Blast
+	},
+	[ 48108] = { -- Hot Streak
+		   133, -- Fireball
+		 11366, -- Pyroblast
+		108853, -- Fire Blast
+	},
+	[226757] = 133, -- Conflagration -> Fireball
 }, {
 	-- map aura to modified spell(s)
 	[198924] = { -- Quickening
@@ -105,4 +130,11 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 	},
 	[205025] = 30451, -- Presence of Mind -> Arcane Blast
 	[210824] = 30451, -- Touch of the Magi (Arcane artifact)
+	[ 48108] = { -- Hot Streak
+		11366, -- Pyroblast
+		 2120, -- Flamestrike
+	},
+	[ 48107] = { -- Heating Up
+		108853, -- Fire Blast
+	},
 })
