@@ -33,6 +33,7 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 		 110744, -- Divine Star
 		 120517, -- Halo
 		 129250, -- Power Word: Solace
+		 204883, -- Circle of Healing
 		 205351, -- Shadow Word: Void
 		 205385, -- Shadow Clash
 		 207946, -- Light's Wrath (Discipline artifact)
@@ -52,6 +53,7 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 				 64844, -- Divine Hymn (heal increase)
 				 65081, -- Body and Soul
 				121557, -- Angelic Feather
+				214121, -- Body and Mind
 				SURVIVAL = {
 					33206, -- Pain Suppression
 					47788, -- Guardian Spirit
@@ -68,18 +70,23 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 				CROWD_CTL = {
 					  8122, -- Psychic Scream (disorient)
 					200196, -- Holy Word: Chastise (incapacitate)
+					200200, -- Holy Word: Chastise (with Censure) (stun)
 					226943, -- Mind Bomb (stun)
 				},
 			},
 			PERSONAL = {
 				  15286, -- Vampiric Embrace
+				  64901, -- Symbol of Hope
 				 194022, -- Mental Fortitude (Shadow artifact)
 				 194025, -- Thrive in the Shadows (Shadow artifact)
+				 197030, -- Divinity
 				 197767, -- Speed of the Pious (Discipline artifact)
+				 200183, -- Apotheosis
 				 210027, -- Share in the Light (Discipline artifact)
 				[212570] = "INVERT_AURA", -- Surrendered Soul
 				SURVIVAL = {
 					   586, -- Fade
+					 19236, -- Desperate Prayer
 					 47585, -- Dispersion
 					216135, -- Vestments of Discipline (Discipline artifact)
 				},
@@ -95,7 +102,6 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 		HELPFUL = {
 			    139, -- Renew
 			  41635, -- Prayer of Mending
-			  77489, -- Echo of Light
 			 152118, -- Clarity of Will
 			 186367, -- Prayer's Reprise
 			 194384, -- Atonement
@@ -120,6 +126,7 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 		PERSONAL = {
 			  2096, -- Mind Vision
 			 45242, -- Focused Will
+			114255, -- Surge of Light
 			124430, -- Shadowy Insight
 			186478, -- Reparation
 			193065, -- Masochism
@@ -136,9 +143,9 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 	[ 45242] =  45243, -- Focused Will
 	[ 64844] =  64843, -- Divine Hymn
 	[ 65081] =  64129, -- Body and Soul
-	[ 77489] =  77485, -- Echo of Light
 	[ 81782] =  62618, -- Power Word: Barrier
 	[111759] =   1706, -- Levitate
+	[114255] = 109186, -- Surge of Light
 	[121557] = 121536, -- Angelic Feather
 	[124430] = 162452, -- Shadowy Insight
 	[186367] =  33076, -- Prayer's Reprise <- Prayer of Mending
@@ -148,10 +155,12 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 	[194022] = 194018, -- Mental Fortitude (Shadow artifact)
 	[194025] = 194024, -- Thrive in the Shadows (Shadow artifact)
 	[194384] =  81749, -- Atonement
+	[197030] = 197031, -- Divinity
 	[197763] = 197762, -- Borrowed Time (Discipline artifact)
 	[197767] = 197766, -- Speed of the Pious (Discipline artifact)
 	[198069] = 198068, -- Power of the Dark Side (Discipline artifact)
 	[200196] =  88625, -- Holy Word: Chastise
+	[200200] = 200199, -- Holy Word: Chastise (with Censure) (stun) <- Censure
 	[204213] = 204197, -- Purge the Wicked
 	[205372] = 205371, -- Void Ray
 	[208772] = 585, -- Smite
@@ -166,15 +175,7 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 		   17, -- Power Word: Shield
 		73325, -- Leap of Faith
 	},
-	[ 77489] = { -- Echo of Light
-		  139, -- Renew
-		  596, -- Prayer of Healing
-		 2050, -- Holy Word: Serenity
-		 2060, -- Heal
-		 2061, -- Flash Heal
-		34861, -- Holy Word: Sanctify
-		64843, -- Divine Hymn
-	},
+	[114255] = 2061, -- Surge of Light -> Flash Heal
 	[124430] = 8092, -- Shadowy Insight -> Mind Blast
 	[193065] = 186263, -- Masochism -> Shadow Mend
 	[194022] = 34914, -- Mental Fortitude (Shadow artifact) -> Vampiric Touch
@@ -185,6 +186,10 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 		194509, -- Power Word: Radiance
 		200829, -- Plea
 	},
+	[197030] = { -- Divinity
+		 2050, -- Holy Word: Serenity
+		34861, -- Holy Word: Sanctify
+	},
 	[197763] = { -- Borrowed Time (Discipline artifact)
 		   585, -- Smite
 		 47540, -- Penance
@@ -192,6 +197,7 @@ lib:__RegisterSpells("PRIEST", 70000, 4, {
 	},
 	[197767] = 47540, -- Speed of the Pious (Discipline artifact) -> Penance
 	[198069] = 47540, -- Power of the Dark Side (Discipline artifact) -> Penance
+	[200200] = 88625, -- Holy Word: Chastise (with Censure) (stun)
 	[205372] = { -- Void Ray
 		15407, -- Mind Flay
 		48045, -- Mind Sear
