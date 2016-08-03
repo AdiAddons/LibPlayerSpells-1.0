@@ -29,7 +29,9 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 		 184575, -- Blade of Justice
 		 198034, -- Divine Hammer
 		 210220, -- Holy Wrath
+		 213652, -- Hand of the Protector
 		[ 96231] = "INTERRUPT", -- Rebuke
+		[204035] = "SURVIVAL", -- Bastion of Light
 		DISPEL = {
 			HELPFUL = {
 				213644, -- Cleanse Toxins
@@ -37,19 +39,23 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 		},
 		AURA = {
 			HELPFUL = {
-				  1044, -- Blessing of Freedom
-				[25771] = "INVERT_AURA", -- Forbearance
+				   1044, -- Blessing of Freedom
+				 204018, -- Blessing of Spellwarding
+				[ 25771] = "INVERT_AURA", -- Forbearance
 				SURVIVAL = {
-					1022, -- Blessing of Protection
-					6940, -- Blessing of Sacrifice
+					  1022, -- Blessing of Protection
+					  6940, -- Blessing of Sacrifice
 				},
 			},
 			HARMFUL = {
 				 62124, -- Hand of Reckoning (taunt)
 				183218, -- Hand of Hindrance (slow)
+				196941, -- Judgement of Light
 				197277, -- Judgement
 				202270, -- Blade of Wrath
+				204077, -- Final Stand (taunt)
 				204242, -- Consecration
+				204301, -- Blessed Hammer
 				205273, -- Wake of Ashes (Retribution artifact) (slow)
 				213757, -- Execution Sentence
 				CROWD_CTL = {
@@ -60,6 +66,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 				},
 			},
 			PERSONAL = {
+				152262, -- Seraphim
 				188370, -- Consecration (Protection)
 				217020, -- Zeal -- NOTE: the buff charges overlay the spell charges
 				221883, -- Divine Steed
@@ -73,6 +80,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 					 86659, -- Guardian of Ancient Kings
 					132403, -- Shield of the Righteous
 					184662, -- Shield of Vengeance
+					204150, -- Aegis of Light
 					205191, -- Eye for an Eye
 				},
 			},
@@ -92,18 +100,21 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 }, {
 	-- map aura to provider(s)
 	[ 25771] = { -- Forbearance
-		 633, -- Lay on Hands
-		 642, -- Divine Shield
-		1022, -- Blessing of Protection
+		   633, -- Lay on Hands
+		   642, -- Divine Shield
+		  1022, -- Blessing of Protection
+		204018, -- Blassing of Spellwarding
 	},
 	[105421] = 115750, -- Blinding Light (disorient)
 	[132403] = 53600, -- Shield of the Righteous
 	[188370] = 26573, -- Consecration (Protection)
+	[196941] = 183778, -- Judgement of Light
 	[197277] = 20271, -- Judgement
 	[204242] = { -- Consecration
 		 26573, -- Consecration (Protection)
 		205228, -- Consecration (Retribution)
 	},
+	[204301] = 204019, -- Blessed Hammer
 	[205290] = 205273, -- Wake of Ashes (Retribution artifact) (stun)
 	[221883] = { -- Divine Steed
 		190784, -- Divine Steed (Protection)
@@ -112,6 +123,8 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 	[223819] = 223817, -- Divine Purpose
 }, {
 	-- map aura to modified spell(s)
+	[196941] = 20271, -- Judgement of Light -> Judgement
+	[204077] = 642, -- Final Stand (taunt) -> Divine Shield
 	[223819] = { -- Divine Purpose
 		 53385, -- Divine Storm
 		 85256, -- Templar's Verdict
