@@ -36,6 +36,7 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 				224968, -- Mark of Aluneth (Arcane artifact)
 				CROWD_CTL = {
 					  122, -- Frost Nova (root)
+					31661, -- Dragon's Breath (disorient)
 					82691, -- Ring of Frost (incapacitate)
 				},
 			},
@@ -46,7 +47,6 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 				 205025, -- Presence of Mind
 				 210126, -- Arcane Familiar
 				 212799, -- Displacement
-				[ 12042] = "BURST", -- Arcane Power
 				[ 12051] = "MANA_REGEN", -- Evocation
 				[ 41425] = "INVERT_AURA", -- Hypothermia
 				SURVIVAL = {
@@ -54,6 +54,10 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 					 45438, -- Ice Block
 					110960, -- Greater Invisibility
 				},
+				BURST = {
+					 12042, -- Arcane Power
+					190319, -- Combustion
+				}
 			},
 		},
 	},
@@ -80,24 +84,33 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 			},
 		},
 		PERSONAL = {
-			  79683, -- Arcane Missiles! (Arcane)
-			 198924, -- Quickening
+			 48108, -- Hot Streak!
+			 79683, -- Arcane Missiles!
+			157644, -- Enhanced Pyrotechnics
+			198924, -- Quickening
 		},
 	},
 }, {
 	-- map aura to provider(s)
 	[ 41425] = 45438, -- Hypothermia <- Ice Block
+	[ 48108] = 195283, -- Hot Streak! <- Hot Streak
 	[ 79683] = 5143, -- Arcane Missiles! -> Arcane Missiles
 	[ 82691] = 113724, -- Ring of Frost
 	[110960] = 110959, -- Greater Invisibility
 	[113862] = 110959, -- Greater Invisibility (dmg reduction)
 	[116014] = 116011, -- Rune of Power
+	[157644] = 157642, -- Enhanced Pyrotechnics
 	[198924] = 198923, -- Quickening
 	[210126] = 205022, -- Arcane Familiar
 	[210824] = 210725, -- Touch of the Magi
 	[212799] = 195676, -- Displacement
 }, {
 	-- map aura to modified spell(s)
+	[ 48108] = { -- Hot Streak!
+		 2120, -- Flamestrike
+		11366, -- Pyroblast
+	},
+	[157644] = 133, -- Enhanced Pyrotechnics -> Fireball
 	[198924] = { -- Quickening
 		 1449, -- Arcane Explosion
 		 5143, -- Arcane Missiles
