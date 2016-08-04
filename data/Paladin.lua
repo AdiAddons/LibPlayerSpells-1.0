@@ -136,7 +136,7 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 	[132403] = 53600, -- Shield of the Righteous
 	[188370] = 26573, -- Consecration (Protection)
 	[196941] = 183778, -- Judgement of Light
-	[197277] = 20271, -- Judgement
+	[197277] = 85256, -- Judgement <- Templar's Verdict NOTE: this is not the provider. Used to signify it is the Retribution version of the Judgement debuff
 	[200376] = 200373, -- Vindicator (Holy artifact)
 	[200654] = 200652, -- Tyr's Deliverance (Holy artifact)
 	[204242] = { -- Consecration
@@ -148,7 +148,7 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 	[209388] = 209389, -- Bulwark of Order (Protection artifact)
 	[209540] = 209539, -- Light of the Titans (Protection artifact)
 	[211422] = 200302, -- Knight of the Silver Hand (Holy artifact)
-	[214222] = 20271, -- Judgement (Holy)
+	[214222] = 20473, -- Judgement (Holy) <- Holy Shock NOTE: this is not the provider. Used to signify it is the Holy version of the Judgement debuff
 	[216411] = 197646, -- Divine Purpose (Holy - Holy Shock)
 	[216413] = 197646, -- Divine Purpose (Holy - Light of Dawn)
 	[221883] = { -- Divine Steed
@@ -164,6 +164,7 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 		82326, -- Holy Light
 	},
 	[196941] = 20271, -- Judgement of Light -> Judgement
+	[197277] = 20271, -- Judgement (Retribution)
 	[200376] = 31842, -- Vindicator (Holy artifact) -> Avenging Wrath
 	[204077] = 642, -- Final Stand (taunt) -> Divine Shield
 	[209388] = 31935, -- Bulwark of Order (Protection artifact) -> Avenger's Shield
@@ -172,6 +173,7 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 		213652, -- Hand of the Protector
 	},
 	[211422] = 20271, -- Knight of the Silver Hand (Holy artifact) -> Judgement
+	[214222] = 20271, -- Judgement (Holy)
 	[216411] = 20473, -- Divine Purpose (Holy) -> Holy Shock
 	[216413] = 85222, -- Divine Purpose (Holy) -> Light of Dawn
 	[223316] = 183998, -- Fervent Martyr -> Light of the Martyr
