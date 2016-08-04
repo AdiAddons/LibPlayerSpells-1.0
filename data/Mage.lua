@@ -20,13 +20,14 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", 70000, 4, {
+lib:__RegisterSpells("MAGE", 70000, 5, {
 	COOLDOWN = {
 		   1953, -- Blink
 		  44425, -- Arcane Barrage
 		  55342, -- Mirror Image
 		 153626, -- Arcane Orb
 		 157980, -- Supernova (knockback)
+		 194466, -- Phoenix's Flames (Fire artifact)
 		 198929, -- Cinderstorm
 		 205029, -- Flame On
 		 205032, -- Charged Up
@@ -37,6 +38,7 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 			HARMFUL = {
 				155158, -- Meteor
 				157981, -- Blast Wave (slow)
+				194522, -- Blast Furnace (Fire artifact)
 				217694, -- Living Bomb
 				224968, -- Mark of Aluneth (Arcane artifact)
 				CROWD_CTL = {
@@ -49,9 +51,11 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 				 108839, -- Ice Floes
 				 113862, -- Greater Invisibility (dmg reduction)
  				 116014, -- Rune of Power
+				 194316, -- Cauterizing Blink (Fire artifact)
 				 205025, -- Presence of Mind
 				 210126, -- Arcane Familiar
 				 212799, -- Displacement
+				 227482, -- Scorched Earth (fire artifact)
 				[ 12051] = "MANA_REGEN", -- Evocation
 				[ 41425] = "INVERT_AURA", -- Hypothermia
 				SURVIVAL = {
@@ -108,12 +112,15 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 	[116014] = 116011, -- Rune of Power
 	[155158] = 153561, -- Meteor
 	[157644] = 157642, -- Enhanced Pyrotechnics
+	[194316] = 194318, -- Cauterizing Blink (Fire artifact)
+	[194522] = 194487, -- Blast Furnace (Fire artifact)
 	[198924] = 198923, -- Quickening
 	[210126] = 205022, -- Arcane Familiar
 	[210824] = 210725, -- Touch of the Magi
 	[212799] = 195676, -- Displacement
 	[217694] = 44457, -- Living Bomb
 	[226757] = 205023, -- Conflagration
+	[227482] = 227481, -- Scorched Earth (Fire artifact)
 }, {
 	-- map aura to modified spell(s)
 	[ 48108] = { -- Hot Streak!
@@ -121,6 +128,11 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 		11366, -- Pyroblast
 	},
 	[157644] = 133, -- Enhanced Pyrotechnics -> Fireball
+	[194316] = { -- Cauterizing Blink (Fire artifact)
+		  1953, -- Blink
+		212653, -- Shimmer
+	},
+	[194522] = 108853, -- Blast Furnace (Fire artifact) -> Fire Blast
 	[198924] = { -- Quickening
 		 1449, -- Arcane Explosion
 		 5143, -- Arcane Missiles
@@ -129,4 +141,5 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 	[205025] = 30451, -- Presence of Mind -> Arcane Blast
 	[210824] = 30451, -- Touch of the Magi (Arcane artifact)
 	[226757] = 133, -- Conflagration -> Fireball
+	[227482] = 2948, -- Scorched Earth (Fire artifact) -> Scorch
 })
