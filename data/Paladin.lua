@@ -118,6 +118,8 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 			203539, -- Greater Blessing of Might
 		},
 		PERSONAL = {
+			200656, -- Power of the Silver Hand (build-up) (Holy artifact)
+			200657, -- Power of the Silver Hand (Holy artifact)
 			202273, -- Seal of Light
 			223316, -- Fervent Martyr
 			223819, -- Divine Purpose (Retribution)
@@ -139,6 +141,8 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 	[197277] = 85256, -- Judgement <- Templar's Verdict NOTE: this is not the provider. Used to signify it is the Retribution version of the Judgement debuff
 	[200376] = 200373, -- Vindicator (Holy artifact)
 	[200654] = 200652, -- Tyr's Deliverance (Holy artifact)
+	[200656] = 200474, -- Power of the Silver Hand (build-up) (Holy artifact)
+	[200657] = 200474, -- Power of the Silver Hand (Holy artifact)
 	[204242] = { -- Consecration
 		 26573, -- Consecration (Protection)
 		205228, -- Consecration (Retribution)
@@ -166,6 +170,11 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 	[196941] = 20271, -- Judgement of Light -> Judgement
 	[197277] = 20271, -- Judgement (Retribution)
 	[200376] = 31842, -- Vindicator (Holy artifact) -> Avenging Wrath
+	[200656] = { -- Power of the Silver Hand (build-up) (Holy artifact)
+		19750, -- Flash of Light
+		82326, -- Holy Light
+	},
+	[200657] = 20473, -- Power of the Silver Hand (Holy artifact) -> Holy Shock
 	[204077] = 642, -- Final Stand (taunt) -> Divine Shield
 	[209388] = 31935, -- Bulwark of Order (Protection artifact) -> Avenger's Shield
 	[209540] = { -- Light of the Titans (Protection artifact)
