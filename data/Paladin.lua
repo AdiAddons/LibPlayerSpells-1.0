@@ -20,11 +20,13 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", 70000, 3, {
+lib:__RegisterSpells("PALADIN", 70000, 4, {
 	COOLDOWN = {
 		  20271, -- Judgement
+		  20473, -- Holy Shock
 		  35395, -- Crusader Strike
 		  53595, -- Hammer of the Righteous
+		  85222, -- Light of Dawn
 		 184575, -- Blade of Justice
 		 198034, -- Divine Hammer
 		 210220, -- Holy Wrath
@@ -33,6 +35,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 		[204035] = "SURVIVAL", -- Bastion of Light
 		DISPEL = {
 			HELPFUL = {
+				  4987, -- Cleanse
 				213644, -- Cleanse Toxins
 			},
 		},
@@ -60,6 +63,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 				205273, -- Wake of Ashes (Retribution artifact) (slow)
 				209202, -- Eye of Tyr (Protection artifact)
 				213757, -- Execution Sentence
+				214222, -- Judgement (Holy)
 				CROWD_CTL = {
 					   853, -- Hammer of Justice (stun)
 					 20066, -- Repentance (incapacitate)
@@ -68,16 +72,20 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 				},
 			},
 			PERSONAL = {
+				 31821, -- Aura Mastery
+				 54149, -- Infusion of Light
 				152262, -- Seraphim
 				188370, -- Consecration (Protection)
 				209388, -- Bulwark of Order (Protection artifact)
 				217020, -- Zeal -- NOTE: the buff charges overlay the spell charges
 				221883, -- Divine Steed
 				BURST = {
+					 31842, -- Avenging Wrath (Holy)
 					 31884, -- Avenging Wrath
 					224668, -- Crusade
 				},
 				SURVIVAL = {
+					   498, -- Divine Protection
 					   642, -- Divine Shield
 					 31850, -- Ardent Defender
 					 86659, -- Guardian of Ancient Kings
@@ -91,6 +99,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 	},
 	AURA = {
 		HELPFUL = {
+			 53563, -- Beacon of Light
 			203528, -- Greater Blessing of Might
 			203538, -- Greater Blessing of Kings
 			203539, -- Greater Blessing of Might
@@ -108,6 +117,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 		  1022, -- Blessing of Protection
 		204018, -- Blassing of Spellwarding
 	},
+	[ 54149] = 53576, -- Infusion of Light
 	[105421] = 115750, -- Blinding Light (disorient)
 	[132403] = 53600, -- Shield of the Righteous
 	[188370] = 26573, -- Consecration (Protection)
@@ -121,6 +131,7 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 	[205290] = 205273, -- Wake of Ashes (Retribution artifact) (stun)
 	[209388] = 209389, -- Bulwark of Order (Protection artifact)
 	[209540] = 209539, -- Light of the Titans (Protection artifact)
+	[214222] = 20271, -- Judgement (Holy)
 	[221883] = { -- Divine Steed
 		190784, -- Divine Steed (Protection)
 		205656, -- Divine Steed (Retribution)
@@ -128,6 +139,10 @@ lib:__RegisterSpells("PALADIN", 70000, 3, {
 	[223819] = 223817, -- Divine Purpose
 }, {
 	-- map aura to modified spell(s)
+	[ 54149] = { -- Infusion of Light
+		19750, -- Flash of Light
+		82326, -- Holy Light
+	},
 	[196941] = 20271, -- Judgement of Light -> Judgement
 	[204077] = 642, -- Final Stand (taunt) -> Divine Shield
 	[209388] = 31935, -- Bulwark of Order (Protection artifact) -> Avenger's Shield
