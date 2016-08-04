@@ -45,6 +45,8 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 			HELPFUL = {
 				   1044, -- Blessing of Freedom
 				 200025, -- Beacon of Virtue
+				 200652, -- Tyr's Deliverance (HoT) (Holy artifact)
+				 200654, -- Tyr's Deliverance (Holy artifact)
 				 204018, -- Blessing of Spellwarding
 				 209540, -- Light of the Titans (Protection artifact)
 				 223306, -- Bestow Faith
@@ -59,7 +61,7 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 				 62124, -- Hand of Reckoning (taunt)
 				183218, -- Hand of Hindrance (slow)
 				196941, -- Judgement of Light
-				197277, -- Judgement
+				197277, -- Judgement (Retribution)
 				202270, -- Blade of Wrath
 				204077, -- Final Stand (taunt)
 				204242, -- Consecration
@@ -80,7 +82,9 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 				 54149, -- Infusion of Light
 				152262, -- Seraphim
 				188370, -- Consecration (Protection)
+				200376, -- Vindicator (Holy artifact)
 				209388, -- Bulwark of Order (Protection artifact)
+				211422, -- Knight of the Silver Hand (Holy artifact)
 				214202, -- Rule of Law
 				216411, -- Divine Purpose (Holy - Holy Shock)
 				216413, -- Divine Purpose (Holy - Light of Dawn)
@@ -133,6 +137,8 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 	[188370] = 26573, -- Consecration (Protection)
 	[196941] = 183778, -- Judgement of Light
 	[197277] = 20271, -- Judgement
+	[200376] = 200373, -- Vindicator (Holy artifact)
+	[200654] = 200652, -- Tyr's Deliverance (Holy artifact)
 	[204242] = { -- Consecration
 		 26573, -- Consecration (Protection)
 		205228, -- Consecration (Retribution)
@@ -141,6 +147,7 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 	[205290] = 205273, -- Wake of Ashes (Retribution artifact) (stun)
 	[209388] = 209389, -- Bulwark of Order (Protection artifact)
 	[209540] = 209539, -- Light of the Titans (Protection artifact)
+	[211422] = 200302, -- Knight of the Silver Hand (Holy artifact)
 	[214222] = 20271, -- Judgement (Holy)
 	[216411] = 197646, -- Divine Purpose (Holy - Holy Shock)
 	[216413] = 197646, -- Divine Purpose (Holy - Light of Dawn)
@@ -157,12 +164,14 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 		82326, -- Holy Light
 	},
 	[196941] = 20271, -- Judgement of Light -> Judgement
+	[200376] = 31842, -- Vindicator (Holy artifact) -> Avenging Wrath
 	[204077] = 642, -- Final Stand (taunt) -> Divine Shield
 	[209388] = 31935, -- Bulwark of Order (Protection artifact) -> Avenger's Shield
 	[209540] = { -- Light of the Titans (Protection artifact)
 		184092, -- Light of the Protector
 		213652, -- Hand of the Protector
 	},
+	[211422] = 20271, -- Knight of the Silver Hand (Holy artifact) -> Judgement
 	[216411] = 20473, -- Divine Purpose (Holy) -> Holy Shock
 	[216413] = 85222, -- Divine Purpose (Holy) -> Light of Dawn
 	[223316] = 183998, -- Fervent Martyr -> Light of the Martyr
