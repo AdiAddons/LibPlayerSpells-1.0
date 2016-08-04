@@ -27,12 +27,17 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 		  55342, -- Mirror Image
 		 153626, -- Arcane Orb
 		 157980, -- Supernova (knockback)
+		 198929, -- Cinderstorm
+		 205029, -- Flame On
 		 205032, -- Charged Up
 		 212653, -- Shimmer
 		[  2139] = "INTERRUPT", -- Counterspell
 		[ 30449] = "DISPEL HARMFUL", -- Spellsteal
 		AURA = {
 			HARMFUL = {
+				155158, -- Meteor
+				157981, -- Blast Wave (slow)
+				217694, -- Living Bomb
 				224968, -- Mark of Aluneth (Arcane artifact)
 				CROWD_CTL = {
 					  122, -- Frost Nova (root)
@@ -66,9 +71,11 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 			130, -- Slow Fall
 		},
 		HARMFUL = {
+			  2120, -- Flamestrike (slow)
 			 31589, -- Slow (slow)
 			114923, -- Nether Tempest
 			210824, -- Touch of the Magi (Arcane artifact)
+			226757, -- Conflagration
 			CROWD_CTL = {
 				   118, -- Polymorph (incapacitate)
 				 28271, -- Polymorph: Turtle (incapacitate)
@@ -99,11 +106,14 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 	[110960] = 110959, -- Greater Invisibility
 	[113862] = 110959, -- Greater Invisibility (dmg reduction)
 	[116014] = 116011, -- Rune of Power
+	[155158] = 153561, -- Meteor
 	[157644] = 157642, -- Enhanced Pyrotechnics
 	[198924] = 198923, -- Quickening
 	[210126] = 205022, -- Arcane Familiar
 	[210824] = 210725, -- Touch of the Magi
 	[212799] = 195676, -- Displacement
+	[217694] = 44457, -- Living Bomb
+	[226757] = 205023, -- Conflagration
 }, {
 	-- map aura to modified spell(s)
 	[ 48108] = { -- Hot Streak!
@@ -118,4 +128,5 @@ lib:__RegisterSpells("MAGE", 70000, 4, {
 	},
 	[205025] = 30451, -- Presence of Mind -> Arcane Blast
 	[210824] = 30451, -- Touch of the Magi (Arcane artifact)
+	[226757] = 133, -- Conflagration -> Fireball
 })
