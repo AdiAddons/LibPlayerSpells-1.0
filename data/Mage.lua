@@ -37,6 +37,7 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 		 205030, -- Frozen Touch
 		 205032, -- Charged Up
 		 212653, -- Shimmer
+		 214634, -- Ebonbolt (Frost artifact)
 		[  2139] = "INTERRUPT", -- Counterspell
 		[ 30449] = "DISPEL HARMFUL", -- Spellsteal
 		AURA = {
@@ -80,6 +81,7 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 					 12042, -- Arcane Power
 					 12472, -- Icy Veins
 					190319, -- Combustion
+					195446, -- Chilled to the Core (Frost artifact)
 				}
 			},
 		},
@@ -119,6 +121,8 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 			 79683, -- Arcane Missiles!
 			157644, -- Enhanced Pyrotechnics
 			190446, -- Brain Freeze
+			195391, -- Jouster (Frost artifact)
+			195418, -- Chain Reaction (Frost artifact)
 			198924, -- Quickening
 			199844, -- Glacial Spike!
 			205473, -- Icicles
@@ -140,6 +144,9 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 	[190446] = 190447, -- Brain Freeze
 	[194316] = 194318, -- Cauterizing Blink (Fire artifact)
 	[194522] = 194487, -- Blast Furnace (Fire artifact)
+	[195391] = 214626, -- Jouster (Frost artifact)
+	[195418] = 195419, -- Chain Reaction (Frost artifact)
+	[195446] = 195448, -- Chilled to the Core (Frost artifact)
 	[198924] = 198923, -- Quickening
 	[199844] = 199786, -- Glacial Spike! <- Glacial Spike
 	[205473] = 76613, -- Icicles <- Mastery: Icicles
@@ -173,6 +180,9 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 		212653, -- Shimmer
 	},
 	[194522] = 108853, -- Blast Furnace (Fire artifact) -> Fire Blast
+	[195391] = 30455, -- Jouster (Frost artifact) -> Ice Lance
+	[195418] = 30455, -- Chain Reaction (Frost artifact) -> Ice Lance
+	[195446] = 12472, -- Chilled to the Core (Frost artifact) -> Icy Veins
 	[198924] = { -- Quickening
 		 1449, -- Arcane Explosion
 		 5143, -- Arcane Missiles
