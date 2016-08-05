@@ -27,12 +27,14 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 		  44425, -- Arcane Barrage
 		  55342, -- Mirror Image
 		  84714, -- Frozen Orb
+		 153595, -- Comet Storm
 		 153626, -- Arcane Orb
 		 157980, -- Supernova (knockback)
 		 190356, -- Blizzard
 		 194466, -- Phoenix's Flames (Fire artifact)
 		 198929, -- Cinderstorm
 		 205029, -- Flame On
+		 205030, -- Frozen Touch
 		 205032, -- Charged Up
 		 212653, -- Shimmer
 		[  2139] = "INTERRUPT", -- Counterspell
@@ -43,14 +45,16 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 				155158, -- Meteor
 				157981, -- Blast Wave (slow)
 				194522, -- Blast Furnace (Fire artifact)
+				205021, -- Ray of Frost (slow)
 				212792, -- Cone of Cold (slow)
 				217694, -- Living Bomb
 				224968, -- Mark of Aluneth (Arcane artifact)
 				CROWD_CTL = {
-					  122, -- Frost Nova (root)
-					31661, -- Dragon's Breath (disorient)
-					33395, -- Freeze (Water Elemental) (root)
-					82691, -- Ring of Frost (incapacitate)
+					   122, -- Frost Nova (root)
+					 31661, -- Dragon's Breath (disorient)
+					 33395, -- Freeze (Water Elemental) (root)
+					 82691, -- Ring of Frost (incapacitate)
+					157997, -- Ice Nova (root) -- TODO: check category
 				},
 			},
 			PERSONAL = {
@@ -59,6 +63,7 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
  				 116014, -- Rune of Power
 				 194316, -- Cauterizing Blink (Fire artifact)
 				 205025, -- Presence of Mind
+				 208166, -- Ray of Frost
 				 210126, -- Arcane Familiar
 				 212799, -- Displacement
 				 227482, -- Scorched Earth (fire artifact)
@@ -86,6 +91,7 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 		HARMFUL = {
 			  2120, -- Flamestrike (slow)
 			 31589, -- Slow (slow)
+			112948, -- Frost Bomb
 			114923, -- Nether Tempest
 			205708, -- Chilled (slow)
 			210824, -- Touch of the Magi (Arcane artifact)
@@ -104,6 +110,7 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 				161354, -- Polymorph: Monkey (incapacitate)
 				161355, -- Polymorph: Penguin (incapacitate)
 				161372, -- Polymorph: Monkey (incapacitate)
+				228600, -- Glacial Spike (root) -- TODO: check category
 			},
 		},
 		PERSONAL = {
@@ -113,6 +120,7 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 			157644, -- Enhanced Pyrotechnics
 			190446, -- Brain Freeze
 			198924, -- Quickening
+			199844, -- Glacial Spike!
 			205473, -- Icicles
 		},
 	},
@@ -133,12 +141,14 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 	[194316] = 194318, -- Cauterizing Blink (Fire artifact)
 	[194522] = 194487, -- Blast Furnace (Fire artifact)
 	[198924] = 198923, -- Quickening
+	[199844] = 199786, -- Glacial Spike! <- Glacial Spike
 	[205473] = 76613, -- Icicles <- Mastery: Icicles
 	[205708] = { -- Chilled (slow)
 		   116, -- Frostbolt
 		 84714, -- Frozen Orb
 		190356, -- Blizzard
 	},
+	[208166] = 205021, -- Ray of Frost
 	[210126] = 205022, -- Arcane Familiar
 	[210824] = 210725, -- Touch of the Magi
 	[212792] = 120, -- Cone of Cold (slow)
@@ -148,6 +158,7 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 	[227482] = 227481, -- Scorched Earth (Fire artifact)
 	[228354] = 44614, -- Flurry (slow)
 	[228358] = 190447, -- Flurry (frozen) <- Brain Freeze
+	[228600] = 199786, -- Glacial Spike (root)
 }, {
 	-- map aura to modified spell(s)
 	[ 44544] = 30455, -- Fingers of Frost -> Ice Lance
