@@ -169,7 +169,7 @@ function testRegisterSpells:test_database_conflict()
 		function() lib:__RegisterSpells("SHAMAN", 1, 1, { [4] = "HELPFUL" }) end,
 		function(m) msg = m end
 	)
-	assertEquals(msg == nil, false)
+	assertEquals(msg == nil, true)
 end
 
 --[[ Ignored until I figure out how to work around luabitop using signed 32-bit integers.
