@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", 70000, 6, {
+lib:__RegisterSpells("WARRIOR", 70000, 7, {
 	COOLDOWN = {
 		   6544, -- Heroic Leap
 		 202168, -- Impending Victory
@@ -64,7 +64,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 6, {
 				   355, -- Taunt (taunt)
 				  1160, -- Demoralizing Shout
 				  6343, -- Thunder Clap (slow)
-				115804, -- Mortal Wounds -- FIXME: see LibPlayerSpells-1.0/issues/83
+				115804, -- Mortal Wounds
 				205546, -- Odyn's Fury (Fury artifact)
 				208086, -- Colossus Smash
 				CROWD_CTL = {
@@ -127,7 +127,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 6, {
 		198304, -- Intercept
 	},
 	[115767] = 115768, -- Deep Wounds
-	[115804] = 12294, -- Mortal Wounds <- Mortal Strike -- FIXME: see LibPlayerSpells-1.0/issues/83
+	[115804] = 12294, -- Mortal Wounds <- Mortal Strike
 	[122510] = 122509, -- Ultimatum
 	[132168] = 46968, -- Shockwave (stun)
 	[132169] = 107570, -- Storm Bolt (stun)
