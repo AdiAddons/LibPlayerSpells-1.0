@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70000, 4, {
+lib:__RegisterSpells("HUNTER", 70000, 5, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -29,8 +29,9 @@ lib:__RegisterSpells("HUNTER", 70000, 4, {
 		 63900, -- Thunderstomp (Tenacity)
 		109304, -- Exhilaration
 		120360, -- Barrage
-		126393, -- Eternal Guardian (Quillen) (exotic)
-		159931, -- Gift of Chi-Ji (Crane)
+		126393, -- Eternal Guardian (Quillen) (exotic) (battle res)
+		159931, -- Gift of Chi-Ji (Crane) (battle res)
+		159956, -- Dust of Life (Moth) (battle res)
 		198670, -- Head Shot
 		200163, -- Throwing Axes
 		201078, -- Snake Hunter

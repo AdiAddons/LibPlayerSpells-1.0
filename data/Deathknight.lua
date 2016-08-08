@@ -26,7 +26,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 6, {
 		  49206, -- Summon Gargoyle
 		  50997, -- Death Gate
 		  57330, -- Horn of Winter
-		  61999, -- Raise Ally
+		  61999, -- Raise Ally (battle res)
 		 194913, -- Glacial Advance
 		 205233, -- Consumption (Blood artifact)
 		 220143, -- Apocalypse (Unholy artifact)

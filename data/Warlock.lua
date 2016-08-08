@@ -51,7 +51,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 		},
 		AURA = {
 			HELPFUL = {
-				[ 20707] = "UNIQUE_AURA", -- Soulstone
+				[ 20707] = "UNIQUE_AURA", -- Soulstone (battle res)
 				[113942] = "INVERT_AURA UNIQUE_AURA", -- Demonic Gateway
 			},
 			HARMFUL = {

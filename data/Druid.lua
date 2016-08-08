@@ -24,7 +24,7 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 	COOLDOWN = {
 		    740, -- Tranquility
 		  18562, -- Swiftmend
-		  20484, -- Rebirth (brezz)
+		  20484, -- Rebirth (battle res)
 		  33917, -- Mangle
 		 102383, -- Wild Charge (Moonkin)
 		 102401, -- Wild Charge (caster)
