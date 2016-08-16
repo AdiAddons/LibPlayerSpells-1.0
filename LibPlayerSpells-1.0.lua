@@ -522,7 +522,9 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	local DISPEL = constants.DISPEL
 	local TYPE = masks.TYPE
 	local CROWD_CTRL_TYPE = masks.CROWD_CTRL_TYPE
+	local NOT_CC_TYPE = bnot(CROWD_CTRL_TYPE)
 	local DISPEL_TYPE = masks.DISPEL_TYPE
+	local NOT_DISPEL_TYPE = bnot(DISPEL_TYPE)
 
 	local errors = {}
 
@@ -534,8 +536,12 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 
 			if band(flags, TYPE) == CROWD_CTRL then
 				crowd_ctrl[spellId] = band(flags, CROWD_CTRL_TYPE)
+				-- clear the crowd control flags
+				flags = band(flags, NOT_CC_TYPE)
 			elseif band(flags, TYPE) == DISPEL then
 				dispels[spellId] = band(flags, DISPEL_TYPE)
+				-- clear the dispel flags
+				flags = band(flags, NOT_DISPEL_TYPE)
 			end
 
 			db[spellId] = bor(db[spellId] or 0, flags, categoryFlag) -- TODO: db[spellId] can't be present?
