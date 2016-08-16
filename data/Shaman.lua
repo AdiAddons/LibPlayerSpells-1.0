@@ -52,13 +52,19 @@ lib:__RegisterSpells("SHAMAN", 70000, 10, {
 				188089, -- Earthen Spike
 				188838, -- Flame Shock (Restoration)
 				224126, -- Frozen Bite (Enhancement artifact) (slow)
-				CROWD_CTL = {
-					 51514, -- Hex (incapacitate)
-					 64695, -- Earthgrab (root)
-					118345, -- Pulverize (Primal Earth Elemental) (stun)
-					118905, -- Static Charge (stun)
-					196942, -- Hex (Voodoo Totem) (incapacitate)
-					197214, -- Sundering (root)
+				CROWD_CTRL = {
+					INCAPACITATE = {
+						 51514, -- Hex (incapacitate)
+						196942, -- Hex (Voodoo Totem) (incapacitate)
+					},
+					ROOT = {
+						64695, -- Earthgrab (root)
+						197214, -- Sundering (root)
+					},
+					STUN = {
+						118345, -- Pulverize (Primal Earth Elemental) (stun)
+						118905, -- Static Charge (stun)
+					},
 				},
 			},
 			PERSONAL = {
@@ -106,14 +112,12 @@ lib:__RegisterSpells("SHAMAN", 70000, 10, {
 			207400, -- Ancestral Vigor
 		},
 		HARMFUL = {
-			182387, -- Earthquake
-			188389, -- Flame Shock (Elemental)
-			196840, -- Frost Shock (slow)
-			197209, -- Lightning Rod
-			197385, -- Fury of Air (slow)
-			CROWD_CTL = {
-				 77505, -- Earthquake (stun)
-			},
+			 182387, -- Earthquake
+			 188389, -- Flame Shock (Elemental)
+			 196840, -- Frost Shock (slow)
+			 197209, -- Lightning Rod
+			 197385, -- Fury of Air (slow)
+			[ 77505] = "CROWD_CTRL STUN", -- Earthquake (stun)
 		},
 		PERSONAL = {
 			   2645, -- Ghost Wolf
@@ -132,8 +136,9 @@ lib:__RegisterSpells("SHAMAN", 70000, 10, {
 		},
 	},
 	DISPEL = {
-		[  370] = "HARMFUL", -- Purge
-		[51866] = "HELPFUL COOLDOWN", -- Cleanse Spirit
+		[  370] = "HARMFUL MAGIC", -- Purge
+		[51886] = "HELPFUL COOLDOWN CURSE", -- Cleanse Spirit
+		[77130] = "HELPFUL COOLDOWN CURSE MAGIC", -- Purify Spirit
 	},
 }, {
 	-- map aura to provider(s)

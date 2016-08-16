@@ -37,8 +37,8 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 		[204035] = "SURVIVAL", -- Bastion of Light
 		DISPEL = {
 			HELPFUL = {
-				  4987, -- Cleanse
-				213644, -- Cleanse Toxins
+				[  4987] = "DISEASE MAGIC POISON", -- Cleanse
+				[213644] = "DISEASE POISON", -- Cleanse Toxins
 			},
 		},
 		AURA = {
@@ -70,11 +70,13 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 				209202, -- Eye of Tyr (Protection artifact)
 				213757, -- Execution Sentence
 				214222, -- Judgement (Holy)
-				CROWD_CTL = {
-					   853, -- Hammer of Justice (stun)
-					 20066, -- Repentance (incapacitate)
-					105421, -- Blinding Light (disorient)
-					205290, -- Wake of Ashes (Retribution artifact) (stun)
+				CROWD_CTRL = {
+					[ 20066] = "INCAPACITATE", -- Repentance (incapacitate)
+					[105421] = "DISORIENT", -- Blinding Light (disorient)
+					STUN = {
+						   853, -- Hammer of Justice (stun)
+						205290, -- Wake of Ashes (Retribution artifact) (stun)
+					},
 				},
 			},
 			PERSONAL = {

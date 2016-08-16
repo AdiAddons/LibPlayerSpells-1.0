@@ -51,12 +51,14 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 3, {
 				 213405, -- Master of the Glaive
 				[204490] = "INTERRUPT", -- Sigil of Silence
 				[207744] = "SURVIVAL", -- Fiery Brand
-				CROWD_CTL = {
-					179057, -- Chaos Nova (stun)
-					200166, -- Metamorphosis (Havoc) (stun)
-					207685, -- Sigil of Misery (disorient)
-					211881, -- Fel Eruption (stun)
-					217832, -- Imprison
+				CROWD_CTRL = {
+					[207685] = "DISORIENT", -- Sigil of Misery (disorient)
+					[217832] = "INCAPACITATE", -- Imprison (incapacitate)
+					STUN = {
+						179057, -- Chaos Nova (stun)
+						200166, -- Metamorphosis (Havoc) (stun)
+						211881, -- Fel Eruption (stun)
+					},
 				},
 			},
 			PERSONAL = {

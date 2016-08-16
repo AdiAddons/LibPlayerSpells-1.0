@@ -67,11 +67,13 @@ lib:__RegisterSpells("WARRIOR", 70000, 7, {
 				115804, -- Mortal Wounds
 				205546, -- Odyn's Fury (Fury artifact)
 				208086, -- Colossus Smash
-				CROWD_CTL = {
-					  5246, -- Intimidating Shout (disorient)
-					  7922, -- Warbringer Stun (stun)
-					132168, -- Shockwave (stun)
-					132169, -- Storm Bolt (stun)
+				CROWD_CTRL = {
+					[5246] = "DISORIENT", -- Intimidating Shout (disorient)
+					STUN = {
+						  7922, -- Warbringer Stun (stun)
+						132168, -- Shockwave (stun)
+						132169, -- Storm Bolt (stun)
+					},
 				},
 			},
 		},
@@ -84,11 +86,9 @@ lib:__RegisterSpells("WARRIOR", 70000, 7, {
 			   772, -- Rend
 			  1715, -- Hamstring (slow)
 			 12323, -- Piercing Howl (slow)
+			105771, -- Charge (root) -- TODO: no DR?
 			115767, -- Deep Wounds
 			215537, -- Trauma
-			CROWD_CTL = {
-				105771, -- Charge (root)
-			},
 		},
 		PERSONAL = {
 			 32216, -- Victorious

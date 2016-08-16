@@ -40,8 +40,8 @@ lib:__RegisterSpells("MONK", 70000, 5, {
 		[116705] = "INTERRUPT", -- Spear Hand Strike
 		DISPEL = {
 			HELPFUL = {
-				115450, -- Detox (MW)
-				218164, -- Detox (BM and WW)
+				[115450] = "DISEASE MAGIC POISON", -- Detox (MW)
+				[218164] = "DISEASE POISON", -- Detox (BM and WW)
 			},
 		},
 		AURA = {
@@ -68,10 +68,10 @@ lib:__RegisterSpells("MONK", 70000, 5, {
 				 205320, -- Strike of the Windlord (WW artifact) (slow)
 				 213063, -- Dark Side of the Moon (BM artifact)
 				 214326, -- Exploding Keg (BM artifact)
-				CROWD_CTL = {
-					115078, -- Paralysis (Incapacitate)
-					119381, -- Leg Sweep (stun)
-					198909, -- Song of Chi-Ji (Disorient)
+				CROWD_CTRL = {
+					[115078] = "INCAPACITATE", -- Paralysis (Incapacitate)
+					[119381] = "STUN", -- Leg Sweep (stun)
+					[198909] = "DISORIENT", -- Song of Chi-Ji (Disorient)
 				},
 			},
 			PERSONAL = {
@@ -114,7 +114,7 @@ lib:__RegisterSpells("MONK", 70000, 5, {
 			 196608, -- Eye of the Tiger -- NOTE: the buff id for the HoT is the same
 			 196723, -- Dizzying Kicks
 			 228287, -- Mark of the Crane
-			[116706] = "CROWD_CTL", -- Disable (root)
+			[116706] = "CROWD_CTRL ROOT", -- Disable (root)
 		},
 		PERSONAL = {
 			101546, -- Spinning Crane Kick

@@ -71,6 +71,7 @@ lib:__RegisterSpells("HUNTER", 70000, 5, {
 				162487, -- Steel Trap (bleed)
 				185855, -- Lacerate
 				190927, -- Harpoon
+				191244, -- Sticky Bomb (knockback)
 				191397, -- Bestial Cunning
 				191413, -- Bestial Ferocity
 				191241, -- Sticky Bomb
@@ -83,16 +84,21 @@ lib:__RegisterSpells("HUNTER", 70000, 5, {
 				202933, -- Spider Sting (Silenced debuff) (PvP)
 				204081, -- On the Trail
 				206505, -- A Murder of Crows (SV)
-				CROWD_CTL = {
-					  3355, -- Freezing Trap (incapacitate)
-					 19386, -- Wyvern Sting (incapacitate)
-					162480, -- Steel Trap (root)
-					191244, -- Sticky Bomb (knockback)
-					201158, -- Super Sticky Tar (root)
-					209790, -- Freezing Arrow (incapacitate) (PvP)
-					212638, -- Tracker's Net (root) (PvP)
-					213691, -- Scatter Shot (disorient) (PvP)
-					224729, -- Bursting Shot (disorient)
+				CROWD_CTRL = {
+					DISORIENT = {
+						213691, -- Scatter Shot (disorient) (PvP)
+						224729, -- Bursting Shot (disorient)
+					},
+					INCAPACITATE = {
+						  3355, -- Freezing Trap (incapacitate)
+						 19386, -- Wyvern Sting (incapacitate)
+						209790, -- Freezing Arrow (incapacitate) (PvP)
+					},
+					ROOT = {
+						162480, -- Steel Trap (root)
+						201158, -- Super Sticky Tar (root)
+						212638, -- Tracker's Net (root) (PvP)
+					},
 				},
 			},
 			PERSONAL = {
@@ -160,7 +166,7 @@ lib:__RegisterSpells("HUNTER", 70000, 5, {
 			 202797, -- Viper Sting (PvP)
 			 202900, -- Scorpid Sting (PvP)
 			 206755, -- Ranger's Net (slow)
-			[200108] = "CROWD_CTL", -- Ranger's Net (root)
+			[200108] = "CROWD_CTRL ROOT", -- Ranger's Net (root)
 		},
 		PERSONAL = {
 			  6197, -- Eagle Eye
@@ -182,12 +188,6 @@ lib:__RegisterSpells("HUNTER", 70000, 5, {
 			118455, -- Beast Cleave
 			126311, -- Surface Trot (Water Strider) (exotic)
 			126364, -- Rest (Porcupine)
-		},
-	},
-	RAIDBUFF = {
-		BURST_HASTE = {
-			 90355, -- Ancient Hysteria (Core Hound)
-			160452, -- Netherwinds (Nether Ray)
 		},
 	},
 }, {

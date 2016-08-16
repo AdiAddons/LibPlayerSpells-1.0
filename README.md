@@ -92,7 +92,7 @@ However, the library provides a way to easily build flag tests.
 These flags indicate special spells, that (will) have additional data.
 
 * `RAIDBUFF`: this is a raid buff; additional data is a bitfield indicating the provided buffs (spell haste, critical strike, ...).
-* `CROWD_CTL`: this is a crowd-control spell; no additional data yet.
+* `CROWD_CTRL`: this is a crowd-control spell; no additional data yet.
 * `INTERRUPT`: this spell can interrupt spell casts; no additional data yet.
 * `DISPEL`: this spell can dispel either allies' debuffs or enemies' buffs; no additional data yet.
 
@@ -131,7 +131,6 @@ These flags hints about the targeting mechanism of the spell. They are exclusive
 * `COOLDOWN`: This spell has a meaningful cooldown.
 * `SURVIVAL`: This spell is considered a survival skill.
 * `BURST`: This spell is considered a burst skill (either damaging or healing).
-* `MANA_REGEN`: This spell allows the target to recharge their mana; e.g. Innervate.
 * `POWER_REGEN`: This spell allows the target to recharge some kind of alternative resource e.g. Energizing Brew
 * `IMPORTANT`: An important spell the player should react to.
 * `INVERT_AURA`: The aura logic of this spell is inverted. It applies a debuff on allies or a buff on enemies (this case has yet to be found), e.g. the Weakened Soul applied by Power Word: Shield.
