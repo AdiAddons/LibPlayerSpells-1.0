@@ -58,12 +58,11 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 			},
 			HARMFUL = {
 				 31935, -- Avenger's Shield -- NOTE: non-player only INTERRUPT and silence
-				 62124, -- Hand of Reckoning (taunt)
 				183218, -- Hand of Hindrance (slow)
 				196941, -- Judgement of Light
 				197277, -- Judgement (Retribution)
 				202270, -- Blade of Wrath
-				204077, -- Final Stand (taunt)
+				204077, -- Final Stand (taunt) -- TODO: check DR
 				204242, -- Consecration
 				204301, -- Blessed Hammer
 				205273, -- Wake of Ashes (Retribution artifact) (slow)
@@ -72,6 +71,7 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 				214222, -- Judgement (Holy)
 				CROWD_CTRL = {
 					[ 20066] = "INCAPACITATE", -- Repentance (incapacitate)
+					[ 62124] = "TAUNT", -- Hand of Reckoning (taunt)
 					[105421] = "DISORIENT", -- Blinding Light (disorient)
 					STUN = {
 						   853, -- Hammer of Justice (stun)

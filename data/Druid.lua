@@ -48,7 +48,6 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 		},
 		AURA = {
 			HARMFUL = {
-				   6795, -- Growl (taunt)
 				  50259, -- Dazed
 				  61391, -- Typhoon (slow) (knockback)
 				 127797, -- Ursol's Vortex (slow) (knockback)
@@ -62,6 +61,7 @@ lib:__RegisterSpells("DRUID", 70000, 4, {
 				CROWD_CTRL = {
 					[  99] = "INCAPACITATE", -- Incapacitating Roar (incapacitate)
 					[5211] = "STUN", -- Mighty Bash (stun)
+					[6795] = "TAUNT", -- Growl (taunt)
 					ROOT = {
 						 45334, -- Immobilized (root)
 						102359, -- Mass Entaglement (root)

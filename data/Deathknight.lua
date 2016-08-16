@@ -36,7 +36,6 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 6, {
 		AURA = {
 			HARMFUL = {
 				  51399, -- Death Grip (taunt)
-				  56222, -- Dark Command (taunt)
 				 130736, -- Soul Reaper
 				 190780, -- Frost Breath (Frost artifact) (slow)
 				 191719, -- Gravitational Pull (Unholy artifact) (slow)
@@ -45,6 +44,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 6, {
 				 212764, -- White Walker (slow)
 				[206977] = "SURVIVAL", -- Blood Mirror
 				CROWD_CTRL = {
+					[56222] = "TAUNT", -- Dark Command (taunt)
 					DISORIENT = {
 						206961, -- Tremble Before Me (disorient)
 						207167, -- Blinding Sleet (disorient)
@@ -60,7 +60,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 6, {
 						212332, -- Smash (abomination) (stun)
 						212337, -- Powerful Smash (abomination) (stun)
 						221562, -- Asphyxiate (Blood) (stun)
-					}
+					},
 				},
 			},
 			PERSONAL = {

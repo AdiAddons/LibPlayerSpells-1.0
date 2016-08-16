@@ -51,7 +51,7 @@ lib:__RegisterSpells("HUNTER", 70000, 5, {
 				212640, -- Mending Bandage (PvP)
 			},
 			HARMFUL = {
-				  2649, -- Growl (pet)
+				  2649, -- Growl (pet) (taunt)
 				  5116, -- Concussive Shot
 				 13812, -- Explosive Trap
 				 24394, -- Intimidation (stun)

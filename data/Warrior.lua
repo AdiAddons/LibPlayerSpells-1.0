@@ -61,13 +61,13 @@ lib:__RegisterSpells("WARRIOR", 70000, 7, {
 				223658, -- Safeguard
 			},
 			HARMFUL = {
-				   355, -- Taunt (taunt)
 				  1160, -- Demoralizing Shout
 				  6343, -- Thunder Clap (slow)
 				115804, -- Mortal Wounds
 				205546, -- Odyn's Fury (Fury artifact)
 				208086, -- Colossus Smash
 				CROWD_CTRL = {
+					[ 355] = "TAUNT", -- Taunt (taunt)
 					[5246] = "DISORIENT", -- Intimidating Shout (disorient)
 					STUN = {
 						  7922, -- Warbringer Stun (stun)

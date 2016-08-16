@@ -36,7 +36,6 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 3, {
 				},
 			},
 			HARMFUL = {
-				 185245, -- Torment (taunt)
 				 198813, -- Vengeful Retreat (slow)
 				 202443, -- Anguish (Havoc artifact)
 				 204598, -- Sigil of Flame
@@ -52,6 +51,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 3, {
 				[204490] = "INTERRUPT", -- Sigil of Silence
 				[207744] = "SURVIVAL", -- Fiery Brand
 				CROWD_CTRL = {
+					[185245] = "TAUNT", -- Torment (taunt)
 					[207685] = "DISORIENT", -- Sigil of Misery (disorient)
 					[217832] = "INCAPACITATE", -- Imprison (incapacitate)
 					STUN = {

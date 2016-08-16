@@ -54,8 +54,7 @@ lib:__RegisterSpells("MONK", 70000, 5, {
 			HARMFUL = {
 				 115080, -- Touch of Death
 				 115804, -- Mortal Wounds
-				 116189, -- Provoke (taunt)
-				 118635, -- Provoke
+				 118635, -- Provoke (through Black Ox Statue) (taunt)
 				 121253, -- Keg Smash (slow)
 				 122470, -- Touch of Karma
 				 123586, -- Flying Serpent Kick (slow)
@@ -70,6 +69,7 @@ lib:__RegisterSpells("MONK", 70000, 5, {
 				 214326, -- Exploding Keg (BM artifact)
 				CROWD_CTRL = {
 					[115078] = "INCAPACITATE", -- Paralysis (Incapacitate)
+					[116189] = "TAUNT", -- Provoke (taunt)
 					[119381] = "STUN", -- Leg Sweep (stun)
 					[198909] = "DISORIENT", -- Song of Chi-Ji (Disorient)
 				},
@@ -131,7 +131,7 @@ lib:__RegisterSpells("MONK", 70000, 5, {
 	[116189] = 115546, -- Provoke (taunt)
 	[116706] = 116095, -- Disable (root)
 	[116768] = 100780, -- Blackout Kick! <- Tiger Palm
-	[118635] = 115315, -- Provoke <- Summon Black Ox Statue
+	[118635] = 115315, -- Provoke (taunt) <- Summon Black Ox Statue
 	[119085] = 115008, -- Chi Torpedo
 	[119611] = 115151, -- Renewing Mist
 	[120954] = 115203, -- Fortifying Brew
@@ -171,7 +171,7 @@ lib:__RegisterSpells("MONK", 70000, 5, {
 }, {
 	-- map aura to modified spell(s)
 	[116768] = 100784, -- Blackout Kick! -> Blackout Kick
-	[118635] = 115546, -- Provoke
+	[118635] = 115546, -- Provoke (through Black Ox Statue) (taunt)
 	[137639] = 221771, -- Storm, Earth and Fire -> Storm, Earth and Fire: Fixate
 	[152173] = { -- Serenity
 		100784, -- Blackout Kick
