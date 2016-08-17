@@ -45,13 +45,13 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 				135029, -- Water Jet (Water Elemental)
 				155158, -- Meteor
 				157981, -- Blast Wave (slow)
+				157997, -- Ice Nova (root) -- TODO: check category
 				194522, -- Blast Furnace (Fire artifact)
 				205021, -- Ray of Frost (slow)
 				212792, -- Cone of Cold (slow)
 				217694, -- Living Bomb
 				224968, -- Mark of Aluneth (Arcane artifact)
 				CROWD_CTRL = {
-					157997, -- Ice Nova (root) -- TODO: check category
 					[31661] = "DISORIENT", -- Dragon's Breath (disorient)
 					[82691] = "INCAPACITATE", -- Ring of Frost (incapacitate)
 					ROOT = {

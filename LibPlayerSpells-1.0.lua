@@ -370,7 +370,7 @@ function lib:GetCrowdControlCategoryNames(bitmask, spellId)
 	local names = {}
 	for mask, name in pairs(CROWD_CTRL_CATEGORY_NAMES) do
 		if band(bitmask, mask) > 0 then
-			name[#names + 1] = name
+			names[#names + 1] = name
 		end
 	end
 	return #names > 0 and names or nil
