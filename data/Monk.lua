@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70000, 5, {
+lib:__RegisterSpells("MONK", 70000, 6, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
