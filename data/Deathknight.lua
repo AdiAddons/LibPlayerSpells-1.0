@@ -32,11 +32,10 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 6, {
 		 220143, -- Apocalypse (Unholy artifact)
 		 221699, -- Blood Tap
 		[ 47528] = "INTERRUPT", -- Mind Freeze
-		[108199] = "CROWD_CTL", -- Gorefiend's Grasp (knockback)
+		[108199] = "KNOCKBACK", -- Gorefiend's Grasp (knockback)
 		AURA = {
 			HARMFUL = {
 				  51399, -- Death Grip (taunt)
-				  56222, -- Dark Command (taunt)
 				 130736, -- Soul Reaper
 				 190780, -- Frost Breath (Frost artifact) (slow)
 				 191719, -- Gravitational Pull (Unholy artifact) (slow)
@@ -44,17 +43,24 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 6, {
 				 211793, -- Remorseless Winter (slow)
 				 212764, -- White Walker (slow)
 				[206977] = "SURVIVAL", -- Blood Mirror
-				CROWD_CTL = {
-					 91797, -- Monstrous Blow (ghoul) (stun)
-					 91800, -- Gnaw (ghoul) (stun)
-					 91807, -- Shambling Rush (ghoul) (root)
-					108194, -- Asphyxiate (Unholy talent) (stun)
-					206961, -- Tremble Before Me (disorient)
-					207167, -- Blinding Sleet (disorient)
-					212332, -- Smash (abomination) (stun)
-					212337, -- Powerful Smash (abomination) (stun)
-					212540, -- Flesh Hook (abomination) (root)
-					221562, -- Asphyxiate (Blood) (stun)
+				CROWD_CTRL = {
+					[56222] = "TAUNT", -- Dark Command (taunt)
+					DISORIENT = {
+						206961, -- Tremble Before Me (disorient)
+						207167, -- Blinding Sleet (disorient)
+					},
+					ROOT = {
+						 91807, -- Shambling Rush (ghoul) (root)
+						212540, -- Flesh Hook (abomination) (root)
+					},
+					STUN = {
+						 91797, -- Monstrous Blow (ghoul) (stun)
+   						 91800, -- Gnaw (ghoul) (stun)
+						108194, -- Asphyxiate (Unholy talent) (stun)
+						212332, -- Smash (abomination) (stun)
+						212337, -- Powerful Smash (abomination) (stun)
+						221562, -- Asphyxiate (Blood) (stun)
+					},
 				},
 			},
 			PERSONAL = {
@@ -108,9 +114,11 @@ lib:__RegisterSpells("DEATHKNIGHT", 70000, 6, {
 			208278, -- Debilitating Infestation
 			211794, -- Winter is Coming
 			211831, -- Abomination's Might (slow)
-			CROWD_CTL = {
-				207165, -- Abomination's Might (stun)
-				207171, -- Winter is Coming (stun)
+			CROWD_CTRL = {
+				STUN = {
+					207165, -- Abomination's Might (stun)
+					207171, -- Winter is Coming (stun)
+				},
 			},
 		},
 		PERSONAL = {

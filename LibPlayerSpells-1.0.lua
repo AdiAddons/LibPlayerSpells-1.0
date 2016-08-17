@@ -50,74 +50,81 @@ local bnot = _G.bit.bnot
 -- Basic constants use for the bitfields
 lib.constants = {
 	-- Special types -- these alters how the 13 lower bits are to be interpreted
-	RAIDBUFF    = 0x80000000, -- Raid buffs
-	CROWD_CTL   = 0x40000000, -- Crowd-control debuffs
-	INTERRUPT   = 0x20000000, -- Interrupt spells
-	DISPEL      = 0x10000000, -- Dispel spell
+	DISPEL       = 0x80000000,
+	CROWD_CTRL   = 0x40000000,
 
 	-- Sources
-	DEATHKNIGHT = 0x00000001,
-	DRUID       = 0x00000002,
-	HUNTER      = 0x00000004,
-	MAGE        = 0x00000008,
-	MONK        = 0x00000010,
-	PALADIN     = 0x00000020,
-	PRIEST      = 0x00000040,
-	ROGUE       = 0x00000080,
-	SHAMAN      = 0x00000100,
-	WARLOCK     = 0x00000200,
-	WARRIOR     = 0x00000400,
-	RACIAL      = 0x00000800, -- Racial trait
-	DEMONHUNTER = 0x00001000,
+	DEATHKNIGHT  = 0x00000001,
+	DEMONHUNTER  = 0x00000002,
+	DRUID        = 0x00000004,
+	HUNTER       = 0x00000008,
+	MAGE         = 0x00000010,
+	MONK         = 0x00000020,
+	PALADIN      = 0x00000040,
+	PRIEST       = 0x00000080,
+	ROGUE        = 0x00000100,
+	SHAMAN       = 0x00000200,
+	WARLOCK      = 0x00000400,
+	WARRIOR      = 0x00000800,
+	RACIAL       = 0x00001000, -- Racial trait
 
-	-- Raid buff types, *requires* RAIDBUFF, else this messes up sources
-	STATS       = 0x00000001, -- +5% strengh, agility and intellect
-	STAMINA     = 0x00000002, -- +10% stamina
-	ATK_POWER   = 0x00000004, -- +10% attack power
-	MULTISTRIKE = 0x00000008, -- +5% Multistrike
-	SPL_POWER   = 0x00000010, -- +10% spell power
-	HASTE       = 0x00000020, -- +5% haste
-	CRITICAL    = 0x00000040, -- +5% critical strike
-	MASTERY     = 0x00000080, -- Flat mastery bonus
-	BURST_HASTE = 0x00000100, -- Bloodlust/Heroism
-	VERSATILITY = 0x00000200, -- +3% Versatility
+	-- Crowd control types, *requires* CROWD_CTRL, else this messes up sources
+	DISORIENT    = 0x00000001,
+	INCAPACITATE = 0x00000002,
+	ROOT         = 0x00000004,
+	STUN         = 0x00000008,
+	TAUNT        = 0x00000010,
+
+	-- Dispel types, *requires* DISPEL, else this messes up sources
+	CURSE        = 0x00000001,
+	DISEASE      = 0x00000002,
+	MAGIC        = 0x00000004,
+	POISON       = 0x00000008,
 
 	-- Targeting
-	HELPFUL     = 0x00002000, -- Usable on allies
-	HARMFUL     = 0x00004000, -- Usable on enemies
-	PERSONAL    = 0x00008000, -- Only usable on self
-	PET         = 0x00010000, -- Only usable on pet
+	HELPFUL      = 0x00004000, -- Usable on allies
+	HARMFUL      = 0x00008000, -- Usable on enemies
+	PERSONAL     = 0x00010000, -- Only usable on self
+	PET          = 0x00020000, -- Only usable on pet
 
 	-- Various flags
-	AURA        = 0x00020000, -- Applies an aura
-	UNIQUE_AURA = 0x00040000, -- Only one aura on a given unit
-	COOLDOWN    = 0x00080000, -- Has a cooldown
-	SURVIVAL    = 0x00100000, -- Survival spell
-	BURST       = 0x00200000, -- Damage/healing burst spell
-	MANA_REGEN  = 0x00400000, -- Recharge mana
-	POWER_REGEN = 0x00800000, -- Recharge any power but mana
-	IMPORTANT   = 0x01000000, -- Important spell the player should react to
-	INVERT_AURA = 0x02000000, -- Watch this as a debuff on allies or a buff on enemies
+	AURA         = 0x00040000, -- Applies an aura
+	INVERT_AURA  = 0x00080000, -- Watch this as a debuff on allies or a buff on enemies
+	UNIQUE_AURA  = 0x00100000, -- Only one aura on a given unit
+	COOLDOWN     = 0x00200000, -- Has a cooldown
+	SURVIVAL     = 0x00400000, -- Survival spell
+	BURST        = 0x00800000, -- Damage/healing burst spell
+	POWER_REGEN  = 0x01000000, -- Recharge any power
+	IMPORTANT    = 0x02000000, -- Important spell the player should react to
+	INTERRUPT    = 0x04000000,
+	KNOCKBACK    = 0x08000000,
+	SNARE        = 0x10000000,
 }
 local constants = lib.constants
 
-local RAID_BUFF_TYPES = {
-	constants.STATS, constants.STAMINA, constants.ATK_POWER,
-	constants.MULTISTRIKE, constants.SPL_POWER, constants.HASTE,
-	constants.CRITICAL, constants.MASTERY, constants.VERSATILITY,
-	constants.BURST_HASTE,
+local CROWD_CTRL_TYPES = {
+	constants.DISORIENT, constants.INCAPACITATE, constants.ROOT,
+	constants.STUN, constants.TAUNT,
 }
 
-local RAIDBUFF_CATEGORY_NAMES = {
-	[constants.STATS]       = RAID_BUFF_1,
-	[constants.STAMINA]     = RAID_BUFF_2,
-	[constants.ATK_POWER]   = RAID_BUFF_3,
-	[constants.HASTE]       = RAID_BUFF_4,
-	[constants.SPL_POWER]   = RAID_BUFF_5,
-	[constants.CRITICAL]    = RAID_BUFF_6,
-	[constants.MASTERY]     = RAID_BUFF_7,
-	[constants.MULTISTRIKE] = RAID_BUFF_8,
-	[constants.VERSATILITY] = RAID_BUFF_9,
+local DISPEL_TYPES = {
+	constants.CURSE, constants.DISEASE,
+	constants.MAGIC, constants.POISON,
+}
+
+local CROWD_CTRL_CATEGORY_NAMES = {
+	[constants.DISORIENT]    = _G.LOSS_OF_CONTROL_DISPLAY_DISORIENT,
+	[constants.INCAPACITATE] = _G.LOSS_OF_CONTROL_DISPLAY_INCAPACITATE,
+	[constants.ROOT]         = _G.LOSS_OF_CONTROL_DISPLAY_ROOT,
+	[constants.STUN]         = _G.LOSS_OF_CONTROL_DISPLAY_STUN,
+	[constants.TAUNT]        = _G.LOSS_OF_CONTROL_DISPLAY_TAUNT,
+}
+
+local DISPEL_TYPE_NAMES = {
+	[constants.CURSE]   = _G.ENCOUNTER_JOURNAL_SECTION_FLAG8,
+	[constants.DISEASE] = _G.ENCOUNTER_JOURNAL_SECTION_FLAG10,
+	[constants.MAGIC]   = _G.ENCOUNTER_JOURNAL_SECTION_FLAG7,
+	[constants.POISON]  = _G.ENCOUNTER_JOURNAL_SECTION_FLAG9,
 }
 
 -- Convenient bitmasks
@@ -158,22 +165,21 @@ lib.masks = {
 		constants.PET
 	),
 	TYPE = bor(
-		constants.RAIDBUFF,
-		constants.CROWD_CTL,
-		constants.INTERRUPT,
+		constants.CROWD_CTRL,
 		constants.DISPEL
 	),
-	RAIDBUFF_TYPE = bor(
-		constants.STATS,
-		constants.STAMINA,
-		constants.ATK_POWER,
-		constants.MULTISTRIKE,
-		constants.SPL_POWER,
-		constants.HASTE,
-		constants.CRITICAL,
-		constants.MASTERY,
-		constants.BURST_HASTE,
-		constants.VERSATILITY
+	CROWD_CTRL_TYPE = bor(
+		constants.DISORIENT,
+		constants.INCAPACITATE,
+		constants.ROOT,
+		constants.STUN,
+		constants.TAUNT
+	),
+	DISPEL_TYPE = bor(
+		constants.CURSE,
+		constants.DISEASE,
+		constants.MAGIC,
+		constants.POISON
 	),
 }
 local masks = lib.masks
@@ -202,7 +208,8 @@ local categories = lib.__categories
 
 -- Special spells
 lib.__specials = lib.__specials or {
-	RAIDBUFF = {},
+	CROWD_CTRL = {},
+	DISPEL     = {},
 }
 local specials = lib.__specials
 
@@ -320,7 +327,7 @@ local function FilterIterator(tester, spellId)
 	repeat
 		spellId, flags = next(spells, spellId)
 		if spellId and tester(flags) then
-			return spellId, flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId], sources[spellId]
+			return spellId, flags, providers[spellId], modifiers[spellId], specials.CROWD_CTRL[spellId], sources[spellId] -- TODO: add specials.DISPEL[spellId]
 		end
 	until not spellId
 end
@@ -338,29 +345,52 @@ function lib:IterateCategories()
 	return pairs(categories)
 end
 
---- Return the lsit of raid buff types.
+--- Return the list of crowd control types.
 -- @return (table)
-function lib:GetRaidBuffTypes()
-	return RAID_BUFF_TYPES
+function lib:GetCrowdControlTypes()
+	return CROWD_CTRL_TYPES
 end
 
---- Return a table containing the localized names of the categories a raid buff belongs to.
+--- Return the list of dispel types.
+-- @return (table)
+function lib:GetDispelTypes()
+	return DISPEL_TYPES
+end
+
+--- Return a table containing the localized name of the category a crowd control aura belongs to.
 -- Can be called with either a bitmask or a spellId.
--- @param buffMask (number) a bitmask for the buff
--- @param spellId (number) spell identifier of the buff
--- @return (table|nil) A table of localized category names or nil
-function lib:GetRaidBuffCategoryNames(buffMask, spellId)
-	buffMask = buffMask or spellId and specials.RAIDBUFF[spellId]
+-- @param bitmask (number) a bitmask for the aura.
+-- @param spellId (number) spell identifier of the aura.
+-- @return (string|nil) The localized category name or nil.
+function lib:GetCrowdControlCategoryName(bitmask, spellId)
+	bitmask = bitmask or spellId and specials.CROWD_CTRL[spellId]
 
-	if not buffMask then return end
+	if not bitmask then return end
 
-	local categories = {}
-	for mask, name in pairs(RAIDBUFF_CATEGORY_NAMES) do
-		if band(buffMask, mask) > 0 then
-			categories[#categories + 1] = name
+	for mask, name in pairs(CROWD_CTRL_CATEGORY_NAMES) do
+		if band(bitmask, mask) > 0 then
+			return name
 		end
 	end
-	return #categories > 0 and categories or nil
+end
+
+--- Return a table containing the localized names of the dispel types.
+-- Can be called with either a bitmask or a spellId.
+-- @param bitmask (number) a bitmask for the spell.
+-- @param spellId (number) spell identifier of the spell.
+-- @return (table) A table of localized type names.
+function lib:GetDispelTypeNames(bitmask, spellId)
+	bitmask = bitmask or spellId and specials.DISPEL[spellId]
+
+	if not bitmask then return end
+
+	local names = {}
+	for mask, name in pairs(DISPEL_TYPE_NAMES) do
+		if band(bitmask, mask) > 0 then
+			name[#names + 1] = name
+		end
+	end
+	return names
 end
 
 --- Return information about a spell.
@@ -368,11 +398,12 @@ end
 -- @return (number) The spell flags or nil if it is unknown.
 -- @return (number|table) Spell(s) providing the given spell.
 -- @return (number|table) Spell(s) modified by the given spell.
--- @return (number) Raid buff type, if the spell is a raid buff (RAIDBUFF is set in flags).
+-- @return (number) Crowd control category, if the spell is a crowd control.
+-- @return (string) Spell source(s).
 function lib:GetSpellInfo(spellId)
 	local flags = spellId and spells[spellId]
 	if flags then
-		return flags, providers[spellId], modifiers[spellId], specials.RAIDBUFF[spellId], sources[spellId]
+		return flags, providers[spellId], modifiers[spellId], specials.CROWD_CTRL[spellId], sources[spellId] -- TODO: add specials.DISPEL[spellId]
 	end
 end
 
@@ -456,7 +487,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	local categoryFlag = constants[category] or 0
 
 	-- Wipe previous spells
-	local db, raidbuffs = categories[category], specials.RAIDBUFF
+	local db, crowd_ctrl, dispels = categories[category], specials.CROWD_CTRL, specials.DISPEL
 	for spellId in pairs(db) do
 		db[spellId] = nil
 		-- wipe the rest only if the current category is the only source
@@ -465,7 +496,8 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 			spells[spellId] = nil
 			providers[spellId] = nil
 			modifiers[spellId] = nil
-			raidbuffs[spellId] = nil
+			crowd_ctrl[spellId] = nil
+			dispels[spellId] = nil
 			sources[spellId] = nil
 		end
 
@@ -474,7 +506,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 			spells[spellId] = bxor(spells[spellId], categoryFlag)
 			-- can't remove old providers -> slight performance hit but no problem
 			-- can't remove old modifiers -> slight performance hit but no problem
-			-- raidbuffs contain no source information
+			-- crowd_ctrl and dispels contain no source information
 			sources[spellId] = strtrim(gsub(sources[spellId], category, ""))
 		end
 	end
@@ -484,11 +516,13 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 	FlattenSpellData(newSpells, defs, "", 2)
 
 	-- Useful constants
-	local RAIDBUFF = constants.RAIDBUFF
+	local CROWD_CTRL = constants.CROWD_CTRL
+	local DISPEL = constants.DISPEL
 	local TYPE = masks.TYPE
-	local RAIDBUFF_TYPE = masks.RAIDBUFF_TYPE
-	local NOT_RAIDBUFF_TYPE = bnot(RAIDBUFF_TYPE)
-	local RAIDBUFF_FLAGS = filters["HELPFUL UNIQUE_AURA AURA"]
+	local CROWD_CTRL_TYPE = masks.CROWD_CTRL_TYPE
+	local NOT_CC_TYPE = bnot(CROWD_CTRL_TYPE)
+	local DISPEL_TYPE = masks.DISPEL_TYPE
+	local NOT_DISPEL_TYPE = bnot(DISPEL_TYPE)
 
 	local errors = {}
 
@@ -498,11 +532,14 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		if spellId then
 			local flags = filters[flagDef]
 
-			if band(flags, TYPE) == RAIDBUFF then
-				-- Raid buff: store the buff type elsewhere
-				raidbuffs[spellId] = band(flags, RAIDBUFF_TYPE)
-				-- Remove the buff type and adds the common flags for raid buffs
-				flags = bor(band(flags, NOT_RAIDBUFF_TYPE), RAIDBUFF_FLAGS)
+			if band(flags, TYPE) == CROWD_CTRL then
+				crowd_ctrl[spellId] = band(flags, CROWD_CTRL_TYPE)
+				-- clear the crowd control flags
+				flags = band(flags, NOT_CC_TYPE)
+			elseif band(flags, TYPE) == DISPEL then
+				dispels[spellId] = band(flags, DISPEL_TYPE)
+				-- clear the dispel flags
+				flags = band(flags, NOT_DISPEL_TYPE)
 			end
 
 			db[spellId] = bor(db[spellId] or 0, flags, categoryFlag) -- TODO: db[spellId] can't be present?

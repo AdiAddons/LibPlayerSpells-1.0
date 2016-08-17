@@ -13,7 +13,6 @@ This library is born from the need to centralize similar data used in several ad
 * Does this spell apply one or several buff(s) or debuff(s) ?
 * Is this spell a survival cooldown, or used for dps ?
 * Does this spell regenerate mana or some other resource ?
-* Is this spell a raid wide buff ?
 * What are the survival buffs of all the classes ?
 * Which spell interrupt abilities are available ?
 
@@ -21,7 +20,7 @@ Each class has his own data file that can be updated separately from the main co
 
 ## Supported classes & specs
 
-Not all classes and specializations are 100% supported yet. However, most interrupts, dispels, survival cooldowns and raid buffs are complete.
+Not all classes and specializations are 100% supported yet. However, most interrupts, dispels, and survival cooldowns are complete.
 
 If LibPlayerSpells is missing something specific from your class please file a detailed bug on Github or contribute to the project yourself if you are feeling brave! In the second case, be sure to read the [contribution guidelines](https://github.com/AdiButtons/LibPlayerSpells-1.0/wiki/Contribution-Guidelines).
 
@@ -91,25 +90,18 @@ However, the library provides a way to easily build flag tests.
 
 These flags indicate special spells, that (will) have additional data.
 
-* `RAIDBUFF`: this is a raid buff; additional data is a bitfield indicating the provided buffs (spell haste, critical strike, ...).
-* `CROWD_CTL`: this is a crowd-control spell; no additional data yet.
-* `INTERRUPT`: this spell can interrupt spell casts; no additional data yet.
+* `CROWD_CTRL`: this is a crowd-control spell; additional data is a bitfield indicating the diminishing returns category (disorient, taunt, etc.).
 * `DISPEL`: this spell can dispel either allies' debuffs or enemies' buffs; no additional data yet.
 
-##### Raid buff flags
+##### Crowd control flags
 
-These flags are used in the additional data for raids buffs.
+These flags are used in the additional data for crowd control spells and indicate the diminishing returns category a spell belongs to. While `INTERRUPT` and `KNOCKBACK` are technically DR categories themselves, they do not always have an associated aura and are not traceable through the UNIT_AURA event. Thus they are just ordinary flags in the spell bitmask.
 
-* `STATS`: Strength, Agility and Intellect
-* `STAMINA`: Stamina
-* `ATK_POWER`: Attack Power
-* `MULTISTRIKE`: Multistrike
-* `SPL_POWER`: Spell Power
-* `HASTE`: Haste
-* `CRITICAL`: Critical Strike
-* `MASTERY`: Mastery Bonus
-* `BURST_HASTE`: Burst Haste (e.g. Bloodlust/Heroism)
-* `VERSATILITY`: Versatility
+* `DISORIENT`
+* `INCAPACITATE`
+* `ROOT`
+* `STUN`
+* `TAUNT`
 
 #### Spell sources
 
@@ -131,7 +123,6 @@ These flags hints about the targeting mechanism of the spell. They are exclusive
 * `COOLDOWN`: This spell has a meaningful cooldown.
 * `SURVIVAL`: This spell is considered a survival skill.
 * `BURST`: This spell is considered a burst skill (either damaging or healing).
-* `MANA_REGEN`: This spell allows the target to recharge their mana; e.g. Innervate.
 * `POWER_REGEN`: This spell allows the target to recharge some kind of alternative resource e.g. Energizing Brew
 * `IMPORTANT`: An important spell the player should react to.
 * `INVERT_AURA`: The aura logic of this spell is inverted. It applies a debuff on allies or a buff on enemies (this case has yet to be found), e.g. the Weakened Soul applied by Power Word: Shield.

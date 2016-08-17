@@ -40,12 +40,16 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 					 79140, -- Vendetta
 					137619, -- Marked for Death
 				},
-				CROWD_CTL = {
-					   408, -- Kidney Shot (stun)
-					  1776, -- Gouge (incapacitate)
-					  2094, -- Blind (disorient)
-					199743, -- Parley (incapacitate)
-					199804, -- Between the Eyes (stun)
+				CROWD_CTRL = {
+					[2094] = "DISORIENT", -- Blind (disorient)
+					INCAPACITATE = {
+						  1776, -- Gouge (incapacitate)
+						199743, -- Parley (incapacitate)
+					},
+					STUN = {
+						   408, -- Kidney Shot (stun)
+						199804, -- Between the Eyes (stun)
+					},
 				},
 			},
 			PERSONAL = {
@@ -92,10 +96,12 @@ lib:__RegisterSpells("ROGUE", 70000, 3, {
 			200803, -- Agonizing Poison
 			206760, -- Night Terrors (slow)
 			222775, -- Strike from the Shadows (slow)
-			CROWD_CTL = {
-				  1833, -- Cheap Shot (stun)
-				  6770, -- Sap (incapacitate)
-				196958, -- Strike from the Shadows (stun)
+			CROWD_CTRL = {
+				[6770] = "INCAPACITATE", -- Sap (incapacitate)
+				STUN = {
+					  1833, -- Cheap Shot (stun)
+					196958, -- Strike from the Shadows (stun)
+				},
 			},
 		},
 		PERSONAL = {

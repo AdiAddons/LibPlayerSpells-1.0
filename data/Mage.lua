@@ -39,23 +39,25 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 		 212653, -- Shimmer
 		 214634, -- Ebonbolt (Frost artifact)
 		[  2139] = "INTERRUPT", -- Counterspell
-		[ 30449] = "DISPEL HARMFUL", -- Spellsteal
+		[ 30449] = "DISPEL HARMFUL MAGIC", -- Spellsteal
 		AURA = {
 			HARMFUL = {
 				135029, -- Water Jet (Water Elemental)
 				155158, -- Meteor
 				157981, -- Blast Wave (slow)
+				157997, -- Ice Nova (root) -- TODO: check category
 				194522, -- Blast Furnace (Fire artifact)
 				205021, -- Ray of Frost (slow)
 				212792, -- Cone of Cold (slow)
 				217694, -- Living Bomb
 				224968, -- Mark of Aluneth (Arcane artifact)
-				CROWD_CTL = {
-					   122, -- Frost Nova (root)
-					 31661, -- Dragon's Breath (disorient)
-					 33395, -- Freeze (Water Elemental) (root)
-					 82691, -- Ring of Frost (incapacitate)
-					157997, -- Ice Nova (root) -- TODO: check category
+				CROWD_CTRL = {
+					[31661] = "DISORIENT", -- Dragon's Breath (disorient)
+					[82691] = "INCAPACITATE", -- Ring of Frost (incapacitate)
+					ROOT = {
+						  122, -- Frost Nova (root)
+						33395, -- Freeze (Water Elemental) (root)
+					},
 				},
 			},
 			PERSONAL = {
@@ -68,7 +70,7 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 				 210126, -- Arcane Familiar
 				 212799, -- Displacement
 				 227482, -- Scorched Earth (fire artifact)
-				[ 12051] = "MANA_REGEN", -- Evocation
+				[ 12051] = "POWER_REGEN", -- Evocation
 				[ 41425] = "INVERT_AURA", -- Hypothermia
 				SURVIVAL = {
 					    66, -- Invisibility (Fading)
@@ -100,19 +102,21 @@ lib:__RegisterSpells("MAGE", 70000, 5, {
 			226757, -- Conflagration
 			228354, -- Flurry (slow)
 			228358, -- Flurry (frozen)
-			CROWD_CTL = {
-				   118, -- Polymorph (incapacitate)
-				 28271, -- Polymorph: Turtle (incapacitate)
-				 28272, -- Polymorph: Pig (incapacitate)
-				 61305, -- Polymorph: Black Cat (incapacitate)
-				 61721, -- Polymorph: Rabbit (incapacitate)
-				 61780, -- Polymorph: Turkey
-				126819, -- Polymorph: Pig (porcupine) (incapacitate)
-				161353, -- Polymorph: Polar Bear Cub (incapacitate)
-				161354, -- Polymorph: Monkey (incapacitate)
-				161355, -- Polymorph: Penguin (incapacitate)
-				161372, -- Polymorph: Monkey (incapacitate)
-				228600, -- Glacial Spike (root) -- TODO: check category
+			CROWD_CTRL = {
+				[228600] = "ROOT", -- Glacial Spike (root) -- TODO: check category
+				INCAPACITATE = {
+					   118, -- Polymorph (incapacitate)
+					 28271, -- Polymorph: Turtle (incapacitate)
+					 28272, -- Polymorph: Pig (incapacitate)
+					 61305, -- Polymorph: Black Cat (incapacitate)
+					 61721, -- Polymorph: Rabbit (incapacitate)
+					 61780, -- Polymorph: Turkey (incapacitate)
+					126819, -- Polymorph: Pig (porcupine) (incapacitate)
+					161353, -- Polymorph: Polar Bear Cub (incapacitate)
+					161354, -- Polymorph: Monkey (incapacitate)
+					161355, -- Polymorph: Penguin (incapacitate)
+					161372, -- Polymorph: Monkey (incapacitate)
+				},
 			},
 		},
 		PERSONAL = {

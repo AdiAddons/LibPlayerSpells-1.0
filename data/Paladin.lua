@@ -37,8 +37,8 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 		[204035] = "SURVIVAL", -- Bastion of Light
 		DISPEL = {
 			HELPFUL = {
-				  4987, -- Cleanse
-				213644, -- Cleanse Toxins
+				[  4987] = "DISEASE MAGIC POISON", -- Cleanse
+				[213644] = "DISEASE POISON", -- Cleanse Toxins
 			},
 		},
 		AURA = {
@@ -58,23 +58,25 @@ lib:__RegisterSpells("PALADIN", 70000, 4, {
 			},
 			HARMFUL = {
 				 31935, -- Avenger's Shield -- NOTE: non-player only INTERRUPT and silence
-				 62124, -- Hand of Reckoning (taunt)
 				183218, -- Hand of Hindrance (slow)
 				196941, -- Judgement of Light
 				197277, -- Judgement (Retribution)
 				202270, -- Blade of Wrath
-				204077, -- Final Stand (taunt)
+				204077, -- Final Stand (taunt) -- TODO: check DR
 				204242, -- Consecration
 				204301, -- Blessed Hammer
 				205273, -- Wake of Ashes (Retribution artifact) (slow)
 				209202, -- Eye of Tyr (Protection artifact)
 				213757, -- Execution Sentence
 				214222, -- Judgement (Holy)
-				CROWD_CTL = {
-					   853, -- Hammer of Justice (stun)
-					 20066, -- Repentance (incapacitate)
-					105421, -- Blinding Light (disorient)
-					205290, -- Wake of Ashes (Retribution artifact) (stun)
+				CROWD_CTRL = {
+					[ 20066] = "INCAPACITATE", -- Repentance (incapacitate)
+					[ 62124] = "TAUNT", -- Hand of Reckoning (taunt)
+					[105421] = "DISORIENT", -- Blinding Light (disorient)
+					STUN = {
+						   853, -- Hammer of Justice (stun)
+						205290, -- Wake of Ashes (Retribution artifact) (stun)
+					},
 				},
 			},
 			PERSONAL = {

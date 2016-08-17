@@ -36,11 +36,9 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 		 205180, -- Summon Darkglare
 		 211714, -- Thal'kiel's Consumption (Demonology artifact)
 		DISPEL = {
-			[171021] = "HARMFUL", -- Torch Magic (Infernal with Grimoire of Supremacy)
-			HELPFUL = {
-				 89808, -- Singe Magic (Imp)
-				111859, -- Grimoire: Imp (NOTE: this one is personal only)
-			},
+			[ 89808] = "HELPFUL MAGIC", -- Singe Magic (Imp)
+			[111859] = "PERSONAL MAGIC", -- Grimoire: Imp
+			[171021] = "HARMFUL MAGIC", -- Torch Magic (Infernal with Grimoire of Supremacy)
 		},
 		INTERRUPT = {
 			 19647, -- Spell Lock (Felhunter)
@@ -62,14 +60,18 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 				171014, -- Seeth (Infernal with Grimoire of Supremacy)
 				205179, -- Phantom Singularity
 				205181, -- Shadowflame
-				CROWD_CTL = {
-					  5484, -- Howl of Terror (disorient)
-					  6358, -- Seduction (Succubus) (disorient)
-					  6789, -- Mortal Coil (incapacitate)
-					 22703, -- Infernal Awakening (Infernal) (stun)
-					 30283, -- Shadowfury (stun)
-					 89766, -- Axe Toss (Felguard) (stun)
-					171017, -- Meteor Strike (stun) (Infernal with Grimoire of Supremacy)
+				CROWD_CTRL = {
+					[6789] = "INCAPACITATE", -- Mortal Coil (incapacitate)
+					DISORIENT = {
+						5484, -- Howl of Terror (disorient)
+						6358, -- Seduction (Succubus) (disorient)
+					},
+					STUN = {
+						 22703, -- Infernal Awakening (Infernal) (stun)
+						 30283, -- Shadowfury (stun)
+						 89766, -- Axe Toss (Felguard) (stun)
+						171017, -- Meteor Strike (Infernal with Grimoire of Supremacy) (stun)
+					},
 				},
 			},
 			PERSONAL = {
@@ -112,9 +114,9 @@ lib:__RegisterSpells("WARLOCK", 70000, 3, {
 			196414, -- Eradication
 			198590, -- Drain Soul
 			205178, -- Soul Effigy
-			CROWD_CTL = {
-				   710, -- Banish (incapacitate)
-				118699, -- Fear (disorient)
+			CROWD_CTRL = {
+				[   710] = "INCAPACITATE", -- Banish (incapacitate)
+				[118699] = "DISORIENT", -- Fear (disorient)
 			},
 		},
 		PERSONAL = {

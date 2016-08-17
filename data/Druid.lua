@@ -42,13 +42,12 @@ lib:__RegisterSpells("DRUID", 70000, 5, {
 		[202060] = "BURST", -- Elune's Guidance
 		DISPEL = {
 			HELPFUL = {
-				 2782, -- Remove Corruption
-				88423, -- Nature's Cure
+				[ 2782] = "CURSE POISON", -- Remove Corruption
+				[88423] = "CURSE POISON MAGIC", -- Nature's Cure
 			},
 		},
 		AURA = {
 			HARMFUL = {
-				   6795, -- Growl (taunt)
 				  50259, -- Dazed
 				  61391, -- Typhoon (slow) (knockback)
 				 127797, -- Ursol's Vortex (slow) (knockback)
@@ -59,11 +58,14 @@ lib:__RegisterSpells("DRUID", 70000, 5, {
 				 214995, -- Bloody Paws (slow) (Guardian artifact)
 				 214998, -- Roar of the Crowd (Guardian artifact)
 				[ 81261] = "INTERRUPT", -- Solar Beam
-				CROWD_CTL = {
-					    99, -- Incapacitating Roar (incapacitate)
-					  5211, -- Mighty Bash (stun)
-					 45334, -- Immobilized (root)
-					102359, -- Mass Entaglement (root)
+				CROWD_CTRL = {
+					[  99] = "INCAPACITATE", -- Incapacitating Roar (incapacitate)
+					[5211] = "STUN", -- Mighty Bash (stun)
+					[6795] = "TAUNT", -- Growl (taunt)
+					ROOT = {
+						 45334, -- Immobilized (root)
+						102359, -- Mass Entaglement (root)
+					},
 				},
 			},
 			HELPFUL = {
@@ -109,7 +111,6 @@ lib:__RegisterSpells("DRUID", 70000, 5, {
 		},
 	},
 	AURA = {
-		[339] = "CROWD_CTL", -- Entagling Roots (root)
 		HARMFUL = {
 			  1079, -- Rip
 			 58180, -- Infected Wounds (slow)
@@ -118,10 +119,13 @@ lib:__RegisterSpells("DRUID", 70000, 5, {
 			164812, -- Moonfire
 			164815, -- Sunfire
 			197637, -- Stellar Empowerment
-			202347, -- Stellar Flare
-			CROWD_CTL = {
-				163505, -- Rake (stun)
-				203123, -- Maim (stun)
+			202374, -- Stellar Flare
+			CROWD_CTRL = {
+				[339] = "ROOT", -- Entagling Roots (root)
+				STUN = {
+					163505, -- Rake (stun)
+					203123, -- Maim (stun)
+				},
 			},
 		},
 		HELPFUL = {
