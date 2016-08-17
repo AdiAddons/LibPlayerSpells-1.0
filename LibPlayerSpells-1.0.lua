@@ -357,23 +357,21 @@ function lib:GetDispelTypes()
 	return DISPEL_TYPES
 end
 
---- Return a table containing the localized names of the categories a crowd control aura belongs to.
+--- Return a table containing the localized name of the category a crowd control aura belongs to.
 -- Can be called with either a bitmask or a spellId.
 -- @param bitmask (number) a bitmask for the aura.
 -- @param spellId (number) spell identifier of the aura.
--- @return (table|nil) A table of localized category names or nil.
-function lib:GetCrowdControlCategoryNames(bitmask, spellId)
+-- @return (string|nil) The localized category name or nil.
+function lib:GetCrowdControlCategoryName(bitmask, spellId)
 	bitmask = bitmask or spellId and specials.CROWD_CTRL[spellId]
-	
+
 	if not bitmask then return end
-	
-	local names = {}
+
 	for mask, name in pairs(CROWD_CTRL_CATEGORY_NAMES) do
 		if band(bitmask, mask) > 0 then
-			names[#names + 1] = name
+			return name
 		end
 	end
-	return #names > 0 and names or nil
 end
 
 --- Return a table containing the localized names of the dispel types.
@@ -383,9 +381,9 @@ end
 -- @return (table) A table of localized type names.
 function lib:GetDispelTypeNames(bitmask, spellId)
 	bitmask = bitmask or spellId and specials.DISPEL[spellId]
-	
+
 	if not bitmask then return end
-	
+
 	local names = {}
 	for mask, name in pairs(DISPEL_TYPE_NAMES) do
 		if band(bitmask, mask) > 0 then
