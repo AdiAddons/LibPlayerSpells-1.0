@@ -11,4 +11,4 @@ chmod -R og= "$HOME/.ssh"
 export GIT_SSH_COMMAND="$(which ssh) -o 'BatchMode Yes'"
 
 # Do push
-git push "git@git.wowace.com:wow/${WOWACE_PROJECT}/mainline.git" --tags "$TRAVIS_BRANCH"
+git push "git@git.wowace.com:wow/${WOWACE_PROJECT}/mainline.git" "${TRAVIS_TAG:-$TRAVIS_BRANCH}"

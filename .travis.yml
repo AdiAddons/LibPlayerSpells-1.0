@@ -31,8 +31,8 @@ deploy:
   provider: script
   script: $TRAVIS_BUILD_DIR/deploy/deploy.sh libplayerspells-1-0
   on:
-    branch: master
     repo: AdiAddons/LibPlayerSpells-1.0
+    condition: '"$TRAVIS_BRANCH" = master -o -n "$TRAVIS_TAG"'
 
 notifications:
   email:
