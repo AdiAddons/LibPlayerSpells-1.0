@@ -32,7 +32,8 @@ deploy:
   script: $TRAVIS_BUILD_DIR/deploy/deploy.sh libplayerspells-1-0
   on:
     repo: AdiAddons/LibPlayerSpells-1.0
-    condition: '"$TRAVIS_BRANCH" = master -o -n "$TRAVIS_TAG"'
+    all_branches: true
+    condition: '"$TRAVIS_BRANCH" = master || -n "$TRAVIS_TAG"'
 
 notifications:
   email:
