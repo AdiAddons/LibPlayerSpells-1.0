@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", 70000, 5, {
+lib:__RegisterSpells("PRIEST", 70000, 6, {
 	[528] = "HARMFUL DISPEL MAGIC", -- Dispel Magic
 	COOLDOWN = {
 		   2050, -- Holy Word: Serenity
@@ -138,6 +138,7 @@ lib:__RegisterSpells("PRIEST", 70000, 5, {
 			198069, -- Power of the Dark Side (Discipline artifact)
 			205372, -- Void Ray
 			210980, -- Focus in the Light (Holy artifact)
+			223166, -- Overloaded with Light (Discipline artifact hidden ability)
 		},
 		PET = {
 			[   605] = "CROWD_CTRL DISORIENT INVERT_AURA", -- Mind Control (disorient)
@@ -178,6 +179,7 @@ lib:__RegisterSpells("PRIEST", 70000, 5, {
 	[216135] = 197711, -- Vestments of Discipline (Discipline artifact)
 	[217673] = 73510, -- Mind Spike
 	[219521] = 204065, -- Shadow Covenant
+	[223166] = 207946, -- Overloaded with Light (Discipline artifact hidden ability) <- Light's Wrath (Discipline artifact)
 	[226943] = 205369, -- Mind Bomb (stun)
 }, { -- map aura(s) to modified spell(s)
 	[ 65081] = { -- Body and Soul
