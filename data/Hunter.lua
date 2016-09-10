@@ -102,7 +102,7 @@ lib:__RegisterSpells("HUNTER", 70000, 7, {
 				},
 			},
 			PERSONAL = {
-				   5384, -- Feign Death
+				[  5384] = "SURVIVAL", -- Feign Death
 				  35079, -- Misdirection
 				  61648, -- Aspect of the Chameleon
 				 118922, -- Posthaste
