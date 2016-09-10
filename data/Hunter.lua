@@ -152,6 +152,7 @@ lib:__RegisterSpells("HUNTER", 70000, 7, {
 				 217200, -- Dire Frenzy
 				[ 90361] = "HELPFUL", -- Spirit Mend (Spirit Beast) (exotic)
 				SURVIVAL = {
+					159733, -- Stone Scales (Basilisk)
 					209997, -- Play Dead
 				},
 			},
@@ -216,6 +217,7 @@ lib:__RegisterSpells("HUNTER", 70000, 7, {
 	[120694] = 120679, -- Dire Beast
 	[135299] = 187698, -- Tar Trap
 	[159954] = 159953, -- Feast (Devilsaur) (exotic)
+	[160048] = 160049, -- Stone Armor (Quilen) (exotic)
 	[162480] = 162488, -- Steel Trap (root)
 	[162487] = 162488, -- Steel Trap (bleed)
 	[185365] = { -- Hunter's Mark
