@@ -120,7 +120,6 @@ lib:__RegisterSpells("HUNTER", 70000, 7, {
 				 202748, -- Survival Tactics (PvP)
 				 203155, -- Sniper Shot (PvP)
 				 203924, -- Healing Shell (MM artifact)
-				 209997, -- Play Dead
 				[ 19574] = "BURST", -- Bestial Wrath
 				[186265] = "SURVIVAL", -- Aspect of the Turtle
 				[186289] = "BURST", -- Aspect of the Eagle
@@ -152,6 +151,9 @@ lib:__RegisterSpells("HUNTER", 70000, 7, {
 				 211138, -- Hunter's Advantage (BM artifact)
 				 217200, -- Dire Frenzy
 				[ 90361] = "HELPFUL", -- Spirit Mend (Spirit Beast) (exotic)
+				SURVIVAL = {
+					209997, -- Play Dead
+				},
 			},
 		},
 	},
