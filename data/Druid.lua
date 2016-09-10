@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70000, 6, {
+lib:__RegisterSpells("DRUID", 70000, 7, {
 	COOLDOWN = {
 		    740, -- Tranquility
 		  18562, -- Swiftmend
@@ -119,7 +119,7 @@ lib:__RegisterSpells("DRUID", 70000, 6, {
 			164812, -- Moonfire
 			164815, -- Sunfire
 			197637, -- Stellar Empowerment
-			202374, -- Stellar Flare
+			202347, -- Stellar Flare
 			CROWD_CTRL = {
 				[339] = "ROOT", -- Entagling Roots (root)
 				STUN = {
