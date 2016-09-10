@@ -130,29 +130,29 @@ lib:__RegisterSpells("HUNTER", 70000, 7, {
 				    136, -- Mend Pet
 				  19577, -- Intimidation
 				  24450, -- Prowl (Cat)
-				  26064, -- Shell Shield (Turtle)
-				  53478, -- Last Stand (Tenacity)
 				  54680, -- Monstrous Bite (Devilsaur) (exotic)
 				  61684, -- Dash (Ferocity/Cunning)
 				  61685, -- Charge (Tenacity)
-				  63896, -- Bullheaded (Cunning)
 				  90328, -- Spirit Walk (Spirit Beast) (exotic)
-				  90339, -- Harden Carapace (Beetle)
 				  93433, -- Burrow Attack (Worm) (exotic)
 				 137798, -- Reflective Armor Plating (Direhorn)
-				 159733, -- Stone Scales (Basilisk)
-				 159926, -- Harden Shell (Crab)
 				 159954, -- Feast (Devilsaur) (exotic)
-				 160011, -- Agile Reflexes (Fox)
-				 160044, -- Primal Agility (Monkey)
-				 160063, -- Solid Shell (Shale Spider) (exotic)
 				 191414, -- Bestial Tenacity
 				 207094, -- Titan's Thunder (BM artifact)
 				 211138, -- Hunter's Advantage (BM artifact)
 				 217200, -- Dire Frenzy
 				[ 90361] = "HELPFUL", -- Spirit Mend (Spirit Beast) (exotic)
 				SURVIVAL = {
+					 26064, -- Shell Shield (Turtle)
+					 53478, -- Last Stand (Tenacity)
+					 63896, -- Bullheaded (Cunning)
+					 90339, -- Harden Carapace (Beetle)
 					159733, -- Stone Scales (Basilisk)
+					159926, -- Harden Shell (Crab)
+					160011, -- Agile Reflexes (Fox)
+					160044, -- Primal Agility (Monkey)
+					160048, -- Stone Armor (Quilen) (exotic)
+					160063, -- Solid Shell (Shale Spider) (exotic)
 					209997, -- Play Dead
 				},
 			},
