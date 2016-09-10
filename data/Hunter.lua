@@ -47,6 +47,7 @@ lib:__RegisterSpells("HUNTER", 70000, 8, {
 		AURA = {
 			HELPFUL = {
 				 53480, -- Roar of Sacrifice (Cunning)
+				 90361, -- Spirit Mend (Spirit Beast) (exotic)
 				204477, -- Windburst (MM artifact)
 				212640, -- Mending Bandage (PvP)
 			},
@@ -141,7 +142,6 @@ lib:__RegisterSpells("HUNTER", 70000, 8, {
 				 207094, -- Titan's Thunder (BM artifact)
 				 211138, -- Hunter's Advantage (BM artifact)
 				 217200, -- Dire Frenzy
-				[ 90361] = "HELPFUL", -- Spirit Mend (Spirit Beast) (exotic)
 				SURVIVAL = {
 					 26064, -- Shell Shield (Turtle)
 					 53478, -- Last Stand (Tenacity)
