@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70000, 8, {
+lib:__RegisterSpells("HUNTER", 70000, 9, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -52,18 +52,16 @@ lib:__RegisterSpells("HUNTER", 70000, 8, {
 				212640, -- Mending Bandage (PvP)
 			},
 			HARMFUL = {
-				  2649, -- Growl (pet) (taunt)
+				  2649, -- Growl (pet) (taunt) NOTE: no DR
 				  5116, -- Concussive Shot
 				 13812, -- Explosive Trap
-				 24394, -- Intimidation (stun)
 				 35346, -- Warp Time (Warp Stalker) (slow)
 				 50433, -- Ankle Crack (Crocolisk) (slow)
-				 53148, -- Charge (stun) (pet)
+				 53148, -- Charge (stun) (pet) NOTE: no DR
 				 54644, -- Frost Breath (Chimaera) (slow)
 				 95809, -- Insanity (Core Hound)
 				115804, -- Mortal Wounds (pet)
 				117405, -- Binding Shot
-				117526, -- Binding Shot (stun)
 				131894, -- A Murder of Crows (BM/MM)
 				135299, -- Tar Trap
 				160065, -- Tendon Rip (Silithid) (exotic) (slow)
@@ -99,6 +97,10 @@ lib:__RegisterSpells("HUNTER", 70000, 8, {
 						162480, -- Steel Trap (root)
 						201158, -- Super Sticky Tar (root)
 						212638, -- Tracker's Net (root) (PvP)
+					},
+					STUN = {
+						 24394, -- Intimidation (stun)
+						117526, -- Binding Shot (stun)
 					},
 				},
 			},
