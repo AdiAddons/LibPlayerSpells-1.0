@@ -20,8 +20,14 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 8
 if LibStub then
-	lib = LibStub:NewLibrary(MAJOR, MINOR)
+	local oldMinor
+	lib, oldMinor = LibStub:NewLibrary(MAJOR, MINOR)
 	if not lib then return end
+
+	if oldMinor < 8 then
+		-- The internal data changed at minor 8, wipe anything coming from the previous version
+		wipe(lib)
+	end
 else
 	lib = {}
 end
