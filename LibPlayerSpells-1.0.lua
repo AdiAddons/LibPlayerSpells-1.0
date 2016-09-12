@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 8
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 9
 if LibStub then
 	lib = LibStub:NewLibrary(MAJOR, MINOR)
 	if not lib then return end
@@ -327,7 +327,7 @@ local function FilterIterator(tester, spellId)
 	repeat
 		spellId, flags = next(spells, spellId)
 		if spellId and tester(flags) then
-			return spellId, flags, providers[spellId], modifiers[spellId], specials.CROWD_CTRL[spellId], sources[spellId] -- TODO: add specials.DISPEL[spellId]
+			return spellId, flags, providers[spellId], modifiers[spellId], specials.CROWD_CTRL[spellId], sources[spellId], specials.DISPEL[spellId]
 		end
 	until not spellId
 end
@@ -400,10 +400,11 @@ end
 -- @return (number|table) Spell(s) modified by the given spell.
 -- @return (number) Crowd control category, if the spell is a crowd control.
 -- @return (string) Spell source(s).
+-- @return (number) Dispel category, if the spell is a dispel.
 function lib:GetSpellInfo(spellId)
 	local flags = spellId and spells[spellId]
 	if flags then
-		return flags, providers[spellId], modifiers[spellId], specials.CROWD_CTRL[spellId], sources[spellId] -- TODO: add specials.DISPEL[spellId]
+		return flags, providers[spellId], modifiers[spellId], specials.CROWD_CTRL[spellId], sources[spellId], specials.DISPEL[spellId]
 	end
 end
 
