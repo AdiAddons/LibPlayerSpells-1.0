@@ -24,7 +24,7 @@ if LibStub then
 	lib, oldMinor = LibStub:NewLibrary(MAJOR, MINOR)
 	if not lib then return end
 
-	if oldMinor < 8 then
+	if oldMinor and oldMinor < 8 then
 		-- The internal data changed at minor 8, wipe anything coming from the previous version
 		wipe(lib)
 	end
