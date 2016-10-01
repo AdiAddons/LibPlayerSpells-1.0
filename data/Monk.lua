@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70000, 6, {
+lib:__RegisterSpells("MONK", 70000, 7, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
@@ -109,12 +109,15 @@ lib:__RegisterSpells("MONK", 70000, 6, {
 			198533, -- Soothing Mist
 		},
 		HARMFUL = {
-			 116095, -- Disable (slow)
-			 117952, -- Crackling Jade Lightning
-			 196608, -- Eye of the Tiger -- NOTE: the buff id for the HoT is the same
-			 196723, -- Dizzying Kicks
-			 228287, -- Mark of the Crane
-			[116706] = "CROWD_CTRL ROOT", -- Disable (root)
+			116095, -- Disable (slow)
+			117952, -- Crackling Jade Lightning
+			196608, -- Eye of the Tiger -- NOTE: the buff id for the HoT is the same
+			196723, -- Dizzying Kicks
+			228287, -- Mark of the Crane
+			CROWD_CTRL = {
+				[116706] = "ROOT", -- Disable (root)
+				[120086] = "STUN", -- Fists of Fury (stun)
+			},
 		},
 		PERSONAL = {
 			101546, -- Spinning Crane Kick
@@ -134,6 +137,7 @@ lib:__RegisterSpells("MONK", 70000, 6, {
 	[118635] = 115315, -- Provoke (taunt) <- Summon Black Ox Statue
 	[119085] = 115008, -- Chi Torpedo
 	[119611] = 115151, -- Renewing Mist
+	[120086] = 205003, -- Fists of Fury (stun) <- Heavy-Handed Strikes (pvp)
 	[120954] = 115203, -- Fortifying Brew
 	[123586] = 101545, -- Flying Serpent Kick (slow)
 	[123725] = 115181, -- Breath of Fire
@@ -200,6 +204,7 @@ lib:__RegisterSpells("MONK", 70000, 6, {
 	[199387] = 101643, -- Spirit Tether (MW artifact) (slow) -> Transcendance
 	[199407] = 191837, -- Light on Your Feet (MW artifact) -> Essence Font
 	[199668] = 115310, -- Blessings of Yu'lon (MW artifact) -> Revival
+	[120086] = 113656, -- Fists of Fury (stun)
 	[202090] = { -- Teachings of the Monastery (MW mastery)
 		100780, -- Tiger Palm (provider)
 		100784, -- Blackout Kick (consumer)
