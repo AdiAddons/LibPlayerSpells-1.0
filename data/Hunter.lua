@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70000, 9, {
+lib:__RegisterSpells("HUNTER", 70000, 10, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -294,6 +294,10 @@ lib:__RegisterSpells("HUNTER", 70000, 9, {
 		185901, -- Marked Shot
 	},
 	[190515] = 781, -- Survival of the Fittest (MM artifact) -> Disengage
+	[190931] = {
+		190928, -- Mongoose Fury -> Mongoose Bite
+		203415, -- Mongoose Fury -> Fury of the Eagle
+	},
 	[191397] = { -- Bestial Cunning
 		 34026, -- Kill Command
 		202800, -- Flanking Strike
