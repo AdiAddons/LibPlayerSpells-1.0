@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", 70000, 6, {
+lib:__RegisterSpells("PRIEST", 70000, 7, {
 	[528] = "HARMFUL DISPEL MAGIC", -- Dispel Magic
 	COOLDOWN = {
 		   2050, -- Holy Word: Serenity
@@ -136,6 +136,7 @@ lib:__RegisterSpells("PRIEST", 70000, 6, {
 			193065, -- Masochism
 			197763, -- Borrowed Time (Discipline artifact)
 			198069, -- Power of the Dark Side (Discipline artifact)
+			198076, -- Sins of the Many (Discipline artifact)
 			205372, -- Void Ray
 			210980, -- Focus in the Light (Holy artifact)
 			223166, -- Overloaded with Light (Discipline artifact hidden ability)
@@ -167,6 +168,7 @@ lib:__RegisterSpells("PRIEST", 70000, 6, {
 	[197763] = 197762, -- Borrowed Time (Discipline artifact)
 	[197767] = 197766, -- Speed of the Pious (Discipline artifact)
 	[198069] = 198068, -- Power of the Dark Side (Discipline artifact)
+	[198076] = 198074, -- Sins of the Many (Discipline artifact)
 	[200196] =  88625, -- Holy Word: Chastise
 	[200200] = 200199, -- Holy Word: Chastise (with Censure) (stun) <- Censure
 	[204213] = 204197, -- Purge the Wicked
