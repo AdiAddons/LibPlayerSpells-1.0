@@ -31,6 +31,7 @@ local bor, tohex = bit.bor, bit.tohex
 local lib, G
 
 LibStub = false
+AdiDebug = false
 
 local function setup()
 	G = mockagne:getMock()
@@ -81,7 +82,7 @@ function testRegisterSpells:test_older_revision()
 	assertEquals(patch, 50000)
 	assertEquals(rev, 2)
 end
-
+--[[ NOTE: __RegisterSpells does not raise an error in those cases anymore
 function testRegisterSpells:test_provider_inconsistency()
 	local success, msg = pcall(lib.__RegisterSpells, lib, "HUNTER", 1, 1, {}, {[5] = 6})
 	assertEquals(success, false)
@@ -90,11 +91,6 @@ end
 function testRegisterSpells:test_modifier_inconsistency()
 	local success, msg = pcall(lib.__RegisterSpells, lib, "HUNTER", 1, 1, {}, {}, {[5] = 6})
 	assertEquals(success, false)
-end
-
-function testRegisterSpells:test_consistent_data()
-	when(G.GetSpellInfo(any())).thenAnswer("link")
-	lib:__RegisterSpells("HUNTER", 1, 1, {[4] = "AURA", [5] = "AURA"}, {[4] = 8}, {[5] = 6})
 end
 
 function testRegisterSpells:test_unknown_flag()
@@ -107,6 +103,11 @@ function testRegisterSpells:test_unknown_spell()
 	local success, msg = pcall(lib.__RegisterSpells, lib, "HUNTER", 1, 1, { [4] = "AURA" })
 	assertEquals(success, false)
 	verify(G.GetSpellInfo(4))
+end
+--]]
+function testRegisterSpells:test_consistent_data()
+	when(G.GetSpellInfo(any())).thenAnswer("link")
+	lib:__RegisterSpells("HUNTER", 1, 1, {[4] = "AURA", [5] = "AURA"}, {[4] = 8}, {[5] = 6})
 end
 
 function testRegisterSpells:test_known_spell()

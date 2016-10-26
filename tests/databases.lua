@@ -32,6 +32,7 @@ testDatabases = {}
 function testDatabases:setup()
 	G = mockagne:getMock()
 	G.LibStub = false
+	G.AdiDebug = false
 	lib = wowmock("../LibPlayerSpells-1.0.lua", G)
 	G.LibStub = nil
 	when(G.geterrorhandler()).thenAnswer(error)
