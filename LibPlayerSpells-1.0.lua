@@ -596,9 +596,13 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		sources[spellId] = format("%s%s", sources[spellId] and sources[spellId].." " or "", category)
 	end
 
+	local errorCount = 0
 	for spellId, msg in pairs(errors) do
 		Debug(category, format("spell #%d: %s", spellId, msg))
+		errorCount = errorCount + 1
 	end
+
+	return errorCount
 end
 
 return lib

@@ -82,29 +82,33 @@ function testRegisterSpells:test_older_revision()
 	assertEquals(patch, 50000)
 	assertEquals(rev, 2)
 end
---[[ NOTE: __RegisterSpells does not raise an error in those cases anymore
+
 function testRegisterSpells:test_provider_inconsistency()
 	local success, msg = pcall(lib.__RegisterSpells, lib, "HUNTER", 1, 1, {}, {[5] = 6})
-	assertEquals(success, false)
+	assertEquals(success, true)
+	assertEquals(msg, 1)
 end
 
 function testRegisterSpells:test_modifier_inconsistency()
 	local success, msg = pcall(lib.__RegisterSpells, lib, "HUNTER", 1, 1, {}, {}, {[5] = 6})
-	assertEquals(success, false)
+	assertEquals(success, true)
+	assertEquals(msg, 1)
 end
 
 function testRegisterSpells:test_unknown_flag()
 	local success, msg = pcall(lib.__RegisterSpells, lib, "HUNTER", 1, 1, {[4] = "FOO"})
-	assertEquals(success, false)
+	assertEquals(success, true)
+	assertEquals(msg, 1)
 end
 
 function testRegisterSpells:test_unknown_spell()
 	when(G.GetSpellInfo(4)).thenAnswer(false)
 	local success, msg = pcall(lib.__RegisterSpells, lib, "HUNTER", 1, 1, { [4] = "AURA" })
-	assertEquals(success, false)
+	assertEquals(success, true)
+	assertEquals(msg, 1)
 	verify(G.GetSpellInfo(4))
 end
---]]
+
 function testRegisterSpells:test_consistent_data()
 	when(G.GetSpellInfo(any())).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, {[4] = "AURA", [5] = "AURA"}, {[4] = 8}, {[5] = 6})
