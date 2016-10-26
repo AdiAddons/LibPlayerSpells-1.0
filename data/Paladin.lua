@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", 70000, 5, {
+lib:__RegisterSpells("PALADIN", 70100, 1, {
 	COOLDOWN = {
 		  20271, -- Judgement
 		  20473, -- Holy Shock
@@ -61,7 +61,6 @@ lib:__RegisterSpells("PALADIN", 70000, 5, {
 				183218, -- Hand of Hindrance (slow)
 				196941, -- Judgement of Light
 				197277, -- Judgement (Retribution)
-				202270, -- Blade of Wrath
 				204077, -- Final Stand (taunt) -- TODO: check DR
 				204242, -- Consecration
 				204301, -- Blessed Hammer
@@ -84,6 +83,7 @@ lib:__RegisterSpells("PALADIN", 70000, 5, {
 				 54149, -- Infusion of Light
 				152262, -- Seraphim
 				188370, -- Consecration (Protection)
+				190784, -- Divine Steed
 				200376, -- Vindicator (Holy artifact)
 				209388, -- Bulwark of Order (Protection artifact)
 				211422, -- Knight of the Silver Hand (Holy artifact)
@@ -91,7 +91,6 @@ lib:__RegisterSpells("PALADIN", 70000, 5, {
 				216411, -- Divine Purpose (Holy - Holy Shock)
 				216413, -- Divine Purpose (Holy - Light of Dawn)
 				217020, -- Zeal -- NOTE: the buff charges overlay the spell charges
-				221883, -- Divine Steed
 				BURST = {
 					 31842, -- Avenging Wrath (Holy)
 					 31884, -- Avenging Wrath
@@ -139,6 +138,7 @@ lib:__RegisterSpells("PALADIN", 70000, 5, {
 	[105421] = 115750, -- Blinding Light (disorient)
 	[132403] = 53600, -- Shield of the Righteous
 	[188370] = 26573, -- Consecration (Protection)
+	[190784] = 221886, -- Divine Steed
 	[196941] = 183778, -- Judgement of Light
 	[197277] = 85256, -- Judgement <- Templar's Verdict NOTE: this is not the provider. Used to signify it is the Retribution version of the Judgement debuff
 	[200376] = 200373, -- Vindicator (Holy artifact)
@@ -157,10 +157,6 @@ lib:__RegisterSpells("PALADIN", 70000, 5, {
 	[214222] = 20473, -- Judgement (Holy) <- Holy Shock NOTE: this is not the provider. Used to signify it is the Holy version of the Judgement debuff
 	[216411] = 197646, -- Divine Purpose (Holy - Holy Shock)
 	[216413] = 197646, -- Divine Purpose (Holy - Light of Dawn)
-	[221883] = { -- Divine Steed
-		190784, -- Divine Steed (Protection)
-		205656, -- Divine Steed (Retribution)
-	},
 	[223316] = 196923, -- Fervent Martyr
 	[223819] = 223817, -- Divine Purpose (Retribution)
 }, {
