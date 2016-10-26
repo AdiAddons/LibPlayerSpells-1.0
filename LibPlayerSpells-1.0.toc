@@ -4,6 +4,7 @@
 ## Author: Adirelle
 ## Version: @project-version@
 ## LoadOnDemand: 1
+## OptionalDeps: AdiDebug
 ## X-Date: @project-date-iso@
 ## X-Category: Library
 ## X-License: GPL v3

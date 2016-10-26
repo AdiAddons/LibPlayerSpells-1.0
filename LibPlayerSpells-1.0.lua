@@ -32,6 +32,11 @@ else
 	lib = {}
 end
 
+local Debug = function() end
+if AdiDebug then
+	Debug = AdiDebug:Embed({}, MAJOR)
+end
+
 local _G = _G
 local ceil = _G.ceil
 local error = _G.error
@@ -591,16 +596,8 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 		sources[spellId] = format("%s%s", sources[spellId] and sources[spellId].." " or "", category)
 	end
 
-	if next(errors) then
-		local msgs = {}
-		local clientInterface = select(4, GetBuildInfo())
-		if tonumber(interface) < clientInterface then
-			tinsert(msgs, format("Data are probably outdated: data version=%5d, client version=%5d", tonumber(interface), clientInterface))
-		end
-		for spellId, msg in pairs(errors) do
-			tinsert(msgs, format("Spell #%d: %s", spellId, msg))
-		end
-		geterrorhandler()(format("%s: %d errors in %s database:\n%s", MAJOR, #msgs, category, table.concat(msgs, "\n")))
+	for spellId, msg in pairs(errors) do
+		Debug(category, format("spell #%d: %s", spellId, msg))
 	end
 end
 
