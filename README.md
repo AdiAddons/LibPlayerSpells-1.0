@@ -3,18 +3,18 @@ LibPlayerSpells-1.0
 
 [![Build Status](https://travis-ci.org/AdiAddons/LibPlayerSpells-1.0.svg?branch=master)](https://travis-ci.org/AdiAddons/LibPlayerSpells-1.0) [![Gitter chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AdiButtons/LibPlayerSpells-1.0)
 
-LibPlayerSpells-1.0 is a library providing data about the spells of the eleven character classes in World of Warcraft. It also includes additional spells derived from racial traits and other sources. The word "spells" is used here in the general sense; it includes active skills as well as passive spells that are found in the players' spellbook. Buffs and debuffs that are applied by the player from other sources are also covered.
+LibPlayerSpells-1.0 is a library providing data about the spells of the twelve character classes in World of Warcraft. It also includes additional spells derived from racial traits and other sources. The word "spells" is used here in the general sense; it includes active skills as well as passive spells that are found in the players' spellbook. Buffs and debuffs that are applied by the player from other sources are also covered.
 
 This library is born from the need to centralize similar data used in several addons to reduce the maintenance cost and to have a better consistency across those addons.
 
 ##### It provides answers to questions like:
 
-* Does this spell have a cooldown ?
-* Does this spell apply one or several buff(s) or debuff(s) ?
-* Is this spell a survival cooldown, or used for dps ?
-* Does this spell regenerate mana or some other resource ?
-* What are the survival buffs of all the classes ?
-* Which spell interrupt abilities are available ?
+* Does this spell have a cooldown?
+* Does this spell apply one or several buff(s) or debuff(s)?
+* Is this spell a survival cooldown, or used for DPS?
+* Does this spell regenerate mana or some other resource?
+* What are the survival buffs of all the classes?
+* Which spell interrupt abilities are available?
 
 Each class has his own data file that can be updated separately from the main code.
 
@@ -22,7 +22,7 @@ Each class has his own data file that can be updated separately from the main co
 
 Not all classes and specializations are 100% supported yet. However, most interrupts, dispels, and survival cooldowns are complete.
 
-If LibPlayerSpells is missing something specific from your class please file a detailed bug on Github or contribute to the project yourself if you are feeling brave! In the second case, be sure to read the [contribution guidelines](https://github.com/AdiButtons/LibPlayerSpells-1.0/wiki/Contribution-Guidelines).
+If LibPlayerSpells is missing something specific from your class please file a detailed bug on Github or contribute to the project yourself if you are feeling brave! In the second case, be sure to read the [contribution guidelines](https://github.com/AdiAddons/LibPlayerSpells-1.0/wiki/Contribution-Guidelines).
 
 ## Usage
 
@@ -44,7 +44,7 @@ Where:
 * `flags` is a bitfield containing data about the spells (see below).
 * `providers` is the identifier (or a table of) identifier(s) of the spell(s) to; said otherwise, if the provider is not found in the player's spellbook, the given spell is unavailable. For example, the provider spell can be a passive spell given by a talent.
 * `modifiedSpells` is the (or a table of) identifier(s) of the spell(s) affected by the given spells.
-* if the given spell is a special case (see below), `moreFlags` contains another bitfield.
+* If the given spell is a special case (see below), `moreFlags` contains another bitfield.
 
 ### Querying the spell database
 
