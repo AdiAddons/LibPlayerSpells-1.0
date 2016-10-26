@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70000, 10, {
+lib:__RegisterSpells("HUNTER", 70100, 1, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -181,9 +181,6 @@ lib:__RegisterSpells("HUNTER", 70000, 10, {
 			193534, -- Steady Focus
 			194594, -- Lock and Load
 			201081, -- Mok'Nathal Tactics
-			204321, -- Instincts of the Raptor
-			204324, -- Instincts of the Cheetah
-			204333, -- Instincts of the Mongoose
 			223138, -- Marking Targets
 			227272, -- Trick Shot
 		},
@@ -251,9 +248,6 @@ lib:__RegisterSpells("HUNTER", 70000, 10, {
 	[203924] = 190503, -- Healing Shell (MM artifact)
 	[202933] = 202914, -- Spider Sting (Silenced debuff) (PvP)
 	[204081] = 203757, -- On the Trail <- Eagle's Bite (SV artifact)
-	[204321] = 204315, -- Instincts of the Raptor <- Animal Instincts
-	[204324] = 204315, -- Instincts of the Cheetah <- Animal Instincts
-	[204333] = 204315, -- Instincts of the Mongoose <- Animal Instincts
 	[204477] = 204147, -- Windburst (MM artifact)
 	[206755] = 200108, -- Ranger's Net (slow)
 	[207094] = 207068, -- Titan's Thunder (BM artifact)
@@ -346,9 +340,6 @@ lib:__RegisterSpells("HUNTER", 70000, 10, {
 		  6603, -- Auto Attack
 		190925, -- Harpoon
 	},
-	[204321] = 202800, -- Instincts of the Raptor -> Flanking Strike
-	[204324] = 202800, -- Instincts of the Cheetah -> Flanking Strike
-	[204333] = 202800, -- Instincts of the Mongoose -> Flanking Strike
 	[209997] = 210000, -- Play Dead -> Wake Up
 	[211138] = 34477, -- Hunter's Advantage (BM artifact) -> Misdirection
 	[223138] = { -- Marking Targets
