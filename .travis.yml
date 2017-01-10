@@ -21,6 +21,7 @@ script:
   - ./cs.sh
   - $LUA core.lua
   - $LUA databases.lua
+  - exit 1 # fail miserably
 
 deploy:
   provider: script
