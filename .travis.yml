@@ -24,7 +24,7 @@ script:
 
 deploy:
   provider: script
-  script: curl -XPOST -sS "https://www.wowace-or-what.com/api/projects/72228/package?token=$WOWACE_API_TOKEN" -d '{"ping":1}'
+  script: curl -XPOST -sS "https://www.wowace.com/api/projects/72228/package?token=$WOWACE_API_TOKEN" -d '{"ping":1}'
   on:
     repo: AdiAddons/LibPlayerSpells-1.0
     all_branches: true
