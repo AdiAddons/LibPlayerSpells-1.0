@@ -28,7 +28,7 @@ deploy:
   on:
     repo: AdiAddons/LibPlayerSpells-1.0
     all_branches: true
-#    condition: '"$TRAVIS_BRANCH" = master || -n "$TRAVIS_TAG"'
+    condition: '"$TRAVIS_BRANCH" = master || -n "$TRAVIS_TAG"'
 
 notifications:
   email:
