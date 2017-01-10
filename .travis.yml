@@ -29,11 +29,11 @@ script:
 
 deploy:
   provider: script
-  script: $TRAVIS_BUILD_DIR/deploy/deploy.sh libplayerspells-1-0
+  script: $TRAVIS_BUILD_DIR/deploy/deploy.sh 72228
   on:
     repo: AdiAddons/LibPlayerSpells-1.0
     all_branches: true
-    condition: '"$TRAVIS_BRANCH" = master || -n "$TRAVIS_TAG"'
+#    condition: '"$TRAVIS_BRANCH" = master || -n "$TRAVIS_TAG"'
 
 notifications:
   email:
