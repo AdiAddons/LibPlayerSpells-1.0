@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70000, 7, {
+lib:__RegisterSpells("DRUID", 70100, 1, {
 	COOLDOWN = {
 		    740, -- Tranquility
 		  18562, -- Swiftmend
@@ -59,9 +59,10 @@ lib:__RegisterSpells("DRUID", 70000, 7, {
 				 214998, -- Roar of the Crowd (Guardian artifact)
 				[ 81261] = "INTERRUPT", -- Solar Beam
 				CROWD_CTRL = {
-					[  99] = "INCAPACITATE", -- Incapacitating Roar (incapacitate)
-					[5211] = "STUN", -- Mighty Bash (stun)
-					[6795] = "TAUNT", -- Growl (taunt)
+					[    99] = "INCAPACITATE", -- Incapacitating Roar (incapacitate)
+					[  5211] = "STUN", -- Mighty Bash (stun)
+					[  6795] = "TAUNT", -- Growl (taunt)
+					[236748] = "DISORIENT", -- Intimidating Roar (disorient)
 					ROOT = {
 						 45334, -- Immobilized (root)
 						102359, -- Mass Entaglement (root)
@@ -141,6 +142,7 @@ lib:__RegisterSpells("DRUID", 70000, 7, {
 			 52610, -- Savage Roar
 			 69369, -- Predatory Swiftness
 			 93622, -- Mangle!
+			135700, -- Clearcasting (Feral)
 			145152, -- Bloodtalons
 			189877, -- Power of the Archdruid (Restoration artifact)
 			213680, -- Guardian of Elune
@@ -164,6 +166,7 @@ lib:__RegisterSpells("DRUID", 70000, 7, {
 	[114108] = 158478, -- Soul of the Forest
 	[117679] = 33891, -- Incarnation: Tree of Life
 	[127797] = 102793, -- Ursol's Vortex (slow) (knockback)
+	[135700] = 16864, -- Clearcasting (Feral) <- Omen of Clarity
 	[137452] = 102280, -- Displacer Beast
 	[145152] = 155672, -- Bloodtalons
 	[155625] = 155580, -- Moonfire <- Lunar Inspiration
@@ -221,6 +224,11 @@ lib:__RegisterSpells("DRUID", 70000, 7, {
 	},
 	[ 93622] = 33917, -- Mangle! -> Mangle
 	[114108] = 18562, -- Soul of the Forest -> Swiftmend
+	[135700] = { -- Clearcasting (Feral)
+		  5221, -- Shred
+		106785, -- Swipe
+		106830, -- Thrash
+	},
 	[145152] = 5185, -- Bloodtalons -> Healing Touch
 	[155625] = { -- Moonfire (from Lunar Inspiration)
 		  8921, -- Moonfire
