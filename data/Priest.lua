@@ -121,10 +121,8 @@ lib:__RegisterSpells("PRIEST", 70000, 7, {
 			    589, -- Shadow Word: Pain
 			  15407, -- Mind Flay
 			  34914, -- Void Touch
-			  48045, -- Mind Sear
 			 204213, -- Purge the Wicked
 			 210979, -- Focus in the Light (Holy artifact) (slow)
-			 217673, -- Mind Spike
 			[  9484] = "CROWD_CTRL INCAPACITATE", -- Shackle Undead (incapacitate)
 		},
 		PERSONAL = {
@@ -179,7 +177,6 @@ lib:__RegisterSpells("PRIEST", 70000, 7, {
 	[210980] = 196419, -- Focus in the Light (Holy artifact)
 	[212570] = 193223, -- Surrendered Soul <- Surrender to Madness
 	[216135] = 197711, -- Vestments of Discipline (Discipline artifact)
-	[217673] = 73510, -- Mind Spike
 	[219521] = 204065, -- Shadow Covenant
 	[223166] = 207946, -- Overloaded with Light (Discipline artifact hidden ability) <- Light's Wrath (Discipline artifact)
 	[226943] = 205369, -- Mind Bomb (stun)
@@ -213,11 +210,7 @@ lib:__RegisterSpells("PRIEST", 70000, 7, {
 	[197767] = 47540, -- Speed of the Pious (Discipline artifact) -> Penance
 	[198069] = 47540, -- Power of the Dark Side (Discipline artifact) -> Penance
 	[200200] = 88625, -- Holy Word: Chastise (with Censure) (stun)
-	[205372] = { -- Void Ray
-		15407, -- Mind Flay
-		48045, -- Mind Sear
-		73510, -- Mind Spike
-	},
+	[205372] = 15407, -- Void Ray -> Mind Flay
 	[210027] = 17, -- Share in the Light (Discipline artifact) -> Power Word: Shield
 	[210979] = { -- Focus in the Light (Holy artifact) (slow)
 		14914, -- Holy Fire
@@ -228,5 +221,4 @@ lib:__RegisterSpells("PRIEST", 70000, 7, {
 		88625, -- Holy Word: Chastise
 	},
 	[216135] = 586, -- Vestments of Discipline (Discipline artifact) -> Fade
-	[217673] = 8092, -- Mind Spike -> Mind Blast
 })
