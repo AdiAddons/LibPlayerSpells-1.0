@@ -20,13 +20,14 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70000, 7, {
+lib:__RegisterSpells("MONK", 70100, 1, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
 		 115288, -- Energizing Elixir
 		 115310, -- Revival
 		 115399, -- Black Ox Brew
+		 116844, -- Ring of Peace
 		 119582, -- Purifying Brew
 		 119996, -- Transcendance: Transfer
 		 122281, -- Healing Elixir
@@ -60,7 +61,6 @@ lib:__RegisterSpells("MONK", 70000, 7, {
 				 123586, -- Flying Serpent Kick (slow)
 				 123725, -- Breath of Fire -- TODO: check without artifact
 				 124280, -- Touch of Karma (dmg dot)
-				 140023, -- Ring of Peace
 				 196727, -- Provoke
 				 196733, -- Special Delivery (slow)
 				 199387, -- Spirit Tether (MW artifact) (slow)
@@ -77,7 +77,6 @@ lib:__RegisterSpells("MONK", 70000, 7, {
 			PERSONAL = {
 				 101643, -- Transcendance
 				 116680, -- Thunder Focus Tea
-				 116844, -- Ring of Peace
 				 116847, -- Rushing Jade Wind
 				 119085, -- Chi Torpedo
 				 125174, -- Touch of Karma
@@ -112,7 +111,6 @@ lib:__RegisterSpells("MONK", 70000, 7, {
 			116095, -- Disable (slow)
 			117952, -- Crackling Jade Lightning
 			196608, -- Eye of the Tiger -- NOTE: the buff id for the HoT is the same
-			196723, -- Dizzying Kicks
 			228287, -- Mark of the Crane
 			CROWD_CTRL = {
 				[116706] = "ROOT", -- Disable (root)
@@ -143,12 +141,10 @@ lib:__RegisterSpells("MONK", 70000, 7, {
 	[123725] = 115181, -- Breath of Fire
 	[124280] = 122470, -- Touch of Karma (dmg dot)
 	[125174] = 122470, -- Touch of Karma
-	[140023] = 116844, -- Ring of Peace
 	[191840] = 191837, -- Essence Font
 	[195321] = 195300, -- Transfer of Power (WW artifact) <- Transfer the Power
 	[195381] = 195380, -- Healing Winds (WW artifact)
 	[196608] = 196607, -- Eye of the Tiger
-	[196723] = 196722, -- Dizzying Kicks
 	[196727] = 132578, -- Provoke <- Invoke Niuzao, the Black Ox
 	[196733] = 196730, -- Special Delivery (slow)
 	[196739] = 196738, -- Elusive Dance
@@ -169,7 +165,8 @@ lib:__RegisterSpells("MONK", 70000, 7, {
 	[228287] = { -- Mark of the Crane
 		100780, -- Tiger Palm (provider)
 		100784, -- Blackout Kick (provider)
-		107428, -- Rising Sun Kick (consumer)
+		107428, -- Rising Sun Kick (provider)
+		116847, -- Rushing Jade Wind (provider)
 	},
 	[228563] = 196736, -- Blackout Combo
 }, {
@@ -192,7 +189,6 @@ lib:__RegisterSpells("MONK", 70000, 7, {
 	},
 	[195381] = 119996, -- Healing Winds (WW artifact) -> Transcendance: Transfer
 	[196608] = 100780, -- Eye of the Tiger
-	[196723] = 100784, -- Dizzying Kicks -> Blackout Kick
 	[196733] = { -- Special Delivery (slow)
 		115308, -- Ironskin Brew
 		119582, -- Purifying Brew
