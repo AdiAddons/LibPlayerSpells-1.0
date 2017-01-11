@@ -20,13 +20,14 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 70000, 4, {
+lib:__RegisterSpells("DEMONHUNTER", 70100, 1, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike
 		 195072, -- Fel Rush
-		 201467, -- Fury of the Illidari (Havon artifact)
+		 201467, -- Fury of the Illidari (Havoc artifact)
 		 213241, -- Felblade
+		 236189, -- Demonic Infusion
 		[183752] = "INTERRUPT", -- Consume Magic
 		AURA = {
 			HELPFUL = {
@@ -135,10 +136,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 4, {
 	[209426] = 196718, -- Darkness
 	[210003] = 209400, -- Razor Spikes (slow)
 	[210155] = 210152, -- Death Sweep
-	[212800] = {
-		198589, -- Blur
-		205411, -- Desperate Instincts
-	},
+	[212800] = 198589, -- Blur
 	[212818] = 212817, -- Fiery Demise (Vengeance artifact)
 	[212988] = 207387, -- Painbringer (Vengeance artifact)
 	[213405] = 203556, -- Master of the Glaive
@@ -151,7 +149,10 @@ lib:__RegisterSpells("DEMONHUNTER", 70000, 4, {
 	[203650] = 198793, -- Prepared -> Vengeful Retreat
 	[207690] = 185123, -- Bloodlet -> Throw Glaive
 	[207693] = 228477, -- Feast of Souls -> Soul Cleave
-	[207709] = 203782, -- Blade Turning -> Shear
+	[207709] = { -- Blade Turning
+		203782, -- Shear
+		235964, -- Sever
+	},
 	[207771] = 204021, -- Fiery Brand
 	[208628] = { -- Momentum
 		195072, -- Fel Rush
