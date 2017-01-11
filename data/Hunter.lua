@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70100, 1, {
+lib:__RegisterSpells("HUNTER", 70100, 2, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -38,6 +38,7 @@ lib:__RegisterSpells("HUNTER", 70100, 1, {
 		201413, -- Stampede (FIXME: currently no duration buff)
 		203415, -- Fury of the Eagle (SV artifact)
 		204147, -- Windburst (MM artifact)
+		206817, -- Sentinel
 		212431, -- Explosive Shot
 		212436, -- Butchery
 		INTERRUPT = {
@@ -68,7 +69,6 @@ lib:__RegisterSpells("HUNTER", 70100, 1, {
 				160067, -- Web Spray (Spider)
 				160455, -- Fatigued (Nether Ray)
 				162487, -- Steel Trap (bleed)
-				185855, -- Lacerate
 				190927, -- Harpoon
 				191244, -- Sticky Bomb (knockback)
 				191397, -- Bestial Cunning
@@ -83,6 +83,8 @@ lib:__RegisterSpells("HUNTER", 70100, 1, {
 				202933, -- Spider Sting (Silenced debuff) (PvP)
 				204081, -- On the Trail
 				206505, -- A Murder of Crows (SV)
+				236699, -- Super Sticky Tar (slow)
+				237338, -- Explosive Trap (melee miss effect)
 				CROWD_CTRL = {
 					DISORIENT = {
 						213691, -- Scatter Shot (disorient) (PvP)
@@ -167,6 +169,7 @@ lib:__RegisterSpells("HUNTER", 70100, 1, {
 			  63468, -- Careful Aim
 			 118253, -- Serpent Sting
 			 185365, -- Hunter's Mark
+			 185855, -- Lacerate
 			 187131, -- Vulnurable
 			 199803, -- True Aim
 			 202797, -- Viper Sting (PvP)
@@ -256,6 +259,8 @@ lib:__RegisterSpells("HUNTER", 70100, 1, {
 	[223138] = 185987, -- Marking Targets <- Hunter's Mark (passive)
 	[224729] = 186387, -- Bursting Shot
 	[227272] = 199522, -- Trick Shot
+	[236699] = 234955, -- Super Sticky Tar (slow) <- Waylay
+	[237338] = 234955, -- Explosive Trap <- Waylay
 }, {
 	-- map aura to modified spell(s)
 	[ 63468] = { -- Careful Aim
@@ -275,17 +280,14 @@ lib:__RegisterSpells("HUNTER", 70100, 1, {
 		   781, -- Disengage
 		190925, -- Harpoon
 	},
-	[185365] = { -- Hunter's Mark
-		185901, -- Marked Shot
-		206817, -- Sentinel
-	},
+	[185365] = 185901, -- Hunter's Mark -> Marked Shot
 	[185791] = { -- Wild Call
 		120679, -- Dire Beast
 		217200, -- Dire Frenzy
 	},
 	[187131] = { -- Vulnurable
 		 19434, -- Aimed Shot
-		185901, -- Marked Shot
+		198670, -- Piercing Shot
 	},
 	[190515] = 781, -- Survival of the Fittest (MM artifact) -> Disengage
 	[190931] = {
@@ -348,4 +350,6 @@ lib:__RegisterSpells("HUNTER", 70100, 1, {
 		214579, -- Sidewinders
 	},
 	[227272] = 19434, -- Trick Shot -> Aimed Shot
+	[236699] = 187698, -- Super Sticky Tar (slow) -> Tar Trap
+	[237338] = 191433, -- Explosive Trap -> Explosive Trap
 })
