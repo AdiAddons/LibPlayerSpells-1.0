@@ -106,7 +106,6 @@ lib:__RegisterSpells("WARLOCK", 70000, 4, {
 			   689, -- Drain Life
 			   980, -- Agony
 			 27243, -- Seed of Corruption
-			 30108, -- Unstable Affliction
 			 30213, -- Legion Strike (Felguard)
 			 63106, -- Siphon Life
 			146739, -- Curruption
@@ -114,6 +113,11 @@ lib:__RegisterSpells("WARLOCK", 70000, 4, {
 			196414, -- Eradication
 			198590, -- Drain Soul
 			205178, -- Soul Effigy
+			233490, -- Unstable Affliction
+			233496, -- Unstable Affliction
+			233497, -- Unstable Affliction
+			233498, -- Unstable Affliction
+			233499, -- Unstable Affliction
 			CROWD_CTRL = {
 				[   710] = "INCAPACITATE", -- Banish (incapacitate)
 				[118699] = "DISORIENT", -- Fear (disorient)
@@ -183,6 +187,11 @@ lib:__RegisterSpells("WARLOCK", 70000, 4, {
 	[211583] = 211530, -- Stolen Power (Demonology artifact)
 	[215165] = 196301, -- Devourer of Life (Destruction artifact)
 	[216708] = 216698, -- Deadwind Harvester (Affliction artifact) <- Reap Souls
+	[233490] = 30108, -- Unstable Affliction
+	[233496] = 30108, -- Unstable Affliction
+	[233497] = 30108, -- Unstable Affliction
+	[233498] = 30108, -- Unstable Affliction
+	[233499] = 30108, -- Unstable Affliction
 }, {
 	-- map aura to modified spell(s)
 	[ 48018] = 48020, -- Demonic Circle -> Demonic Circle (Teleport)
