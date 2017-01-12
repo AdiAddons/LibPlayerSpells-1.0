@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", 70000, 4, {
+lib:__RegisterSpells("WARLOCK", 70100, 1, {
 	COOLDOWN = {
 		    698, -- Ritual of Summoning
 		   1122, -- Summon Infernal
@@ -103,7 +103,6 @@ lib:__RegisterSpells("WARLOCK", 70000, 4, {
 		},
 		HARMFUL = {
 			   603, -- Doom
-			   689, -- Drain Life
 			   980, -- Agony
 			 27243, -- Seed of Corruption
 			 30108, -- Unstable Affliction
@@ -114,6 +113,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 4, {
 			196414, -- Eradication
 			198590, -- Drain Soul
 			205178, -- Soul Effigy
+			234153, -- Drain Life
 			CROWD_CTRL = {
 				[   710] = "INCAPACITATE", -- Banish (incapacitate)
 				[118699] = "DISORIENT", -- Fear (disorient)
@@ -128,6 +128,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 4, {
 			 199281, -- Compounding Horror (Affliction  artifact)
 			 205146, -- Demonic Calling
 			 211583, -- Stolen Power (Demonology artifact)
+			 235156, -- Empowered Life Tap
 			[196104] = "BURST", -- Mana Tap
 		},
 		PET = {
@@ -183,6 +184,7 @@ lib:__RegisterSpells("WARLOCK", 70000, 4, {
 	[211583] = 211530, -- Stolen Power (Demonology artifact)
 	[215165] = 196301, -- Devourer of Life (Destruction artifact)
 	[216708] = 216698, -- Deadwind Harvester (Affliction artifact) <- Reap Souls
+	[235156] = 235157, -- Empowered Life Tap
 }, {
 	-- map aura to modified spell(s)
 	[ 48018] = 48020, -- Demonic Circle -> Demonic Circle (Teleport)
@@ -192,7 +194,10 @@ lib:__RegisterSpells("WARLOCK", 70000, 4, {
 	},
 	[196304] = 1454, -- Eternal Struggle (Destruction artifact) -> Life Tap
 	[196414] = 116858, -- Eradication -> Chaos Bolt
-	[196546] = 17962, -- Conflagration of Chaos (Destruction artifact) -> Conflagration
+	[196546] = { -- Conflagration of Chaos (Destruction artifact)
+		17877, -- Shadowburn
+		17962, -- Conflagration
+	},
 	[196606] = { -- Shadowy Inspiration
 		   686, -- Shadow Bolt
 		157695, -- Demonbolt
@@ -204,5 +209,6 @@ lib:__RegisterSpells("WARLOCK", 70000, 4, {
 		   686, -- Shadow Bolt
 		157695, -- Demonbolt
 	},
-	[215165] = 689, -- Devourer of Life (Destruction artifact) -> Drain Life
+	[215165] = 234153, -- Devourer of Life (Destruction artifact) -> Drain Life
+	[235156] = 1454, -- Empowered Life Tap -> Life Tap
 })
