@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", 70000, 6, {
+lib:__RegisterSpells("MAGE", 70000, 7, {
 	COOLDOWN = {
 		   1953, -- Blink
 		  31687, -- Summon Water Elemental
@@ -78,6 +78,7 @@ lib:__RegisterSpells("MAGE", 70000, 6, {
 					 32612, -- Invisibility
 					 45438, -- Ice Block
 					110960, -- Greater Invisibility
+					235450, -- Prismatic Barrier
 				},
 				BURST = {
 					 12042, -- Arcane Power
@@ -127,9 +128,9 @@ lib:__RegisterSpells("MAGE", 70000, 6, {
 			190446, -- Brain Freeze
 			195391, -- Jouster (Frost artifact)
 			195418, -- Chain Reaction (Frost artifact)
-			198924, -- Quickening
 			199844, -- Glacial Spike!
 			205473, -- Icicles
+			236298, -- Chrono Shift
 		},
 	},
 }, {
@@ -151,7 +152,6 @@ lib:__RegisterSpells("MAGE", 70000, 6, {
 	[195391] = 214626, -- Jouster (Frost artifact)
 	[195418] = 195419, -- Chain Reaction (Frost artifact)
 	[195446] = 195448, -- Chilled to the Core (Frost artifact)
-	[198924] = 198923, -- Quickening
 	[199844] = 199786, -- Glacial Spike! <- Glacial Spike
 	[205473] = 76613, -- Icicles <- Mastery: Icicles
 	[205708] = { -- Chilled (slow)
@@ -170,6 +170,7 @@ lib:__RegisterSpells("MAGE", 70000, 6, {
 	[228354] = 44614, -- Flurry (slow)
 	[228358] = 190447, -- Flurry (frozen) <- Brain Freeze
 	[228600] = 199786, -- Glacial Spike (root)
+	[236298] = 44425, -- Chrono Shift <- Arcane Barrage
 }, {
 	-- map aura to modified spell(s)
 	[ 44544] = 30455, -- Fingers of Frost -> Ice Lance
@@ -187,11 +188,6 @@ lib:__RegisterSpells("MAGE", 70000, 6, {
 	[195391] = 30455, -- Jouster (Frost artifact) -> Ice Lance
 	[195418] = 30455, -- Chain Reaction (Frost artifact) -> Ice Lance
 	[195446] = 12472, -- Chilled to the Core (Frost artifact) -> Icy Veins
-	[198924] = { -- Quickening
-		 1449, -- Arcane Explosion
-		 5143, -- Arcane Missiles
-		30451, -- Arcane Blast
-	},
 	[205025] = 30451, -- Presence of Mind -> Arcane Blast
 	[205473] = 116, -- Icicles -> Frostbolt
 	[210824] = 30451, -- Touch of the Magi (Arcane artifact)
