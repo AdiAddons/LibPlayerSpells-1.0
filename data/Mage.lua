@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", 70100, 1, {
+lib:__RegisterSpells("MAGE", 70100, 2, {
 	COOLDOWN = {
 		   1953, -- Blink
 		  31687, -- Summon Water Elemental
@@ -33,12 +33,12 @@ lib:__RegisterSpells("MAGE", 70100, 1, {
 		 190356, -- Blizzard
 		 194466, -- Phoenix's Flames (Fire artifact)
 		 198929, -- Cinderstorm
-		 205030, -- Frozen Touch
 		 205032, -- Charged Up
 		 212653, -- Shimmer
 		 214634, -- Ebonbolt (Frost artifact)
 		[  2139] = "INTERRUPT", -- Counterspell
 		[ 30449] = "DISPEL HARMFUL MAGIC", -- Spellsteal
+		[235219] = "SURVIVAL", -- Cold Snap
 		AURA = {
 			HARMFUL = {
 				135029, -- Water Jet (Water Elemental)
