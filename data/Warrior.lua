@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", 70000, 8, {
+lib:__RegisterSpells("WARRIOR", 70100, 1, {
 	COOLDOWN = {
 		   6544, -- Heroic Leap
 		 202168, -- Impending Victory
@@ -33,7 +33,6 @@ lib:__RegisterSpells("WARRIOR", 70000, 8, {
 				  23920, -- Spell Reflection
 				  46924, -- Bladestorm (Fury)
 				 118000, -- Dragon Roar
-				 122510, -- Ultimatum
 				 132404, -- Shield Block
 				 188783, -- Might of the Vrykul (Protection artifact)
 				 188923, -- Cleave
@@ -99,10 +98,9 @@ lib:__RegisterSpells("WARRIOR", 70000, 8, {
 			201009, -- Juggernaut (Fury artifact)
 			202289, -- Renewed Fury
 			202539, -- Frenzy
-			202573, -- Vengeance: Focused Rage
+			202573, -- Vengeance: Revenge
 			202574, -- Vengeance: Ignore Pain
 			203581, -- Dragon Scales (Protection artifact)
-			204488, -- Focused Rage (Protection)
 			206316, -- Massacre
 			206333, -- Taste for Blood
 			207982, -- Focused Rage (Arms)
@@ -128,7 +126,6 @@ lib:__RegisterSpells("WARRIOR", 70000, 8, {
 	},
 	[115767] = 115768, -- Deep Wounds
 	[115804] = 12294, -- Mortal Wounds <- Mortal Strike
-	[122510] = 122509, -- Ultimatum
 	[132168] = 46968, -- Shockwave (stun)
 	[132169] = 107570, -- Storm Bolt (stun)
 	[132404] = 2565, -- Shield Block
@@ -143,7 +140,7 @@ lib:__RegisterSpells("WARRIOR", 70000, 8, {
 	[202225] = 202224, -- Furious Charge
 	[202289] = 202288, -- Renewed Fury
 	[202539] = 206313, -- Frenzy
-	[202573] = 202572, -- Vengeance: Focused Rage <- Vengeance
+	[202573] = 202572, -- Vengeance: Revenge <- Vengeance
 	[202574] = 202572, -- Vengeance: Ignore Pain <- Vengeance
 	[203581] = 203576, -- Dragon Scales (Protection artifact)
 	[205546] = 205545, -- Odyn's Fury (Fury artifact)
@@ -167,13 +164,13 @@ lib:__RegisterSpells("WARRIOR", 70000, 8, {
 		184367, -- Rampage
 	},
 	[115767] = { -- Deep Wounds
-		 6572, -- Revenge
-		20243, -- Devastate
+		  6572, -- Revenge
+		 20243, -- Devastate
+		236282, -- Devastator
 	},
-	[122510] = 204488, -- Ultimatum -> Focused Rage
 	[184362] = 85288, -- Enrage -> Raging Blow
 	[188783] = { -- Might of the Vrykul (Protection artifact)
-		 6572, -- Revenge
+		 6343, -- Thunder Clap
 		23922, -- Shield Slam
 	},
 	[188923] = 1680, -- Cleave -> Whirlwind
@@ -183,10 +180,9 @@ lib:__RegisterSpells("WARRIOR", 70000, 8, {
 	[202225] = 23881, -- Furious Charge -> Bloodthirst
 	[202289] = 190456, -- Renewed Fury -> Ignore Pain
 	[202539] = 100130, -- Frenzy -> Furious Slash
-	[202573] = 204488, -- Vengeance: Focused Rage -> Focused Rage
+	[202573] = 6572, -- Vengeance: Revenge -> Revenge
 	[202574] = 190456, -- Vengeance: Ignore Pain -> Ignore Pain
 	[203581] = 190456, -- Dragon Scales (Protection artifact) -> Ignore Pain
-	[204488] = 23922, -- Focused Rage (Protection) -> Shield Slam
 	[206316] = 184367, -- Massacre -> Rampage
 	[206333] = 23881, -- Taste for Blood -> Bloodthirst
 	[207982] = 12294, -- Focused Rage (Arms) -> Mortal Strike
