@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", 70100, 1, {
+lib:__RegisterSpells("WARLOCK", 70100, 2, {
 	COOLDOWN = {
 		    698, -- Ritual of Summoning
 		   1122, -- Summon Infernal
@@ -132,8 +132,7 @@ lib:__RegisterSpells("WARLOCK", 70100, 1, {
 			 199281, -- Compounding Horror (Affliction  artifact)
 			 205146, -- Demonic Calling
 			 211583, -- Stolen Power (Demonology artifact)
-			 235156, -- Empowered Life Tap
-			[196104] = "BURST", -- Mana Tap
+			[235156] = "BURST", -- Empowered Life Tap
 		},
 		PET = {
 			   7870, -- Lesser Invisibility (Succubus)
