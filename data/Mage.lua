@@ -33,7 +33,6 @@ lib:__RegisterSpells("MAGE", 70100, 1, {
 		 190356, -- Blizzard
 		 194466, -- Phoenix's Flames (Fire artifact)
 		 198929, -- Cinderstorm
-		 205029, -- Flame On
 		 205030, -- Frozen Touch
 		 205032, -- Charged Up
 		 212653, -- Shimmer
@@ -80,6 +79,7 @@ lib:__RegisterSpells("MAGE", 70100, 1, {
 					 32612, -- Invisibility
 					 45438, -- Ice Block
 					110960, -- Greater Invisibility
+					235313, -- Blazing Barrier
 					235450, -- Prismatic Barrier
 				},
 				BURST = {
@@ -132,6 +132,7 @@ lib:__RegisterSpells("MAGE", 70100, 1, {
 			195418, -- Chain Reaction (Frost artifact)
 			199844, -- Glacial Spike!
 			205473, -- Icicles
+			236060, -- Frenetic Speed
 		},
 	},
 }, {
@@ -171,6 +172,7 @@ lib:__RegisterSpells("MAGE", 70100, 1, {
 	[228354] = 44614, -- Flurry (slow)
 	[228358] = 190447, -- Flurry (frozen) <- Brain Freeze
 	[228600] = 199786, -- Glacial Spike (root)
+	[236060] = 236058, -- Frenetic Speed
 	[236298] = 235711, -- Chrono Shift
 	[236299] = 235711, -- Chrono Shift (slow)
 }, {
@@ -196,6 +198,7 @@ lib:__RegisterSpells("MAGE", 70100, 1, {
 	[226757] = 133, -- Conflagration -> Fireball
 	[227482] = 2948, -- Scorched Earth (Fire artifact) -> Scorch
 	[228358] = 44614, -- Flurry (frozen) -> Flurry -- TODO: Ice Lance better?
+	[236060] = 2948, -- Frenetic Speed -> Scorch
 	[236298] = 44425, -- Chrono Shift -> Arcane Barrage
 	[236299] = 44425, -- Chrono Shift (slow) -> Arcane Barrage
 })
