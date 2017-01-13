@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", 70000, 7, {
+lib:__RegisterSpells("MAGE", 70100, 1, {
 	COOLDOWN = {
 		   1953, -- Blink
 		  31687, -- Summon Water Elemental
@@ -51,6 +51,7 @@ lib:__RegisterSpells("MAGE", 70000, 7, {
 				212792, -- Cone of Cold (slow)
 				217694, -- Living Bomb
 				224968, -- Mark of Aluneth (Arcane artifact)
+				236299, -- Chrono Shift (slow)
 				CROWD_CTRL = {
 					[31661] = "DISORIENT", -- Dragon's Breath (disorient)
 					[82691] = "INCAPACITATE", -- Ring of Frost (incapacitate)
@@ -70,6 +71,7 @@ lib:__RegisterSpells("MAGE", 70000, 7, {
 				 210126, -- Arcane Familiar
 				 212799, -- Displacement
 				 227482, -- Scorched Earth (fire artifact)
+				 236298, -- Chrono Shift
 				[ 12051] = "POWER_REGEN", -- Evocation
 				[ 41425] = "INVERT_AURA", -- Hypothermia
 				SURVIVAL = {
@@ -130,7 +132,6 @@ lib:__RegisterSpells("MAGE", 70000, 7, {
 			195418, -- Chain Reaction (Frost artifact)
 			199844, -- Glacial Spike!
 			205473, -- Icicles
-			236298, -- Chrono Shift
 		},
 	},
 }, {
@@ -170,7 +171,8 @@ lib:__RegisterSpells("MAGE", 70000, 7, {
 	[228354] = 44614, -- Flurry (slow)
 	[228358] = 190447, -- Flurry (frozen) <- Brain Freeze
 	[228600] = 199786, -- Glacial Spike (root)
-	[236298] = 44425, -- Chrono Shift <- Arcane Barrage
+	[236298] = 235711, -- Chrono Shift
+	[236299] = 235711, -- Chrono Shift (slow)
 }, {
 	-- map aura to modified spell(s)
 	[ 44544] = 30455, -- Fingers of Frost -> Ice Lance
@@ -194,4 +196,6 @@ lib:__RegisterSpells("MAGE", 70000, 7, {
 	[226757] = 133, -- Conflagration -> Fireball
 	[227482] = 2948, -- Scorched Earth (Fire artifact) -> Scorch
 	[228358] = 44614, -- Flurry (frozen) -> Flurry -- TODO: Ice Lance better?
+	[236298] = 44425, -- Chrono Shift -> Arcane Barrage
+	[236299] = 44425, -- Chrono Shift (slow) -> Arcane Barrage
 })
