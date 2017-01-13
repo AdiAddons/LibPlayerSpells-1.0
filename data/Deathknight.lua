@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", 70000, 7, {
+lib:__RegisterSpells("DEATHKNIGHT", 70100, 1, {
 	COOLDOWN = {
 		  47568, -- Empower Rune Weapon
 		  49206, -- Summon Gargoyle
