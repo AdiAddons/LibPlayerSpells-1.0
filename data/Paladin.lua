@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", 70100, 1, {
+lib:__RegisterSpells("PALADIN", 70100, 2, {
 	COOLDOWN = {
 		  20271, -- Judgement
 		  20473, -- Holy Shock
@@ -114,14 +114,12 @@ lib:__RegisterSpells("PALADIN", 70100, 1, {
 		HELPFUL = {
 			 53563, -- Beacon of Light
 			156910, -- Beacon of Faith
-			203528, -- Greater Blessing of Might
 			203538, -- Greater Blessing of Kings
-			203539, -- Greater Blessing of Might
+			203539, -- Greater Blessing of Wisdom
 		},
 		PERSONAL = {
 			200656, -- Power of the Silver Hand (build-up) (Holy artifact)
 			200657, -- Power of the Silver Hand (Holy artifact)
-			202273, -- Seal of Light
 			223316, -- Fervent Martyr
 			223819, -- Divine Purpose (Retribution)
 		},
@@ -187,7 +185,6 @@ lib:__RegisterSpells("PALADIN", 70100, 1, {
 	[223819] = { -- Divine Purpose (Retribution)
 		 53385, -- Divine Storm
 		 85256, -- Templar's Verdict
-		202273, -- Seal of Light
 		210191, -- Word of Glory
 		213757, -- Execution Sentence
 		215661, -- Judicar's Vengeance
