@@ -185,7 +185,10 @@ lib:__RegisterSpells("WARRIOR", 70100, 1, {
 	[203581] = 190456, -- Dragon Scales (Protection artifact) -> Ignore Pain
 	[206316] = 184367, -- Massacre -> Rampage
 	[206333] = 23881, -- Taste for Blood -> Bloodthirst
-	[207982] = 12294, -- Focused Rage (Arms) -> Mortal Strike
+	[207982] = { -- Focused Rage (Arms)
+		 12294, -- Mortal Strike
+		207982, -- Focused Rage
+	},
 	[209484] = 6544, -- Tactical Advance -> Heroic Leap (Arms artifact)
 	[209706] = { -- Shattered Defenses (Arms artifact)
 		 12294, -- Mortal Strike
