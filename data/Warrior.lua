@@ -74,6 +74,7 @@ lib:__RegisterSpells("WARRIOR", 70100, 1, {
 						132169, -- Storm Bolt (stun)
 					},
 				},
+				[206891] = "UNIQUE_AURA", -- Intimidated (Protection Honor Talent)
 			},
 		},
 	},
@@ -146,6 +147,7 @@ lib:__RegisterSpells("WARRIOR", 70100, 1, {
 	[205546] = 205545, -- Odyn's Fury (Fury artifact)
 	[206316] = 206315, -- Massacre
 	[206333] = 100130, -- Taste for Blood <- Furious Slash
+	[206891] = 205800, -- Oppressor (Protection Honor Talent)
 	[208086] = { -- Colossus Smash
 		167105, -- Colossus Smash
 		209577, -- Warbreaker (Arms artifact)
