@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", 70100, 1, {
+lib:__RegisterSpells("WARRIOR", 70100, 2, {
 	COOLDOWN = {
 		   6544, -- Heroic Leap
 		 202168, -- Impending Victory
@@ -60,11 +60,12 @@ lib:__RegisterSpells("WARRIOR", 70100, 1, {
 				223658, -- Safeguard
 			},
 			HARMFUL = {
-				  1160, -- Demoralizing Shout
-				  6343, -- Thunder Clap (slow)
-				115804, -- Mortal Wounds
-				205546, -- Odyn's Fury (Fury artifact)
-				208086, -- Colossus Smash
+				   1160, -- Demoralizing Shout
+				   6343, -- Thunder Clap (slow)
+				 115804, -- Mortal Wounds
+				 205546, -- Odyn's Fury (Fury artifact)
+				 208086, -- Colossus Smash
+				[206891] = "UNIQUE_AURA", -- Intimidated (Protection Honor Talent)
 				CROWD_CTRL = {
 					[ 355] = "TAUNT", -- Taunt (taunt)
 					[5246] = "DISORIENT", -- Intimidating Shout (disorient)
@@ -74,7 +75,6 @@ lib:__RegisterSpells("WARRIOR", 70100, 1, {
 						132169, -- Storm Bolt (stun)
 					},
 				},
-				[206891] = "UNIQUE_AURA", -- Intimidated (Protection Honor Talent)
 			},
 		},
 	},
