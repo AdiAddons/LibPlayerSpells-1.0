@@ -88,6 +88,7 @@ lib:__RegisterSpells("WARRIOR", 70100, 1, {
 			105771, -- Charge (root) -- TODO: no DR?
 			115767, -- Deep Wounds
 			215537, -- Trauma
+			236027, -- Charge (slow)
 		},
 		PERSONAL = {
 			 32216, -- Victorious
@@ -156,6 +157,10 @@ lib:__RegisterSpells("WARRIOR", 70100, 1, {
 	[215570] = 215569, -- Wrecking Ball
 	[227744] = 228920, -- Ravager
 	[223658] = 198304, -- Safeguard <- Intercept
+	[236027] = { -- Charge (slow)
+		   100, -- Charge
+		198304, -- Intercept
+	},
 }, {
 	-- map aura to modified spell(s)
 	[  7922] = 198304, -- Warbringer (stun) -> Intercept
