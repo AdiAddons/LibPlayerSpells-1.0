@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", 70100, 1, {
+lib:__RegisterSpells("DEATHKNIGHT", 70100, 2, {
 	COOLDOWN = {
 		  47568, -- Empower Rune Weapon
 		  49206, -- Summon Gargoyle
@@ -42,6 +42,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70100, 1, {
 				 206931, -- Blooddrinker
 				 211793, -- Remorseless Winter (slow)
 				 212764, -- White Walker (slow)
+				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
 				[206977] = "SURVIVAL", -- Blood Mirror
 				CROWD_CTRL = {
 					[56222] = "TAUNT", -- Dark Command (taunt)
@@ -170,6 +171,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70100, 1, {
 	[195181] = 195182, -- Bone Shield <- Marrowrend
 	[196782] = 77575, -- Outbreak
 	[205725] = 205727, -- Anti-Magic Barrier
+	[206891] = 207018, -- Intimidated <- Murderous Intent (Blood Honor Talent)
 	[206961] = 206960, -- Tremble Before Me (disorient)
 	[207165] = 207161, -- Abomination's Might (stun)
 	[207171] = 207170, -- Winter is Coming (stun)
