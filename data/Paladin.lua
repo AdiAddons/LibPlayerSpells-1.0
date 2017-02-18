@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", 70100, 2, {
+lib:__RegisterSpells("PALADIN", 70100, 3, {
 	COOLDOWN = {
 		  20271, -- Judgement
 		  20473, -- Holy Shock
@@ -57,17 +57,18 @@ lib:__RegisterSpells("PALADIN", 70100, 2, {
 				},
 			},
 			HARMFUL = {
-				 31935, -- Avenger's Shield -- NOTE: non-player only INTERRUPT and silence
-				183218, -- Hand of Hindrance (slow)
-				196941, -- Judgement of Light
-				197277, -- Judgement (Retribution)
-				204077, -- Final Stand (taunt) -- TODO: check DR
-				204242, -- Consecration
-				204301, -- Blessed Hammer
-				205273, -- Wake of Ashes (Retribution artifact) (slow)
-				209202, -- Eye of Tyr (Protection artifact)
-				213757, -- Execution Sentence
-				214222, -- Judgement (Holy)
+				  31935, -- Avenger's Shield -- NOTE: non-player only INTERRUPT and silence
+				 183218, -- Hand of Hindrance (slow)
+				 196941, -- Judgement of Light
+				 197277, -- Judgement (Retribution)
+				 204077, -- Final Stand (taunt) -- TODO: check DR
+				 204242, -- Consecration
+				 204301, -- Blessed Hammer
+				 205273, -- Wake of Ashes (Retribution artifact) (slow)
+				 209202, -- Eye of Tyr (Protection artifact)
+				 213757, -- Execution Sentence
+				 214222, -- Judgement (Holy)
+				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
 				CROWD_CTRL = {
 					[ 20066] = "INCAPACITATE", -- Repentance (incapacitate)
 					[ 62124] = "TAUNT", -- Hand of Reckoning (taunt)
@@ -149,6 +150,7 @@ lib:__RegisterSpells("PALADIN", 70100, 2, {
 	},
 	[204301] = 204019, -- Blessed Hammer
 	[205290] = 205273, -- Wake of Ashes (Retribution artifact) (stun)
+	[206891] = 207028, -- Intimidated <- Inquisition (Protection Honor Talent)
 	[209388] = 209389, -- Bulwark of Order (Protection artifact)
 	[209540] = 209539, -- Light of the Titans (Protection artifact)
 	[211422] = 200302, -- Knight of the Silver Hand (Holy artifact)

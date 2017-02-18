@@ -65,7 +65,7 @@ lib:__RegisterSpells("WARRIOR", 70100, 2, {
 				 115804, -- Mortal Wounds
 				 205546, -- Odyn's Fury (Fury artifact)
 				 208086, -- Colossus Smash
-				[206891] = "UNIQUE_AURA", -- Intimidated (Protection Honor Talent)
+				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
 				CROWD_CTRL = {
 					[ 355] = "TAUNT", -- Taunt (taunt)
 					[5246] = "DISORIENT", -- Intimidating Shout (disorient)
