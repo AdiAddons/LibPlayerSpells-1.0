@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70100, 1, {
+lib:__RegisterSpells("MONK", 70100, 2, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
@@ -67,6 +67,7 @@ lib:__RegisterSpells("MONK", 70100, 1, {
 				 205320, -- Strike of the Windlord (WW artifact) (slow)
 				 213063, -- Dark Side of the Moon (BM artifact)
 				 214326, -- Exploding Keg (BM artifact)
+				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
 				CROWD_CTRL = {
 					[115078] = "INCAPACITATE", -- Paralysis (Incapacitate)
 					[116189] = "TAUNT", -- Provoke (taunt)
@@ -157,6 +158,7 @@ lib:__RegisterSpells("MONK", 70100, 1, {
 	[199407] = 199401, -- Light on Your Feet (MW artifact)
 	[199668] = 199665, -- Blessings of Yu'lon (MW artifact)
 	[202090] = 116645, -- Teachings of the Monastery (MW mastery)
+	[206891] = 207025, -- Intimidated <- Admonishment (BM Honor Talent)
 	[213063] = 227689, -- Dark Side of the Moon (BM artifact)
 	[213341] = 213340, -- Fortification (BM artifact)
 	[213177] = 213161, -- Swift as a Coursing River (BM artifact)
