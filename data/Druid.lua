@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70100, 1, {
+lib:__RegisterSpells("DRUID", 70100, 2, {
 	COOLDOWN = {
 		    740, -- Tranquility
 		  18562, -- Swiftmend
@@ -58,6 +58,7 @@ lib:__RegisterSpells("DRUID", 70100, 1, {
 				 214995, -- Bloody Paws (slow) (Guardian artifact)
 				 214998, -- Roar of the Crowd (Guardian artifact)
 				[ 81261] = "INTERRUPT", -- Solar Beam
+				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
 				CROWD_CTRL = {
 					[    99] = "INCAPACITATE", -- Incapacitating Roar (incapacitate)
 					[  5211] = "STUN", -- Mighty Bash (stun)
@@ -203,6 +204,7 @@ lib:__RegisterSpells("DRUID", 70100, 1, {
 	[202739] = 202360, -- Blessing of An'she <- Blessing of the Ancients
 	[203123] = 22570, -- Maim (stun)
 	[205644] = 205636, -- Force of Nature
+	[206891] = 207017, -- Intimidated <- Alpha Challenge (Guardian Honor Talent)
 	[207386] = 207385, -- Spring Blossoms
 	[210583] = 210579, -- Ashamane's Energy (Feral artifact)
 	[210649] = 210631, -- Feral Instinct (Feral artifact)
