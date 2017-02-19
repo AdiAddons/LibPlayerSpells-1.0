@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70100, 2, {
+lib:__RegisterSpells("MONK", 70100, 3, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
@@ -56,15 +56,10 @@ lib:__RegisterSpells("MONK", 70100, 2, {
 				 115080, -- Touch of Death
 				 115804, -- Mortal Wounds
 				 118635, -- Provoke (through Black Ox Statue) (taunt)
-				 121253, -- Keg Smash (slow)
 				 122470, -- Touch of Karma
-				 123586, -- Flying Serpent Kick (slow)
 				 123725, -- Breath of Fire -- TODO: check without artifact
 				 124280, -- Touch of Karma (dmg dot)
 				 196727, -- Provoke
-				 196733, -- Special Delivery (slow)
-				 199387, -- Spirit Tether (MW artifact) (slow)
-				 205320, -- Strike of the Windlord (WW artifact) (slow)
 				 213063, -- Dark Side of the Moon (BM artifact)
 				 214326, -- Exploding Keg (BM artifact)
 				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
@@ -73,6 +68,13 @@ lib:__RegisterSpells("MONK", 70100, 2, {
 					[116189] = "TAUNT", -- Provoke (taunt)
 					[119381] = "STUN", -- Leg Sweep (stun)
 					[198909] = "DISORIENT", -- Song of Chi-Ji (Disorient)
+				},
+				SNARE = {
+					121253, -- Keg Smash (slow)
+					123586, -- Flying Serpent Kick (slow)
+					196733, -- Special Delivery (slow)
+					199387, -- Spirit Tether (MW artifact) (slow)
+					205320, -- Strike of the Windlord (WW artifact) (slow)
 				},
 			},
 			PERSONAL = {
@@ -109,10 +111,10 @@ lib:__RegisterSpells("MONK", 70100, 2, {
 			198533, -- Soothing Mist
 		},
 		HARMFUL = {
-			116095, -- Disable (slow)
-			117952, -- Crackling Jade Lightning
-			196608, -- Eye of the Tiger -- NOTE: the buff id for the HoT is the same
-			228287, -- Mark of the Crane
+			 117952, -- Crackling Jade Lightning
+			 196608, -- Eye of the Tiger -- NOTE: the buff id for the HoT is the same
+			 228287, -- Mark of the Crane
+			[116095] = "SNARE", -- Disable (slow)
 			CROWD_CTRL = {
 				[116706] = "ROOT", -- Disable (root)
 				[120086] = "STUN", -- Fists of Fury (stun)

@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", 70100, 2, {
+lib:__RegisterSpells("MAGE", 70100, 3, {
 	COOLDOWN = {
 		   1953, -- Blink
 		  31687, -- Summon Water Elemental
@@ -43,14 +43,10 @@ lib:__RegisterSpells("MAGE", 70100, 2, {
 			HARMFUL = {
 				135029, -- Water Jet (Water Elemental)
 				155158, -- Meteor
-				157981, -- Blast Wave (slow)
 				157997, -- Ice Nova (root) -- TODO: check category
 				194522, -- Blast Furnace (Fire artifact)
-				205021, -- Ray of Frost (slow)
-				212792, -- Cone of Cold (slow)
 				217694, -- Living Bomb
 				224968, -- Mark of Aluneth (Arcane artifact)
-				236299, -- Chrono Shift (slow)
 				CROWD_CTRL = {
 					[31661] = "DISORIENT", -- Dragon's Breath (disorient)
 					[82691] = "INCAPACITATE", -- Ring of Frost (incapacitate)
@@ -58,6 +54,12 @@ lib:__RegisterSpells("MAGE", 70100, 2, {
 						  122, -- Frost Nova (root)
 						33395, -- Freeze (Water Elemental) (root)
 					},
+				},
+				SNARE = {
+					157981, -- Blast Wave (slow)
+					205021, -- Ray of Frost (slow)
+					212792, -- Cone of Cold (slow)
+					236299, -- Chrono Shift (slow)
 				},
 			},
 			PERSONAL = {
@@ -96,14 +98,10 @@ lib:__RegisterSpells("MAGE", 70100, 2, {
 			130, -- Slow Fall
 		},
 		HARMFUL = {
-			  2120, -- Flamestrike (slow)
-			 31589, -- Slow (slow)
 			112948, -- Frost Bomb
 			114923, -- Nether Tempest
-			205708, -- Chilled (slow)
 			210824, -- Touch of the Magi (Arcane artifact)
 			226757, -- Conflagration
-			228354, -- Flurry (slow)
 			228358, -- Flurry (frozen)
 			CROWD_CTRL = {
 				[228600] = "ROOT", -- Glacial Spike (root) -- TODO: check category
@@ -120,6 +118,12 @@ lib:__RegisterSpells("MAGE", 70100, 2, {
 					161355, -- Polymorph: Penguin (incapacitate)
 					161372, -- Polymorph: Monkey (incapacitate)
 				},
+			},
+			SNARE = {
+				  2120, -- Flamestrike (slow)
+				 31589, -- Slow (slow)
+				205708, -- Chilled (slow)
+				228354, -- Flurry (slow)
 			},
 		},
 		PERSONAL = {

@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", 70100, 3, {
+lib:__RegisterSpells("PALADIN", 70100, 4, {
 	COOLDOWN = {
 		  20271, -- Judgement
 		  20473, -- Holy Shock
@@ -58,13 +58,11 @@ lib:__RegisterSpells("PALADIN", 70100, 3, {
 			},
 			HARMFUL = {
 				  31935, -- Avenger's Shield -- NOTE: non-player only INTERRUPT and silence
-				 183218, -- Hand of Hindrance (slow)
 				 196941, -- Judgement of Light
 				 197277, -- Judgement (Retribution)
 				 204077, -- Final Stand (taunt) -- TODO: check DR
 				 204242, -- Consecration
 				 204301, -- Blessed Hammer
-				 205273, -- Wake of Ashes (Retribution artifact) (slow)
 				 209202, -- Eye of Tyr (Protection artifact)
 				 213757, -- Execution Sentence
 				 214222, -- Judgement (Holy)
@@ -77,6 +75,10 @@ lib:__RegisterSpells("PALADIN", 70100, 3, {
 						   853, -- Hammer of Justice (stun)
 						205290, -- Wake of Ashes (Retribution artifact) (stun)
 					},
+				},
+				SNARE = {
+					183218, -- Hand of Hindrance (slow)
+					205273, -- Wake of Ashes (Retribution artifact) (slow)
 				},
 			},
 			PERSONAL = {

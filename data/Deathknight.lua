@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", 70100, 2, {
+lib:__RegisterSpells("DEATHKNIGHT", 70100, 3, {
 	COOLDOWN = {
 		  47568, -- Empower Rune Weapon
 		  49206, -- Summon Gargoyle
@@ -37,11 +37,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70100, 2, {
 			HARMFUL = {
 				  51399, -- Death Grip (taunt)
 				 130736, -- Soul Reaper
-				 190780, -- Frost Breath (Frost artifact) (slow)
-				 191719, -- Gravitational Pull (Unholy artifact) (slow)
 				 206931, -- Blooddrinker
-				 211793, -- Remorseless Winter (slow)
-				 212764, -- White Walker (slow)
 				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
 				[206977] = "SURVIVAL", -- Blood Mirror
 				CROWD_CTRL = {
@@ -62,6 +58,12 @@ lib:__RegisterSpells("DEATHKNIGHT", 70100, 2, {
 						212337, -- Powerful Smash (abomination) (stun)
 						221562, -- Asphyxiate (Blood) (stun)
 					},
+				},
+				SNARE = {
+					190780, -- Frost Breath (Frost artifact) (slow)
+					191719, -- Gravitational Pull (Unholy artifact) (slow)
+					211793, -- Remorseless Winter (slow)
+					212764, -- White Walker (slow)
 				},
 			},
 			PERSONAL = {
@@ -104,22 +106,24 @@ lib:__RegisterSpells("DEATHKNIGHT", 70100, 2, {
 			3714, -- Path of Frost
 		},
 		HARMFUL = {
-			 45524, -- Chains of Ice (slow)
 			 55078, -- Blood Plague
 			 55095, -- Frost Fever
 			191587, -- Virulent Plague
 			194310, -- Festering Wound
 			196782, -- Outbreak
-			206930, -- Hearth Strike (slow)
 			206940, -- Mark of Blood
 			208278, -- Debilitating Infestation
 			211794, -- Winter is Coming
-			211831, -- Abomination's Might (slow)
 			CROWD_CTRL = {
 				STUN = {
 					207165, -- Abomination's Might (stun)
 					207171, -- Winter is Coming (stun)
 				},
+			},
+			SNARE = {
+				 45524, -- Chains of Ice (slow)
+				206930, -- Hearth Strike (slow)
+				211831, -- Abomination's Might (slow)
 			},
 		},
 		PERSONAL = {

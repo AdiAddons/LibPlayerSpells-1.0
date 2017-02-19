@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", 70100, 1, {
+lib:__RegisterSpells("ROGUE", 70100, 2, {
 	COOLDOWN = {
 		   1725, -- Distract
 		 195457, -- Grappling Hook
@@ -33,9 +33,7 @@ lib:__RegisterSpells("ROGUE", 70100, 1, {
 				   703, -- Garrote
 				  1330, -- Garrote - Silence
 				154953, -- Internal Bleeding
-				185778, -- Shellshocked (slow)
 				192759, -- Kingsbane (Assassination artifact)
-				209786, -- Goremaw's Bite (Subtlety artifact) (slow)
 				BURST = {
 					 79140, -- Vendetta
 					137619, -- Marked for Death
@@ -50,6 +48,10 @@ lib:__RegisterSpells("ROGUE", 70100, 1, {
 						   408, -- Kidney Shot (stun)
 						199804, -- Between the Eyes (stun)
 					},
+				},
+				SNARE = {
+					185778, -- Shellshocked (slow)
+					209786, -- Goremaw's Bite (Subtlety artifact) (slow)
 				},
 			},
 			PERSONAL = {
@@ -85,23 +87,25 @@ lib:__RegisterSpells("ROGUE", 70100, 1, {
 		HARMFUL = {
 			  1943, -- Rupture
 			  2818, -- Deadly Poison
-			  3409, -- Crippling Poison
 			  8680, -- Wound Poison
 			 16511, -- Hemorrhage
-			185763, -- Pistol Shot (slow)
 			192425, -- Surge of Toxins (Assassination artifact)
 			192925, -- Blood of the Assassinated (Assassination artifact)
 			195452, -- Nightblade
 			196937, -- Ghostly Strike
 			200803, -- Agonizing Poison
-			206760, -- Night Terrors (slow)
-			222775, -- Strike from the Shadows (slow)
 			CROWD_CTRL = {
 				[6770] = "INCAPACITATE", -- Sap (incapacitate)
 				STUN = {
 					  1833, -- Cheap Shot (stun)
 					196958, -- Strike from the Shadows (stun)
 				},
+			},
+			SNARE = {
+				  3409, -- Crippling Poison (slow)
+				185763, -- Pistol Shot (slow)
+				206760, -- Night Terrors (slow)
+				222775, -- Strike from the Shadows (slow)
 			},
 		},
 		PERSONAL = {

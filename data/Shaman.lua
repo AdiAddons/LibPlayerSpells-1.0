@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70100, 1, {
+lib:__RegisterSpells("SHAMAN", 70100, 2, {
 	COOLDOWN = {
 		    556, -- Astral Recall
 		  17364, -- Stormstrike
@@ -46,25 +46,27 @@ lib:__RegisterSpells("SHAMAN", 70100, 1, {
 				208899, -- Queen's Decree (Restoration artifact)
 			},
 			HARMFUL = {
-				 51490, -- Thunderstorm (slow) (knockback)
-				116947, -- Earthbind (slow)
 				118297, -- Immolate (Primal Fire Elemental)
 				188089, -- Earthen Spike
 				188838, -- Flame Shock (Restoration)
-				224126, -- Frozen Bite (Enhancement artifact) (slow)
 				CROWD_CTRL = {
 					INCAPACITATE = {
 						 51514, -- Hex (incapacitate)
 						196942, -- Hex (Voodoo Totem) (incapacitate)
 					},
 					ROOT = {
-						64695, -- Earthgrab (root)
+						 64695, -- Earthgrab (root)
 						197214, -- Sundering (root)
 					},
 					STUN = {
 						118345, -- Pulverize (Primal Earth Elemental) (stun)
 						118905, -- Static Charge (stun)
 					},
+				},
+				SNARE = {
+					 51490, -- Thunderstorm (slow) (knockback)
+					116947, -- Earthbind (slow)
+					224126, -- Frozen Bite (Enhancement artifact) (slow)
 				},
 			},
 			PERSONAL = {
@@ -114,10 +116,12 @@ lib:__RegisterSpells("SHAMAN", 70100, 1, {
 		HARMFUL = {
 			 182387, -- Earthquake
 			 188389, -- Flame Shock (Elemental)
-			 196840, -- Frost Shock (slow)
 			 197209, -- Lightning Rod
-			 197385, -- Fury of Air (slow)
 			[ 77505] = "CROWD_CTRL STUN", -- Earthquake (stun)
+			SNARE = {
+				196840, -- Frost Shock (slow)
+				197385, -- Fury of Air (slow)
+			},
 		},
 		PERSONAL = {
 			   2645, -- Ghost Wolf

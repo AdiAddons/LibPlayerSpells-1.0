@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70100, 2, {
+lib:__RegisterSpells("DRUID", 70100, 3, {
 	COOLDOWN = {
 		    740, -- Tranquility
 		  18562, -- Swiftmend
@@ -49,13 +49,10 @@ lib:__RegisterSpells("DRUID", 70100, 2, {
 		AURA = {
 			HARMFUL = {
 				  50259, -- Dazed
-				  61391, -- Typhoon (slow) (knockback)
-				 127797, -- Ursol's Vortex (slow) (knockback)
 				 192090, -- Thrash (bear)
 				 106830, -- Thrash (cat)
 				 205644, -- Force of Nature
 				 210723, -- Ashamane's Frenzy (Feral artifact)
-				 214995, -- Bloody Paws (slow) (Guardian artifact)
 				 214998, -- Roar of the Crowd (Guardian artifact)
 				[ 81261] = "INTERRUPT", -- Solar Beam
 				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
@@ -68,6 +65,11 @@ lib:__RegisterSpells("DRUID", 70100, 2, {
 						 45334, -- Immobilized (root)
 						102359, -- Mass Entaglement (root)
 					},
+				},
+				SNARE = {
+					 61391, -- Typhoon (slow) (knockback)
+					127797, -- Ursol's Vortex (slow) (knockback)
+					214995, -- Bloody Paws (slow) (Guardian artifact)
 				},
 			},
 			HELPFUL = {
@@ -114,14 +116,14 @@ lib:__RegisterSpells("DRUID", 70100, 2, {
 	},
 	AURA = {
 		HARMFUL = {
-			  1079, -- Rip
-			 58180, -- Infected Wounds (slow)
-			155625, -- Moonfire (from Lunar Inspiration)
-			155722, -- Rake
-			164812, -- Moonfire
-			164815, -- Sunfire
-			197637, -- Stellar Empowerment
-			202347, -- Stellar Flare
+			   1079, -- Rip
+			 155625, -- Moonfire (from Lunar Inspiration)
+			 155722, -- Rake
+			 164812, -- Moonfire
+			 164815, -- Sunfire
+			 197637, -- Stellar Empowerment
+			 202347, -- Stellar Flare
+			[ 58180] = "SNARE", -- Infected Wounds (slow)
 			CROWD_CTRL = {
 				[339] = "ROOT", -- Entagling Roots (root)
 				STUN = {

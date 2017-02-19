@@ -20,21 +20,21 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", 70100, 2, {
+lib:__RegisterSpells("WARLOCK", 70100, 3, {
 	COOLDOWN = {
-		    698, -- Ritual of Summoning
-		   1122, -- Summon Infernal
-		   6360, -- Whiplash (Succubus) (knockback)
-		  17962, -- Conflagrate
-		  18540, -- Summon Doomguard
-		  29893, -- Create Soulwell
-		  89792, -- Flee (Imp)
-		 104316, -- Call Dreadstalkers
-		 119909, -- Whiplash (Command Demon with Succubus) (knockback)
-		 152108, -- Cataclysm
-		 196586, -- Dimensional Rift (Destruction artifact)
-		 205180, -- Summon Darkglare
-		 211714, -- Thal'kiel's Consumption (Demonology artifact)
+		   698, -- Ritual of Summoning
+		  1122, -- Summon Infernal
+		  6360, -- Whiplash (Succubus) (knockback)
+		 17962, -- Conflagrate
+		 18540, -- Summon Doomguard
+		 29893, -- Create Soulwell
+		 89792, -- Flee (Imp)
+		104316, -- Call Dreadstalkers
+		119909, -- Whiplash (Command Demon with Succubus) (knockback)
+		152108, -- Cataclysm
+		196586, -- Dimensional Rift (Destruction artifact)
+		205180, -- Summon Darkglare
+		211714, -- Thal'kiel's Consumption (Demonology artifact)
 		DISPEL = {
 			[ 89808] = "HELPFUL MAGIC", -- Singe Magic (Imp)
 			[111859] = "PERSONAL MAGIC", -- Grimoire: Imp
@@ -53,13 +53,13 @@ lib:__RegisterSpells("WARLOCK", 70100, 2, {
 				[113942] = "INVERT_AURA UNIQUE_AURA", -- Demonic Gateway
 			},
 			HARMFUL = {
-				 17735, -- Suffering (Voidwalker)
-				 48181, -- Haunt
-				 80240, -- Havoc
-				170995, -- Criple (Doomguard with Grimoire of Supremacy) (slow)
-				171014, -- Seeth (Infernal with Grimoire of Supremacy)
-				205179, -- Phantom Singularity
-				205181, -- Shadowflame
+				  17735, -- Suffering (Voidwalker)
+				  48181, -- Haunt
+				  80240, -- Havoc
+				 171014, -- Seeth (Infernal with Grimoire of Supremacy)
+				 205179, -- Phantom Singularity
+				 205181, -- Shadowflame
+				[170995] = "SNARE", -- Criple (Doomguard with Grimoire of Supremacy) (slow)
 				CROWD_CTRL = {
 					[6789] = "INCAPACITATE", -- Mortal Coil (incapacitate)
 					DISORIENT = {

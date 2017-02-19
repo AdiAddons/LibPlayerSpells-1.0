@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", 70100, 1, {
+lib:__RegisterSpells("PRIEST", 70100, 2, {
 	[528] = "HARMFUL DISPEL MAGIC", -- Dispel Magic
 	COOLDOWN = {
 		   2050, -- Holy Word: Serenity
@@ -63,12 +63,12 @@ lib:__RegisterSpells("PRIEST", 70100, 1, {
 				},
 			},
 			HARMFUL = {
-				 14914, -- Holy Fire
-				 15487, -- Silence -- NOTE: non-players only INTERRUPT, special case
-				204263, -- Shininig Force (slow)
-				205065, -- Void Torrent (Shadow artifact)
-				205369, -- Mind Bomb
-				214621, -- Schism
+				  14914, -- Holy Fire
+				  15487, -- Silence -- NOTE: non-players only INTERRUPT, special case
+				 205065, -- Void Torrent (Shadow artifact)
+				 205369, -- Mind Bomb
+				 214621, -- Schism
+				[204263] = "SNARE", -- Shininig Force (slow)
 				CROWD_CTRL = {
 					[  8122] = "DISORIENT", -- Psychic Scream (disorient)
 					[200196] = "INCAPACITATE", -- Holy Word: Chastise (incapacitate)
@@ -111,19 +111,19 @@ lib:__RegisterSpells("PRIEST", 70100, 1, {
 			 186367, -- Prayer's Reprise
 			 194384, -- Atonement
 			 208772, -- Smite
+			[111759] = "UNIQUE_AURA", -- Levitate
 			INVERT_AURA = {
 				187464, -- Shadow Mend
 				219521, -- Shadow Covenant
 			},
-			[111759] = "UNIQUE_AURA", -- Levitate
 		},
 		HARMFUL = {
 			    589, -- Shadow Word: Pain
 			  15407, -- Mind Flay
 			  34914, -- Void Touch
 			 204213, -- Purge the Wicked
-			 210979, -- Focus in the Light (Holy artifact) (slow)
 			[  9484] = "CROWD_CTRL INCAPACITATE", -- Shackle Undead (incapacitate)
+			[210979] = "SNARE", -- Focus in the Light (Holy artifact) (slow)
 		},
 		PERSONAL = {
 			  2096, -- Mind Vision
@@ -140,7 +140,7 @@ lib:__RegisterSpells("PRIEST", 70100, 1, {
 			223166, -- Overloaded with Light (Discipline artifact hidden ability)
 		},
 		PET = {
-			[   605] = "CROWD_CTRL DISORIENT INVERT_AURA", -- Mind Control (disorient)
+			[605] = "CROWD_CTRL DISORIENT INVERT_AURA", -- Mind Control (disorient)
 		},
 	},
 }, { -- map aura to provider(s)

@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70100, 2, {
+lib:__RegisterSpells("HUNTER", 70100, 3, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -54,19 +54,12 @@ lib:__RegisterSpells("HUNTER", 70100, 2, {
 			},
 			HARMFUL = {
 				  2649, -- Growl (pet) (taunt) NOTE: no DR
-				  5116, -- Concussive Shot
 				 13812, -- Explosive Trap
-				 35346, -- Warp Time (Warp Stalker) (slow)
-				 50433, -- Ankle Crack (Crocolisk) (slow)
 				 53148, -- Charge (stun) (pet) NOTE: no DR
-				 54644, -- Frost Breath (Chimaera) (slow)
 				 95809, -- Insanity (Core Hound)
 				115804, -- Mortal Wounds (pet)
 				117405, -- Binding Shot
 				131894, -- A Murder of Crows (BM/MM)
-				135299, -- Tar Trap
-				160065, -- Tendon Rip (Silithid) (exotic) (slow)
-				160067, -- Web Spray (Spider)
 				160455, -- Fatigued (Nether Ray)
 				162487, -- Steel Trap (bleed)
 				190927, -- Harpoon
@@ -74,16 +67,12 @@ lib:__RegisterSpells("HUNTER", 70100, 2, {
 				191397, -- Bestial Cunning
 				191413, -- Bestial Ferocity
 				191241, -- Sticky Bomb
-				194279, -- Caltrops
 				194599, -- Black Arrow
 				194858, -- Dragonsfire Grenade
-				195645, -- Wing Clip
-				201142, -- Frozen Wake
 				202914, -- Spider Sting (PvP)
 				202933, -- Spider Sting (Silenced debuff) (PvP)
 				204081, -- On the Trail
 				206505, -- A Murder of Crows (SV)
-				236699, -- Super Sticky Tar (slow)
 				237338, -- Explosive Trap (melee miss effect)
 				CROWD_CTRL = {
 					DISORIENT = {
@@ -105,47 +94,63 @@ lib:__RegisterSpells("HUNTER", 70100, 2, {
 						117526, -- Binding Shot (stun)
 					},
 				},
+				SNARE = {
+					  5116, -- Concussive Shot (slow)
+					 35346, -- Warp Time (Warp Stalker) (slow)
+					 50433, -- Ankle Crack (Crocolisk) (slow)
+					 54644, -- Frost Breath (Chimaera) (slow)
+					135299, -- Tar Trap (slow)
+					160065, -- Tendon Rip (Silithid) (exotic) (slow)
+					160067, -- Web Spray (Spider) (slow)
+					194279, -- Caltrops (slow)
+					195645, -- Wing Clip (slow)
+					201142, -- Frozen Wake (slow)
+					236699, -- Super Sticky Tar (slow)
+				},
 			},
 			PERSONAL = {
-				[  5384] = "SURVIVAL", -- Feign Death
-				  35079, -- Misdirection
-				  61648, -- Aspect of the Chameleon
-				 118922, -- Posthaste
-				 120694, -- Dire Beast
-				 160007, -- Updraft (Rylak)
-				 186257, -- Aspect of the Cheetah (90%)
-				 186258, -- Aspect of the Cheetah (30%)
-				 190515, -- Survival of the Fittest (MM artifact)
-				 190931, -- Mongoose Fury
-				 193530, -- Aspect of the Wild
-				 194407, -- Spitting Cobra
-				 197161, -- Mimiron's Shell (BM artifact)
-				 198783, -- Camouflage (Marksmanship)
-				 199483, -- Camouflage (Survival)
-				 202748, -- Survival Tactics (PvP)
-				 203155, -- Sniper Shot (PvP)
-				 203924, -- Healing Shell (MM artifact)
-				[ 19574] = "BURST", -- Bestial Wrath
-				[186265] = "SURVIVAL", -- Aspect of the Turtle
-				[186289] = "BURST", -- Aspect of the Eagle
-				[193526] = "BURST", -- Trueshot
-
+				 35079, -- Misdirection
+				 61648, -- Aspect of the Chameleon
+				118922, -- Posthaste
+				120694, -- Dire Beast
+				160007, -- Updraft (Rylak)
+				186257, -- Aspect of the Cheetah (90%)
+				186258, -- Aspect of the Cheetah (30%)
+				190515, -- Survival of the Fittest (MM artifact)
+				190931, -- Mongoose Fury
+				193530, -- Aspect of the Wild
+				194407, -- Spitting Cobra
+				197161, -- Mimiron's Shell (BM artifact)
+				198783, -- Camouflage (Marksmanship)
+				199483, -- Camouflage (Survival)
+				202748, -- Survival Tactics (PvP)
+				203155, -- Sniper Shot (PvP)
+				203924, -- Healing Shell (MM artifact)
+				BURST = {
+					 19574, -- Bestial Wrath
+					186289, -- Aspect of the Eagle
+					193526, -- Trueshot
+				},
+				SURVIVAL = {
+					  5384, -- Feign Death
+					186265, -- Aspect of the Turtle
+				},
 			},
 			PET = {
-				    136, -- Mend Pet
-				  19577, -- Intimidation
-				  24450, -- Prowl (Cat)
-				  54680, -- Monstrous Bite (Devilsaur) (exotic)
-				  61684, -- Dash (Ferocity/Cunning)
-				  61685, -- Charge (Tenacity)
-				  90328, -- Spirit Walk (Spirit Beast) (exotic)
-				  93433, -- Burrow Attack (Worm) (exotic)
-				 137798, -- Reflective Armor Plating (Direhorn)
-				 159954, -- Feast (Devilsaur) (exotic)
-				 191414, -- Bestial Tenacity
-				 207094, -- Titan's Thunder (BM artifact)
-				 211138, -- Hunter's Advantage (BM artifact)
-				 217200, -- Dire Frenzy
+				   136, -- Mend Pet
+				 19577, -- Intimidation
+				 24450, -- Prowl (Cat)
+				 54680, -- Monstrous Bite (Devilsaur) (exotic)
+				 61684, -- Dash (Ferocity/Cunning)
+				 61685, -- Charge (Tenacity)
+				 90328, -- Spirit Walk (Spirit Beast) (exotic)
+				 93433, -- Burrow Attack (Worm) (exotic)
+				137798, -- Reflective Armor Plating (Direhorn)
+				159954, -- Feast (Devilsaur) (exotic)
+				191414, -- Bestial Tenacity
+				207094, -- Titan's Thunder (BM artifact)
+				211138, -- Hunter's Advantage (BM artifact)
+				217200, -- Dire Frenzy
 				SURVIVAL = {
 					 26064, -- Shell Shield (Turtle)
 					 53478, -- Last Stand (Tenacity)
@@ -174,8 +179,8 @@ lib:__RegisterSpells("HUNTER", 70100, 2, {
 			 199803, -- True Aim
 			 202797, -- Viper Sting (PvP)
 			 202900, -- Scorpid Sting (PvP)
-			 206755, -- Ranger's Net (slow)
 			[200108] = "CROWD_CTRL ROOT", -- Ranger's Net (root)
+			[206755] = "SNARE", -- Ranger's Net (slow)
 		},
 		PERSONAL = {
 			  6197, -- Eagle Eye
