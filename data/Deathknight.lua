@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", 70100, 3, {
+lib:__RegisterSpells("DEATHKNIGHT", 70200, 1, {
 	COOLDOWN = {
 		  47568, -- Empower Rune Weapon
 		  49206, -- Summon Gargoyle
@@ -34,6 +34,9 @@ lib:__RegisterSpells("DEATHKNIGHT", 70100, 3, {
 		[ 47528] = "INTERRUPT", -- Mind Freeze
 		[108199] = "KNOCKBACK", -- Gorefiend's Grasp (knockback)
 		AURA = {
+			HELPFUL = {
+				238698, -- Vampiric Aura (Blood artifact)
+			},
 			HARMFUL = {
 				  51399, -- Death Grip (taunt)
 				 130736, -- Soul Reaper
@@ -137,6 +140,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70100, 3, {
 			195181, -- Bone Shield
 			207203, -- Frost Shield
 			213003, -- Soulgorge
+			240558, -- Souldrinker (Blood artifact)
 		},
 		PET = {
 			[111673] = "INVERT_AURA", -- Control Undead
@@ -194,6 +198,8 @@ lib:__RegisterSpells("DEATHKNIGHT", 70100, 3, {
 	[215711] = 130736, -- Soul Reaper
 	[216974] = 207346, -- Necrosis
 	[218100] = 152280, -- Defile
+	[238698] = 238078, -- Vampiric Aura (Blood artifact)
+	[240558] = 238114,-- Souldrinker (Blood artifact)
 }, {
 	-- map aura to modified spell(s)
 	[ 51124] = { -- Killing Machine
@@ -231,4 +237,6 @@ lib:__RegisterSpells("DEATHKNIGHT", 70100, 3, {
 		 55090, -- Scourge Strike
 		207311, -- Clawing Shadows
 	},
+	[238698] = 205223, -- Vampiric Aura -> Consumption (Blood artifact)
+	[240558] = 49998,-- Souldrinker (Blood artifact) -> Death Strike
 })
