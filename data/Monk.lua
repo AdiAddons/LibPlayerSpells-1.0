@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70100, 3, {
+lib:__RegisterSpells("MONK", 70200, 1, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
@@ -35,7 +35,6 @@ lib:__RegisterSpells("MONK", 70100, 3, {
 		 123986, -- Chi Burst
 		 124081, -- Zen Pulse
 		 152175, -- Whirling Dragon Punch
-		 197945, -- Mistwalk
 		 198664, -- Invoke Chi-Ji, the Red Crane
 		[115176] = "SURVIVAL", -- Zen Meditation
 		[116705] = "INTERRUPT", -- Spear Hand Strike
@@ -93,13 +92,15 @@ lib:__RegisterSpells("MONK", 70100, 3, {
 				 213177, -- Swift as a Coursing River (BM artifact)
 				 214373, -- Brew-Stache (BM artifact)
 				 228563, -- Blackout Combo
+				 242387, -- Thunderfist (WW artifact)
 				[152173] = "BURST", -- Serenity
 				SURVIVAL = {
-					120954, -- Fortifying Brew
+					120954, -- Fortifying Brew (Brewmaster)
 					122278, -- Dampen Harm
 					122783, -- Diffuse Magic
 					213341, -- Fortification (BM artifact)
 					215479, -- Ironskin Brew
+					243435, -- Fortifying Brew (Mistweaver)
 				},
 			},
 		},
@@ -109,6 +110,7 @@ lib:__RegisterSpells("MONK", 70100, 3, {
 			124682, -- Enveloping Mist
 			191840, -- Essence Font
 			198533, -- Soothing Mist
+			240672, -- Master of Combinations (WW artifact)
 		},
 		HARMFUL = {
 			 117952, -- Crackling Jade Lightning
@@ -139,7 +141,7 @@ lib:__RegisterSpells("MONK", 70100, 3, {
 	[119085] = 115008, -- Chi Torpedo
 	[119611] = 115151, -- Renewing Mist
 	[120086] = 205003, -- Fists of Fury (stun) <- Heavy-Handed Strikes (pvp)
-	[120954] = 115203, -- Fortifying Brew
+	[120954] = 115203, -- Fortifying Brew (Brewmaster)
 	[123586] = 101545, -- Flying Serpent Kick (slow)
 	[123725] = 115181, -- Breath of Fire
 	[124280] = 122470, -- Touch of Karma (dmg dot)
@@ -173,6 +175,8 @@ lib:__RegisterSpells("MONK", 70100, 3, {
 		116847, -- Rushing Jade Wind (provider)
 	},
 	[228563] = 196736, -- Blackout Combo
+	[240672] = 238095, -- Master of Combinations (WW artifact)
+	[242387] = 238131, -- Thunderfist (WW artifact)
 }, {
 	-- map aura to modified spell(s)
 	[116768] = 100784, -- Blackout Kick! -> Blackout Kick
@@ -229,4 +233,5 @@ lib:__RegisterSpells("MONK", 70100, 3, {
 		121253, -- Keg Smash
 		205523, -- Blacout Strike
 	},
+	[242387] = 205320, -- Thunderfist (WW artifact) -> Strike of the Windlord (WW artifact)
 })
