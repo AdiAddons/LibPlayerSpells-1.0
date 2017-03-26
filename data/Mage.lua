@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", 70100, 3, {
+lib:__RegisterSpells("MAGE", 70200, 1, {
 	COOLDOWN = {
 		   1953, -- Blink
 		  31687, -- Summon Water Elemental
@@ -40,6 +40,9 @@ lib:__RegisterSpells("MAGE", 70100, 3, {
 		[ 30449] = "DISPEL HARMFUL MAGIC", -- Spellsteal
 		[235219] = "SURVIVAL", -- Cold Snap
 		AURA = {
+			HELPFUL = {
+				240671, -- Warmth of the Phoenix (Fire artifact)
+			},
 			HARMFUL = {
 				135029, -- Water Jet (Water Elemental)
 				155158, -- Meteor
@@ -73,6 +76,7 @@ lib:__RegisterSpells("MAGE", 70100, 3, {
 				 212799, -- Displacement
 				 227482, -- Scorched Earth (fire artifact)
 				 236298, -- Chrono Shift
+				 240555, -- Freezing Rain (Frost artifact)
 				[ 12051] = "POWER_REGEN", -- Evocation
 				[ 41425] = "INVERT_AURA", -- Hypothermia
 				SURVIVAL = {
@@ -179,6 +183,8 @@ lib:__RegisterSpells("MAGE", 70100, 3, {
 	[236060] = 236058, -- Frenetic Speed
 	[236298] = 235711, -- Chrono Shift
 	[236299] = 235711, -- Chrono Shift (slow)
+	[240555] = 238092, -- Freezing Rain (Frost artifact)
+	[240671] = 238091, -- Warmth of the Phoenix (Fire artifact)
 }, {
 	-- map aura to modified spell(s)
 	[ 44544] = 30455, -- Fingers of Frost -> Ice Lance
@@ -205,4 +211,6 @@ lib:__RegisterSpells("MAGE", 70100, 3, {
 	[236060] = 2948, -- Frenetic Speed -> Scorch
 	[236298] = 44425, -- Chrono Shift -> Arcane Barrage
 	[236299] = 44425, -- Chrono Shift (slow) -> Arcane Barrage
+	[240555] = 190356, -- Freezing Rain (Frost artifact) -> Blizzard
+	[240671] = 194466, -- Warmth of the Phoenix (Fire artifact) -> Phoenix's Flames (Fire artifact)
 })
