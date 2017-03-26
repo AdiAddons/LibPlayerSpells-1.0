@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", 70100, 4, {
+lib:__RegisterSpells("PALADIN", 70200, 1, {
 	COOLDOWN = {
 		  20271, -- Judgement
 		  20473, -- Holy Shock
@@ -50,6 +50,7 @@ lib:__RegisterSpells("PALADIN", 70100, 4, {
 				 204018, -- Blessing of Spellwarding
 				 209540, -- Light of the Titans (Protection artifact)
 				 223306, -- Bestow Faith
+				 243174, -- Sacred Dawn (Holy artifact)
 				[ 25771] = "INVERT_AURA", -- Forbearance
 				SURVIVAL = {
 					  1022, -- Blessing of Protection
@@ -94,6 +95,7 @@ lib:__RegisterSpells("PALADIN", 70100, 4, {
 				216411, -- Divine Purpose (Holy - Holy Shock)
 				216413, -- Divine Purpose (Holy - Light of Dawn)
 				217020, -- Zeal -- NOTE: the buff charges overlay the spell charges
+				242869, -- Blessed Stalwart (Protection artifact)
 				BURST = {
 					 31842, -- Avenging Wrath (Holy)
 					 31884, -- Avenging Wrath
@@ -109,6 +111,7 @@ lib:__RegisterSpells("PALADIN", 70100, 4, {
 					184662, -- Shield of Vengeance
 					204150, -- Aegis of Light
 					205191, -- Eye for an Eye
+					240059, -- Defender of Truth (Protection artifact)
 				},
 			},
 		},
@@ -125,6 +128,8 @@ lib:__RegisterSpells("PALADIN", 70100, 4, {
 			200657, -- Power of the Silver Hand (Holy artifact)
 			223316, -- Fervent Martyr
 			223819, -- Divine Purpose (Retribution)
+			238996, -- Righteous Verdict (Retribution artifact)
+			242981, -- Blessing of the Ashbringer (Retribution artifact)
 		},
 	},
 }, {
@@ -161,6 +166,11 @@ lib:__RegisterSpells("PALADIN", 70100, 4, {
 	[216413] = 197646, -- Divine Purpose (Holy - Light of Dawn)
 	[223316] = 196923, -- Fervent Martyr
 	[223819] = 223817, -- Divine Purpose (Retribution)
+	[238996] = 238062, -- Righteous Verdict (Retribution artifact)
+	[240059] = 238097, -- Defender of Truth (Protection artifact)
+	[242869] = 238133, -- Blessed Stalwart (Protection artifact)
+	[242981] = 238098, -- Blessing of the Ashbringer (Retribution artifact)
+	[243174] = 238132, -- Sacred Dawn (Holy artifact)
 }, {
 	-- map aura to modified spell(s)
 	[ 54149] = { -- Infusion of Light
@@ -193,4 +203,15 @@ lib:__RegisterSpells("PALADIN", 70100, 4, {
 		213757, -- Execution Sentence
 		215661, -- Judicar's Vengeance
 	},
+	[238996] = { -- Righteous Verdict (Retribution artifact)
+		184575, -- Blade of Justice
+		198034, -- Divine Hammer
+	},
+	[240059] = 31850, -- Defender of Truth (Protection artifact) -> Ardent Defender
+	[242869] = 53600, -- Blessed Stalwart (Protection artifact) -> Shield of the Righteous
+	[242981] = { -- Blessing of the Ashbringer (Retribution artifact)
+		203538, -- Greater Blessing of Kings
+		203539, -- Greater Blessing of Wisdom
+	},
+	[243174] = 85222, -- Sacred Dawn (Holy artifact) -> Light of Dawn
 })
