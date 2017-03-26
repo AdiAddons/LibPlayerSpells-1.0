@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70100, 3, {
+lib:__RegisterSpells("HUNTER", 70200, 1, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -134,6 +134,7 @@ lib:__RegisterSpells("HUNTER", 70100, 3, {
 				SURVIVAL = {
 					  5384, -- Feign Death
 					186265, -- Aspect of the Turtle
+					240777, -- Feet of Wind (MM artifact)
 				},
 			},
 			PET = {
@@ -266,6 +267,7 @@ lib:__RegisterSpells("HUNTER", 70100, 3, {
 	[227272] = 199522, -- Trick Shot
 	[236699] = 234955, -- Super Sticky Tar (slow) <- Waylay
 	[237338] = 234955, -- Explosive Trap <- Waylay
+	[240777] = 238088, -- Feet of Wind (MM artifact)
 }, {
 	-- map aura to modified spell(s)
 	[ 63468] = { -- Careful Aim
@@ -357,4 +359,5 @@ lib:__RegisterSpells("HUNTER", 70100, 3, {
 	[227272] = 19434, -- Trick Shot -> Aimed Shot
 	[236699] = 187698, -- Super Sticky Tar (slow) -> Tar Trap
 	[237338] = 191433, -- Explosive Trap -> Explosive Trap
+	[240777] = 186257, -- Feet of Wind (MM artifact) -> Aspect of the Cheetah
 })
