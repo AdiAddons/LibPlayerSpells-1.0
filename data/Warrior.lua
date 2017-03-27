@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", 70100, 3, {
+lib:__RegisterSpells("WARRIOR", 70200, 1, {
 	COOLDOWN = {
 		   6544, -- Heroic Leap
 		 202168, -- Impending Victory
@@ -64,6 +64,7 @@ lib:__RegisterSpells("WARRIOR", 70100, 3, {
 				 115804, -- Mortal Wounds
 				 205546, -- Odyn's Fury (Fury artifact)
 				 208086, -- Colossus Smash
+				 243016, -- Neltharions Thunder (Protection artifact)
 				[  6343] = "SNARE", -- Thunder Clap (slow)
 				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
 				CROWD_CTRL = {
@@ -84,10 +85,10 @@ lib:__RegisterSpells("WARRIOR", 70100, 3, {
 		},
 		HARMFUL = {
 			   772, -- Rend
-
 			105771, -- Charge (root) -- TODO: no DR?
 			115767, -- Deep Wounds
 			215537, -- Trauma
+			242188, -- Executioner's Precision (Arms artifact)
 			SNARE = {
 				  1715, -- Hamstring (slow)
 				 12323, -- Piercing Howl (slow)
@@ -166,6 +167,8 @@ lib:__RegisterSpells("WARRIOR", 70100, 3, {
 		   100, -- Charge
 		198304, -- Intercept
 	},
+	[242188] = 238147, -- Executioner's Precision (Arms artifact)
+	[243016] = 238149, -- Neltharions Thunder (Protection artifact)
 }, {
 	-- map aura to modified spell(s)
 	[  7922] = 198304, -- Warbringer (stun) -> Intercept
@@ -209,4 +212,9 @@ lib:__RegisterSpells("WARRIOR", 70100, 3, {
 		1680, -- Whirlwind
 	},
 	[215570] = 190411, -- Wrecking Ball -> Whirlwind
+	[242188] = { -- Executioner's Precision (Arms artifact)
+		 12294, -- Mortal Strike (modified)
+		163201, -- Execute (Arms) (provider)
+	},
+	[243016] = 6343, -- Neltharions Thunder (Protection artifact) -> Thunder Clap
 })
