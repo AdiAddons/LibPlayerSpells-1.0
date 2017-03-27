@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", 70100, 3, {
+lib:__RegisterSpells("WARLOCK", 70200, 1, {
 	COOLDOWN = {
 		   698, -- Ritual of Summoning
 		  1122, -- Summon Infernal
@@ -118,6 +118,7 @@ lib:__RegisterSpells("WARLOCK", 70100, 3, {
 			233498, -- Unstable Affliction
 			233499, -- Unstable Affliction
 			234153, -- Drain Life
+			242922, -- Jaws of Shadow (Demonology artifact) -- TODO: debuff on enemy?
 			CROWD_CTRL = {
 				[   710] = "INCAPACITATE", -- Banish (incapacitate)
 				[118699] = "DISORIENT", -- Fear (disorient)
@@ -193,6 +194,7 @@ lib:__RegisterSpells("WARLOCK", 70100, 3, {
 	[233498] = 30108, -- Unstable Affliction
 	[233499] = 30108, -- Unstable Affliction
 	[235156] = 235157, -- Empowered Life Tap
+	[242922] = 238109, -- Jaws of Shadow (Demonology artifact) -- TODO: debuff on enemy?
 }, {
 	-- map aura to modified spell(s)
 	[ 48018] = 48020, -- Demonic Circle -> Demonic Circle (Teleport)
