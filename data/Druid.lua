@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70100, 3, {
+lib:__RegisterSpells("DRUID", 70200, 1, {
 	COOLDOWN = {
 		    740, -- Tranquility
 		  18562, -- Swiftmend
@@ -79,6 +79,7 @@ lib:__RegisterSpells("DRUID", 70100, 3, {
 				 29166, -- Innervate
 				102342, -- Ironbark
 				102351, -- Cenarion Ward
+				240670, -- Fury of Ashamane (Feral artifact)
 			},
 			PERSONAL = {
 				  1850, -- Dash
@@ -123,6 +124,8 @@ lib:__RegisterSpells("DRUID", 70100, 3, {
 			 164815, -- Sunfire
 			 197637, -- Stellar Empowerment
 			 202347, -- Stellar Flare
+			 240606, -- Circadian Invocation (Arcane) (Balance artifact)
+			 240607, -- Circadian Invocation (Nature) (Balance artifact)
 			[ 58180] = "SNARE", -- Infected Wounds (slow)
 			CROWD_CTRL = {
 				[339] = "ROOT", -- Entagling Roots (root)
@@ -150,6 +153,7 @@ lib:__RegisterSpells("DRUID", 70100, 3, {
 			189877, -- Power of the Archdruid (Restoration artifact)
 			213680, -- Guardian of Elune
 			213708, -- Galactic Guardian
+			239952, -- Wax and Wane (Balance artifact)
 			SURVIVAL = {
 				192081, -- Ironfur
 				192083, -- Mark of Ursol
@@ -215,6 +219,10 @@ lib:__RegisterSpells("DRUID", 70100, 3, {
 	[213708] = 203964, -- Galactic Guardian
 	[214995] = 200515, -- Bloody Paws (slow) (Guardian artifact)
 	[214998] = 214996, -- Roar of the Crowd (Guardian artifact)
+	[239952] = 238083, -- Wax and Wane (Balance artifact)
+	[240606] = 238119, -- Circadian Invocation (Arcane) (Balance artifact)
+	[240607] = 238119, -- Circadian Invocation (Nature) (Balance artifact)
+	[240670] = 238084, -- Fury of Ashamane (Feral artifact)
 }, {
 	-- map aura to modified spell(s)
 	[ 16870] = 8936, -- Clearcasting (Restoration) -> Regrowth
@@ -276,4 +284,8 @@ lib:__RegisterSpells("DRUID", 70100, 3, {
 		77761, -- Stampeding Roar (bear)
 		77764, -- Stampeding Roar (cat)
 	},
+	[239952] = 8921, -- Wax and Wane (Balance artifact) -> Moonfire
+	[240606] = 8921, -- Circadian Invocation (Arcane) (Balance artifact) -> Moonfire
+	[240607] = 93402, -- Circadian Invocation (Nature) (Balance artifact) -> Sunfire
+	[240670] = 5217, -- Fury of Ashamane (Feral artifact) -> Tiger's Fury
 })
