@@ -50,15 +50,21 @@ lib:__RegisterSpells("RACIAL", 70200, 1, {
 				121093, -- Gift of the Naaru (Draenei Monk)
 			},
 			HARMFUL = {
-				 20549, -- War Stomp (Tauren)
-				 25046, -- Arcane Torrent (Blood elf energy)
-				 28730, -- Arcane Torrent (Blood elf mana)
-				 50613, -- Arcane Torrent (Blood elf runic power)
-				 69179, -- Arcane Torrent (Blood elf rage)
-				 80483, -- Arcane Torrent (Blood elf focus)
-				107079, -- Quaking Palm (Monk)
-				129597, -- Arcane Torrent (Blood elf chi)
-				155145, -- Arcane Torrent (Blood elf holy power)
+				CROWD_CTRL = {
+					[ 20549] = "STUN", -- War Stomp (Tauren)
+					[107079] = "INCAPACITATE", -- Quaking Palm (Monk)
+				},
+				INTERRUPT = {
+					 25046, -- Arcane Torrent (Blood elf Rogue)
+					 28730, -- Arcane Torrent (Blood elf Mage/Warlock)
+					 50613, -- Arcane Torrent (Blood elf Death Knight)
+					 69179, -- Arcane Torrent (Blood elf Warrior)
+					 80483, -- Arcane Torrent (Blood elf Hunter)
+					129597, -- Arcane Torrent (Blood elf Monk)
+					155145, -- Arcane Torrent (Blood elf Paladin)
+					202719, -- Arcane Torrent (Blood elf Demon Hunter)
+					232633, -- Arcane Torrent (Blood elf Priest)
+				},
 			},
 		},
 	},
