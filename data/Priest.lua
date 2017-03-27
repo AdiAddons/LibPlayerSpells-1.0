@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", 70100, 2, {
+lib:__RegisterSpells("PRIEST", 70200, 1, {
 	[528] = "HARMFUL DISPEL MAGIC", -- Dispel Magic
 	COOLDOWN = {
 		   2050, -- Holy Word: Serenity
@@ -45,17 +45,19 @@ lib:__RegisterSpells("PRIEST", 70100, 2, {
 		},
 		AURA = {
 			HELPFUL = {
-				    17, -- Power Word: Shield
-				 33076, -- Prayer of Mending
-				 62618, -- Power Word: Barrier
-				 64843, -- Divine Hymn (hot)
-				 64844, -- Divine Hymn (heal increase)
-				 65081, -- Body and Soul
-				 73325, -- Leap of Faith
-				121557, -- Angelic Feather
-				196356, -- Trust in the Light (Holy artifact)
-				208065, -- Light of T'uure (Holy artifact)
-				214121, -- Body and Mind
+				     17, -- Power Word: Shield
+				  33076, -- Prayer of Mending
+				  62618, -- Power Word: Barrier
+				  64843, -- Divine Hymn (hot)
+				  64844, -- Divine Hymn (heal increase)
+				  65081, -- Body and Soul
+				  73325, -- Leap of Faith
+				 121557, -- Angelic Feather
+				 196356, -- Trust in the Light (Holy artifact)
+				 208065, -- Light of T'uure (Holy artifact)
+				 214121, -- Body and Mind
+				 240673, -- Mind Quickening (Shadow artifact)
+				[243021] = "INVERT_AURA", -- Aegis of Wrath (Discipline artifact)
 				SURVIVAL = {
 					33206, -- Pain Suppression
 					47788, -- Guardian Spirit
@@ -180,6 +182,8 @@ lib:__RegisterSpells("PRIEST", 70100, 2, {
 	[219521] = 204065, -- Shadow Covenant
 	[223166] = 207946, -- Overloaded with Light (Discipline artifact hidden ability) <- Light's Wrath (Discipline artifact)
 	[226943] = 205369, -- Mind Bomb (stun)
+	[240673] = 238101, -- Mind Quickening (Shadow artifact)
+	[243021] = 238135, -- Aegis of Wrath (Discipline artifact)
 }, { -- map aura(s) to modified spell(s)
 	[ 65081] = { -- Body and Soul
 		   17, -- Power Word: Shield
@@ -221,4 +225,6 @@ lib:__RegisterSpells("PRIEST", 70100, 2, {
 		88625, -- Holy Word: Chastise
 	},
 	[216135] = 586, -- Vestments of Discipline (Discipline artifact) -> Fade
+	[240673] = 205065, -- Mind Quickening (Shadow artifact) -> Void Torrent (Shadow artifact)
+	[243021] = 17, -- Aegis of Wrath (Discipline artifact) -> Power Word: Shield
 })
