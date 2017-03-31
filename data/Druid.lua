@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70200, 1, {
+lib:__RegisterSpells("DRUID", 70200, 2, {
 	COOLDOWN = {
 		    740, -- Tranquility
 		  18562, -- Swiftmend
@@ -284,7 +284,10 @@ lib:__RegisterSpells("DRUID", 70200, 1, {
 		77761, -- Stampeding Roar (bear)
 		77764, -- Stampeding Roar (cat)
 	},
-	[239952] = 8921, -- Wax and Wane (Balance artifact) -> Moonfire
+	[239952] = { -- Wax and Wane (Balance artifact) -> Moonfire
+		 8921, -- Moonfire
+		93402, -- Sunfire
+	},
 	[240606] = 8921, -- Circadian Invocation (Arcane) (Balance artifact) -> Moonfire
 	[240607] = 93402, -- Circadian Invocation (Nature) (Balance artifact) -> Sunfire
 	[240670] = 5217, -- Fury of Ashamane (Feral artifact) -> Tiger's Fury
