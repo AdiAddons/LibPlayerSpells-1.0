@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70200, 1, {
+lib:__RegisterSpells("HUNTER", 70200, 2, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -252,7 +252,6 @@ lib:__RegisterSpells("HUNTER", 70200, 1, {
 	[201158] = 199543, -- Super Sticky Tar <- Expert Trapper
 	[201081] = 201082, -- Mok'Nathal Tactics <- Way of the Mok'Nathal
 	[202748] = 202746, -- Survival Tactics (PvP)
-	[202797] = 202793, -- Viper Sting (PvP)
 	[202900] = 202901, -- Scorpid Sting (PvP)
 	[203924] = 190503, -- Healing Shell (MM artifact)
 	[202933] = 202914, -- Spider Sting (Silenced debuff) (PvP)
@@ -334,11 +333,6 @@ lib:__RegisterSpells("HUNTER", 70200, 1, {
 	[201142] = 187650, -- Frozen Wake -> Freezing Trap
 	[201158] = 187698, -- Super Sticky Tar -> Tar Trap
 	[202748] = 5384, -- Survival Tactics -> Feign Death
-	[202797] = { -- Viper Sting (PvP)
-		 19434, -- Aimed Shot
-		186270, -- Raptor Strike
-		193455, -- Cobra Shot
-	},
 	[202900] = { -- Scorpid Sting (PvP)
 		 19434, -- Aimed Shot
 		186270, -- Raptor Strike
