@@ -303,7 +303,7 @@ function lib:GetFlagTester(anyOf, include, exclude)
 		local includeMask, excludeMask = filters[include], filters[exclude]
 		local mask = bor(includeMask, excludeMask)
 		local expected = bxor(mask, excludeMask)
-		if anyOf then
+		if anyOfMask ~= 0 then
 			return function(flags)
 				return flags and band(flags, anyOfMask) ~= 0 and band(flags, mask) == expected
 			end
@@ -312,7 +312,7 @@ function lib:GetFlagTester(anyOf, include, exclude)
 				return flags and band(flags, mask) == expected
 			end
 		end
-	elseif anyOf then
+	elseif anyOfMask ~= 0 then
 		return function(flags)
 			return flags and band(flags, anyOfMask) ~= 0
 		end
