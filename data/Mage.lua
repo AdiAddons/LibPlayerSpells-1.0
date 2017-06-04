@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", 70200, 1, {
+lib:__RegisterSpells("MAGE", 70200, 2, {
 	COOLDOWN = {
 		   1953, -- Blink
 		  31687, -- Summon Water Elemental
@@ -106,7 +106,7 @@ lib:__RegisterSpells("MAGE", 70200, 1, {
 			114923, -- Nether Tempest
 			210824, -- Touch of the Magi (Arcane artifact)
 			226757, -- Conflagration
-			228358, -- Flurry (frozen)
+			228358, -- Winter's Chill
 			CROWD_CTRL = {
 				[228600] = "ROOT", -- Glacial Spike (root) -- TODO: check category
 				INCAPACITATE = {
@@ -178,7 +178,7 @@ lib:__RegisterSpells("MAGE", 70200, 1, {
 	[226757] = 205023, -- Conflagration
 	[227482] = 227481, -- Scorched Earth (Fire artifact)
 	[228354] = 44614, -- Flurry (slow)
-	[228358] = 190447, -- Flurry (frozen) <- Brain Freeze
+	[228358] = 190447, -- Winter's Chill <- Brain Freeze
 	[228600] = 199786, -- Glacial Spike (root)
 	[236060] = 236058, -- Frenetic Speed
 	[236298] = 235711, -- Chrono Shift
@@ -207,7 +207,7 @@ lib:__RegisterSpells("MAGE", 70200, 1, {
 	[210824] = 30451, -- Touch of the Magi (Arcane artifact)
 	[226757] = 133, -- Conflagration -> Fireball
 	[227482] = 2948, -- Scorched Earth (Fire artifact) -> Scorch
-	[228358] = 44614, -- Flurry (frozen) -> Flurry -- TODO: Ice Lance better?
+	[228358] = 44614, -- Winter's Chill -> Flurry
 	[236060] = 2948, -- Frenetic Speed -> Scorch
 	[236298] = 44425, -- Chrono Shift -> Arcane Barrage
 	[236299] = 44425, -- Chrono Shift (slow) -> Arcane Barrage
