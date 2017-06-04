@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70200, 2, {
+lib:__RegisterSpells("DRUID", 70200, 3, {
 	COOLDOWN = {
 		    740, -- Tranquility
 		  18562, -- Swiftmend
@@ -144,20 +144,17 @@ lib:__RegisterSpells("DRUID", 70200, 2, {
 			207386, -- Spring Blossoms
 		},
 		PERSONAL = {
-			 16870, -- Clearcasting (Restoration)
-			 52610, -- Savage Roar
-			 69369, -- Predatory Swiftness
-			 93622, -- Mangle!
-			135700, -- Clearcasting (Feral)
-			145152, -- Bloodtalons
-			189877, -- Power of the Archdruid (Restoration artifact)
-			213680, -- Guardian of Elune
-			213708, -- Galactic Guardian
-			239952, -- Wax and Wane (Balance artifact)
-			SURVIVAL = {
-				192081, -- Ironfur
-				192083, -- Mark of Ursol
-			},
+			  16870, -- Clearcasting (Restoration)
+			  52610, -- Savage Roar
+			  69369, -- Predatory Swiftness
+			  93622, -- Mangle!
+			 135700, -- Clearcasting (Feral)
+			 145152, -- Bloodtalons
+			 189877, -- Power of the Archdruid (Restoration artifact)
+			 213680, -- Guardian of Elune
+			 213708, -- Galactic Guardian
+			 239952, -- Wax and Wane (Balance artifact)
+			[192081] = "SURVIVAL", -- Ironfur
 		},
 	},
 }, {
@@ -266,10 +263,7 @@ lib:__RegisterSpells("DRUID", 70200, 2, {
 		8936, -- Regrowth
 	},
 	[200389] = 774, -- Cultivation -> Rejuvenation
-	[201671] = { -- Gory Fur (Guardian artifact)
-		192081, -- Ironfur
-		192083, -- Mark of Ursol
-	},
+	[201671] = 192081, -- Gory Fur (Guardian artifact) - > Ironfur
 	[202425] = 194153, -- Warrior of Elune -> Lunar Strike
 	[207386] = 145205, -- Spring Blossoms -> Efflorescence
 	[210583] = 5217, -- Ashamane's Energy (Feral artifact) -> Tiger's Fury
@@ -284,7 +278,7 @@ lib:__RegisterSpells("DRUID", 70200, 2, {
 		77761, -- Stampeding Roar (bear)
 		77764, -- Stampeding Roar (cat)
 	},
-	[239952] = { -- Wax and Wane (Balance artifact) -> Moonfire
+	[239952] = { -- Wax and Wane (Balance artifact)
 		 8921, -- Moonfire
 		93402, -- Sunfire
 	},
