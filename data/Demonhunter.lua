@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 70200, 1, {
+lib:__RegisterSpells("DEMONHUNTER", 70200, 2, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike
@@ -70,7 +70,6 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 1, {
 				188499, -- Blade Dance
 				188501, -- Spectral Sight
 				203650, -- Prepared
-				207709, -- Blade Turning
 				208579, -- Nemesis (Demons)
 				208605, -- Nemesis (Humanoids)
 				208607, -- Nemesis (Aberrations)
@@ -101,7 +100,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 1, {
 		},
 	},
 	AURA = {
-		[224509] = "HARMFUL", -- Frailty
+		[247456] = "HARMFUL", -- Frailty
 		PERSONAL = {
 			 131347, -- Glide
 			 207693, -- Feast of Souls
@@ -123,7 +122,6 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 1, {
 	[207685] = 207684, -- Sigil of Misery (disorient)
 	[207690] = 206473, -- Bloodlet
 	[207693] = 207697, -- Feast of Souls
-	[207709] = 203753, -- Blade Turning
 	[207744] = 204021, -- Fiery Brand
 	[207771] = 207739, -- Fiery Brand <- Burning Alive
 	[207811] = 207810, -- Nether Bond
@@ -145,7 +143,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 1, {
 	[212988] = 207387, -- Painbringer (Vengeance artifact)
 	[213405] = 203556, -- Master of the Glaive
 	[218561] = 218910, -- Siphoned Power <- Siphon Power (Vengeance artifact)
-	[224509] = 218679, -- Frailty <- Spirit Bomb
+	[247456] = 247454, -- Frailty <- Spirit Bomb
 	[227330] = 227327, -- Gluttony
 }, {
 	-- map aura to modified spell(s)
@@ -153,10 +151,6 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 1, {
 	[203650] = 198793, -- Prepared -> Vengeful Retreat
 	[207690] = 185123, -- Bloodlet -> Throw Glaive
 	[207693] = 228477, -- Feast of Souls -> Soul Cleave
-	[207709] = { -- Blade Turning
-		203782, -- Shear
-		235964, -- Sever
-	},
 	[207771] = 204021, -- Fiery Brand
 	[208628] = { -- Momentum
 		195072, -- Fel Rush
