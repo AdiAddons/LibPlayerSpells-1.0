@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", 70200, 1, {
+lib:__RegisterSpells("WARLOCK", 70200, 2, {
 	COOLDOWN = {
 		   698, -- Ritual of Summoning
 		  1122, -- Summon Infernal
@@ -111,7 +111,6 @@ lib:__RegisterSpells("WARLOCK", 70200, 1, {
 			157736, -- Immolate
 			196414, -- Eradication
 			198590, -- Drain Soul
-			205178, -- Soul Effigy
 			233490, -- Unstable Affliction
 			233496, -- Unstable Affliction
 			233497, -- Unstable Affliction
