@@ -252,7 +252,6 @@ lib:__RegisterSpells("HUNTER", 70200, 2, {
 	[201158] = 199543, -- Super Sticky Tar <- Expert Trapper
 	[201081] = 201082, -- Mok'Nathal Tactics <- Way of the Mok'Nathal
 	[202748] = 202746, -- Survival Tactics (PvP)
-	[202900] = 202901, -- Scorpid Sting (PvP)
 	[203924] = 190503, -- Healing Shell (MM artifact)
 	[202933] = 202914, -- Spider Sting (Silenced debuff) (PvP)
 	[204081] = 203757, -- On the Trail <- Eagle's Bite (SV artifact)
@@ -333,11 +332,6 @@ lib:__RegisterSpells("HUNTER", 70200, 2, {
 	[201142] = 187650, -- Frozen Wake -> Freezing Trap
 	[201158] = 187698, -- Super Sticky Tar -> Tar Trap
 	[202748] = 5384, -- Survival Tactics -> Feign Death
-	[202900] = { -- Scorpid Sting (PvP)
-		 19434, -- Aimed Shot
-		186270, -- Raptor Strike
-		193455, -- Cobra Shot
-	},
 	[203924] = 186265, -- Healing Shell (MM artifact) -> Aspect of the Turtle
 	[204081] = { -- On the Trail
 		  6603, -- Auto Attack
