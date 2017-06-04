@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70200, 1, {
+lib:__RegisterSpells("SHAMAN", 70200, 2, {
 	COOLDOWN = {
 		    556, -- Astral Recall
 		  17364, -- Stormstrike
@@ -91,7 +91,6 @@ lib:__RegisterSpells("SHAMAN", 70200, 1, {
 				210714, -- Icefury
 				215785, -- Hot Hand
 				215864, -- Rainfall
-				218825, -- Boulderfist
 				SURVIVAL = {
 					108271, -- Astral Shift
 					209950, -- Caress of the Tidemother (Restoration artifact)
@@ -181,7 +180,6 @@ lib:__RegisterSpells("SHAMAN", 70200, 1, {
 	[210658] = 210643, -- Ember Totem <- Totem Mastery
 	[210659] = 210643, -- Tailwind Totem <- Totem Mastery
 	[215785] = 201900, -- Hot Hand
-	[218825] = 201897, -- Boulderfist
 	[224126] = 198505, -- Frozen Bite (Enhancement artifact) (slow) <- Doom Wolves
 	[240842] = 238142, -- Lashing Flames (Enhancement artifact)
 }, {
@@ -212,10 +210,7 @@ lib:__RegisterSpells("SHAMAN", 70200, 1, {
 		 17364, -- Stormstrike
 		115356, -- Windstrike
 	},
-	[202004] = { -- Landslide
-		193786, -- Rockbiter
-		201897, -- Boulderfist
-	},
+	[202004] = 193786, -- Landslide -> Rockbiter
 	[205495] = { -- Stormkeeper (Elemental artifact)
 		188196, -- Lightning Bolt
 		188443, -- Chain Lightning
