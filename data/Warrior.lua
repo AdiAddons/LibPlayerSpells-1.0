@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARRIOR", 70200, 1, {
+lib:__RegisterSpells("WARRIOR", 70200, 2, {
 	COOLDOWN = {
 		   6544, -- Heroic Leap
 		 202168, -- Impending Victory
@@ -41,6 +41,7 @@ lib:__RegisterSpells("WARRIOR", 70200, 1, {
 				 209484, -- Tactical Advance (Arms artifact)
 				 209706, -- Shattered Defenses (Arms artifact)
 				 227847, -- Bladestorm (Arms)
+				 248622, -- In for the Kill
 				BURST = {
 					  1719, -- Battle Cry
 					107574, -- Avatar
@@ -169,6 +170,7 @@ lib:__RegisterSpells("WARRIOR", 70200, 1, {
 	},
 	[242188] = 238147, -- Executioner's Precision (Arms artifact)
 	[243016] = 238149, -- Neltharions Thunder (Protection artifact)
+	[248622] = 248621, -- In for the Kill
 }, {
 	-- map aura to modified spell(s)
 	[  7922] = 198304, -- Warbringer (stun) -> Intercept
@@ -208,8 +210,9 @@ lib:__RegisterSpells("WARRIOR", 70200, 1, {
 		163201, -- Execute (Arms)
 	},
 	[215537] = { -- Trauma
-		1464, -- Slam
-		1680, -- Whirlwind
+		  1464, -- Slam
+		  1680, -- Whirlwind
+		163201, -- Execute
 	},
 	[215570] = 190411, -- Wrecking Ball -> Whirlwind
 	[242188] = { -- Executioner's Precision (Arms artifact)
@@ -217,4 +220,5 @@ lib:__RegisterSpells("WARRIOR", 70200, 1, {
 		163201, -- Execute (Arms) (provider)
 	},
 	[243016] = 6343, -- Neltharions Thunder (Protection artifact) -> Thunder Clap
+	[248622] = 167105, -- In for the Kill -> Colossus Smash
 })
