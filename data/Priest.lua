@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PRIEST", 70200, 1, {
+lib:__RegisterSpells("PRIEST", 70200, 2, {
 	[528] = "HARMFUL DISPEL MAGIC", -- Dispel Magic
 	COOLDOWN = {
 		   2050, -- Holy Word: Serenity
@@ -32,10 +32,12 @@ lib:__RegisterSpells("PRIEST", 70200, 1, {
 		 110744, -- Divine Star
 		 120517, -- Halo
 		 129250, -- Power Word: Solace
+		 194509, -- Power Word: Radiance
 		 204883, -- Circle of Healing
 		 205351, -- Shadow Word: Void
 		 205385, -- Shadow Clash
 		 207946, -- Light's Wrath (Discipline artifact)
+		 246287, -- Evangelism
 		[123040] = "POWER_REGEN", -- Mindbender (Discipline)
 		[200174] = "POWER_REGEN", -- Mindbender (Shadow)
 		DISPEL = {
@@ -57,7 +59,6 @@ lib:__RegisterSpells("PRIEST", 70200, 1, {
 				 208065, -- Light of T'uure (Holy artifact)
 				 214121, -- Body and Mind
 				 240673, -- Mind Quickening (Shadow artifact)
-				[243021] = "INVERT_AURA", -- Aegis of Wrath (Discipline artifact)
 				SURVIVAL = {
 					33206, -- Pain Suppression
 					47788, -- Guardian Spirit
@@ -112,7 +113,6 @@ lib:__RegisterSpells("PRIEST", 70200, 1, {
 			 152118, -- Clarity of Will
 			 186367, -- Prayer's Reprise
 			 194384, -- Atonement
-			 208772, -- Smite
 			[111759] = "UNIQUE_AURA", -- Levitate
 			INVERT_AURA = {
 				187464, -- Shadow Mend
@@ -124,6 +124,7 @@ lib:__RegisterSpells("PRIEST", 70200, 1, {
 			  15407, -- Mind Flay
 			  34914, -- Void Touch
 			 204213, -- Purge the Wicked
+			 208772, -- Smite
 			[  9484] = "CROWD_CTRL INCAPACITATE", -- Shackle Undead (incapacitate)
 			[210979] = "SNARE", -- Focus in the Light (Holy artifact) (slow)
 		},
@@ -183,7 +184,6 @@ lib:__RegisterSpells("PRIEST", 70200, 1, {
 	[223166] = 207946, -- Overloaded with Light (Discipline artifact hidden ability) <- Light's Wrath (Discipline artifact)
 	[226943] = 205369, -- Mind Bomb (stun)
 	[240673] = 238101, -- Mind Quickening (Shadow artifact)
-	[243021] = 238135, -- Aegis of Wrath (Discipline artifact)
 }, { -- map aura(s) to modified spell(s)
 	[ 65081] = { -- Body and Soul
 		   17, -- Power Word: Shield
@@ -226,5 +226,4 @@ lib:__RegisterSpells("PRIEST", 70200, 1, {
 	},
 	[216135] = 586, -- Vestments of Discipline (Discipline artifact) -> Fade
 	[240673] = 205065, -- Mind Quickening (Shadow artifact) -> Void Torrent (Shadow artifact)
-	[243021] = 17, -- Aegis of Wrath (Discipline artifact) -> Power Word: Shield
 })
