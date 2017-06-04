@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70200, 1, {
+lib:__RegisterSpells("MONK", 70200, 2, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
@@ -49,6 +49,7 @@ lib:__RegisterSpells("MONK", 70200, 1, {
 				116841, -- Tiger's Lust
 				116849, -- Life Cocoon
 				119611, -- Renewing Mist
+				191840, -- Essence Font
 				199668, -- Blessings of Yu'lon (MW artifact)
 			},
 			HARMFUL = {
@@ -84,6 +85,7 @@ lib:__RegisterSpells("MONK", 70200, 1, {
 				 125174, -- Touch of Karma
 				 137639, -- Storm, Earth and Fire
 				 195381, -- Healing Winds (WW artifact)
+				 195630, -- Elusive Brawler
 				 196725, -- Refreshing Jade Wind
 				 196739, -- Elusive Dance
 				 197206, -- Uplifting Trance
@@ -108,7 +110,6 @@ lib:__RegisterSpells("MONK", 70200, 1, {
 	AURA = {
 		HELPFUL = {
 			124682, -- Enveloping Mist
-			191840, -- Essence Font
 			198533, -- Soothing Mist
 			240672, -- Master of Combinations (WW artifact)
 		},
@@ -149,6 +150,7 @@ lib:__RegisterSpells("MONK", 70200, 1, {
 	[191840] = 191837, -- Essence Font
 	[195321] = 195300, -- Transfer of Power (WW artifact) <- Transfer the Power
 	[195381] = 195380, -- Healing Winds (WW artifact)
+	[195630] = 117906, -- Elusive Brawler <- Mastery: Elusive Brawler
 	[196608] = 196607, -- Eye of the Tiger
 	[196727] = 132578, -- Provoke <- Invoke Niuzao, the Black Ox
 	[196733] = 196730, -- Special Delivery (slow)
@@ -196,6 +198,10 @@ lib:__RegisterSpells("MONK", 70200, 1, {
 		113656, -- Fists of Fury (consumer)
 	},
 	[195381] = 119996, -- Healing Winds (WW artifact) -> Transcendance: Transfer
+	[195630] = { -- Elusive Brawler
+		115181, -- Breath of Fire
+		205523, -- Blackout Kick (BM)
+	},
 	[196608] = 100780, -- Eye of the Tiger
 	[196733] = { -- Special Delivery (slow)
 		115308, -- Ironskin Brew
