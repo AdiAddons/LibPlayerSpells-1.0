@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", 70200, 1, {
+lib:__RegisterSpells("DEATHKNIGHT", 70200, 2, {
 	COOLDOWN = {
 		  47568, -- Empower Rune Weapon
 		  49206, -- Summon Gargoyle
@@ -139,7 +139,6 @@ lib:__RegisterSpells("DEATHKNIGHT", 70200, 1, {
 			194879, -- Icy Talons
 			195181, -- Bone Shield
 			207203, -- Frost Shield
-			213003, -- Soulgorge
 			240558, -- Souldrinker (Blood artifact)
 		},
 		PET = {
@@ -194,7 +193,6 @@ lib:__RegisterSpells("DEATHKNIGHT", 70200, 1, {
 	[212385] = 212384, -- Protective Bile (abomination)
 	[212540] = 63560, -- Flesh Hook (abomination) (root) <- Dark Transformation
 	[212764] = 212765, -- White Walker (slow)
-	[213003] = 212744, -- Soulgorge
 	[215711] = 130736, -- Soul Reaper
 	[216974] = 207346, -- Necrosis
 	[218100] = 152280, -- Defile
