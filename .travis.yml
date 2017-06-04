@@ -26,7 +26,7 @@ script:
 
 deploy:
   provider: script
-  script: "for PROJECT_ID in 72228 68441; do curl -sdS https://www.wowace.com/api/projects/${PROJECT_ID}/package?token=${WOWACE_API_TOKEN}; done"
+  script: "curl -sdS https://www.wowace.com/api/projects/72228/package?token=$WOWACE_API_TOKEN"
   on:
     repo: AdiAddons/LibPlayerSpells-1.0
     all_branches: true
