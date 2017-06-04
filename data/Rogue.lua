@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", 70200, 1, {
+lib:__RegisterSpells("ROGUE", 70200, 2, {
 	COOLDOWN = {
 		   1725, -- Distract
 		 195457, -- Grappling Hook
@@ -34,6 +34,7 @@ lib:__RegisterSpells("ROGUE", 70200, 1, {
 				  1330, -- Garrote - Silence
 				154953, -- Internal Bleeding
 				192759, -- Kingsbane (Assassination artifact)
+				245389, -- Toxic Blade
 				BURST = {
 					 79140, -- Vendetta
 					137619, -- Marked for Death
@@ -63,9 +64,7 @@ lib:__RegisterSpells("ROGUE", 70200, 1, {
 				 185311, -- Crimson Vial
 				 185422, -- Shadow Dance
 				 192432, -- From the Shadows (Assassination artifact)
-				 212283, -- Symbols of Death
 				 226364, -- Evasion (Assassination artifact)
-				 227151, -- Death
 				 240525, -- Dense Concoction (Assassination artifact)
 				 240837, -- Loaded Dice (Outlaw artifact)
 				 242705, -- Feeding Frenzy (Subtlety artifact)
@@ -82,6 +81,7 @@ lib:__RegisterSpells("ROGUE", 70200, 1, {
 					 13750, -- Adrenaline Rush
 					 51690, -- Killing Spree
 					121471, -- Shadow Blades
+					212283, -- Symbols of Death
 				}
 			},
 		},
@@ -96,7 +96,6 @@ lib:__RegisterSpells("ROGUE", 70200, 1, {
 			192925, -- Blood of the Assassinated (Assassination artifact)
 			195452, -- Nightblade
 			196937, -- Ghostly Strike
-			200803, -- Agonizing Poison
 			CROWD_CTRL = {
 				[6770] = "INCAPACITATE", -- Sap (incapacitate)
 				STUN = {
@@ -129,9 +128,8 @@ lib:__RegisterSpells("ROGUE", 70200, 1, {
 			197498, -- Finality: Nightblade (Subtlety artifact)
 			199600, -- Buried Treasure
 			199603, -- Jolly Rogger
-			200802, -- Agonizing Poison
 			202754, -- Hidden Blade (Outlaw artifact)
-			206237, -- Enveloping Shadows
+			245640, -- Shuriken Combo
 		},
 	},
 }, {
@@ -164,17 +162,17 @@ lib:__RegisterSpells("ROGUE", 70200, 1, {
 	[197603] = 197604, -- Embrace of Darkness (Subtlety artifact)
 	[199600] = 193316, -- Buried Treasure <- Roll the Bones
 	[199603] = 193316, -- Jolly Rogger <- Roll the Bones
-	[200803] = 200802, -- Agonizing Poison
 	[202754] = 202753, -- Hidden Blade (Outlaw artifact)
 	[206760] = 195452, -- Night Terrors (slow) <- Nightblade
 	[209786] = 209782, -- Goremaw's Bite (Subtlety artifact) (slow)
 	[220901] = 209782, -- Goremaw's Bite (Subtlety artifact)
 	[222775] = 196951, -- Strike from the Shadows (slow)
 	[226364] = 192422, -- Evasion (Assassination artifact) <- Shadow Swiftness (Assassination artifact)
-	[227151] = 212283, -- Death <- Symbols of Death
 	[240525] = 238102, -- Dense Concoction (Assassination artifact)
 	[240837] = 238139, -- Loaded Dice (Outlaw artifact)
 	[242705] = 238140, -- Feeding Frenzy (Subtlety artifact)
+	[245389] = 245388, -- Toxic Blade
+	[245640] = 245639, -- Shuriken Combo
 }, {
 	-- map aura to modified spell(s)
 	[115192] = 115191, -- Subterfuge -> Stealth
@@ -211,12 +209,11 @@ lib:__RegisterSpells("ROGUE", 70200, 1, {
 		193315, -- Saber Slash
 		193316, -- Roll the Bones
 	},
-	[200803] = 185565, -- Agonizing Poison -> Poisoned Knife
 	[202754] = 193315, -- Hidden Blade (Outlaw artifact) -> Saber Slash
 	[222775] = 185438, -- Strike from the Shadows (slow) -> Shadowstrike
 	[226364] = 5277, -- Evasion (Assassination artifact) -> Evasion
-	[227151] = 185438, -- Death -> Shadowstrike
 	[240525] = 185311, -- Dense Concoction (Assassination artifact) -> Crimson Vial
 	[240837] = 13750, -- Loaded Dice (Outlaw artifact) -> Adrenaline Rush
 	[242705] = 209782, -- Feeding Frenzy (Subtlety artifact) -> Goremaw's Bite (Subtlety artifact)
+	[245640] = 196819, -- Shuriken Combo -> Eviscerate
 })
