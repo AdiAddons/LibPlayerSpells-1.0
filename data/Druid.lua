@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70200, 3, {
+lib:__RegisterSpells("DRUID", 70200, 4, {
 	COOLDOWN = {
 		    740, -- Tranquility
 		  18562, -- Swiftmend
@@ -38,7 +38,6 @@ lib:__RegisterSpells("DRUID", 70200, 3, {
 		 202768, -- Half Moon (Moonkin artifact)
 		 202771, -- Full Moon (Moonkin artifact)
 		 204066, -- Lunar Beam
-		[106839] = "INTERRUPT", -- Skull Bash
 		[202060] = "BURST", -- Elune's Guidance
 		DISPEL = {
 			HELPFUL = {
@@ -46,15 +45,19 @@ lib:__RegisterSpells("DRUID", 70200, 3, {
 				[88423] = "CURSE POISON MAGIC", -- Nature's Cure
 			},
 		},
+		INTERRUPT = {
+			 78675, -- Solar Beam
+			106839, -- Skull Bash
+		},
 		AURA = {
 			HARMFUL = {
 				  50259, -- Dazed
+				  81261, -- Solar Beam
 				 192090, -- Thrash (bear)
 				 106830, -- Thrash (cat)
 				 205644, -- Force of Nature
 				 210723, -- Ashamane's Frenzy (Feral artifact)
 				 214998, -- Roar of the Crowd (Guardian artifact)
-				[ 81261] = "INTERRUPT", -- Solar Beam
 				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
 				CROWD_CTRL = {
 					[    99] = "INCAPACITATE", -- Incapacitating Roar (incapacitate)
