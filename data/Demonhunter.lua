@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 70200, 2, {
+lib:__RegisterSpells("DEMONHUNTER", 70200, 3, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike
@@ -57,6 +57,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 2, {
 						179057, -- Chaos Nova (stun)
 						200166, -- Metamorphosis (Havoc) (stun)
 						211881, -- Fel Eruption (stun)
+						213491, -- Demonic Trample (stun) (PvP)
 					},
 				},
 				SNARE = {
@@ -70,6 +71,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 2, {
 				188499, -- Blade Dance
 				188501, -- Spectral Sight
 				203650, -- Prepared
+				205629, -- Demonic Trample (PvP)
 				208579, -- Nemesis (Demons)
 				208605, -- Nemesis (Humanoids)
 				208607, -- Nemesis (Aberrations)
@@ -143,6 +145,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 2, {
 	[212988] = 207387, -- Painbringer (Vengeance artifact)
 	[213405] = 203556, -- Master of the Glaive
 	[218561] = 218910, -- Siphoned Power <- Siphon Power (Vengeance artifact)
+	[213491] = 205629, -- Demonic Trample (stun) (PvP)
 	[247456] = 247454, -- Frailty <- Spirit Bomb
 	[227330] = 227327, -- Gluttony
 }, {
