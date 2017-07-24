@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 9
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 10
 if LibStub then
 	local oldMinor
 	lib, oldMinor = LibStub:NewLibrary(MAJOR, MINOR)
@@ -368,7 +368,7 @@ function lib:GetDispelTypes()
 	return DISPEL_TYPES
 end
 
---- Return a table containing the localized name of the category a crowd control aura belongs to.
+--- Return the localized name of the category a crowd control aura belongs to.
 -- Can be called with either a bitmask or a spellId.
 -- @param bitmask (number) a bitmask for the aura.
 -- @param spellId (number) spell identifier of the aura.
@@ -389,7 +389,7 @@ end
 -- Can be called with either a bitmask or a spellId.
 -- @param bitmask (number) a bitmask for the spell.
 -- @param spellId (number) spell identifier of the spell.
--- @return (table) A table of localized type names.
+-- @return (table|nil) A table of localized dispel type names or nil.
 function lib:GetDispelTypeNames(bitmask, spellId)
 	bitmask = bitmask or spellId and specials.DISPEL[spellId]
 
@@ -398,7 +398,7 @@ function lib:GetDispelTypeNames(bitmask, spellId)
 	local names = {}
 	for mask, name in pairs(DISPEL_TYPE_NAMES) do
 		if band(bitmask, mask) > 0 then
-			name[#names + 1] = name
+			names[#names + 1] = name
 		end
 	end
 	return names
