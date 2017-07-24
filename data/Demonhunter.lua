@@ -20,15 +20,17 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 70200, 3, {
+lib:__RegisterSpells("DEMONHUNTER", 70200, 4, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike
 		 195072, -- Fel Rush
 		 201467, -- Fury of the Illidari (Havoc artifact)
 		 213241, -- Felblade
+		 235903, -- Mana Rift (PvP)
 		 236189, -- Demonic Infusion
 		[183752] = "INTERRUPT", -- Consume Magic
+		[205604] = "DISPEL HELPFUL MAGIC", -- Reverse Magic (PvP)
 		AURA = {
 			HELPFUL = {
 				SURVIVAL = {
@@ -52,7 +54,10 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 3, {
 				CROWD_CTRL = {
 					[185245] = "TAUNT", -- Torment (taunt)
 					[207685] = "DISORIENT", -- Sigil of Misery (disorient)
-					[217832] = "INCAPACITATE", -- Imprison (incapacitate)
+					INCAPACITATE = {
+						217832, -- Imprison (incapacitate)
+						221527, -- Imprison (incapacitate) (PvP)
+					},
 					STUN = {
 						179057, -- Chaos Nova (stun)
 						200166, -- Metamorphosis (Havoc) (stun)
@@ -64,6 +69,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 3, {
 					198813, -- Vengeful Retreat (slow)
 					204843, -- Sigil of Chains (slow)
 					210003, -- Razor Spikes (slow)
+					232538, -- Rain of Chaos (slow) (PvP)
 				},
 			},
 			PERSONAL = {
@@ -72,6 +78,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 3, {
 				188501, -- Spectral Sight
 				203650, -- Prepared
 				205629, -- Demonic Trample (PvP)
+				206803, -- Rain from Above (PvP)
 				208579, -- Nemesis (Demons)
 				208605, -- Nemesis (Humanoids)
 				208607, -- Nemesis (Aberrations)
@@ -147,7 +154,9 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 3, {
 	[218561] = 218910, -- Siphoned Power <- Siphon Power (Vengeance artifact)
 	[213491] = 205629, -- Demonic Trample (stun) (PvP)
 	[247456] = 247454, -- Frailty <- Spirit Bomb
+	[221527] = 225596, -- Imprison (incapacitate) (PvP) <- Detainment
 	[227330] = 227327, -- Gluttony
+	[232538] = 205628, -- Rain of Chaos (slow) (PvP)
 }, {
 	-- map aura to modified spell(s)
 	[202443] = 198013, -- Anguish (Havoc artifact) -> Eyebeam
@@ -164,5 +173,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 3, {
 	[212988] = 228477, -- Painbringer (Vengeance artifact) -> Soul Cleave
 	[213405] = 185123, -- Master of the Glaive -> Throw Glaive
 	[218561] = 218256, -- Siphoned Power (Vengeance artifact) -> Empower Wards
+	[221527] = 221527, -- Imprison (incapacitate) (PvP)
 	[227330] = 228477, -- Gluttony
+	[232538] = 189110, -- Rain of Chaos (slow) (PvP) -> Infernal Strike
 })
