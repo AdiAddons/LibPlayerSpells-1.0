@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70200, 2, {
+lib:__RegisterSpells("MONK", 70200, 3, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
@@ -184,14 +184,6 @@ lib:__RegisterSpells("MONK", 70200, 2, {
 	[116768] = 100784, -- Blackout Kick! -> Blackout Kick
 	[118635] = 115546, -- Provoke (through Black Ox Statue) (taunt)
 	[137639] = 221771, -- Storm, Earth and Fire -> Storm, Earth and Fire: Fixate
-	[152173] = { -- Serenity
-		100784, -- Blackout Kick
-		101546, -- Spinning Crane Kick
-		107428, -- Rising Sun Kick
-		113656, -- Fists of Fury
-		116847, -- Rushing Jade Wind
-		205320, -- Strike of the Windlord (WW artifact)
-	},
 	[195321] = { -- Transfer of Power (WW artifact)
 		100784, -- Blackout Kick (provider)
 		107428, -- Rising Sun Kick (provider)
