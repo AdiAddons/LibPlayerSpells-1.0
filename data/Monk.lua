@@ -231,13 +231,6 @@ lib:__RegisterSpells("MONK", 70200, 2, {
 		119582, -- Purifying Brew
 	},
 	[228287] = 101546, -- Mark of the Crane -> Spinning Crane Kick
-	[228563] = { -- Blackout Combo
-		100780, -- Tiger Palm
-		115181, -- Beath of Fire
-		115308, -- Ironskin Brew
-		119582, -- Purifying Brew
-		121253, -- Keg Smash
-		205523, -- Blacout Strike
-	},
+	[228563] = 205523, -- Blackout Combo -> Blackout Strike
 	[242387] = 205320, -- Thunderfist (WW artifact) -> Strike of the Windlord (WW artifact)
 })
