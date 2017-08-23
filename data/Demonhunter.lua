@@ -20,13 +20,14 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 70200, 4, {
+lib:__RegisterSpells("DEMONHUNTER", 70200, 5, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike
 		 195072, -- Fel Rush
 		 201467, -- Fury of the Illidari (Havoc artifact)
 		 213241, -- Felblade
+		 203704, -- Mana Break (PvP)
 		 235903, -- Mana Rift (PvP)
 		 236189, -- Demonic Infusion
 		[183752] = "INTERRUPT", -- Consume Magic
@@ -41,8 +42,9 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 4, {
 			HARMFUL = {
 				 202443, -- Anguish (Havoc artifact)
 				 204598, -- Sigil of Flame
-				 207407, -- Soul Carver (Vengeance artifact)
 				 206491, -- Nemesis
+				 206649, -- Eye of Leotheras (PvP)
+				 207407, -- Soul Carver (Vengeance artifact)
 				 207690, -- Bloodlet
 				 207771, -- Fiery Brand
 				 211053, -- Fel Barrage
@@ -61,6 +63,8 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 4, {
 					STUN = {
 						179057, -- Chaos Nova (stun)
 						200166, -- Metamorphosis (Havoc) (stun)
+						205630, -- Illidan's Grasp (PvP) (stun)
+						208618, -- Illidan's Grasp (PvP) (stun)
 						211881, -- Fel Eruption (stun)
 						213491, -- Demonic Trample (stun) (PvP)
 					},
@@ -143,6 +147,7 @@ lib:__RegisterSpells("DEMONHUNTER", 70200, 4, {
 	[208612] = 206491, -- Nemesis (Giants)
 	[208613] = 206491, -- Nemesis (Mechanicals)
 	[208614] = 206491, -- Nemesis (Undead)
+	[208618] = 208173, -- Illidan's Grasp <- Illidan's Grasp: Throw (PvP) (stun)
 	[208628] = 206476, -- Momentum
 	[209426] = 196718, -- Darkness
 	[210003] = 209400, -- Razor Spikes (slow)
