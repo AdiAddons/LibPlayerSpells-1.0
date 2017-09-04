@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 70200, 5, {
+lib:__RegisterSpells("DEMONHUNTER", 70300, 1, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike
