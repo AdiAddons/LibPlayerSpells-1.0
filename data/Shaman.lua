@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("SHAMAN", 70200, 2, {
+lib:__RegisterSpells("SHAMAN", 70300, 1, {
 	COOLDOWN = {
 		    556, -- Astral Recall
 		  17364, -- Stormstrike
@@ -82,6 +82,7 @@ lib:__RegisterSpells("SHAMAN", 70200, 2, {
 				173183, -- Elemental Blast: Haste
 				173184, -- Elemental Blast: Mastery
 				187878, -- Crash Lightning
+				191634, -- Static Overload (Elemental artifact)
 				191877, -- Power of Maelstrom (Elemental artifact)
 				198249, -- Elemental Healing (Enhancement artifact)
 				198300, -- Gathering Storms (Enhancement artifact)
@@ -160,6 +161,7 @@ lib:__RegisterSpells("SHAMAN", 70200, 2, {
 	[173184] = 117014, -- Elemental Blast: Mastery <- Elemental Blast
 	[182387] = 61882, -- Earthquake (knockback) <- Earthquake Totem
 	[187878] = 187874, -- Crash Lightning
+	[191634] = 191602, -- Static Overload (Elemental artifact)
 	[191877] = 191861, -- Power of Maelstrom (Elemental artifact)
 	[192082] = 192077, -- Wind Rush
 	[194084] = 193796, -- Flametounge
@@ -196,10 +198,11 @@ lib:__RegisterSpells("SHAMAN", 70200, 2, {
 	[157504] = { -- Cloudburst Totem
 		201764, -- Recall Cloudburst Totem
 	},
+	[191634] = 188443, -- Static Overload (Elemental artifact) -> Chain Lightning
 	[191877] = 188196, -- Power of Maelstrom (Elemental artifact) -> Lightning Bolt
 	[197209] = { -- Lightning Rod
 		188196, -- Lightning Bolt
-		188443, -- Lightning Chain
+		188443, -- Chain Lightning
 	},
 	[198249] = 108271, -- Elemental Healing (Enhancement artifact) -> Astral Shift
 	[198300] = { -- Gathering Storms (Enhancement artifact)
