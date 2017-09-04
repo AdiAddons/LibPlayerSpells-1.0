@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEATHKNIGHT", 70200, 2, {
+lib:__RegisterSpells("DEATHKNIGHT", 70300, 1, {
 	COOLDOWN = {
 		  47568, -- Empower Rune Weapon
 		  49206, -- Summon Gargoyle
@@ -66,7 +66,6 @@ lib:__RegisterSpells("DEATHKNIGHT", 70200, 2, {
 					190780, -- Frost Breath (Frost artifact) (slow)
 					191719, -- Gravitational Pull (Unholy artifact) (slow)
 					211793, -- Remorseless Winter (slow)
-					212764, -- White Walker (slow)
 				},
 			},
 			PERSONAL = {
@@ -140,6 +139,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70200, 2, {
 			195181, -- Bone Shield
 			207203, -- Frost Shield
 			240558, -- Souldrinker (Blood artifact)
+			253595, -- Inexorable Assault
 		},
 		PET = {
 			[111673] = "INVERT_AURA", -- Control Undead
@@ -192,12 +192,12 @@ lib:__RegisterSpells("DEATHKNIGHT", 70200, 2, {
 	[212383] = 63560, -- Gastric Bloat (abomination) <- Dark Transformation
 	[212385] = 212384, -- Protective Bile (abomination)
 	[212540] = 63560, -- Flesh Hook (abomination) (root) <- Dark Transformation
-	[212764] = 212765, -- White Walker (slow)
 	[215711] = 130736, -- Soul Reaper
 	[216974] = 207346, -- Necrosis
 	[218100] = 152280, -- Defile
 	[238698] = 238078, -- Vampiric Aura (Blood artifact)
 	[240558] = 238114,-- Souldrinker (Blood artifact)
+	[253595] = 253593, -- Inexorable Assault
 }, {
 	-- map aura to modified spell(s)
 	[ 51124] = { -- Killing Machine
@@ -230,11 +230,11 @@ lib:__RegisterSpells("DEATHKNIGHT", 70200, 2, {
 	[212337] = 212336, -- Powerful Smash (abomination) (stun) -> Smash (with Dark Transformation)
 	[212383] = 212384, -- Gastric Bloat (abomination) -> Protective Bile (with Dark Transformation)
 	[212540] = 212468, -- Flesh Hook (abomination) (root) -> Hook (with Dark Transformation)
-	[212764] = 212552, -- White Walker (slow) -> Wraith Walk
 	[216974] = { -- Necrosis
 		 55090, -- Scourge Strike
 		207311, -- Clawing Shadows
 	},
 	[238698] = 205223, -- Vampiric Aura -> Consumption (Blood artifact)
 	[240558] = 49998,-- Souldrinker (Blood artifact) -> Death Strike
+	[253595] = 6603, -- Inexorable Assault -> Auto Attack
 })
