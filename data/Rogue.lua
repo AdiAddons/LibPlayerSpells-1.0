@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("ROGUE", 70200, 2, {
+lib:__RegisterSpells("ROGUE", 70300, 1, {
 	COOLDOWN = {
 		   1725, -- Distract
 		 195457, -- Grappling Hook
