@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70200, 3, {
+lib:__RegisterSpells("HUNTER", 70300, 1, {
 	COOLDOWN = {
 		   781, -- Disengage
 		  1543, -- Flare
@@ -204,7 +204,7 @@ lib:__RegisterSpells("HUNTER", 70200, 3, {
 			 94019, -- Rest (Bear)
 			118455, -- Beast Cleave
 			126311, -- Surface Trot (Water Strider) (exotic)
-			126364, -- Rest (Porcupine)
+			126364, -- Rest (Rodent)
 		},
 	},
 }, {
