@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MONK", 70200, 4, {
+lib:__RegisterSpells("MONK", 70300, 1, {
 	COOLDOWN = {
 		 109132, -- Roll
 		 115098, -- Chi Wave
@@ -242,7 +242,7 @@ lib:__RegisterSpells("MONK", 70200, 4, {
 	[216915] = 116694, -- Fortune Turned (pvp) -> Effuse
 	[228287] = 101546, -- Mark of the Crane -> Spinning Crane Kick
 	[228563] = 205523, -- Blackout Combo -> Blackout Strike
-	[232055] = 103656, -- Fists of Fury (stun) (pvp)
+	[232055] = 113656, -- Fists of Fury (stun) (pvp)
 	[233766] = 116694, -- Control the Mists (pvp) -> Effuse
 	[242387] = 205320, -- Thunderfist (WW artifact) -> Strike of the Windlord (WW artifact)
 })
