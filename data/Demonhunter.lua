@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 70300, 1, {
+lib:__RegisterSpells("DEMONHUNTER", 70300, 2, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike
@@ -31,7 +31,10 @@ lib:__RegisterSpells("DEMONHUNTER", 70300, 1, {
 		 235903, -- Mana Rift (PvP)
 		 236189, -- Demonic Infusion
 		[183752] = "INTERRUPT", -- Consume Magic
-		[205604] = "DISPEL HELPFUL MAGIC", -- Reverse Magic (PvP)
+		DISPEL = {
+			[205604] = "HELPFUL MAGIC", -- Reverse Magic (PvP)
+			[205625] = "PERSONAL MAGIC", -- Cleansed by Magic (PvP) -- NOTE: Immolation Aura is then the dispeling spell
+		},
 		AURA = {
 			HELPFUL = {
 				SURVIVAL = {
