@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("WARLOCK", 70300, 1, {
+lib:__RegisterSpells("WARLOCK", 70300, 2, {
 	COOLDOWN = {
 		   698, -- Ritual of Summoning
 		  1122, -- Summon Infernal
@@ -36,9 +36,12 @@ lib:__RegisterSpells("WARLOCK", 70300, 1, {
 		205180, -- Summon Darkglare
 		211714, -- Thal'kiel's Consumption (Demonology artifact)
 		DISPEL = {
-			[ 89808] = "HELPFUL MAGIC", -- Singe Magic (Imp)
-			[111859] = "PERSONAL MAGIC", -- Grimoire: Imp
-			[171021] = "HARMFUL MAGIC", -- Torch Magic (Infernal with Grimoire of Supremacy)
+			MAGIC = {
+				[ 89808] = "HELPFUL", -- Singe Magic (Imp)
+				[111859] = "PERSONAL", -- Grimoire: Imp
+				[171021] = "HARMFUL", -- Torch Magic (Infernal with Grimoire of Supremacy)
+				[212623] = "HELPFUL", -- Singe Magic (Imp) (PvP)
+			},
 		},
 		INTERRUPT = {
 			 19647, -- Spell Lock (Felhunter)
