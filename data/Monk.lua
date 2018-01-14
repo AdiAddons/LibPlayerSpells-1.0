@@ -41,6 +41,7 @@ lib:__RegisterSpells("MONK", 70300, 1, {
 		DISPEL = {
 			HELPFUL = {
 				[115450] = "DISEASE MAGIC POISON", -- Detox (MW)
+				[205234] = "MAGIC", -- Healing Sphere (PvP)
 				[218164] = "DISEASE POISON", -- Detox (BM and WW)
 			},
 		},
