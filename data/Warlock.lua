@@ -40,7 +40,7 @@ lib:__RegisterSpells("WARLOCK", 70300, 2, {
 				[ 89808] = "HELPFUL", -- Singe Magic (Imp)
 				[111859] = "PERSONAL", -- Grimoire: Imp
 				[171021] = "HARMFUL", -- Torch Magic (Infernal with Grimoire of Supremacy)
-				[212623] = "HELPFUL", -- Singe Magic (Imp) (PvP)
+				[212623] = "HELPFUL", -- Singe Magic (PvP)
 			},
 		},
 		INTERRUPT = {

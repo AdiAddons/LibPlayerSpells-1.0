@@ -32,8 +32,10 @@ lib:__RegisterSpells("DEMONHUNTER", 70300, 2, {
 		 236189, -- Demonic Infusion
 		[183752] = "INTERRUPT", -- Consume Magic
 		DISPEL = {
-			[205604] = "HELPFUL MAGIC", -- Reverse Magic (PvP)
-			[205625] = "PERSONAL MAGIC", -- Cleansed by Magic (PvP) -- NOTE: Immolation Aura is then the dispeling spell
+			MAGIC = {
+				[205604] = "HELPFUL", -- Reverse Magic (PvP)
+				[205625] = "PERSONAL", -- Cleansed by Magic (PvP) -- NOTE: Immolation Aura is then the dispeling spell
+			},
 		},
 		AURA = {
 			HELPFUL = {

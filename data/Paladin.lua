@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", 70300, 1, {
+lib:__RegisterSpells("PALADIN", 70300, 2, {
 	COOLDOWN = {
 		  20271, -- Judgement
 		  20473, -- Holy Shock
@@ -39,6 +39,7 @@ lib:__RegisterSpells("PALADIN", 70300, 1, {
 			HELPFUL = {
 				[  4987] = "DISEASE MAGIC POISON", -- Cleanse
 				[213644] = "DISEASE POISON", -- Cleanse Toxins
+				[236186] = "DISEASE POISON", -- Cleansing Light (PvP)
 			},
 		},
 		AURA = {
