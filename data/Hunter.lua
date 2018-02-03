@@ -20,28 +20,29 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 70300, 1, {
+lib:__RegisterSpells("HUNTER", 70300, 2, {
 	COOLDOWN = {
-		   781, -- Disengage
-		  1543, -- Flare
-		 34026, -- Kill Command
-		 53209, -- Chimaera Shot
-		 63900, -- Thunderstomp (Tenacity)
-		109304, -- Exhilaration
-		120360, -- Barrage
-		126393, -- Eternal Guardian (Quillen) (exotic) (battle res)
-		159931, -- Gift of Chi-Ji (Crane) (battle res)
-		159956, -- Dust of Life (Moth) (battle res)
-		198670, -- Head Shot
-		200163, -- Throwing Axes
-		201078, -- Snake Hunter
-		201413, -- Stampede (FIXME: currently no duration buff)
-		203415, -- Fury of the Eagle (SV artifact)
-		204147, -- Windburst (MM artifact)
-		206817, -- Sentinel
-		208652, -- Dire Beast: Hawk (PvP)
-		212431, -- Explosive Shot
-		212436, -- Butchery
+		    781, -- Disengage
+		   1543, -- Flare
+		  34026, -- Kill Command
+		  53209, -- Chimaera Shot
+		  63900, -- Thunderstomp (Tenacity)
+		 109304, -- Exhilaration
+		 120360, -- Barrage
+		 126393, -- Eternal Guardian (Quillen) (exotic) (battle res)
+		 159931, -- Gift of Chi-Ji (Crane) (battle res)
+		 159956, -- Dust of Life (Moth) (battle res)
+		 198670, -- Head Shot
+		 200163, -- Throwing Axes
+		 201078, -- Snake Hunter
+		 201413, -- Stampede (FIXME: currently no duration buff)
+		 203415, -- Fury of the Eagle (SV artifact)
+		 204147, -- Windburst (MM artifact)
+		 206817, -- Sentinel
+		 208652, -- Dire Beast: Hawk (PvP)
+		 212431, -- Explosive Shot
+		 212436, -- Butchery
+		[202746] = "DISPEL MAGIC PERSONAL", -- Survival Tactics (PvP)
 		INTERRUPT = {
 			147362, -- Counter Shot
 			187707, -- Muzzle
