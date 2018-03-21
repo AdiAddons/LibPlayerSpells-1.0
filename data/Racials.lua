@@ -20,24 +20,28 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0", true)
 if not lib then return end
-lib:__RegisterSpells("RACIAL", 70300, 1, {
+lib:__RegisterSpells("RACIAL", 70300, 2, {
 	COOLDOWN = {
-		 7744, -- Will of the Forsaken (Undead)
-		20589, -- Escape Artist (Gnome)
-		59752, -- Every Man for Himself (Human)
-		69041, -- Rocket Barrage (Goblin)
-		69046, -- Pack Hobgoblin (Goblin)
-		69070, -- Rocket Jump (Goblin)
+		   7744, -- Will of the Forsaken (Undead)
+		  20589, -- Escape Artist (Gnome)
+		  59752, -- Every Man for Himself (Human)
+		  69041, -- Rocket Barrage (Goblin)
+		  69046, -- Pack Hobgoblin (Goblin)
+		  69070, -- Rocket Jump (Goblin)
+		 255647, -- Light's Judgement (Lightforged Draenei)
+		 255661, -- Cantrips (Nightborne)
+		 259930, -- Forge of Light (Lightforged Draenei)
 		AURA = {
 			PERSONAL = {
-				20578, -- Cannibalize (Undead)
-				26297, -- Berserking (Troll)
-				20572, -- Blood Fury (Orc attack power)
-				33697, -- Blood Fury (Orc both)
-				33702, -- Blood Fury (Orc spell power)
-				58984, -- Shadowmeld (Night elf)
-				65116, -- Stoneform (Dwarf)
-				68992, -- Darkflight (Worgen)
+				 20578, -- Cannibalize (Undead)
+				 26297, -- Berserking (Troll)
+				 20572, -- Blood Fury (Orc attack power)
+				 33697, -- Blood Fury (Orc both)
+				 33702, -- Blood Fury (Orc spell power)
+				 58984, -- Shadowmeld (Night elf)
+				 65116, -- Stoneform (Dwarf)
+				 68992, -- Darkflight (Worgen)
+				256948, -- Spatial Rift (Void elf)
 			},
 			HELPFUL = {
 				 28880, -- Gift of the Naaru (Draenei Warrior)
@@ -50,9 +54,13 @@ lib:__RegisterSpells("RACIAL", 70300, 1, {
 				121093, -- Gift of the Naaru (Draenei Monk)
 			},
 			HARMFUL = {
+				[260369] = "SNARE", -- Arcane Pulse (Nightborne)
 				CROWD_CTRL = {
-					[ 20549] = "STUN", -- War Stomp (Tauren)
 					[107079] = "INCAPACITATE", -- Quaking Palm (Monk)
+					STUN = {
+						 20549, -- War Stomp (Tauren)
+						255723, -- Bull Rush (Highmountain Tauren)
+					},
 				},
 				INTERRUPT = {
 					 25046, -- Arcane Torrent (Blood elf Rogue)
@@ -74,7 +82,12 @@ lib:__RegisterSpells("RACIAL", 70300, 1, {
 		},
 	},
 }, {
-	-- map aura to provider
-	[20578] = 20577, -- Cannibalize (Undead)
-	[65116] = 20594, -- Stone Form (Dwarf)
+	-- map aura to provider(s)
+	[ 20578] = 20577, -- Cannibalize (Undead)
+	[ 65116] = 20594, -- Stone Form (Dwarf)
+	[255723] = 255654, -- Bull Rush (Highmountain Tauren)
+	[260369] = 260364, -- Arcane Pulse (Nightborne)
+}, {
+	-- map aura to modified spell(s)
+	[256948] = 257040, -- Spatial Rift (Void elf)
 })
