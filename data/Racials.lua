@@ -31,6 +31,7 @@ lib:__RegisterSpells("RACIAL", 70300, 2, {
 		 255647, -- Light's Judgement (Lightforged Draenei)
 		 255661, -- Cantrips (Nightborne)
 		 259930, -- Forge of Light (Lightforged Draenei)
+		[ 20594] = "DISPEL PERSONAL CURSE DISEASE MAGIC POISON", -- Stoneform (Dwarf) -- NOTE: bleeds currently not tracked
 		AURA = {
 			PERSONAL = {
 				 20578, -- Cannibalize (Undead)
