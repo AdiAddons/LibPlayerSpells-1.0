@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70300, 1, {
+lib:__RegisterSpells("DRUID", 70300, 2, {
 	COOLDOWN = {
 		    740, -- Tranquility
 		  18562, -- Swiftmend
@@ -153,6 +153,7 @@ lib:__RegisterSpells("DRUID", 70300, 1, {
 			  93622, -- Mangle!
 			 135700, -- Clearcasting (Feral)
 			 145152, -- Bloodtalons
+			 157228, -- Owlkin Frenzy
 			 189877, -- Power of the Archdruid (Restoration artifact)
 			 213680, -- Guardian of Elune
 			 213708, -- Galactic Guardian
@@ -183,6 +184,7 @@ lib:__RegisterSpells("DRUID", 70300, 1, {
 		202157, -- Feral Affinity (Balance)
 	},
 	[155777] = 155675, -- Rejuvenation (Germination) <- Germination
+	[157228] = 231042, -- Owlkin Frenzy <- Moonkin Form (Rank 2)
 	[158792] = 80313, -- Pulverize
 	[163505] = 1822, -- Rake (stun)
 	[164545] = { -- Solar Empowerment
@@ -247,6 +249,7 @@ lib:__RegisterSpells("DRUID", 70300, 1, {
 	},
 	[155722] = 1822, -- Rake
 	[155777] = 774, -- Rejuvenation (Germination) -> Rejuvenation
+	[157228] = 194153, -- Owlkin Frenzy -> Lunar Strike
 	[164545] = { -- Solar Empowerment
 		  5176, -- Solar Wrath (Restoration)
 		190984, -- Solar Wrath (Balance)
