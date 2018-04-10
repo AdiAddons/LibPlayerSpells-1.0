@@ -130,7 +130,6 @@ lib:__RegisterSpells("HUNTER", 70300, 2, {
 				198783, -- Camouflage (Marksmanship)
 				199483, -- Camouflage (Survival)
 				202748, -- Survival Tactics (PvP)
-				203155, -- Sniper Shot (PvP)
 				203924, -- Healing Shell (MM artifact)
 				BURST = {
 					 19574, -- Bestial Wrath
@@ -196,6 +195,7 @@ lib:__RegisterSpells("HUNTER", 70300, 2, {
 			193534, -- Steady Focus
 			194594, -- Lock and Load
 			201081, -- Mok'Nathal Tactics
+			203155, -- Sniper Shot (PvP)
 			223138, -- Marking Targets
 			227272, -- Trick Shot
 		},
