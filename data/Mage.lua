@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("MAGE", 70300, 1, {
+lib:__RegisterSpells("MAGE", 70300, 2, {
 	COOLDOWN = {
 		   1953, -- Blink
 		  31687, -- Summon Water Elemental
@@ -70,6 +70,7 @@ lib:__RegisterSpells("MAGE", 70300, 1, {
 				 113862, -- Greater Invisibility (dmg reduction)
  				 116014, -- Rune of Power
 				 194316, -- Cauterizing Blink (Fire artifact)
+				 198111, -- Temporal Shield (PvP)
 				 205025, -- Presence of Mind
 				 208166, -- Ray of Frost
 				 210126, -- Arcane Familiar
