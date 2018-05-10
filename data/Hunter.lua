@@ -22,26 +22,32 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("HUNTER", 80000, 1, {
 	COOLDOWN = {
-		   781, -- Disengage
-		 19434, -- Aimed Shot (Marksmanship)
-		109304, -- Exhilaration
-		120360, -- Barrage (Marksmanship talent)
-		198670, -- Piercing Shot (Marksmanship talent)
-		212431, -- Explosive Shot (Marksmanship talent)
-		257044, -- Rapid Fire (Marksmanship)
+		    781, -- Disengage
+		  19434, -- Aimed Shot (Marksmanship)
+		 109304, -- Exhilaration
+		 120360, -- Barrage (Marksmanship talent)
+		 198670, -- Piercing Shot (Marksmanship talent)
+		 212431, -- Explosive Shot (Marksmanship talent)
+		 257044, -- Rapid Fire (Marksmanship)
+		[236776] = 'KNOCKBACK', -- Hi-Explosive Trap (honor talent)
 		INTERRUPT = {
 			147362, -- Counter Shot (Marksmanship, Survival)
 		},
 		AURA = {
 			HELPFUL = {
 				34477, -- Misdirection
+				53480, -- Roar of Sacrifice (honor talent)
 			},
 			HARMFUL = {
 				117405, -- Binding Shot
 				132951, -- Flare
+				202797, -- Viper Sting (honor talent)
+				202900, -- Scorpid Sting (honor talent)
+				202914, -- Spider Sting (honor talent)
 				CROWD_CTRL = {
 					INCAPACITATE = {
-						3355, -- Freezing Trap
+						  3355, -- Freezing Trap
+						213691, -- Scatter Shot (Marksmanship honor talent)
 					},
 					ROOT = {
 						117526, -- Binding Shot (Marksmanship talent)
@@ -60,6 +66,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				186257, -- Aspect of the Cheetah
 				186258, -- Aspect of the Cheetah
 				199483, -- Camouflage (Marksmanship talent)
+				203155, -- Sniper Shot (Marksmanship honor talent)
 				260242, -- Precise Shots (Marksmanship)
 				260402, -- Double Tap (Marksmanship talent)
 				269576, -- Master Marksman (Marksmanship talent)
@@ -90,15 +97,16 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 }, {
 	-- map aura to provider(s)
 	[  3355] = 187650, -- Freezing Trap
-	[ 35079] = 34477, -- Misdirection
+	[ 35079] =  34477, -- Misdirection
 	[117405] = 109248, -- Binding Shot (Marksmanship talent)
 	[117526] = 109248, -- Binding Shot (Marksmanship talent)
 	[118922] = 109215, -- Posthaste (Marksmanship talent)
-	[132951] = 1543, -- Flare
+	[132951] =   1543, -- Flare
 	[135299] = 187698, -- Tar Trap
 	[186258] = 186557, -- Aspect of the Cheetah
 	[193534] = 193533, -- Steady Focus (Marksmanship talent)
 	[194594] = 194595, -- Lock and Load (Marksmanship talent)
+	[213691] = 186387, -- Scatter Shot (Marksmanship honor talent)
 	[257622] = 257621, -- Trick Shots (Marksmanship)
 	[260242] = 260240, -- Precise Shots (Marksmanship)
 	[260395] = 260393, -- Lethal Shots (Marksmanship talent)
@@ -106,7 +114,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[269576] = 260309, -- Master Marksman (Marksmanship talent)
 }, {
 	-- map aura to modified spell(s)
-	[118922] = 781, -- Posthaste (Marksmanship talent) -> Disengage
+	[118922] =   781, -- Posthaste (Marksmanship talent) -> Disengage
 	[193534] = 56641, -- Steady Focus (Marksmanship talent) -> Steady Shot
 	[194594] = 19434, -- Lock and Load (Marksmanship talent) -> Aimed Shot
 	[257622] = { -- Trick Shots (Marksmanship)
