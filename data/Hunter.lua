@@ -24,6 +24,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	COOLDOWN = {
 		    781, -- Disengage
 		  19434, -- Aimed Shot (Marksmanship)
+		  34026, -- Kill Command (Beast Mastery) 
 		 109304, -- Exhilaration
 		 120360, -- Barrage (Marksmanship talent)
 		 198670, -- Piercing Shot (Marksmanship talent)
@@ -44,6 +45,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				202797, -- Viper Sting (honor talent)
 				202900, -- Scorpid Sting (honor talent)
 				202914, -- Spider Sting (honor talent)
+				217200, -- Barbed Shot (Beast Mastery)
 				CROWD_CTRL = {
 					INCAPACITATE = {
 						  3355, -- Freezing Trap
@@ -51,7 +53,10 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 					},
 					ROOT = {
 						117526, -- Binding Shot (Marksmanship talent)
-					}
+					},
+					STUN = {
+						24394, -- Intimidation (Beast Mastery)
+					},
 				},
 				SNARE = {
 					  5116, -- Concussive Shot (Marksmanship)
@@ -71,12 +76,21 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				260402, -- Double Tap (Marksmanship talent)
 				269576, -- Master Marksman (Marksmanship talent)
 				BURST = {
+					 19574, -- Bestial Wrath (Beast Mastery)
 					193526, -- Trueshot (Marksmanship)
+					193530, -- Aspect of the Wild (Beast Mastery)
 				},
 				SURVIVAL = {
 					186265, -- Aspect of the Turtle
 				},
 			},
+			PET = {
+				   136, -- Mend Pet
+				 19577, -- Intimidation (Beast Mastery)
+				118455, -- Beast Cleave (Beast Mastery)
+				186254, -- Bestial Wrath (Beast Mastery)
+				272790, -- Dire Frenzy (Beast Mastery)
+			}
 		},
 	},
 	AURA = {
@@ -97,12 +111,15 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 }, {
 	-- map aura to provider(s)
 	[  3355] = 187650, -- Freezing Trap
+	[ 24394] =  19577, -- Intimidation (Beast Mastery)
 	[ 35079] =  34477, -- Misdirection
 	[117405] = 109248, -- Binding Shot (Marksmanship talent)
 	[117526] = 109248, -- Binding Shot (Marksmanship talent)
+	[118455] = 115939, -- Beast Cleave (Beast Mastery)
 	[118922] = 109215, -- Posthaste (Marksmanship talent)
 	[132951] =   1543, -- Flare
 	[135299] = 187698, -- Tar Trap
+	[186254] =  19574, -- Bestial Wrath (Beast Mastery)
 	[186258] = 186557, -- Aspect of the Cheetah
 	[193534] = 193533, -- Steady Focus (Marksmanship talent)
 	[194594] = 194595, -- Lock and Load (Marksmanship talent)
@@ -112,8 +129,10 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[260395] = 260393, -- Lethal Shots (Marksmanship talent)
 	[269502] = 260393, -- Lethal Shots (Marksmanship talent)
 	[269576] = 260309, -- Master Marksman (Marksmanship talent)
+	[272790] = 217200, -- Dire Frenzy <- Barbed Shot (Beast Mastery)
 }, {
 	-- map aura to modified spell(s)
+	[118455] =  2643, -- Beast Cleave (Beast Mastery) -> Multi-Shot
 	[118922] =   781, -- Posthaste (Marksmanship talent) -> Disengage
 	[193534] = 56641, -- Steady Focus (Marksmanship talent) -> Steady Shot
 	[194594] = 19434, -- Lock and Load (Marksmanship talent) -> Aimed Shot
