@@ -26,13 +26,18 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 		  19434, -- Aimed Shot (Marksmanship)
 		  34026, -- Kill Command (Beast Mastery) 
 		 109304, -- Exhilaration
-		 120360, -- Barrage (Marksmanship talent)
+		 120360, -- Barrage (Beast Mastery/Marksmanship talent)
+		 120679, -- Dire Beast (Beast Mastery talent)
 		 198670, -- Piercing Shot (Marksmanship talent)
+		 201430, -- Stampede (Beast Mastery talent)
 		 212431, -- Explosive Shot (Marksmanship talent)
-		 257044, -- Rapid Fire (Marksmanship)
 		[236776] = 'KNOCKBACK', -- Hi-Explosive Trap (honor talent)
 		INTERRUPT = {
 			147362, -- Counter Shot (Marksmanship, Survival)
+		},
+		POWER_REGEN = {
+			 53209, -- Chimaera Shot (Beast Mastery talent)
+			257044, -- Rapid Fire (Marksmanship)
 		},
 		AURA = {
 			HELPFUL = {
@@ -40,7 +45,8 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				53480, -- Roar of Sacrifice (honor talent)
 			},
 			HARMFUL = {
-				117405, -- Binding Shot
+				117405, -- Binding Shot (Beast Mastery/Marksmanship talent)
+				131894, -- A Murder of Crows (Beast Mastery/Marksmanship talent)
 				132951, -- Flare
 				202797, -- Viper Sting (honor talent)
 				202900, -- Scorpid Sting (honor talent)
@@ -52,7 +58,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 						213691, -- Scatter Shot (Marksmanship honor talent)
 					},
 					ROOT = {
-						117526, -- Binding Shot (Marksmanship talent)
+						117526, -- Binding Shot (Beast Mastery/Marksmanship talent)
 					},
 					STUN = {
 						24394, -- Intimidation (Beast Mastery)
@@ -67,11 +73,12 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 			PERSONAL = {
 				  5384, -- Feign Death
 				 35079, -- Misdirection
-				118922, -- Posthaste (Marksmanship talent)
+				118922, -- Posthaste (Beast Mastery/Marksmanship talent)
 				186257, -- Aspect of the Cheetah
 				186258, -- Aspect of the Cheetah
-				199483, -- Camouflage (Marksmanship talent)
+				199483, -- Camouflage (Beast Mastery/Marksmanship talent)
 				203155, -- Sniper Shot (Marksmanship honor talent)
+				257946, -- Thrill of the Hunt (Beast Mastery talent)
 				260242, -- Precise Shots (Marksmanship)
 				260402, -- Double Tap (Marksmanship talent)
 				269576, -- Master Marksman (Marksmanship talent)
@@ -79,6 +86,10 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 					 19574, -- Bestial Wrath (Beast Mastery)
 					193526, -- Trueshot (Marksmanship)
 					193530, -- Aspect of the Wild (Beast Mastery)
+				},
+				POWER_REGEN = {
+					194407, -- Spitting Cobra (Beast Mastery talent)
+					246152, -- Barbed Shot (Beast Mastery)
 				},
 				SURVIVAL = {
 					186265, -- Aspect of the Turtle
@@ -95,7 +106,6 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
-			131894, -- A Murder of Crows (Marksmanship talent)
 			257284, -- Hunter's Mark (Marksmanship talent)
 			271788, -- Serpent Sting (Marksmanship talent)
 		},
@@ -108,6 +118,9 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 			269502, -- Lethal Shots (Marksmanship talent)
 		},
 	},
+	POWER_REGEN = {
+		56641, -- Steady Shot (Marksmanship)
+	}
 }, {
 	-- map aura to provider(s)
 	[  3355] = 187650, -- Freezing Trap
@@ -124,7 +137,9 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[193534] = 193533, -- Steady Focus (Marksmanship talent)
 	[194594] = 194595, -- Lock and Load (Marksmanship talent)
 	[213691] = 186387, -- Scatter Shot (Marksmanship honor talent)
+	[246152] = 217200, -- Barbed Shot (Beast Mastery)
 	[257622] = 257621, -- Trick Shots (Marksmanship)
+	[257946] = 257944, -- Thrill of the Hunt (Beast Mastery talent)
 	[260242] = 260240, -- Precise Shots (Marksmanship)
 	[260395] = 260393, -- Lethal Shots (Marksmanship talent)
 	[269502] = 260393, -- Lethal Shots (Marksmanship talent)
@@ -140,6 +155,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 		 19434, -- Aimed Shot
 		257044, -- Rapid Fire
 	},
+	[257946] = 217200, -- Thrill of the Hunt (Beast Mastery talent) -> Barbed Shot
 	[260242] = 185358, -- Precise Shots (Marksmanship) -> Arcane Shot
 	[260395] = 257044, -- Lethal Shots (Marksmanship talent) -> Rapid Fire
 	[260402] = { -- Double Tap (Marksmanship talent)
