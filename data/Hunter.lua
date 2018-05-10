@@ -41,8 +41,9 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 		},
 		AURA = {
 			HELPFUL = {
-				34477, -- Misdirection
-				53480, -- Roar of Sacrifice (honor talent)
+				 34477, -- Misdirection
+				 53480, -- Roar of Sacrifice (honor talent)
+				248519, -- Interlope (Beast Mastery honor talent)
 			},
 			HARMFUL = {
 				117405, -- Binding Shot (Beast Mastery/Marksmanship talent)
@@ -51,6 +52,8 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				202797, -- Viper Sting (honor talent)
 				202900, -- Scorpid Sting (honor talent)
 				202914, -- Spider Sting (honor talent)
+				208684, -- Dire Beast: Hawk (Beast Mastery honor talent)
+				209967, -- Dire Beast: Basilisk (Beast Mastery honor talent)
 				217200, -- Barbed Shot (Beast Mastery)
 				CROWD_CTRL = {
 					INCAPACITATE = {
@@ -136,8 +139,11 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[186258] = 186557, -- Aspect of the Cheetah
 	[193534] = 193533, -- Steady Focus (Marksmanship talent)
 	[194594] = 194595, -- Lock and Load (Marksmanship talent)
+	[208684] = 208652, -- Dire Beast: Hawk (Beast Mastery honor talent)
+	[209967] = 205691, -- Dire Beast: Basilisk (Beast Mastery honor talent)
 	[213691] = 186387, -- Scatter Shot (Marksmanship honor talent)
 	[246152] = 217200, -- Barbed Shot (Beast Mastery)
+	[248519] = 248518, -- Interlope (Beast Mastery honor talent)
 	[257622] = 257621, -- Trick Shots (Marksmanship)
 	[257946] = 257944, -- Thrill of the Hunt (Beast Mastery talent)
 	[260242] = 260240, -- Precise Shots (Marksmanship)
