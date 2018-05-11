@@ -23,11 +23,18 @@ if not lib then return end
 lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 	COOLDOWN = {
 		 189110, -- Infernal Strike (Vengeance)
+		 212084, -- Fel Devastation (Vengeance talent)
 		[183752] = 'INTERRUPT', -- Consume Magic (Vengeance)
+		POWER_REGEN = {
+			232893, -- Felblade (Vengeance talent)
+			263642, -- Fracture (Vengeance talent)
+		},
 		AURA = {
 			HARMFUL = {
 				204598, -- Sigil of Flame (Vengeance)
+				204843, -- Sigil of Chains (Vengeance talent)
 				207744, -- Fiery Brand (Vengeance)
+				210003, -- Razor Spikes (Vengeance talent)
 				[204490] = 'INTERRUPT', -- Sigil of Silence (Vengeance)
 				CROWD_CTRL = {
 					[185245] = 'TAUNT', -- Torment (Vengeance)
@@ -45,8 +52,18 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 				SURVIVAL = {
 					187827, -- Metamorphosis (Vengeance)
 					203819, -- Demon Spikes (Vengeance)
+					263648, -- Soul Barrier (Vengeance talent)
 				},
 			},
+		},
+	},
+	AURA = {
+		HARMFUL = {
+			247456, -- Frailty (Vengeance talent)
+			268178, -- Void Reaver (Vengeance talent)
+		},
+		PERSONAL = {
+			207693, -- Feast of Souls (Vengeance talent)
 		},
 	},
 	POWER_REGEN = {
@@ -59,11 +76,30 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 	[203819] = 203720, -- Demon Spikes (Vengeance)
 	[204490] = 202137, -- Sigil of Silence (Vengeange)
 	[204598] = 188499, -- Sigil of Flame (Vengeance)
+	[204843] = 202138, -- Sigil of Chains (Vengeance talent)
 	[207685] = 207684, -- Sigil of Misery (Vengeance)
+	[207693] = 207697, -- Feast of Souls (Vengeance talent)
 	[207744] = 204021, -- Fiery Brand (Vengeance)
+	[210003] = 209400, -- Razor Spikes (Vengeance talent)
+	[247456] = 247454, -- Frailty (Vengeance talent) <- Spirit Bomb
+	[268178] = 268175, -- Void Reaver (Vengeance talent)
 }, {
 	-- map aura to modified spell(s)
 	[185245] = 185245, -- Torment (Vengeance)
 	[187827] = 187827, -- Metamorphosis (Vengeance)
-	[204598] = 204596, -- Sigil of Flame (Vengeance)
+	[204490] = { -- Sigil of Silence (Vengeange)
+		202137, -- Sigil of Silence (Vengeange)
+		207682, -- Sigil of Silence (with Concentrated Sigils talent) (Vengeance)
+	},
+	[204598] = { -- Sigil of Flame (Vengeance)
+		204513, -- Sigil of Flame (with Concentrated Sigils talent) (Vengeance)
+		204596, -- Sigil of Flame (Vengeance)
+	},
+	[207685] = { -- Sigil of Misery (Vengeance)
+		202140, -- Sigil of Misery (with Concentrated Sigils talent) (Vengeance)
+		207684, -- Sigil of Misery (Vengeance)
+	},
+	[207693] = 228477, -- Feast of Souls (Vengeance talent) -> Soul Cleave
+	[210003] = 6603, -- Razor Spikes (Vengeance talent) -> Auto Attack
+	[268178] = 228477, -- Void Reaver (Vengeance talent) -> Soul Cleave
 })
