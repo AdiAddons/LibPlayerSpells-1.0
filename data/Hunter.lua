@@ -31,9 +31,11 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 		 198670, -- Piercing Shot (Marksmanship talent)
 		 201430, -- Stampede (Beast Mastery talent)
 		 212431, -- Explosive Shot (Marksmanship talent)
+		 259489, -- Kill Command (Survival)
 		[236776] = 'KNOCKBACK', -- Hi-Explosive Trap (honor talent)
 		INTERRUPT = {
-			147362, -- Counter Shot (Marksmanship, Survival)
+			147362, -- Counter Shot (Beast Mastery/Marksmanship)
+			187707, -- Muzzle (Survival)
 		},
 		POWER_REGEN = {
 			 53209, -- Chimaera Shot (Beast Mastery talent)
@@ -54,6 +56,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				202914, -- Spider Sting (honor talent)
 				208684, -- Dire Beast: Hawk (Beast Mastery honor talent)
 				209967, -- Dire Beast: Basilisk (Beast Mastery honor talent)
+				269747, -- Wildfire Bomb (Survival)
 				217200, -- Barbed Shot (Beast Mastery)
 				CROWD_CTRL = {
 					INCAPACITATE = {
@@ -62,9 +65,10 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 					},
 					ROOT = {
 						117526, -- Binding Shot (Beast Mastery/Marksmanship talent)
+						190927, -- Harpoon (Survival)
 					},
 					STUN = {
-						24394, -- Intimidation (Beast Mastery)
+						24394, -- Intimidation (Beast Mastery/Survival)
 					},
 				},
 				SNARE = {
@@ -79,6 +83,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				118922, -- Posthaste (Beast Mastery/Marksmanship talent)
 				186257, -- Aspect of the Cheetah
 				186258, -- Aspect of the Cheetah
+				186289, -- Aspect of the Eagle (Survival)
 				199483, -- Camouflage (Beast Mastery/Marksmanship talent)
 				203155, -- Sniper Shot (Marksmanship honor talent)
 				257946, -- Thrill of the Hunt (Beast Mastery talent)
@@ -89,6 +94,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 					 19574, -- Bestial Wrath (Beast Mastery)
 					193526, -- Trueshot (Marksmanship)
 					193530, -- Aspect of the Wild (Beast Mastery)
+					266779, -- Coordinated Assault (Survival)
 				},
 				POWER_REGEN = {
 					194407, -- Spitting Cobra (Beast Mastery talent)
@@ -100,7 +106,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 			},
 			PET = {
 				   136, -- Mend Pet
-				 19577, -- Intimidation (Beast Mastery)
+				 19577, -- Intimidation (Beast Mastery/Survival)
 				118455, -- Beast Cleave (Beast Mastery)
 				186254, -- Bestial Wrath (Beast Mastery)
 				272790, -- Dire Frenzy (Beast Mastery)
@@ -109,7 +115,9 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
+			195645, -- Wing Clip (Survival)
 			257284, -- Hunter's Mark (Marksmanship talent)
+			259491, -- Serpent Sting (Survival)
 			271788, -- Serpent Sting (Marksmanship talent)
 		},
 		PERSONAL = {
@@ -127,7 +135,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 }, {
 	-- map aura to provider(s)
 	[  3355] = 187650, -- Freezing Trap
-	[ 24394] =  19577, -- Intimidation (Beast Mastery)
+	[ 24394] =  19577, -- Intimidation (Beast Mastery/Survival)
 	[ 35079] =  34477, -- Misdirection
 	[117405] = 109248, -- Binding Shot (Marksmanship talent)
 	[117526] = 109248, -- Binding Shot (Marksmanship talent)
@@ -136,7 +144,8 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[132951] =   1543, -- Flare
 	[135299] = 187698, -- Tar Trap
 	[186254] =  19574, -- Bestial Wrath (Beast Mastery)
-	[186258] = 186557, -- Aspect of the Cheetah
+	[186258] = 186257, -- Aspect of the Cheetah
+	[190927] = 190925, -- Harpoon (Survival)
 	[193534] = 193533, -- Steady Focus (Marksmanship talent)
 	[194594] = 194595, -- Lock and Load (Marksmanship talent)
 	[208684] = 208652, -- Dire Beast: Hawk (Beast Mastery honor talent)
@@ -150,6 +159,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[260395] = 260393, -- Lethal Shots (Marksmanship talent)
 	[269502] = 260393, -- Lethal Shots (Marksmanship talent)
 	[269576] = 260309, -- Master Marksman (Marksmanship talent)
+	[269747] = 259495, -- Wildfire Bomb (Survival)
 	[272790] = 217200, -- Dire Frenzy <- Barbed Shot (Beast Mastery)
 }, {
 	-- map aura to modified spell(s)
