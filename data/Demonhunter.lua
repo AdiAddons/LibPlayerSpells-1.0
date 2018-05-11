@@ -37,12 +37,10 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 			},
 			HARMFUL = {
 				204598, -- Sigil of Flame (Vengeance)
-				204843, -- Sigil of Chains (Vengeance talent)
 				206491, -- Nemesis (Havoc talent)
 				206649, -- Eye of Leotheras (Havoc honor talent)
 				206891, -- Intimidated (Vengeance honor talent)
 				207744, -- Fiery Brand (Vengeance)
-				210003, -- Razor Spikes (Vengeance talent)
 				258860, -- Dark Slash (Havoc talent)
 				258883, -- Trail of Ruin (Havoc talent)
 				[204490] = 'INTERRUPT', -- Sigil of Silence (Vengeance)
@@ -66,6 +64,8 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 				},
 				SNARE = {
 					198813, -- Vengeful Retreat (Havoc)
+					204843, -- Sigil of Chains (Vengeance talent)
+					210003, -- Razor Spikes (Vengeance talent)
 					213405, -- Master of the Glaive (Havoc talent)
 				},
 			},
