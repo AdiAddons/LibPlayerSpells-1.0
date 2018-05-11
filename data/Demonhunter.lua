@@ -26,7 +26,9 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 		 189110, -- Infernal Strike (Vengeance)
 		 195072, -- Fel Rush (Havoc)
 		 198013, -- Eye Beam (Havoc)
+		 203704, -- Mana Break (Havoc honor talent)
 		 212084, -- Fel Devastation (Vengeance talent)
+		 235903, -- Mana Rift (Havon honor talent)
 		 258925, -- Fel Barrage (Havoc talent)
 		[183752] = 'INTERRUPT', -- Consume Magic
 		AURA = {
@@ -37,6 +39,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 				204598, -- Sigil of Flame (Vengeance)
 				204843, -- Sigil of Chains (Vengeance talent)
 				206491, -- Nemesis (Havoc talent)
+				206649, -- Eye of Leotheras (Havoc honor talent)
 				206891, -- Intimidated (Vengeance honor talent)
 				207744, -- Fiery Brand (Vengeance)
 				210003, -- Razor Spikes (Vengeance talent)
@@ -70,6 +73,8 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 				 188499, -- Blade Dance (Havoc) -- NOTE: somehow the same id as Sigil of Flame
 				 188501, -- Spectral Sight
 				 205629, -- Demonic Trample (Vengeance honor talent)
+				 206803, -- Rain from Above (launching) (Havoc honor talent)
+				 206804, -- Rain from Above (gliding) (Havoc honor talent)
 				 210152, -- Death Sweep (replaces Blade Dance when Metamorphosis) (Havoc)
 				[258920] = 'POWER_REGEN', -- Immolation Aura (Havoc talent)
 				BURST = {
@@ -101,7 +106,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 		},
 		DISPEL = {
 			MAGIC = {
-				[205604] = 'HELPFUL', -- Reverse Magic (Vengeance honor talent)
+				[205604] = 'HELPFUL', -- Reverse Magic (honor talent)
 				[205625] = 'PERSONAL', -- Cleaned by Flame (Vengeance honor talent) -- BUG: not in the spellbook -- NOTE: Immolation Aura is then the dispelling spell
 			},
 		},
@@ -134,6 +139,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 	[204490] = 202137, -- Sigil of Silence (Vengeange)
 	[204598] = 188499, -- Sigil of Flame (Vengeance)
 	[204843] = 202138, -- Sigil of Chains (Vengeance talent)
+	[206804] = 206803, -- Rain from Above (gliding) (Havoc honor talent)
 	[206891] = 198589, -- Intimidated (Vengeance honor talent) <- Tormentor
 	[207685] = 207684, -- Sigil of Misery (Vengeance)
 	[207693] = 207697, -- Feast of Souls (Vengeance talent)
