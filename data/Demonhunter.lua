@@ -22,10 +22,16 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 	COOLDOWN = {
+		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike (Vengeance)
+		 195072, -- Fel Rush (Havoc)
+		 198013, -- Eye Beam (Havoc)
 		 212084, -- Fel Devastation (Vengeance talent)
-		[183752] = 'INTERRUPT', -- Consume Magic (Vengeance)
+		[183752] = 'INTERRUPT', -- Consume Magic
 		AURA = {
+			HELPFUL = {
+				[209426] = 'SURVIVAL', -- Darkness (Havoc)
+			},
 			HARMFUL = {
 				204598, -- Sigil of Flame (Vengeance)
 				204843, -- Sigil of Chains (Vengeance talent)
@@ -36,6 +42,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 				CROWD_CTRL = {
 					[185245] = 'TAUNT', -- Torment (Vengeance)
 					DISORIENT = {
+						179057, -- Chaos Nova (Havoc)
 						207685, -- Sigil of Misery (Vengeance)
 					},
 					INCAPACITATE = {
@@ -43,15 +50,24 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 						221527, -- Imprison (honor talent)
 					},
 					STUN = {
+						200166, -- Metamorphosis (Havoc)
 						205630, -- Illidan's Grasp (hold) (Vengeance honor talent)
 						208618, -- Illidan's Grasp (thrown) (Vengeance honor talent)
 						213491, -- Demonic Trample (Vengeance honor talent)
 					},
 				},
+				SNARE = {
+					198813, -- Vengeful Retreat (Havoc)
+				},
 			},
 			PERSONAL = {
+				188499, -- Blade Dance (Havoc) -- NOTE: somehow the same id as Sigil of Flame
 				188501, -- Spectral Sight (Vengeance)
 				205629, -- Demonic Trample (Vengeance honor talent)
+				210152, -- Death Sweep (replaces Blade Dance when Metamorphosis) (Havoc)
+				BURST = {
+					162264, -- Metamorphosis (Havoc)
+				},
 				POWER_REGEN = {
 					178740, -- Immolation Aura (Vengeance)
 				},
@@ -59,6 +75,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 					187827, -- Metamorphosis (Vengeance)
 					203819, -- Demon Spikes (Vengeance)
 					208796, -- Jagged Spikes (Vengeance honor talent)
+					212800, -- Blur (Havoc)
 					263648, -- Soul Barrier (Vengeance talent)
 				},
 			},
@@ -70,6 +87,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 			},
 		},
 		POWER_REGEN = {
+			162243, -- Demon's Bite (Havoc)
 			232893, -- Felblade (Vengeance talent)
 			263642, -- Fracture (Vengeance talent)
 		},
@@ -88,8 +106,11 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 	}
 }, {
 	-- map aura to provider(s)
+	[162264] = 191427, -- Metamorphosis (Havoc)
 	[185245] = 198589, -- Torment (Vengeance)
 	[187827] = 191427, -- Metamorphosis (Vengeance)
+	[198813] = 198793, -- Vengeful Retreat (Havoc)
+	[200166] = 191427, -- Metamorphosis (Havoc)
 	[203819] = 203720, -- Demon Spikes (Vengeance)
 	[204490] = 202137, -- Sigil of Silence (Vengeange)
 	[204598] = 188499, -- Sigil of Flame (Vengeance)
@@ -100,7 +121,9 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 	[207744] = 204021, -- Fiery Brand (Vengeance)
 	[208618] = 205630, -- Illidan's Grasp (thrown) (Vengeance honor talent)
 	[208796] = 205627, -- Jagged Spikes (Vengeance honor talent) -- BUG: not in the spellbook
+	[209426] = 196718, -- Darkness (Havoc)
 	[210003] = 209400, -- Razor Spikes (Vengeance talent)
+	[212800] = 198589, -- Blur (Havoc)
 	[213491] = 205629, -- Demonic Trample (Vengeance honor talent)
 	[247456] = 247454, -- Frailty (Vengeance talent) <- Spirit Bomb
 	[268178] = 268175, -- Void Reaver (Vengeance talent)
