@@ -132,11 +132,11 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
-			195645, -- Wing Clip (Survival)
-			257284, -- Hunter's Mark (Marksmanship talent)
-			259491, -- Serpent Sting (Survival)
-			270343, -- Internal Bleeding (Survival talent)
-			271788, -- Serpent Sting (Marksmanship talent)
+			 257284, -- Hunter's Mark (Marksmanship talent)
+			 259491, -- Serpent Sting (Survival)
+			 270343, -- Internal Bleeding (Survival talent)
+			 271788, -- Serpent Sting (Marksmanship talent)
+			[195645] = 'SNARE', -- Wing Clip (Survival)
 		},
 		PERSONAL = {
 			  6197, -- Eagle Eye
