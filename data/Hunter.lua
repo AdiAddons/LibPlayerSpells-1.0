@@ -46,9 +46,11 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 		},
 		AURA = {
 			HELPFUL = {
-				 34477, -- Misdirection
-				 53480, -- Roar of Sacrifice (honor talent)
-				248519, -- Interlope (Beast Mastery honor talent)
+				  34477, -- Misdirection
+				  53480, -- Roar of Sacrifice (honor talent)
+				 203233, -- Aspect of the Cheetah (Survival honor talent)
+				 248519, -- Interlope (Beast Mastery honor talent)
+				[212640] = 'DISPEL DISEASE POISON', -- Mending Bandage (Survival honor talent) -- NOTE: Bleeds too
 			},
 			HARMFUL = {
 				117405, -- Binding Shot (talent)
@@ -58,6 +60,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				202797, -- Viper Sting (honor talent)
 				202900, -- Scorpid Sting (honor talent)
 				202914, -- Spider Sting (honor talent)
+				203268, -- Sticky Tar (Survival honor talent)
 				208684, -- Dire Beast: Hawk (Beast Mastery honor talent)
 				209967, -- Dire Beast: Basilisk (Beast Mastery honor talent)
 				217200, -- Barbed Shot (Beast Mastery)
@@ -69,12 +72,14 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				CROWD_CTRL = {
 					INCAPACITATE = {
 						  3355, -- Freezing Trap
+						203337, -- Freezing Trap (Survival honor talent)
 						213691, -- Scatter Shot (Marksmanship honor talent)
 					},
 					ROOT = {
 						117526, -- Binding Shot (talent)
 						162480, -- Steel Trap (Survival talent)
 						190927, -- Harpoon (Survival)
+						212638, -- Tracker's Net (Survival honor talent)
 					},
 					STUN = {
 						24394, -- Intimidation (Beast Mastery/Survival)
@@ -165,6 +170,9 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[190927] = 190925, -- Harpoon (Survival)
 	[193534] = 193533, -- Steady Focus (Marksmanship talent)
 	[194594] = 194595, -- Lock and Load (Marksmanship talent)
+	[203233] = 203235, -- Aspect of the Cheetah (Survival honor talent) -- BUG: does not appear in the spellbook
+	[203268] = 203264, -- Sticky Tar (Survival honor talent)
+	[203337] = 203340, -- Freezing Trap (Survival honor talent) <- Diamond Ice -- BUG: does not appear in the spellbook
 	[208684] = 208652, -- Dire Beast: Hawk (Beast Mastery honor talent)
 	[209967] = 205691, -- Dire Beast: Basilisk (Beast Mastery honor talent)
 	[213691] = 186387, -- Scatter Shot (Marksmanship honor talent)
@@ -194,6 +202,9 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[118922] =   781, -- Posthaste (talent) -> Disengage
 	[193534] = 56641, -- Steady Focus (Marksmanship talent) -> Steady Shot
 	[194594] = 19434, -- Lock and Load (Marksmanship talent) -> Aimed Shot
+	[203233] = 186257, -- Aspect of the Cheetah (Survival honor talent)
+	[203268] = 187698, -- Sticky Tar (Survival honor talent) -> Tar Trap
+	[203337] = 187650, -- Freezing Trap (Survival honor talent)
 	[257622] = { -- Trick Shots (Marksmanship)
 		 19434, -- Aimed Shot
 		257044, -- Rapid Fire
