@@ -33,6 +33,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 		 212431, -- Explosive Shot (Marksmanship talent)
 		 212436, -- Butchery (Survival talent)
 		 259391, -- Chakrams (Survival talent)
+		 267922, -- Eternal Guardian (quilen)
 		[236776] = 'KNOCKBACK', -- Hi-Explosive Trap (honor talent)
 		INTERRUPT = {
 			147362, -- Counter Shot (Beast Mastery/Marksmanship)
@@ -48,11 +49,14 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 			HELPFUL = {
 				  34477, -- Misdirection
 				  53480, -- Roar of Sacrifice (honor talent)
+				  54216, -- Master's Call (Cunning pet)
+				  90361, -- Spirit Mend (spirit beast)
 				 203233, -- Aspect of the Cheetah (Survival honor talent)
 				 248519, -- Interlope (Beast Mastery honor talent)
 				[212640] = 'DISPEL DISEASE POISON', -- Mending Bandage (Survival honor talent) -- NOTE: Bleeds too
 			},
 			HARMFUL = {
+				115804, -- Mortal Wounds (scorpid)
 				117405, -- Binding Shot (talent)
 				131894, -- A Murder of Crows (talent)
 				132951, -- Flare
@@ -70,6 +74,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				270339, -- Scorching Shrapnel (Survival talent)
 				271049, -- Volatile Wildfire (Survival talent)
 				CROWD_CTRL = {
+					[2649] = 'TAUNT', --Growl (pet)
 					INCAPACITATE = {
 						  3355, -- Freezing Trap
 						203337, -- Freezing Trap (Survival honor talent)
@@ -87,8 +92,17 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				},
 				SNARE = {
 					  5116, -- Concussive Shot (Marksmanship)
+					 35346, -- Warp Time (warp stalker)
+					 50433, -- Ankle Crack (crocolisk)
+					 54644, -- Frost Breath (chimaera)
 					135299, -- Tar Trap (Marksmanship)
+					160065, -- Tendon Rip (silithid)
+					160067, -- Web Spray (spider)
 					186387, -- Bursting Shot (Marksmanship)
+					263423, -- Lock Jaw (dog)
+					263446, -- Acid Spit (worm)
+					263840, -- Furious Bite (wolf)
+					263852, -- Talon Rend (bird of prey)
 				},
 			},
 			PERSONAL = {
@@ -119,14 +133,43 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				},
 				SURVIVAL = {
 					186265, -- Aspect of the Turtle
+					264735, -- Survival of the Fittest (Tanacity pet)
 				},
 			},
 			PET = {
 				   136, -- Mend Pet
 				 19577, -- Intimidation (Beast Mastery/Survival)
+				 24450, -- Prowl (cat)
+				 61684, -- Dash (Ferocity/Cunning pet)
+				 62305, -- Master's Call (Cunning pet)
+				 90328, -- Spirit Walk (spirit beast)
+				 93433, -- Burrow Attack (worm)
 				118455, -- Beast Cleave (Beast Mastery)
+				159786, -- Molten Hide (core hound)
 				186254, -- Bestial Wrath (Beast Mastery)
 				272790, -- Dire Frenzy (Beast Mastery)
+				SURVIVAL = {
+					 26064, -- Shell Shield (turtle)
+					 90339, -- Harden Carapace (beetle)
+					159733, -- Stone Scales (Basilisk)
+					160011, -- Agile Reflexes (fox)
+					160044, -- Primal Agility (monkey)
+					160048, -- Stone Armor (quilen)
+					160058, -- Thick Hide (clefthoof)
+					160063, -- Solid Shell (shale spider)
+					263865, -- Scale Shield (scalehide)
+					263867, -- Obsidian Skin (core hound)
+					263868, -- Defense Matrix (mechanical)
+					263869, -- Bristle (boar)
+					263887, -- Dragons Guile (dragonhawk)
+					263892, -- Catlike Reflexes (cat)
+					263904, -- Serpent's Swiftness (serpent)
+					263920, -- Gruff (goat)
+					263926, -- Thick Fur (bear)
+					263938, -- Silverback (gorilla)
+					264022, -- Niuzao's Fortitude (ox)
+					264360, -- Winged Agility (wind serpent)
+				}
 			}
 		},
 	},
@@ -157,12 +200,34 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[  3355] = 187650, -- Freezing Trap
 	[ 24394] =  19577, -- Intimidation (Beast Mastery/Survival)
 	[ 35079] =  34477, -- Misdirection
+	[ 54216] = { -- Master's Call (Cunning pet)
+		 53271, -- Master's Call (Cunning pet)
+		272682, -- Master's Call (Command Pet)
+	},
+	[ 62305] = { -- Master's Call (Cunning pet)
+		 53271, -- Master's Call (Cunning pet)
+		272682, -- Master's Call (Command Pet)
+	},
+	[115804] = { -- Mortal Wounds
+		 24423, -- Bloody Screech (carrion bird)
+		160018, -- Gruesome Bite (riverbeast)
+		160060, -- Deadly Sting (scorpid)
+		263854, -- Savage Rend (raptor)
+		263856, -- Gnaw (rodent)
+		263857, -- Ravage (ravager)
+		263858, -- Toxic Sting (wasp)
+		263861, -- Gore (direhorn)
+		263863, -- Acid Bite (hydra)
+	},
 	[117405] = 109248, -- Binding Shot (talent)
 	[117526] = 109248, -- Binding Shot (root) (talent)
 	[118455] = 115939, -- Beast Cleave (Beast Mastery)
 	[118922] = 109215, -- Posthaste (talent)
 	[132951] =   1543, -- Flare
 	[135299] = 187698, -- Tar Trap
+	[159786] = 159788, -- Molten Hide (core hound)
+	[160048] = 160049, -- Stone Armor (quilen)
+	[160058] = 160057, -- Thick Hide (clefthoof)
 	[162480] = 162488, -- Steel Trap (root) (Survival talent)
 	[162487] = 162488, -- Steel Trap (Survival talent)
 	[186254] =  19574, -- Bestial Wrath (Beast Mastery)
@@ -185,8 +250,16 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[260242] = 260240, -- Precise Shots (Marksmanship)
 	[260249] = 260248, -- Predator (Survival talent) <- Bloodseeker
 	[260395] = 260393, -- Lethal Shots (Marksmanship talent)
+	[263920] = 263921, -- Gruff (goat)
+	[263938] = 263939, -- Silverback (gorilla)
+	[264022] = 264023, -- Niuzao's Fortitude (ox)
+	[264735] = { -- Survival of the Fittest (Tenacity pet)
+		264735, -- Survival of the Fittest (Tenacity pet)
+		272679, -- Survival of the Fittest (Command Pet)
+	},
 	[265898] = 265895, -- Terms of Engagement (Survival talent)
 	[260286] = 260285, -- Tip of the Spear (Survival talent)
+	[263926] = 263934, -- Thick Fur (bear)
 	[268552] = 268501, -- Viper's Venom (Survival talent)
 	[269502] = 260393, -- Lethal Shots (Marksmanship talent)
 	[269576] = 260309, -- Master Marksman (Marksmanship talent)
