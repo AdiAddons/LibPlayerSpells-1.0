@@ -18,9 +18,9 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local lib = LibStub("LibPlayerSpells-1.0")
+local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells("HUNTER", 80000, 1, {
+lib:__RegisterSpells('HUNTER', 80000, 1, {
 	COOLDOWN = {
 		    781, -- Disengage
 		  19434, -- Aimed Shot (Marksmanship)
@@ -35,42 +35,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 		 259391, -- Chakrams (Survival talent)
 		 267922, -- Eternal Guardian (quilen)
 		[236776] = 'KNOCKBACK', -- Hi-Explosive Trap (honor talent)
-		DISPEL = {
-			HARMFUL = {
-				MAGIC = {
-					ENRAGE = {
-						264028, -- Chi-Ji's Tranquility (crane)
-						264055, -- Serenity Dust (moth)
-						264056, -- Spore Cloud (sporebat)
-						264262, -- Soothing Water (water strider)
-						264263, -- Sonic Blast (bat)
-						264264, -- Nether Shock (nether ray)
-						264265, -- Spirit Shock (spirit beast)
-						264266, -- Nature's Grace (stag)
-					},
-				},
-			},
-		},
-		INTERRUPT = {
-			147362, -- Counter Shot (Beast Mastery/Marksmanship)
-			187707, -- Muzzle (Survival)
-		},
-		POWER_REGEN = {
-			 53209, -- Chimaera Shot (Beast Mastery talent)
-			257044, -- Rapid Fire (Marksmanship)
-			259489, -- Kill Command (Survival)
-			269751, -- Flanking Strike (Survival talent)
-		},
 		AURA = {
-			HELPFUL = {
-				  34477, -- Misdirection
-				  53480, -- Roar of Sacrifice (honor talent)
-				  54216, -- Master's Call (Cunning pet)
-				  90361, -- Spirit Mend (spirit beast)
-				 203233, -- Aspect of the Cheetah (Survival honor talent)
-				 248519, -- Interlope (Beast Mastery honor talent)
-				[212640] = 'DISPEL DISEASE POISON', -- Mending Bandage (Survival honor talent) -- NOTE: Bleeds too
-			},
 			HARMFUL = {
 				115804, -- Mortal Wounds (scorpid)
 				117405, -- Binding Shot (talent)
@@ -90,7 +55,8 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				270339, -- Scorching Shrapnel (Survival talent)
 				271049, -- Volatile Wildfire (Survival talent)
 				CROWD_CTRL = {
-					[2649] = 'TAUNT', --Growl (pet)
+					[ 2649] = 'TAUNT', --Growl (pet)
+					[24394] = 'STUN', -- Intimidation (Beast Mastery/Survival)
 					INCAPACITATE = {
 						  3355, -- Freezing Trap
 						203337, -- Freezing Trap (Survival honor talent)
@@ -101,9 +67,6 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 						162480, -- Steel Trap (Survival talent)
 						190927, -- Harpoon (Survival)
 						212638, -- Tracker's Net (Survival honor talent)
-					},
-					STUN = {
-						24394, -- Intimidation (Beast Mastery/Survival)
 					},
 				},
 				SNARE = {
@@ -123,6 +86,15 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 					263852, -- Talon Rend (bird of prey)
 				},
 			},
+			HELPFUL = {
+				  34477, -- Misdirection
+				  53480, -- Roar of Sacrifice (honor talent)
+				  54216, -- Master's Call (Cunning pet)
+				  90361, -- Spirit Mend (spirit beast)
+				 203233, -- Aspect of the Cheetah (Survival honor talent)
+				 248519, -- Interlope (Beast Mastery honor talent)
+				[212640] = 'DISPEL DISEASE POISON', -- Mending Bandage (Survival honor talent) -- NOTE: Bleeds too
+			},
 			PERSONAL = {
 				  5384, -- Feign Death
 				 35079, -- Misdirection
@@ -135,8 +107,8 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				257946, -- Thrill of the Hunt (Beast Mastery talent)
 				260242, -- Precise Shots (Marksmanship)
 				260249, -- Predator (Survival talent)
-				260402, -- Double Tap (Marksmanship talent)
 				260286, -- Tip of the Spear (Survival talent)
+				260402, -- Double Tap (Marksmanship talent)
 				269576, -- Master Marksman (Marksmanship talent)
 				BURST = {
 					 19574, -- Bestial Wrath (Beast Mastery)
@@ -190,6 +162,32 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 					264360, -- Winged Agility (wind serpent)
 				}
 			}
+		},
+		DISPEL = {
+			HARMFUL = {
+				MAGIC = {
+					ENRAGE = {
+						264028, -- Chi-Ji's Tranquility (crane)
+						264055, -- Serenity Dust (moth)
+						264056, -- Spore Cloud (sporebat)
+						264262, -- Soothing Water (water strider)
+						264263, -- Sonic Blast (bat)
+						264264, -- Nether Shock (nether ray)
+						264265, -- Spirit Shock (spirit beast)
+						264266, -- Nature's Grace (stag)
+					},
+				},
+			},
+		},
+		INTERRUPT = {
+			147362, -- Counter Shot (Beast Mastery/Marksmanship)
+			187707, -- Muzzle (Survival)
+		},
+		POWER_REGEN = {
+			 53209, -- Chimaera Shot (Beast Mastery talent)
+			257044, -- Rapid Fire (Marksmanship)
+			259489, -- Kill Command (Survival)
+			269751, -- Flanking Strike (Survival talent)
 		},
 	},
 	AURA = {
@@ -274,8 +272,10 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[259277] = 260248, -- Kill Command (Survival talent) <- Bloodseeker
 	[260242] = 260240, -- Precise Shots (Marksmanship)
 	[260249] = 260248, -- Predator (Survival talent) <- Bloodseeker
+	[260286] = 260285, -- Tip of the Spear (Survival talent)
 	[260395] = 260393, -- Lethal Shots (Marksmanship talent)
 	[263920] = 263921, -- Gruff (goat)
+	[263926] = 263934, -- Thick Fur (bear)
 	[263938] = 263939, -- Silverback (gorilla)
 	[264022] = 264023, -- Niuzao's Fortitude (ox)
 	[264735] = { -- Survival of the Fittest (Tenacity pet)
@@ -283,8 +283,6 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 		272679, -- Survival of the Fittest (Command Pet)
 	},
 	[265898] = 265895, -- Terms of Engagement (Survival talent)
-	[260286] = 260285, -- Tip of the Spear (Survival talent)
-	[263926] = 263934, -- Thick Fur (bear)
 	[268552] = 268501, -- Viper's Venom (Survival talent)
 	[269502] = 260393, -- Lethal Shots (Marksmanship talent)
 	[269576] = 260309, -- Master Marksman (Marksmanship talent)
@@ -296,10 +294,10 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[272790] = 217200, -- Dire Frenzy <- Barbed Shot (Beast Mastery)
 }, {
 	-- map aura to modified spell(s)
-	[118455] =  2643, -- Beast Cleave (Beast Mastery) -> Multi-Shot
-	[118922] =   781, -- Posthaste (talent) -> Disengage
-	[193534] = 56641, -- Steady Focus (Marksmanship talent) -> Steady Shot
-	[194594] = 19434, -- Lock and Load (Marksmanship talent) -> Aimed Shot
+	[118455] =   2643, -- Beast Cleave (Beast Mastery) -> Multi-Shot
+	[118922] =    781, -- Posthaste (talent) -> Disengage
+	[193534] =  56641, -- Steady Focus (Marksmanship talent) -> Steady Shot
+	[194594] =  19434, -- Lock and Load (Marksmanship talent) -> Aimed Shot
 	[203233] = 186257, -- Aspect of the Cheetah (Survival honor talent)
 	[203268] = 187698, -- Sticky Tar (Survival honor talent) -> Tar Trap
 	[203337] = 187650, -- Freezing Trap (Survival honor talent)
@@ -319,7 +317,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	},
 	[265898] = 190925, -- Terms of Engagement (Survival talent) -> Harpoon
 	[268552] = 259491, -- Viper's Venom (Survival talent) -> Serpent Sting
-	[269502] = 19434, -- Lethal Shots (Marksmanship talent) -> Aimed Shot
+	[269502] =  19434, -- Lethal Shots (Marksmanship talent) -> Aimed Shot
 	[269576] = { -- Master Marksman (Marksmanship talent)
 		185358, -- Arcane Shot
 		267620, -- Multi-Shot
