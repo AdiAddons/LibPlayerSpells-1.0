@@ -35,6 +35,22 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 		 259391, -- Chakrams (Survival talent)
 		 267922, -- Eternal Guardian (quilen)
 		[236776] = 'KNOCKBACK', -- Hi-Explosive Trap (honor talent)
+		DISPEL = {
+			HARMFUL = {
+				MAGIC = {
+					ENRAGE = {
+						264028, -- Chi-Ji's Tranquility (crane)
+						264055, -- Serenity Dust (moth)
+						264056, -- Spore Cloud (sporebat)
+						264262, -- Soothing Water (water strider)
+						264263, -- Sonic Blast (bat)
+						264264, -- Nether Shock (nether ray)
+						264265, -- Spirit Shock (spirit beast)
+						264266, -- Nature's Grace (stag)
+					},
+				},
+			},
+		},
 		INTERRUPT = {
 			147362, -- Counter Shot (Beast Mastery/Marksmanship)
 			187707, -- Muzzle (Survival)
@@ -93,6 +109,8 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				SNARE = {
 					  5116, -- Concussive Shot (Marksmanship)
 					 35346, -- Warp Time (warp stalker)
+					 50245, -- Pin (crab)
+					 50285, -- Dust Cloud (tallstrider)
 					 50433, -- Ankle Crack (crocolisk)
 					 54644, -- Frost Breath (chimaera)
 					135299, -- Tar Trap (Marksmanship)
@@ -146,6 +164,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 				 93433, -- Burrow Attack (worm)
 				118455, -- Beast Cleave (Beast Mastery)
 				159786, -- Molten Hide (core hound)
+				159954, -- Feast (devilsaur)
 				186254, -- Bestial Wrath (Beast Mastery)
 				272790, -- Dire Frenzy (Beast Mastery)
 				SURVIVAL = {
@@ -191,6 +210,10 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 			268552, -- Viper's Venom (Survival talent)
 			269502, -- Lethal Shots (Marksmanship talent)
 		},
+		PET = {
+			126311, -- Surface Trot (water strider)
+			160007, -- Updraft (feathermane/rylak)
+		}
 	},
 	POWER_REGEN = {
 		56641, -- Steady Shot (Marksmanship)
@@ -210,6 +233,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	},
 	[115804] = { -- Mortal Wounds
 		 24423, -- Bloody Screech (carrion bird)
+		 54680, -- Monstrous Bite (devilsaur)
 		160018, -- Gruesome Bite (riverbeast)
 		160060, -- Deadly Sting (scorpid)
 		263854, -- Savage Rend (raptor)
@@ -226,6 +250,7 @@ lib:__RegisterSpells("HUNTER", 80000, 1, {
 	[132951] =   1543, -- Flare
 	[135299] = 187698, -- Tar Trap
 	[159786] = 159788, -- Molten Hide (core hound)
+	[159954] = 159953, -- Feast (devilsaur)
 	[160048] = 160049, -- Stone Armor (quilen)
 	[160058] = 160057, -- Thick Hide (clefthoof)
 	[162480] = 162488, -- Steel Trap (root) (Survival talent)
