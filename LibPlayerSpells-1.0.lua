@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 10
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 11
 if LibStub then
 	local oldMinor
 	lib, oldMinor = LibStub:NewLibrary(MAJOR, MINOR)
@@ -91,6 +91,7 @@ lib.constants = {
 	DISEASE      = 0x00000002,
 	MAGIC        = 0x00000004,
 	POISON       = 0x00000008,
+	ENRAGE       = 0x00000010,
 
 	-- Targeting
 	HELPFUL      = 0x00004000, -- Usable on allies
@@ -110,6 +111,7 @@ lib.constants = {
 	INTERRUPT    = 0x04000000,
 	KNOCKBACK    = 0x08000000,
 	SNARE        = 0x10000000,
+	RAIDBUFF     = 0x20000000,
 }
 local constants = lib.constants
 
@@ -120,7 +122,7 @@ local CROWD_CTRL_TYPES = {
 
 local DISPEL_TYPES = {
 	constants.CURSE, constants.DISEASE,
-	constants.MAGIC, constants.POISON,
+	constants.ENRAGE , constants.MAGIC, constants.POISON,
 }
 
 local CROWD_CTRL_CATEGORY_NAMES = {
@@ -134,6 +136,7 @@ local CROWD_CTRL_CATEGORY_NAMES = {
 local DISPEL_TYPE_NAMES = {
 	[constants.CURSE]   = _G.ENCOUNTER_JOURNAL_SECTION_FLAG8,
 	[constants.DISEASE] = _G.ENCOUNTER_JOURNAL_SECTION_FLAG10,
+	[constants.ENRAGE]  = _G.ENCOUNTER_JOURNAL_SECTION_FLAG11,
 	[constants.MAGIC]   = _G.ENCOUNTER_JOURNAL_SECTION_FLAG7,
 	[constants.POISON]  = _G.ENCOUNTER_JOURNAL_SECTION_FLAG9,
 }
@@ -189,6 +192,7 @@ lib.masks = {
 	DISPEL_TYPE = bor(
 		constants.CURSE,
 		constants.DISEASE,
+		constants.ENRAGE,
 		constants.MAGIC,
 		constants.POISON
 	),
