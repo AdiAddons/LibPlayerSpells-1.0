@@ -45,7 +45,6 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 			HARMFUL = {
 				 31935,  -- Avenger's Shield (Protection)
 				196941, -- Judgement of Light (Protection Talent)
-				204242, -- Consecration
 				204079, -- Final Stand (Protection Talent / Taunt)
 				204301, -- Blessed Hammer (Protection Talent)
 				CROWD_CTRL = {
@@ -59,16 +58,16 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				152262, -- Seraphim (Protection Talent)
 				188370, -- Consecration (Protection)
 				276112, -- Divine Steed
-					BURST = {
-					      31884, -- Avenging Wrath
-					},
-					SURVIVAL = {
-						642, -- Divine Shield
-					      31850, -- Ardent Defender
-					      86659, -- Guardian of Ancient Kings
-					     132403, -- Shield of the Righteous (Protection)
-					     204150, -- Aegis of Light (Protection Talent)
-					},
+				BURST = {
+				      31884, -- Avenging Wrath
+				},
+				SURVIVAL = {
+					642, -- Divine Shield
+				      31850, -- Ardent Defender
+				      86659, -- Guardian of Ancient Kings
+				     132403, -- Shield of the Righteous (Protection)
+			             204150, -- Aegis of Light (Protection Talent)
+				},
 			},
 		},
 	},
