@@ -30,6 +30,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		DISPEL = {
 			HELPFUL = {
 				[213644] = "DISEASE POISON", -- Cleanse Toxins (Protection)
+				[236186] = "DISEASE POISON", -- Cleansing Light (Protection/Retribution PvP Talent)
 			},
 		},
 		AURA = {
@@ -47,6 +48,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				196941, -- Judgement of Light (Protection Talent)
 				204079, -- Final Stand (Protection Talent / Taunt)
 				204301, -- Blessed Hammer (Protection Talent)
+			       [206891] = "UNIQUE_AURA", -- Inquisition (Protection PvP Talent)
 				CROWD_CTRL = {
 					[62124] = "TAUNT", -- Hand of Reckoning (Protection Taunt)
 					  [853] = "STUN",    -- Hammer of Justice
@@ -85,11 +87,12 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[196941] = 275779, -- Judgement of Light (Protection Talent)
 	[204079] = 62124, -- Final Stand to Hand of Reckoning (Taunt / Protection Talent)
 	[204301] = 204019, -- Blessed Hammer (Protection Talent)
+	[206891] = 207028, -- Intimidated to Inquisition (Protection Honor Talent / Taunt)
 	[25771] = { -- Forbearance
 		633,    -- Lay on Hands
 		642,    -- Divine Shield
 	       1022,    -- Blessing of Protection
-		},
+		  },
 	[276112] = 190784, -- Divine Steed
 }, {
 	-- Map Aura to Modified Spell(s)
