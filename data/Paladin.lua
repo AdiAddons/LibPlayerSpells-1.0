@@ -20,49 +20,57 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("PALADIN", 80100, 1, {
+lib:__RegisterSpells("PALADIN", 80000, 1, {
 	COOLDOWN = {
-		20271, -- Judgement
-		53595, -- Hammer of the Righteous
-			INTERRUPT = {
-				96321, -- Rebuke
+		20271, -- Judgement (Protection)
+		53595, -- Hammer of the Righteous (Protection)
+		INTERRUPT = {
+			96321, -- Rebuke
+		},
+		DISPEL = {
+			HELPFUL = {
+				[213644] = "DISEASE POISON", -- Cleanse Toxins (Protection)
 			},
-			DISPEL = {
-				HELPFUL = {
-					[213644] = "DISEASE POISON", -- Cleanse Toxins
-				},
-			},
-			AURA = {
-				HELPFUL = {
-					1044, -- Blessing of Freedom
-					[25771] = "INVERT_AURA", -- Forbearance
-						SURVIVAL = {
-							1022, -- Blessing of Protection
-							6940, -- Blessing of Sacrifice
-						},
-				},
-				HARMFUL = {
-					31935,  -- Avenger's Shield
-					204242, -- Consecration
-						CROWD_CTRL = {
-							[62124] = "TAUNT", -- Hand of Reckoning
-							[853] = "STUN",    -- Hammer of Justice
-						},
-				},
-				PERSONAL = {
-					188370, -- Consecration (Protection)
-					276112, -- Divine Steed
-						BURST = {
-							31884, -- Avenging Wrath
-						},
-						SURVIVAL = {
-							642,    -- Divine Shield
-							31850,  -- Ardent Defender
-							86659,  -- Guardian of Ancient Kings
-							132403, -- Shield of the Righteous
-						},
+		},
+		AURA = {
+			HELPFUL = {
+			    1044, -- Blessing of Freedom
+			  204018, -- Blessing of Spellwarding (Protection Talent)
+			  [25771] = "INVERT_AURA", -- Forbearance
+				SURVIVAL = {
+					1022, -- Blessing of Protection
+					6940, -- Blessing of Sacrifice
 				},
 			},
+			HARMFUL = {
+				 31935,  -- Avenger's Shield (Protection)
+				196941, -- Judgement of Light (Protection Talent)
+				204242, -- Consecration
+				204079, -- Final Stand (Protection Talent / Taunt)
+				204301, -- Blessed Hammer (Protection Talent)
+				CROWD_CTRL = {
+					[62124] = "TAUNT", -- Hand of Reckoning (Protection Taunt)
+					  [853] = "STUN",    -- Hammer of Justice
+					[20066] = "INCAPACITATE", -- Repentance 
+				       [105421] = "DISORIENT", -- Blinding Light (Protection Talent)
+				},
+			},
+			PERSONAL = {
+				152262, -- Seraphim (Protection Talent)
+				188370, -- Consecration (Protection)
+				276112, -- Divine Steed
+					BURST = {
+					      31884, -- Avenging Wrath
+					},
+					SURVIVAL = {
+						642, -- Divine Shield
+					      31850, -- Ardent Defender
+					      86659, -- Guardian of Ancient Kings
+					     132403, -- Shield of the Righteous (Protection)
+					     204150, -- Aegis of Light (Protection Talent)
+					},
+			},
+		},
 	},
 	AURA = {
 		HELPFUL = {
@@ -72,15 +80,18 @@ lib:__RegisterSpells("PALADIN", 80100, 1, {
 	},
 },  {
 	-- map aura to provider(s)
-	[132403] = 53600, -- Shield of the Righteous
+	[105421] = 115750, -- Blinding Light (Disorient / Protection Talent)
+	[132403] = 53600, -- Shield of the Righteous (Protection)
 	[188370] = 26573, -- Consecration (Protection)
-	[204242] = { -- Consecration
-		26573,   -- Consecration (Protection)
-	},
+	[196941] = 275779, -- Judgement of Light (Protection Talent)
+	[204079] = 62124, -- Final Stand to Hand of Reckoning (Taunt / Protection Talent)
+	[204301] = 204019, -- Blessed Hammer (Protection Talent)
 	[25771] = { -- Forbearance
 		633,    -- Lay on Hands
 		642,    -- Divine Shield
-	   1022,    -- Blessing of Protection
+	       1022,    -- Blessing of Protection
 		},
-	[276112] = 190784, -- Divine Steed 	
+	[276112] = 190784, -- Divine Steed
+}, {
+	-- Map Aura to Modified Spell(s)
 })
