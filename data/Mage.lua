@@ -68,7 +68,7 @@ lib:__RegisterSpells("MAGE", 70300, 2, {
 			PERSONAL = {
 				 108839, -- Ice Floes
 				 113862, -- Greater Invisibility (dmg reduction)
- 				 116014, -- Rune of Power
+				 116014, -- Rune of Power
 				 194316, -- Cauterizing Blink (Fire artifact)
 				 198111, -- Temporal Shield (PvP)
 				 205025, -- Presence of Mind

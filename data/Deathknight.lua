@@ -55,7 +55,7 @@ lib:__RegisterSpells("DEATHKNIGHT", 70300, 1, {
 					},
 					STUN = {
 						 91797, -- Monstrous Blow (ghoul) (stun)
-   						 91800, -- Gnaw (ghoul) (stun)
+						 91800, -- Gnaw (ghoul) (stun)
 						108194, -- Asphyxiate (Unholy talent) (stun)
 						212332, -- Smash (abomination) (stun)
 						212337, -- Powerful Smash (abomination) (stun)
