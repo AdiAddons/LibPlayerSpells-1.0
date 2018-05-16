@@ -31,13 +31,20 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 		 119996, -- Transcendence: Transfer (Brewmaster)
 		 122281, -- Healing Elixir (Brewmaster talent)
 		 123986, -- Chi Burst (Brewmaster talent)
+		 202370, -- Mighty Ox Kick (Brewmaster honor talent)
+		 213658, -- Craft: Nimble Brew (Brewmaster honor talent)
 		[116705] = 'INTERRUPT', -- Spear Hand Strike (Brewmaster)
 		AURA = {
 			HARMFUL = {
 				123725, -- Breath of Fire (Brewmaster)
+				206891, -- Intimidated (Brewmaster honor talent)
 				CROWD_CTRL = {
 					[115078] = 'INCAPACITATE', -- Paralysis
 					[119381] = 'STUN', -- Leg Sweep (Brewmaster)
+					[202274] = 'DISORIENT', -- Incendiary Brew (Brewmaster honor talent)
+					STUN = {
+						202346, -- Double Barrel (Brewmaster honor talent)
+					},
 					TAUNT = {
 						116189, -- Provoke (Brewmaster)
 						118635, -- Provoke (Brewmaster talent)
@@ -50,12 +57,17 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 			},
 			HELPFUL = {
 				116841, -- Tiger's Lust (Brewmaster talent)
+				SURVIVAL = {
+					202162, -- Guard (Brewmaster honor talent)
+					202248, -- Guided Meditation (Brewmaster honor talent)
+				},
 			},
 			PERSONAL = {
 				101643, -- Transcendence (Brewmaster)
 				116847, -- Rushing Jade Wind (Brewmaster talent)
 				119085, -- Chi Torpedo (Brewmaster talent)
 				196739, -- Elusive Dance (Brewmaster talent)
+				202335, -- Double Barrel (Brewmaster honor talent)
 				215479, -- Ironskin Brew (Brewmaster)
 				SURVIVAL = {
 					115176, -- Zen Meditation (Brewmaster)
@@ -85,6 +97,10 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 	[196608] = 196607, -- Eye of the Tiger (Brewmaster talent)
 	[196727] = 132578, -- Provoke (Brewmaster talent) <- Invoke Niuzao, the Black Ox
 	[196739] = 196738, -- Elusive Dance (Brewmaster talent)
+	[202248] = 202200, -- Guided Meditation (Brewmaster honor talent)
+	[202274] = 202272, -- Incendiary Brew (Brewmaster honor talent) <- Incendiary Breath
+	[202346] = 202335, -- Double Barrel (Brewmaster honor talent)
+	[206891] = 207025, -- Intimidated (Brewmaster honor talent) <- Admonishment
 	[215479] = 115308, -- Ironskin Brew (Brewmaster
 	[228563] = 196736, -- Blackout Combo (Brewmaster talent)
 }, {
@@ -94,6 +110,10 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 	[196608] = 100780, -- Eye of the Tiger (Brewmaster talent) -> Tiger Palm
 	[196727] = 196727, -- Provoke (Niuzao) (Brewmaster talent)
 	[196739] = 119582, -- Elusive Dance (Brewmaster talent) -> Purifying Brew
+	[202248] = 115176, -- Guided Meditation (Brewmaster honor talent) -> Zen Meditation
+	[202274] = 115181, -- Incendiary Brew (Brewmaster honor talent) -> Breath of Fire
+	[202335] = 121253, -- Double Barrel (Brewmaster honor talent) -> Keg Smash
+	[202346] = 121253, -- Double Barrel (Brewmaster honor talent) -> Keg Smash
 	[228563] = { -- Blackout Combo (Brewmaster talent)
 		100780, -- Tiger Palm
 		115181, -- Breath of Fire
