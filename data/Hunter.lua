@@ -138,7 +138,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 				159786, -- Molten Hide (core hound)
 				159954, -- Feast (devilsaur)
 				186254, -- Bestial Wrath (Beast Mastery)
-				272790, -- Dire Frenzy (Beast Mastery)
+				272790, -- Frenzy (Beast Mastery)
 				SURVIVAL = {
 					 26064, -- Shell Shield (turtle)
 					 90339, -- Harden Carapace (beetle)
@@ -160,8 +160,8 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 					263938, -- Silverback (gorilla)
 					264022, -- Niuzao's Fortitude (ox)
 					264360, -- Winged Agility (wind serpent)
-				}
-			}
+				},
+			},
 		},
 		DISPEL = {
 			HARMFUL = {
@@ -291,7 +291,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 	[270339] = 271014, -- Scorching Shrapnel (Survival talent) <- Wildfire Infusion
 	[270343] = 271014, -- Internal Bleeding (Survival talent) <- Wildfire Infusion
 	[271049] = 271014, -- Volatile Wildfire (Survival talent) <- Wildfire Infusion
-	[272790] = 217200, -- Dire Frenzy <- Barbed Shot (Beast Mastery)
+	[272790] = 217200, -- Frenzy <- Barbed Shot (Beast Mastery)
 }, {
 	-- map aura to modified spell(s)
 	[118455] =   2643, -- Beast Cleave (Beast Mastery) -> Multi-Shot
