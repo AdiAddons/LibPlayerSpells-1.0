@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
+lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike (Vengeance)
@@ -30,7 +30,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 		 212084, -- Fel Devastation (Vengeance talent)
 		 235903, -- Mana Rift (Havon honor talent)
 		 258925, -- Fel Barrage (Havoc talent)
-		[183752] = 'INTERRUPT', -- Consume Magic
+		[183752] = 'INTERRUPT', -- Disrupt
 		AURA = {
 			HELPFUL = {
 				[209426] = 'SURVIVAL', -- Darkness (Havoc)
@@ -47,7 +47,6 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 				CROWD_CTRL = {
 					[185245] = 'TAUNT', -- Torment (Vengeance)
 					DISORIENT = {
-						179057, -- Chaos Nova (Havoc)
 						207685, -- Sigil of Misery (Vengeance)
 					},
 					INCAPACITATE = {
@@ -55,6 +54,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 						221527, -- Imprison (honor talent)
 					},
 					STUN = {
+						179057, -- Chaos Nova (Havoc) -- BUG: the debuff is currently not applied
 						200166, -- Metamorphosis (Havoc)
 						205630, -- Illidan's Grasp (hold) (Vengeance honor talent)
 						208618, -- Illidan's Grasp (thrown) (Vengeance honor talent)
@@ -108,6 +108,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 			MAGIC = {
 				[205604] = 'HELPFUL', -- Reverse Magic (honor talent)
 				[205625] = 'PERSONAL', -- Cleaned by Flame (Vengeance honor talent) -- BUG: not in the spellbook -- NOTE: Immolation Aura is then the dispelling spell
+				[278326] = 'HARMFUL', -- Consume Magic
 			},
 		},
 		POWER_REGEN = {
@@ -154,7 +155,6 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 1, {
 	[208612] = 206491, -- Nemesis (Giants) (Havoc talent)
 	[208613] = 206491, -- Nemesis (Mechanicals) (Havoc talent)
 	[208614] = 206491, -- Nemesis (Undead) (Havoc talent)
-	[208628] = 206491, -- Momentum (Havoc talent) (Havoc talent)
 	[208618] = 205630, -- Illidan's Grasp (thrown) (Vengeance honor talent)
 	[208628] = 206476, -- Momentum (Havoc talent)
 	[208796] = 205627, -- Jagged Spikes (Vengeance honor talent) -- BUG: not in the spellbook
