@@ -23,6 +23,7 @@ if not lib then return end
 lib:__RegisterSpells('MONK', 8000, 1, {
 	COOLDOWN = {
 		 109132, -- Roll
+		 113656, -- Fists of Fury (Windwalker)
 		 115098, -- Chi Wave (Brewmaster talent)
 		 115399, -- Black Ox Brew (Brewmaster talent)
 		 116844, -- Ring of Peace (Brewmaster talent)
@@ -36,23 +37,29 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 		[116705] = 'INTERRUPT', -- Spear Hand Strike (Brewmaster)
 		AURA = {
 			HARMFUL = {
-				123725, -- Breath of Fire (Brewmaster)
-				206891, -- Intimidated (Brewmaster honor talent)
+				 115804, -- Mortal Wounds (Windwalker)
+				 122470, --Touch of Karma (Windwalker)
+				 123725, -- Breath of Fire (Brewmaster)
+				 206891, -- Intimidated (Brewmaster honor talent)
+				[115080] = 'BURST', -- Touch of Death (Windwalker)
 				CROWD_CTRL = {
 					[115078] = 'INCAPACITATE', -- Paralysis
-					[119381] = 'STUN', -- Leg Sweep (Brewmaster)
+					[116706] = 'ROOT', -- Disable (Windwalker)
 					[202274] = 'DISORIENT', -- Incendiary Brew (Brewmaster honor talent)
 					STUN = {
+						119381, -- Leg Sweep
 						202346, -- Double Barrel (Brewmaster honor talent)
 					},
 					TAUNT = {
-						116189, -- Provoke (Brewmaster)
+						116189, -- Provoke (Brewmaster/Windwalker)
 						118635, -- Provoke (Brewmaster talent)
 						196727, -- Provoke (Brewmaster talent)
 					},
 				},
 				SNARE = {
+					116095, -- Disable (Windwalker)
 					121253, -- Keg Smash (Brewmaster)
+					123586, -- Flying Serpent Kick (Wilnwalker)
 				},
 			},
 			HELPFUL = {
@@ -69,18 +76,29 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 				196739, -- Elusive Dance (Brewmaster talent)
 				202335, -- Double Barrel (Brewmaster honor talent)
 				215479, -- Ironskin Brew (Brewmaster)
+				BURST = {
+					137639, -- Storm, Earth, and Fire (Windwalker)
+				},
 				SURVIVAL = {
 					115176, -- Zen Meditation (Brewmaster)
 					120954, -- Fortifying Brew (Brewmaster)
 					122278, -- Dampen Harm (Brewmaster talent)
+					125174, -- Touch of Karma (Windwalker)
 				},
 			},
 		},
+		DISPEL = {
+			[218164] = 'HELPFUL DISEASE POISON', -- Detox (Brewmaster/Windwalker)
+		}
 	},
 	AURA = {
-		HARMFUL = {},
+		HARMFUL = {
+			117952, -- Crackling Jade Lightning
+			228287, -- Mark of the Crane (Windwalker)
+		},
 		HELPFUL = {},
 		PERSONAL = {
+			116768, -- Blackout Kick! (Windwalker)
 			195630, -- Elusive Brawler (Brewmaster)
 			196608, -- Eye of the Tiger (Brewmaster talent) -- NOTE: also HARMFUL with the same id (not supported)
 			228563, -- Blackout Combo (Brewmaster talent)
@@ -88,11 +106,17 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 	},
 }, {
 	-- map aura to provider(s)
-	[116189] = 115546, -- Provoke (Brewmaster)
+	[115804] = 107428, -- Mortal Wounds (Windwalker) <- Rising Sun Kick
+	[116189] = 115546, -- Provoke (Brewmaster/Windwalker)
+	[116706] = 116095, -- Disable (Windwalker)
+	[116768] = 100780, -- Blackout Kick! (Windwalker) <- Tiger Palm
 	[118635] = 115315, -- Provoke (Brewmaster talent) <- Black Ox Statue
 	[119085] = 115008, -- Chi Torpedo (Brewmaster talent)
-	[123725] = 115181, -- Breath of Fire (Brewmaster)
 	[120954] = 115203, -- Fortifying Brew (Brewmaster)
+	[123586] = 101545, -- Flying Serpent Kick (Wilnwalker)
+	[123725] = 115181, -- Breath of Fire (Brewmaster)
+	[125174] = 122470, -- Touch of Karma (Windwalker)
+	[137639] = 221771, -- Storm, Earth, and Fire (Windwalker)
 	[195630] = 117906, -- Elusive Brawler (Brewmaster) <- Mastery: Elusive Brawler
 	[196608] = 196607, -- Eye of the Tiger (Brewmaster talent)
 	[196727] = 132578, -- Provoke (Brewmaster talent) <- Invoke Niuzao, the Black Ox
@@ -101,10 +125,12 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 	[202274] = 202272, -- Incendiary Brew (Brewmaster honor talent) <- Incendiary Breath
 	[202346] = 202335, -- Double Barrel (Brewmaster honor talent)
 	[206891] = 207025, -- Intimidated (Brewmaster honor talent) <- Admonishment
-	[215479] = 115308, -- Ironskin Brew (Brewmaster
+	[215479] = 115308, -- Ironskin Brew (Brewmaster)
+	[228287] = 101546, -- Mark of the Crane (Windwalker) <- Spinning Crane Kick
 	[228563] = 196736, -- Blackout Combo (Brewmaster talent)
 }, {
 	-- map aura to modified spell(s)
+	[116768] = 100784, -- Blackout Kick! (Windwalker) -> Blackout Kick
 	[118635] = 115546, -- Provoke (Brewmaster talent)
 	[195630] = 205523, -- Elusive Brawler (Brewmaster) -> Blackout Strike
 	[196608] = 100780, -- Eye of the Tiger (Brewmaster talent) -> Tiger Palm
