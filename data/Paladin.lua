@@ -161,7 +161,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[221886] = 190874, -- Divine Steed (Blood Elf)
 	[221887] = 190874, -- Divine Steed (Draenai/Lightforged Draenai)
 	[276111] = 190874, -- Divine Steed (Dwarf)
-	[276112] = 190784, -- Divine Steed (Dark Iron Dwarf)
+	[276112] = 190874, -- Divine Steed (Dark Iron Dwarf)
 }, {
 	-- Map Aura to Modified Spell(s)
 	[183778] = { -- Judgement of Light (Protection/Holy Talent)
