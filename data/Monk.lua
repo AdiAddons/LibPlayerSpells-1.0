@@ -45,6 +45,7 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 				 122470, --Touch of Karma (Windwalker)
 				 123725, -- Breath of Fire (Brewmaster)
 				 206891, -- Intimidated (Brewmaster honor talent)
+				 233759, -- Grapple Weapon (Windwalker honor talent)
 				[115080] = 'BURST', -- Touch of Death (Windwalker)
 				CROWD_CTRL = {
 					[115078] = 'INCAPACITATE', -- Paralysis
@@ -53,6 +54,7 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 					STUN = {
 						119381, -- Leg Sweep
 						202346, -- Double Barrel (Brewmaster honor talent)
+						232055, -- Fists of Fury (Windwalker honor talent)
 					},
 					TAUNT = {
 						116189, -- Provoke (Brewmaster/Windwalker)
@@ -68,6 +70,7 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 			},
 			HELPFUL = {
 				116841, -- Tiger's Lust (Brewmaster/Windwalker talent)
+				201447, -- Ride the Wind (Windwalker honor talent)
 				SURVIVAL = {
 					202162, -- Guard (Brewmaster honor talent)
 					202248, -- Guided Meditation (Brewmaster honor talent)
@@ -92,6 +95,7 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 					122278, -- Dampen Harm (Brewmaster/Windwalker talent)
 					122783, -- Diffuse Magic (Windwalker talent)
 					125174, -- Touch of Karma (Windwalker)
+					201318, -- Fortifying Brew (Windwalker honor talent)
 				},
 			},
 		},
@@ -110,6 +114,7 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 			195630, -- Elusive Brawler (Brewmaster)
 			196608, -- Eye of the Tiger (Brewmaster/Windwalker talent) -- NOTE: also HARMFUL with the same id (not supported)
 			228563, -- Blackout Combo (Brewmaster talent)
+			247483, -- Tigereye Brew (Windwalker honor talent)
 			261769, -- Inner Strength (Windwalker talent)
 		},
 	},
@@ -131,6 +136,7 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 	[196608] = 196607, -- Eye of the Tiger (Brewmaster talent)
 	[196727] = 132578, -- Provoke (Brewmaster talent) <- Invoke Niuzao, the Black Ox
 	[196739] = 196738, -- Elusive Dance (Brewmaster talent)
+	[201447] = 201372, -- Ride the Wind (Windwalker honor talent)
 	[202248] = 202200, -- Guided Meditation (Brewmaster honor talent)
 	[202274] = 202272, -- Incendiary Brew (Brewmaster honor talent) <- Incendiary Breath
 	[202346] = 202335, -- Double Barrel (Brewmaster honor talent)
@@ -138,6 +144,7 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 	[215479] = 115308, -- Ironskin Brew (Brewmaster)
 	[228287] = 101546, -- Mark of the Crane (Windwalker) <- Spinning Crane Kick
 	[228563] = 196736, -- Blackout Combo (Brewmaster talent)
+	[232055] = 205003, -- Fists of Fury (Windwalker honor talent) <- Heavy-Handed Strikes
 	[261769] = 261767, -- Inner Strength (Windwalker talent)
 }, {
 	-- map aura to modified spell(s)
@@ -148,6 +155,7 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 	[196608] = 100780, -- Eye of the Tiger (Brewmaster talent) -> Tiger Palm
 	[196727] = 196727, -- Provoke (Niuzao) (Brewmaster talent)
 	[196739] = 119582, -- Elusive Dance (Brewmaster talent) -> Purifying Brew
+	[201447] = 101545, -- Ride the Wind (Windwalker honor talent) -> Flying Serpent Kick
 	[202248] = 115176, -- Guided Meditation (Brewmaster honor talent) -> Zen Meditation
 	[202274] = 115181, -- Incendiary Brew (Brewmaster honor talent) -> Breath of Fire
 	[202335] = 121253, -- Double Barrel (Brewmaster honor talent) -> Keg Smash
@@ -159,6 +167,7 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 		119582, -- Purifying Brew
 		121253, -- Keg Smash
 	},
+	[232055] = 113656, -- Fists of Fury (Windwalker honor talent)
 	[261769] = { -- Inner Strength (Windwalker talent)
 		100784, -- Blackout Kick
 		101546, -- Spinning Crane Kick
