@@ -90,7 +90,12 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				152262, -- Seraphim (Protection Talent)
 				188370, -- Consecration (Protection)
 				214202, -- Rule of Law (Holy Talent)
-				276112, -- Divine Steed
+				221883, -- Divine Steed (Human)
+				221885, -- Divine Steed (Tauren)
+				221886, -- Divine Steed (Blood Elf)
+				221887, -- Divine Steed (Draenai/Lightforged Draenai)
+				276111, -- Divine Steed (Dwarf)
+				276112, -- Divine Steed (Dark Iron Dwarf)
 				BURST = {
 					 31884, -- Avenging Wrath
 					105809, -- Holy Avenger (Holy Talent)
@@ -151,7 +156,12 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[223819] = 223817, -- Divine Purpose (Retribution Talent)
 	[267611] =  85256, -- Righteous Verdict (Retribution Talent)
 	[267799] = 267798, -- Execution Sentence (Retribution Talent)
-	[276112] = 190784, -- Divine Steed
+	[221883] = 190874, -- Divine Steed (Human)
+	[221885] = 190874, -- Divine Steed (Tauren)
+	[221886] = 190874, -- Divine Steed (Blood Elf)
+	[221887] = 190874, -- Divine Steed (Draenai/Lightforged Draenai)
+	[276111] = 190874, -- Divine Steed (Dwarf)
+	[276112] = 190784, -- Divine Steed (Dark Iron Dwarf)
 }, {
 	-- Map Aura to Modified Spell(s)
 	[183778] = { -- Judgement of Light (Protection/Holy Talent)
