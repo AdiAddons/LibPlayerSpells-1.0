@@ -38,7 +38,6 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 			HARMFUL = {
 				 196941, -- Judgement of Light (Protection/Holy talent)
 				 197277, -- Judgement (Retribution)
-				 204079, -- Final Stand (Protection talent/Taunt)
 				 204242, -- Consecration (Protection/Holy)
 				 204301, -- Blessed Hammer (Protection talent)
 				 214222, -- Judgement (Holy)
@@ -78,7 +77,6 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				 31821, -- Aura Mastery
 				 84963, -- Inquisition (Retribution talent)
 				114250, -- Selfless Healer (Retribution talent)
-				152262, -- Seraphim (Protection talent)
 				188370, -- Consecration (Protection)
 				214202, -- Rule of Law (Holy talent)
 				221883, -- Divine Steed (Human)
@@ -88,7 +86,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				276111, -- Divine Steed (Dwarf)
 				276112, -- Divine Steed (Dark Iron Dwarf)
 				BURST = {
-					 31884, -- Avenging Wrath
+					31884, -- Avenging Wrath
 					105809, -- Holy Avenger (Holy talent)
 					216331, -- Avenging Crusader (Holy talent)
 					231895, -- Crusade (Retribution talent)
@@ -99,6 +97,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 					 31850, -- Ardent Defender
 					 86659, -- Guardian of Ancient Kings
 					132403, -- Shield of the Righteous (Protection)
+					152262, -- Seraphim (Protection talent)
 					184662, -- Shield of Vengeance (Retribution)
 					204150, -- Aegis of Light (Protection talent)
 					205191, -- Eye for an Eye (Retribution talent)
@@ -135,16 +134,14 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		  1022, -- Blessing of Protection
 		204018, -- Blessing of Spellwarding
 	},
-	[105421] = 115750, -- Blinding Light (Disorient / Protection talent)
+	[105421] = 115750, -- Blinding Light (Protection talent)
 	[114250] =  19750, -- Selfless Healer (Retribution talent)
 	[132403] =  53600, -- Shield of the Righteous (Protection)
 	[188370] =  26573, -- Consecration (Protection)
-	[196941] = { -- Judgement of Light (Protection/Holy talent)
-		275773, -- Judgement (Holy)
-		275779, -- Judgement (Protection)
-	},
+	[196941] = 183778, -- Judgement of Light (Protection/Holy talent)
 	[197277] =  20271, -- Judgement (Retribution)
-	[204242] =  26573, -- Consecration (Protection)
+	[204079] = 204077, -- Final Stand (Protection talent)
+	[204242] = 204054, -- Consecration (Protection) <- Consecrated Ground
 	[204301] = 204019, -- Blessed Hammer (Protection talent)
 	[204335] = 204150, -- Aegis of Light (Protection talent)
 	[206891] = 207028, -- Intimidated -> Inquisition (Protection honor talent)
@@ -166,7 +163,12 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		275773, -- Judgement (Holy)
 		275779, -- Judgement (Protection)
 	},
-	[204077] =    642, -- Final Stand -> Divine Shield (Protection talent)
+	[196941] = { -- Judgement of Light (Protection/Holy talent)
+		275773, -- Judgement (Holy)
+		275779, -- Judgement (Protection)
+	},
+	[204079] =    642, -- Final Stand (Protection talent) -> Divine Shield
+	[204242] =  26573, -- Consecration (Protection)
 	[216411] =  20473, -- Divine Purpose (Holy talent) -> Holy Shock
 	[216413] =  85222, -- Divine Purpose (Holy talent) -> Light of Dawn
 	[223819] = { -- Divine Purpose (Retribution)
