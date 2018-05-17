@@ -18,78 +18,69 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("PALADIN", 80000, 1, {
 	COOLDOWN = {
-		   633, -- Lay on Hands
-		 20473, -- Holy Shock (Holy)
-		 24275, -- Hammer of Wrath (Retribution Talent)
-		 35395, -- Crusader Strike (Retribution/Holy)
-		 53385, -- Divine Storm (Retribution)
-		 53595, -- Hammer of the Righteous (Protection)
-		 85222, -- Light of Dawn (Holy)
-		114158, -- Light's Hammer (Holy Talent)
-		114165, -- Holy Prism (Holy Talent)
-		184092, -- Light of the Protector (Protection)
-		184575, -- Blade of Justice (Retribution)
-		204035, -- Bastion of Light (Protection Talent)
-		210191, -- Word of Glory (Retribution Talent)
-		213652, -- Hand of the Protector (Protection Talent)		 
-		275779, -- Judgement (Protection)
-		INTERRUPT = {
-			96231, -- Rebuke
-		},
-		DISPEL = {
-			HELPFUL = {
-				[  4987] = "DISEASE POISON MAGIC", -- Cleanse (Holy)
-				[213644] = "DISEASE POISON", -- Cleanse Toxins (Protection/Retribution)
-				[236186] = "DISEASE POISON", -- Cleansing Light (Protection/Retribution PvP Talent)
-			},
-		},
+		    633, -- Lay on Hands
+		  20473, -- Holy Shock (Holy)
+		  24275, -- Hammer of Wrath (Retribution talent)
+		  35395, -- Crusader Strike (Retribution/Holy)
+		  53385, -- Divine Storm (Retribution)
+		  53595, -- Hammer of the Righteous (Protection)
+		  85222, -- Light of Dawn (Holy)
+		 114158, -- Light's Hammer (Holy talent)
+		 114165, -- Holy Prism (Holy talent)
+		 184092, -- Light of the Protector (Protection)
+		 184575, -- Blade of Justice (Retribution)
+		 204035, -- Bastion of Light (Protection talent)
+		 210191, -- Word of Glory (Retribution talent)
+		 213652, -- Hand of the Protector (Protection talent)
+		 275779, -- Judgement (Protection)
+		[ 96231] = "INTERRUPT", -- Rebuke
 		AURA = {
+			HARMFUL = {
+				 196941, -- Judgement of Light (Protection/Holy talent)
+				 197277, -- Judgement (Retribution)
+				 204079, -- Final Stand (Protection talent/Taunt)
+				 204242, -- Consecration (Protection/Holy)
+				 204301, -- Blessed Hammer (Protection talent)
+				 214222, -- Judgement (Holy)
+				 267799, -- Execution Sentence (Retribution)
+				[ 31935] = "INTERRUPT", -- Avenger's Shield (Protection)
+				[206891] = "UNIQUE_AURA", -- Inquisition (Protection honor talent)
+				CROWD_CTRL = {
+					[ 20066] = "INCAPACITATE", -- Repentance
+					[105421] = "DISORIENT", -- Blinding Light
+					STUN = {
+						   853, -- Hammer of Justice
+						205290, -- Wake of Ashes (Retribution talent)
+					},
+					TAUNT = {
+						 62124, -- Hand of Reckoning
+						204079, -- Final Stand (Protection talent)
+					},
+				},
+				SNARE = {
+					183218, -- Hand of Hindrance (Retribution)
+					255937, -- Wake of Ashes (Retribution talent)
+				},
+			},
 			HELPFUL = {
-			          1044, -- Blessing of Freedom
-				200025, -- Beacon of Virtue (Holy Talent)
-				204018, -- Blessing of Spellwarding (Protection Talent)
-				204335, -- Aegis of Light (Protection Talent)
-				223306, -- Bestow Faith (Holy Talent)
-			       [ 25771] = "INVERT_AURA", -- Forbearance	
+				   1044, -- Blessing of Freedom
+				 200025, -- Beacon of Virtue (Holy talent)
+				 204018, -- Blessing of Spellwarding (Protection talent)
+				 204335, -- Aegis of Light (Protection talent)
+				 223306, -- Bestow Faith (Holy talent)
+				[ 25771] = "INVERT_AURA", -- Forbearance
 				SURVIVAL = {
 					1022, -- Blessing of Protection
 					6940, -- Blessing of Sacrifice
 				},
 			},
-			HARMFUL = {
-				196941, -- Judgement of Light (Protection/Holy Talent)
-				197277, -- Judgement (Retribution)
-				204079, -- Final Stand (Protection Talent/Taunt)
-				204242, -- Consecration (Protection/Holy)
-				204301, -- Blessed Hammer (Protection Talent)
-				214222, -- Judgement (Holy)
-				267799, -- Execution Sentence (Retribution)
-			       [ 31935] = "INTERRUPT", -- Avenger's Shield (Protection)
-			       [206891] = "UNIQUE_AURA", -- Inquisition (Protection PvP Talent)
-				CROWD_CTRL = {
-					 [20066] = "INCAPACITATE", -- Repentance 
-					[105421] = "DISORIENT", -- Blinding Light
-				},
-				SNARE = {
-					183218, -- Hand of Hindrance (Retribution)
-					255937, -- Wake of Ashes (Retribution Talent)
-				},
-				STUN = {
-					   853, -- Hammer of Justice
-					205290, -- Wake of Ashes (Retribution Talent)
-				},
-				TAUNT = {
-					 62124, -- Hand of Reckoning
-					204079, -- Final Stand (Protection Talent)
-				}, 
-			},
 			PERSONAL = {
 				 31821, -- Aura Mastery
-				 84963, -- Inquisition (Retribution Talent)
-				114250, -- Selfless Healer (Retribution Talent)
-				152262, -- Seraphim (Protection Talent)
+				 84963, -- Inquisition (Retribution talent)
+				114250, -- Selfless Healer (Retribution talent)
+				152262, -- Seraphim (Protection talent)
 				188370, -- Consecration (Protection)
-				214202, -- Rule of Law (Holy Talent)
+				214202, -- Rule of Law (Holy talent)
 				221883, -- Divine Steed (Human)
 				221885, -- Divine Steed (Tauren)
 				221886, -- Divine Steed (Blood Elf)
@@ -98,9 +89,9 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				276112, -- Divine Steed (Dark Iron Dwarf)
 				BURST = {
 					 31884, -- Avenging Wrath
-					105809, -- Holy Avenger (Holy Talent)
-					216331, -- Avenging Crusader (Holy Talent)
-					231895, -- Crusade (Retribution Talent)
+					105809, -- Holy Avenger (Holy talent)
+					216331, -- Avenging Crusader (Holy talent)
+					231895, -- Crusade (Retribution talent)
 				},
 				SURVIVAL = {
 					   498, -- Divine Protection (Holy)
@@ -108,54 +99,61 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 					 31850, -- Ardent Defender
 					 86659, -- Guardian of Ancient Kings
 					132403, -- Shield of the Righteous (Protection)
-				    	184662, -- Shield of Vengeance (Retribution)
-				    	204150, -- Aegis of Light (Protection Talent)
-					205191, -- Eye for an Eye (Retribution Talent)
+					184662, -- Shield of Vengeance (Retribution)
+					204150, -- Aegis of Light (Protection talent)
+					205191, -- Eye for an Eye (Retribution talent)
 				},
+			},
+		},
+		DISPEL = {
+			HELPFUL = {
+				[  4987] = "DISEASE POISON MAGIC", -- Cleanse (Holy)
+				[213644] = "DISEASE POISON", -- Cleanse Toxins (Protection/Retribution)
+				[236186] = "DISEASE POISON", -- Cleansing Light (Protection/Retribution honor talent)
 			},
 		},
 	},
 	AURA = {
 		HELPFUL = {
 			 53563, -- Beacon of Light (Holy)
-			156910, -- Beacon of Faith (Holy Talent)
+			156910, -- Beacon of Faith (Holy talent)
 			203538, -- Greater Blessing of Kings (Retribution)
 			203539, -- Greater Blessing of Wisdom (Retribution)
 		},
 		PERSONAL = {
-			216411, -- Divine Purpose (Holy Talent - Holy Shock)
-			216413, -- Divine Purpose (Holy Talent - Light of Dawn)
-			223819, -- Divine Purpose (Retribution Talent)
-			267611, -- Righteous Verdict (Retribution Talent)	
+			216411, -- Divine Purpose (Holy talent - Holy Shock)
+			216413, -- Divine Purpose (Holy talent - Light of Dawn)
+			223819, -- Divine Purpose (Retribution talent)
+			267611, -- Righteous Verdict (Retribution talent)
 		},
 	},
-},  {
+}, {
 	-- map aura to provider(s)
 	[ 25771] = { -- Forbearance
 		   633, -- Lay on Hands
 		   642, -- Divine Shield
-	      	  1022, -- Blessing of Protection
+		  1022, -- Blessing of Protection
 		204018, -- Blessing of Spellwarding
 	},
-	[105421] = 115750, -- Blinding Light (Disorient / Protection Talent)
-	[114250] =  19750, -- Selfless Healer (Retribution Talent)
+	[105421] = 115750, -- Blinding Light (Disorient / Protection talent)
+	[114250] =  19750, -- Selfless Healer (Retribution talent)
 	[132403] =  53600, -- Shield of the Righteous (Protection)
 	[188370] =  26573, -- Consecration (Protection)
-	[196941] = { -- Judgement of Light (Protection/Holy Talent)
+	[196941] = { -- Judgement of Light (Protection/Holy talent)
 		275773, -- Judgement (Holy)
 		275779, -- Judgement (Protection)
 	},
 	[197277] =  20271, -- Judgement (Retribution)
 	[204242] =  26573, -- Consecration (Protection)
-	[204301] = 204019, -- Blessed Hammer (Protection Talent)
-	[204335] = 204150, -- Aegis of Light (Protection Talent)
-	[206891] = 207028, -- Intimidated to Inquisition (Protection Honor Talent / Taunt)
+	[204301] = 204019, -- Blessed Hammer (Protection talent)
+	[204335] = 204150, -- Aegis of Light (Protection talent)
+	[206891] = 207028, -- Intimidated -> Inquisition (Protection honor talent)
 	[214222] = 275773, -- Judgement (Holy)
-	[216411] = 197646, -- Divine Purpose (Holy Talent - Holy Shock)
-	[216413] = 197646, -- Divine Purpose (Holy Talent - Light of Dawn)
-	[223819] = 223817, -- Divine Purpose (Retribution Talent)
-	[267611] =  85256, -- Righteous Verdict (Retribution Talent)
-	[267799] = 267798, -- Execution Sentence (Retribution Talent)
+	[216411] = 197646, -- Divine Purpose (Holy talent - Holy Shock)
+	[216413] = 197646, -- Divine Purpose (Holy talent - Light of Dawn)
+	[223819] = 223817, -- Divine Purpose (Retribution talent)
+	[267611] =  85256, -- Righteous Verdict (Retribution talent)
+	[267799] = 267798, -- Execution Sentence (Retribution talent)
 	[221883] = 190874, -- Divine Steed (Human)
 	[221885] = 190874, -- Divine Steed (Tauren)
 	[221886] = 190874, -- Divine Steed (Blood Elf)
@@ -163,14 +161,14 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[276111] = 190874, -- Divine Steed (Dwarf)
 	[276112] = 190874, -- Divine Steed (Dark Iron Dwarf)
 }, {
-	-- Map Aura to Modified Spell(s)
-	[183778] = { -- Judgement of Light (Protection/Holy Talent)
+	-- map aura to modified spell(s)
+	[183778] = { -- Judgement of Light (Protection/Holy talent)
 		275773, -- Judgement (Holy)
 		275779, -- Judgement (Protection)
 	},
-	[204077] =    642, -- Final Stand to Divine Shield (Taunt / Protection Talent)
-	[216411] =  20473, -- Divine Purpose (Holy Talent) to Holy Shock
-	[216413] =  85222, -- Divine Purpose (Holy Talent) to Light of Dawn
+	[204077] =    642, -- Final Stand -> Divine Shield (Protection talent)
+	[216411] =  20473, -- Divine Purpose (Holy talent) -> Holy Shock
+	[216413] =  85222, -- Divine Purpose (Holy talent) -> Light of Dawn
 	[223819] = { -- Divine Purpose (Retribution)
 		 53385, -- Divine Storm
 		 85256, -- Templar's Verdict
