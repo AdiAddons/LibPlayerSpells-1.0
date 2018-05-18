@@ -71,11 +71,11 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				[ 25771] = "INVERT_AURA", -- Forbearance
 				SURVIVAL = {
 					1022, -- Blessing of Protection
-					6940, -- Blessing of Sacrifice
+					6940, -- Blessing of Sacrifice (Holy/Protection)
 				},
 			},
 			PERSONAL = {
-				 31821, -- Aura Mastery
+				 31821, -- Aura Mastery (Holy)
 				114250, -- Selfless Healer (Retribution talent)
 				188370, -- Consecration (Protection)
 				209785, -- Fires of Justice (Retribution talent)
@@ -122,6 +122,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 			203539, -- Greater Blessing of Wisdom (Retribution)
 		},
 		PERSONAL = {
+			 54149, -- Infusion of Light (Holy)
 			 84963, -- Inquisition (Retribution talent)
 			216411, -- Divine Purpose (Holy talent - Holy Shock)
 			216413, -- Divine Purpose (Holy talent - Light of Dawn)
@@ -138,6 +139,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		  1022, -- Blessing of Protection
 		204018, -- Blessing of Spellwarding
 	},
+	[ 54149] =  53576, -- Infusion of Light (Holy)
 	[105421] = 115750, -- Blinding Light (Protection talent)
 	[114250] =  85804, -- Selfless Healer (Retribution talent)
 	[132403] =  53600, -- Shield of the Righteous (Protection)
@@ -145,7 +147,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[196941] = 183778, -- Judgement of Light (Protection/Holy talent)
 	[197277] =  20271, -- Judgement (Retribution)
 	[204079] = 204077, -- Final Stand (Protection talent)
-	[204242] = 204054, -- Consecration (Protection) <- Consecrated Ground
+	[204242] =  26573, -- Consecration (Holy/Protection)
 	[204301] = 204019, -- Blessed Hammer (Protection talent)
 	[204335] = 204150, -- Aegis of Light (Protection talent)
 	[206891] = 207028, -- Intimidated -> Inquisition (Protection honor talent)
@@ -156,19 +158,23 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[223819] = 223817, -- Divine Purpose (Retribution talent)
 	[267611] = 267610, -- Righteous Verdict (Retribution talent)
 	[267799] = 267798, -- Execution Sentence (Retribution talent)
-	[221883] = 190874, -- Divine Steed (Human)
-	[221885] = 190874, -- Divine Steed (Tauren)
-	[221886] = 190874, -- Divine Steed (Blood Elf)
-	[221887] = 190874, -- Divine Steed (Draenai/Lightforged Draenai)
+	[221883] = 190784, -- Divine Steed (Human)
+	[221885] = 190784, -- Divine Steed (Tauren)
+	[221886] = 190784, -- Divine Steed (Blood Elf)
+	[221887] = 190784, -- Divine Steed (Draenai/Lightforged Draenai)
 	[269571] = 269569, -- Zeal (Retribution talent)
 	[271581] = 271580, -- Divine Judgement (Retribution talent)
-	[276111] = 190874, -- Divine Steed (Dwarf)
-	[276112] = 190874, -- Divine Steed (Dark Iron Dwarf)
+	[276111] = 190784, -- Divine Steed (Dwarf)
+	[276112] = 190784, -- Divine Steed (Dark Iron Dwarf)
 }, {
 	-- map aura to modified spell(s)
 	[ 31884] = { -- Avenging Wrath
 		24275, -- Hammer of Wrath (Retribution talent)
 		31884, -- Avenging Wrath
+	},
+	[ 54149] = { -- Infusion of Light (Holy)
+		19750, -- Flash of Light
+		82326, -- Holy Light
 	},
 	[114250] =  19750, -- Selfless Healer (Retribution talent) -> Flash of Light
 	[183778] = { -- Judgement of Light (Protection/Holy talent)
@@ -180,7 +186,6 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		275779, -- Judgement (Protection)
 	},
 	[204079] =    642, -- Final Stand (Protection talent) -> Divine Shield
-	[204242] =  26573, -- Consecration (Protection)
 	[209785] =  35395, -- Fires of Justice (Retribution talent) -> Crusader Strike
 	[216411] =  20473, -- Divine Purpose (Holy talent) -> Holy Shock
 	[216413] =  85222, -- Divine Purpose (Holy talent) -> Light of Dawn
