@@ -103,6 +103,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 				186258, -- Aspect of the Cheetah (30%)
 				186289, -- Aspect of the Eagle (Survival)
 				199483, -- Camouflage (talent)
+				202748, -- Survival Tactics (honor talent)
 				203155, -- Sniper Shot (Marksmanship honor talent)
 				257946, -- Thrill of the Hunt (Beast Mastery talent)
 				260242, -- Precise Shots (Marksmanship)
@@ -158,6 +159,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 			},
 		},
 		DISPEL = {
+			[202746] = 'PERSONAL MAGIC', -- Survival Tactics (honor talent) -- NOTE: Feign Death is the dispel
 			HARMFUL = {
 				MAGIC = {
 					ENRAGE = {
@@ -254,9 +256,10 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 	[190927] = 190925, -- Harpoon (Survival)
 	[193534] = 193533, -- Steady Focus (Marksmanship talent)
 	[194594] = 194595, -- Lock and Load (Marksmanship talent)
-	[203233] = 203235, -- Aspect of the Cheetah (Survival honor talent) -- BUG: does not appear in the spellbook
+	[202748] = 202746, -- Survival Tactics (honor talent)
+	[203233] = 203235, -- Aspect of the Cheetah (Survival honor talent)
 	[203268] = 203264, -- Sticky Tar (Survival honor talent)
-	[203337] = 203340, -- Freezing Trap (Survival honor talent) <- Diamond Ice -- BUG: does not appear in the spellbook
+	[203337] = 203340, -- Freezing Trap (Survival honor talent) <- Diamond Ice
 	[208684] = 208652, -- Dire Beast: Hawk (Beast Mastery honor talent)
 	[209967] = 205691, -- Dire Beast: Basilisk (Beast Mastery honor talent)
 	[213691] = 186387, -- Scatter Shot (Marksmanship honor talent)
@@ -294,6 +297,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 	[118922] =    781, -- Posthaste (talent) -> Disengage
 	[193534] =  56641, -- Steady Focus (Marksmanship talent) -> Steady Shot
 	[194594] =  19434, -- Lock and Load (Marksmanship talent) -> Aimed Shot
+	[202748] =   5384, -- Survival Tactics (honor talent) -> Feign Death
 	[203233] = 186257, -- Aspect of the Cheetah (Survival honor talent)
 	[203268] = 187698, -- Sticky Tar (Survival honor talent) -> Tar Trap
 	[203337] = 187650, -- Freezing Trap (Survival honor talent)
