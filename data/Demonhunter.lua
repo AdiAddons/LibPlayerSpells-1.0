@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local lib = LibStub("LibPlayerSpells-1.0")
+local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
 lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 	COOLDOWN = {
@@ -70,13 +70,12 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 				},
 			},
 			PERSONAL = {
-				 188499, -- Blade Dance (Havoc) -- NOTE: somehow the same id as Sigil of Flame
-				 188501, -- Spectral Sight
-				 205629, -- Demonic Trample (Vengeance honor talent)
-				 206803, -- Rain from Above (launching) (Havoc honor talent)
-				 206804, -- Rain from Above (gliding) (Havoc honor talent)
-				 210152, -- Death Sweep (replaces Blade Dance when Metamorphosis) (Havoc)
-				[258920] = 'POWER_REGEN', -- Immolation Aura (Havoc talent)
+				188499, -- Blade Dance (Havoc) -- NOTE: somehow the same id as Sigil of Flame
+				188501, -- Spectral Sight
+				205629, -- Demonic Trample (Vengeance honor talent)
+				206803, -- Rain from Above (launching) (Havoc honor talent)
+				206804, -- Rain from Above (gliding) (Havoc honor talent)
+				210152, -- Death Sweep (replaces Blade Dance when Metamorphosis) (Havoc)
 				BURST = {
 					162264, -- Metamorphosis (Havoc)
 					208579, -- Nemesis (Demons) (Havoc talent)
@@ -93,6 +92,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 				},
 				POWER_REGEN = {
 					178740, -- Immolation Aura (Vengeance)
+					258920, -- Immolation Aura (Havoc talent)
 				},
 				SURVIVAL = {
 					187827, -- Metamorphosis (Vengeance)
@@ -107,7 +107,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 		DISPEL = {
 			MAGIC = {
 				[205604] = 'HELPFUL', -- Reverse Magic (honor talent)
-				[205625] = 'PERSONAL', -- Cleaned by Flame (Vengeance honor talent) -- BUG: not in the spellbook -- NOTE: Immolation Aura is then the dispelling spell
+				[205625] = 'PERSONAL', -- Cleaned by Flame (Vengeance honor talent) -- NOTE: Immolation Aura is the dispelling spell
 				[278326] = 'HARMFUL', -- Consume Magic
 			},
 		},
@@ -123,6 +123,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 			268178, -- Void Reaver (Vengeance talent)
 		},
 		PERSONAL = {
+			203981, -- Soul Fragments (Vengeance)
 			207693, -- Feast of Souls (Vengeance talent)
 		},
 	},
@@ -137,6 +138,10 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 	[198813] = 198793, -- Vengeful Retreat (Havoc)
 	[200166] = 191427, -- Metamorphosis (Havoc)
 	[203819] = 203720, -- Demon Spikes (Vengeance)
+	[203981] = { -- Soul Fragments (Vengeance)
+		203782, -- Shear
+		264632, -- Fracture (talent)
+	},
 	[204490] = 202137, -- Sigil of Silence (Vengeange)
 	[204598] = 188499, -- Sigil of Flame (Vengeance)
 	[204843] = 202138, -- Sigil of Chains (Vengeance talent)
@@ -170,19 +175,24 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 	-- map aura to modified spell(s)
 	[185245] = 185245, -- Torment (Vengeance)
 	[187827] = 187827, -- Metamorphosis (Vengeance)
+	[203981] = { -- Soul Fragments (Vengeance)
+		228477, -- Soul Cleave
+		247454, -- Soul Bomb (talent)
+		263648, -- Soul Barrier (talent)
+	},
 	[204490] = { -- Sigil of Silence (Vengeange)
-		202137, -- Sigil of Silence (Vengeange)
-		207682, -- Sigil of Silence (with Concentrated Sigils talent) (Vengeance)
+		202137, -- Sigil of Silence
+		207682, -- Sigil of Silence (with Concentrated Sigils talent)
 	},
 	[204598] = { -- Sigil of Flame (Vengeance)
-		204513, -- Sigil of Flame (with Concentrated Sigils talent) (Vengeance)
-		204596, -- Sigil of Flame (Vengeance)
+		204513, -- Sigil of Flame (with Concentrated Sigils talent)
+		204596, -- Sigil of Flame
 	},
 	[205630] = 208173, -- Illidan's Grasp (Vengeance honor talent) -> Illidan's Grasp: Throw
 	[206891] = 207029, -- Intimidated (Vengeance honor talent) <- Tormentor
 	[207685] = { -- Sigil of Misery (Vengeance)
-		202140, -- Sigil of Misery (with Concentrated Sigils talent) (Vengeance)
-		207684, -- Sigil of Misery (Vengeance)
+		202140, -- Sigil of Misery (with Concentrated Sigils talent)
+		207684, -- Sigil of Misery
 	},
 	[207693] = 228477, -- Feast of Souls (Vengeance talent) -> Soul Cleave
 	[208628] = 195072, -- Momentum (Havoc talent) -> Fel Rush
@@ -191,7 +201,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 	[213405] = 185123, -- Master of the Glaive (Havoc talent) -> Throw Glaive
 	[258883] = { -- Trail of Ruin (Havoc talent)
 		188499, -- Blade Dance
-		210152, -- Death Sweep
+		210152, -- Death Sweep (during Metamorphosis)
 	},
 	[268178] = 228477, -- Void Reaver (Vengeance talent) -> Soul Cleave
 })
