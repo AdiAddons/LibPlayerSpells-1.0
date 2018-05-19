@@ -24,7 +24,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 	COOLDOWN = {
 		    781, -- Disengage
 		  19434, -- Aimed Shot (Marksmanship)
-		  34026, -- Kill Command (Beast Mastery) 
+		  34026, -- Kill Command (Beast Mastery)
 		 109304, -- Exhilaration
 		 120360, -- Barrage (Beast Mastery/Marksmanship talent)
 		 120679, -- Dire Beast (Beast Mastery talent)
@@ -145,8 +145,6 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 					159733, -- Stone Scales (Basilisk)
 					160011, -- Agile Reflexes (fox)
 					160044, -- Primal Agility (monkey)
-					160048, -- Stone Armor (quilen)
-					160058, -- Thick Hide (clefthoof)
 					160063, -- Solid Shell (shale spider)
 					263865, -- Scale Shield (scalehide)
 					263867, -- Obsidian Skin (core hound)
@@ -155,10 +153,6 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 					263887, -- Dragons Guile (dragonhawk)
 					263892, -- Catlike Reflexes (cat)
 					263904, -- Serpent's Swiftness (serpent)
-					263920, -- Gruff (goat)
-					263926, -- Thick Fur (bear)
-					263938, -- Silverback (gorilla)
-					264022, -- Niuzao's Fortitude (ox)
 					264360, -- Winged Agility (wind serpent)
 				},
 			},
@@ -192,6 +186,8 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
+			   1462, -- Beast Lore -- NOTE: HELPFUL on player controlled pets
+			   1515, -- Tame Beast
 			 257284, -- Hunter's Mark (Marksmanship talent)
 			 259491, -- Serpent Sting (Survival)
 			 270343, -- Internal Bleeding (Survival talent)
