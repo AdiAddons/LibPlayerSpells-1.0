@@ -67,7 +67,9 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				 200025, -- Beacon of Virtue (Holy talent)
 				 204018, -- Blessing of Spellwarding (Protection talent)
 				 204335, -- Aegis of Light (Protection talent)
+				 210256, -- Blessing of Sanctuary (Retribution honor talent)
 				 223306, -- Bestow Faith (Holy talent)
+				 246807, -- Lawbringer (Retribution honor talent)
 				[ 25771] = "INVERT_AURA", -- Forbearance
 				SURVIVAL = {
 					  1022, -- Blessing of Protection
@@ -76,20 +78,22 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				},
 			},
 			PERSONAL = {
-				 31821, -- Aura Mastery (Holy)
-				114250, -- Selfless Healer (Retribution talent)
-				188370, -- Consecration (Protection)
-				199545, -- Steed of Glory (Protection honor talent)
-				209785, -- Fires of Justice (Retribution talent)
-				214202, -- Rule of Law (Holy talent)
-				215652, -- Shield of Virtue (Protection honor talent)
-				221883, -- Divine Steed (Human)
-				221885, -- Divine Steed (Tauren)
-				221886, -- Divine Steed (Blood Elf)
-				221887, -- Divine Steed (Draenai/Lightforged Draenai)
-				269571, -- Zeal (Retribution talent)
-				276111, -- Divine Steed (Dwarf)
-				276112, -- Divine Steed (Dark Iron Dwarf)
+				  31821, -- Aura Mastery (Holy)
+				 114250, -- Selfless Healer (Retribution talent)
+				 188370, -- Consecration (Protection)
+				 199545, -- Steed of Glory (Protection honor talent)
+				 209785, -- Fires of Justice (Retribution talent)
+				 214202, -- Rule of Law (Holy talent)
+				 215652, -- Shield of Virtue (Protection honor talent)
+				 221883, -- Divine Steed (Human)
+				 221885, -- Divine Steed (Tauren)
+				 221886, -- Divine Steed (Blood Elf)
+				 221887, -- Divine Steed (Draenai/Lightforged Draenai)
+				 247677, -- Reckoning (Retribution honor talent)
+				 248878, -- Seraphim's Blessing (Retribution honor talent)
+				 269571, -- Zeal (Retribution talent)
+				 276111, -- Divine Steed (Dwarf)
+				 276112, -- Divine Steed (Dark Iron Dwarf)
 				BURST = {
 					 31884, -- Avenging Wrath
 					105809, -- Holy Avenger (Holy talent)
@@ -128,8 +132,8 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		PERSONAL = {
 			 54149, -- Infusion of Light (Holy)
 			 84963, -- Inquisition (Retribution talent)
-			216411, -- Divine Purpose (Holy talent - Holy Shock)
-			216413, -- Divine Purpose (Holy talent - Light of Dawn)
+			216411, -- Divine Purpose (Holy talent) -- NOTE: Holy Shock
+			216413, -- Divine Purpose (Holy talent) -- NOTE: Light of Dawn
 			223819, -- Divine Purpose (Retribution talent)
 			267611, -- Righteous Verdict (Retribution talent)
 			271581, -- Divine Judgement (Retribution talent)
@@ -158,17 +162,20 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[206891] = 207028, -- Intimidated -> Inquisition (Protection honor talent)
 	[209785] = 203316, -- Fires of Justice (Retribution talent)
 	[214222] = 275773, -- Judgement (Holy)
-	[216411] = 197646, -- Divine Purpose (Holy talent - Holy Shock)
-	[216413] = 197646, -- Divine Purpose (Holy talent - Light of Dawn)
+	[216411] = 197646, -- Divine Purpose (Holy talent) -- NOTE: Holy Shock
+	[216413] = 197646, -- Divine Purpose (Holy talent) -- NOTE: Light of Dawn
 	[216857] = 216855, -- Guarded by the Light (Protection honor talent)
 	[223819] = 223817, -- Divine Purpose (Retribution talent)
-	[228050] = 228049, -- Divine Shield (Protection honor talent) -> Guardian of the Forgotten Queen
+	[228050] = 228049, -- Divine Shield (Protection honor talent) <- Guardian of the Forgotten Queen
+	[247677] = 247675, -- Reckoning (Retribution honor talent) <- Hammer of Reckoning
+	[248878] = 204927, -- Seraphim's Blessing (Retribution honor talent)
 	[267611] = 267610, -- Righteous Verdict (Retribution talent)
 	[267799] = 267798, -- Execution Sentence (Retribution talent)
 	[221883] = 190784, -- Divine Steed (Human)
 	[221885] = 190784, -- Divine Steed (Tauren)
 	[221886] = 190784, -- Divine Steed (Blood Elf)
 	[221887] = 190784, -- Divine Steed (Draenai/Lightforged Draenai)
+	[246807] = 246806, -- Lawbringer (Retribution honor talent)
 	[269571] = 269569, -- Zeal (Retribution talent)
 	[271581] = 271580, -- Divine Judgement (Retribution talent)
 	[276111] = 190784, -- Divine Steed (Dwarf)
@@ -209,6 +216,8 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		231895, -- Crusade (Retribution talent)
 		24275, -- Hammer of Wrath (Retribution talent)
 	},
+	[246807] =  20271, -- Lawbringer (Retribution honor talent) -> Judgement
+	[248878] =  19750, -- Seraphim's Blessing (Retribution honor talent) -> Flash of Light
 	[267611] =  85256, -- Righteous Verdict (Retribution talent) -> Templar's Verdict
 	[269571] =  20271, -- Zeal (Retribution talent) -> Judgement
 	[271581] =  20271, -- Divine Judgement (Retribution talent) -> Judgement
