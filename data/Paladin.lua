@@ -70,16 +70,19 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				 223306, -- Bestow Faith (Holy talent)
 				[ 25771] = "INVERT_AURA", -- Forbearance
 				SURVIVAL = {
-					1022, -- Blessing of Protection
-					6940, -- Blessing of Sacrifice (Holy/Protection)
+					  1022, -- Blessing of Protection
+					  6940, -- Blessing of Sacrifice (Holy/Protection)
+					228050, -- Divine Shield (Protection honor talent)
 				},
 			},
 			PERSONAL = {
 				 31821, -- Aura Mastery (Holy)
 				114250, -- Selfless Healer (Retribution talent)
 				188370, -- Consecration (Protection)
+				199545, -- Steed of Glory (Protection honor talent)
 				209785, -- Fires of Justice (Retribution talent)
 				214202, -- Rule of Law (Holy talent)
+				215652, -- Shield of Virtue (Protection honor talent)
 				221883, -- Divine Steed (Human)
 				221885, -- Divine Steed (Tauren)
 				221886, -- Divine Steed (Blood Elf)
@@ -120,6 +123,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 			156910, -- Beacon of Faith (Holy talent)
 			203538, -- Greater Blessing of Kings (Retribution)
 			203539, -- Greater Blessing of Wisdom (Retribution)
+			216857, -- Guarded by the Light (Protection honor talent)
 		},
 		PERSONAL = {
 			 54149, -- Infusion of Light (Holy)
@@ -146,6 +150,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[188370] =  26573, -- Consecration (Protection)
 	[196941] = 183778, -- Judgement of Light (Protection/Holy talent)
 	[197277] =  20271, -- Judgement (Retribution)
+	[199545] = 199542, -- Steed of Glory (Protection honor talent)
 	[204079] = 204077, -- Final Stand (Protection talent)
 	[204242] =  26573, -- Consecration (Holy/Protection)
 	[204301] = 204019, -- Blessed Hammer (Protection talent)
@@ -155,7 +160,9 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[214222] = 275773, -- Judgement (Holy)
 	[216411] = 197646, -- Divine Purpose (Holy talent - Holy Shock)
 	[216413] = 197646, -- Divine Purpose (Holy talent - Light of Dawn)
+	[216857] = 216855, -- Guarded by the Light (Protection honor talent)
 	[223819] = 223817, -- Divine Purpose (Retribution talent)
+	[228050] = 228049, -- Divine Shield (Protection honor talent) -> Guardian of the Forgotten Queen
 	[267611] = 267610, -- Righteous Verdict (Retribution talent)
 	[267799] = 267798, -- Execution Sentence (Retribution talent)
 	[221883] = 190784, -- Divine Steed (Human)
@@ -185,10 +192,12 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		275773, -- Judgement (Holy)
 		275779, -- Judgement (Protection)
 	},
+	[199545] = 190784, -- Steed of Glory (Protection honor talent) -> Divine Steed
 	[204079] =    642, -- Final Stand (Protection talent) -> Divine Shield
 	[209785] =  35395, -- Fires of Justice (Retribution talent) -> Crusader Strike
 	[216411] =  20473, -- Divine Purpose (Holy talent) -> Holy Shock
 	[216413] =  85222, -- Divine Purpose (Holy talent) -> Light of Dawn
+	[216857] =  19750, -- Guarded by the Light (Protection honor talent) -> Flash of Light
 	[223819] = { -- Divine Purpose (Retribution)
 		 53385, -- Divine Storm
 		 85256, -- Templar's Verdict
