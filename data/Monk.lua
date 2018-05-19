@@ -79,6 +79,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 				119611, -- Renewing Mist (Mistweaver)
 				191840, -- Essence Font (Mistweaver)
 				201447, -- Ride the Wind (Windwalker honor talent)
+				205655, -- Dome of Mist (Mistweaver honor talent)
 				SURVIVAL = {
 					116849, -- Life Cocoon (Mistweaver)
 					202162, -- Guard (Brewmaster honor talent)
@@ -96,11 +97,13 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 				197206, -- Uplifting Trance (Mistweaver)
 				197908, -- Mana Tea (Mistweaver talent)
 				202335, -- Double Barrel (Brewmaster honor talent)
+				209584, -- Zen Focus Tea (Mistweaver honor talent)
 				215479, -- Ironskin Brew (Brewmaster)
 				261715, -- Rushing Jade Wind (Windwalker talent)
 				BURST = {
 					137639, -- Storm, Earth, and Fire (Windwalker)
 					152173, -- Serenity (Windwalker talent)
+					216113, -- Way of the Crane (Mistweaver honor talent)
 				},
 				SURVIVAL = {
 					115176, -- Zen Meditation (Brewmaster)
@@ -117,6 +120,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 			HELPFUL = {
 				[115310] = 'DISEASE MAGIC POISON', -- Revival (Mistweaver)
 				[115450] = 'DISEASE MAGIC POISON', -- Detox (Mistweaver)
+				[205234] = 'MAGIC', -- Healing Sphere (Mistweaver honor talent)
 				[218164] = 'DISEASE POISON', -- Detox (Brewmaster/Windwalker)
 			},
 		}
@@ -130,6 +134,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 			115175, -- Soothing Mist (Mistweaver)
 			124682, -- Enveloping Mist (Mistweaver)
 			198533, -- Soothing Mist (Mistweaver talent)
+			227344, -- Surging Mist (Mistweaver honor talent)
 		},
 		PERSONAL = {
 			116768, -- Blackout Kick! (Windwalker)
@@ -173,6 +178,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 	[202248] = 202200, -- Guided Meditation (Brewmaster honor talent)
 	[202274] = 202272, -- Incendiary Brew (Brewmaster honor talent) <- Incendiary Breath
 	[202346] = 202335, -- Double Barrel (Brewmaster honor talent)
+	[205655] = 202577, -- Dome of Mist (Mistweaver honor talent)
 	[206891] = 207025, -- Intimidated (Brewmaster honor talent) <- Admonishment
 	[215479] = 115308, -- Ironskin Brew (Brewmaster)
 	[228287] = 101546, -- Mark of the Crane (Windwalker) <- Spinning Crane Kick
@@ -203,6 +209,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 	[202274] = 115181, -- Incendiary Brew (Brewmaster honor talent) -> Breath of Fire
 	[202335] = 121253, -- Double Barrel (Brewmaster honor talent) -> Keg Smash
 	[202346] = 121253, -- Double Barrel (Brewmaster honor talent) -> Keg Smash
+	[205655] = 115151, -- Dome of Mist (Mistweaver honor talent) -> Renewing Mist
 	[228563] = { -- Blackout Combo (Brewmaster talent)
 		100780, -- Tiger Palm
 		115181, -- Breath of Fire
