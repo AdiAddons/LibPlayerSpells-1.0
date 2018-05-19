@@ -74,6 +74,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				SURVIVAL = {
 					  1022, -- Blessing of Protection
 					  6940, -- Blessing of Sacrifice (Holy/Protection)
+					199507, -- Spreading The Word: Protection (Holy honor talent)
 					228050, -- Divine Shield (Protection honor talent)
 				},
 			},
@@ -83,6 +84,8 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				 188370, -- Consecration (Protection)
 				 199545, -- Steed of Glory (Protection honor talent)
 				 209785, -- Fires of Justice (Retribution talent)
+				 210294, -- Divine Favor (Holy honor talent)
+				 210391, -- Darkest before the Dawn (Holy honor talent)
 				 214202, -- Rule of Law (Holy talent)
 				 215652, -- Shield of Virtue (Protection honor talent)
 				 221883, -- Divine Steed (Human)
@@ -94,6 +97,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				 269571, -- Zeal (Retribution talent)
 				 276111, -- Divine Steed (Dwarf)
 				 276112, -- Divine Steed (Dark Iron Dwarf)
+				[199448] = "INVERT_AURA", -- Blessing of Sacrifice (Holy honor talent) -- NOTE: from Ultimate Sacrifice
 				BURST = {
 					 31884, -- Avenging Wrath
 					105809, -- Holy Avenger (Holy talent)
@@ -127,6 +131,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 			156910, -- Beacon of Faith (Holy talent)
 			203538, -- Greater Blessing of Kings (Retribution)
 			203539, -- Greater Blessing of Wisdom (Retribution)
+			216328, -- Light's Grace (Holy honor talent)
 			216857, -- Guarded by the Light (Protection honor talent)
 		},
 		PERSONAL = {
@@ -154,6 +159,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[188370] =  26573, -- Consecration (Protection)
 	[196941] = 183778, -- Judgement of Light (Protection/Holy talent)
 	[197277] =  20271, -- Judgement (Retribution)
+	[199507] = 199456, -- Spreading The Word: Protection (Holy honor talent)
 	[199545] = 199542, -- Steed of Glory (Protection honor talent)
 	[204079] = 204077, -- Final Stand (Protection talent)
 	[204242] =  26573, -- Consecration (Holy/Protection)
@@ -161,7 +167,9 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[204335] = 204150, -- Aegis of Light (Protection talent)
 	[206891] = 207028, -- Intimidated -> Inquisition (Protection honor talent)
 	[209785] = 203316, -- Fires of Justice (Retribution talent)
+	[210391] = 210378, -- Darkest before the Dawn (Holy honor talent)
 	[214222] = 275773, -- Judgement (Holy)
+	[216328] = 216327, -- Light's Grace (Holy honor talent)
 	[216411] = 197646, -- Divine Purpose (Holy talent) -- NOTE: Holy Shock
 	[216413] = 197646, -- Divine Purpose (Holy talent) -- NOTE: Light of Dawn
 	[216857] = 216855, -- Guarded by the Light (Protection honor talent)
@@ -199,9 +207,16 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		275773, -- Judgement (Holy)
 		275779, -- Judgement (Protection)
 	},
+	[199507] =   1022, -- Spreading The Word: Protection (Holy honor talent) -> Blessing of Protection
 	[199545] = 190784, -- Steed of Glory (Protection honor talent) -> Divine Steed
+	[210391] =  85222, -- Darkest before the Dawn (Holy honor talent) -> Light of Dawn
 	[204079] =    642, -- Final Stand (Protection talent) -> Divine Shield
 	[209785] =  35395, -- Fires of Justice (Retribution talent) -> Crusader Strike
+	[210294] = { -- Divine Favor (Holy honor talent)
+		19750, -- Flash of Light
+		82326, -- Holy Light
+	},
+	[216328] =  82326, -- Light's Grace (Holy honor talent) -> Holy Light
 	[216411] =  20473, -- Divine Purpose (Holy talent) -> Holy Shock
 	[216413] =  85222, -- Divine Purpose (Holy talent) -> Light of Dawn
 	[216857] =  19750, -- Guarded by the Light (Protection honor talent) -> Flash of Light
