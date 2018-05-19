@@ -20,19 +20,22 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('MONK', 8000, 1, {
+lib:__RegisterSpells('MONK', 80000, 1, {
 	COOLDOWN = {
+		 107428, -- Rising Sun Kick (Mistweaver/Windwalker)
 		 109132, -- Roll
 		 113656, -- Fists of Fury (Windwalker)
-		 115098, -- Chi Wave (Brewmaster/Windwalker talent)
+		 115098, -- Chi Wave (talent)
+		 115313, -- Summon Jade Serpent Statue (Mistweaver talent)
+		 115315, -- Summon Black Ox Statue (Brewmaster/Windwalker talent)
 		 115399, -- Black Ox Brew (Brewmaster talent)
-		 116844, -- Ring of Peace (Brewmaster/Windwalker talent)
-		 116892, -- Zen Pilgrimage
+		 116844, -- Ring of Peace (talent)
 		 119582, -- Purifying Brew (Brewmaster)
 		 119996, -- Transcendence: Transfer (Brewmaster)
-		 122281, -- Healing Elixir (Brewmaster talent)
+		 122281, -- Healing Elixir (Brewmaster/Mistweaver talent)
 		 123904, -- Invoke Xuen, the White Tiger (Windwalker talent)
-		 123986, -- Chi Burst (Brewmaster/Windwalker talent)
+		 123986, -- Chi Burst (talent)
+		 126892, -- Zen Pilgrimage
 		 152175, -- Whirling Dragon Punch (Windwalker talent)
 		 202370, -- Mighty Ox Kick (Brewmaster honor talent)
 		 213658, -- Craft: Nimble Brew (Brewmaster honor talent)
@@ -50,14 +53,17 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 				CROWD_CTRL = {
 					[115078] = 'INCAPACITATE', -- Paralysis
 					[116706] = 'ROOT', -- Disable (Windwalker)
-					[202274] = 'DISORIENT', -- Incendiary Brew (Brewmaster honor talent)
+					DISORIENT = {
+						198909, -- Song of Chi-Ji (Mistweaver talent)
+						202274, -- Incendiary Brew (Brewmaster honor talent)
+					},
 					STUN = {
 						119381, -- Leg Sweep
 						202346, -- Double Barrel (Brewmaster honor talent)
 						232055, -- Fists of Fury (Windwalker honor talent)
 					},
 					TAUNT = {
-						116189, -- Provoke (Brewmaster/Windwalker)
+						116189, -- Provoke
 						118635, -- Provoke (Brewmaster/Windwalker talent)
 						196727, -- Provoke (Brewmaster talent)
 					},
@@ -69,19 +75,26 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 				},
 			},
 			HELPFUL = {
-				116841, -- Tiger's Lust (Brewmaster/Windwalker talent)
+				116841, -- Tiger's Lust (talent)
+				119611, -- Renewing Mist (Mistweaver)
+				191840, -- Essence Font (Mistweaver)
 				201447, -- Ride the Wind (Windwalker honor talent)
 				SURVIVAL = {
+					116849, -- Life Cocoon (Mistweaver)
 					202162, -- Guard (Brewmaster honor talent)
 					202248, -- Guided Meditation (Brewmaster honor talent)
 				},
 			},
 			PERSONAL = {
 				101643, -- Transcendence (Brewmaster)
+				116680, -- Thunder Focus Tea (Mistweaver)
 				116847, -- Rushing Jade Wind (Brewmaster talent)
-				119085, -- Chi Torpedo (Brewmaster/Windwalker talent)
+				119085, -- Chi Torpedo (talent)
 				129914, -- Power Strikes (Windwalker talent)
+				196725, -- Refreshing Jade Wind (Mistweaver talent)
 				196739, -- Elusive Dance (Brewmaster talent)
+				197206, -- Uplifting Trance (Mistweaver)
+				197908, -- Mana Tea (Mistweaver talent)
 				202335, -- Double Barrel (Brewmaster honor talent)
 				215479, -- Ironskin Brew (Brewmaster)
 				261715, -- Rushing Jade Wind (Windwalker talent)
@@ -92,15 +105,20 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 				SURVIVAL = {
 					115176, -- Zen Meditation (Brewmaster)
 					120954, -- Fortifying Brew (Brewmaster)
-					122278, -- Dampen Harm (Brewmaster/Windwalker talent)
-					122783, -- Diffuse Magic (Windwalker talent)
+					122278, -- Dampen Harm (talent)
+					122783, -- Diffuse Magic (Mistweaver/Windwalker talent)
 					125174, -- Touch of Karma (Windwalker)
 					201318, -- Fortifying Brew (Windwalker honor talent)
+					243435, -- Fortifying Brew (Mistweaver)
 				},
 			},
 		},
 		DISPEL = {
-			[218164] = 'HELPFUL DISEASE POISON', -- Detox (Brewmaster/Windwalker)
+			HELPFUL = {
+				[115310] = 'DISEASE MAGIC POISON', -- Revival (Mistweaver)
+				[115450] = 'DISEASE MAGIC POISON', -- Detox (Mistweaver)
+				[218164] = 'DISEASE POISON', -- Detox (Brewmaster/Windwalker)
+			},
 		}
 	},
 	AURA = {
@@ -108,11 +126,18 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 			117952, -- Crackling Jade Lightning
 			228287, -- Mark of the Crane (Windwalker)
 		},
-		HELPFUL = {},
+		HELPFUL = {
+			115175, -- Soothing Mist (Mistweaver)
+			124682, -- Enveloping Mist (Mistweaver)
+			198533, -- Soothing Mist (Mistweaver talent)
+		},
 		PERSONAL = {
 			116768, -- Blackout Kick! (Windwalker)
 			195630, -- Elusive Brawler (Brewmaster)
 			196608, -- Eye of the Tiger (Brewmaster/Windwalker talent) -- NOTE: also HARMFUL with the same id (not supported)
+			197916, -- Lifecycles (Vivify) (Mistweaver talent)
+			197919, -- Lifecycles (Enveloping Mist) (Mistweaver talent)
+			202090, -- Teachings of the Monastery (Mistweaver)
 			228563, -- Blackout Combo (Brewmaster talent)
 			247483, -- Tigereye Brew (Windwalker honor talent)
 			261769, -- Inner Strength (Windwalker talent)
@@ -121,22 +146,30 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 }, {
 	-- map aura to provider(s)
 	[115804] = 107428, -- Mortal Wounds (Windwalker) <- Rising Sun Kick
-	[116189] = 115546, -- Provoke (Brewmaster/Windwalker)
+	[116189] = 115546, -- Provoke
 	[116706] = 116095, -- Disable (Windwalker)
 	[116768] = 100780, -- Blackout Kick! (Windwalker) <- Tiger Palm
 	[118635] = 115315, -- Provoke (Brewmaster/Windwalker talent) <- Summon Black Ox Statue
-	[119085] = 115008, -- Chi Torpedo (Brewmaster/Windwalker talent)
+	[119085] = 115008, -- Chi Torpedo (talent)
+	[119611] = 115151, -- Renewing Mist (Mistweaver)
 	[120954] = 115203, -- Fortifying Brew (Brewmaster)
 	[123586] = 101545, -- Flying Serpent Kick (Wilnwalker)
 	[123725] = 115181, -- Breath of Fire (Brewmaster)
 	[125174] = 122470, -- Touch of Karma (Windwalker)
 	[129914] = 121817, -- Power Strikes (Windwalker talent)
 	[137639] = 221771, -- Storm, Earth, and Fire (Windwalker)
+	[191840] = 191837, -- Essence Font (Mistweaver)
 	[195630] = 117906, -- Elusive Brawler (Brewmaster) <- Mastery: Elusive Brawler
 	[196608] = 196607, -- Eye of the Tiger (Brewmaster talent)
 	[196727] = 132578, -- Provoke (Brewmaster talent) <- Invoke Niuzao, the Black Ox
 	[196739] = 196738, -- Elusive Dance (Brewmaster talent)
+	[197206] = 115151, -- Uplifting Trance (Mistweaver) <- Renewing Mist
+	[197916] = 197915, -- Lifecycles (Vivify) (Mistweaver talent) <- Lifecycles
+	[197919] = 197915, -- Lifecycles (Enveloping Mist) (Mistweaver talent) <- Lifecycles
+	[198533] = 115313, -- Soothing Mist (Mistweaver talent) <- Summon Jade Serpent Statue
+	[198909] = 198898, -- Song of Chi-Ji (Mistweaver talent)
 	[201447] = 201372, -- Ride the Wind (Windwalker honor talent)
+	[202090] = 116645, -- Teachings of the Monastery (Mistweaver)
 	[202248] = 202200, -- Guided Meditation (Brewmaster honor talent)
 	[202274] = 202272, -- Incendiary Brew (Brewmaster honor talent) <- Incendiary Breath
 	[202346] = 202335, -- Double Barrel (Brewmaster honor talent)
@@ -148,6 +181,12 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 	[261769] = 261767, -- Inner Strength (Windwalker talent)
 }, {
 	-- map aura to modified spell(s)
+	[116680] = { -- Thunder Focus Tea (Mistweaver)
+		107428, -- Rising Sun Kick
+		115151, -- Renewing Mist
+		116670, -- Vivify
+		124682, -- Enveloping Mist
+	},
 	[116768] = 100784, -- Blackout Kick! (Windwalker) -> Blackout Kick
 	[118635] = 115546, -- Provoke (Brewmaster/Windwalker talent)
 	[129914] = 100780, -- Power Strikes (Windwalker talent) -> Tiger Palm
@@ -155,7 +194,11 @@ lib:__RegisterSpells('MONK', 8000, 1, {
 	[196608] = 100780, -- Eye of the Tiger (Brewmaster talent) -> Tiger Palm
 	[196727] = 196727, -- Provoke (Niuzao) (Brewmaster talent)
 	[196739] = 119582, -- Elusive Dance (Brewmaster talent) -> Purifying Brew
+	[197206] = 116670, -- Uplifting Trance (Mistweaver) -> Vivify
+	[197916] = 116670, -- Lifecycles (Vivify) (Mistweaver talent) -> Vivify
+	[197919] = 124682, -- Lifecycles (Enveloping Mist) (Mistweaver talent) -> Enveloping Mist
 	[201447] = 101545, -- Ride the Wind (Windwalker honor talent) -> Flying Serpent Kick
+	[202090] = 100784, -- Teachings of the Monastery (Mistweaver) -> Blackout Kick
 	[202248] = 115176, -- Guided Meditation (Brewmaster honor talent) -> Zen Meditation
 	[202274] = 115181, -- Incendiary Brew (Brewmaster honor talent) -> Breath of Fire
 	[202335] = 121253, -- Double Barrel (Brewmaster honor talent) -> Keg Smash
