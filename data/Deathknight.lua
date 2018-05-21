@@ -24,11 +24,15 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	COOLDOWN = {
 		  50977, -- Death Gate
 		  61999, -- Raise Ally
+		 210764, -- Rune Strike (Blood talent)
+		 274156, -- Consumption (Blood talent)
 		[ 47528] = 'INTERRUPT', -- Mind Freeze (Blood)
 		[108199] = 'KNOCKBACK', -- Gorefiend's Grasp (Blood)
 		AURA = {
 			HARMFUL = {
-				55078, -- Blood Plague (Blood)
+				 55078, -- Blood Plague (Blood)
+				206931, -- Blooddrinker (Blood talent)
+				206940, -- Mark of Blood (Blood talent)
 				CROWD_CTRL = {
 					STUN = {
 						221562, -- Asphyxiate (Blood)
@@ -40,19 +44,27 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 				},
 				SNARE = {
 					206930, -- Heart Strike (Blood)
+					273977, -- Grip of the Dead (Blood talent)
 				},
 			},
 			HELPFUL = {},
 			PERSONAL = {
-				 48265, -- Death's Advance (Blood)
-				 77535, -- Blood Shield (Blood)
-				188290, -- Death and Decay (Blood)
-				195181, -- Bone Shield (Blood)
+				  48265, -- Death's Advance (Blood)
+				  77535, -- Blood Shield (Blood)
+				 188290, -- Death and Decay (Blood)
+				 194844, -- Bonestorm (Blood talent)
+				 195181, -- Bone Shield (Blood)
+				 212552, -- Wraith Walk (Blood talent)
+				 219788, -- Ossuary (Blood talent)
+				 273947, -- Hemostasis (Blood talent)
+				 274009, -- Voracious (Blood talent)
+				[219809] = 'POWER_REGEN', -- Tombstone (Blood talent)
 				SURVIVAL = {
-					48707, -- Anti-Magic Shield (Blood)
-					48792, -- Icebound Fortitude (Blood)
-					55233, -- Vampiric Blood (Blood)
-					81256, -- Dancing Rune Weapon (Blood)
+					 48707, -- Anti-Magic Shield (Blood)
+					 48792, -- Icebound Fortitude (Blood)
+					 55233, -- Vampiric Blood (Blood)
+					 81256, -- Dancing Rune Weapon (Blood)
+					194679, -- Rune Tap (Blood talent)
 				},
 			},
 		},
@@ -80,8 +92,16 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[ 81256] =  49028, -- Dancing Rune Weapon (Blood)
 	[188290] =  43265, -- Death and Decay (Blood)
 	[195181] = 195182, -- Bone Shield (Blood) <- Marrowrend
+	[219788] = 219786, -- Ossuary (Blood talent)
+	[273947] = 273946, -- Hemostasis (Blood talent)
+	[273977] = 273952, -- Grip of the Dead (Blood talent)
+	[274009] = 273953, -- Voracious (Blood talent)
 }, {
 	-- map aura to modified spell(s)
-	[77535] = 49998, -- Blood Shield (Blood) -> Death Strike
-	[81141] = 43265, -- Crimson Scourge (Blood) -> Death and Decay
+	[ 77535] =  49998, -- Blood Shield (Blood) -> Death Strike
+	[ 81141] =  43265, -- Crimson Scourge (Blood) -> Death and Decay
+	[219788] = 195182, -- Ossuary (Blood talent) -> Marrowrend
+	[273947] =  49998, -- Hemostasis (Blood talent) -> Death Strike
+	[273977] =  43265, -- Grip of the Dead (Blood talent) -> Death and Decay
+	[274009] =  49998, -- Voracious (Blood talent) -> Death Strike
 })
