@@ -18,172 +18,190 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local lib = LibStub("LibPlayerSpells-1.0")
+local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 70300, 2, {
+lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
-		 189110, -- Infernal Strike
-		 195072, -- Fel Rush
-		 201467, -- Fury of the Illidari (Havoc artifact)
-		 213241, -- Felblade
-		 203704, -- Mana Break (PvP)
-		 235903, -- Mana Rift (PvP)
-		 236189, -- Demonic Infusion
-		[183752] = "INTERRUPT", -- Consume Magic
-		DISPEL = {
-			MAGIC = {
-				[205604] = "HELPFUL", -- Reverse Magic (PvP)
-				[205625] = "PERSONAL", -- Cleansed by Magic (PvP) -- NOTE: Immolation Aura is then the dispeling spell
-			},
-		},
+		 189110, -- Infernal Strike (Vengeance)
+		 195072, -- Fel Rush (Havoc)
+		 198013, -- Eye Beam (Havoc)
+		 203704, -- Mana Break (Havoc honor talent)
+		 212084, -- Fel Devastation (Vengeance talent)
+		 235903, -- Mana Rift (Havon honor talent)
+		 258925, -- Fel Barrage (Havoc talent)
+		[183752] = 'INTERRUPT', -- Disrupt
 		AURA = {
 			HELPFUL = {
-				SURVIVAL = {
-					207810, -- Nether Bond
-					209426, -- Darkness
-				},
+				[209426] = 'SURVIVAL', -- Darkness (Havoc)
 			},
 			HARMFUL = {
-				 202443, -- Anguish (Havoc artifact)
-				 204598, -- Sigil of Flame
-				 206491, -- Nemesis
-				 206649, -- Eye of Leotheras (PvP)
-				 207407, -- Soul Carver (Vengeance artifact)
-				 207690, -- Bloodlet
-				 207771, -- Fiery Brand
-				 211053, -- Fel Barrage
-				 212818, -- Fiery Demise (Vengeance artifact)
-				 213405, -- Master of the Glaive
-				[204490] = "INTERRUPT", -- Sigil of Silence
-				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
-				[207744] = "SURVIVAL", -- Fiery Brand
+				204598, -- Sigil of Flame (Vengeance)
+				206491, -- Nemesis (Havoc talent)
+				206649, -- Eye of Leotheras (Havoc honor talent)
+				206891, -- Intimidated (Vengeance honor talent)
+				207744, -- Fiery Brand (Vengeance)
+				258860, -- Dark Slash (Havoc talent)
+				258883, -- Trail of Ruin (Havoc talent)
+				[204490] = 'INTERRUPT', -- Sigil of Silence (Vengeance)
 				CROWD_CTRL = {
-					[185245] = "TAUNT", -- Torment (taunt)
-					[207685] = "DISORIENT", -- Sigil of Misery (disorient)
+					[185245] = 'TAUNT', -- Torment (Vengeance)
+					DISORIENT = {
+						207685, -- Sigil of Misery (Vengeance)
+					},
 					INCAPACITATE = {
-						217832, -- Imprison (incapacitate)
-						221527, -- Imprison (incapacitate) (PvP)
+						217832, -- Imprison
+						221527, -- Imprison (honor talent)
 					},
 					STUN = {
-						179057, -- Chaos Nova (stun)
-						200166, -- Metamorphosis (Havoc) (stun)
-						205630, -- Illidan's Grasp (PvP) (stun)
-						208618, -- Illidan's Grasp (PvP) (stun)
-						211881, -- Fel Eruption (stun)
-						213491, -- Demonic Trample (stun) (PvP)
+						179057, -- Chaos Nova (Havoc) -- BUG: the debuff is currently not applied
+						200166, -- Metamorphosis (Havoc)
+						205630, -- Illidan's Grasp (hold) (Vengeance honor talent)
+						208618, -- Illidan's Grasp (thrown) (Vengeance honor talent)
+						211881, -- Fel Eruption (Havoc talent)
+						213491, -- Demonic Trample (Vengeance honor talent)
 					},
 				},
 				SNARE = {
-					198813, -- Vengeful Retreat (slow)
-					204843, -- Sigil of Chains (slow)
-					210003, -- Razor Spikes (slow)
-					232538, -- Rain of Chaos (slow) (PvP)
+					198813, -- Vengeful Retreat (Havoc)
+					204843, -- Sigil of Chains (Vengeance talent)
+					210003, -- Razor Spikes (Vengeance talent)
+					213405, -- Master of the Glaive (Havoc talent)
 				},
 			},
 			PERSONAL = {
-				178740, -- Immolation Aura
-				188499, -- Blade Dance
+				188499, -- Blade Dance (Havoc) -- NOTE: somehow the same id as Sigil of Flame
 				188501, -- Spectral Sight
-				203650, -- Prepared
-				205629, -- Demonic Trample (PvP)
-				206803, -- Rain from Above (PvP)
-				208579, -- Nemesis (Demons)
-				208605, -- Nemesis (Humanoids)
-				208607, -- Nemesis (Aberrations)
-				208608, -- Nemesis (Beasts)
-				208610, -- Nemesis (Draginkin)
-				208611, -- Nemesis (Elementals)
-				208612, -- Nemesis (Giants)
-				208613, -- Nemesis (Mechanicals)
-				208614, -- Nemesis (Undead)
-				208628, -- Momentum
-				210155, -- Death Sweep
-				218561, -- Siphoned Power (Vengeance artifact)
-				227330, -- Gluttony
+				205629, -- Demonic Trample (Vengeance honor talent)
+				206803, -- Rain from Above (launching) (Havoc honor talent)
+				206804, -- Rain from Above (gliding) (Havoc honor talent)
+				210152, -- Death Sweep (replaces Blade Dance when Metamorphosis) (Havoc)
 				BURST = {
 					162264, -- Metamorphosis (Havoc)
-					211048, -- Chaos Blades
+					208579, -- Nemesis (Demons) (Havoc talent)
+					208605, -- Nemesis (Humanoids) (Havoc talent)
+					208607, -- Nemesis (Aberrations) (Havoc talent)
+					208608, -- Nemesis (Beasts) (Havoc talent)
+					208609, -- Nemesis (Critters) (Havoc talent)
+					208610, -- Nemesis (Draginkin) (Havoc talent)
+					208611, -- Nemesis (Elementals) (Havoc talent)
+					208612, -- Nemesis (Giants) (Havoc talent)
+					208613, -- Nemesis (Mechanicals) (Havoc talent)
+					208614, -- Nemesis (Undead) (Havoc talent)
+					208628, -- Momentum (Havoc talent) (Havoc talent)
+				},
+				POWER_REGEN = {
+					178740, -- Immolation Aura (Vengeance)
+					258920, -- Immolation Aura (Havoc talent)
 				},
 				SURVIVAL = {
 					187827, -- Metamorphosis (Vengeance)
-					196555, -- Netherwalk
-					203819, -- Demon Spikes
-					207811, -- Nether Bond
-					212800, -- Blur
-					218256, -- Empower Wards
-					227225, -- Soul Barrier
+					196555, -- Netherwalk (Havoc)
+					203819, -- Demon Spikes (Vengeance)
+					208796, -- Jagged Spikes (Vengeance honor talent)
+					212800, -- Blur (Havoc)
+					263648, -- Soul Barrier (Vengeance talent)
 				},
 			},
 		},
+		DISPEL = {
+			MAGIC = {
+				[205604] = 'HELPFUL', -- Reverse Magic (honor talent)
+				[205625] = 'PERSONAL', -- Cleaned by Flame (Vengeance honor talent) -- NOTE: Immolation Aura is the dispelling spell
+				[278326] = 'HARMFUL', -- Consume Magic
+			},
+		},
+		POWER_REGEN = {
+			162243, -- Demon's Bite (Havoc)
+			232893, -- Felblade (talent)
+			263642, -- Fracture (Vengeance talent)
+		},
 	},
 	AURA = {
-		[247456] = "HARMFUL", -- Frailty
-		PERSONAL = {
-			 131347, -- Glide
-			 207693, -- Feast of Souls
-			[212988] = "SURVIVAL", -- Painbringer (Vengeance artifact)
+		HARMFUL = {
+			247456, -- Frailty (Vengeance talent)
+			268178, -- Void Reaver (Vengeance talent)
 		},
+		PERSONAL = {
+			203981, -- Soul Fragments (Vengeance)
+			207693, -- Feast of Souls (Vengeance talent)
+		},
+	},
+	POWER_REGEN = {
+		203782, -- Shear (Vengeance)
 	}
 }, {
-	-- map aura to provider
+	-- map aura to provider(s)
 	[162264] = 191427, -- Metamorphosis (Havoc)
-	[198813] = 198793, -- Vengeful Retreat (slow)
-	[200166] = 191427, -- Metamorphosis (Havoc) (stun)
-	[202443] = 201473, -- Anguish <- Anguish of the Deceiver (Havoc artifact)
-	[203650] = 203551, -- Prepared
-	[203819] = 203720, -- Demon Spikes
-	[204490] = 202137, -- Sigil of Silence
-	[204598] = 204596, -- Sigil of Flame
-	[204843] = 202138, -- Sigil of Chains (slow)
-	[206891] = 207029, -- Intimidated <- Tormentor (Vengeance Honor Talent)
-	[207685] = 207684, -- Sigil of Misery (disorient)
-	[207690] = 206473, -- Bloodlet
-	[207693] = 207697, -- Feast of Souls
-	[207744] = 204021, -- Fiery Brand
-	[207771] = 207739, -- Fiery Brand <- Burning Alive
-	[207811] = 207810, -- Nether Bond
-	[208579] = 206491, -- Nemesis (Demons)
-	[208605] = 206491, -- Nemesis (Humanoids)
-	[208607] = 206491, -- Nemesis (Aberrations)
-	[208608] = 206491, -- Nemesis (Beasts)
-	[208610] = 206491, -- Nemesis (Draginkin)
-	[208611] = 206491, -- Nemesis (Elementals)
-	[208612] = 206491, -- Nemesis (Giants)
-	[208613] = 206491, -- Nemesis (Mechanicals)
-	[208614] = 206491, -- Nemesis (Undead)
-	[208618] = 208173, -- Illidan's Grasp <- Illidan's Grasp: Throw (PvP) (stun)
-	[208628] = 206476, -- Momentum
-	[209426] = 196718, -- Darkness
-	[210003] = 209400, -- Razor Spikes (slow)
-	[210155] = 210152, -- Death Sweep
-	[212800] = 198589, -- Blur
-	[212818] = 212817, -- Fiery Demise (Vengeance artifact)
-	[212988] = 207387, -- Painbringer (Vengeance artifact)
-	[213405] = 203556, -- Master of the Glaive
-	[218561] = 218910, -- Siphoned Power <- Siphon Power (Vengeance artifact)
-	[213491] = 205629, -- Demonic Trample (stun) (PvP)
-	[247456] = 247454, -- Frailty <- Spirit Bomb
-	[221527] = 225596, -- Imprison (incapacitate) (PvP) <- Detainment
-	[227330] = 227327, -- Gluttony
-	[232538] = 205628, -- Rain of Chaos (slow) (PvP)
+	[185245] = 198589, -- Torment (Vengeance)
+	[187827] = 191427, -- Metamorphosis (Vengeance)
+	[198813] = 198793, -- Vengeful Retreat (Havoc)
+	[200166] = 191427, -- Metamorphosis (Havoc)
+	[203819] = 203720, -- Demon Spikes (Vengeance)
+	[203981] = { -- Soul Fragments (Vengeance)
+		203782, -- Shear
+		264632, -- Fracture (talent)
+	},
+	[204490] = 202137, -- Sigil of Silence (Vengeange)
+	[204598] = 188499, -- Sigil of Flame (Vengeance)
+	[204843] = 202138, -- Sigil of Chains (Vengeance talent)
+	[206804] = 206803, -- Rain from Above (gliding) (Havoc honor talent)
+	[206891] = 198589, -- Intimidated (Vengeance honor talent) <- Tormentor
+	[207685] = 207684, -- Sigil of Misery (Vengeance)
+	[207693] = 207697, -- Feast of Souls (Vengeance talent)
+	[207744] = 204021, -- Fiery Brand (Vengeance)
+	[208579] = 206491, -- Nemesis (Demons) (Havoc talent)
+	[208605] = 206491, -- Nemesis (Humanoids) (Havoc talent)
+	[208607] = 206491, -- Nemesis (Aberrations) (Havoc talent)
+	[208608] = 206491, -- Nemesis (Beasts) (Havoc talent)
+	[208609] = 206491, -- Nemesis (Critters) (Havoc talent)
+	[208610] = 206491, -- Nemesis (Draginkin) (Havoc talent)
+	[208611] = 206491, -- Nemesis (Elementals) (Havoc talent)
+	[208612] = 206491, -- Nemesis (Giants) (Havoc talent)
+	[208613] = 206491, -- Nemesis (Mechanicals) (Havoc talent)
+	[208614] = 206491, -- Nemesis (Undead) (Havoc talent)
+	[208618] = 205630, -- Illidan's Grasp (thrown) (Vengeance honor talent)
+	[208628] = 206476, -- Momentum (Havoc talent)
+	[208796] = 205627, -- Jagged Spikes (Vengeance honor talent) -- BUG: not in the spellbook
+	[209426] = 196718, -- Darkness (Havoc)
+	[210003] = 209400, -- Razor Spikes (Vengeance talent)
+	[212800] = 198589, -- Blur (Havoc)
+	[213405] = 203556, -- Master of the Glaive (Havoc talent)
+	[213491] = 205629, -- Demonic Trample (Vengeance honor talent)
+	[247456] = 247454, -- Frailty (Vengeance talent) <- Spirit Bomb
+	[258883] = 258881, -- Trail of Ruin (Havoc talent)
+	[268178] = 268175, -- Void Reaver (Vengeance talent)
 }, {
 	-- map aura to modified spell(s)
-	[202443] = 198013, -- Anguish (Havoc artifact) -> Eyebeam
-	[203650] = 198793, -- Prepared -> Vengeful Retreat
-	[207690] = 185123, -- Bloodlet -> Throw Glaive
-	[207693] = 228477, -- Feast of Souls -> Soul Cleave
-	[207771] = 204021, -- Fiery Brand
-	[208628] = { -- Momentum
-		195072, -- Fel Rush
-		198793, -- Vengeful Retreat
+	[185245] = 185245, -- Torment (Vengeance)
+	[187827] = 187827, -- Metamorphosis (Vengeance)
+	[203981] = { -- Soul Fragments (Vengeance)
+		228477, -- Soul Cleave
+		247454, -- Soul Bomb (talent)
+		263648, -- Soul Barrier (talent)
 	},
-	[210003] = 6603, -- Razor Spikes (slow) -> Auto Attack
-	[212818] = 204021, -- Fiery Demise (Vengeance artifact) -> Fiery Brand
-	[212988] = 228477, -- Painbringer (Vengeance artifact) -> Soul Cleave
-	[213405] = 185123, -- Master of the Glaive -> Throw Glaive
-	[218561] = 218256, -- Siphoned Power (Vengeance artifact) -> Empower Wards
-	[221527] = 221527, -- Imprison (incapacitate) (PvP)
-	[227330] = 228477, -- Gluttony
-	[232538] = 189110, -- Rain of Chaos (slow) (PvP) -> Infernal Strike
+	[204490] = { -- Sigil of Silence (Vengeange)
+		202137, -- Sigil of Silence
+		207682, -- Sigil of Silence (with Concentrated Sigils talent)
+	},
+	[204598] = { -- Sigil of Flame (Vengeance)
+		204513, -- Sigil of Flame (with Concentrated Sigils talent)
+		204596, -- Sigil of Flame
+	},
+	[205630] = 208173, -- Illidan's Grasp (Vengeance honor talent) -> Illidan's Grasp: Throw
+	[206891] = 207029, -- Intimidated (Vengeance honor talent) <- Tormentor
+	[207685] = { -- Sigil of Misery (Vengeance)
+		202140, -- Sigil of Misery (with Concentrated Sigils talent)
+		207684, -- Sigil of Misery
+	},
+	[207693] = 228477, -- Feast of Souls (Vengeance talent) -> Soul Cleave
+	[208628] = 195072, -- Momentum (Havoc talent) -> Fel Rush
+	[208796] = 203720, -- Jagged Spikes (Vengeance honor talent) -> Demon Spikes
+	[210003] = 6603, -- Razor Spikes (Vengeance talent) -> Auto Attack
+	[213405] = 185123, -- Master of the Glaive (Havoc talent) -> Throw Glaive
+	[258883] = { -- Trail of Ruin (Havoc talent)
+		188499, -- Blade Dance
+		210152, -- Death Sweep (during Metamorphosis)
+	},
+	[268178] = 228477, -- Void Reaver (Vengeance talent) -> Soul Cleave
 })
