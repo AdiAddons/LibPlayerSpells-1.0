@@ -18,232 +18,210 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local lib = LibStub("LibPlayerSpells-1.0")
+local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells("MONK", 70300, 1, {
+lib:__RegisterSpells('MONK', 80000, 1, {
 	COOLDOWN = {
+		 107428, -- Rising Sun Kick (Mistweaver/Windwalker)
 		 109132, -- Roll
-		 115098, -- Chi Wave
-		 115288, -- Energizing Elixir
-		 115310, -- Revival
-		 115399, -- Black Ox Brew
-		 116844, -- Ring of Peace
-		 119582, -- Purifying Brew
-		 119996, -- Transcendance: Transfer
-		 122281, -- Healing Elixir
-		 123904, -- Invoke Xuen, the White Tiger
-		 123986, -- Chi Burst
-		 124081, -- Zen Pulse
-		 152175, -- Whirling Dragon Punch
-		 198664, -- Invoke Chi-Ji, the Red Crane
-		[115176] = "SURVIVAL", -- Zen Meditation
-		[116705] = "INTERRUPT", -- Spear Hand Strike
-		DISPEL = {
-			HELPFUL = {
-				[115450] = "DISEASE MAGIC POISON", -- Detox (MW)
-				[205234] = "MAGIC", -- Healing Sphere (PvP)
-				[218164] = "DISEASE POISON", -- Detox (BM and WW)
-			},
-		},
+		 113656, -- Fists of Fury (Windwalker)
+		 115098, -- Chi Wave (talent)
+		 115313, -- Summon Jade Serpent Statue (Mistweaver talent)
+		 115315, -- Summon Black Ox Statue (Brewmaster/Windwalker talent)
+		 115399, -- Black Ox Brew (Brewmaster talent)
+		 116844, -- Ring of Peace (talent)
+		 119582, -- Purifying Brew (Brewmaster)
+		 119996, -- Transcendence: Transfer (Brewmaster)
+		 122281, -- Healing Elixir (Brewmaster/Mistweaver talent)
+		 123904, -- Invoke Xuen, the White Tiger (Windwalker talent)
+		 123986, -- Chi Burst (talent)
+		 126892, -- Zen Pilgrimage
+		 152175, -- Whirling Dragon Punch (Windwalker talent)
+		 202370, -- Mighty Ox Kick (Brewmaster honor talent)
+		 213658, -- Craft: Nimble Brew (Brewmaster honor talent)
+		 261947, -- Fist of the White Tiger (Windwalker talent)
+		[115288] = 'POWER_REGEN', -- Energizing Elixir (Windwalker talent)
+		[116705] = 'INTERRUPT', -- Spear Hand Strike (Brewmaster)
 		AURA = {
-			HELPFUL = {
-				116841, -- Tiger's Lust
-				116849, -- Life Cocoon
-				119611, -- Renewing Mist
-				191840, -- Essence Font
-				199668, -- Blessings of Yu'lon (MW artifact)
-			},
 			HARMFUL = {
-				 115080, -- Touch of Death
-				 115804, -- Mortal Wounds
-				 118635, -- Provoke (through Black Ox Statue) (taunt)
-				 122470, -- Touch of Karma
-				 123725, -- Breath of Fire -- TODO: check without artifact
-				 124280, -- Touch of Karma (dmg dot)
-				 196727, -- Provoke
-				 213063, -- Dark Side of the Moon (BM artifact)
-				 214326, -- Exploding Keg (BM artifact)
-				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
+				 115804, -- Mortal Wounds (Windwalker)
+				 122470, --Touch of Karma (Windwalker)
+				 123725, -- Breath of Fire (Brewmaster)
+				 206891, -- Intimidated (Brewmaster honor talent)
+				 233759, -- Grapple Weapon (Windwalker honor talent)
+				[115080] = 'BURST', -- Touch of Death (Windwalker)
 				CROWD_CTRL = {
-					[115078] = "INCAPACITATE", -- Paralysis (Incapacitate)
-					[116189] = "TAUNT", -- Provoke (taunt)
+					[115078] = 'INCAPACITATE', -- Paralysis
+					[116706] = 'ROOT', -- Disable (Windwalker)
 					DISORIENT = {
-						198909, -- Song of Chi-Ji (disorient)
-						202274, -- Incendiary Brew (pvp)
+						198909, -- Song of Chi-Ji (Mistweaver talent)
+						202274, -- Incendiary Brew (Brewmaster honor talent)
 					},
 					STUN = {
-						119381, -- Leg Sweep (stun)
-						232055, -- Fists of Fury (stun) (pvp)
+						119381, -- Leg Sweep
+						202346, -- Double Barrel (Brewmaster honor talent)
+						232055, -- Fists of Fury (Windwalker honor talent)
+					},
+					TAUNT = {
+						116189, -- Provoke
+						118635, -- Provoke (Brewmaster/Windwalker talent)
+						196727, -- Provoke (Brewmaster talent)
 					},
 				},
 				SNARE = {
-					121253, -- Keg Smash (slow)
-					123586, -- Flying Serpent Kick (slow)
-					196733, -- Special Delivery (slow)
-					199387, -- Spirit Tether (MW artifact) (slow)
-					205320, -- Strike of the Windlord (WW artifact) (slow)
+					116095, -- Disable (Windwalker)
+					121253, -- Keg Smash (Brewmaster)
+					123586, -- Flying Serpent Kick (Wilnwalker)
+				},
+			},
+			HELPFUL = {
+				116841, -- Tiger's Lust (talent)
+				119611, -- Renewing Mist (Mistweaver)
+				191840, -- Essence Font (Mistweaver)
+				201447, -- Ride the Wind (Windwalker honor talent)
+				205655, -- Dome of Mist (Mistweaver honor talent)
+				SURVIVAL = {
+					116849, -- Life Cocoon (Mistweaver)
+					202162, -- Guard (Brewmaster honor talent)
+					202248, -- Guided Meditation (Brewmaster honor talent)
 				},
 			},
 			PERSONAL = {
-				 101643, -- Transcendance
-				 116680, -- Thunder Focus Tea
-				 116847, -- Rushing Jade Wind
-				 119085, -- Chi Torpedo
-				 125174, -- Touch of Karma
-				 137639, -- Storm, Earth and Fire
-				 195381, -- Healing Winds (WW artifact)
-				 195630, -- Elusive Brawler
-				 196725, -- Refreshing Jade Wind
-				 196739, -- Elusive Dance
-				 197206, -- Uplifting Trance
-				 197908, -- Mana Tea
-				 199407, -- Light on Your Feet (MW artifact)
-				 202248, -- Guided Meditation (pvp)
-				 213177, -- Swift as a Coursing River (BM artifact)
-				 214373, -- Brew-Stache (BM artifact)
-				 228563, -- Blackout Combo
-				 242387, -- Thunderfist (WW artifact)
-				[152173] = "BURST", -- Serenity
+				101643, -- Transcendence (Brewmaster)
+				116680, -- Thunder Focus Tea (Mistweaver)
+				116847, -- Rushing Jade Wind (Brewmaster talent)
+				119085, -- Chi Torpedo (talent)
+				129914, -- Power Strikes (Windwalker talent)
+				196725, -- Refreshing Jade Wind (Mistweaver talent)
+				196739, -- Elusive Dance (Brewmaster talent)
+				197206, -- Uplifting Trance (Mistweaver)
+				197908, -- Mana Tea (Mistweaver talent)
+				202335, -- Double Barrel (Brewmaster honor talent)
+				209584, -- Zen Focus Tea (Mistweaver honor talent)
+				215479, -- Ironskin Brew (Brewmaster)
+				261715, -- Rushing Jade Wind (Windwalker talent)
+				BURST = {
+					137639, -- Storm, Earth, and Fire (Windwalker)
+					152173, -- Serenity (Windwalker talent)
+					216113, -- Way of the Crane (Mistweaver honor talent)
+				},
 				SURVIVAL = {
-					115176, -- Zen Meditation
+					115176, -- Zen Meditation (Brewmaster)
 					120954, -- Fortifying Brew (Brewmaster)
-					122278, -- Dampen Harm
-					122783, -- Diffuse Magic
-					213341, -- Fortification (BM artifact)
-					215479, -- Ironskin Brew
+					122278, -- Dampen Harm (talent)
+					122783, -- Diffuse Magic (Mistweaver/Windwalker talent)
+					125174, -- Touch of Karma (Windwalker)
+					201318, -- Fortifying Brew (Windwalker honor talent)
 					243435, -- Fortifying Brew (Mistweaver)
 				},
 			},
 		},
+		DISPEL = {
+			HELPFUL = {
+				[115310] = 'DISEASE MAGIC POISON', -- Revival (Mistweaver)
+				[115450] = 'DISEASE MAGIC POISON', -- Detox (Mistweaver)
+				[205234] = 'MAGIC', -- Healing Sphere (Mistweaver honor talent)
+				[218164] = 'DISEASE POISON', -- Detox (Brewmaster/Windwalker)
+			},
+		}
 	},
 	AURA = {
-		HELPFUL = {
-			124682, -- Enveloping Mist
-			198533, -- Soothing Mist
-			216915, -- Fortune Turned (pvp)
-			240672, -- Master of Combinations (WW artifact)
-		},
 		HARMFUL = {
-			 117952, -- Crackling Jade Lightning
-			 196608, -- Eye of the Tiger -- NOTE: the buff id for the HoT is the same
-			 228287, -- Mark of the Crane
-			[116095] = "SNARE", -- Disable (slow)
-			CROWD_CTRL = {
-				[116706] = "ROOT", -- Disable (root)
-				[120086] = "STUN", -- Fists of Fury (stun)
-			},
+			117952, -- Crackling Jade Lightning
+			228287, -- Mark of the Crane (Windwalker)
+		},
+		HELPFUL = {
+			115175, -- Soothing Mist (Mistweaver)
+			124682, -- Enveloping Mist (Mistweaver)
+			198533, -- Soothing Mist (Mistweaver talent)
+			227344, -- Surging Mist (Mistweaver honor talent)
 		},
 		PERSONAL = {
-			 101546, -- Spinning Crane Kick
-			 116768, -- Blackout Kick!
-			 195321, -- Transfer of Power (WW artifact)
-			 197916, -- Lifecycles (Vivify)
-			 197919, -- Lifecycles (Enveloping Mist)
-			 202090, -- Teachings of the Monastery (MW mastery)
-			[233766] = "INVERT_AURA", -- Control the Mists (pvp)
+			116768, -- Blackout Kick! (Windwalker)
+			195630, -- Elusive Brawler (Brewmaster)
+			196608, -- Eye of the Tiger (Brewmaster/Windwalker talent) -- NOTE: also HARMFUL with the same id (not supported)
+			197916, -- Lifecycles (Vivify) (Mistweaver talent)
+			197919, -- Lifecycles (Enveloping Mist) (Mistweaver talent)
+			202090, -- Teachings of the Monastery (Mistweaver)
+			228563, -- Blackout Combo (Brewmaster talent)
+			247483, -- Tigereye Brew (Windwalker honor talent)
+			261769, -- Inner Strength (Windwalker talent)
 		},
 	},
 }, {
 	-- map aura to provider(s)
-	[115804] = 107428, -- Mortal Wounds <- Rising Sun Kick
-	[116189] = 115546, -- Provoke (taunt)
-	[116706] = 116095, -- Disable (root)
-	[116768] = 100780, -- Blackout Kick! <- Tiger Palm
-	[118635] = 115315, -- Provoke (taunt) <- Summon Black Ox Statue
-	[119085] = 115008, -- Chi Torpedo
-	[119611] = 115151, -- Renewing Mist
-	[120086] = 205003, -- Fists of Fury (stun) <- Heavy-Handed Strikes (pvp)
+	[115804] = 107428, -- Mortal Wounds (Windwalker) <- Rising Sun Kick
+	[116189] = 115546, -- Provoke
+	[116706] = 116095, -- Disable (Windwalker)
+	[116768] = 100780, -- Blackout Kick! (Windwalker) <- Tiger Palm
+	[118635] = 115315, -- Provoke (Brewmaster/Windwalker talent) <- Summon Black Ox Statue
+	[119085] = 115008, -- Chi Torpedo (talent)
+	[119611] = 115151, -- Renewing Mist (Mistweaver)
 	[120954] = 115203, -- Fortifying Brew (Brewmaster)
-	[123586] = 101545, -- Flying Serpent Kick (slow)
-	[123725] = 115181, -- Breath of Fire
-	[124280] = 122470, -- Touch of Karma (dmg dot)
-	[125174] = 122470, -- Touch of Karma
-	[191840] = 191837, -- Essence Font
-	[195321] = 195300, -- Transfer of Power (WW artifact) <- Transfer the Power
-	[195381] = 195380, -- Healing Winds (WW artifact)
-	[195630] = 117906, -- Elusive Brawler <- Mastery: Elusive Brawler
-	[196608] = 196607, -- Eye of the Tiger
-	[196727] = 132578, -- Provoke <- Invoke Niuzao, the Black Ox
-	[196733] = 196730, -- Special Delivery (slow)
-	[196739] = 196738, -- Elusive Dance
-	[197206] = 115151, -- Uplifting Trance <- Renewing Mist
-	[197916] = 197915, -- Lifecycles (Vivify) <- Lifecycles
-	[197919] = 197915, -- Lifecycles (Enveloping Mist) <- Lifecycles
-	[198533] = 115313, -- Soothing Mist <- Summon Jade Serpent Statue
-	[198909] = 198898, -- Song of Chi-Ji (Disorient)
-	[199387] = 199384, -- Spirit Tether (MW artifact) (slow)
-	[199407] = 199401, -- Light on Your Feet (MW artifact)
-	[199668] = 199665, -- Blessings of Yu'lon (MW artifact)
-	[202090] = 116645, -- Teachings of the Monastery (MW mastery)
-	[202248] = 202200, -- Guided Meditation (pvp)
-	[202274] = 202272, -- Incendiary Brew (pvp) <- Incendiary Breath (pvp)
-	[206891] = 207025, -- Intimidated <- Admonishment (BM Honor Talent)
-	[213063] = 227689, -- Dark Side of the Moon (BM artifact)
-	[213341] = 213340, -- Fortification (BM artifact)
-	[213177] = 213161, -- Swift as a Coursing River (BM artifact)
-	[214373] = 214372, -- Brew-Stache (BM artifact)
-	[215479] = 115308, -- Ironskin Brew
-	[216915] = 216913, -- Fortune Turned (pvp)
-	[228287] = { -- Mark of the Crane
-		100780, -- Tiger Palm (provider)
-		100784, -- Blackout Kick (provider)
-		107428, -- Rising Sun Kick (provider)
-		116847, -- Rushing Jade Wind (provider)
-	},
-	[228563] = 196736, -- Blackout Combo
-	[232055] = 205003, -- Fists of Fury (stun) (pvp) <- Heavy-Handed Strikes (pvp)
-	[233766] = 233765, -- Control the Mists (pvp)
-	[240672] = 238095, -- Master of Combinations (WW artifact)
-	[242387] = 238131, -- Thunderfist (WW artifact)
+	[123586] = 101545, -- Flying Serpent Kick (Wilnwalker)
+	[123725] = 115181, -- Breath of Fire (Brewmaster)
+	[125174] = 122470, -- Touch of Karma (Windwalker)
+	[129914] = 121817, -- Power Strikes (Windwalker talent)
+	[137639] = 221771, -- Storm, Earth, and Fire (Windwalker)
+	[191840] = 191837, -- Essence Font (Mistweaver)
+	[195630] = 117906, -- Elusive Brawler (Brewmaster) <- Mastery: Elusive Brawler
+	[196608] = 196607, -- Eye of the Tiger (Brewmaster talent)
+	[196727] = 132578, -- Provoke (Brewmaster talent) <- Invoke Niuzao, the Black Ox
+	[196739] = 196738, -- Elusive Dance (Brewmaster talent)
+	[197206] = 115151, -- Uplifting Trance (Mistweaver) <- Renewing Mist
+	[197916] = 197915, -- Lifecycles (Vivify) (Mistweaver talent) <- Lifecycles
+	[197919] = 197915, -- Lifecycles (Enveloping Mist) (Mistweaver talent) <- Lifecycles
+	[198533] = 115313, -- Soothing Mist (Mistweaver talent) <- Summon Jade Serpent Statue
+	[198909] = 198898, -- Song of Chi-Ji (Mistweaver talent)
+	[201447] = 201372, -- Ride the Wind (Windwalker honor talent)
+	[202090] = 116645, -- Teachings of the Monastery (Mistweaver)
+	[202248] = 202200, -- Guided Meditation (Brewmaster honor talent)
+	[202274] = 202272, -- Incendiary Brew (Brewmaster honor talent) <- Incendiary Breath
+	[202346] = 202335, -- Double Barrel (Brewmaster honor talent)
+	[205655] = 202577, -- Dome of Mist (Mistweaver honor talent)
+	[206891] = 207025, -- Intimidated (Brewmaster honor talent) <- Admonishment
+	[215479] = 115308, -- Ironskin Brew (Brewmaster)
+	[228287] = 101546, -- Mark of the Crane (Windwalker) <- Spinning Crane Kick
+	[228563] = 196736, -- Blackout Combo (Brewmaster talent)
+	[232055] = 205003, -- Fists of Fury (Windwalker honor talent) <- Heavy-Handed Strikes
+	[261769] = 261767, -- Inner Strength (Windwalker talent)
 }, {
 	-- map aura to modified spell(s)
-	[116768] = 100784, -- Blackout Kick! -> Blackout Kick
-	[118635] = 115546, -- Provoke (through Black Ox Statue) (taunt)
-	[137639] = 221771, -- Storm, Earth and Fire -> Storm, Earth and Fire: Fixate
-	[195321] = { -- Transfer of Power (WW artifact)
-		100784, -- Blackout Kick (provider)
-		107428, -- Rising Sun Kick (provider)
-		113656, -- Fists of Fury (consumer)
+	[116680] = { -- Thunder Focus Tea (Mistweaver)
+		107428, -- Rising Sun Kick
+		115151, -- Renewing Mist
+		116670, -- Vivify
+		124682, -- Enveloping Mist
 	},
-	[195381] = 119996, -- Healing Winds (WW artifact) -> Transcendance: Transfer
-	[195630] = { -- Elusive Brawler
+	[116768] = 100784, -- Blackout Kick! (Windwalker) -> Blackout Kick
+	[118635] = 115546, -- Provoke (Brewmaster/Windwalker talent)
+	[129914] = 100780, -- Power Strikes (Windwalker talent) -> Tiger Palm
+	[195630] = 205523, -- Elusive Brawler (Brewmaster) -> Blackout Strike
+	[196608] = 100780, -- Eye of the Tiger (Brewmaster talent) -> Tiger Palm
+	[196727] = 196727, -- Provoke (Niuzao) (Brewmaster talent)
+	[196739] = 119582, -- Elusive Dance (Brewmaster talent) -> Purifying Brew
+	[197206] = 116670, -- Uplifting Trance (Mistweaver) -> Vivify
+	[197916] = 116670, -- Lifecycles (Vivify) (Mistweaver talent) -> Vivify
+	[197919] = 124682, -- Lifecycles (Enveloping Mist) (Mistweaver talent) -> Enveloping Mist
+	[201447] = 101545, -- Ride the Wind (Windwalker honor talent) -> Flying Serpent Kick
+	[202090] = 100784, -- Teachings of the Monastery (Mistweaver) -> Blackout Kick
+	[202248] = 115176, -- Guided Meditation (Brewmaster honor talent) -> Zen Meditation
+	[202274] = 115181, -- Incendiary Brew (Brewmaster honor talent) -> Breath of Fire
+	[202335] = 121253, -- Double Barrel (Brewmaster honor talent) -> Keg Smash
+	[202346] = 121253, -- Double Barrel (Brewmaster honor talent) -> Keg Smash
+	[205655] = 115151, -- Dome of Mist (Mistweaver honor talent) -> Renewing Mist
+	[228563] = { -- Blackout Combo (Brewmaster talent)
+		100780, -- Tiger Palm
 		115181, -- Breath of Fire
-		205523, -- Blackout Kick (BM)
-	},
-	[196608] = 100780, -- Eye of the Tiger
-	[196733] = { -- Special Delivery (slow)
 		115308, -- Ironskin Brew
 		119582, -- Purifying Brew
+		121253, -- Keg Smash
 	},
-	[196739] = 119582, -- Elusive Dance -> Purifying Brew
-	[197206] = 116670, -- Uplifting Trance -> Vivify
-	[197916] = 116670, -- Lifecycles (Vivify) -> Vivify
-	[197919] = 124682, -- Lifecycles (Enveloping Mist) -> Enveloping Mist
-	[199387] = 101643, -- Spirit Tether (MW artifact) (slow) -> Transcendance
-	[199407] = 191837, -- Light on Your Feet (MW artifact) -> Essence Font
-	[199668] = 115310, -- Blessings of Yu'lon (MW artifact) -> Revival
-	[120086] = 113656, -- Fists of Fury (stun)
-	[202090] = { -- Teachings of the Monastery (MW mastery)
-		100780, -- Tiger Palm (provider)
-		100784, -- Blackout Kick (consumer)
+	[232055] = 113656, -- Fists of Fury (Windwalker honor talent)
+	[261769] = { -- Inner Strength (Windwalker talent)
+		100784, -- Blackout Kick
+		101546, -- Spinning Crane Kick
+		107428, -- Rising Sun Kick
+		113656, -- Fists of Fury
 	},
-	[202248] = 115176, -- Guided Meditation (pvp) -> Zen Meditation
-	[202274] = 115181, -- Incendiary Brew (pvp) -> Breath of Fire
-	[213063] = 205523, -- Dark Side of the Moon (BM artifact) -> Blackout Strike
-	[213177] = { -- Swift as a Coursing River (BM artifact)
-		115203, -- Fortifying Brew
-		115308, -- Ironskin Brew
-		119582, -- Purifying Brew
-	},
-	[213341] = 115203, -- Fortification (BM artifact) -> Fortifying Brew
-	[214373] = { -- Brew-Stache (BM artifact)
-		115308, -- Ironskin Brew
-		119582, -- Purifying Brew
-	},
-	[216915] = 116694, -- Fortune Turned (pvp) -> Effuse
-	[228287] = 101546, -- Mark of the Crane -> Spinning Crane Kick
-	[228563] = 205523, -- Blackout Combo -> Blackout Strike
-	[232055] = 113656, -- Fists of Fury (stun) (pvp)
-	[233766] = 116694, -- Control the Mists (pvp) -> Effuse
-	[242387] = 205320, -- Thunderfist (WW artifact) -> Strike of the Windlord (WW artifact)
 })
