@@ -30,9 +30,14 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 		[108199] = 'KNOCKBACK', -- Gorefiend's Grasp (Blood)
 		AURA = {
 			HARMFUL = {
+				 47476, -- Strangulate (Blood honor talent) -- NOTE: Silence
 				 55078, -- Blood Plague (Blood)
+				 77606, -- Dark Simulacrum (Blood honor talent)
+				203173, -- Death Chain (Blood honor talent)
+				206891, -- Intimidated (Blood honor talent)
 				206931, -- Blooddrinker (Blood talent)
 				206940, -- Mark of Blood (Blood talent)
+				212610, -- Walking Dead (Blood honor talent)
 				CROWD_CTRL = {
 					STUN = {
 						221562, -- Asphyxiate (Blood)
@@ -47,7 +52,11 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 					273977, -- Grip of the Dead (Blood talent)
 				},
 			},
-			HELPFUL = {},
+			HELPFUL = {
+				SURVIVAL = {
+					145622, -- Anti-Magic Zone (Blood honor talent)
+				},
+			},
 			PERSONAL = {
 				  48265, -- Death's Advance (Blood)
 				  77535, -- Blood Shield (Blood)
@@ -74,7 +83,8 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			3714, -- Path of Frost
 		},
 		PERSONAL = {
-			81141, -- Crimson Scourge (Blood)
+			 81141, -- Crimson Scourge (Blood)
+			233411, -- Blood for Blood (Blood honor talent)
 		},
 		PET = {
 			[111673] = 'INVERT_AURA', -- Control Undead (Blood)
@@ -90,8 +100,11 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[ 77535] =  77513, -- Blood Shield (Blood) <- Mastery: Blood Shield
 	[ 81141] =  81136, -- Crimson Scourge (Blood)
 	[ 81256] =  49028, -- Dancing Rune Weapon (Blood)
+	[145622] =  51052, -- Anti-Magic Zone (Blood honor talent)
 	[188290] =  43265, -- Death and Decay (Blood)
 	[195181] = 195182, -- Bone Shield (Blood) <- Marrowrend
+	[206891] = 207018, -- Intimidated (Blood honor talent) <- Murderous Intent
+	[212610] = 202731, -- Walking Dead (Blood honor talent)
 	[219788] = 219786, -- Ossuary (Blood talent)
 	[273947] = 273946, -- Hemostasis (Blood talent)
 	[273977] = 273952, -- Grip of the Dead (Blood talent)
@@ -100,6 +113,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	-- map aura to modified spell(s)
 	[ 77535] =  49998, -- Blood Shield (Blood) -> Death Strike
 	[ 81141] =  43265, -- Crimson Scourge (Blood) -> Death and Decay
+	[212610] =  49576, -- Walking Dead (Blood honor talent) -> Death Grip
 	[219788] = 195182, -- Ossuary (Blood talent) -> Marrowrend
 	[273947] =  49998, -- Hemostasis (Blood talent) -> Death Strike
 	[273977] =  43265, -- Grip of the Dead (Blood talent) -> Death and Decay
