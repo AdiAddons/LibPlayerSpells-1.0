@@ -22,7 +22,7 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	COOLDOWN = {
-		  6544, -- Heroic Leap (Protection/Fury)
+		  6544, -- Heroic Leap
 		  6572, -- Revenge (Protection)
 		 23881, -- Bloodthirst (Fury)
 		 23922, -- Shield Slam (Protection)
@@ -30,8 +30,8 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	       [  6552] = "INTERRUPT", -- Pummel
 		AURA = {
 			HELPFUL = {
-				  6673, -- Battle Shout (Protection/Fury)
-				 97463, -- Rallying Cry (Protection/Fury)
+				  6673, -- Battle Shout
+				 97463, -- Rallying Cry
 				147833, -- Intervene (Protection)
 				223658, -- Safeguard (Protection talent)
 			},
@@ -39,22 +39,26 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				  1160, -- Demoralizing Shout (Protection)
 				105771, -- Charge (Protection/Fury)
 				113344, -- Bloodbath (Fury talent)
+				115804, -- Mortal Wounds (Arms)
+				208086, -- Colossus Smash (Arms)
 				275335, -- Punish (Protection talent)
 				CROWD_CTRL = {
 					[ 355] = "TAUNT", -- Taunt
-					[5246] = "DISORIENT", -- Intimidating Shout (Protection/Fury)
+					[5246] = "DISORIENT", -- Intimidating Shout
 					STUN = {
 						132168, -- Shockwave (Protection)
 						132169, -- Storm Bolt (Protection/Fury talent)
 					},
 				},
 				SNARE = {
+					 1715, -- Hamstring (Arms)
 					 6343, -- Thunderclap (Protection)
 					12323, -- Piercing Howl (Fury)
 				},
 			},
 			PERSONAL = {
-				 18499, -- Berserker Rage (Protection/Fury)
+				  7384, -- Overpower (Arms)
+				 18499, -- Berserker Rage
 				 23920, -- Spell Reflection (Protection)
 				 46924, -- Bladestorm (Fury talent)
 				 85739, -- Meat Cleaver (Fury)
@@ -62,6 +66,8 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				132404, -- Shield Block (Protection)
 				202164, -- Bounding Stride (Protection/Fury talent)
 				202225, -- Furious Charge (Fury talent)
+				227847, -- Bladestorm (Arms)
+				260708, -- Sweeping Strikes (Arms)
 				274818, -- Bloodbath (Fury talent)
  				BURST = {
 					  1719, -- Recklessness (Fury)
@@ -70,6 +76,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				SURVIVAL = {
 					   871, -- Shield Wall (Protection)
 					 12975, -- Last Stand (Protection)
+					118038, -- Die by the Sword (Arms)
 					184364, -- Enraged Regeneration (Fury)
 					227744, -- Ravager (Protection talent)
 					275337, -- Bolster (Protection talent)
@@ -80,9 +87,10 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	AURA = {
 		HARMFUL = {
 			115767, -- Deep Wounds (Protection)
+			262115, -- Deep Wounds (Arms)
 		},
 		PERSONAL = {
-			 32216, -- Victorious (Protection)
+			 32216, -- Victorious
 			184362, -- Enrage (Fury)
 			202539, -- Frenzy (Fury talent)
 			202573, -- Vengeance: Revenge (Protection talent)
@@ -100,18 +108,19 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	},
 }, {
 	-- Map aura to provider(s)
-	[ 32216] = { -- Victorious (Protection)
-		 34428, -- Victory Rush (Protection)
+	[ 32216] = { -- Victorious
+		 34428, -- Victory Rush (Protection/Arms)
 		202168, -- Impending Victory (Protection/Fury talent)
 	},
 	[ 85739] = 190411, -- Meat Cleaver -> Whirlwind (Fury)
-	[ 97463] =  97462, -- Rallying Cry (Protection)
+	[ 97463] =  97462, -- Rallying Cry
 	[105771] = { -- Charge (root)
-		   100, -- Charge (Fury)
+		   100, -- Charge (Fury/Arms)
 		198304, -- Intercept - Charge (Protection)
 	},
 	[113344] =  12292, -- Bloodbath (Fury talent)
 	[115767] = 115768, -- Deep Wounds (Protection)
+	[115804] =  12294, -- Mortal Strike (Arms
 	[132168] =  46968, -- Shockwave (Protection)
 	[132169] = 107570, -- Storm Bolt (Protection/Fury talent)
 	[132404] =   2565, -- Shield Block (Protection)
@@ -125,15 +134,18 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[202602] = 202603, -- Into the Fray (Protection talent)
 	[206316] = 206315, -- Massacre (Fury talent)
 	[206333] = 100130, -- Taste for Blood -> Furious Slash
+	[208086] = 167105, -- Colossus Smash (Arms)
 	[215562] = 215556, -- War Machine (Fury talent)
 	[215570] = 215569, -- Wrecking Ball (Fury talent)
 	[215572] = 215571, -- Frothing Berserker (Fury talent)
 	[223658] = 223657, -- Safeguard (Protection talent)
 	[227744] = 228920, -- Ravager (Protection talent)
+	[262115] = 262111, -- Mastery: Deep Wounds (Arms)
 	[274818] =  12292, -- Bloodbath (Fury talent)
 	[275335] = 275334, -- Punish (Protection talent)
 }, {
 	-- map aura to modified spell(s)
+	[  7384] = 12294, -- Overpower -> Mortal Strike (Arms)
 	[ 85739] = { -- Meat Cleaver (Fury)
 		 23881, -- Bloodthirst (Fury)
 		184367, -- Rampage (Fury)
