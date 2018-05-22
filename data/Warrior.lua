@@ -31,26 +31,38 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		 260643, -- Skullsplitter (Arms talent)
 		[  6552] = "INTERRUPT", -- Pummel
 		[ 23922] = "POWER_REGEN", -- Shield Slam (Protection)
+		[206572] = "KNOCKBACK", -- Dragon Charge (Protection honor talent)
 		AURA = {
 			HELPFUL = {
-				 147833, -- Intervene (Protection)
+				 199038, -- Leave No Man Behind (Protection honor talent)
+				 206891, -- Intimidated (Protection honor talent)
+				 213871, -- Bodyguard (Protection honor talent)
 				 223658, -- Safeguard (Protection talent)
 				[  6673] = "RAIDBUFF", -- Battle Shout
-				[ 97463] = "SURVIVAL", -- Rallying Cry
+				[147833] = "POWER_REGEN", -- Intervene (Protection)
+				SURVIVAL = {
+					 97463, -- Rallying Cry
+					213915, -- Mass Spell Reflection (Protection honor talent)
+				},
 			},
 			HARMFUL = {
 				  1160, -- Demoralizing Shout (Protection)
 				113344, -- Bloodbath (Fury talent)
 				115804, -- Mortal Wounds (Arms)
+				198912, -- Shield Bash (Protection honor talent)
 				208086, -- Colossus Smash (Arms)
 				275335, -- Punish (Protection talent)
 				CROWD_CTRL = {
 					[   355] = "TAUNT", -- Taunt
 					[  5246] = "DISORIENT", -- Intimidating Shout
-					[105771] = "ROOT", -- Charge
+					ROOT = {
+						 199042, -- Thunderstruck (Protection honor talent)
+						[105771] = "POWER_REGEN", -- Charge
+					},
 					STUN = {
 						132168, -- Shockwave (Protection)
 						132169, -- Storm Bolt (talent)
+						199085, -- Warpath (Protection honor talent)
 					},
 				},
 				SNARE = {
@@ -138,6 +150,9 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[147833] = 198304, -- Intervene (Protection) <- Intercept
 	[184362] = 184361, -- Enrage (Fury)
 	[197690] = 212520, -- Defensive Stance (Arms talent)
+	[199038] = 199037, -- Leave No Man Behind (Protection honor talent)
+	[199042] = 199045, -- Thunderstruck (Protection honor talent)
+	[199085] = 199086, -- Warpath (Protection honor talent)
 	[202164] = 202163, -- Bounding Stride (talent)
 	[202225] = 202224, -- Furious Charge (Fury talent)
 	[202539] = 206313, -- Frenzy (Fury talent)
@@ -146,6 +161,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[202602] = 202603, -- Into the Fray (Protection talent)
 	[206316] = 206315, -- Massacre (Fury talent)
 	[206333] = 100130, -- Taste for Blood <- Furious Slash
+	[206891] = 205800, -- Intimidated (Protection honor talent) <- Oppressor
 	[208086] = { -- Colossus Smash (Arms)
 		167105, -- Colossus Smash (Arms)
 		262161, -- Warbreaker (Arms talent)
@@ -178,6 +194,9 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		236279, -- Devastator (Protection talent)
 	},
 	[184362] =  85288, -- Enrage -> Raging Blow (Fury)
+	[199038] = 198304, -- Leave No Man Behind (Protection honor talent) -> Intercept
+	[199042] =   6343, -- Thunderstruck (Protection honor talent) -> Thunder Clap
+	[199085] =   6544, -- Warpath (Protection honor talent) -> Heroic Leap
 	[202164] =   6544, -- Bounding Stride -> Heroic Leap (talent)
 	[202225] =  23881, -- Furious Charge -> Bloodthirst (Fury talent)
 	[202539] = 100130, -- Frenzy -> Furious Slash (Fury talent)
