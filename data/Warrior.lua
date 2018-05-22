@@ -182,7 +182,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[202225] =  23881, -- Furious Charge -> Bloodthirst (Fury talent)
 	[202539] = 100130, -- Frenzy -> Furious Slash (Fury talent)
 	[202573] =   6572, -- Vengeance: Revenge -> Revenge (Protection talent)
-	[202574] = 190456, -- Vengeance: Ignore Pain -> Ignore Pain (Protection talent)
+	[202574] = 190456, -- Vengeance: Ignore Pain (Protection talent) -> Ignore Pain
 	[206316] = 184367, -- Massacre -> Rampage (Fury talent)
 	[206333] =  23881, -- Taste for Blood -> Bloodthirst (Fury)
 	[215537] = { -- Trauma (Arms talent)
@@ -191,10 +191,10 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		163201, -- Execute (Arms)
 	},
 	[215570] = 190411, -- Wrecking Ball -> Whirlwind (Fury talent)
-	[223658] = 198304, -- Safeguard -> Intercept (Protection talent)
+	[223658] = 198304, -- Safeguard (Protection talent) -> Intercept
 	[248622] = {
 		167105, -- In for the Kill -> Colossus Smash (Arms talent)
 		262161, -- In for the Kill -> Warbreaker (Arms talent)
 	},
-	[275335] =  23922, -- Punish -> Shield Slam (Protection talent)
+	[275335] =  23922, -- Punish (Protection talent) -> Shield Slam
 })
