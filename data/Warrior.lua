@@ -33,9 +33,9 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		[ 23922] = "POWER_REGEN", -- Shield Slam (Protection)
 		AURA = {
 			HELPFUL = {
-				   6673, -- Battle Shout
 				 147833, -- Intervene (Protection)
 				 223658, -- Safeguard (Protection talent)
+				[  6673] = "RAIDBUFF", -- Battle Shout
 				[ 97463] = "SURVIVAL", -- Rallying Cry
 			},
 			HARMFUL = {
