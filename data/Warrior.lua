@@ -22,11 +22,14 @@ local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	COOLDOWN = {
+		   845, -- Cleave (Arms talent)
 		  6544, -- Heroic Leap
 		  6572, -- Revenge (Protection)
 		 23881, -- Bloodthirst (Fury)
 		 23922, -- Shield Slam (Protection)
-		202168, -- Impending Victory (Protection/Fury talent)
+		152277, -- Ravager (Arms talent)
+		202168, -- Impending Victory (talent)
+		260643, -- Skullsplitter (Arms talent)
 	       [  6552] = "INTERRUPT", -- Pummel
 		AURA = {
 			HELPFUL = {
@@ -47,7 +50,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 					[5246] = "DISORIENT", -- Intimidating Shout
 					STUN = {
 						132168, -- Shockwave (Protection)
-						132169, -- Storm Bolt (Protection/Fury talent)
+						132169, -- Storm Bolt (talent)
 					},
 				},
 				SNARE = {
@@ -64,14 +67,15 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				 85739, -- Meat Cleaver (Fury)
 				118000, -- Dragon Roar (fury talent)
 				132404, -- Shield Block (Protection)
-				202164, -- Bounding Stride (Protection/Fury talent)
+				202164, -- Bounding Stride (talent)
 				202225, -- Furious Charge (Fury talent)
 				227847, -- Bladestorm (Arms)
 				260708, -- Sweeping Strikes (Arms)
 				274818, -- Bloodbath (Fury talent)
  				BURST = {
 					  1719, -- Recklessness (Fury)
-					107574, -- Avatar (Protection)(Fury talent)
+					107574, -- Avatar (Protection)(Fury/Arms talent)
+					262228, -- Deadly Calm (Arms talent)
 				},
 				SURVIVAL = {
 					   871, -- Shield Wall (Protection)
@@ -86,11 +90,15 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
+			   772, -- Rend (Arms talent)
 			115767, -- Deep Wounds (Protection)
+			215537, -- Trauma (Arms talent)
+			248622, -- In for the Kill (Arms talent)
 			262115, -- Deep Wounds (Arms)
 		},
 		PERSONAL = {
 			 32216, -- Victorious
+			 52437, -- Sudden Death (Arms talent)
 			184362, -- Enrage (Fury)
 			202539, -- Frenzy (Fury talent)
 			202573, -- Vengeance: Revenge (Protection talent)
@@ -101,8 +109,10 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 			215562, -- War Machine (Fury talent)
 			215570, -- Wrecking Ball (Fury talent)
 			215572, -- Frothing Berserker (Fury talent)
+			262232, -- War Machine (Arms talent)
 			SURVIVAL = {
 				190456, -- Ignore Pain (Protection)
+				197690, -- Defensive Stance (Arms talent)
 			},
 		},
 	},
@@ -110,8 +120,9 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	-- Map aura to provider(s)
 	[ 32216] = { -- Victorious
 		 34428, -- Victory Rush (Protection/Arms)
-		202168, -- Impending Victory (Protection/Fury talent)
+		202168, -- Impending Victory (talent)
 	},
+	[ 52437] =  29725, -- Sudden Death (Arms talent)
 	[ 85739] = 190411, -- Meat Cleaver -> Whirlwind (Fury)
 	[ 97463] =  97462, -- Rallying Cry
 	[105771] = { -- Charge (root)
@@ -122,11 +133,12 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[115767] = 115768, -- Deep Wounds (Protection)
 	[115804] =  12294, -- Mortal Strike (Arms
 	[132168] =  46968, -- Shockwave (Protection)
-	[132169] = 107570, -- Storm Bolt (Protection/Fury talent)
+	[132169] = 107570, -- Storm Bolt (talent)
 	[132404] =   2565, -- Shield Block (Protection)
 	[147833] = 198304, -- Intercept - Intervene (Protection)
 	[184362] = 184361, -- Enrage (Fury)
-	[202164] = 202163, -- Bounding Stride (Protection/Fury talent)
+	[197690] = 212520, -- Defensive Stance (Arms talent)
+	[202164] = 202163, -- Bounding Stride (talent)
 	[202225] = 202224, -- Furious Charge (Fury talent)
 	[202539] = 206313, -- Frenzy (Fury talent)
 	[202573] = 202572, -- Vengeance: Revenge <- Vengeance (Protectiont talent)
@@ -134,18 +146,28 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[202602] = 202603, -- Into the Fray (Protection talent)
 	[206316] = 206315, -- Massacre (Fury talent)
 	[206333] = 100130, -- Taste for Blood -> Furious Slash
-	[208086] = 167105, -- Colossus Smash (Arms)
+	[208086] = { -- Colossus Smash (Arms)
+		167105, -- Colossus Smash (Arms)
+		262161, -- Warbreaker (Arms talent)
+	},
+	[215537] = 215538, -- Trauma (Arms talent)
 	[215562] = 215556, -- War Machine (Fury talent)
 	[215570] = 215569, -- Wrecking Ball (Fury talent)
 	[215572] = 215571, -- Frothing Berserker (Fury talent)
 	[223658] = 223657, -- Safeguard (Protection talent)
 	[227744] = 228920, -- Ravager (Protection talent)
-	[262115] = 262111, -- Mastery: Deep Wounds (Arms)
+	[248622] = 248621, -- In for the Kill (Arms talent)
+	[262115] = { -- Deep Wounds (Arms)
+		   845, -- Cleave (Arms talent)
+		262111, -- Mastery: Deep Wounds (Arms)
+	},
+	[262232] = 262231, -- War Machine (Arms talent)
 	[274818] =  12292, -- Bloodbath (Fury talent)
 	[275335] = 275334, -- Punish (Protection talent)
 }, {
 	-- map aura to modified spell(s)
-	[  7384] = 12294, -- Overpower -> Mortal Strike (Arms)
+	[  7384] =  12294, -- Overpower -> Mortal Strike (Arms)
+	[ 52437] = 163201, -- Sudden Death -> Execute (Arms talent)
 	[ 85739] = { -- Meat Cleaver (Fury)
 		 23881, -- Bloodthirst (Fury)
 		184367, -- Rampage (Fury)
@@ -156,14 +178,23 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		236279, -- Devastator (Protection talent)
 	},
 	[184362] =  85288, -- Enrage -> Raging Blow (Fury)
-	[202164] =   6544, -- Bounding Stride -> Heroic Leap (Protection/Fury talent)
+	[202164] =   6544, -- Bounding Stride -> Heroic Leap (talent)
 	[202225] =  23881, -- Furious Charge -> Bloodthirst (Fury talent)
 	[202539] = 100130, -- Frenzy -> Furious Slash (Fury talent)
 	[202573] =   6572, -- Vengeance: Revenge -> Revenge (Protection talent)
 	[202574] = 190456, -- Vengeance: Ignore Pain -> Ignore Pain (Protection talent)
 	[206316] = 184367, -- Massacre -> Rampage (Fury talent)
 	[206333] =  23881, -- Taste for Blood -> Bloodthirst (Fury)
+	[215537] = { -- Trauma (Arms talent)
+		  1464, -- Slam (Arms)
+		  1680, -- Whirlwind (Arms)
+		163201, -- Execute (Arms)
+	},
 	[215570] = 190411, -- Wrecking Ball -> Whirlwind (Fury talent)
 	[223658] = 198304, -- Safeguard -> Intercept (Protection talent)
+	[248622] = {
+		167105, -- In for the Kill -> Colossus Smash (Arms talent)
+		262161, -- In for the Kill -> Warbreaker (Arms talent)
+	},
 	[275335] =  23922, -- Punish -> Shield Slam (Protection talent)
 })
