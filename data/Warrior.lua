@@ -26,37 +26,37 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		   6544, -- Heroic Leap
 		   6572, -- Revenge (Protection)
 		  23881, -- Bloodthirst (Fury)
-		  23922, -- Shield Slam (Protection)
 		 152277, -- Ravager (Arms talent)
 		 202168, -- Impending Victory (talent)
 		 260643, -- Skullsplitter (Arms talent)
 		[  6552] = "INTERRUPT", -- Pummel
+		[ 23922] = "POWER_REGEN", -- Shield Slam (Protection)
 		AURA = {
 			HELPFUL = {
-				  6673, -- Battle Shout
-				 97463, -- Rallying Cry
-				147833, -- Intervene (Protection)
-				223658, -- Safeguard (Protection talent)
+				   6673, -- Battle Shout
+				 147833, -- Intervene (Protection)
+				 223658, -- Safeguard (Protection talent)
+				[ 97463] = "SURVIVAL", -- Rallying Cry
 			},
 			HARMFUL = {
 				  1160, -- Demoralizing Shout (Protection)
-				105771, -- Charge (Protection/Fury)
 				113344, -- Bloodbath (Fury talent)
 				115804, -- Mortal Wounds (Arms)
 				208086, -- Colossus Smash (Arms)
 				275335, -- Punish (Protection talent)
 				CROWD_CTRL = {
-					[ 355] = "TAUNT", -- Taunt
-					[5246] = "DISORIENT", -- Intimidating Shout
+					[   355] = "TAUNT", -- Taunt
+					[  5246] = "DISORIENT", -- Intimidating Shout
+					[105771] = "ROOT", -- Charge
 					STUN = {
 						132168, -- Shockwave (Protection)
 						132169, -- Storm Bolt (talent)
 					},
 				},
 				SNARE = {
-					 1715, -- Hamstring (Arms)
-					 6343, -- Thunderclap (Protection)
-					12323, -- Piercing Howl (Fury)
+					  1715, -- Hamstring (Arms)
+					 12323, -- Piercing Howl (Fury)
+					[ 6343] = "POWER_REGEN", -- Thunder Clap (Protection)
 				},
 			},
 			PERSONAL = {
@@ -73,9 +73,9 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				260708, -- Sweeping Strikes (Arms)
 				274818, -- Bloodbath (Fury talent)
 				BURST = {
-					  1719, -- Recklessness (Fury)
-					107574, -- Avatar (Protection)(Fury/Arms talent)
-					262228, -- Deadly Calm (Arms talent)
+					   1719, -- Recklessness (Fury)
+					 262228, -- Deadly Calm (Arms talent)
+					[107574] = "POWER_REGEN", -- Avatar (Protection)(Fury/Arms talent)
 				},
 				SURVIVAL = {
 					   871, -- Shield Wall (Protection)
@@ -125,9 +125,9 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[ 52437] =  29725, -- Sudden Death (Arms talent)
 	[ 85739] = 190411, -- Meat Cleaver <- Whirlwind (Fury)
 	[ 97463] =  97462, -- Rallying Cry
-	[105771] = { -- Charge (root)
+	[105771] = { -- Charge
 		   100, -- Charge (Fury/Arms)
-		198304, -- Intercept - Charge (Protection)
+		198304, -- Intercept (Protection)
 	},
 	[113344] =  12292, -- Bloodbath (Fury talent)
 	[115767] = 115768, -- Deep Wounds (Protection)
@@ -135,7 +135,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[132168] =  46968, -- Shockwave (Protection)
 	[132169] = 107570, -- Storm Bolt (talent)
 	[132404] =   2565, -- Shield Block (Protection)
-	[147833] = 198304, -- Intercept <- Intervene (Protection)
+	[147833] = 198304, -- Intervene (Protection) <- Intercept
 	[184362] = 184361, -- Enrage (Fury)
 	[197690] = 212520, -- Defensive Stance (Arms talent)
 	[202164] = 202163, -- Bounding Stride (talent)
