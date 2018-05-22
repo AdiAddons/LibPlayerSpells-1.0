@@ -15,22 +15,22 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
+along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
 local lib = LibStub("LibPlayerSpells-1.0")
 if not lib then return end
 lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	COOLDOWN = {
-		   845, -- Cleave (Arms talent)
-		  6544, -- Heroic Leap
-		  6572, -- Revenge (Protection)
-		 23881, -- Bloodthirst (Fury)
-		 23922, -- Shield Slam (Protection)
-		152277, -- Ravager (Arms talent)
-		202168, -- Impending Victory (talent)
-		260643, -- Skullsplitter (Arms talent)
-	       [  6552] = "INTERRUPT", -- Pummel
+		    845, -- Cleave (Arms talent)
+		   6544, -- Heroic Leap
+		   6572, -- Revenge (Protection)
+		  23881, -- Bloodthirst (Fury)
+		  23922, -- Shield Slam (Protection)
+		 152277, -- Ravager (Arms talent)
+		 202168, -- Impending Victory (talent)
+		 260643, -- Skullsplitter (Arms talent)
+		[  6552] = "INTERRUPT", -- Pummel
 		AURA = {
 			HELPFUL = {
 				  6673, -- Battle Shout
@@ -72,7 +72,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				227847, -- Bladestorm (Arms)
 				260708, -- Sweeping Strikes (Arms)
 				274818, -- Bloodbath (Fury talent)
- 				BURST = {
+				BURST = {
 					  1719, -- Recklessness (Fury)
 					107574, -- Avatar (Protection)(Fury/Arms talent)
 					262228, -- Deadly Calm (Arms talent)
@@ -123,7 +123,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		202168, -- Impending Victory (talent)
 	},
 	[ 52437] =  29725, -- Sudden Death (Arms talent)
-	[ 85739] = 190411, -- Meat Cleaver -> Whirlwind (Fury)
+	[ 85739] = 190411, -- Meat Cleaver <- Whirlwind (Fury)
 	[ 97463] =  97462, -- Rallying Cry
 	[105771] = { -- Charge (root)
 		   100, -- Charge (Fury/Arms)
@@ -135,7 +135,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[132168] =  46968, -- Shockwave (Protection)
 	[132169] = 107570, -- Storm Bolt (talent)
 	[132404] =   2565, -- Shield Block (Protection)
-	[147833] = 198304, -- Intercept - Intervene (Protection)
+	[147833] = 198304, -- Intercept <- Intervene (Protection)
 	[184362] = 184361, -- Enrage (Fury)
 	[197690] = 212520, -- Defensive Stance (Arms talent)
 	[202164] = 202163, -- Bounding Stride (talent)
@@ -145,7 +145,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[202574] = 202572, -- Vengeance: Ignore Pain <- Vengeance (Protection talent)
 	[202602] = 202603, -- Into the Fray (Protection talent)
 	[206316] = 206315, -- Massacre (Fury talent)
-	[206333] = 100130, -- Taste for Blood -> Furious Slash
+	[206333] = 100130, -- Taste for Blood <- Furious Slash
 	[208086] = { -- Colossus Smash (Arms)
 		167105, -- Colossus Smash (Arms)
 		262161, -- Warbreaker (Arms talent)
