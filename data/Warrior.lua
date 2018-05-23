@@ -27,7 +27,6 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		   6572, -- Revenge (Protection)
 		  23881, -- Bloodthirst (Fury)
 		  57755, -- Heroic Throw
-		 152277, -- Ravager (Arms talent)
 		 202168, -- Impending Victory (talent)
 		[  6552] = "INTERRUPT", -- Pummel
 		[206572] = "KNOCKBACK", -- Dragon Charge (Protection honor talent)
@@ -48,7 +47,10 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				   1160, -- Demoralizing Shout (Protection)
 				 113344, -- Bloodbath (Fury talent)
 				 115804, -- Mortal Wounds (Arms)
+				 198819, -- Mortal Strike (Arms honor talent)
 				 198912, -- Shield Bash (Protection honor talent)
+				 236321, -- War Banner (Arms honor talent)
+				 236273, -- Duel (Arms honor talent) -- NOTE: also PERSONAL with the same id
 				 248622, -- In for the Kill (Arms talent)
 				 275335, -- Punish (Protection talent)
 				[208086] = "BURST", -- Colossus Smash (Arms)
@@ -78,8 +80,10 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				 85739, -- Meat Cleaver (Fury)
 				118000, -- Dragon Roar (fury talent)
 				132404, -- Shield Block (Protection)
+				198817, -- Sharpen Blade (Arms honor talen)
 				202164, -- Bounding Stride (talent)
 				202225, -- Furious Charge (Fury talent)
+				216890, -- Spell Reflection (Arms/Fury honor talent)
 				227847, -- Bladestorm (Arms)
 				260708, -- Sweeping Strikes (Arms)
 				274818, -- Bloodbath (Fury talent)
@@ -101,6 +105,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		},
 		POWER_REGEN = {
 			 23922, -- Shield Slam (Protection)
+			152277, -- Ravager (Arms talent)
 			260643, -- Skullsplitter (Arms talent)
 		}
 	},
@@ -152,6 +157,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[132404] =   2565, -- Shield Block (Protection)
 	[147833] = 198304, -- Intervene (Protection) <- Intercept
 	[184362] = 184361, -- Enrage (Fury)
+	[198819] = 198817, -- Mortal Strike (Arms honor talent) <- Sharpen Blade
 	[199038] = 199037, -- Leave No Man Behind (Protection honor talent)
 	[199042] = 199045, -- Thunderstruck (Protection honor talent)
 	[199085] = 199086, -- Warpath (Protection honor talent)
@@ -174,6 +180,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[215572] = 215571, -- Frothing Berserker (Fury talent)
 	[223658] = 223657, -- Safeguard (Protection talent)
 	[227744] = 228920, -- Ravager (Protection talent)
+	[236321] = 236320, -- War Banner (Arms honor talent)
 	[248622] = 248621, -- In for the Kill (Arms talent)
 	[262115] = 262111, -- Deep Wounds (Arms) <- Mastery: Deep Wounds
 	[262232] = 262231, -- War Machine (Arms talent)
@@ -194,6 +201,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	},
 	[184362] =  85288, -- Enrage -> Raging Blow (Fury)
 	[197690] = 212520, -- Defensive Stance (Arms talent)
+	[198817] =  12294, -- Sharpen Blade (Arms honor talen) -> Mortal Strike
 	[199038] = 198304, -- Leave No Man Behind (Protection honor talent) -> Intercept
 	[199042] =   6343, -- Thunderstruck (Protection honor talent) -> Thunder Clap
 	[199085] =   6544, -- Warpath (Protection honor talent) -> Heroic Leap
