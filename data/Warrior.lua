@@ -48,6 +48,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				 115804, -- Mortal Wounds (Arms)
 				 198819, -- Mortal Strike (Arms honor talent)
 				 198912, -- Shield Bash (Protection honor talent)
+				 236077, -- Disarm (honor talent)
 				 236321, -- War Banner (Arms honor talent)
 				 236273, -- Duel (Arms honor talent) -- NOTE: also PERSONAL with the same id
 				 248622, -- In for the Kill (Arms talent)
@@ -78,8 +79,10 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				 85739, -- Meat Cleaver (Fury)
 				132404, -- Shield Block (Protection)
 				198817, -- Sharpen Blade (Arms honor talen)
+				199261, -- Death Wish (Fury honor talent)
 				202164, -- Bounding Stride (talent)
 				202225, -- Furious Charge (Fury talent)
+				213858, -- Battle Trance (Fury honor talent)
 				216890, -- Spell Reflection (Arms/Fury honor talent)
 				227847, -- Bladestorm (Arms)
 				260708, -- Sweeping Strikes (Arms)
@@ -123,6 +126,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 			 32216, -- Victorious
 			 52437, -- Sudden Death (Arms talent)
 			184362, -- Enrage (Fury)
+			199203, -- Thirst for Battle (Fury honor talent)
 			202539, -- Frenzy (Fury talent)
 			202573, -- Vengeance: Revenge (Protection talent)
 			202574, -- Vengeance: Ignore Pain (Protection talent)
@@ -163,6 +167,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[199038] = 199037, -- Leave No Man Behind (Protection honor talent)
 	[199042] = 199045, -- Thunderstruck (Protection honor talent)
 	[199085] = 199086, -- Warpath (Protection honor talent)
+	[199203] = 199202, -- Thirst for Battle (Fury honor talent)
 	[202164] = 202163, -- Bounding Stride (talent)
 	[202225] = 202224, -- Furious Charge (Fury talent)
 	[202539] = 206313, -- Frenzy (Fury talent)
@@ -176,6 +181,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		167105, -- Colossus Smash (Arms)
 		262161, -- Warbreaker (Arms talent)
 	},
+	[213858] = 213857, -- Battle Trance (Fury honor talent)
 	[215537] = 215538, -- Trauma (Arms talent)
 	[215562] = 215556, -- War Machine (Fury talent)
 	[215570] = 215569, -- Wrecking Ball (Fury talent)
@@ -201,12 +207,13 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		 20243, -- Devestate (Protection)
 		236279, -- Devastator (Protection talent)
 	},
-	[184362] =  85288, -- Enrage -> Raging Blow (Fury)
+	[184362] =  85288, -- Enrage (Fury) -> Raging Blow
 	[197690] = 212520, -- Defensive Stance (Arms talent)
 	[198817] =  12294, -- Sharpen Blade (Arms honor talen) -> Mortal Strike
 	[199038] = 198304, -- Leave No Man Behind (Protection honor talent) -> Intercept
 	[199042] =   6343, -- Thunderstruck (Protection honor talent) -> Thunder Clap
 	[199085] =   6544, -- Warpath (Protection honor talent) -> Heroic Leap
+	[199203] =  23881, -- Thirst for Battle (Fury honor talent) -> Bloodthirst
 	[202164] =   6544, -- Bounding Stride (talent) -> Heroic Leap
 	[202225] =  23881, -- Furious Charge (Fury talent) -> Bloodthirst
 	[202539] = 100130, -- Frenzy (Fury talent) -> Furious Slash
@@ -214,6 +221,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[202574] = 190456, -- Vengeance: Ignore Pain (Protection talent) -> Ignore Pain
 	[206316] = 184367, -- Massacre (Fury talent) -> Rampage
 	[206333] =  23881, -- Taste for Blood -> Bloodthirst (Fury)
+	[213858] =  85288, -- Battle Trance (Fury honor talent) -> Raging Blow
 	[215537] = { -- Trauma (Arms talent)
 		  1464, -- Slam (Arms)
 		  1680, -- Whirlwind (Arms)
