@@ -25,7 +25,6 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		    845, -- Cleave (Arms talent)
 		   6544, -- Heroic Leap
 		   6572, -- Revenge (Protection)
-		  23881, -- Bloodthirst (Fury)
 		  57755, -- Heroic Throw
 		 202168, -- Impending Victory (talent)
 		[  6552] = "INTERRUPT", -- Pummel
@@ -68,7 +67,6 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 					},
 				},
 				SNARE = {
-					 12323, -- Piercing Howl (Fury)
 					[ 6343] = "POWER_REGEN", -- Thunder Clap (Protection)
 				},
 			},
@@ -104,6 +102,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 			},
 		},
 		POWER_REGEN = {
+			 23881, -- Bloodthirst (Fury)
 			 23922, -- Shield Slam (Protection)
 			152277, -- Ravager (Arms talent)
 			260643, -- Skullsplitter (Arms talent)
@@ -115,7 +114,10 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 			 115767, -- Deep Wounds (Protection)
 			 215537, -- Trauma (Arms talent)
 			 262115, -- Deep Wounds (Arms)
-			[  1715] = "SNARE", -- Hamstring (Arms)
+			SNARE = {
+				 1715, -- Hamstring (Arms)
+				12323, -- Piercing Howl (Fury)
+			}
 		},
 		PERSONAL = {
 			 32216, -- Victorious
