@@ -26,6 +26,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		   6544, -- Heroic Leap
 		   6572, -- Revenge (Protection)
 		  23881, -- Bloodthirst (Fury)
+		  57755, -- Heroic Throw
 		 152277, -- Ravager (Arms talent)
 		 202168, -- Impending Victory (talent)
 		 260643, -- Skullsplitter (Arms talent)
@@ -46,12 +47,12 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				},
 			},
 			HARMFUL = {
-				  1160, -- Demoralizing Shout (Protection)
-				113344, -- Bloodbath (Fury talent)
-				115804, -- Mortal Wounds (Arms)
-				198912, -- Shield Bash (Protection honor talent)
-				208086, -- Colossus Smash (Arms)
-				275335, -- Punish (Protection talent)
+				   1160, -- Demoralizing Shout (Protection)
+				 113344, -- Bloodbath (Fury talent)
+				 115804, -- Mortal Wounds (Arms)
+				 198912, -- Shield Bash (Protection honor talent)
+				 275335, -- Punish (Protection talent)
+				[208086] = "BURST", -- Colossus Smash (Arms)
 				CROWD_CTRL = {
 					[   355] = "TAUNT", -- Taunt
 					[  5246] = "DISORIENT", -- Intimidating Shout
@@ -66,7 +67,6 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 					},
 				},
 				SNARE = {
-					  1715, -- Hamstring (Arms)
 					 12323, -- Piercing Howl (Fury)
 					[ 6343] = "POWER_REGEN", -- Thunder Clap (Protection)
 				},
@@ -102,11 +102,12 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
-			   772, -- Rend (Arms talent)
-			115767, -- Deep Wounds (Protection)
-			215537, -- Trauma (Arms talent)
-			248622, -- In for the Kill (Arms talent)
-			262115, -- Deep Wounds (Arms)
+			    772, -- Rend (Arms talent)
+			 115767, -- Deep Wounds (Protection)
+			 215537, -- Trauma (Arms talent)
+			 248622, -- In for the Kill (Arms talent)
+			 262115, -- Deep Wounds (Arms)
+			[  1715] = "SNARE", -- Hamstring (Arms)
 		},
 		PERSONAL = {
 			 32216, -- Victorious
@@ -143,7 +144,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	},
 	[113344] =  12292, -- Bloodbath (Fury talent)
 	[115767] = 115768, -- Deep Wounds (Protection)
-	[115804] =  12294, -- Mortal Strike (Arms
+	[115804] =  12294, -- Mortal Wounds (Arms) <- Mortal Strike
 	[132168] =  46968, -- Shockwave (Protection)
 	[132169] = 107570, -- Storm Bolt (talent)
 	[132404] =   2565, -- Shield Block (Protection)
@@ -173,10 +174,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[223658] = 223657, -- Safeguard (Protection talent)
 	[227744] = 228920, -- Ravager (Protection talent)
 	[248622] = 248621, -- In for the Kill (Arms talent)
-	[262115] = { -- Deep Wounds (Arms)
-		   845, -- Cleave (Arms talent)
-		262111, -- Mastery: Deep Wounds (Arms)
-	},
+	[262115] = 262111, -- Deep Wounds (Arms) <- Mastery: Deep Wounds
 	[262232] = 262231, -- War Machine (Arms talent)
 	[274818] =  12292, -- Bloodbath (Fury talent)
 	[275335] = 275334, -- Punish (Protection talent)
@@ -214,6 +212,12 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[248622] = {
 		167105, -- In for the Kill -> Colossus Smash (Arms talent)
 		262161, -- In for the Kill -> Warbreaker (Arms talent)
+	},
+	[262115] = { -- Deep Wounds (Arms) <- Mastery: Deep Wounds
+	       845, -- Cleave (Arms talent)
+		 12294, -- Mortal Strike
+		163201, -- Execute
+		227847, -- Bladestorm
 	},
 	[275335] =  23922, -- Punish (Protection talent) -> Shield Slam
 })
