@@ -29,9 +29,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		  57755, -- Heroic Throw
 		 152277, -- Ravager (Arms talent)
 		 202168, -- Impending Victory (talent)
-		 260643, -- Skullsplitter (Arms talent)
 		[  6552] = "INTERRUPT", -- Pummel
-		[ 23922] = "POWER_REGEN", -- Shield Slam (Protection)
 		[206572] = "KNOCKBACK", -- Dragon Charge (Protection honor talent)
 		AURA = {
 			HELPFUL = {
@@ -51,6 +49,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				 113344, -- Bloodbath (Fury talent)
 				 115804, -- Mortal Wounds (Arms)
 				 198912, -- Shield Bash (Protection honor talent)
+				 248622, -- In for the Kill (Arms talent)
 				 275335, -- Punish (Protection talent)
 				[208086] = "BURST", -- Colossus Smash (Arms)
 				CROWD_CTRL = {
@@ -94,18 +93,22 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 					 12975, -- Last Stand (Protection)
 					118038, -- Die by the Sword (Arms)
 					184364, -- Enraged Regeneration (Fury)
+					197690, -- Defensive Stance (Arms talent)
 					227744, -- Ravager (Protection talent)
 					275337, -- Bolster (Protection talent)
 				},
 			},
 		},
+		POWER_REGEN = {
+			 23922, -- Shield Slam (Protection)
+			260643, -- Skullsplitter (Arms talent)
+		}
 	},
 	AURA = {
 		HARMFUL = {
 			    772, -- Rend (Arms talent)
 			 115767, -- Deep Wounds (Protection)
 			 215537, -- Trauma (Arms talent)
-			 248622, -- In for the Kill (Arms talent)
 			 262115, -- Deep Wounds (Arms)
 			[  1715] = "SNARE", -- Hamstring (Arms)
 		},
@@ -125,7 +128,6 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 			262232, -- War Machine (Arms talent)
 			SURVIVAL = {
 				190456, -- Ignore Pain (Protection)
-				197690, -- Defensive Stance (Arms talent)
 			},
 		},
 	},
@@ -150,7 +152,6 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[132404] =   2565, -- Shield Block (Protection)
 	[147833] = 198304, -- Intervene (Protection) <- Intercept
 	[184362] = 184361, -- Enrage (Fury)
-	[197690] = 212520, -- Defensive Stance (Arms talent)
 	[199038] = 199037, -- Leave No Man Behind (Protection honor talent)
 	[199042] = 199045, -- Thunderstruck (Protection honor talent)
 	[199085] = 199086, -- Warpath (Protection honor talent)
@@ -181,7 +182,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 }, {
 	-- map aura to modified spell(s)
 	[  7384] =  12294, -- Overpower -> Mortal Strike (Arms)
-	[ 52437] = 163201, -- Sudden Death -> Execute (Arms talent)
+	[ 52437] = 163201, -- Sudden Death (Arms talent) -> Execute
 	[ 85739] = { -- Meat Cleaver (Fury)
 		 23881, -- Bloodthirst (Fury)
 		184367, -- Rampage (Fury)
@@ -192,6 +193,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 		236279, -- Devastator (Protection talent)
 	},
 	[184362] =  85288, -- Enrage -> Raging Blow (Fury)
+	[197690] = 212520, -- Defensive Stance (Arms talent)
 	[199038] = 198304, -- Leave No Man Behind (Protection honor talent) -> Intercept
 	[199042] =   6343, -- Thunderstruck (Protection honor talent) -> Thunder Clap
 	[199085] =   6544, -- Warpath (Protection honor talent) -> Heroic Leap
@@ -209,13 +211,14 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	},
 	[215570] = 190411, -- Wrecking Ball -> Whirlwind (Fury talent)
 	[223658] = 198304, -- Safeguard (Protection talent) -> Intercept
-	[248622] = {
-		167105, -- In for the Kill -> Colossus Smash (Arms talent)
-		262161, -- In for the Kill -> Warbreaker (Arms talent)
+	[248622] = { -- In for the Kill (Arms talent)
+		167105, -- Colossus Smash
+		262161, -- Warbreaker (Arms talent)
 	},
 	[262115] = { -- Deep Wounds (Arms) <- Mastery: Deep Wounds
 	       845, -- Cleave (Arms talent)
 		 12294, -- Mortal Strike
+		152277, -- Ravager (Arms talent)
 		163201, -- Execute
 		227847, -- Bladestorm
 	},
