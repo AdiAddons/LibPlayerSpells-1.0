@@ -23,6 +23,7 @@ if not lib then return end
 lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	COOLDOWN = {
 		  46584, -- Raise Dead (Unholy)
+		  49206, -- Summon Gargoyle (Unholy talent)
 		  49576, -- Death Grip
 		  50977, -- Death Gate
 		  61999, -- Raise Ally
@@ -36,6 +37,8 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 				 47476, -- Strangulate (Blood honor talent) -- NOTE: Silence
 				 55078, -- Blood Plague (Blood)
 				 77606, -- Dark Simulacrum (Blood honor talent)
+				115994, -- Unholy Blight (Unholy talent)
+				130736, -- Soul Reaper (Unholy talent)
 				203173, -- Death Chain (Blood honor talent)
 				206891, -- Intimidated (Blood honor talent)
 				206931, -- Blooddrinker (Blood talent)
@@ -48,6 +51,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 					STUN = {
 						 91797, -- Monstrous Blow (Ghoul) (Unholy)
 						 91800, -- Gnaw (Ghoul) (Unholy)
+						108194, -- Asphyxiate (Unholy talent)
 						221562, -- Asphyxiate (Blood)
 					},
 					TAUNT = {
@@ -68,16 +72,19 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			PERSONAL = {
 				  48265, -- Death's Advance
 				  77535, -- Blood Shield (Blood)
+				 115989, -- Unholy Blight (Unholy talent)
 				 188290, -- Death and Decay (Blood/Unholy)
 				 194844, -- Bonestorm (Blood talent)
 				 195181, -- Bone Shield (Blood)
-				 212552, -- Wraith Walk (Blood talent)
+				 212552, -- Wraith Walk (talent)
 				 219788, -- Ossuary (Blood talent)
 				 273947, -- Hemostasis (Blood talent)
 				 274009, -- Voracious (Blood talent)
+				[ 48743] = 'INVERT_AURA', -- Death Pact (Unholy talent)
 				[219809] = 'POWER_REGEN', -- Tombstone (Blood talent)
 				BURST = {
-					42650, -- Army of the Dead (Unholy)
+					 42650, -- Army of the Dead (Unholy)
+					207289, -- Unholy Frenzy (Unholy talent)
 				},
 				SURVIVAL = {
 					 48707, -- Anti-Magic Shell
@@ -134,7 +141,11 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[ 91838] =  47484, -- Huddle (Ghoul) (Unholy)
 	[101568] = 178819, -- Dark Succor (Unholy)
 	[145622] =  51052, -- Anti-Magic Zone (Blood honor talent)
-	[188290] =  43265, -- Death and Decay (Blood/Unholy)
+	[115994] = 115989, -- Unholy Blight (Unholy talent)
+	[188290] = { -- Death and Decay (Blood/Unholy)
+		 43265, -- Death and Decay (Blood/Unholy)
+		152280, -- Defile (Unholy talent)
+	},
 	[191587] =  77575, -- Virulent Plague (Unholy) <- Outbreak
 	[194310] =  85948, -- Festering Wound (Unholy) <- Festering Strike
 	[195181] = 195182, -- Bone Shield (Blood) <- Marrowrend
