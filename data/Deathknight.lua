@@ -36,7 +36,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			HARMFUL = {
 				 47476, -- Strangulate (Blood honor talent) -- NOTE: Silence
 				 55078, -- Blood Plague (Blood)
-				 77606, -- Dark Simulacrum (Blood honor talent)
+				 77606, -- Dark Simulacrum (Blood/Unholy honor talent)
 				115994, -- Unholy Blight (Unholy talent)
 				130736, -- Soul Reaper (Unholy talent)
 				203173, -- Death Chain (Blood honor talent)
@@ -66,7 +66,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			},
 			HELPFUL = {
 				SURVIVAL = {
-					145622, -- Anti-Magic Zone (Blood honor talent)
+					145622, -- Anti-Magic Zone (Blood/Unholy honor talent)
 				},
 			},
 			PERSONAL = {
@@ -77,6 +77,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 				 194844, -- Bonestorm (Blood talent)
 				 195181, -- Bone Shield (Blood)
 				 212552, -- Wraith Walk (talent)
+				 215711, -- Soul Ripper (Unholy talent)
 				 219788, -- Ossuary (Blood talent)
 				 273947, -- Hemostasis (Blood talent)
 				 274009, -- Voracious (Blood talent)
@@ -108,7 +109,10 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			 191587, -- Virulent Plague (Unholy)
 			 194310, -- Festering Wound (Unholy)
 			 196782, -- Outbreak (Unholy)
+			 199969, -- Wandering Plague (Unholy honor talent)
+			 223929, -- Necrotic Wound (Unholy honor talent)
 			[ 45524] = 'SNARE', -- Chains of Ice (Frost/Unholy)
+			[210141] = 'STUN', -- Zombie Explosion (Unholy honor talent)
 		},
 		HELPFUL = {
 			3714, -- Path of Frost
@@ -150,9 +154,13 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[194310] =  85948, -- Festering Wound (Unholy) <- Festering Strike
 	[195181] = 195182, -- Bone Shield (Blood) <- Marrowrend
 	[196782] =  77575, -- Outbreak (Unholy)
-	[206891] = 207018, -- Intimidated (Blood honor talent) <- Murderous Intent
+	[199969] = 199725, -- Wandering Plague (Unholy honor talent)
+	[206891] = 207018, -- Intimidated <- Murderous Intent (Blood honor talent)
+	[210141] = 210128, -- Zombie Explosion <- Reanimation (Unholy honor talent)
 	[212610] = 202731, -- Walking Dead (Blood honor talent)
+	[215711] = 130736, -- Soul Ripper (Unholy talent)
 	[219788] = 219786, -- Ossuary (Blood talent)
+	[223929] = 223829, -- Necrotic Wound (Unholy honor talent)
 	[273947] = 273946, -- Hemostasis (Blood talent)
 	[273977] = 273952, -- Grip of the Dead (Blood talent)
 	[274009] = 273953, -- Voracious (Blood talent)
@@ -166,6 +174,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[ 91807] =  47482, -- Shambling Rush (Ghoul) (Unholy) <- Leap (Ghoul)
 	[ 91837] =  47484, -- Putrid Bulwark (Ghoul) (Unholy) <- Huddle (Ghoul)
 	[101568] =  49998, -- Dark Succor (Unholy) -> Death Strike
+	[199969] =  77575, -- Wandering Plague (Unholy honor talent) -> Outbreak
 	[212610] =  49576, -- Walking Dead (Blood honor talent) -> Death Grip
 	[219788] = 195182, -- Ossuary (Blood talent) -> Marrowrend
 	[273947] =  49998, -- Hemostasis (Blood talent) -> Death Strike
