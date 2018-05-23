@@ -76,7 +76,6 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				 23920, -- Spell Reflection (Protection)
 				 46924, -- Bladestorm (Fury talent)
 				 85739, -- Meat Cleaver (Fury)
-				118000, -- Dragon Roar (fury talent)
 				132404, -- Shield Block (Protection)
 				198817, -- Sharpen Blade (Arms honor talen)
 				202164, -- Bounding Stride (talent)
@@ -87,6 +86,7 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 				274818, -- Bloodbath (Fury talent)
 				BURST = {
 					   1719, -- Recklessness (Fury)
+					 118000, -- Dragon Roar (Fury talent)
 					 262228, -- Deadly Calm (Arms talent)
 					[107574] = "POWER_REGEN", -- Avatar (Protection)(Fury/Arms talent)
 				},
@@ -207,12 +207,12 @@ lib:__RegisterSpells("WARRIOR", 80000, 1, {
 	[199038] = 198304, -- Leave No Man Behind (Protection honor talent) -> Intercept
 	[199042] =   6343, -- Thunderstruck (Protection honor talent) -> Thunder Clap
 	[199085] =   6544, -- Warpath (Protection honor talent) -> Heroic Leap
-	[202164] =   6544, -- Bounding Stride -> Heroic Leap (talent)
-	[202225] =  23881, -- Furious Charge -> Bloodthirst (Fury talent)
-	[202539] = 100130, -- Frenzy -> Furious Slash (Fury talent)
+	[202164] =   6544, -- Bounding Stride (talent) -> Heroic Leap
+	[202225] =  23881, -- Furious Charge (Fury talent) -> Bloodthirst
+	[202539] = 100130, -- Frenzy (Fury talent) -> Furious Slash
 	[202573] =   6572, -- Vengeance: Revenge -> Revenge (Protection talent)
 	[202574] = 190456, -- Vengeance: Ignore Pain (Protection talent) -> Ignore Pain
-	[206316] = 184367, -- Massacre -> Rampage (Fury talent)
+	[206316] = 184367, -- Massacre (Fury talent) -> Rampage
 	[206333] =  23881, -- Taste for Blood -> Bloodthirst (Fury)
 	[215537] = { -- Trauma (Arms talent)
 		  1464, -- Slam (Arms)
