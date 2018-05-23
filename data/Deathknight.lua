@@ -30,7 +30,8 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 		 210764, -- Rune Strike (Blood talent)
 		 274156, -- Consumption (Blood talent)
 		 275699, -- Apocalypse (Unholy)
-		[ 47528] = 'INTERRUPT', -- Mind Freeze (Blood)
+		[ 47528] = 'INTERRUPT', -- Mind Freeze
+		[ 47568] = 'POWER_REGEN', -- Empower Rune Weapon (Frost)
 		[108199] = 'KNOCKBACK', -- Gorefiend's Grasp (Blood)
 		AURA = {
 			HARMFUL = {
@@ -61,6 +62,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 				},
 				SNARE = {
 					206930, -- Heart Strike (Blood)
+					211793, -- Remorsless Winter (Frost)
 					273977, -- Grip of the Dead (Blood talent)
 				},
 			},
@@ -85,6 +87,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 				[219809] = 'POWER_REGEN', -- Tombstone (Blood talent)
 				BURST = {
 					 42650, -- Army of the Dead (Unholy)
+					 51271, -- Pillar of Frost (Frost)
 					207289, -- Unholy Frenzy (Unholy talent)
 				},
 				SURVIVAL = {
@@ -106,6 +109,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
+			  55095, -- Frost Fever (Frost)
 			 191587, -- Virulent Plague (Unholy)
 			 194310, -- Festering Wound (Unholy)
 			 196782, -- Outbreak (Unholy)
@@ -118,9 +122,11 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			3714, -- Path of Frost
 		},
 		PERSONAL = {
+			 51124, -- Killing Machine (Frost)
+			 59052, -- Rime (Frost)
 			 81141, -- Crimson Scourge (Blood)
 			 81340, -- Sudden Doom (Unholy)
-			101568, -- Dark Succor (Unholy)
+			101568, -- Dark Succor (Frost/Unholy)
 			233411, -- Blood for Blood (Blood honor talent)
 		},
 		PET = {
@@ -129,11 +135,14 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	},
 }, {
 	-- map aura to provider(s)
+	[ 51124] =  51128, -- Killing Machine (Frost)
 	[ 51399] = 206930, -- Death Grip (Blood) <- Heart Strike -- NOTE: to signify the taunt is Blood only
 	[ 55078] = { -- Blood Plague (Blood)
 		 50842, -- Blood Boil
 		195292, -- Death's Caress
 	},
+	[ 55095] =  49184, -- Frost Fever (Frost) <- Howling Blast
+	[ 59052] =  59057, -- Rime (Frost)
 	[ 77535] =  77513, -- Blood Shield (Blood) <- Mastery: Blood Shield
 	[ 81141] =  81136, -- Crimson Scourge (Blood)
 	[ 81256] =  49028, -- Dancing Rune Weapon (Blood)
@@ -143,7 +152,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[ 91807] =  63560, -- Shambling Rush (Ghoul) (Unholy) <- Dark Transformation
 	[ 91837] =  63560, -- Putrid Bulwark (Ghoul) (Unholy) <- Dark Transformation
 	[ 91838] =  47484, -- Huddle (Ghoul) (Unholy)
-	[101568] = 178819, -- Dark Succor (Unholy)
+	[101568] = 178819, -- Dark Succor (Frost/Unholy)
 	[145622] =  51052, -- Anti-Magic Zone (Blood honor talent)
 	[115994] = 115989, -- Unholy Blight (Unholy talent)
 	[188290] = { -- Death and Decay (Blood/Unholy)
@@ -153,6 +162,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[191587] =  77575, -- Virulent Plague (Unholy) <- Outbreak
 	[194310] =  85948, -- Festering Wound (Unholy) <- Festering Strike
 	[195181] = 195182, -- Bone Shield (Blood) <- Marrowrend
+	[211793] = 196770, -- Remorsless Winter (Frost)
 	[196782] =  77575, -- Outbreak (Unholy)
 	[199969] = 199725, -- Wandering Plague (Unholy honor talent)
 	[206891] = 207018, -- Intimidated <- Murderous Intent (Blood honor talent)
@@ -166,14 +176,16 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[274009] = 273953, -- Voracious (Blood talent)
 }, {
 	-- map aura to modified spell(s)
+	[ 51124] =  49020, -- Killing Machine (Frost) -> Obliterate
 	[ 51399] =  49576, -- Death Grip (Blood)
+	[ 59052] =  49184, -- Rime (Frost) -> Howling Blast
 	[ 77535] =  49998, -- Blood Shield (Blood) -> Death Strike
 	[ 81141] =  43265, -- Crimson Scourge (Blood) -> Death and Decay
 	[ 81340] =  47541, -- Sudden Doom (Unholy) -> Death Coil
 	[ 91797] =  47481, -- Monstrous Blow (Ghoul) (Unholy) <- Gnaw (Ghoul)
 	[ 91807] =  47482, -- Shambling Rush (Ghoul) (Unholy) <- Leap (Ghoul)
 	[ 91837] =  47484, -- Putrid Bulwark (Ghoul) (Unholy) <- Huddle (Ghoul)
-	[101568] =  49998, -- Dark Succor (Unholy) -> Death Strike
+	[101568] =  49998, -- Dark Succor (Frost/Unholy) -> Death Strike
 	[199969] =  77575, -- Wandering Plague (Unholy honor talent) -> Outbreak
 	[212610] =  49576, -- Walking Dead (Blood honor talent) -> Death Grip
 	[219788] = 195182, -- Ossuary (Blood talent) -> Marrowrend
