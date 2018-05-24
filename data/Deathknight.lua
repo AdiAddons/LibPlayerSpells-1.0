@@ -48,9 +48,10 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 				212610, -- Walking Dead (Blood honor talent)
 				CROWD_CTRL = {
 					[207167] = 'DISORIENT', -- Blinding Sleet (Frost talent)
-					[207171] = 'ROOT', -- Winter is Comming (Frost talent)
 					ROOT = {
-						91807, -- Shambling Rush (Ghoul) (Unholy)
+						 91807, -- Shambling Rush (Ghoul) (Unholy)
+						207171, -- Winter is Comming (Frost talent)
+						233395, -- Frozen Center (Frost honor talent)
 					},
 					STUN = {
 						 91797, -- Monstrous Blow (Ghoul) (Unholy)
@@ -64,15 +65,14 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 					}
 				},
 				SNARE = {
+					204206, -- Chilled (Frost honor talent)
 					206930, -- Heart Strike (Blood)
 					211793, -- Remorsless Winter (Frost)
 					273977, -- Grip of the Dead (Blood talent)
 				},
 			},
 			HELPFUL = {
-				SURVIVAL = {
-					145622, -- Anti-Magic Zone (Blood/Unholy honor talent)
-				},
+				[145622] = 'SURVIVAL', -- Anti-Magic Zone (honor talent)
 			},
 			PERSONAL = {
 				  48265, -- Death's Advance
@@ -126,8 +126,10 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			 196782, -- Outbreak (Unholy)
 			 199969, -- Wandering Plague (Unholy honor talent)
 			 223929, -- Necrotic Wound (Unholy honor talent)
+			 233397, -- Delirium (Frost honor talent)
 			[ 45524] = 'SNARE', -- Chains of Ice (Frost/Unholy)
 			CROWD_CTRL = {
+				[204085] = 'ROOT', -- Deathchill (Frost honor talent)
 				STUN = {
 					207165, -- Abomination's Might (Frost talent)
 					210141, -- Zombie Explosion (Unholy honor talent)
@@ -144,7 +146,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			 81340, -- Sudden Doom (Unholy)
 			101568, -- Dark Succor (Frost/Unholy)
 			194879, -- Icy Talons (Frost talent)
-			207203, -- Permafrost (Frost talent)
+			207203, -- Frost Shield (Frost talent)
 			233411, -- Blood for Blood (Blood honor talent)
 		},
 		PET = {
@@ -171,7 +173,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[ 91837] =  63560, -- Putrid Bulwark (Ghoul) (Unholy) <- Dark Transformation
 	[ 91838] =  47484, -- Huddle (Ghoul) (Unholy)
 	[101568] = 178819, -- Dark Succor (Frost/Unholy)
-	[145622] =  51052, -- Anti-Magic Zone (Blood honor talent)
+	[145622] =  51052, -- Anti-Magic Zone (honor talent)
 	[115994] = 115989, -- Unholy Blight (Unholy talent)
 	[188290] = { -- Death and Decay (Blood/Unholy)
 		 43265, -- Death and Decay (Blood/Unholy)
@@ -181,19 +183,23 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[194310] =  85948, -- Festering Wound (Unholy) <- Festering Strike
 	[194879] = 194878, -- Icy Talons (Frost talent)
 	[195181] = 195182, -- Bone Shield (Blood) <- Marrowrend
+	[204085] = 204080, -- Deathchill (Frost honor talent)
 	[211793] = 196770, -- Remorsless Winter (Frost)
 	[196782] =  77575, -- Outbreak (Unholy)
 	[199969] = 199725, -- Wandering Plague (Unholy honor talent)
+	[204206] = 204160, -- Chilled (Frost honor talent) <- Chill Streak
 	[206891] = 207018, -- Intimidated <- Murderous Intent (Blood honor talent)
 	[207165] = 207161, -- Abomination's Might (Frost talent)
 	[207171] = 207170, -- Winter is Comming (Frost talent)
-	[207203] = 207200, -- Permafrost (Frost talent)
+	[207203] = 207200, -- Frost Shield <- Permafrost (Frost talent)
 	[210141] = 210128, -- Zombie Explosion <- Reanimation (Unholy honor talent)
 	[211794] = 207170, -- Winter is Comming (Frost talent)
 	[212610] = 202731, -- Walking Dead (Blood honor talent)
 	[215711] = 130736, -- Soul Ripper (Unholy talent)
 	[219788] = 219786, -- Ossuary (Blood talent)
 	[223929] = 223829, -- Necrotic Wound (Unholy honor talent)
+	[233395] = 204135, -- Frozen Center (Frost honor talent)
+	[233397] = 233396, -- Delirium (Frost honor talent)
 	[273947] = 273946, -- Hemostasis (Blood talent)
 	[273977] = 273952, -- Grip of the Dead (Blood talent)
 	[274009] = 273953, -- Voracious (Blood talent)
@@ -216,10 +222,16 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[199969] =  77575, -- Wandering Plague (Unholy honor talent) -> Outbreak
 	[207165] =  49020, -- Abomination's Might (Frost talent) -> Obliterate
 	[207171] = 196170, -- Winter is Comming (Frost talent) -> Remorseless Winter
-	[207203] =   6603, -- Permafrost (Frost talent) -> Auto Attack
+	[207203] =   6603, -- Frost Shield (Frost talent) -> Auto Attack
+	[204085] =  45524, -- Deathchill (Frost honor talent) -> Chains of Ice
 	[211794] = 196170, -- Winter is Comming (Frost talent) -> Remorseless Winter
 	[212610] =  49576, -- Walking Dead (Blood honor talent) -> Death Grip
 	[219788] = 195182, -- Ossuary (Blood talent) -> Marrowrend
+	[233395] = 196770, -- Frozen Center (Frost honor talent) -> Remorseless Winter
+	[233397] = { -- Delirium (Frost honor talent)
+		49143, -- Frost Strike
+		49184, -- Howling Blast
+	},
 	[273947] =  49998, -- Hemostasis (Blood talent) -> Death Strike
 	[273977] =  43265, -- Grip of the Dead (Blood talent) -> Death and Decay
 	[274009] =  49998, -- Voracious (Blood talent) -> Death Strike
