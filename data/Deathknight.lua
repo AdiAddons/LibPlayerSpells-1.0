@@ -156,7 +156,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 }, {
 	-- map aura to provider(s)
 	[ 51124] =  51128, -- Killing Machine (Frost)
-	[ 51399] = 206930, -- Death Grip (Blood) <- Heart Strike -- NOTE: to signify the taunt is Blood only
+	[ 51399] =  48263, -- Death Grip (Blood) <- Veteran of the Third War -- NOTE: to signify the taunt is Blood only
 	[ 55078] = { -- Blood Plague (Blood)
 		 50842, -- Blood Boil
 		195292, -- Death's Caress
