@@ -97,6 +97,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				 269571, -- Zeal (Retribution talent)
 				 276111, -- Divine Steed (Dwarf)
 				 276112, -- Divine Steed (Dark Iron Dwarf)
+				 280375, -- Redoubt (Protection talent)
 				[199448] = "INVERT_AURA", -- Blessing of Sacrifice (Holy honor talent) -- NOTE: from Ultimate Sacrifice
 				BURST = {
 					 31884, -- Avenging Wrath
@@ -188,6 +189,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[271581] = 271580, -- Divine Judgement (Retribution talent)
 	[276111] = 190784, -- Divine Steed (Dwarf)
 	[276112] = 190784, -- Divine Steed (Dark Iron Dwarf)
+	[280375] = 280373, -- Redoubt (Protection talent)
 }, {
 	-- map aura to modified spell(s)
 	[ 31884] = { -- Avenging Wrath
@@ -236,4 +238,5 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[267611] =  85256, -- Righteous Verdict (Retribution talent) -> Templar's Verdict
 	[269571] =  20271, -- Zeal (Retribution talent) -> Judgement
 	[271581] =  20271, -- Divine Judgement (Retribution talent) -> Judgement
+	[280373] =  31935, -- Redoubt (Protection talent) -> Avenger's Shield
 })
