@@ -238,5 +238,5 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[267611] =  85256, -- Righteous Verdict (Retribution talent) -> Templar's Verdict
 	[269571] =  20271, -- Zeal (Retribution talent) -> Judgement
 	[271581] =  20271, -- Divine Judgement (Retribution talent) -> Judgement
-	[280373] =  31935, -- Redoubt (Protection talent) -> Avenger's Shield
+	[280375] =  31935, -- Redoubt (Protection talent) -> Avenger's Shield
 })
