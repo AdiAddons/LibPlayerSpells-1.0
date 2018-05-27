@@ -120,20 +120,23 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
-			  55095, -- Frost Fever (Frost)
-			 191587, -- Virulent Plague (Unholy)
-			 194310, -- Festering Wound (Unholy)
-			 196782, -- Outbreak (Unholy)
-			 199969, -- Wandering Plague (Unholy honor talent)
-			 223929, -- Necrotic Wound (Unholy honor talent)
-			 233397, -- Delirium (Frost honor talent)
-			[ 45524] = 'SNARE', -- Chains of Ice (Frost/Unholy)
+			 55095, -- Frost Fever (Frost)
+			191587, -- Virulent Plague (Unholy)
+			194310, -- Festering Wound (Unholy)
+			196782, -- Outbreak (Unholy)
+			199969, -- Wandering Plague (Unholy honor talent)
+			223929, -- Necrotic Wound (Unholy honor talent)
+			233397, -- Delirium (Frost honor talent)
 			CROWD_CTRL = {
 				[204085] = 'ROOT', -- Deathchill (Frost honor talent)
 				STUN = {
 					207165, -- Abomination's Might (Frost talent)
 					210141, -- Zombie Explosion (Unholy honor talent)
 				},
+			},
+			SNARE = {
+				 45524, -- Chains of Ice (Frost/Unholy)
+				200646, -- Unholy Mutation (Unholy honor talent)
 			},
 		},
 		HELPFUL = {
@@ -148,6 +151,8 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			194879, -- Icy Talons (Frost talent)
 			207203, -- Frost Shield (Frost talent)
 			233411, -- Blood for Blood (Blood honor talent)
+			253595, -- Inexorable Assault (Frost talent)
+			279942, -- Tundra Stalker (Frost honor talent)
 		},
 		PET = {
 			[111673] = 'INVERT_AURA', -- Control Undead
@@ -187,6 +192,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[211793] = 196770, -- Remorsless Winter (Frost)
 	[196782] =  77575, -- Outbreak (Unholy)
 	[199969] = 199725, -- Wandering Plague (Unholy honor talent)
+	[200646] = 201934, -- Unholy Mutation (Unholy honor talent)
 	[204206] = 204160, -- Chilled (Frost honor talent) <- Chill Streak
 	[206891] = 207018, -- Intimidated <- Murderous Intent (Blood honor talent)
 	[207165] = 207161, -- Abomination's Might (Frost talent)
@@ -200,9 +206,11 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[223929] = 223829, -- Necrotic Wound (Unholy honor talent)
 	[233395] = 204135, -- Frozen Center (Frost honor talent)
 	[233397] = 233396, -- Delirium (Frost honor talent)
+	[253595] = 253593, -- Inexorable Assault (Frost talent)
 	[273947] = 273946, -- Hemostasis (Blood talent)
 	[273977] = 273952, -- Grip of the Dead (Blood talent)
 	[274009] = 273953, -- Voracious (Blood talent)
+	[279942] = 279941, -- Tundra Stalker (Frost honor talent)
 }, {
 	-- map aura to modified spell(s)
 	[ 51124] = { -- Killing Machine (Frost)
@@ -220,6 +228,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[101568] =  49998, -- Dark Succor (Frost/Unholy) -> Death Strike
 	[194879] =  49143, -- Icy Talons (Frost talent) -> Frost Strike
 	[199969] =  77575, -- Wandering Plague (Unholy honor talent) -> Outbreak
+	[200646] =  77575, -- Unholy Mutation (Unholy honor talent) -> Outbreak
 	[207165] =  49020, -- Abomination's Might (Frost talent) -> Obliterate
 	[207171] = 196170, -- Winter is Comming (Frost talent) -> Remorseless Winter
 	[207203] =   6603, -- Frost Shield (Frost talent) -> Auto Attack
@@ -232,7 +241,9 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 		49143, -- Frost Strike
 		49184, -- Howling Blast
 	},
+	[253595] =   6603, -- Inexorable Assault (Frost talent) -> Auto Attack
 	[273947] =  49998, -- Hemostasis (Blood talent) -> Death Strike
 	[273977] =  43265, -- Grip of the Dead (Blood talent) -> Death and Decay
 	[274009] =  49998, -- Voracious (Blood talent) -> Death Strike
+	[279942] =  49143, -- Tundra Stalker (Frost honor talent) -> Frost Strike
 })
