@@ -91,7 +91,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 				  53480, -- Roar of Sacrifice (honor talent)
 				  54216, -- Master's Call (Cunning pet)
 				  90361, -- Spirit Mend (spirit beast)
-				 203233, -- Aspect of the Cheetah (Survival honor talent)
+				 203233, -- Aspect of the Cheetah (honor talent)
 				 248519, -- Interlope (Beast Mastery honor talent)
 				[212640] = 'DISPEL DISEASE POISON', -- Mending Bandage (Survival honor talent) -- NOTE: Bleeds too
 			},
@@ -155,6 +155,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 					263892, -- Catlike Reflexes (cat)
 					263904, -- Serpent's Swiftness (serpent)
 					264360, -- Winged Agility (wind serpent)
+					279410, -- Bulwark (krolusk)
 				},
 			},
 		},
@@ -208,7 +209,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 		},
 		PET = {
 			126311, -- Surface Trot (water strider)
-			160007, -- Updraft (feathermane/rylak)
+			160007, -- Updraft (feathermane/rylak/pterrordax)
 		}
 	},
 	POWER_REGEN = {
@@ -238,6 +239,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 		263858, -- Toxic Sting (wasp)
 		263861, -- Gore (direhorn)
 		263863, -- Acid Bite (hydra)
+		279362, -- Grievous Bite (lizzard)
 	},
 	[117405] = 109248, -- Binding Shot (talent)
 	[117526] = 109248, -- Binding Shot (root) (talent)
@@ -257,7 +259,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 	[193534] = 193533, -- Steady Focus (Marksmanship talent)
 	[194594] = 194595, -- Lock and Load (Marksmanship talent)
 	[202748] = 202746, -- Survival Tactics (honor talent)
-	[203233] = 203235, -- Aspect of the Cheetah (Survival honor talent)
+	[203233] = 203235, -- Aspect of the Cheetah <- Hunting Pack (honor talent)
 	[203268] = 203264, -- Sticky Tar (Survival honor talent)
 	[203337] = 203340, -- Freezing Trap (Survival honor talent) <- Diamond Ice
 	[208684] = 208652, -- Dire Beast: Hawk (Beast Mastery honor talent)
@@ -298,7 +300,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 	[193534] =  56641, -- Steady Focus (Marksmanship talent) -> Steady Shot
 	[194594] =  19434, -- Lock and Load (Marksmanship talent) -> Aimed Shot
 	[202748] =   5384, -- Survival Tactics (honor talent) -> Feign Death
-	[203233] = 186257, -- Aspect of the Cheetah (Survival honor talent)
+	[203233] = 186257, -- Aspect of the Cheetah (honor talent)
 	[203268] = 187698, -- Sticky Tar (Survival honor talent) -> Tar Trap
 	[203337] = 187650, -- Freezing Trap (Survival honor talent)
 	[257622] = { -- Trick Shots (Marksmanship)
@@ -307,7 +309,10 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 	},
 	[257946] = 217200, -- Thrill of the Hunt (Beast Mastery talent) -> Barbed Shot
 	[259277] = 259489, -- Kill Command (Survival talent)
-	[260242] = 185358, -- Precise Shots (Marksmanship) -> Arcane Shot
+	[260242] = { -- Precise Shots (Marksmanship)
+		185358, -- Arcane Shot
+		257620, -- Multi-Shot
+	},
 	[260249] = 259489, -- Predator (Survival talent) -> Kill Command
 	[260286] = 186270, -- Tip of the Spear (Survival talent) -> Raptor Strike
 	[260395] = 257044, -- Lethal Shots (Marksmanship talent) -> Rapid Fire
