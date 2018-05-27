@@ -27,7 +27,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 		 113656, -- Fists of Fury (Windwalker)
 		 115098, -- Chi Wave (talent)
 		 115313, -- Summon Jade Serpent Statue (Mistweaver talent)
-		 115315, -- Summon Black Ox Statue (Brewmaster/Windwalker talent)
+		 115315, -- Summon Black Ox Statue (Brewmaster talent)
 		 115399, -- Black Ox Brew (Brewmaster talent)
 		 116844, -- Ring of Peace (talent)
 		 119582, -- Purifying Brew (Brewmaster)
@@ -37,6 +37,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 		 123986, -- Chi Burst (talent)
 		 126892, -- Zen Pilgrimage
 		 152175, -- Whirling Dragon Punch (Windwalker talent)
+		 198644, -- Invoke Chi-Ji, the Red Crane (Mistweaver talent)
 		 202370, -- Mighty Ox Kick (Brewmaster honor talent)
 		 213658, -- Craft: Nimble Brew (Brewmaster honor talent)
 		 261947, -- Fist of the White Tiger (Windwalker talent)
@@ -48,7 +49,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 				 122470, --Touch of Karma (Windwalker)
 				 123725, -- Breath of Fire (Brewmaster)
 				 206891, -- Intimidated (Brewmaster honor talent)
-				 233759, -- Grapple Weapon (Windwalker honor talent)
+				 233759, -- Grapple Weapon (Mistweaver/Windwalker honor talent)
 				[115080] = 'BURST', -- Touch of Death (Windwalker)
 				CROWD_CTRL = {
 					[115078] = 'INCAPACITATE', -- Paralysis
@@ -64,7 +65,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 					},
 					TAUNT = {
 						116189, -- Provoke
-						118635, -- Provoke (Brewmaster/Windwalker talent)
+						118635, -- Provoke (Brewmaster talent)
 						196727, -- Provoke (Brewmaster talent)
 					},
 				},
@@ -91,7 +92,6 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 				116680, -- Thunder Focus Tea (Mistweaver)
 				116847, -- Rushing Jade Wind (Brewmaster talent)
 				119085, -- Chi Torpedo (talent)
-				129914, -- Power Strikes (Windwalker talent)
 				196725, -- Refreshing Jade Wind (Mistweaver talent)
 				196739, -- Elusive Dance (Brewmaster talent)
 				197206, -- Uplifting Trance (Mistweaver)
@@ -154,19 +154,18 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 	[116189] = 115546, -- Provoke
 	[116706] = 116095, -- Disable (Windwalker)
 	[116768] = 100780, -- Blackout Kick! (Windwalker) <- Tiger Palm
-	[118635] = 115315, -- Provoke (Brewmaster/Windwalker talent) <- Summon Black Ox Statue
+	[118635] = 115315, -- Provoke (Brewmaster talent) <- Summon Black Ox Statue
 	[119085] = 115008, -- Chi Torpedo (talent)
 	[119611] = 115151, -- Renewing Mist (Mistweaver)
 	[120954] = 115203, -- Fortifying Brew (Brewmaster)
 	[123586] = 101545, -- Flying Serpent Kick (Wilnwalker)
 	[123725] = 115181, -- Breath of Fire (Brewmaster)
 	[125174] = 122470, -- Touch of Karma (Windwalker)
-	[129914] = 121817, -- Power Strikes (Windwalker talent)
 	[137639] = 221771, -- Storm, Earth, and Fire (Windwalker)
 	[191840] = 191837, -- Essence Font (Mistweaver)
 	[195630] = 117906, -- Elusive Brawler (Brewmaster) <- Mastery: Elusive Brawler
 	[196608] = 196607, -- Eye of the Tiger (Brewmaster talent)
-	[196727] = 132578, -- Provoke (Brewmaster talent) <- Invoke Niuzao, the Black Ox
+	[196727] = 132578, -- Provoke (Brewmaster talent) <- Invoke Niuzao, the Black Ox -- BUG: not in the spellbook
 	[196739] = 196738, -- Elusive Dance (Brewmaster talent)
 	[197206] = 115151, -- Uplifting Trance (Mistweaver) <- Renewing Mist
 	[197916] = 197915, -- Lifecycles (Vivify) (Mistweaver talent) <- Lifecycles
@@ -194,11 +193,10 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 		124682, -- Enveloping Mist
 	},
 	[116768] = 100784, -- Blackout Kick! (Windwalker) -> Blackout Kick
-	[118635] = 115546, -- Provoke (Brewmaster/Windwalker talent)
-	[129914] = 100780, -- Power Strikes (Windwalker talent) -> Tiger Palm
+	[118635] = 115546, -- Provoke (Brewmaster talent)
 	[195630] = 205523, -- Elusive Brawler (Brewmaster) -> Blackout Strike
 	[196608] = 100780, -- Eye of the Tiger (Brewmaster talent) -> Tiger Palm
-	[196727] = 196727, -- Provoke (Niuzao) (Brewmaster talent)
+	[196727] = 196727, -- Provoke (Niuzao) (Brewmaster talent) -- BUG: not in the spellbook
 	[196739] = 119582, -- Elusive Dance (Brewmaster talent) -> Purifying Brew
 	[197206] = 116670, -- Uplifting Trance (Mistweaver) -> Vivify
 	[197916] = 116670, -- Lifecycles (Vivify) (Mistweaver talent) -> Vivify
