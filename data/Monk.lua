@@ -48,6 +48,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 				 115804, -- Mortal Wounds (Windwalker)
 				 122470, --Touch of Karma (Windwalker)
 				 123725, -- Breath of Fire (Brewmaster)
+				 201787, -- Heavy-Handed Strikes (Windwalker honor talent)
 				 206891, -- Intimidated (Brewmaster honor talent)
 				 233759, -- Grapple Weapon (Mistweaver/Windwalker honor talent)
 				[115080] = 'BURST', -- Touch of Death (Windwalker)
@@ -61,7 +62,6 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 					STUN = {
 						119381, -- Leg Sweep
 						202346, -- Double Barrel (Brewmaster honor talent)
-						232055, -- Fists of Fury (Windwalker honor talent)
 					},
 					TAUNT = {
 						116189, -- Provoke
@@ -173,6 +173,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 	[198533] = 115313, -- Soothing Mist (Mistweaver talent) <- Summon Jade Serpent Statue
 	[198909] = 198898, -- Song of Chi-Ji (Mistweaver talent)
 	[201447] = 201372, -- Ride the Wind (Windwalker honor talent)
+	[201787] = 232054, -- Heavy-Handed Strikes (Windwalker honor talent)
 	[202090] = 116645, -- Teachings of the Monastery (Mistweaver)
 	[202248] = 202200, -- Guided Meditation (Brewmaster honor talent)
 	[202274] = 202272, -- Incendiary Brew (Brewmaster honor talent) <- Incendiary Breath
@@ -182,7 +183,6 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 	[215479] = 115308, -- Ironskin Brew (Brewmaster)
 	[228287] = 101546, -- Mark of the Crane (Windwalker) <- Spinning Crane Kick
 	[228563] = 196736, -- Blackout Combo (Brewmaster talent)
-	[232055] = 205003, -- Fists of Fury (Windwalker honor talent) <- Heavy-Handed Strikes
 	[261769] = 261767, -- Inner Strength (Windwalker talent)
 }, {
 	-- map aura to modified spell(s)
@@ -202,6 +202,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 	[197916] = 116670, -- Lifecycles (Vivify) (Mistweaver talent) -> Vivify
 	[197919] = 124682, -- Lifecycles (Enveloping Mist) (Mistweaver talent) -> Enveloping Mist
 	[201447] = 101545, -- Ride the Wind (Windwalker honor talent) -> Flying Serpent Kick
+	[201787] = 113656, -- Heavy-Handed Strikes (Windwalker honor talent) -> Fists of Fury
 	[202090] = 100784, -- Teachings of the Monastery (Mistweaver) -> Blackout Kick
 	[202248] = 115176, -- Guided Meditation (Brewmaster honor talent) -> Zen Meditation
 	[202274] = 115181, -- Incendiary Brew (Brewmaster honor talent) -> Breath of Fire
@@ -215,7 +216,6 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 		119582, -- Purifying Brew
 		121253, -- Keg Smash
 	},
-	[232055] = 113656, -- Fists of Fury (Windwalker honor talent)
 	[261769] = { -- Inner Strength (Windwalker talent)
 		100784, -- Blackout Kick
 		101546, -- Spinning Crane Kick
