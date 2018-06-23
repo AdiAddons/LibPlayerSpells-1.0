@@ -50,7 +50,6 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 					[207167] = 'DISORIENT', -- Blinding Sleet (Frost talent)
 					ROOT = {
 						 91807, -- Shambling Rush (Ghoul) (Unholy)
-						207171, -- Winter is Comming (Frost talent)
 						233395, -- Frozen Center (Frost honor talent)
 					},
 					STUN = {
@@ -69,6 +68,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 					206930, -- Heart Strike (Blood)
 					211793, -- Remorsless Winter (Frost)
 					273977, -- Grip of the Dead (Blood talent)
+					279303, -- Frost Breath (Frost talent)
 				},
 			},
 			HELPFUL = {
@@ -89,12 +89,15 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 				 273947, -- Hemostasis (Blood talent)
 				 274009, -- Voracious (Blood talent)
 				[ 48743] = 'INVERT_AURA', -- Death Pact (Unholy talent)
-				[219809] = 'POWER_REGEN', -- Tombstone (Blood talent)
 				BURST = {
 					 42650, -- Army of the Dead (Unholy)
 					 51271, -- Pillar of Frost (Frost)
 					207256, -- Obliteration (Frost talent)
 					207289, -- Unholy Frenzy (Unholy talent)
+				},
+				POWER_REGEN = {
+					 47568, -- Empower Rune Weapon (Frost)
+					219809, -- Tombstone (Blood talent)
 				},
 				SURVIVAL = {
 					 48707, -- Anti-Magic Shell
@@ -113,7 +116,6 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			},
 		},
 		POWER_REGEN = {
-			 47568, -- Empower Rune Weapon (Frost)
 			 57330, -- Horn of Winter (Frost talent)
 			207127, -- Hungering Rune Weapon (Frost talent)
 		}
@@ -153,6 +155,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			233411, -- Blood for Blood (Blood honor talent)
 			253595, -- Inexorable Assault (Frost talent)
 			279942, -- Tundra Stalker (Frost honor talent)
+			281209, -- Cold Heart (Frost talent)
 		},
 		PET = {
 			[111673] = 'INVERT_AURA', -- Control Undead
@@ -196,7 +199,6 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[204206] = 204160, -- Chilled (Frost honor talent) <- Chill Streak
 	[206891] = 207018, -- Intimidated <- Murderous Intent (Blood honor talent)
 	[207165] = 207161, -- Abomination's Might (Frost talent)
-	[207171] = 207170, -- Winter is Comming (Frost talent)
 	[207203] = 207200, -- Frost Shield <- Permafrost (Frost talent)
 	[210141] = 210128, -- Zombie Explosion <- Reanimation (Unholy honor talent)
 	[211794] = 207170, -- Winter is Comming (Frost talent)
@@ -210,7 +212,9 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[273947] = 273946, -- Hemostasis (Blood talent)
 	[273977] = 273952, -- Grip of the Dead (Blood talent)
 	[274009] = 273953, -- Voracious (Blood talent)
+	[279303] = 279302, -- Frost Breath <- Frostwyrm's Fury (Frost talent)
 	[279942] = 279941, -- Tundra Stalker (Frost honor talent)
+	[281209] = 281208, -- Cold Heart (Frost talent)
 }, {
 	-- map aura to modified spell(s)
 	[ 51124] = { -- Killing Machine (Frost)
@@ -226,11 +230,15 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[ 91807] =  47482, -- Shambling Rush (Ghoul) (Unholy) <- Leap (Ghoul)
 	[ 91837] =  47484, -- Putrid Bulwark (Ghoul) (Unholy) <- Huddle (Ghoul)
 	[101568] =  49998, -- Dark Succor (Frost/Unholy) -> Death Strike
-	[194879] =  49143, -- Icy Talons (Frost talent) -> Frost Strike
+	[194879] =  { -- Icy Talons (Frost talent)
+		 49143, -- Frost Strike
+		 49998, -- Death Strike
+		152279, -- Breath of Sindragosa (Frost talent)
+		194913, -- Glacial Advance (Frost talent)
+	},
 	[199969] =  77575, -- Wandering Plague (Unholy honor talent) -> Outbreak
 	[200646] =  77575, -- Unholy Mutation (Unholy honor talent) -> Outbreak
 	[207165] =  49020, -- Abomination's Might (Frost talent) -> Obliterate
-	[207171] = 196170, -- Winter is Comming (Frost talent) -> Remorseless Winter
 	[207203] =   6603, -- Frost Shield (Frost talent) -> Auto Attack
 	[204085] =  45524, -- Deathchill (Frost honor talent) -> Chains of Ice
 	[211794] = 196170, -- Winter is Comming (Frost talent) -> Remorseless Winter
@@ -246,4 +254,5 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[273977] =  43265, -- Grip of the Dead (Blood talent) -> Death and Decay
 	[274009] =  49998, -- Voracious (Blood talent) -> Death Strike
 	[279942] =  49143, -- Tundra Stalker (Frost honor talent) -> Frost Strike
+	[281209] =  45524, -- Cold Heart (Frost talent) -> Chains of Ice
 })
