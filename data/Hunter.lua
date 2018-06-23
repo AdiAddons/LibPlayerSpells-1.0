@@ -125,6 +125,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 				SURVIVAL = {
 					186265, -- Aspect of the Turtle
 					264735, -- Survival of the Fittest (Tanacity pet)
+					281195, -- Survival of the Fittest (Marksmanship - Lone Wolf ability)
 				},
 			},
 			PET = {
@@ -331,6 +332,7 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 	[270339] = 270335, -- Scorching Shrapnel (Survival talent) -> Shrapnel Bomb
 	[270343] = { -- Internal Bleeding (Survival talent)
 		186270, -- Raptor Strike
+		187708, -- Carve
 		212436, -- Butchery (Survival talent)
 		259387, -- Mongoose Bite (Survival talent)
 	},
