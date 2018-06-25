@@ -83,7 +83,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 				205655, -- Dome of Mist (Mistweaver honor talent)
 				SURVIVAL = {
 					116849, -- Life Cocoon (Mistweaver)
-					202162, -- Guard (Brewmaster honor talent)
+					202162, -- Avert Harm (Brewmaster honor talent)
 					202248, -- Guided Meditation (Brewmaster honor talent)
 				},
 			},
@@ -93,8 +93,6 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 				116847, -- Rushing Jade Wind (Brewmaster talent)
 				119085, -- Chi Torpedo (talent)
 				196725, -- Refreshing Jade Wind (Mistweaver talent)
-				196739, -- Elusive Dance (Brewmaster talent)
-				197206, -- Uplifting Trance (Mistweaver)
 				197908, -- Mana Tea (Mistweaver talent)
 				202335, -- Double Barrel (Brewmaster honor talent)
 				209584, -- Zen Focus Tea (Mistweaver honor talent)
@@ -107,6 +105,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 				},
 				SURVIVAL = {
 					115176, -- Zen Meditation (Brewmaster)
+					115295, -- Guard (Brewmaster talent)
 					120954, -- Fortifying Brew (Brewmaster)
 					122278, -- Dampen Harm (talent)
 					122783, -- Diffuse Magic (Mistweaver/Windwalker talent)
@@ -166,8 +165,6 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 	[195630] = 117906, -- Elusive Brawler (Brewmaster) <- Mastery: Elusive Brawler
 	[196608] = 196607, -- Eye of the Tiger (Brewmaster talent)
 	[196727] = 132578, -- Provoke (Brewmaster talent) <- Invoke Niuzao, the Black Ox -- BUG: not in the spellbook
-	[196739] = 196738, -- Elusive Dance (Brewmaster talent)
-	[197206] = 115151, -- Uplifting Trance (Mistweaver) <- Renewing Mist
 	[197916] = 197915, -- Lifecycles (Vivify) (Mistweaver talent) <- Lifecycles
 	[197919] = 197915, -- Lifecycles (Enveloping Mist) (Mistweaver talent) <- Lifecycles
 	[198533] = 115313, -- Soothing Mist (Mistweaver talent) <- Summon Jade Serpent Statue
@@ -197,8 +194,6 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 	[195630] = 205523, -- Elusive Brawler (Brewmaster) -> Blackout Strike
 	[196608] = 100780, -- Eye of the Tiger (Brewmaster talent) -> Tiger Palm
 	[196727] = 196727, -- Provoke (Niuzao) (Brewmaster talent) -- BUG: not in the spellbook
-	[196739] = 119582, -- Elusive Dance (Brewmaster talent) -> Purifying Brew
-	[197206] = 116670, -- Uplifting Trance (Mistweaver) -> Vivify
 	[197916] = 116670, -- Lifecycles (Vivify) (Mistweaver talent) -> Vivify
 	[197919] = 124682, -- Lifecycles (Enveloping Mist) (Mistweaver talent) -> Enveloping Mist
 	[201447] = 101545, -- Ride the Wind (Windwalker honor talent) -> Flying Serpent Kick
@@ -213,7 +208,6 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 		100780, -- Tiger Palm
 		115181, -- Breath of Fire
 		115308, -- Ironskin Brew
-		119582, -- Purifying Brew
 		121253, -- Keg Smash
 	},
 	[261769] = { -- Inner Strength (Windwalker talent)
