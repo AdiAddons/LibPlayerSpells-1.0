@@ -30,14 +30,14 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		 102383, -- Wild Charge (talent - moonkin)
 		 204066, -- Lunar Beam (Guardian talent)
 		[106839] = 'INTERRUPT', -- Skull Bash (Guardian)
-		[132469] = 'KNOCKBACK', -- Typhoon (Guardian talent)
 		AURA = {
 			HARMFUL = {
-				164812, -- Moonfire (Guardian)
-				106830, -- Thrash (cat)
-				192090, -- Thrash (bear)
+				 164812, -- Moonfire (Guardian)
+				 106830, -- Thrash (cat)
+				 192090, -- Thrash (bear)
+				 206891, -- Intimidated (Guardian honor talent)
+				[201664] = 'SURVIVAL', -- Demoralizing Roar (Guardian honor talent)
 				CROWD_CTRL = {
-					[  5211] = 'STUN', -- Mighty Bash (Guardian talent)
 					[  6795] = 'TAUNT', -- Growl (Guardian)
 					[236748] = 'DISORIENT', -- Intimidating Roar (Guardian talent)
 					INCAPACITATE = {
@@ -48,6 +48,10 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 						   339, -- Entangling Roots (Guardian)
 						 45334, -- Immobilized (Guardian talent - bear)
 						102359, -- Mass Entanglement (Guardian talent)
+					},
+					STUN = {
+						  5211, -- Mighty Bash (Guardian talent)
+						202244, -- Overrun (Guardian honor talent)
 					},
 				},
 				SNARE = {
@@ -69,6 +73,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				 164547, -- Lunar Empowerment (moonkin)
 				 203975, -- Earthwarden (Guardian talent)
 				 213680, -- Guardian of Elune (Guardian talent)
+				 236185, -- Master Shapeshifter (Guardian honor talent)
 				 252216, -- Tiger Dash (Guardian talent)
 				[155835] = 'POWER_REGEN', -- Bristling Fur (Guardian talent)
 				SURVIVAL = {
@@ -82,6 +87,10 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			HELPFUL = {
 				[2782] = 'CURSE POISON', -- Remove Corruption (Balance/Feral/Guardian)
 			},
+		},
+		KNOCKBACK = {
+			132469, -- Typhoon (Guardian talent)
+			202246, -- Overrun (Guardian honor talent)
 		},
 		POWER_REGEN = {
 			33917, -- Mangle (Guardian)
@@ -101,6 +110,8 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		PERSONAL = {
 			158792, -- Pulverize (Guardian talent)
 			213708, -- Galactic Guardian (Guardian talent)
+			236187, -- Master Shapeshifter (Guardian honor talent)
+			279943, -- Sharpened Claws (Guardian honor talent)
 			SURVIVAL = {
 				192081, -- Ironfur (Guardian)
 			},
@@ -120,9 +131,14 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[164812] =   8921, -- Moonfire (Guardian)
 	[164815] = 197630, -- Sunfire (moonkin)
 	[192090] =  77758, -- Thrash (bear)
+	[202244] = 202246, -- Overrun (Guardian honor talent)
 	[203975] = 203974, -- Earthwarden (Guardian talent)
+	[206891] = 207017, -- Intimidated <- Alpha Chalenge (Guardian honor talent)
 	[213680] = 155578, -- Guardian of Elune (Guardian talent)
 	[213708] = 203964, -- Galactic Guardian (Guardian talent)
+	[236185] = 236144, -- Master Shapeshifter (Guardian honor talent)
+	[236187] = 236144, -- Master Shapeshifter (Guardian honor talent)
+	[279943] = 202110, -- Sharpened Claws (Guardian honor talent)
 }, {
 	-- map aura to modified spell(s)
 	[ 45334] =  16979, -- Immobilized -> Wild Charge (talent - bear)
@@ -140,4 +156,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		192081, -- Ironfur
 	},
 	[213708] =   8921, -- Galactic Guardian (Guardian talent) -> Moonfire
+	[236185] =  18562, -- Master Shapeshifter (Guardian honor talent) -> Swiftmend
+	[236187] = 197625, -- Master Shapeshifter (Guardian honor talent) -> Moonkin Form
+	[279943] =   6807, -- Sharpened Claws (Guardian honor talent) -> Maul
 })
