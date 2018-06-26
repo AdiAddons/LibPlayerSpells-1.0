@@ -22,34 +22,59 @@ local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
 lib:__RegisterSpells('DRUID', 80000, 1, {
 	COOLDOWN = {
+		  18562, -- Swiftmend
 		  18960, -- Teleport: Moonglade
 		  20484, -- Rebirth
+		 102401, -- Wild Charge (talent - non-shapeshifted)
+		 102417, -- Wild Charge (talent - travel)
+		 102383, -- Wild Charge (talent - moonkin)
+		 204066, -- Lunar Beam (Guardian talent)
 		[106839] = 'INTERRUPT', -- Skull Bash (Guardian)
+		[132469] = 'KNOCKBACK', -- Typhoon (Guardian talent)
 		AURA = {
 			HARMFUL = {
 				164812, -- Moonfire (Guardian)
-				106830, -- Thrash (Guardian - Cat)
-				192090, -- Thrash (Guardian - Bear)
+				106830, -- Thrash (cat)
+				192090, -- Thrash (bear)
 				CROWD_CTRL = {
-					[ 339] = 'ROOT', -- Entangling Roots (Guardian)
-					[6795] = 'TAUNT', -- Growl (Guardian)
+					[  5211] = 'STUN', -- Mighty Bash (Guardian talent)
+					[  6795] = 'TAUNT', -- Growl (Guardian)
+					[236748] = 'DISORIENT', -- Intimidating Roar (Guardian talent)
 					INCAPACITATE = {
 						  99, -- Incapacitating Roar (Guardian)
 						2637, -- Hibernate -- TODO: category
 					},
+					ROOT = {
+						   339, -- Entangling Roots (Guardian)
+						 45334, -- Immobilized (Guardian talent - bear)
+						102359, -- Mass Entanglement (Guardian talent)
+					},
 				},
+				SNARE = {
+					50259, -- Dazed (talent - cat)
+					61391, -- Typhoon (Guardian talent)
+				}
 			},
 			HELPFUL = {
+				48438, -- Wild Growth
 				77761, -- Stampeding Roar (Guardian)
 			},
 			PERSONAL = {
-				 1850, -- Dash (Feral/Guardian)
-				 5215, -- Prowl (Guardian)
-				22842, -- Frenzied Regeneration (Guardian)
-				93622, -- Gore (Guardian)
+				   1850, -- Dash (Feral/Guardian)
+				   5215, -- Prowl (Guardian)
+				  22842, -- Frenzied Regeneration (Guardian)
+				  93622, -- Gore (Guardian)
+				 102416, -- Wild Charge (talent - aquatic)
+				 164545, -- Solar Empowerment (moonkin)
+				 164547, -- Lunar Empowerment (moonkin)
+				 203975, -- Earthwarden (Guardian talent)
+				 213680, -- Guardian of Elune (Guardian talent)
+				 252216, -- Tiger Dash (Guardian talent)
+				[155835] = 'POWER_REGEN', -- Bristling Fur (Guardian talent)
 				SURVIVAL = {
-					22812, -- Barkskin (Guardian)
-					61336, -- Survival Instincts (Guardian)
+					 22812, -- Barkskin (Guardian)
+					 61336, -- Survival Instincts (Guardian)
+					102558, -- Incarnation: Guardian of Ursoc (Guardian talent)
 				},
 			},
 		},
@@ -60,14 +85,22 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		},
 		POWER_REGEN = {
 			33917, -- Mangle (Guardian)
-			77758, -- Thrash (Guardian - Bear)
+			77758, -- Thrash (bear)
 		},
 	},
 	AURA = {
+		HARMFUL = {
+			  1079, -- Rip
+			155722, -- Rake
+			164815, -- Sunfire (moonkin)
+		},
 		HELPFUL = {
-			8936, -- Regrowth (Guardian)
+			   774, -- Rejuvenation
+			  8936, -- Regrowth (Guardian)
 		},
 		PERSONAL = {
+			158792, -- Pulverize (Guardian talent)
+			213708, -- Galactic Guardian (Guardian talent)
 			SURVIVAL = {
 				192081, -- Ironfur (Guardian)
 			},
@@ -75,10 +108,36 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	},
 }, {
 	-- map aura to provider(s)
+	[ 45334] = 102401, -- Immobilized <- Wild Charge (talent - bear)
+	[ 50259] = 102401, -- Dazed <- Wild Charge (talent - cat)
+	[ 61391] = 132469, -- Typhoon (Guardian talent)
 	[ 93622] = 210706, -- Gore (Guardian)
-	[164812] =  8921, -- Moonfire (Guardian)
-	[192090] = 77758, -- Thrash (Guardian - Bear)
+	[102416] = 102401, -- Wild Charge (talent - aquatic)
+	[155722] =   1822, -- Rake
+	[158792] =  80313, -- Pulverize (Guardian talent)
+	[164545] = 197626, -- Solar Empowerment <- Starsurge (moonkin)
+	[164547] = 197626, -- Lunar Empowerment <- Starsurge (moonkin)
+	[164812] =   8921, -- Moonfire (Guardian)
+	[164815] = 197630, -- Sunfire (moonkin)
+	[192090] =  77758, -- Thrash (bear)
+	[203975] = 203974, -- Earthwarden (Guardian talent)
+	[213680] = 155578, -- Guardian of Elune (Guardian talent)
+	[213708] = 203964, -- Galactic Guardian (Guardian talent)
 }, {
 	-- map aura to modified spell(s)
-	[ 93622] = 33917, -- Gore (Guardian) -> Mangle
+	[ 45334] =  16979, -- Immobilized -> Wild Charge (talent - bear)
+	[ 50259] =  49376, -- Dazed -> Wild Charge (talent - cat)
+	[ 93622] =  33917, -- Gore (Guardian) -> Mangle
+	[102416] = 102416, -- Wild Charge (talent - aquatic)
+	[164545] = 197629, -- Solar Empowerment -> Solar Wrath (moonkin)
+	[164547] = 197628, -- Lunar Empowerment -> Lunar Strike (moonkin)
+	[203975] = { -- Earthwarden (Guardian talent)
+		 77758, -- Thrash (bear)
+		106830, -- Thrash (cat)
+	},
+	[213680] = { -- Guardian of Elune (Guardian talent)
+		 22842, -- Frenzied Regeneration
+		192081, -- Ironfur
+	},
+	[213708] =   8921, -- Galactic Guardian (Guardian talent) -> Moonfire
 })
