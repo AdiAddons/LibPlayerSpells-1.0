@@ -30,12 +30,12 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		 102383, -- Wild Charge (talent - moonkin)
 		 202028, -- Brutal Slash (Feral talent)
 		 204066, -- Lunar Beam (Guardian talent)
-		[106839] = 'INTERRUPT', -- Skull Bash (Feral/Guardian)
 		[108238] = 'SURVIVAL', -- Renewal (Feral talent)
 		AURA = {
 			HARMFUL = {
-				 164812, -- Moonfire (Guardian)
+				  81261, -- Solar Beam (Balance)
 				 106830, -- Thrash (cat)
+				 164812, -- Moonfire (Guardian)
 				 192090, -- Thrash (bear)
 				 206891, -- Intimidated (Guardian honor talent)
 				 274838, -- Feral Frenzy (Feral talent)
@@ -66,6 +66,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				}
 			},
 			HELPFUL = {
+				 29166, -- Innervate (Balance)
 				 48438, -- Wild Growth
 				 77761, -- Stampeding Roar (Guardian)
 				 77764, -- Stampeding Roar (Feral)
@@ -87,14 +88,15 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				BURST = {
 					102543, -- Incarnation: King of the Jungle (Feral talent)
 					106951, -- Berserker (Feral)
+					194223, -- Celestial Alignment (Balance)
 				},
 				POWER_REGEN = {
 					 155835, -- Bristling Fur (Guardian talent)
 					[  5217] = 'BURST', -- Tiger's Fury
 				},
 				SURVIVAL = {
-					 22812, -- Barkskin (Guardian)
-					 61336, -- Survival Instincts (Guardian)
+					 22812, -- Barkskin (Balance/Guardian)
+					 61336, -- Survival Instincts (Feral/Guardian)
 					102558, -- Incarnation: Guardian of Ursoc (Guardian talent)
 				},
 			},
@@ -106,6 +108,10 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			HELPFUL = {
 				[2782] = 'CURSE POISON', -- Remove Corruption (Balance/Feral/Guardian)
 			},
+		},
+		INTERRUPT = {
+			 78675, -- Solar Beam (Balance)
+			106839, -- Skull Bash (Feral/Guardian)
 		},
 		KNOCKBACK = {
 			132469, -- Typhoon (Guardian talent)
@@ -136,6 +142,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			135700, -- Clearcasting (Feral)
 			145152, -- Bloodtalons (Feral talent)
 			158792, -- Pulverize (Guardian talent)
+			191034, -- Starfall (Balance)
 			209731, -- Protector of the Grove (Feral honor talent)
 			213708, -- Galactic Guardian (Guardian talent)
 			236187, -- Master Shapeshifter (Guardian honor talent)
@@ -156,6 +163,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[ 58180] =  48484, -- Infected Wounds (Feral)
 	[ 61391] = 132469, -- Typhoon (Guardian talent)
 	[ 69369] =  16974, -- Predatory Swiftness (Feral)
+	[ 81261] =  78675, -- Solar Beam (Balance)
 	[ 93622] = 210706, -- Gore (Guardian)
 	[102416] = 102401, -- Wild Charge (talent - aquatic)
 	[135700] =  16864, -- Clearcasting <- Omen of Clarity (Feral)
@@ -165,10 +173,19 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		203242, -- Rip and Tear (Feral honor talent)
 	},
 	[158792] =  80313, -- Pulverize (Guardian talent)
-	[164545] = 197626, -- Solar Empowerment <- Starsurge
-	[164547] = 197626, -- Lunar Empowerment <- Starsurge
+	[164545] = { -- Solar Empowerment
+		197626, -- Starsurge (from Balance Affinity)
+		279708, -- Empowerments (Balance)
+	},
+	[164547] = { -- Lunar Empowerment
+		197626, -- Starsurge (from Balance Affinity)
+		279708, -- Empowerments (Balance)
+	},
 	[164812] =   8921, -- Moonfire (Guardian)
-	[164815] = 197630, -- Sunfire
+	[164815] = { -- Sunfire
+		 93402, -- Sunfire (Balance/Resoration)
+		197630, -- Sunfire (from Balance Affinity)
+	},
 	[192090] =  77758, -- Thrash (bear)
 	[202244] = 202246, -- Overrun (Guardian honor talent)
 	[203123] =  22570, -- Maim (Feral)
@@ -213,8 +230,14 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		106830, -- Thrash (cat)
 		202028, -- Brutal Slash (Feral talent)
 	},
-	[164545] = 197629, -- Solar Empowerment -> Solar Wrath
-	[164547] = 197628, -- Lunar Empowerment -> Lunar Strike
+	[164545] = { -- Solar Empowerment
+		190984, -- Solar Wrath (Balance)
+		197629, -- Solar Wrath (from Balance Affinity)
+	},
+	[164547] = { -- Lunar Empowerment
+		194153, -- Lunar Strike (Balance)
+		197628, -- Lunar Strike (from Balance Affinity)
+	},
 	[203975] = { -- Earthwarden (Guardian talent)
 		 77758, -- Thrash (bear)
 		106830, -- Thrash (cat)
