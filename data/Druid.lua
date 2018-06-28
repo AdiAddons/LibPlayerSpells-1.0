@@ -28,14 +28,17 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		 102401, -- Wild Charge (talent - non-shapeshifted)
 		 102417, -- Wild Charge (talent - travel)
 		 102383, -- Wild Charge (talent - moonkin)
+		 202028, -- Brutal Slash (Feral talent)
 		 204066, -- Lunar Beam (Guardian talent)
 		[106839] = 'INTERRUPT', -- Skull Bash (Feral/Guardian)
+		[108238] = 'SURVIVAL', -- Renewal (Feral talent)
 		AURA = {
 			HARMFUL = {
 				 164812, -- Moonfire (Guardian)
 				 106830, -- Thrash (cat)
 				 192090, -- Thrash (bear)
 				 206891, -- Intimidated (Guardian honor talent)
+				 274838, -- Feral Frenzy (Feral talent)
 				[201664] = 'SURVIVAL', -- Demoralizing Roar (Guardian honor talent)
 				CROWD_CTRL = {
 					[  6795] = 'TAUNT', -- Growl
@@ -47,17 +50,17 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 					ROOT = {
 						   339, -- Entangling Roots
 						 45334, -- Immobilized (Guardian talent - bear)
-						102359, -- Mass Entanglement (Guardian talent)
+						102359, -- Mass Entanglement (talent)
 					},
 					STUN = {
-						  5211, -- Mighty Bash (Guardian talent)
+						  5211, -- Mighty Bash (talent)
 						202244, -- Overrun (Guardian honor talent)
 						203123, -- Maim (Feral)
 					},
 				},
 				SNARE = {
 					50259, -- Dazed (talent - cat)
-					61391, -- Typhoon (Guardian talent)
+					61391, -- Typhoon (talent)
 				}
 			},
 			HELPFUL = {
@@ -66,18 +69,22 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				77764, -- Stampeding Roar (Feral)
 			},
 			PERSONAL = {
-				   1850, -- Dash
-				   5215, -- Prowl (Guardian)
-				  22842, -- Frenzied Regeneration (Guardian)
-				  93622, -- Gore (Guardian)
-				 102416, -- Wild Charge (talent - aquatic)
-				 164545, -- Solar Empowerment
-				 164547, -- Lunar Empowerment
-				 203975, -- Earthwarden (Guardian talent)
-				 213680, -- Guardian of Elune (Guardian talent)
-				 236185, -- Master Shapeshifter (Guardian honor talent)
-				 252216, -- Tiger Dash (Guardian talent)
-				[106951] = 'BURST', -- Berserker (Feral)
+				  1850, -- Dash
+				  5215, -- Prowl (Guardian)
+				 22842, -- Frenzied Regeneration
+				 93622, -- Gore (Guardian)
+				102416, -- Wild Charge (talent - aquatic)
+				164545, -- Solar Empowerment
+				164547, -- Lunar Empowerment
+				203975, -- Earthwarden (Guardian talent)
+				213680, -- Guardian of Elune (Guardian talent)
+				236185, -- Master Shapeshifter (Guardian honor talent)
+				252071, -- Jungle Stalker (Feral talent)
+				252216, -- Tiger Dash (Feral/Guardian talent)
+				BURST = {
+					102543, -- Incarnation: King of the Jungle (Feral talent)
+					106951, -- Berserker (Feral)
+				},
 				POWER_REGEN = {
 					 155835, -- Bristling Fur (Guardian talent)
 					[  5217] = 'BURST', -- Tiger's Fury
@@ -120,14 +127,16 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			  8936, -- Regrowth (Guardian)
 		},
 		PERSONAL = {
+			 52610, -- Savage Roar (Feral talent)
 			 69369, -- Predatory Swiftness (Feral)
 			135700, -- Clearcasting (Feral)
+			145152, -- Bloodtalons (Feral talent)
 			158792, -- Pulverize (Guardian talent)
 			213708, -- Galactic Guardian (Guardian talent)
 			236187, -- Master Shapeshifter (Guardian honor talent)
 			279943, -- Sharpened Claws (Guardian honor talent)
 			SURVIVAL = {
-				192081, -- Ironfur (Guardian)
+				192081, -- Ironfur
 			},
 		},
 	},
@@ -141,6 +150,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[ 93622] = 210706, -- Gore (Guardian)
 	[102416] = 102401, -- Wild Charge (talent - aquatic)
 	[135700] =  16864, -- Clearcasting <- Omen of Clarity (Feral)
+	[145152] = 155672, -- Bloodtalons (Feral talent)
 	[155722] =   1822, -- Rake
 	[158792] =  80313, -- Pulverize (Guardian talent)
 	[164545] = 197626, -- Solar Empowerment <- Starsurge
@@ -156,6 +166,8 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[213708] = 203964, -- Galactic Guardian (Guardian talent)
 	[236185] = 236144, -- Master Shapeshifter (Guardian honor talent)
 	[236187] = 236144, -- Master Shapeshifter (Guardian honor talent)
+	[252071] = 102543, -- Jungle Stalker <- Incarnation: King of the Jungle (Feral talent)
+	[274838] = 274837, -- Feral Frenzy (Feral talent)
 	[279943] = 202110, -- Sharpened Claws (Guardian honor talent)
 }, {
 	-- map aura to modified spell(s)
@@ -172,6 +184,19 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		  5221, -- Shred
 		106785, -- Swipe
 		106830, -- Thrash
+		202028, -- Brutal Slash (Feral talent)
+	},
+	[145152] = { -- Bloodtalons (Feral talent)
+		  1079, -- Rip
+		  1822, -- Rake
+		  5221, -- Shred
+		 22568, -- Ferocious Bite
+		 22570, -- Maim
+		 33917, -- Mangle
+		 77758, -- Thrash (bear)
+		106785, -- Swipe
+		106830, -- Thrash (cat)
+		202028, -- Brutal Slash (Feral talent)
 	},
 	[164545] = 197629, -- Solar Empowerment -> Solar Wrath
 	[164547] = 197628, -- Lunar Empowerment -> Lunar Strike
@@ -186,5 +211,6 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[213708] =   8921, -- Galactic Guardian (Guardian talent) -> Moonfire
 	[236185] =  18562, -- Master Shapeshifter (Guardian honor talent) -> Swiftmend
 	[236187] = 197625, -- Master Shapeshifter (Guardian honor talent) -> Moonkin Form
+	[252071] = 102547, -- Jungle Stalker (Feral talent) -> Prowl
 	[279943] =   6807, -- Sharpened Claws (Guardian honor talent) -> Maul
 })
