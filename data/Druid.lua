@@ -29,7 +29,11 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		 102417, -- Wild Charge (talent - travel)
 		 102383, -- Wild Charge (talent - moonkin)
 		 202028, -- Brutal Slash (Feral talent)
+		 202770, -- Fury of Elune (Balance talent)
 		 204066, -- Lunar Beam (Guardian talent)
+		 205636, -- Force of Nature (Balance talent)
+		 274281, -- New Moon (Balance talent)
+		 274282, -- Half Moon (Balance talent)
 		[108238] = 'SURVIVAL', -- Renewal (Feral talent)
 		AURA = {
 			HARMFUL = {
@@ -80,6 +84,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				102416, -- Wild Charge (talent - aquatic)
 				164545, -- Solar Empowerment
 				164547, -- Lunar Empowerment
+				202425, -- Warrior of Elune (Balance talent)
 				203975, -- Earthwarden (Guardian talent)
 				213680, -- Guardian of Elune (Guardian talent)
 				236185, -- Master Shapeshifter (Guardian honor talent)
@@ -87,6 +92,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				252216, -- Tiger Dash (Feral/Guardian talent)
 				BURST = {
 					102543, -- Incarnation: King of the Jungle (Feral talent)
+					102560, -- Incarnation: Chosen of Elune (Balance talent)
 					106951, -- Berserker (Feral)
 					194223, -- Celestial Alignment (Balance)
 				},
@@ -127,6 +133,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			  1079, -- Rip
 			155722, -- Rake
 			164815, -- Sunfire
+			202347, -- Stellar Flare (Balance talent)
 			236021, -- Ferocious Wound (Feral honor talent)
 			SNARE = {
 				58180, -- Infected Wounds (Feral)
@@ -143,9 +150,11 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			145152, -- Bloodtalons (Feral talent)
 			158792, -- Pulverize (Guardian talent)
 			191034, -- Starfall (Balance)
+			202461, -- Stellar Drift (Balance talent)
 			209731, -- Protector of the Grove (Feral honor talent)
 			213708, -- Galactic Guardian (Guardian talent)
 			236187, -- Master Shapeshifter (Guardian honor talent)
+			279709, -- Starfond (Balance talent)
 			279943, -- Sharpened Claws (Guardian honor talent)
 			SURVIVAL = {
 				192081, -- Ironfur
@@ -188,6 +197,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	},
 	[192090] =  77758, -- Thrash (bear)
 	[202244] = 202246, -- Overrun (Guardian honor talent)
+	[202461] = 202354, -- Stellar Drift (Balance talent)
 	[203123] =  22570, -- Maim (Feral)
 	[203975] = 203974, -- Earthwarden (Guardian talent)
 	[206891] = 207017, -- Intimidated <- Alpha Chalenge (Guardian honor talent)
@@ -200,6 +210,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[236187] = 236144, -- Master Shapeshifter (Guardian honor talent)
 	[252071] = 102543, -- Jungle Stalker <- Incarnation: King of the Jungle (Feral talent)
 	[274838] = 274837, -- Feral Frenzy (Feral talent)
+	[279709] = 202345, -- Starfond (Balance talent)
 	[279943] = 202110, -- Sharpened Claws (Guardian honor talent)
 }, {
 	-- map aura to modified spell(s)
@@ -238,6 +249,8 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		194153, -- Lunar Strike (Balance)
 		197628, -- Lunar Strike (from Balance Affinity)
 	},
+	[202425] = 194153, -- Warrior of Elune (Balance talent) -> Lunar Strike
+	[202461] = 191034, -- Stellar Drift (Balance talent) -> Starfall
 	[203975] = { -- Earthwarden (Guardian talent)
 		 77758, -- Thrash (bear)
 		106830, -- Thrash (cat)
@@ -252,5 +265,9 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[236185] =  18562, -- Master Shapeshifter (Guardian honor talent) -> Swiftmend
 	[236187] = 197625, -- Master Shapeshifter (Guardian honor talent) -> Moonkin Form
 	[252071] = 102547, -- Jungle Stalker (Feral talent) -> Prowl
+	[279709] = { -- Starfond (Balance talent)
+		 78674, -- Starsurge
+		191034, -- Starfall
+	},
 	[279943] =   6807, -- Sharpened Claws (Guardian honor talent) -> Maul
 })
