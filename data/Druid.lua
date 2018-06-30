@@ -42,11 +42,15 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				 164812, -- Moonfire (Guardian)
 				 192090, -- Thrash (bear)
 				 206891, -- Intimidated (Guardian honor talent)
+				 209749, -- Faerie Swarm (Balance honor talent)
 				 274838, -- Feral Frenzy (Feral talent)
 				[201664] = 'SURVIVAL', -- Demoralizing Roar (Guardian honor talent)
 				CROWD_CTRL = {
 					[  6795] = 'TAUNT', -- Growl
-					[236748] = 'DISORIENT', -- Intimidating Roar (Guardian talent)
+					DISORIENT = {
+						209753, -- Cyclone (Balance honor talent)
+						236748, -- Intimidating Roar (Guardian talent)
+					},
 					INCAPACITATE = {
 						    99, -- Incapacitating Roar (Guardian)
 						  2637, -- Hibernate -- TODO: category
@@ -74,7 +78,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				 48438, -- Wild Growth
 				 77761, -- Stampeding Roar (Guardian)
 				 77764, -- Stampeding Roar (Feral)
-				236696, -- Thorns (Feral honor talent)
+				236696, -- Thorns (Balance/Feral honor talent)
 			},
 			PERSONAL = {
 				  1850, -- Dash
@@ -87,6 +91,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				202425, -- Warrior of Elune (Balance talent)
 				203975, -- Earthwarden (Guardian talent)
 				213680, -- Guardian of Elune (Guardian talent)
+				234084, -- Moon and Stars (Balance honor talent)
 				236185, -- Master Shapeshifter (Guardian honor talent)
 				252071, -- Jungle Stalker (Feral talent)
 				252216, -- Tiger Dash (Feral/Guardian talent)
@@ -142,6 +147,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		HELPFUL = {
 			   774, -- Rejuvenation
 			  8936, -- Regrowth (Guardian)
+			209746, -- Moonkin Aura (Balance honor talent)
 		},
 		PERSONAL = {
 			 52610, -- Savage Roar (Feral talent)
@@ -151,7 +157,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			158792, -- Pulverize (Guardian talent)
 			191034, -- Starfall (Balance)
 			202461, -- Stellar Drift (Balance talent)
-			209731, -- Protector of the Grove (Feral honor talent)
+			209731, -- Protector of the Grove (Balance/Feral honor talent)
 			213708, -- Galactic Guardian (Guardian talent)
 			236187, -- Master Shapeshifter (Guardian honor talent)
 			279709, -- Starfond (Balance talent)
@@ -201,9 +207,11 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[203123] =  22570, -- Maim (Feral)
 	[203975] = 203974, -- Earthwarden (Guardian talent)
 	[206891] = 207017, -- Intimidated <- Alpha Chalenge (Guardian honor talent)
-	[209731] = 209730, -- Protector of the Grove (Feral honor talent)
+	[209731] = 209730, -- Protector of the Grove (Balance/Feral honor talent)
+	[209746] = 209740, -- Moonkin Aura (Balance honor talent)
 	[213680] = 155578, -- Guardian of Elune (Guardian talent)
 	[213708] = 203964, -- Galactic Guardian (Guardian talent)
+	[234084] = 233750, -- Moon and Stars (Balance honor talent)
 	[236021] = 236020, -- Ferocious Wound (Feral honor talent)
 	[236025] = 236026, -- Enraged Maim (Feral honor talent)
 	[236185] = 236144, -- Master Shapeshifter (Guardian honor talent)
@@ -255,12 +263,17 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		 77758, -- Thrash (bear)
 		106830, -- Thrash (cat)
 	},
-	[209731] =   8936, -- Protector of the Grove (Feral honor talent) -> Regrowth
+	[209731] =   8936, -- Protector of the Grove (Balance/Feral honor talent) -> Regrowth
+	[209746] =  78674, -- Moonkin Aura (Balance honor talent) -> Starsurge
 	[213680] = { -- Guardian of Elune (Guardian talent)
 		 22842, -- Frenzied Regeneration
 		192081, -- Ironfur
 	},
 	[213708] =   8921, -- Galactic Guardian (Guardian talent) -> Moonfire
+	[234084] = { -- Moon and Stars (Balance honor talent)
+		102560, -- Incarnation: Chosen of Elune
+		194223, -- Celestial Alignment
+	},
 	[236021] =  22568, -- Ferocious Wound (Feral honor talent) -> Ferocious Bite
 	[236185] =  18562, -- Master Shapeshifter (Guardian honor talent) -> Swiftmend
 	[236187] = 197625, -- Master Shapeshifter (Guardian honor talent) -> Moonkin Form
