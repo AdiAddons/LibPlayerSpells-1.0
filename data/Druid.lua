@@ -69,16 +69,18 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 					},
 				},
 				SNARE = {
-					50259, -- Dazed (talent - cat)
-					61391, -- Typhoon (talent)
+					 50259, -- Dazed (talent - cat)
+					 61391, -- Typhoon (talent)
+					127797, -- Ursol's Vortex (Restoration)
 				}
 			},
 			HELPFUL = {
-				 29166, -- Innervate (Balance)
-				 48438, -- Wild Growth
-				 77761, -- Stampeding Roar (Guardian)
-				 77764, -- Stampeding Roar (Feral)
-				236696, -- Thorns (Balance/Feral honor talent)
+				  29166, -- Innervate (Balance/Restoration)
+				  48438, -- Wild Growth
+				  77761, -- Stampeding Roar (Guardian)
+				  77764, -- Stampeding Roar (Feral)
+				 236696, -- Thorns (Balance/Feral honor talent)
+				[102342] = 'SURVIVAL', -- Ironbark (Balance)
 			},
 			PERSONAL = {
 				  1850, -- Dash
@@ -146,10 +148,12 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		},
 		HELPFUL = {
 			   774, -- Rejuvenation
-			  8936, -- Regrowth (Guardian)
+			  8936, -- Regrowth
+			 33763, -- Lifebloom (Restoration)
 			209746, -- Moonkin Aura (Balance honor talent)
 		},
 		PERSONAL = {
+			 16870, -- Clearcasting (Restoration)
 			 52610, -- Savage Roar (Feral talent)
 			 69369, -- Predatory Swiftness (Feral)
 			135700, -- Clearcasting (Feral)
@@ -173,6 +177,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		  1079, -- Rip
 		203242, -- Rip and Tear (Feral honor talent)
 	},
+	[ 16870] = 113043, -- Clearcasting <- Omen of Clarity (Restoration)
 	[ 45334] = 102401, -- Immobilized <- Wild Charge (talent - bear)
 	[ 50259] = 102401, -- Dazed <- Wild Charge (talent - cat)
 	[ 58180] =  48484, -- Infected Wounds (Feral)
@@ -181,6 +186,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[ 81261] =  78675, -- Solar Beam (Balance)
 	[ 93622] = 210706, -- Gore (Guardian)
 	[102416] = 102401, -- Wild Charge (talent - aquatic)
+	[127797] = 102793, -- Ursol's Vortex (Restoration)
 	[135700] =  16864, -- Clearcasting <- Omen of Clarity (Feral)
 	[145152] = 155672, -- Bloodtalons (Feral talent)
 	[155722] = { -- Rake
@@ -222,6 +228,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[279943] = 202110, -- Sharpened Claws (Guardian honor talent)
 }, {
 	-- map aura to modified spell(s)
+	[ 16870] =   8936, -- Clearcasting (Restoration) -> Regrowth
 	[ 45334] =  16979, -- Immobilized -> Wild Charge (talent - bear)
 	[ 50259] =  49376, -- Dazed -> Wild Charge (talent - cat)
 	[ 58180] =   1822, -- Infected Wounds -> Rake (Feral)
