@@ -51,6 +51,9 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 			PERSONAL = {
 				  11426, -- Ice Barrier (Frost)
 				 108839, -- Ice Floes (Frost talent)
+				 198111, -- Temporal Shield (Frost honor talent)
+				 198144, -- Ice Form (Frost honor talent)
+				 206432, -- Burst of Cold (Frost honor talent)
 				 270232, -- Freezing Rain (Frost talent)
 				[ 41425] = 'INVERT_AURA', -- Hypothermia
 				BURST = {
@@ -58,9 +61,10 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 					116014, -- Rune of Power (Frost talent)
 				},
 				SURVIVAL = {
-					   66, -- Invisibility (Fading)
-					32612, -- Invisibility
-					45438, -- Ice Block
+					    66, -- Invisibility (Fading)
+					 32612, -- Invisibility
+					 45438, -- Ice Block
+					198065, -- Prismatic Cloak (honor talent)
 				},
 			},
 		},
@@ -113,6 +117,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 	[ 82691] = 113724, -- Ring of Frost (Frost talent)
 	[116014] = 116011, -- Rune of Power (Frost talent)
 	[190446] = 190447, -- Brain Freeze (Frost)
+	[198065] = 198064, -- Prismatic Cloak (honor talent)
 	[205708] = { -- Chilled (Frost)
 		   116, -- Frostbolt
 		 84714, -- Frozen Orb
@@ -120,6 +125,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 	},
 	[205473] =  76613, -- Icicles <- Mastery: Icicles (Frost)
 	[205766] = 205027, -- Bone Chilling (Frost talent)
+	[206432] = 206431, -- Burst of Cold (Frost honor talent)
 	[212792] =    120, -- Cone of Cold (Frost)
 	[228600] = 199786, -- Glacial Spike (Frost talent)
 	[228354] =  44614, -- Flurry (Frost)
@@ -129,6 +135,10 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 	-- map aura to modified spell(s)
 	[ 44544] =  30455, -- Fingers of Frost (Frost) -> Ice Lance
 	[190446] =  44614, -- Brain Freeze (Frost) -> Flurry
+	[198065] = { -- Prismatic Cloak (honor talent)
+		  1953, -- Blink
+		212653, -- Shimmer (talent)
+	},
 	[205473] =  { -- Icicles (Frost)
 		 30455, -- Ice Lance
 		199786, -- Glacial Spike (Frost talent)
@@ -139,6 +149,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 		190356, -- Blizzard
 		205021, -- Ray of Frost (Frost talent)
 	},
+	[206432] =    120, -- Burst of Cold (Frost honor talent) -> Cone of Cold
 	[270232] = 190356, -- Freezing Rain (Frost talent) -> Blizzard
 	[278310] =  30455, -- Chain Reaction (Frost talent) -> Ice Lance
 })
