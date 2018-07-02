@@ -34,7 +34,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		 205636, -- Force of Nature (Balance talent)
 		 274281, -- New Moon (Balance talent)
 		 274282, -- Half Moon (Balance talent)
-		[108238] = 'SURVIVAL', -- Renewal (Feral talent)
+		[108238] = 'SURVIVAL', -- Renewal (Feral/Restoration talent)
 		AURA = {
 			HARMFUL = {
 				  81261, -- Solar Beam (Balance)
@@ -79,6 +79,9 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				  48438, -- Wild Growth
 				  77761, -- Stampeding Roar (Guardian)
 				  77764, -- Stampeding Roar (Feral)
+				 102351, -- Cenarion Ward (Restoration talent)
+				 102352, -- Cenarion Ward (Restoration talent - HoT)
+				 157982, -- Tranquility (Restoration)
 				 236696, -- Thorns (Balance/Feral honor talent)
 				[102342] = 'SURVIVAL', -- Ironbark (Balance)
 			},
@@ -88,19 +91,22 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				 22842, -- Frenzied Regeneration
 				 93622, -- Gore (Guardian)
 				102416, -- Wild Charge (talent - aquatic)
+				114108, -- Soul of the Forest (Restoration talent)
 				164545, -- Solar Empowerment
 				164547, -- Lunar Empowerment
+				197721, -- Flourish (Restoration talent)
 				202425, -- Warrior of Elune (Balance talent)
 				203975, -- Earthwarden (Guardian talent)
 				213680, -- Guardian of Elune (Guardian talent)
 				234084, -- Moon and Stars (Balance honor talent)
 				236185, -- Master Shapeshifter (Guardian honor talent)
 				252071, -- Jungle Stalker (Feral talent)
-				252216, -- Tiger Dash (Feral/Guardian talent)
+				252216, -- Tiger Dash (Feral/Guardian/Restoration talent)
 				BURST = {
 					102543, -- Incarnation: King of the Jungle (Feral talent)
 					102560, -- Incarnation: Chosen of Elune (Balance talent)
 					106951, -- Berserker (Feral)
+					117679, -- Incarnation: Tree of Life (Restoration talent)
 					194223, -- Celestial Alignment (Balance)
 				},
 				POWER_REGEN = {
@@ -150,6 +156,9 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			   774, -- Rejuvenation
 			  8936, -- Regrowth
 			 33763, -- Lifebloom (Restoration)
+			155777, -- Rejuvenation (Germination) (Restoration talent)
+			200389, -- Cultivation (Restoration talent)
+			207386, -- Spring Blossoms (Restoration talent)
 			209746, -- Moonkin Aura (Balance honor talent)
 		},
 		PERSONAL = {
@@ -161,6 +170,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			158792, -- Pulverize (Guardian talent)
 			191034, -- Starfall (Balance)
 			202461, -- Stellar Drift (Balance talent)
+			207640, -- Abundance (Restoration talent)
 			209731, -- Protector of the Grove (Balance/Feral honor talent)
 			213708, -- Galactic Guardian (Guardian talent)
 			236187, -- Master Shapeshifter (Guardian honor talent)
@@ -185,7 +195,10 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[ 69369] =  16974, -- Predatory Swiftness (Feral)
 	[ 81261] =  78675, -- Solar Beam (Balance)
 	[ 93622] = 210706, -- Gore (Guardian)
+	[102352] = 102351, -- Cenarion Ward (Restoration talent - HoT)
 	[102416] = 102401, -- Wild Charge (talent - aquatic)
+	[114108] = 158478, -- Soul of the Forest (Restoration talent)
+	[117679] =  33891, -- Incarnation: Tree of Life (Restoration talent)
 	[127797] = 102793, -- Ursol's Vortex (Restoration)
 	[135700] =  16864, -- Clearcasting <- Omen of Clarity (Feral)
 	[145152] = 155672, -- Bloodtalons (Feral talent)
@@ -193,7 +206,9 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		  1822, -- Rake
 		203242, -- Rip and Tear (Feral honor talent)
 	},
+	[155777] = 155675, -- Rejuvenation (Germination) <- Germination (Restoration talent)
 	[158792] =  80313, -- Pulverize (Guardian talent)
+	[157982] =    740, -- Tranquility (Restoration)
 	[164545] = { -- Solar Empowerment
 		197626, -- Starsurge (from Balance Affinity)
 		279708, -- Empowerments (Balance)
@@ -208,11 +223,14 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		197630, -- Sunfire (from Balance Affinity)
 	},
 	[192090] =  77758, -- Thrash (bear)
+	[200389] = 200390, -- Cultivation (Restoration talent)
 	[202244] = 202246, -- Overrun (Guardian honor talent)
 	[202461] = 202354, -- Stellar Drift (Balance talent)
 	[203123] =  22570, -- Maim (Feral)
 	[203975] = 203974, -- Earthwarden (Guardian talent)
 	[206891] = 207017, -- Intimidated <- Alpha Chalenge (Guardian honor talent)
+	[207386] = 207385, -- Spring Blossoms (Restoration talent)
+	[207640] = 207383, -- Abundance (Restoration talent)
 	[209731] = 209730, -- Protector of the Grove (Balance/Feral honor talent)
 	[209746] = 209740, -- Moonkin Aura (Balance honor talent)
 	[213680] = 155578, -- Guardian of Elune (Guardian talent)
@@ -238,6 +256,11 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	},
 	[ 93622] =  33917, -- Gore (Guardian) -> Mangle
 	[102416] = 102416, -- Wild Charge (talent - aquatic)
+	[114108] = { -- Soul of the Forest (Restoration talent)
+		  774, -- Rejuvenation
+		 8936, -- Regrowth
+		48438, -- Wild Growth
+	},
 	[135700] = { -- Clearcasting (Feral)
 		  5221, -- Shred
 		106785, -- Swipe
@@ -256,6 +279,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		106830, -- Thrash (cat)
 		202028, -- Brutal Slash (Feral talent)
 	},
+	[155777] =    774, -- Rejuvenation (Germination) (Restoration talent) -> Rejuvenation
 	[164545] = { -- Solar Empowerment
 		190984, -- Solar Wrath (Balance)
 		197629, -- Solar Wrath (from Balance Affinity)
@@ -264,12 +288,15 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		194153, -- Lunar Strike (Balance)
 		197628, -- Lunar Strike (from Balance Affinity)
 	},
+	[200389] =    774, -- Cultivation (Restoration talent) -> Rejuvenation
 	[202425] = 194153, -- Warrior of Elune (Balance talent) -> Lunar Strike
 	[202461] = 191034, -- Stellar Drift (Balance talent) -> Starfall
 	[203975] = { -- Earthwarden (Guardian talent)
 		 77758, -- Thrash (bear)
 		106830, -- Thrash (cat)
 	},
+	[207386] = 145205, -- Spring Blossoms (Restoration talent) -> Efflorescence
+	[207640] =   8936, -- Abundance (Restoration talent) -> Regrowth
 	[209731] =   8936, -- Protector of the Grove (Balance/Feral honor talent) -> Regrowth
 	[209746] =  78674, -- Moonkin Aura (Balance honor talent) -> Starsurge
 	[213680] = { -- Guardian of Elune (Guardian talent)
