@@ -30,6 +30,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		 102383, -- Wild Charge (talent - moonkin)
 		 202028, -- Brutal Slash (Feral talent)
 		 202770, -- Fury of Elune (Balance talent)
+		 203651, -- Overgrowth (Restoration honor talent)
 		 204066, -- Lunar Beam (Guardian talent)
 		 205636, -- Force of Nature (Balance talent)
 		 274281, -- New Moon (Balance talent)
@@ -48,7 +49,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				CROWD_CTRL = {
 					[  6795] = 'TAUNT', -- Growl
 					DISORIENT = {
-						209753, -- Cyclone (Balance honor talent)
+						209753, -- Cyclone (Balance/Restoration honor talent)
 						236748, -- Intimidating Roar (Guardian talent)
 					},
 					INCAPACITATE = {
@@ -82,7 +83,8 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				 102351, -- Cenarion Ward (Restoration talent)
 				 102352, -- Cenarion Ward (Restoration talent - HoT)
 				 157982, -- Tranquility (Restoration)
-				 236696, -- Thorns (Balance/Feral honor talent)
+				 203554, -- Focused Growth (Restoration honor talent)
+				 236696, -- Thorns (Balance/Feral/Restoration honor talent)
 				[102342] = 'SURVIVAL', -- Ironbark (Balance)
 			},
 			PERSONAL = {
@@ -146,6 +148,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			  1079, -- Rip
 			155722, -- Rake
 			164815, -- Sunfire
+			200947, -- Encroaching Vines (Restoration honor talent)
 			202347, -- Stellar Flare (Balance talent)
 			236021, -- Ferocious Wound (Feral honor talent)
 			SNARE = {
@@ -158,6 +161,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 			 33763, -- Lifebloom (Restoration)
 			155777, -- Rejuvenation (Germination) (Restoration talent)
 			200389, -- Cultivation (Restoration talent)
+			203407, -- Revitalize (Restoration honor talent)
 			207386, -- Spring Blossoms (Restoration talent)
 			209746, -- Moonkin Aura (Balance honor talent)
 		},
@@ -224,9 +228,12 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	},
 	[192090] =  77758, -- Thrash (bear)
 	[200389] = 200390, -- Cultivation (Restoration talent)
+	[200947] = 200931, -- Encroaching Vines (Restoration honor talent)
 	[202244] = 202246, -- Overrun (Guardian honor talent)
 	[202461] = 202354, -- Stellar Drift (Balance talent)
 	[203123] =  22570, -- Maim (Feral)
+	[203407] = 203399, -- Revitalize (Restoration honor talent)
+	[203554] = 203553, -- Focused Growth (Restoration honor talent)
 	[203975] = 203974, -- Earthwarden (Guardian talent)
 	[206891] = 207017, -- Intimidated <- Alpha Chalenge (Guardian honor talent)
 	[207386] = 207385, -- Spring Blossoms (Restoration talent)
@@ -289,8 +296,11 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		197628, -- Lunar Strike (from Balance Affinity)
 	},
 	[200389] =    774, -- Cultivation (Restoration talent) -> Rejuvenation
+	[200947] =    339, -- Encroaching Vines (Restoration honor talent) -> Entangling Roots
 	[202425] = 194153, -- Warrior of Elune (Balance talent) -> Lunar Strike
 	[202461] = 191034, -- Stellar Drift (Balance talent) -> Starfall
+	[203407] =    774, -- Revitalize (Restoration honor talent) -> Rejuventation
+	[203554] =  33763, -- Focused Growth (Restoration honor talent) -> Lifebloom
 	[203975] = { -- Earthwarden (Guardian talent)
 		 77758, -- Thrash (bear)
 		106830, -- Thrash (cat)
