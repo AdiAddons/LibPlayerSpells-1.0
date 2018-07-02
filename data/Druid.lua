@@ -127,7 +127,8 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 				[2908] = 'ENRAGE', -- Soothe (Balance/Feral/Restoration)
 			},
 			HELPFUL = {
-				[2782] = 'CURSE POISON', -- Remove Corruption (Balance/Feral/Guardian)
+				[ 2782] = 'CURSE POISON', -- Remove Corruption (Balance/Feral/Guardian)
+				[88423] = 'CURSE MAGIC POISON', -- Nature's Cure (Restoration)
 			},
 		},
 		INTERRUPT = {
