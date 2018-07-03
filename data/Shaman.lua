@@ -23,10 +23,13 @@ if not lib then return end
 lib:__RegisterSpells('SHAMAN', 80000, 1, {
 	COOLDOWN = {
 		   8143, -- Tremor Totem
+		  17364, -- Stormstrike (Enhancement)
 		  51505, -- Lava Burst (Elemental)
+		  51533, -- Feral Spirit (Enhancement)
 		 198067, -- Fire Elemental (Elemental)
 		 198103, -- Earth Elemental
-		[57994] = 'INTERRUPT', -- Wind Shear
+		[ 57994] = 'INTERRUPT', -- Wind Shear
+		[193786] = 'POWER_REGEN', -- Rockbiter (Enhancement)
 		AURA = {
 			HARMFUL = {
 				118297, -- Immolate (Fire Elemental) (Elemental talent)
@@ -52,11 +55,14 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				208963, -- Skyfury Totem (Elemental honor talent)
 			},
 			PERSONAL = {
+				 58875, -- Spirit Walk (Enhancement)
 				 77762, -- Lava Surge (Elemental)
 				108281, -- Ancestral Guidance (Elemental talent)
 				118522, -- Elemental Blast: Crtical Strike (Elemental talent)
 				173183, -- Elemental Blast: Haste (Elemental talent)
 				173184, -- Elemental Blast: Mastery (Elemental talent)
+				187878, -- Crash Lightning (Enhancement)
+				194084, -- Flametongue (Enhancement)
 				210714, -- Icefury (Elemental talent)
 				236746, -- Control of Lava (Elemental honor talent)
 				260734, -- Master of the Elements (Elemental talent)
@@ -83,7 +89,8 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				[204399] = 'STUN', -- Earthfury (Elemental honor talent)
 			},
 			SNARE = {
-				196840, -- Frost Shock
+				147732, -- Frostbrand (Enhancement)
+				196840, -- Frost Shock (Elemental)
 			},
 		},
 		HELPFUL = {
@@ -93,6 +100,8 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 		PERSONAL = {
 			  2645, -- Ghost Wolf
 			  6196, -- Far Sight
+			196834, -- Frostbrand (Enhancement)
+			201846, -- Stormbringer (Enhancement)
 			204262, -- Spectral Recovery (Elemental honor talent)
 			SURVIVAL = {
 				260881, -- Spirit Wolf (Elemental talent)
@@ -113,12 +122,16 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 	[118345] = 117013, -- Pulverize <- Primal Elementalist (Elemental talent)
 	[118522] = 117014, -- Elemental Blast: Crtical Strike (Elemental totem) <- Elemental Blast (Elemental talent)
 	[118905] = 192058, -- Static Charge <- Capacitor Totem
+	[147732] = 196834, -- Frostbrand (Enhancement)
 	[157348] = 117013, -- Call Lightning <- Primal Elementalist (Elemental talent)
 	[157375] = 117013, -- Eye of the Storm <- Primal Elementalist (Elemental talent)
 	[173183] = 117014, -- Elemental Blast: Haste (Elemental totem) <- Elemental Blast (Elemental talent)
 	[173184] = 117014, -- Elemental Blast: Mastery (Elemental totem) <- Elemental Blast (Elemental talent)
 	[182387] =  61882, -- Earthquake (Elemental)
+	[187878] = 187874, -- Crash Lightning (Enhancement)
 	[192082] = 192077, -- Wind Rush <- Wind Rush Totem (Elemental talent)
+	[194084] = 193796, -- Flametongue (Enhancement)
+	[201846] = 201845, -- Stormbringer (Enhancement)
 	[204262] = 204261, -- Spectral Recovery (Elemental honor talent)
 	[204399] = 204398, -- Earthfury (Elemental honor talent)
 	[208963] = 204330, -- Skyfury Totem (Elemental honor talent)
@@ -140,6 +153,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 		188196, -- Lighting Bolt
 		188443, -- Chain Lightning
 	},
+	[201846] =  17364, -- Stormbringer (Enhancement) -> Stormstrike
 	[204262] =   2645, -- Spectral Recovery (Elemental honor talent) -> Ghost Wolf
 	[204399] =   8042, -- Earthfury (Elemental honor talent) -> Earth Shock
 	[210714] = 196840, -- Icefury (Elemental talent) -> Frost Shock
