@@ -38,7 +38,8 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				157375, -- Eye of the Storm (Storm Elemental) (Elemental talent)
 				188089, -- Earthen Spike (Enhancement talent)
 				188389, -- Flame Shock (Elemental)
-				208997, -- Counterstrike Totem (Elemental honor talent)
+				208997, -- Counterstrike Totem (Elemental/Enhancement honor talent)
+				210927, -- Static Cling (Enhancement honor talent)
 				268429, -- Searing Assault (Enhancement talent)
 				271924, -- Molten Weapon (Enhancement talent)
 				CROWD_CTRL = {
@@ -58,9 +59,13 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				},
 			},
 			HELPFUL = {
-				  8178, -- Grounding Totem Effect (Elemental honor talent)
+				  8178, -- Grounding Totem Effect (Elemental/Enhancement honor talent)
 				192082, -- Wind Rush (Elemental/Enhancement talent)
-				208963, -- Skyfury Totem (Elemental honor talent)
+				204366, -- Thundercharge (Enhancement honor talent)
+				BURST = {
+					204361, -- Bloodlust (Enhancement honor talent)
+					208963, -- Skyfury Totem (Elemental/Enhancement honor talent)
+				},
 			},
 			PERSONAL = {
 				 58875, -- Spirit Walk (Enhancement)
@@ -73,6 +78,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				194084, -- Flametongue (Enhancement)
 				202004, -- Landslide (Enhancement talent)
 				210714, -- Icefury (Elemental talent)
+				211400, -- Static Cling (Enhancement honor talent)
 				224125, -- Molten Weapon (Enhancement talent)
 				224127, -- Crackling Surge (Enhancement talent)
 				236746, -- Control of Lava (Elemental honor talent)
@@ -86,6 +92,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				SURVIVAL = {
 					108271, -- Astral Shift
 					118337, -- Harden Skin (Earth Elemental) (Elemental talent)
+					210918, -- Ethereal Form (Enhancement honor talent)
 				},
 			},
 			PET = {
@@ -118,7 +125,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 			197211, -- Fury of Air (Enhancement talent)
 			201846, -- Stormbringer (Enhancement)
 			202192, -- Resonance Totem (Elemental talent)
-			204262, -- Spectral Recovery (Elemental honor talent)
+			204262, -- Spectral Recovery (Elemental/Enhancement honor talent)
 			210652, -- Storm Totem (Elemental talent)
 			210658, -- Ember Totem (Elemental talent)
 			210659, -- Tailwind Totem (Elemental talent)
@@ -141,7 +148,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 }, {
 	-- map aura to provider(s)
 	[  3600] =   2484, -- Earthbind <- Earthbind Totem
-	[  8178] = 204336, -- Grounding Totem Effect (Elemental honor talent) <- Grounding Totem
+	[  8178] = 204336, -- Grounding Totem Effect (Elemental/Enhancement honor talent) <- Grounding Totem
 	[ 77762] =  77756, -- Lava Surge (Elemental)
 	[118297] = 117013, -- Immolate <- Primal Elementalist (Elemental talent)
 	[118337] = 117013, -- Harden Skin <- Primal Elementalist (Elemental talent)
@@ -161,13 +168,16 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 	[201846] = 201845, -- Stormbringer (Enhancement)
 	[202004] = 197992, -- Landslide (Enhancement talent)
 	[202192] = 210643, -- Resonance Totem <- Totem Mastery (Elemental talent)
-	[204262] = 204261, -- Spectral Recovery (Elemental honor talent)
+	[204262] = 204261, -- Spectral Recovery (Elemental/Enhancement honor talent)
+	[204361] = 193876, -- Bloodlust <- Shamanism (Enhancement honor talent)
 	[204399] = 204398, -- Earthfury (Elemental honor talent)
 	[208963] = 204330, -- Skyfury Totem (Elemental honor talent)
-	[208997] = 204331, -- Counterstrike Totem (Elemental honor talent)
+	[208997] = 204331, -- Counterstrike Totem (Elemental/Enhancement honor talent)
 	[210652] = 210643, -- Storm Totem <- Totem Mastery (Elemental talent)
 	[210658] = 210643, -- Ember Totem <- Totem Mastery (Elemental talent)
 	[210659] = 210643, -- Tailwind Totem <- Totem Mastery (Elemental talent)
+	[210927] = 211062, -- Static Cling (Enhancement honor talent)
+	[211400] = 211062, -- Static Cling (Enhancement honor talent)
 	[215785] = 201900, -- Hot Hand (Enhacement talent)
 	[224125] = 262624, -- Molten Weapon <- Elemental Spirits (Enhancement talent)
 	[224127] = 262624, -- Crackling Surge <- Elemental Spirits (Enhancement talent)
@@ -204,9 +214,12 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 		 17364, -- Stormstrike
 		115356, -- Windstrike (Enhancement talent) NOTE: when Ascendance is active
 	},
-	[204262] =   2645, -- Spectral Recovery (Elemental honor talent) -> Ghost Wolf
+	[204262] =   2645, -- Spectral Recovery (Elemental/Enhancement honor talent) -> Ghost Wolf
+	[204361] = 204361, -- Bloodlust (Enhancement honor talent)
 	[204399] =   8042, -- Earthfury (Elemental honor talent) -> Earth Shock
 	[210714] = 196840, -- Icefury (Elemental talent) -> Frost Shock
+	[210927] =  17364, -- Static Cling (Enhancement honor talent) -> Stormstrike NOTE: not with Windstrike
+	[211400] =  17364, -- Static Cling (Enhancement honor talent) -> Stormstrike NOTE: not with Windstrike
 	[215785] =  60103, -- Hot Hand (Enhacement talent) -> Lava Lash
 	[224125] =  60103, -- Molten Weapon (Enhancement talent) -> Lava Lash
 	[224127] =  17364, -- Crackling Surge (Enhancement talent) -> Stormstrike
