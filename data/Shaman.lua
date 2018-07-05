@@ -38,6 +38,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				157375, -- Eye of the Storm (Storm Elemental) (Elemental talent)
 				188089, -- Earthen Spike (Enhancement talent)
 				188389, -- Flame Shock (Elemental)
+				188838, -- Flame Shock (Restoration)
 				208997, -- Counterstrike Totem (Elemental/Enhancement honor talent)
 				210927, -- Static Cling (Enhancement honor talent)
 				268429, -- Searing Assault (Enhancement talent)
@@ -60,16 +61,22 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 			},
 			HELPFUL = {
 				  8178, -- Grounding Totem Effect (Elemental/Enhancement honor talent)
+				 61295, -- Riptide (Restoration)
 				192082, -- Wind Rush (Elemental/Enhancement talent)
 				204366, -- Thundercharge (Enhancement honor talent)
 				BURST = {
 					204361, -- Bloodlust (Enhancement honor talent)
 					208963, -- Skyfury Totem (Elemental/Enhancement honor talent)
 				},
+				SURVIVAL = {
+					98007, -- Spirit Link Totem (Restoration)
+				},
 			},
 			PERSONAL = {
 				 58875, -- Spirit Walk (Enhancement)
-				 77762, -- Lava Surge (Elemental)
+				 73920, -- Healing Rain (Restoration)
+				 77762, -- Lava Surge (Elemental/Restoration)
+				 79206, -- Spiritwalker's Grace (Restoration)
 				108281, -- Ancestral Guidance (Elemental talent)
 				118522, -- Elemental Blast: Crtical Strike (Elemental talent)
 				173183, -- Elemental Blast: Haste (Elemental talent)
@@ -120,6 +127,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 		PERSONAL = {
 			  2645, -- Ghost Wolf
 			  6196, -- Far Sight
+			 53390, -- Tidal Waves (Restoration)
 			192106, -- Lightning Shield (Enhancement talent)
 			196834, -- Frostbrand (Enhancement)
 			197211, -- Fury of Air (Enhancement talent)
@@ -142,14 +150,19 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 		},
 	},
 	DISPEL = {
-		[  370] = 'HARMFUL MAGIC', -- Purge
-		[51886] = 'HELPFUL CURSE', -- Cleanse Spirit (Elemental/Enhancement)
+		[370] = 'HARMFUL MAGIC', -- Purge
+		HELPFUL = {
+			[51886] = 'CURSE', -- Cleanse Spirit (Elemental/Enhancement)
+			[77130] = 'CURSE MAGIC', -- Purify Spirit (Restoration)
+		},
 	},
 }, {
 	-- map aura to provider(s)
 	[  3600] =   2484, -- Earthbind <- Earthbind Totem
 	[  8178] = 204336, -- Grounding Totem Effect (Elemental/Enhancement honor talent) <- Grounding Totem
-	[ 77762] =  77756, -- Lava Surge (Elemental)
+	[ 53390] =  51564, -- Tidal Waves (Restoration)
+	[ 77762] =  77756, -- Lava Surge (Elemental/Restoration)
+	[ 98007] =  98008, -- Spirit Link Totem (Restoration)
 	[118297] = 117013, -- Immolate <- Primal Elementalist (Elemental talent)
 	[118337] = 117013, -- Harden Skin <- Primal Elementalist (Elemental talent)
 	[118345] = 117013, -- Pulverize <- Primal Elementalist (Elemental talent)
@@ -196,7 +209,11 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 	[273323] = 192106, -- Lightning Shield Overcharge <- Lightning Shield (Enhancement talent)
 }, {
 	-- map aura to modified spell(s)
-	[ 77762] =  51505, -- Lava Surge (Elemental) -> Lava Burst
+	[ 53390] =  { -- Tidal Waves (Restoration)
+		 8004, -- Healing Surge
+		77472, -- Healing Wave
+	},
+	[ 77762] =  51505, -- Lava Surge (Elemental/Restoration) -> Lava Burst
 	[118297] = 118297, -- Immolate (Fire Elemental) (Elemental talent)
 	[118337] = 118337, -- Harden Skin (Earth Elemental) (Elemental talent)
 	[118345] = 118345, -- Pulverize (Earth Elemental) (Elemental talent)
