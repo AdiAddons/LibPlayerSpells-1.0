@@ -22,28 +22,38 @@ local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
 lib:__RegisterSpells('PRIEST', 80000, 1, {
 	COOLDOWN = {
-		 2050, -- Holy Word: Serenity (Holy)
-		34861, -- Holy Word: Sanctify (Holy)
-		73325, -- Leap of Faith
+		  2050, -- Holy Word: Serenity (Holy)
+		 34861, -- Holy Word: Sanctify (Holy)
+		 73325, -- Leap of Faith
+		110744, -- Divine Star (Holy talent)
+		120517, -- Halo (Holy talent)
+		204883, -- Circle of Healing (Holy talent)
+		265202, -- Holy Word: Salvation (Holy talent)
 		AURA = {
 			HARMFUL = {
 				14914, -- Holy Fire (Holy)
 				CROWD_CTRL = {
 					[  8122] = 'DISORIENT', -- Psychic Scream
 					[200196] = 'INCAPACITATE', -- Holy Word: Chastise
+					[200200] = 'STUN', -- Holy Word: Chastise (Holy talent)
+				},
+				SNARE = {
+					[204263] = 'KNOCKBACK', -- Shining Force (Holy talent)
 				},
 			},
 			HELPFUL = {
-				 41635, -- Prayer of Mending (Holy)
-				 64844, -- Divine Hymn (Holy)
+				  41635, -- Prayer of Mending (Holy)
+				  64844, -- Divine Hymn (Holy)
+				 121557, -- Angelic Feather (Holy talent)
 				[64901] = 'POWER_REGEN', -- Symbol of Hope (Holy)
 				SURVIVAL = {
 					47788, -- Guardian Spirit (Holy)
 				},
 			},
 			PERSONAL = {
-				  586, -- Fade
-				64843, -- Divine Hymn (Holy)
+				   586, -- Fade
+				 64843, -- Divine Hymn (Holy)
+				200183, -- Apotheosis (Holy talent)
 				SURVIVAL = {
 					19236, -- Desperate Prayer (Discipline/Holy)
 				}
@@ -62,7 +72,8 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 			111759, -- Levitate
 		},
 		PERSONAL = {
-			2096, -- Mind Vision
+			  2096, -- Mind Vision
+			114255, -- Surge of Light (Holy talent)
 		},
 	},
 	DISPEL = {
@@ -75,9 +86,14 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 		},
 	},
 }, { -- map aura to provider(s)
-	[ 41635] = 33076, -- Prayer of Mending (Holy)
-	[ 64844] = 64843, -- Divine Hymn (Holy)
-	[111759] =  1706, -- Levitate
-	[200196] = 88625, -- Holy Word: Chastise
+	[ 41635] =  33076, -- Prayer of Mending (Holy)
+	[ 64844] =  64843, -- Divine Hymn (Holy)
+	[111759] =   1706, -- Levitate
+	[114255] = 109186, -- Surge of Light (Holy talent)
+	[121557] = 121536, -- Angelic Feather (Holy talent)
+	[200196] =  88625, -- Holy Word: Chastise
+	[200200] = 200199, -- Holy Word: Chastise <- Censure (Holy talent)
 }, { -- map aura(s) to modified spell(s)
+	[114255] =   2061, -- Surge of Light (Holy talent) -> Flash Heal
+	[200200] =  88625, -- Holy Word: Chastise (Holy talent)
 })
