@@ -41,7 +41,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				188089, -- Earthen Spike (Enhancement talent)
 				188389, -- Flame Shock (Elemental)
 				188838, -- Flame Shock (Restoration)
-				208997, -- Counterstrike Totem (Elemental/Enhancement honor talent)
+				208997, -- Counterstrike Totem (honor talent)
 				210927, -- Static Cling (Enhancement honor talent)
 				268429, -- Searing Assault (Enhancement talent)
 				271924, -- Molten Weapon (Enhancement talent)
@@ -64,14 +64,14 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				},
 			},
 			HELPFUL = {
-				  8178, -- Grounding Totem Effect (Elemental/Enhancement honor talent)
+				  8178, -- Grounding Totem Effect (honor talent)
 				 61295, -- Riptide (Restoration)
 				192082, -- Wind Rush (talent)
 				201633, -- Earthen Wall (Restoraton talent)
 				204366, -- Thundercharge (Enhancement honor talent)
 				BURST = {
 					204361, -- Bloodlust (Enhancement honor talent)
-					208963, -- Skyfury Totem (Elemental/Enhancement honor talent)
+					208963, -- Skyfury Totem (honor talent)
 				},
 				SURVIVAL = {
 					 98007, -- Spirit Link Totem (Restoration)
@@ -96,6 +96,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				211400, -- Static Cling (Enhancement honor talent)
 				224125, -- Molten Weapon (Enhancement talent)
 				224127, -- Crackling Surge (Enhancement talent)
+				236502, -- Tidebringer (Restoration honor talent)
 				236746, -- Control of Lava (Elemental honor talent)
 				260734, -- Master of the Elements (Elemental talent)
 				263806, -- Wind Gust (Elemental talent)
@@ -118,6 +119,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
+			206647, -- Electrocute (Restoration honor talent)
 			269808, -- Exposed Elements (Elemental talent)
 			[182387] = 'KNOCKBACK', -- Earthquake (Elemental)
 			CROWD_CTRL = {
@@ -132,6 +134,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 		HELPFUL = {
 			   546, -- Water Walking
 			   974, -- Earth Shield (talent)
+			204293, -- Spirit Link (Restoration honor talent)
 			207400, -- Ancestral Vigor (Restoration talent)
 		},
 		PERSONAL = {
@@ -143,7 +146,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 			197211, -- Fury of Air (Enhancement talent)
 			201846, -- Stormbringer (Enhancement)
 			202192, -- Resonance Totem (Elemental talent)
-			204262, -- Spectral Recovery (Elemental/Enhancement honor talent)
+			204262, -- Spectral Recovery (honor talent)
 			210652, -- Storm Totem (Elemental talent)
 			210658, -- Ember Totem (Elemental talent)
 			210659, -- Tailwind Totem (Elemental talent)
@@ -171,7 +174,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 }, {
 	-- map aura to provider(s)
 	[  3600] =   2484, -- Earthbind <- Earthbind Totem
-	[  8178] = 204336, -- Grounding Totem Effect (Elemental/Enhancement honor talent) <- Grounding Totem
+	[  8178] = 204336, -- Grounding Totem Effect (honor talent) <- Grounding Totem
 	[ 53390] =  51564, -- Tidal Waves (Restoration)
 	[ 64695] =  51485, -- Earthgrab <- Earthgrab Totem (Restoration talent)
 	[ 77762] =  77756, -- Lava Surge (Elemental/Restoration)
@@ -197,13 +200,14 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 	[201846] = 201845, -- Stormbringer (Enhancement)
 	[202004] = 197992, -- Landslide (Enhancement talent)
 	[202192] = 210643, -- Resonance Totem <- Totem Mastery (Elemental talent)
-	[204262] = 204261, -- Spectral Recovery (Elemental/Enhancement honor talent)
+	[204262] = 204261, -- Spectral Recovery (honor talent)
 	[204361] = 193876, -- Bloodlust <- Shamanism (Enhancement honor talent)
 	[204399] = 204398, -- Earthfury (Elemental honor talent)
+	[206647] = 206642, -- Electrocute (Restoration honor talent)
 	[207400] = 207401, -- Ancestral Vigor (Restoration talent)
 	[207498] = 207399, -- Ancestral Protection <- Ancestral Protection Totem (Restoration talent)
-	[208963] = 204330, -- Skyfury Totem (Elemental honor talent)
-	[208997] = 204331, -- Counterstrike Totem (Elemental/Enhancement honor talent)
+	[208963] = 204330, -- Skyfury Totem (honor talent)
+	[208997] = 204331, -- Counterstrike Totem (honor talent)
 	[210652] = 210643, -- Storm Totem <- Totem Mastery (Elemental talent)
 	[210658] = 210643, -- Ember Totem <- Totem Mastery (Elemental talent)
 	[210659] = 210643, -- Tailwind Totem <- Totem Mastery (Elemental talent)
@@ -213,6 +217,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 	[216251] = 200071, -- Undulation (Restoration talent)
 	[224125] = 262624, -- Molten Weapon <- Elemental Spirits (Enhancement talent)
 	[224127] = 262624, -- Crackling Surge <- Elemental Spirits (Enhancement talent)
+	[236502] = 236501, -- Tidebringer (Restoration honor talent)
 	[236746] = 204393, -- Control of Lava (Elemental honor talent)
 	[260734] =  16166, -- Master of the Elements (Elemental talent)
 	[260881] = 260878, -- Spirit Wolf (talent)
@@ -252,9 +257,10 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 		 17364, -- Stormstrike
 		115356, -- Windstrike (Enhancement talent) NOTE: when Ascendance is active
 	},
-	[204262] =   2645, -- Spectral Recovery (Elemental/Enhancement honor talent) -> Ghost Wolf
+	[204262] =   2645, -- Spectral Recovery (honor talent) -> Ghost Wolf
 	[204361] = 204361, -- Bloodlust (Enhancement honor talent)
 	[204399] =   8042, -- Earthfury (Elemental honor talent) -> Earth Shock
+	[206647] =    370, -- Electrocute (Restoration honor talent) -> Purge
 	[207400] = { -- Ancestral Vigor (Restoration talent)
 		 1064, -- Chain Heal
 		 8004, -- Healing Surge
@@ -271,6 +277,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 	},
 	[224125] =  60103, -- Molten Weapon (Enhancement talent) -> Lava Lash
 	[224127] =  17364, -- Crackling Surge (Enhancement talent) -> Stormstrike
+	[236502] =   1064, -- Tidebringer (Restoration honor talent) -> Chain Heal
 	[236746] =  51505, -- Control of Lava (Elemental honor talent) -> Lava Burst
 	[260734] =  51505, -- Master of the Elements (Elemental talent) -> Lava Burst
 	[260881] =   2645, -- Spirit Wolf (talent)
