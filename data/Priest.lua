@@ -45,6 +45,8 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 				  41635, -- Prayer of Mending (Holy)
 				  64844, -- Divine Hymn (Holy)
 				 121557, -- Angelic Feather (Holy talent)
+				 213610, -- Holy Ward (Holy honor talent)
+				 232707, -- Ray of Hope (Holy honor talent)
 				[64901] = 'POWER_REGEN', -- Symbol of Hope (Holy)
 				SURVIVAL = {
 					47788, -- Guardian Spirit (Holy)
@@ -55,7 +57,10 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 				 64843, -- Divine Hymn (Holy)
 				200183, -- Apotheosis (Holy talent)
 				SURVIVAL = {
-					19236, -- Desperate Prayer (Discipline/Holy)
+					 19236, -- Desperate Prayer (Discipline/Holy)
+					196773, -- Inner Focus (Holy honor talent)
+					213602, -- Greater Fade (Holy honor talent)
+					215769, -- Spirit of Redemption (Holy honor talent)
 				}
 			},
 		},
@@ -70,6 +75,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 		HELPFUL = {
 			   139, -- Renew (Holy)
 			111759, -- Levitate
+			215962, -- Inspiration (Holy honor talent)
 		},
 		PERSONAL = {
 			  2096, -- Mind Vision
@@ -91,9 +97,22 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 	[111759] =   1706, -- Levitate
 	[114255] = 109186, -- Surge of Light (Holy talent)
 	[121557] = 121536, -- Angelic Feather (Holy talent)
+	[196773] = 196762, -- Inner Focus (Holy honor talent)
 	[200196] =  88625, -- Holy Word: Chastise
 	[200200] = 200199, -- Holy Word: Chastise <- Censure (Holy talent)
+	[215769] = 215782, -- Spirit of Redemption <- Spirit of the Redeemer (Holy honor talent)
+	[215962] = 215960, -- Inspiration <- Greater Heal (Holy honor talent)
+	[232707] = 197268, -- Ray of Hope (Holy honor talent)
 }, { -- map aura(s) to modified spell(s)
 	[114255] =   2061, -- Surge of Light (Holy talent) -> Flash Heal
+	[196773] = { -- Inner Focus (Holy honor talent)
+		  585, -- Smite
+		 2050, -- Holy Word: Serenity
+		 2060, -- Heal
+		 2061, -- Flash Heal
+		14914, -- Holy Fire
+	},
 	[200200] =  88625, -- Holy Word: Chastise (Holy talent)
+	[215769] = 215769, -- Spirit of Redemption (Holy honor talent)
+	[215962] =   2060, -- Inspiration (Holy honor talent) -> Heal
 })
