@@ -31,6 +31,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 		123040, -- Mindbender (Discipline talent)
 		129250, -- Power Word: Solace (Discipline talent)
 		204883, -- Circle of Healing (Holy talent)
+		209780, -- Premonition (Discipline honor talent)
 		246287, -- Evangelism (Discipline talent)
 		265202, -- Holy Word: Salvation (Holy talent)
 		AURA = {
@@ -50,10 +51,14 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 				  41635, -- Prayer of Mending (Holy)
 				  64844, -- Divine Hymn (Holy)
 				 121557, -- Angelic Feather (Discipline/Holy talent)
+				 196440, -- Purified Resolve (Discipline honor talent)
 				 213610, -- Holy Ward (Holy honor talent)
 				 232707, -- Ray of Hope (Holy honor talent)
 				[ 64901] = 'POWER_REGEN', -- Symbol of Hope (Holy)
 				[219521] = 'INVERT_AURA', -- Shadow Covenant (Discipline talent)
+				BURST = {
+					197874, -- Dark Archangel (Discipline honor talent)
+				},
 				SURVIVAL = {
 					 33206, -- Pain Suppression (Discipline)
 					 47788, -- Guardian Spirit (Holy)
@@ -66,6 +71,10 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 				 47536, -- Rapture (Discipline)
 				 64843, -- Divine Hymn (Holy)
 				200183, -- Apotheosis (Holy talent)
+				BURST = {
+					197862, -- Archangel (Discipline honor talent)
+					197871, -- Dark Archangel (Discipline honor talent)
+				},
 				SURVIVAL = {
 					 19236, -- Desperate Prayer (Discipline/Holy)
 					196773, -- Inner Focus (Holy honor talent)
@@ -94,6 +103,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 			  65081, -- Body and Soul (Discipline talent)
 			 111759, -- Levitate
 			 194384, -- Atonement (Discipline)
+			 197548, -- Strength of Soul (Discipline honor talent)
 			 215962, -- Inspiration (Holy honor talent)
 			[ 21562] = 'RAIDBUFF', -- Power Word: Fortitude
 			[187464] = 'INVERT_AURA', -- Shadow Mend (Discipline)
@@ -125,7 +135,10 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 	[187464] = 186263, -- Shadow Mend (Discipline)
 	[193065] = 193063, -- Masochism (Discipline talent)
 	[194384] =  81749, -- Atonement (Discipline)
+	[196440] = 196439, -- Purified Resolve (Discipline honor talent)
 	[196773] = 196762, -- Inner Focus (Holy honor talent)
+	[197548] = 197535, -- Strength of Soul (Discipline honor talent)
+	[197874] = 197871, -- Dark Archangel (Discipline honor talent)
 	[198069] = 198068, -- Power of the Dark Side (Discipline)
 	[200196] =  88625, -- Holy Word: Chastise
 	[200200] = 200199, -- Holy Word: Chastise <- Censure (Holy talent)
@@ -148,6 +161,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 		186263, -- Shadow Mend
 		194509, -- Power Word: Radiance
 	},
+	[196440] =    527, -- Purified Resolve (Discipline honor talent) -> Purify
 	[196773] = { -- Inner Focus (Holy honor talent)
 		  585, -- Smite
 		 2050, -- Holy Word: Serenity
@@ -155,6 +169,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 		 2061, -- Flash Heal
 		14914, -- Holy Fire
 	},
+	[197548] =     17, -- Strength of Soul (Discipline honor talent) -> Power Word: Shield
 	[198069] =  47540, -- Power of the Dark Side (Discipline) -> Penance
 	[200200] =  88625, -- Holy Word: Chastise (Holy talent)
 	[205364] = 205364, -- Mind Control(Discipline talent)
