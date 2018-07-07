@@ -22,18 +22,22 @@ local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
 lib:__RegisterSpells('PRIEST', 80000, 1, {
 	COOLDOWN = {
-		  2050, -- Holy Word: Serenity (Holy)
-		 34433, -- Shadowfiend (Discipline)
-		 34861, -- Holy Word: Sanctify (Holy)
-		 73325, -- Leap of Faith
-		110744, -- Divine Star (Discipline/Holy talent)
-		120517, -- Halo (Discipline/Holy talent)
-		123040, -- Mindbender (Discipline talent)
-		129250, -- Power Word: Solace (Discipline talent)
-		204883, -- Circle of Healing (Holy talent)
-		209780, -- Premonition (Discipline honor talent)
-		246287, -- Evangelism (Discipline talent)
-		265202, -- Holy Word: Salvation (Holy talent)
+		   2050, -- Holy Word: Serenity (Holy)
+		   8092, -- Mind Blast (Shadow)
+		  32379, -- Shadow Word: Death (Shadow)
+		  34433, -- Shadowfiend (Discipline/Shadow)
+		  34861, -- Holy Word: Sanctify (Holy)
+		  73325, -- Leap of Faith
+		 110744, -- Divine Star (Discipline/Holy talent)
+		 120517, -- Halo (Discipline/Holy talent)
+		 123040, -- Mindbender (Discipline talent)
+		 129250, -- Power Word: Solace (Discipline talent)
+		 204883, -- Circle of Healing (Holy talent)
+		 205448, -- Void Bolt (Shadow)
+		 209780, -- Premonition (Discipline honor talent)
+		 246287, -- Evangelism (Discipline talent)
+		 265202, -- Holy Word: Salvation (Holy talent)
+		[ 15487] = 'INTERRUPT', -- Silence (Shadow)
 		AURA = {
 			HARMFUL = {
 				 14914, -- Holy Fire (Holy)
@@ -48,6 +52,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 				},
 			},
 			HELPFUL = {
+				     17, -- Power Word: Shield (Discipline/Shadow)
 				  41635, -- Prayer of Mending (Holy)
 				  64844, -- Divine Hymn (Holy)
 				 121557, -- Angelic Feather (Discipline/Holy talent)
@@ -61,17 +66,21 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 				},
 				SURVIVAL = {
 					 33206, -- Pain Suppression (Discipline)
+					 47585, -- Dispersion (Shadow)
 					 47788, -- Guardian Spirit (Holy)
 					 81782, -- Power Word: Barrier (Discipline)
 					271466, -- Luminous Barrier (Discipline talent)
 				},
 			},
 			PERSONAL = {
-				   586, -- Fade
-				 47536, -- Rapture (Discipline)
-				 64843, -- Divine Hymn (Holy)
-				200183, -- Apotheosis (Holy talent)
+				    586, -- Fade
+				  15286, -- Vampiric Embrace (Shadow)
+				  47536, -- Rapture (Discipline)
+				  64843, -- Divine Hymn (Holy)
+				 200183, -- Apotheosis (Holy talent)
+				[263406] = 'INVERT_AURA', -- Surrendered to Madness (Shadow)
 				BURST = {
+					193223, -- Surrender to Madness (Shadow)
 					197862, -- Archangel (Discipline honor talent)
 					197871, -- Dark Archangel (Discipline honor talent)
 				},
@@ -89,16 +98,20 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
-			   589, -- Shadow Word: Pain (Discipline)
+			   589, -- Shadow Word: Pain (Discipline/Shadow)
+			 34914, -- Vampiric Touch (Shadow)
+			 48045, -- Mind Sear (Shadow)
 			204213, -- Purge the Wicked (Discipline talent)
 			208772, -- Smite (Discipline)
 			CROWD_CTRL = {
 				[ 605] = 'DISORIENT', -- Mind Control
 				[9484] = 'INCAPACITATE', -- Shackle Undead
 			},
+			SNARE = {
+				15407, -- Mind Flay (Shadow)
+			},
 		},
 		HELPFUL = {
-			     17, -- Power Word: Shield (Discipline)
 				139, -- Renew (Holy)
 			  65081, -- Body and Soul (Discipline talent)
 			 111759, -- Levitate
@@ -106,21 +119,24 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 			 197548, -- Strength of Soul (Discipline honor talent)
 			 215962, -- Inspiration (Holy honor talent)
 			[ 21562] = 'RAIDBUFF', -- Power Word: Fortitude
-			[187464] = 'INVERT_AURA', -- Shadow Mend (Discipline)
+			[187464] = 'INVERT_AURA', -- Shadow Mend (Discipline/Shadow)
 		},
 		PERSONAL = {
 			  2096, -- Mind Vision
 			114255, -- Surge of Light (Holy talent)
 			193065, -- Masochism (Discipline talent)
+			194249, -- Voidform (Shadow)
 			198069, -- Power of the Dark Side (Discipline)
+			232698, -- Shadowform (Shadow)
 		},
 	},
 	DISPEL = {
 		[528] = 'HARMFUL MAGIC', -- Dispel Magic
 		HELPFUL = {
 			COOLDOWN = {
-				[  527] = 'DISEASE MAGIC', -- Purify (Discipline/Holy)
-				[32375] = 'HARMFUL MAGIC', -- Mass Dispel
+				[   527] = 'DISEASE MAGIC', -- Purify (Discipline/Holy)
+				[ 32375] = 'HARMFUL MAGIC', -- Mass Dispel
+				[213634] = 'DISEASE', -- Purify Disease (Shadow)
 			},
 		},
 	},
@@ -132,8 +148,9 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 	[111759] =   1706, -- Levitate
 	[114255] = 109186, -- Surge of Light (Holy talent)
 	[121557] = 121536, -- Angelic Feather (Discipline/Holy talent)
-	[187464] = 186263, -- Shadow Mend (Discipline)
+	[187464] = 186263, -- Shadow Mend (Discipline/Shadow)
 	[193065] = 193063, -- Masochism (Discipline talent)
+	[194249] = 228264, -- Voidform (Shadow)
 	[194384] =  81749, -- Atonement (Discipline)
 	[196440] = 196439, -- Purified Resolve (Discipline honor talent)
 	[196773] = 196762, -- Inner Focus (Holy honor talent)
@@ -149,6 +166,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 	[215962] = 215960, -- Inspiration <- Greater Heal (Holy honor talent)
 	[219521] = 204065, -- Shadow Covenant (Discipline talent)
 	[232707] = 197268, -- Ray of Hope (Holy honor talent)
+	[263406] = 193223, -- Surrendered to Madness <- Surrender to Madness (Shadow)
 }, { -- map aura(s) to modified spell(s)
 	[ 65081] = { -- Body and Soul (Discipline talent)
 		   17, -- Power Word: Shield
@@ -156,6 +174,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 	},
 	[114255] =   2061, -- Surge of Light (Holy talent) -> Flash Heal
 	[193065] = 186263, -- Masochism (Discipline talent) -> Shadow Mend
+	[194249] = 194249, -- Voidform (Shadow)
 	[194384] = { -- Atonement (Discipline)
 			17, -- Power Word: Shield
 		186263, -- Shadow Mend
