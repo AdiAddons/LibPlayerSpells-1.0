@@ -71,6 +71,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
+			228358, -- Winter's Chill (Frost)
 			CROWD_CTRL = {
 				[228600] = 'ROOT', -- Glacial Spike (Frost talent)
 				INCAPACITATE = {
@@ -127,6 +128,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 	[205766] = 205027, -- Bone Chilling (Frost talent)
 	[206432] = 206431, -- Burst of Cold (Frost honor talent)
 	[212792] =    120, -- Cone of Cold (Frost)
+	[228358] = 231584, -- Winter's Chill (Frost) <- Brain Freeze (Rank 2)
 	[228600] = 199786, -- Glacial Spike (Frost talent)
 	[228354] =  44614, -- Flurry (Frost)
 	[270232] = 270233, -- Freezing Rain (Frost talent)
@@ -150,6 +152,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 		205021, -- Ray of Frost (Frost talent)
 	},
 	[206432] =    120, -- Burst of Cold (Frost honor talent) -> Cone of Cold
+	[228358] =  44614, -- Winter's Chill (Frost) -> Flurry
 	[270232] = 190356, -- Freezing Rain (Frost talent) -> Blizzard
 	[278310] =  30455, -- Chain Reaction (Frost talent) -> Ice Lance
 })
