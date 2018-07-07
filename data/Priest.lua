@@ -24,7 +24,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 	COOLDOWN = {
 		   2050, -- Holy Word: Serenity (Holy)
 		   8092, -- Mind Blast (Shadow)
-		  32379, -- Shadow Word: Death (Shadow)
+		  32379, -- Shadow Word: Death (Shadow talent)
 		  34433, -- Shadowfiend (Discipline/Shadow)
 		  34861, -- Holy Word: Sanctify (Holy)
 		  73325, -- Leap of Faith
@@ -33,19 +33,31 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 		 123040, -- Mindbender (Discipline talent)
 		 129250, -- Power Word: Solace (Discipline talent)
 		 204883, -- Circle of Healing (Holy talent)
+		 205351, -- Shadow Word: Void (Shadow talent)
+		 205385, -- Shadow Crash (Shadow talent)
 		 205448, -- Void Bolt (Shadow)
 		 209780, -- Premonition (Discipline honor talent)
 		 246287, -- Evangelism (Discipline talent)
+		 263346, -- Dark Void (Shadow talent)
 		 265202, -- Holy Word: Salvation (Holy talent)
+		 280711, -- Dark Ascension (Shadow talent)
 		[ 15487] = 'INTERRUPT', -- Silence (Shadow)
 		AURA = {
 			HARMFUL = {
 				 14914, -- Holy Fire (Holy)
+				205369, -- Mind Bomb (Shadow talent)
 				214621, -- Schism (Discipline talent)
+				263165, -- Void Torrent (Shadow talent)
 				CROWD_CTRL = {
-					[  8122] = 'DISORIENT', -- Psychic Scream
 					[200196] = 'INCAPACITATE', -- Holy Word: Chastise
-					[200200] = 'STUN', -- Holy Word: Chastise (Holy talent)
+					DISORIENT = {
+						  8122, -- Psychic Scream
+						226943, -- Mind Bomb (Shadow talent)
+					},
+					STUN = {
+						 64044, -- Psychic Horror (Shadow talent)
+						200200, -- Holy Word: Chastise (Holy talent)
+					},
 				},
 				SNARE = {
 					[204263] = 'KNOCKBACK', -- Shining Force (Discipline/Holy talent)
@@ -78,9 +90,9 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 				  47536, -- Rapture (Discipline)
 				  64843, -- Divine Hymn (Holy)
 				 200183, -- Apotheosis (Holy talent)
-				[263406] = 'INVERT_AURA', -- Surrendered to Madness (Shadow)
+				[263406] = 'INVERT_AURA', -- Surrendered to Madness (Shadow talent)
 				BURST = {
-					193223, -- Surrender to Madness (Shadow)
+					193223, -- Surrender to Madness (Shadow talent)
 					197862, -- Archangel (Discipline honor talent)
 					197871, -- Dark Archangel (Discipline honor talent)
 				},
@@ -113,7 +125,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 		},
 		HELPFUL = {
 				139, -- Renew (Holy)
-			  65081, -- Body and Soul (Discipline talent)
+			  65081, -- Body and Soul (Discipline/Shadow talent)
 			 111759, -- Levitate
 			 194384, -- Atonement (Discipline)
 			 197548, -- Strength of Soul (Discipline honor talent)
@@ -124,6 +136,7 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 		PERSONAL = {
 			  2096, -- Mind Vision
 			114255, -- Surge of Light (Holy talent)
+			124430, -- Shadowy Insight (Shadow talent)
 			193065, -- Masochism (Discipline talent)
 			194249, -- Voidform (Shadow)
 			198069, -- Power of the Dark Side (Discipline)
@@ -141,13 +154,18 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 		},
 	},
 }, { -- map aura to provider(s)
+	[   589] = { -- Shadow Word: Pain (Discipline/Shadow)
+		   589, -- Shadow Word: Pain (Discipline/Shadow)
+		263346, -- Dark Void (Shadow talent)
+	},
 	[ 41635] =  33076, -- Prayer of Mending (Holy)
 	[ 64844] =  64843, -- Divine Hymn (Holy)
-	[ 65081] =  64129, -- Body and Soul (Discipline talent)
+	[ 65081] =  64129, -- Body and Soul (Discipline/Shadow talent)
 	[ 81782] =  62618, -- Power Word: Barrier (Discipline)
 	[111759] =   1706, -- Levitate
 	[114255] = 109186, -- Surge of Light (Holy talent)
 	[121557] = 121536, -- Angelic Feather (Discipline/Holy talent)
+	[124430] = 162452, -- Shadowy Insight (Shadow talent
 	[187464] = 186263, -- Shadow Mend (Discipline/Shadow)
 	[193065] = 193063, -- Masochism (Discipline talent)
 	[194249] = 228264, -- Voidform (Shadow)
@@ -165,14 +183,16 @@ lib:__RegisterSpells('PRIEST', 80000, 1, {
 	[215769] = 215782, -- Spirit of Redemption <- Spirit of the Redeemer (Holy honor talent)
 	[215962] = 215960, -- Inspiration <- Greater Heal (Holy honor talent)
 	[219521] = 204065, -- Shadow Covenant (Discipline talent)
+	[226943] = 205369, -- Mind Bomb (Shadow talent)
 	[232707] = 197268, -- Ray of Hope (Holy honor talent)
-	[263406] = 193223, -- Surrendered to Madness <- Surrender to Madness (Shadow)
+	[263406] = 193223, -- Surrendered to Madness <- Surrender to Madness (Shadow talent)
 }, { -- map aura(s) to modified spell(s)
-	[ 65081] = { -- Body and Soul (Discipline talent)
-		   17, -- Power Word: Shield
-		73325, -- Leap of Faith
+	[ 65081] = { -- Body and Soul (Discipline/Shadow talent)
+		   17, -- Power Word: Shield (Discipline/Shadow)
+		73325, -- Leap of Faith (Discipline only)
 	},
 	[114255] =   2061, -- Surge of Light (Holy talent) -> Flash Heal
+	[124430] =   8092, -- Shadowy Insight (Shadow talent -> Mind Blast
 	[193065] = 186263, -- Masochism (Discipline talent) -> Shadow Mend
 	[194249] = 194249, -- Voidform (Shadow)
 	[194384] = { -- Atonement (Discipline)
