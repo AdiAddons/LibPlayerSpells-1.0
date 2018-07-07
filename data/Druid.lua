@@ -65,6 +65,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 					},
 					STUN = {
 						  5211, -- Mighty Bash (talent)
+						163505, -- Rake (Feral)
 						202244, -- Overrun (Guardian honor talent)
 						203123, -- Maim (Feral)
 					},
@@ -214,6 +215,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[155777] = 155675, -- Rejuvenation (Germination) <- Germination (Restoration talent)
 	[158792] =  80313, -- Pulverize (Guardian talent)
 	[157982] =    740, -- Tranquility (Restoration)
+	[163505] = 231052, -- Rake <- Rake (Rank 2) (Feral)
 	[164545] = { -- Solar Empowerment
 		197626, -- Starsurge (from Balance Affinity)
 		279708, -- Empowerments (Balance)
@@ -288,6 +290,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		202028, -- Brutal Slash (Feral talent)
 	},
 	[155777] =    774, -- Rejuvenation (Germination) (Restoration talent) -> Rejuvenation
+	[163505] =   1822, -- Rake (Feral)
 	[164545] = { -- Solar Empowerment
 		190984, -- Solar Wrath (Balance)
 		197629, -- Solar Wrath (from Balance Affinity)
