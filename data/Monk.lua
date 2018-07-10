@@ -161,7 +161,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 	[123725] = 115181, -- Breath of Fire (Brewmaster)
 	[125174] = 122470, -- Touch of Karma (Windwalker)
 	[137639] = 221771, -- Storm, Earth, and Fire (Windwalker)
-	[191840] = 191837, -- Essence Font (Mistweaver)
+	[191840] = 231633, -- Essence Font <- Essense Font (Rank 2) (Mistweaver)
 	[195630] = 117906, -- Elusive Brawler (Brewmaster) <- Mastery: Elusive Brawler
 	[196608] = 196607, -- Eye of the Tiger (Brewmaster talent)
 	[196727] = 132578, -- Provoke (Brewmaster talent) <- Invoke Niuzao, the Black Ox -- BUG: not in the spellbook
@@ -191,6 +191,7 @@ lib:__RegisterSpells('MONK', 80000, 1, {
 	},
 	[116768] = 100784, -- Blackout Kick! (Windwalker) -> Blackout Kick
 	[118635] = 115546, -- Provoke (Brewmaster talent)
+	[191840] = 191837, -- Essence Font (Mistweaver)
 	[195630] = 205523, -- Elusive Brawler (Brewmaster) -> Blackout Strike
 	[196608] = 100780, -- Eye of the Tiger (Brewmaster talent) -> Tiger Palm
 	[196727] = 196727, -- Provoke (Niuzao) (Brewmaster talent) -- BUG: not in the spellbook
