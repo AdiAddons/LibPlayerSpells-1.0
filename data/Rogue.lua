@@ -27,6 +27,9 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 		[  1766] = 'INTERRUPT', -- Kick
 		AURA = {
 			HARMFUL = {
+				137619, -- Marked for Death (Outlaw talent)
+				196937, -- Ghostly Strike (Outlaw talent)
+				255909, -- Prey on the Weak (Outlaw talent)
 				CROWD_CTRL = {
 					DISORIENT = {
 						2094, -- Blind
@@ -46,7 +49,10 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				  2987, -- Sprint
 				 11327, -- Vanish
 				 13877, -- Blade Flurry (Outlaw)
+				 51690, -- Killing Spree (Outlaw talent)
 				114018, -- Shroud of Concealment
+				256171, -- Loaded Dice (Outlaw talent)
+				271896, -- Blade Rush (Outlaw talent)
 				BURST = {
 					13750, -- Adrenalin Rush (Outlaw)
 				},
@@ -76,10 +82,12 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 		HELPFUL = {},
 		PERSONAL = {
 			  1784, -- Stealth
+			  5171, -- Slice and Dice (Outlaw talent)
 			193356, -- Broadside (Outlaw)
 			193357, -- Ruthless Precision (Outlaw)
 			193358, -- Grand Melee (Outlaw)
 			193359, -- True Bearing (Outlaw)
+			193538, -- Alacrity (Outlaw talent)
 			195627, -- Opportunity (Outlaw)
 			199600, -- Buried Treasure (Outlaw)
 			199603, -- Skull and Crossbones (Outlaw)
@@ -92,10 +100,24 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	[193357] = 193316, -- Ruthless Precision <- Roll the Bones (Outlaw)
 	[193358] = 193316, -- Grand Melee <- Roll the Bones (Outlaw)
 	[193359] = 193316, -- True Bearing <- Roll the Bones (Outlaw)
+	[193538] = 193539, -- Alacrity (Outlaw talent)
 	[195627] = 193315, -- Opportunity <- Sinister Strike (Outlaw)
 	[199600] = 193316, -- Buried Treasure <- Roll the Bones (Outlaw)
 	[199603] = 193316, -- Skull and Crossbones <- Roll the Bones (Outlaw)
+	[255909] = 131511, -- Prey on the Weak (Outlaw talent)
+	[256171] = 256170, -- Loaded Dice (Outlaw talent)
+	[271896] = 271877, -- Blade Rush (Outlaw talent)
 }, {
 	-- map aura to modified spell(s)
+	[193538] = { -- Alacrity (Outlaw talent)
+		  2098, -- Dispatch
+		193316, -- Roll the Bones
+		199804, -- Between the Eyes
+	},
 	[195627] = 185763, -- Opportunity -> Pistol Shot (Outlaw)
+	[255909] = { -- Prey on the Weak (Outlaw talent)
+		  1833, -- Cheap Shot
+		199804, -- Between the Eyes
+	},
+	[256171] = 193316, -- Loaded Dice (Outlaw talent) -> Roll the Bones
 })
