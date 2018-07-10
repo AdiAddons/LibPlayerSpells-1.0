@@ -18,276 +18,317 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local lib = LibStub("LibPlayerSpells-1.0")
+local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells("DRUID", 70300, 2, {
+lib:__RegisterSpells('DRUID', 80000, 1, {
 	COOLDOWN = {
-		    740, -- Tranquility
 		  18562, -- Swiftmend
-		  20484, -- Rebirth (battle res)
-		  33917, -- Mangle
-		 102383, -- Wild Charge (Moonkin)
-		 102401, -- Wild Charge (caster)
-		 102417, -- Wild Charge (travel form)
-		 108238, -- Renewal
-		 197626, -- Starsurge (from Balance Affinity talent)
-		 197721, -- Flourish
-		 202028, -- Brutal Slash
-		 202359, -- Astral Communion
-		 202767, -- New Moon (Moonkin artifact)
-		 202768, -- Half Moon (Moonkin artifact)
-		 202771, -- Full Moon (Moonkin artifact)
-		 204066, -- Lunar Beam
-		[202060] = "BURST", -- Elune's Guidance
-		DISPEL = {
-			HELPFUL = {
-				[ 2782] = "CURSE POISON", -- Remove Corruption
-				[88423] = "CURSE POISON MAGIC", -- Nature's Cure
-			},
-		},
-		INTERRUPT = {
-			 78675, -- Solar Beam
-			106839, -- Skull Bash
-		},
+		  18960, -- Teleport: Moonglade
+		  20484, -- Rebirth
+		 102401, -- Wild Charge (talent - non-shapeshifted)
+		 102417, -- Wild Charge (talent - travel)
+		 102383, -- Wild Charge (talent - moonkin)
+		 202028, -- Brutal Slash (Feral talent)
+		 202770, -- Fury of Elune (Balance talent)
+		 203651, -- Overgrowth (Restoration honor talent)
+		 204066, -- Lunar Beam (Guardian talent)
+		 205636, -- Force of Nature (Balance talent)
+		 274281, -- New Moon (Balance talent)
+		 274282, -- Half Moon (Balance talent)
+		[108238] = 'SURVIVAL', -- Renewal (Feral/Restoration talent)
 		AURA = {
 			HARMFUL = {
-				  50259, -- Dazed
-				  81261, -- Solar Beam
-				 192090, -- Thrash (bear)
+				  81261, -- Solar Beam (Balance)
 				 106830, -- Thrash (cat)
-				 205644, -- Force of Nature
-				 210723, -- Ashamane's Frenzy (Feral artifact)
-				 214998, -- Roar of the Crowd (Guardian artifact)
-				[206891] = "UNIQUE_AURA", -- Intimidated (PvP)
+				 164812, -- Moonfire (Guardian)
+				 192090, -- Thrash (bear)
+				 206891, -- Intimidated (Guardian honor talent)
+				 209749, -- Faerie Swarm (Balance honor talent)
+				 274838, -- Feral Frenzy (Feral talent)
+				[201664] = 'SURVIVAL', -- Demoralizing Roar (Guardian honor talent)
 				CROWD_CTRL = {
-					[    99] = "INCAPACITATE", -- Incapacitating Roar (incapacitate)
-					[  5211] = "STUN", -- Mighty Bash (stun)
-					[  6795] = "TAUNT", -- Growl (taunt)
-					[236748] = "DISORIENT", -- Intimidating Roar (disorient)
+					[  6795] = 'TAUNT', -- Growl
+					DISORIENT = {
+						209753, -- Cyclone (Balance/Restoration honor talent)
+						236748, -- Intimidating Roar (Guardian talent)
+					},
+					INCAPACITATE = {
+						    99, -- Incapacitating Roar (Guardian)
+						  2637, -- Hibernate -- TODO: category
+						236025, -- Enraged Maim (Feral honor talent)
+					},
 					ROOT = {
-						 45334, -- Immobilized (root)
-						102359, -- Mass Entaglement (root)
+						   339, -- Entangling Roots
+						 45334, -- Immobilized (Guardian talent - bear)
+						102359, -- Mass Entanglement (talent)
+						235963, -- Entangling Roots (Feral honor talent)
+					},
+					STUN = {
+						  5211, -- Mighty Bash (talent)
+						163505, -- Rake (Feral)
+						202244, -- Overrun (Guardian honor talent)
+						203123, -- Maim (Feral)
 					},
 				},
 				SNARE = {
-					 61391, -- Typhoon (slow) (knockback)
-					127797, -- Ursol's Vortex (slow) (knockback)
-					214995, -- Bloody Paws (slow) (Guardian artifact)
-				},
+					 50259, -- Dazed (talent - cat)
+					 61391, -- Typhoon (talent)
+					127797, -- Ursol's Vortex (Restoration)
+				}
 			},
 			HELPFUL = {
-				 48438, -- Wild Growth
-				 77761, -- Stampeding Roar (bear)
-				 77764, -- Stampeding Roar (cat)
-				 29166, -- Innervate
-				102342, -- Ironbark
-				102351, -- Cenarion Ward
-				240670, -- Fury of Ashamane (Feral artifact)
+				  29166, -- Innervate (Balance/Restoration)
+				  48438, -- Wild Growth
+				  77761, -- Stampeding Roar (Guardian)
+				  77764, -- Stampeding Roar (Feral)
+				 102351, -- Cenarion Ward (Restoration talent)
+				 102352, -- Cenarion Ward (Restoration talent - HoT)
+				 157982, -- Tranquility (Restoration)
+				 203554, -- Focused Growth (Restoration honor talent)
+				 236696, -- Thorns (Balance/Feral/Restoration honor talent)
+				[102342] = 'SURVIVAL', -- Ironbark (Balance)
 			},
 			PERSONAL = {
 				  1850, -- Dash
-				  5215, -- Prowl
+				  5215, -- Prowl (Guardian)
 				 22842, -- Frenzied Regeneration
-				102558, -- Incarnation: Guardian of Ursoc
-				114108, -- Soul of the Forest
-				137452, -- Displacer Beast
-				155835, -- Bristling Fur
+				 93622, -- Gore (Guardian)
+				102416, -- Wild Charge (talent - aquatic)
+				114108, -- Soul of the Forest (Restoration talent)
 				164545, -- Solar Empowerment
 				164547, -- Lunar Empowerment
-				201671, -- Gory Fur (Guardian artifact)
-				202737, -- Blessing of Elune
-				202739, -- Blessing of An'she
-				210583, -- Ashamane's Energy (Feral artifact)
-				202425, -- Warrior of Elune
-				202770, -- Fury of Elune
+				197721, -- Flourish (Restoration talent)
+				202425, -- Warrior of Elune (Balance talent)
+				203975, -- Earthwarden (Guardian talent)
+				213680, -- Guardian of Elune (Guardian talent)
+				234084, -- Moon and Stars (Balance honor talent)
+				236185, -- Master Shapeshifter (Guardian honor talent)
+				252071, -- Jungle Stalker (Feral talent)
+				252216, -- Tiger Dash (Feral/Guardian/Restoration talent)
 				BURST = {
-					  5217, -- Tiger's Fury
-					106951, -- Berserk
-					102543, -- Incarnation: King of the Jungle
-					102560, -- Incarnation: Chosen of Elune
-					117679, -- Incarnation: Tree of Life
-					194223, -- Celestial Alignment
-					210649, -- Feral Instinct (Feral artifact)
+					102543, -- Incarnation: King of the Jungle (Feral talent)
+					102560, -- Incarnation: Chosen of Elune (Balance talent)
+					106951, -- Berserker (Feral)
+					117679, -- Incarnation: Tree of Life (Restoration talent)
+					194223, -- Celestial Alignment (Balance)
+				},
+				POWER_REGEN = {
+					 155835, -- Bristling Fur (Guardian talent)
+					[  5217] = 'BURST', -- Tiger's Fury
 				},
 				SURVIVAL = {
-					 22812, -- Barkskin
-					 61336, -- Survival Instincts
-					158792, -- Pulverize
-					200851, -- Rage of the Sleeper (Guardian artifact)
+					 22812, -- Barkskin (Balance/Guardian)
+					 61336, -- Survival Instincts (Feral/Guardian)
+					102558, -- Incarnation: Guardian of Ursoc (Guardian talent)
 				},
 			},
+		},
+		DISPEL = {
+			HARMFUL = {
+				[2908] = 'ENRAGE', -- Soothe (Balance/Feral/Restoration)
+			},
+			HELPFUL = {
+				[ 2782] = 'CURSE POISON', -- Remove Corruption (Balance/Feral/Guardian)
+				[88423] = 'CURSE MAGIC POISON', -- Nature's Cure (Restoration)
+			},
+		},
+		INTERRUPT = {
+			 78675, -- Solar Beam (Balance)
+			106839, -- Skull Bash (Feral/Guardian)
+		},
+		KNOCKBACK = {
+			132469, -- Typhoon (Guardian talent)
+			202246, -- Overrun (Guardian honor talent)
+		},
+		POWER_REGEN = {
+			33917, -- Mangle (Guardian)
+			77758, -- Thrash (bear)
 		},
 	},
 	AURA = {
 		HARMFUL = {
-			   1079, -- Rip
-			 155625, -- Moonfire (from Lunar Inspiration)
-			 155722, -- Rake
-			 164812, -- Moonfire
-			 164815, -- Sunfire
-			 197637, -- Stellar Empowerment
-			 202347, -- Stellar Flare
-			 240606, -- Circadian Invocation (Arcane) (Balance artifact)
-			 240607, -- Circadian Invocation (Nature) (Balance artifact)
-			[ 58180] = "SNARE", -- Infected Wounds (slow)
-			CROWD_CTRL = {
-				[339] = "ROOT", -- Entagling Roots (root)
-				STUN = {
-					163505, -- Rake (stun)
-					203123, -- Maim (stun)
-				},
+			  1079, -- Rip
+			155722, -- Rake
+			164815, -- Sunfire
+			200947, -- Encroaching Vines (Restoration honor talent)
+			202347, -- Stellar Flare (Balance talent)
+			236021, -- Ferocious Wound (Feral honor talent)
+			SNARE = {
+				58180, -- Infected Wounds (Feral)
 			},
 		},
 		HELPFUL = {
 			   774, -- Rejuvenation
 			  8936, -- Regrowth
-			 33763, -- Lifebloom
-			155777, -- Rejuvenation (Germination)
-			200389, -- Cultivation
-			207386, -- Spring Blossoms
+			 33763, -- Lifebloom (Restoration)
+			155777, -- Rejuvenation (Germination) (Restoration talent)
+			200389, -- Cultivation (Restoration talent)
+			203407, -- Revitalize (Restoration honor talent)
+			207386, -- Spring Blossoms (Restoration talent)
+			209746, -- Moonkin Aura (Balance honor talent)
 		},
 		PERSONAL = {
-			  16870, -- Clearcasting (Restoration)
-			  52610, -- Savage Roar
-			  69369, -- Predatory Swiftness
-			  93622, -- Mangle!
-			 135700, -- Clearcasting (Feral)
-			 145152, -- Bloodtalons
-			 157228, -- Owlkin Frenzy
-			 189877, -- Power of the Archdruid (Restoration artifact)
-			 213680, -- Guardian of Elune
-			 213708, -- Galactic Guardian
-			 239952, -- Wax and Wane (Balance artifact)
-			[192081] = "SURVIVAL", -- Ironfur
+			 16870, -- Clearcasting (Restoration)
+			 52610, -- Savage Roar (Feral talent)
+			 69369, -- Predatory Swiftness (Feral)
+			135700, -- Clearcasting (Feral)
+			145152, -- Bloodtalons (Feral talent)
+			158792, -- Pulverize (Guardian talent)
+			191034, -- Starfall (Balance)
+			202461, -- Stellar Drift (Balance talent)
+			207640, -- Abundance (Restoration talent)
+			209731, -- Protector of the Grove (Balance/Feral honor talent)
+			213708, -- Galactic Guardian (Guardian talent)
+			236187, -- Master Shapeshifter (Guardian honor talent)
+			279709, -- Starfond (Balance talent)
+			279943, -- Sharpened Claws (Guardian honor talent)
+			SURVIVAL = {
+				192081, -- Ironfur
+			},
 		},
 	},
 }, {
 	-- map aura to provider(s)
-	[ 16870] = 113043, -- Clearcasting (Restoration) <- Omen of Clarity
-	[ 45334] = 102401, -- Immobilized (root) <- Wild Charge
-	[ 50259] = 102401, -- Dazed <- Wild Charge
-	[ 58180] = 48484, -- Infected Wounds (slow)
-	[ 61391] = 132469, -- Typhoon (slow) (knockback)
-	[ 69369] = 16974, -- Predatory Swiftness
-	[ 81261] = 78675, -- Solar Beam
-	[ 93622] = 210706, -- Mangle! <- Gore
-	[114108] = 158478, -- Soul of the Forest
-	[117679] = 33891, -- Incarnation: Tree of Life
-	[127797] = 102793, -- Ursol's Vortex (slow) (knockback)
-	[135700] = 16864, -- Clearcasting (Feral) <- Omen of Clarity
-	[137452] = 102280, -- Displacer Beast
-	[145152] = 155672, -- Bloodtalons
-	[155625] = 155580, -- Moonfire <- Lunar Inspiration
-	[155722] = { -- Rake
-		  1822, -- Rake (Feral)
-		202155, -- Feral Affinity (Guardian)
-		202157, -- Feral Affinity (Balance)
+	[  1079] = {
+		  1079, -- Rip
+		203242, -- Rip and Tear (Feral honor talent)
 	},
-	[155777] = 155675, -- Rejuvenation (Germination) <- Germination
-	[157228] = 231042, -- Owlkin Frenzy <- Moonkin Form (Rank 2)
-	[158792] = 80313, -- Pulverize
-	[163505] = 1822, -- Rake (stun)
+	[ 16870] = 113043, -- Clearcasting <- Omen of Clarity (Restoration)
+	[ 45334] = 102401, -- Immobilized <- Wild Charge (talent - bear)
+	[ 50259] = 102401, -- Dazed <- Wild Charge (talent - cat)
+	[ 58180] =  48484, -- Infected Wounds (Feral)
+	[ 61391] = 132469, -- Typhoon (Guardian talent)
+	[ 69369] =  16974, -- Predatory Swiftness (Feral)
+	[ 81261] =  78675, -- Solar Beam (Balance)
+	[ 93622] = 210706, -- Gore (Guardian)
+	[102352] = 102351, -- Cenarion Ward (Restoration talent - HoT)
+	[102416] = 102401, -- Wild Charge (talent - aquatic)
+	[114108] = 158478, -- Soul of the Forest (Restoration talent)
+	[117679] =  33891, -- Incarnation: Tree of Life (Restoration talent)
+	[127797] = 102793, -- Ursol's Vortex (Restoration)
+	[135700] =  16864, -- Clearcasting <- Omen of Clarity (Feral)
+	[145152] = 155672, -- Bloodtalons (Feral talent)
+	[155722] = { -- Rake
+		  1822, -- Rake
+		203242, -- Rip and Tear (Feral honor talent)
+	},
+	[155777] = 155675, -- Rejuvenation (Germination) <- Germination (Restoration talent)
+	[158792] =  80313, -- Pulverize (Guardian talent)
+	[157982] =    740, -- Tranquility (Restoration)
+	[163505] = 231052, -- Rake <- Rake (Rank 2) (Feral)
 	[164545] = { -- Solar Empowerment
-		 78674, -- Starsurge (Balance)
-		197626, -- Starsurge (from Balance Affinity talent)
+		197626, -- Starsurge (from Balance Affinity)
+		279708, -- Empowerments (Balance)
 	},
 	[164547] = { -- Lunar Empowerment
-		 78674, -- Starsurge (Balance)
-		197626, -- Starsurge (from Balance Affinity talent)
+		197626, -- Starsurge (from Balance Affinity)
+		279708, -- Empowerments (Balance)
 	},
-	[164812] = { -- Moonfire
-		  8921, -- Moonfire
-		155625, -- Moonfire (from Lunar Inspiration)
-	},
+	[164812] =   8921, -- Moonfire (Guardian)
 	[164815] = { -- Sunfire
-		 93402, -- Sunfire (Balance)
-		197488, -- Sunfire (from Balance Affinity talent)
+		 93402, -- Sunfire (Balance/Resoration)
+		197630, -- Sunfire (from Balance Affinity)
 	},
-	[189877] = 189870, -- Power of the Archdruid (Restoration artifact)
-	[192090] = 77758, -- Thrash
-	[197637] = 191034, -- Stellar Empowerment <- Starfall
-	[200389] = 200390, -- Cultivation
-	[201671] = 200854, -- Gory Fur (Guardian artifact)
-	[202737] = 202360, -- Blessing of Elune <- Blessing of the Ancients
-	[202739] = 202360, -- Blessing of An'she <- Blessing of the Ancients
-	[203123] = 22570, -- Maim (stun)
-	[205644] = 205636, -- Force of Nature
-	[206891] = 207017, -- Intimidated <- Alpha Challenge (Guardian Honor Talent)
-	[207386] = 207385, -- Spring Blossoms
-	[210583] = 210579, -- Ashamane's Energy (Feral artifact)
-	[210649] = 210631, -- Feral Instinct (Feral artifact)
-	[210723] = 210722, -- Ashamane's Frenzy (Feral artifact)
-	[213680] = 155578, -- Guardian of Elune
-	[213708] = 203964, -- Galactic Guardian
-	[214995] = 200515, -- Bloody Paws (slow) (Guardian artifact)
-	[214998] = 214996, -- Roar of the Crowd (Guardian artifact)
-	[239952] = 238083, -- Wax and Wane (Balance artifact)
-	[240606] = 238119, -- Circadian Invocation (Arcane) (Balance artifact)
-	[240607] = 238119, -- Circadian Invocation (Nature) (Balance artifact)
-	[240670] = 238084, -- Fury of Ashamane (Feral artifact)
+	[192090] =  77758, -- Thrash (bear)
+	[200389] = 200390, -- Cultivation (Restoration talent)
+	[200947] = 200931, -- Encroaching Vines (Restoration honor talent)
+	[202244] = 202246, -- Overrun (Guardian honor talent)
+	[202461] = 202354, -- Stellar Drift (Balance talent)
+	[203123] =  22570, -- Maim (Feral)
+	[203407] = 203399, -- Revitalize (Restoration honor talent)
+	[203554] = 203553, -- Focused Growth (Restoration honor talent)
+	[203975] = 203974, -- Earthwarden (Guardian talent)
+	[206891] = 207017, -- Intimidated <- Alpha Chalenge (Guardian honor talent)
+	[207386] = 207385, -- Spring Blossoms (Restoration talent)
+	[207640] = 207383, -- Abundance (Restoration talent)
+	[209731] = 209730, -- Protector of the Grove (Balance/Feral honor talent)
+	[209746] = 209740, -- Moonkin Aura (Balance honor talent)
+	[213680] = 155578, -- Guardian of Elune (Guardian talent)
+	[213708] = 203964, -- Galactic Guardian (Guardian talent)
+	[234084] = 233750, -- Moon and Stars (Balance honor talent)
+	[236021] = 236020, -- Ferocious Wound (Feral honor talent)
+	[236025] = 236026, -- Enraged Maim (Feral honor talent)
+	[236185] = 236144, -- Master Shapeshifter (Guardian honor talent)
+	[236187] = 236144, -- Master Shapeshifter (Guardian honor talent)
+	[252071] = 102543, -- Jungle Stalker <- Incarnation: King of the Jungle (Feral talent)
+	[274838] = 274837, -- Feral Frenzy (Feral talent)
+	[279709] = 202345, -- Starfond (Balance talent)
+	[279943] = 202110, -- Sharpened Claws (Guardian honor talent)
 }, {
 	-- map aura to modified spell(s)
-	[ 16870] = 8936, -- Clearcasting (Restoration) -> Regrowth
-	[ 45334] = 16979, -- Immobilized (root) -> Wild Charge (bear)
-	[ 50259] = 49376, -- Dazed -> Wild Charge (cat)
-	[ 58180] = 1822, -- Infected Wounds (slow) -> Rake
-	[ 69369] = { -- Predatory Swiftness
-		  339, -- Entagling Roots
-		 5185, -- Healing Touch
+	[ 16870] =   8936, -- Clearcasting (Restoration) -> Regrowth
+	[ 45334] =  16979, -- Immobilized -> Wild Charge (talent - bear)
+	[ 50259] =  49376, -- Dazed -> Wild Charge (talent - cat)
+	[ 58180] =   1822, -- Infected Wounds -> Rake (Feral)
+	[ 69369] = { -- Predatory Swiftness (Feral)
+		 339, -- Entangling Roots
+		8936, -- Regrowth
 	},
-	[ 93622] = 33917, -- Mangle! -> Mangle
-	[114108] = 18562, -- Soul of the Forest -> Swiftmend
+	[ 93622] =  33917, -- Gore (Guardian) -> Mangle
+	[102416] = 102416, -- Wild Charge (talent - aquatic)
+	[114108] = { -- Soul of the Forest (Restoration talent)
+		  774, -- Rejuvenation
+		 8936, -- Regrowth
+		48438, -- Wild Growth
+	},
 	[135700] = { -- Clearcasting (Feral)
 		  5221, -- Shred
 		106785, -- Swipe
 		106830, -- Thrash
+		202028, -- Brutal Slash (Feral talent)
 	},
-	[145152] = 5185, -- Bloodtalons -> Healing Touch
-	[155625] = { -- Moonfire (from Lunar Inspiration)
-		  8921, -- Moonfire
-		155625, -- Moonfire (from Lunar Inspiration)
+	[145152] = { -- Bloodtalons (Feral talent)
+		  1079, -- Rip
+		  1822, -- Rake
+		  5221, -- Shred
+		 22568, -- Ferocious Bite
+		 22570, -- Maim
+		 33917, -- Mangle
+		 77758, -- Thrash (bear)
+		106785, -- Swipe
+		106830, -- Thrash (cat)
+		202028, -- Brutal Slash (Feral talent)
 	},
-	[155722] = 1822, -- Rake
-	[155777] = 774, -- Rejuvenation (Germination) -> Rejuvenation
-	[157228] = 194153, -- Owlkin Frenzy -> Lunar Strike
+	[155777] =    774, -- Rejuvenation (Germination) (Restoration talent) -> Rejuvenation
+	[163505] =   1822, -- Rake (Feral)
 	[164545] = { -- Solar Empowerment
-		  5176, -- Solar Wrath (Restoration)
 		190984, -- Solar Wrath (Balance)
-		197629, -- Solar Wrath (from Balance Affinity talent)
+		197629, -- Solar Wrath (from Balance Affinity)
 	},
 	[164547] = { -- Lunar Empowerment
 		194153, -- Lunar Strike (Balance)
-		197628, -- Lunar Strike (from Balance Affinity talent)
+		197628, -- Lunar Strike (from Balance Affinity)
 	},
-	[164815] = {
-		 93402, -- Sunfire (Balance)
-		197630, -- Sunfire (from Balance Affinity talent)
+	[200389] =    774, -- Cultivation (Restoration talent) -> Rejuvenation
+	[200947] =    339, -- Encroaching Vines (Restoration honor talent) -> Entangling Roots
+	[202425] = 194153, -- Warrior of Elune (Balance talent) -> Lunar Strike
+	[202461] = 191034, -- Stellar Drift (Balance talent) -> Starfall
+	[203407] =    774, -- Revitalize (Restoration honor talent) -> Rejuventation
+	[203554] =  33763, -- Focused Growth (Restoration honor talent) -> Lifebloom
+	[203975] = { -- Earthwarden (Guardian talent)
+		 77758, -- Thrash (bear)
+		106830, -- Thrash (cat)
 	},
-	[189877] = { -- Power of the Archdruid (Restoration artifact)
-		 774, -- Rejuvenation
-		8936, -- Regrowth
+	[207386] = 145205, -- Spring Blossoms (Restoration talent) -> Efflorescence
+	[207640] =   8936, -- Abundance (Restoration talent) -> Regrowth
+	[209731] =   8936, -- Protector of the Grove (Balance/Feral honor talent) -> Regrowth
+	[209746] =  78674, -- Moonkin Aura (Balance honor talent) -> Starsurge
+	[213680] = { -- Guardian of Elune (Guardian talent)
+		 22842, -- Frenzied Regeneration
+		192081, -- Ironfur
 	},
-	[200389] = 774, -- Cultivation -> Rejuvenation
-	[201671] = 192081, -- Gory Fur (Guardian artifact) - > Ironfur
-	[202425] = 194153, -- Warrior of Elune -> Lunar Strike
-	[207386] = 145205, -- Spring Blossoms -> Efflorescence
-	[210583] = 5217, -- Ashamane's Energy (Feral artifact) -> Tiger's Fury
-	[210649] = { -- Feral Instinct (Feral artifact)
-		106951, -- Berserk
-		102543, -- Incarnation: King of the Jungle
+	[213708] =   8921, -- Galactic Guardian (Guardian talent) -> Moonfire
+	[234084] = { -- Moon and Stars (Balance honor talent)
+		102560, -- Incarnation: Chosen of Elune
+		194223, -- Celestial Alignment
 	},
-	[213680] = 33917, -- Guardian of Elune -> Mangle
-	[213708] = 8921, -- Galactic Guardian -> Moonfire
-	[214995] = 77758, -- Bloody Paws (slow) (Guardian artifact) -> Thrash
-	[214998] = { -- Roar of the Crowd (Guardian artifact)
-		77761, -- Stampeding Roar (bear)
-		77764, -- Stampeding Roar (cat)
+	[236021] =  22568, -- Ferocious Wound (Feral honor talent) -> Ferocious Bite
+	[236185] =  18562, -- Master Shapeshifter (Guardian honor talent) -> Swiftmend
+	[236187] = 197625, -- Master Shapeshifter (Guardian honor talent) -> Moonkin Form
+	[252071] = 102547, -- Jungle Stalker (Feral talent) -> Prowl
+	[279709] = { -- Starfond (Balance talent)
+		 78674, -- Starsurge
+		191034, -- Starfall
 	},
-	[239952] = { -- Wax and Wane (Balance artifact)
-		 8921, -- Moonfire
-		93402, -- Sunfire
-	},
-	[240606] = 8921, -- Circadian Invocation (Arcane) (Balance artifact) -> Moonfire
-	[240607] = 93402, -- Circadian Invocation (Nature) (Balance artifact) -> Sunfire
-	[240670] = 5217, -- Fury of Ashamane (Feral artifact) -> Tiger's Fury
+	[279943] =   6807, -- Sharpened Claws (Guardian honor talent) -> Maul
 })
