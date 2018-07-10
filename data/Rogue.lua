@@ -25,10 +25,14 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 		   1725, -- Distract
 		 195457, -- Grappling Hook (Outlaw)
 		[  1766] = 'INTERRUPT', -- Kick
+		[248744] = 'DISPEL HARMFUL ENRAGE', -- Shiv (honor talent)
 		AURA = {
 			HARMFUL = {
 				137619, -- Marked for Death (Outlaw talent)
 				196937, -- Ghostly Strike (Outlaw talent)
+				198529, -- Plunder Armor (Outlaw honor talent)
+				207777, -- Dismantle (Outlaw honor talent)
+				212150, -- Cheap Tricks (Outlaw honor talent)
 				255909, -- Prey on the Weak (Outlaw talent)
 				CROWD_CTRL = {
 					DISORIENT = {
@@ -41,9 +45,17 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 						199804, -- Between the Eyes (Outlaw)
 					},
 				},
+				SNARE = {
+					248744, -- Shiv (honor talent)
+				},
 			},
 			HELPFUL = {
-				57934, -- Tricks of the Trade
+				 57934, -- Tricks of the Trade
+				212183, -- Smoke Bomb (honor talent)
+				212198, -- Crimson Vial (Outlaw honor talent)
+				BURST = {
+					221630, -- Tricks of the Trade (Outlaw honor talent)
+				},
 			},
 			PERSONAL = {
 				  2987, -- Sprint
@@ -51,7 +63,10 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				 13877, -- Blade Flurry (Outlaw)
 				 51690, -- Killing Spree (Outlaw talent)
 				114018, -- Shroud of Concealment
+				197003, -- Maneuverability (Outlaw honor talent)
+				213995, -- Cheap Tricks (Outlaw honor talent)
 				256171, -- Loaded Dice (Outlaw talent)
+				269513, -- Death from Above (honor talent)
 				271896, -- Blade Rush (Outlaw talent)
 				BURST = {
 					13750, -- Adrenalin Rush (Outlaw)
@@ -79,7 +94,10 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				185763, -- Pistol Shot (Outlaw)
 			},
 		},
-		HELPFUL = {},
+		HELPFUL = {
+			198368, -- Take Your Cut (Outlaw honor talent)
+			209754, -- Boarding Party (Outlaw honor talent)
+		},
 		PERSONAL = {
 			  1784, -- Stealth
 			  5171, -- Slice and Dice (Outlaw talent)
@@ -102,8 +120,16 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	[193359] = 193316, -- True Bearing <- Roll the Bones (Outlaw)
 	[193538] = 193539, -- Alacrity (Outlaw talent)
 	[195627] = 193315, -- Opportunity <- Sinister Strike (Outlaw)
+	[197003] = 197000, -- Maneuverability (Outlaw honor talent)
+	[198368] = 198265, -- Take Your Cut (Outlaw honor talent)
 	[199600] = 193316, -- Buried Treasure <- Roll the Bones (Outlaw)
 	[199603] = 193316, -- Skull and Crossbones <- Roll the Bones (Outlaw)
+	[209754] = 209752, -- Boarding Party (Outlaw honor talent)
+	[212183] = 212182, -- Smoke Bomb (honor talent)
+	[212150] = 212035, -- Cheap Tricks (Outlaw honor talent)
+	[212198] = 212210, -- Crimson Vial <- Drink Up Me Hearties (Outlaw honor talent)
+	[213995] = 212035, -- Cheap Tricks (Outlaw honor talent)
+	[221630] = 221622, -- Tricks of the Trade <- Thick as Thieves (Outlaw honor talent)
 	[255909] = 131511, -- Prey on the Weak (Outlaw talent)
 	[256171] = 256170, -- Loaded Dice (Outlaw talent)
 	[271896] = 271877, -- Blade Rush (Outlaw talent)
@@ -115,6 +141,16 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 		199804, -- Between the Eyes
 	},
 	[195627] = 185763, -- Opportunity -> Pistol Shot (Outlaw)
+	[197003] =   2983, -- Maneuverability (Outlaw honor talent) -> Sprint
+	[198368] = { -- Take Your Cut (Outlaw honor talent)
+		  5171, -- Slice and Dice (Outlaw talent)
+		193316, -- Roll the Bones
+	},
+	[209754] = 199804, -- Boarding Party (Outlaw honor talent) -> Between the Eyes
+	[212150] =   2094, -- Cheap Tricks (Outlaw honor talent) -> Blind
+	[212198] = 212205, -- Crimson Vial -> Create: Crimson Vial (Outlaw honor talent)
+	[213995] = 199804, -- Cheap Tricks (Outlaw honor talent) -> Between the Eyes
+	[221630] =  57934, -- Tricks of the Trade (Outlaw honor talent)
 	[255909] = { -- Prey on the Weak (Outlaw talent)
 		  1833, -- Cheap Shot
 		199804, -- Between the Eyes
