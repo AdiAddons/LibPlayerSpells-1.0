@@ -33,6 +33,7 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				  1330, -- Garrote - Silence (Assassination)
 				154953, -- Internal Bleeding (Assassination)
 				196937, -- Ghostly Strike (Outlaw talent)
+				197091, -- Neurotoxin (Assassination honor talent)
 				198529, -- Plunder Armor (Outlaw honor talent)
 				207777, -- Dismantle (Outlaw honor talent)
 				212150, -- Cheap Tricks (Outlaw honor talent)
@@ -67,14 +68,13 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				},
 			},
 			PERSONAL = {
-				  2983, -- Sprint (Assassination)
-				  2987, -- Sprint (Outlaw)
+				  2983, -- Sprint
 				 11327, -- Vanish
 				 13877, -- Blade Flurry (Outlaw)
 				 36554, -- Shadowstep (Assassination)
 				 51690, -- Killing Spree (Outlaw talent)
 				114018, -- Shroud of Concealment
-				197003, -- Maneuverability (Outlaw honor talent)
+				197003, -- Maneuverability (Assassination/Outlaw honor talent)
 				213995, -- Cheap Tricks (Outlaw honor talent)
 				256171, -- Loaded Dice (Outlaw talent)
 				269513, -- Death from Above (honor talent)
@@ -98,6 +98,9 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 			  2818, -- Deadly Poison (Assassination)
 			  8680, -- Wound Poison (Assassination)
 			121411, -- Crimson Tempest (Assassination talent)
+			197046, -- Minor Wound Poison (Assassination honor talent)
+			197051, -- Mind-Numbing Poison (Assassination honor talent)
+			198097, -- Creeping Venom (Assassination honor talent)
 			256148, -- Iron Wire (Assassination talent)
 			CROWD_CTRL = {
 				INCAPACITATE = {
@@ -110,6 +113,7 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 			SNARE = {
 				  3409, -- Crippling Poison (Assassination)
 				185763, -- Pistol Shot (Outlaw)
+				198222, -- System Shock (Assassination honor talent)
 			},
 		},
 		HELPFUL = {
@@ -158,6 +162,11 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	[193641] = 193640, -- Elaborate Planning (Assassination talent)
 	[195627] = 193315, -- Opportunity <- Sinister Strike (Outlaw)
 	[197003] = 197000, -- Maneuverability (Outlaw honor talent)
+	[197046] = 197044, -- Minor Wound Poison <- Deadly Brew (Assassination honor talent)
+	[197051] = 197050, -- Mind-Numbing Poison (Assassination honor talent)
+	[197091] = 206328, -- Neurotoxin (Assassination honor talent)
+	[198097] = 198092, -- Creeping Venom (Assassination honor talent)
+	[198222] = 198145, -- System Shock (Assassination honor talent)
 	[198368] = 198265, -- Take Your Cut (Outlaw honor talent)
 	[199600] = 193316, -- Buried Treasure <- Roll the Bones (Outlaw)
 	[199603] = 193316, -- Skull and Crossbones <- Roll the Bones (Outlaw)
@@ -195,6 +204,10 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	},
 	[195627] = 185763, -- Opportunity -> Pistol Shot (Outlaw)
 	[197003] =   2983, -- Maneuverability (Outlaw honor talent) -> Sprint
+	[197046] =   2823, -- Minor Wound Poison (Assassination honor talent) -> Deadly Poison
+	[197051] =   2823, -- Mind-Numbing Poison (Assassination honor talent) -> Deadly Poison
+	[198097] =  32645, -- Creeping Venom (Assassination honor talent) -> Envenom
+	[198222] =  32645, -- System Shock (Assassination honor talent) -> Envenom
 	[198368] = { -- Take Your Cut (Outlaw honor talent)
 		  5171, -- Slice and Dice (Outlaw talent)
 		193316, -- Roll the Bones
