@@ -24,20 +24,23 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	COOLDOWN = {
 		   1725, -- Distract
 		 195457, -- Grappling Hook (Outlaw)
+		 200806, -- Exsanguinate (Assassination talent)
 		[  1766] = 'INTERRUPT', -- Kick
 		[248744] = 'DISPEL HARMFUL ENRAGE', -- Shiv (honor talent)
 		AURA = {
 			HARMFUL = {
 				   703, -- Garrote (Assassination)
 				  1330, -- Garrote - Silence (Assassination)
-				137619, -- Marked for Death (Outlaw talent)
+				154953, -- Internal Bleeding (Assassination)
 				196937, -- Ghostly Strike (Outlaw talent)
 				198529, -- Plunder Armor (Outlaw honor talent)
 				207777, -- Dismantle (Outlaw honor talent)
 				212150, -- Cheap Tricks (Outlaw honor talent)
-				255909, -- Prey on the Weak (Outlaw talent)
+				245389, -- Toxic Blade (Assassination talent)
+				255909, -- Prey on the Weak (Assassination/Outlaw talent)
 				BURST = {
-					79140, -- Vendetta (Assassination)
+					 79140, -- Vendetta (Assassination)
+					137619, -- Marked for Death (Assassination/Outlaw talent)
 				},
 				CROWD_CTRL = {
 					DISORIENT = {
@@ -91,9 +94,11 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
-			1943, -- Rupture (Assassination)
-			2818, -- Deadly Poison (Assassination)
-			8680, -- Wound Poison (Assassination)
+			  1943, -- Rupture (Assassination)
+			  2818, -- Deadly Poison (Assassination)
+			  8680, -- Wound Poison (Assassination)
+			121411, -- Crimson Tempest (Assassination talent)
+			256148, -- Iron Wire (Assassination talent)
 			CROWD_CTRL = {
 				INCAPACITATE = {
 					6770, -- Sap
@@ -118,14 +123,20 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 			  5171, -- Slice and Dice (Outlaw talent)
 			  8679, -- Wound Poison (Assassination)
 			 32645, -- Envenom (Assassination)
+			108211, -- Leeching Poison (Assassination talent)
+			115192, -- Subterfuge (Assassination talent)
+			121153, -- Blindside (Assassination talent)
 			193356, -- Broadside (Outlaw)
 			193357, -- Ruthless Precision (Outlaw)
 			193358, -- Grand Melee (Outlaw)
 			193359, -- True Bearing (Outlaw)
 			193538, -- Alacrity (Outlaw talent)
+			193641, -- Elaborate Planning (Assassination talent)
 			195627, -- Opportunity (Outlaw)
 			199600, -- Buried Treasure (Outlaw)
 			199603, -- Skull and Crossbones (Outlaw)
+			256735, -- Master Assassin (Assassination talent)
+			270070, -- Hidden Blades (Assassination talent)
 		},
 	},
 }, {
@@ -135,11 +146,16 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	[  3409] =   3408, -- Crippling Poison (Assassination)
 	[  8680] =   8679, -- Wound Poison (Assassination)
 	[ 11327] =   1856, -- Vanish
+	[108211] = 280716, -- Leeching Poison (Assassination talent)
+	[115192] = 108208, -- Subterfuge (Assassination talent)
+	[121153] = 111240, -- Blindside (Assassination talent)
+	[154953] = 154904, -- Internal Bleeding (Assassination)
 	[193356] = 193316, -- Broadside <- Roll the Bones (Outlaw)
 	[193357] = 193316, -- Ruthless Precision <- Roll the Bones (Outlaw)
 	[193358] = 193316, -- Grand Melee <- Roll the Bones (Outlaw)
 	[193359] = 193316, -- True Bearing <- Roll the Bones (Outlaw)
 	[193538] = 193539, -- Alacrity (Outlaw talent)
+	[193641] = 193640, -- Elaborate Planning (Assassination talent)
 	[195627] = 193315, -- Opportunity <- Sinister Strike (Outlaw)
 	[197003] = 197000, -- Maneuverability (Outlaw honor talent)
 	[198368] = 198265, -- Take Your Cut (Outlaw honor talent)
@@ -151,15 +167,31 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	[212198] = 212210, -- Crimson Vial <- Drink Up Me Hearties (Outlaw honor talent)
 	[213995] = 212035, -- Cheap Tricks (Outlaw honor talent)
 	[221630] = 221622, -- Tricks of the Trade <- Thick as Thieves (Outlaw honor talent)
-	[255909] = 131511, -- Prey on the Weak (Outlaw talent)
+	[245389] = 245388, -- Toxic Blade (Assassination talent)
+	[255909] = 131511, -- Prey on the Weak (Assassination/Outlaw talent)
+	[256148] = 196861, -- Iron Wire (Assassination talent)
 	[256171] = 256170, -- Loaded Dice (Outlaw talent)
+	[256735] = 255989, -- Master Assassin (Assassination talent)
+	[270070] = 270061, -- Hidden Blades (Assassination talent)
 	[271896] = 271877, -- Blade Rush (Outlaw talent)
 }, {
 	-- map aura to modified spell(s)
+	[108211] = { -- Leeching Poison (Assassination talent)
+		2823, -- Deadly Poison
+		8679, -- Wound Poison
+	},
+	[115192] = 115191, -- Subterfuge (Assassination talent) -> Stealth
+	[154953] =    408, -- Internal Bleeding (Assassination) -> Kidney Shot
 	[193538] = { -- Alacrity (Outlaw talent)
 		  2098, -- Dispatch
 		193316, -- Roll the Bones
 		199804, -- Between the Eyes
+	},
+	[193641] = { -- Elaborate Planning (Assassination talent)
+		   408, -- Kidney Shot
+		  1943, -- Rupture
+		 32645, -- Envenom
+		121411, -- Crimson Tempest (Assassination talent)
 	},
 	[195627] = 185763, -- Opportunity -> Pistol Shot (Outlaw)
 	[197003] =   2983, -- Maneuverability (Outlaw honor talent) -> Sprint
@@ -172,9 +204,13 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	[212198] = 212205, -- Crimson Vial -> Create: Crimson Vial (Outlaw honor talent)
 	[213995] = 199804, -- Cheap Tricks (Outlaw honor talent) -> Between the Eyes
 	[221630] =  57934, -- Tricks of the Trade (Outlaw honor talent)
-	[255909] = { -- Prey on the Weak (Outlaw talent)
+	[255909] = { -- Prey on the Weak (Assassination/Outlaw talent)
+		   408, -- Kidney Shot (Assassination)
 		  1833, -- Cheap Shot
-		199804, -- Between the Eyes
+		199804, -- Between the Eyes (Outlaw)
 	},
+	[256148] =    703, -- Iron Wire (Assassination talent) -> Garrote
 	[256171] = 193316, -- Loaded Dice (Outlaw talent) -> Roll the Bones
+	[256735] =   1784, -- Master Assassin (Assassination talent) -> Stealth
+	[270070] =  51723, -- Hidden Blades (Assassination talent) -> Fan of Knives
 })
