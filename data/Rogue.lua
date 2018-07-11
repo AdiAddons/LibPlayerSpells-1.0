@@ -28,12 +28,17 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 		[248744] = 'DISPEL HARMFUL ENRAGE', -- Shiv (honor talent)
 		AURA = {
 			HARMFUL = {
+				   703, -- Garrote (Assassination)
+				  1330, -- Garrote - Silence (Assassination)
 				137619, -- Marked for Death (Outlaw talent)
 				196937, -- Ghostly Strike (Outlaw talent)
 				198529, -- Plunder Armor (Outlaw honor talent)
 				207777, -- Dismantle (Outlaw honor talent)
 				212150, -- Cheap Tricks (Outlaw honor talent)
 				255909, -- Prey on the Weak (Outlaw talent)
+				BURST = {
+					79140, -- Vendetta (Assassination)
+				},
 				CROWD_CTRL = {
 					DISORIENT = {
 						2094, -- Blind
@@ -42,6 +47,7 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 						1766, -- Gouge (Outlaw)
 					},
 					STUN = {
+						   408, -- Kidney Shot (Assassination)
 						199804, -- Between the Eyes (Outlaw)
 					},
 				},
@@ -58,9 +64,11 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				},
 			},
 			PERSONAL = {
-				  2987, -- Sprint
+				  2983, -- Sprint (Assassination)
+				  2987, -- Sprint (Outlaw)
 				 11327, -- Vanish
 				 13877, -- Blade Flurry (Outlaw)
+				 36554, -- Shadowstep (Assassination)
 				 51690, -- Killing Spree (Outlaw talent)
 				114018, -- Shroud of Concealment
 				197003, -- Maneuverability (Outlaw honor talent)
@@ -73,6 +81,7 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				},
 				SURVIVAL = {
 					  1966, -- Feint
+					  5277, -- Evasion (Assassination)
 					 31224, -- Cloak of Shadows
 					185311, -- Crimson Vial
 					199754, -- Riposte (Outlaw)
@@ -82,6 +91,9 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
+			1943, -- Rupture (Assassination)
+			2818, -- Deadly Poison (Assassination)
+			8680, -- Wound Poison (Assassination)
 			CROWD_CTRL = {
 				INCAPACITATE = {
 					6770, -- Sap
@@ -91,6 +103,7 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				},
 			},
 			SNARE = {
+				  3409, -- Crippling Poison (Assassination)
 				185763, -- Pistol Shot (Outlaw)
 			},
 		},
@@ -100,7 +113,11 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 		},
 		PERSONAL = {
 			  1784, -- Stealth
+			  2823, -- Deadly Poison (Assassination)
+			  3408, -- Crippling Poison (Assassination)
 			  5171, -- Slice and Dice (Outlaw talent)
+			  8679, -- Wound Poison (Assassination)
+			 32645, -- Envenom (Assassination)
 			193356, -- Broadside (Outlaw)
 			193357, -- Ruthless Precision (Outlaw)
 			193358, -- Grand Melee (Outlaw)
@@ -113,6 +130,10 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	},
 }, {
 	-- map aura to provider(s)
+	[  1330] =    703, -- Garrote - Silence <- Garrote (Assassination)
+	[  2818] =   2823, -- Deadly Poison (Assassination)
+	[  3409] =   3408, -- Crippling Poison (Assassination)
+	[  8680] =   8679, -- Wound Poison (Assassination)
 	[ 11327] =   1856, -- Vanish
 	[193356] = 193316, -- Broadside <- Roll the Bones (Outlaw)
 	[193357] = 193316, -- Ruthless Precision <- Roll the Bones (Outlaw)
