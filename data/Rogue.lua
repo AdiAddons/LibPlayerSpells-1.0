@@ -30,44 +30,37 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 		[248744] = 'DISPEL HARMFUL ENRAGE', -- Shiv (honor talent)
 		AURA = {
 			HARMFUL = {
-				   703, -- Garrote (Assassination)
-				  1330, -- Garrote - Silence (Assassination)
-				154953, -- Internal Bleeding (Assassination)
-				196937, -- Ghostly Strike (Outlaw talent)
-				197091, -- Neurotoxin (Assassination honor talent)
-				198529, -- Plunder Armor (Outlaw honor talent)
-				207777, -- Dismantle (Outlaw honor talent)
-				212150, -- Cheap Tricks (Outlaw honor talent)
-				245389, -- Toxic Blade (Assassination talent)
-				255909, -- Prey on the Weak (talent)
+				    703, -- Garrote (Assassination)
+				   1330, -- Garrote - Silence (Assassination)
+				 154953, -- Internal Bleeding (Assassination)
+				 196937, -- Ghostly Strike (Outlaw talent)
+				 197091, -- Neurotoxin (Assassination honor talent)
+				 198529, -- Plunder Armor (Outlaw honor talent)
+				 207777, -- Dismantle (Outlaw honor talent)
+				 212150, -- Cheap Tricks (Outlaw honor talent)
+				 245389, -- Toxic Blade (Assassination talent)
+				 255909, -- Prey on the Weak (talent)
+				 207736, -- Shadowy Duel (Subtlety honor talent)
+				[248744] = 'SNARE', -- Shiv (honor talent)
 				BURST = {
 					 79140, -- Vendetta (Assassination)
 					121471, -- Shadow Blades (Subtlety)
 					137619, -- Marked for Death (talent)
 				},
 				CROWD_CTRL = {
-					DISORIENT = {
-						2094, -- Blind
-					},
-					INCAPACITATE = {
-						1766, -- Gouge (Outlaw)
-					},
+					[1766] = 'INCAPACITATE', -- Gouge (Outlaw)
+					[2094] = 'DISORIENT', -- Blind
 					STUN = {
 						   408, -- Kidney Shot (Assassination/Subtlety)
 						199804, -- Between the Eyes (Outlaw)
 					},
 				},
-				SNARE = {
-					248744, -- Shiv (honor talent)
-				},
 			},
 			HELPFUL = {
-				 57934, -- Tricks of the Trade
-				212183, -- Smoke Bomb (honor talent)
-				212198, -- Crimson Vial (Outlaw honor talent)
-				BURST = {
-					221630, -- Tricks of the Trade (Outlaw honor talent)
-				},
+				  57934, -- Tricks of the Trade
+				 212183, -- Smoke Bomb (honor talent)
+				 212198, -- Crimson Vial (Outlaw honor talent)
+				[221630] = 'BURST', -- Tricks of the Trade (Outlaw honor talent)
 			},
 			PERSONAL = {
 				   2983, -- Sprint
@@ -78,6 +71,7 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				 114018, -- Shroud of Concealment
 				 185422, -- Shadow Dance (Subtlety)
 				 197003, -- Maneuverability (Assassination/Outlaw honor talent)
+				 213981, -- Cold Blood (Subtlety honor talent)
 				 213995, -- Cheap Tricks (Outlaw honor talent)
 				 256171, -- Loaded Dice (Outlaw talent)
 				 269513, -- Death from Above (honor talent)
@@ -109,14 +103,11 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 			197046, -- Minor Wound Poison (Assassination honor talent)
 			197051, -- Mind-Numbing Poison (Assassination honor talent)
 			198097, -- Creeping Venom (Assassination honor talent)
+			198688, -- Dagger in the Dark (Subtlety honor talent)
 			256148, -- Iron Wire (Assassination talent)
 			CROWD_CTRL = {
-				INCAPACITATE = {
-					6770, -- Sap
-				},
-				STUN = {
-					1833, -- Cheap Shot
-				},
+				[1833] = 'STUN', -- Cheap Shot
+				[6770] = 'INCAPACITATE', -- Sap
 			},
 			SNARE = {
 				  3409, -- Crippling Poison (Assassination)
@@ -147,6 +138,7 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 			193538, -- Alacrity (Outlaw/Subtlety talent)
 			193641, -- Elaborate Planning (Assassination talent)
 			195627, -- Opportunity (Outlaw)
+			199027, -- Veil of Midnight (Subtlety honor talent)
 			199600, -- Buried Treasure (Outlaw)
 			199603, -- Skull and Crossbones (Outlaw)
 			245640, -- Shuriken Combo (Subtlety)
@@ -183,6 +175,8 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	[198097] = 198092, -- Creeping Venom (Assassination honor talent)
 	[198222] = 198145, -- System Shock (Assassination honor talent)
 	[198368] = 198265, -- Take Your Cut (Outlaw honor talent)
+	[198688] = 198675, -- Dagger in the Dark (Subtlety honor talent)
+	[199027] = 198952, -- Veil of Midnight (Subtlety honor talent)
 	[199600] = 193316, -- Buried Treasure <- Roll the Bones (Outlaw)
 	[199603] = 193316, -- Skull and Crossbones <- Roll the Bones (Outlaw)
 	[206760] = 277950, -- Shadow's Grasp (Subtlety)
@@ -231,7 +225,7 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	[195627] = 185763, -- Opportunity -> Pistol Shot (Outlaw)
 	[196980] = { -- Master of Shadows (Subtlety)
 		  1784, -- Stealth
-		115191, -- Stealth (with Subterfuge)
+		115191, -- Stealth (with Subterfuge talent)
 		185313, -- Shadow Dance
 	},
 	[197003] =   2983, -- Maneuverability (Outlaw honor talent) -> Sprint
@@ -243,6 +237,12 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 		  5171, -- Slice and Dice (Outlaw talent)
 		193316, -- Roll the Bones
 	},
+	[198688] = 185438, -- Dagger in the Dark (Subtlety honor talent) -> Shadowstrike
+	[199027] = { -- Veil of Midnight (Subtlety honor talent)
+		  1784, -- Stealth
+		  1856, -- Vanish
+		115191, -- Stealth (with Subterfuge talent)
+	},
 	[206760] = { -- Shadow's Grasp (Subtlety)
 		    53, -- Backstab
 		185438, -- Shadowstrike
@@ -251,6 +251,10 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 	[209754] = 199804, -- Boarding Party (Outlaw honor talent) -> Between the Eyes
 	[212150] =   2094, -- Cheap Tricks (Outlaw honor talent) -> Blind
 	[212198] = 212205, -- Crimson Vial -> Create: Crimson Vial (Outlaw honor talent)
+	[213981] = { -- Cold Blood (Subtlety honor talent)
+		  1833, -- Cheap Shot
+		185438, -- Shadowstrike
+	},
 	[213995] = 199804, -- Cheap Tricks (Outlaw honor talent) -> Between the Eyes
 	[221630] =  57934, -- Tricks of the Trade (Outlaw honor talent)
 	[245640] = 196819, -- Shuriken Combo (Subtlety) -> Eviscerate
