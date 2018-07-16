@@ -44,7 +44,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				 214222, -- Judgement (Holy)
 				[ 31935] = "INTERRUPT", -- Avenger's Shield (Protection)
 				[206891] = "UNIQUE_AURA", -- Inquisition (Protection honor talent)
-				[267799] = "BURST", -- Execution Sentence (Retribution)
+				[267799] = "BURST", -- Execution Sentence (Retribution talent)
 				CROWD_CTRL = {
 					[ 20066] = "INCAPACITATE", -- Repentance (talent)
 					[105421] = "DISORIENT", -- Blinding Light (talent)
@@ -144,6 +144,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 			223819, -- Divine Purpose (Retribution talent)
 			267611, -- Righteous Verdict (Retribution talent)
 			271581, -- Divine Judgement (Retribution talent)
+			281178, -- Blade of Wrath (Retribution talent)
 		},
 	},
 }, {
@@ -192,6 +193,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[276111] = 190784, -- Divine Steed (Dwarf)
 	[276112] = 190784, -- Divine Steed (Dark Iron Dwarf)
 	[280375] = 280373, -- Redoubt (Protection talent)
+	[281178] = 231832, -- Blade of Wrath (Retribution talent)
 }, {
 	-- map aura to modified spell(s)
 	[ 31884] = { -- Avenging Wrath
@@ -212,7 +214,14 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[199545] = 190784, -- Steed of Glory (Protection honor talent) -> Divine Steed
 	[210391] =  85222, -- Darkest before the Dawn (Holy honor talent) -> Light of Dawn
 	[204079] =    642, -- Final Stand (Protection talent) -> Divine Shield
-	[209785] =  35395, -- Fires of Justice (Retribution talent) -> Crusader Strike
+	[209785] = { -- Fires of Justice (Retribution talent)
+		 53385, -- Divine Storm
+		 84963, -- Inquisition (Retribution talent)
+		 85256, -- Templar's Verdict
+		210191, -- Word of Glory (Retribution talent)
+		215661, -- Justicar's Vengeance (Retribution talent)
+		267798, -- Execution Sentence (Retribution talent)
+	},
 	[210294] = { -- Divine Favor (Holy honor talent)
 		19750, -- Flash of Light
 		82326, -- Holy Light
@@ -221,12 +230,12 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[216411] =  20473, -- Divine Purpose (Holy talent) -> Holy Shock
 	[216413] =  85222, -- Divine Purpose (Holy talent) -> Light of Dawn
 	[216857] =  19750, -- Guarded by the Light (Protection honor talent) -> Flash of Light
-	[223819] = { -- Divine Purpose (Retribution)
+	[223819] = { -- Divine Purpose (Retribution talent)
 		 53385, -- Divine Storm
 		 85256, -- Templar's Verdict
-		210191, -- Word of Glory
-		215661, -- Justicar's Vengeance
-		267798, -- Execution Sentence
+		210191, -- Word of Glory (Retribution talent)
+		215661, -- Justicar's Vengeance (Retribution talent)
+		267798, -- Execution Sentence (Retribution talent)
 	},
 	[231895] = { -- Crusade (Retribution talent)
 		231895, -- Crusade (Retribution talent)
@@ -238,5 +247,5 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 	[269571] =  20271, -- Zeal (Retribution talent) -> Judgement
 	[271581] =  20271, -- Divine Judgement (Retribution talent) -> Judgement
 	[280375] =  31935, -- Redoubt (Protection talent) -> Avenger's Shield
-	-- we almost good to go
+	[281178] = 184575, -- Blade of Wrath (Retribution talent) -> Blade of Justice
 })
