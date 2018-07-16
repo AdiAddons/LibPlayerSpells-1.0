@@ -11,7 +11,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
-along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
+along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
 local lib = LibStub("LibPlayerSpells-1.0")
@@ -46,8 +46,8 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				[206891] = "UNIQUE_AURA", -- Inquisition (Protection honor talent)
 				[267799] = "BURST", -- Execution Sentence (Retribution)
 				CROWD_CTRL = {
-					[ 20066] = "INCAPACITATE", -- Repentance
-					[105421] = "DISORIENT", -- Blinding Light
+					[ 20066] = "INCAPACITATE", -- Repentance (talent)
+					[105421] = "DISORIENT", -- Blinding Light (talent)
 					STUN = {
 						   853, -- Hammer of Justice
 						205290, -- Wake of Ashes (Retribution talent)
@@ -82,6 +82,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				  31821, -- Aura Mastery (Holy)
 				 114250, -- Selfless Healer (Retribution talent)
 				 188370, -- Consecration (Protection)
+				 197561, -- Avenger's Valor (Protection)
 				 199545, -- Steed of Glory (Protection honor talent)
 				 209785, -- Fires of Justice (Retribution talent)
 				 210294, -- Divine Favor (Holy honor talent)
@@ -109,7 +110,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 					   498, -- Divine Protection (Holy)
 					   642, -- Divine Shield
 					 31850, -- Ardent Defender
-					 86659, -- Guardian of Ancient Kings
+					 86659, -- Guardian of Ancient Kings (Protection)
 					132403, -- Shield of the Righteous (Protection)
 					152262, -- Seraphim (Protection talent)
 					184662, -- Shield of Vengeance (Retribution)
@@ -154,12 +155,13 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		204018, -- Blessing of Spellwarding
 	},
 	[ 54149] =  53576, -- Infusion of Light (Holy)
-	[105421] = 115750, -- Blinding Light (Protection talent)
+	[105421] = 115750, -- Blinding Light (talent)
 	[114250] =  85804, -- Selfless Healer (Retribution talent)
 	[132403] =  53600, -- Shield of the Righteous (Protection)
 	[188370] =  26573, -- Consecration (Protection)
 	[196941] = 183778, -- Judgement of Light (Protection/Holy talent)
 	[197277] =  20271, -- Judgement (Retribution)
+	[197561] =  31935, -- Avenger's Valor <- Avenger's Shield (Protection)
 	[199507] = 199456, -- Spreading The Word: Protection (Holy honor talent)
 	[199545] = 199542, -- Steed of Glory (Protection honor talent)
 	[204079] = 204077, -- Final Stand (Protection talent)
@@ -201,14 +203,11 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		82326, -- Holy Light
 	},
 	[114250] =  19750, -- Selfless Healer (Retribution talent) -> Flash of Light
-	[183778] = { -- Judgement of Light (Protection/Holy talent)
-		275773, -- Judgement (Holy)
-		275779, -- Judgement (Protection)
-	},
 	[196941] = { -- Judgement of Light (Protection/Holy talent)
 		275773, -- Judgement (Holy)
 		275779, -- Judgement (Protection)
 	},
+	[197561] =  53600, -- Avenger's Valor (Protection) -> Shield of the Righteous
 	[199507] =   1022, -- Spreading The Word: Protection (Holy honor talent) -> Blessing of Protection
 	[199545] = 190784, -- Steed of Glory (Protection honor talent) -> Divine Steed
 	[210391] =  85222, -- Darkest before the Dawn (Holy honor talent) -> Light of Dawn
