@@ -14,9 +14,9 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local lib = LibStub("LibPlayerSpells-1.0")
+local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells("PALADIN", 80000, 1, {
+lib:__RegisterSpells('PALADIN', 80000, 1, {
 	COOLDOWN = {
 		    633, -- Lay on Hands
 		  20473, -- Holy Shock (Holy)
@@ -34,7 +34,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		 210191, -- Word of Glory (Retribution talent)
 		 213652, -- Hand of the Protector (Protection talent)
 		 275779, -- Judgement (Protection)
-		[ 96231] = "INTERRUPT", -- Rebuke
+		[ 96231] = 'INTERRUPT', -- Rebuke
 		AURA = {
 			HARMFUL = {
 				 196941, -- Judgement of Light (Protection/Holy talent)
@@ -42,12 +42,12 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				 204242, -- Consecration (Protection/Holy)
 				 204301, -- Blessed Hammer (Protection talent)
 				 214222, -- Judgement (Holy)
-				[ 31935] = "INTERRUPT", -- Avenger's Shield (Protection)
-				[206891] = "UNIQUE_AURA", -- Inquisition (Protection honor talent)
-				[267799] = "BURST", -- Execution Sentence (Retribution talent)
+				[ 31935] = 'INTERRUPT', -- Avenger's Shield (Protection)
+				[206891] = 'UNIQUE_AURA', -- Inquisition (Protection honor talent)
+				[267799] = 'BURST', -- Execution Sentence (Retribution talent)
 				CROWD_CTRL = {
-					[ 20066] = "INCAPACITATE", -- Repentance (talent)
-					[105421] = "DISORIENT", -- Blinding Light (talent)
+					[ 20066] = 'INCAPACITATE', -- Repentance (talent)
+					[105421] = 'DISORIENT', -- Blinding Light (talent)
 					STUN = {
 						   853, -- Hammer of Justice
 						205290, -- Wake of Ashes (Retribution talent)
@@ -70,7 +70,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				 210256, -- Blessing of Sanctuary (Retribution honor talent)
 				 223306, -- Bestow Faith (Holy talent)
 				 246807, -- Lawbringer (Retribution honor talent)
-				[ 25771] = "INVERT_AURA", -- Forbearance
+				[ 25771] = 'INVERT_AURA', -- Forbearance
 				SURVIVAL = {
 					  1022, -- Blessing of Protection
 					  6940, -- Blessing of Sacrifice (Holy/Protection)
@@ -99,7 +99,7 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 				 276111, -- Divine Steed (Dwarf)
 				 276112, -- Divine Steed (Dark Iron Dwarf)
 				 280375, -- Redoubt (Protection talent)
-				[199448] = "INVERT_AURA", -- Blessing of Sacrifice (Holy honor talent) -- NOTE: from Ultimate Sacrifice
+				[199448] = 'INVERT_AURA', -- Blessing of Sacrifice (Holy honor talent) -- NOTE: from Ultimate Sacrifice
 				BURST = {
 					 31884, -- Avenging Wrath
 					105809, -- Holy Avenger (Holy talent)
@@ -121,9 +121,9 @@ lib:__RegisterSpells("PALADIN", 80000, 1, {
 		},
 		DISPEL = {
 			HELPFUL = {
-				[  4987] = "DISEASE POISON MAGIC", -- Cleanse (Holy)
-				[213644] = "DISEASE POISON", -- Cleanse Toxins (Protection/Retribution)
-				[236186] = "DISEASE POISON", -- Cleansing Light (Protection/Retribution honor talent)
+				[  4987] = 'DISEASE POISON MAGIC', -- Cleanse (Holy)
+				[213644] = 'DISEASE POISON', -- Cleanse Toxins (Protection/Retribution)
+				[236186] = 'DISEASE POISON', -- Cleansing Light (Protection/Retribution honor talent)
 			},
 		},
 	},
