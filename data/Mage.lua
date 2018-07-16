@@ -36,6 +36,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 		AURA = {
 			HARMFUL = {
 				CROWD_CTRL = {
+					[31661] = 'DISORIENT', -- Dragon's Breath (Fire)
 					[82691] = 'INCAPACITATE', -- Ring of Frost (Frost talent)
 					ROOT = {
 						   122, -- Frost Nova
@@ -59,18 +60,21 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 				BURST = {
 					 12472, -- Icy Veins (Frost)
 					116014, -- Rune of Power (Frost talent)
+					190319, -- Combustion (Fire)
 				},
 				SURVIVAL = {
 					    66, -- Invisibility (Fading)
 					 32612, -- Invisibility
 					 45438, -- Ice Block
 					198065, -- Prismatic Cloak (honor talent)
+					235313, -- Blazing Barrier (Fire)
 				},
 			},
 		},
 	},
 	AURA = {
 		HARMFUL = {
+			 12654, -- Ignite (Fire)
 			228358, -- Winter's Chill (Frost)
 			CROWD_CTRL = {
 				[228600] = 'ROOT', -- Glacial Spike (Frost talent)
@@ -91,6 +95,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 				},
 			},
 			SNARE = {
+				  2120, -- Flamestrike (Fire)
 				205708, -- Chilled (Frost)
 				228354, -- Flurry (Frost)
 			},
@@ -101,6 +106,8 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 		},
 		PERSONAL = {
 			 44544, -- Fingers of Frost (Frost)
+			 48108, -- Hot Streak! (Fire)
+			157644, -- Enhanced Pyrotechnics (Fire)
 			190446, -- Brain Freeze (Frost)
 			205473, -- Icicles (Frost)
 			205766, -- Bone Chilling (Frost talent)
@@ -112,11 +119,14 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 	},
 }, {
 	-- map aura to provider(s)
+	[ 12654] =  12846, -- Ignite (Fire) <- Mastery: Ignite
 	[ 32612] =     66, -- Invisibility
 	[ 41425] =  45438, -- Hypothermia <- Ice Block
 	[ 44544] = 112965, -- Fingers of Frost (Frost)
+	[ 48108] = 195283, -- Hot Streak! (Fire)
 	[ 82691] = 113724, -- Ring of Frost (Frost talent)
 	[116014] = 116011, -- Rune of Power (Frost talent)
+	[157644] = 157642, -- Enhanced Pyrotechnics (Fire)
 	[190446] = 190447, -- Brain Freeze (Frost)
 	[198065] = 198064, -- Prismatic Cloak (honor talent)
 	[205708] = { -- Chilled (Frost)
@@ -135,7 +145,19 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 	[278310] = 278309, -- Chain Reaction (Frost talent)
 }, {
 	-- map aura to modified spell(s)
+	[ 12654] = { -- Ignite (Fire)
+		   133, -- Fireball
+		  2120, -- Flamestrike
+		  2948, -- Scorch
+		 11366, -- Pyroblast
+		108853, -- Fire Blast
+	},
 	[ 44544] =  30455, -- Fingers of Frost (Frost) -> Ice Lance
+	[ 48108] = { -- Hot Streak! (Fire)
+		 2120, -- Flamestrike
+		11366, -- Pyroblast
+	},
+	[157644] =    133, -- Enhanced Pyrotechnics (Fire) -> Fireball
 	[190446] =  44614, -- Brain Freeze (Frost) -> Flurry
 	[198065] = { -- Prismatic Cloak (honor talent)
 		  1953, -- Blink
