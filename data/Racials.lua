@@ -1,6 +1,6 @@
 --[[
 LibPlayerSpells-1.0 - Additional information about player spells.
-(c) 2013-2014 Adirelle (adirelle@gmail.com)
+(c) 2013-2018 Adirelle (adirelle@gmail.com)
 
 This file is part of LibPlayerSpells-1.0.
 
@@ -15,12 +15,12 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
-along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
+along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local lib = LibStub("LibPlayerSpells-1.0", true)
+local lib = LibStub('LibPlayerSpells-1.0', true)
 if not lib then return end
-lib:__RegisterSpells("RACIAL", 80000, 1, {
+lib:__RegisterSpells('RACIAL', 80000, 1, {
 	COOLDOWN = {
 		  7744, -- Will of the Forsaken (Undead)
 		 20589, -- Escape Artist (Gnome)
@@ -33,8 +33,8 @@ lib:__RegisterSpells("RACIAL", 80000, 1, {
 		259930, -- Forge of Light (Lightforged Draenei)
 		DISPEL = {
 			PERSONAL = {
-				[ 20594] = "CURSE DISEASE MAGIC POISON", -- Stoneform (Dwarf) -- NOTE: bleeds currently not tracked
-				[265221] = "CURSE DISEASE MAGIC POISON", -- Fireblood (Dark Iron Dwarf) -- NOTE: bleeds currently not tracked
+				[ 20594] = 'CURSE DISEASE MAGIC POISON', -- Stoneform (Dwarf) -- NOTE: bleeds currently not tracked
+				[265221] = 'CURSE DISEASE MAGIC POISON', -- Fireblood (Dark Iron Dwarf) -- NOTE: bleeds currently not tracked
 			},
 			HARMFUL = {
 				MAGIC = {
@@ -78,9 +78,9 @@ lib:__RegisterSpells("RACIAL", 80000, 1, {
 				121093, -- Gift of the Naaru (Draenei Monk)
 			},
 			HARMFUL = {
-				[260369] = "SNARE", -- Arcane Pulse (Nightborne)
+				[260369] = 'SNARE', -- Arcane Pulse (Nightborne)
 				CROWD_CTRL = {
-					[107079] = "INCAPACITATE", -- Quaking Palm (Monk)
+					[107079] = 'INCAPACITATE', -- Quaking Palm (Monk)
 					STUN = {
 						 20549, -- War Stomp (Tauren)
 						255723, -- Bull Rush (Highmountain Tauren)
@@ -96,8 +96,8 @@ lib:__RegisterSpells("RACIAL", 80000, 1, {
 	},
 }, {
 	-- map aura to provider(s)
-	[ 20578] = 20577, -- Cannibalize (Undead)
-	[ 65116] = 20594, -- Stone Form (Dwarf)
+	[ 20578] =  20577, -- Cannibalize (Undead)
+	[ 65116] =  20594, -- Stone Form (Dwarf)
 	[255723] = 255654, -- Bull Rush (Highmountain Tauren)
 	[260369] = 260364, -- Arcane Pulse (Nightborne)
 	[273104] = 265221, -- Fireblood (Dark Iron dwarf)
