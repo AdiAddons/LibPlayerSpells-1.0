@@ -34,16 +34,20 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 		152108, -- Cataclysm (Destruction talent)
 		196447, -- Channel Demonfire (Destruction talent)
 		264057, -- Soul Strike (Demonology talent)
+		264106, -- Deathbolt (Affliction talent)
 		264130, -- Power Siphon (Demonology talent)
 		267211, -- Bilescourge Bombers (Demonology talent)
 		AURA = {
 			HARMFUL = {
+				 48181, -- Haunt (Affliction talent)
 				 80240, -- Havoc (Destruction)
 				199890, -- Curse of Tongues (honor talent)
 				199892, -- Curse of Weakness (honor talent)
 				199954, -- Curse of Fragility (honor talent)
 				200548, -- Bane of Havoc (Destruction honor talent)
+				205179, -- Phantom Singularity (Affliction talent)
 				212580, -- Eye of the Observer (Demonology honor talent)
+				234877, -- Curse of Shadows (Affliction honor talent)
 				265931, -- Conflagrate (Destruction talent)
 				270569, -- From the Shadows (Demonology talent)
 				CROWD_CTRL = {
@@ -62,7 +66,8 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 					},
 				},
 				SNARE = {
-					6360, -- Whiplash (succubus)
+					  6360, -- Whiplash (succubus)
+					278350, -- Vile Taint (Affliction talent)
 				},
 			},
 			HELPFUL = {
@@ -73,11 +78,13 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 				117828, -- Backdraft (Destruction)
 				196099, -- Grimoire of Sacrifice (Affliction/Destruction talent)
 				221705, -- Casting Circle (honor talent)
+				236471, -- Soulshatter (Affliction honor talent)
 				265273, -- Demonic Power (Demonology)
 				266091, -- Grimoire of Supremacy (Destruction talent)
 				267218, -- Nether Portal (Demonology talent)
 				BURST = {
 					113858, -- Dark Soul: Instability (Destruction talent)
+					113860, -- Dark Soul: Misery (Affliction talent)
 				},
 				SURVIVAL = {
 					104773, -- Unending Resolve
@@ -113,11 +120,22 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
+			   980, -- Agony (Affliction)
+			 27243, -- Seed of Corruption (Affliction)
 			 30213, -- Legion Strike (felguard) (Demonology)
+			 32390, -- Shadow Embrace (Affliction talent)
+			 63106, -- Siphon Life (Affliction talent)
+			146739, -- Corruption (Affliction)
 			157736, -- Immolate (Destruction)
 			196414, -- Eradication (Destruction talent)
+			198590, -- Drain Soul (Affliction talent)
 			200587, -- Fel Fissure (Destruction honor talent)
 			221715, -- Essence Drain (honor talent)
+			233490, -- Unstable Affliction (Affliction)
+			233496, -- Unstable Affliction (Affliction)
+			233497, -- Unstable Affliction (Affliction)
+			233498, -- Unstable Affliction (Affliction)
+			233499, -- Unstable Affliction (Affliction)
 			234153, -- Drain Life (Destruction)
 			265412, -- Doom (Demonology talent)
 			267997, -- Bile Spit (Demonology talent)
@@ -135,6 +153,7 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 			111400, -- Burning Rush (talent)
 			205146, -- Demonic Calling (Demonology talent)
 			264173, -- Demonic Core (Demonology)
+			264571, -- Nightfall (Affliction talent)
 		},
 		PET = {
 				755, -- Health Funnel
@@ -155,6 +174,7 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 		119907, -- Shadow Bulwark NOTE: Command Demon when voidwalker summoned
 	},
 	[ 22703] =   1122, -- Infernal Awakening <- Summon Infernal (Destruction)
+	[ 32390] =  32388, -- Shadow Embrace (Affliction talent)
 	[ 89766] = { -- Axe Toss (felguard) (Demonology)
 		 89766, -- Axe Toss (felguard)
 		119914, -- Axe Toss (Demonology) NOTE: Command Demon when felguard summoned
@@ -162,6 +182,7 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 	[118699] =   5782, -- Fear
 	[117828] = 196406, -- Backdraft (Destruction)
 	[132413] = 108503, -- Shadow Bulwark <- Grimoire of Sacrifice (Destruction talent)
+	[146739] =    172, -- Corruption (Affliction)
 	[157736] = { -- Immolate (Destruction)
 		   348, -- Immolate (Destruction)
 		152108, -- Cataclysm (Destruction talent)
@@ -175,9 +196,16 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 	[213688] = 212459, -- Fel Cleave (fel lord) (Demonology honor talent) <- Call Fel Lord (Demonology talent)
 	[221705] = 221703, -- Casting Circle (honor talent)
 	[221715] = 221711, -- Essence Drain (honor talent)
+	[233490] =  30108, -- Unstable Affliction (Affliction)
+	[233496] =  30108, -- Unstable Affliction (Affliction)
+	[233497] =  30108, -- Unstable Affliction (Affliction)
+	[233498] =  30108, -- Unstable Affliction (Affliction)
+	[233499] =  30108, -- Unstable Affliction (Affliction)
 	[233582] = 233581, -- Entrenced in Flame (Destruction honor talent)
+	[236471] = 212356, -- Soulshatter (Affliction honor talent)
 	[261589] = 108503, -- Seduction <- Grimoire of Sacrifice (Destruction talent)
 	[264173] = 267102, -- Demonic Core (Demonology)
+	[264571] = 108558, -- Nightfall (Affliction talent)
 	[265273] = 265187, -- Demonic Power (Demonology) <- Summon Demonic Tyrant
 	[265931] = 205184, -- Conflagrate <- Roaring Blaze (Destruction talent)
 	[266091] = 266086, -- Grimoire of Supremacy (Destruction talent)
@@ -186,6 +214,7 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 	[270569] = 267171, -- From the Shadows (Demonology talent)
 }, {
 	-- map aura to modified spell(s)
+	[ 32390] =  232670, -- Shadow Embrace (Affliction talent) -> Shadow Bolt
 	[117828] = { -- Backdraft (Destruction)
 		 29722, -- Incinerate
 		116858, -- Chaos Bolt
@@ -198,6 +227,7 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 	[233582] =  17962, -- Entrenced in Flame (Destruction honor talent) -> Conflagrate
 	[261589] = 261589, -- Seduction <- Grimoire of Sacrifice (Destruction talent)
 	[264173] = 264178, -- Demonic Core (Demonology) -> Demonbolt
+	[264571] = 232670, -- Nightfall (Affliction talent) -> Shadow Bolt
 	[265931] =  17962, -- Conflagrate (Destruction talent)
 	[266091] = 116858, -- Grimoire of Supremacy (Destruction talent) -> Chaos Bolt
 	[270569] = 104316, -- From the Shadows (Demonology talent) -> Call Dreadstalkers
