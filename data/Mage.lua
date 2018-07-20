@@ -31,7 +31,6 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 		 190356, -- Blizzard (Frost)
 		 212653, -- Shimmer (talent)
 		 257537, -- Ebonbolt (Frost talent)
-		[   475] = 'DISPEL HELPFUL CURSE', -- Remove Curse
 		[  2139] = 'INTERRUPT', -- Counterspell
 		[235219] = 'SURVIVAL', -- Cold Snap (Frost)
 		AURA = {
@@ -57,7 +56,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 			PERSONAL = {
 				  11426, -- Ice Barrier (Frost)
 				 108839, -- Ice Floes (Frost talent)
-				 198111, -- Temporal Shield (Frost honor talent)
+				 198111, -- Temporal Shield (honor talent)
 				 198144, -- Ice Form (Frost honor talent)
 				 206432, -- Burst of Cold (Frost honor talent)
 				 270232, -- Freezing Rain (Frost talent)
@@ -75,11 +74,16 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 					235313, -- Blazing Barrier (Fire)
 				},
 			},
+			DISPEL = {
+				[  475] = 'HELPFUL CURSE', -- Remove Curse
+				[30449] = 'HARMFUL MAGIC', -- Spellsteal NOTE: has cooldown with Kleptomania (honor talent)
+			},
 		},
 	},
 	AURA = {
 		HARMFUL = {
 			 12654, -- Ignite (Fire)
+			203277, -- Tinder (Fire honor talent)
 			226757, -- Conflagrate (Fire talent)
 			228358, -- Winter's Chill (Frost)
 			CROWD_CTRL = {
@@ -122,9 +126,6 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 			278310, -- Chain Reaction (Frost talent)
 		},
 	},
-	DISPEL = {
-		[30449] = 'HARMFUL MAGIC', -- Spellsteal
-	},
 }, {
 	-- map aura to provider(s)
 	[ 12654] =  12846, -- Ignite (Fire) <- Mastery: Ignite
@@ -138,6 +139,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 	[157644] = 157642, -- Enhanced Pyrotechnics (Fire)
 	[190446] = 190447, -- Brain Freeze (Frost)
 	[198065] = 198064, -- Prismatic Cloak (honor talent)
+	[203277] = 203275, -- Tinder (Fire honor talent)
 	[205708] = { -- Chilled (Frost)
 		   116, -- Frostbolt
 		 84714, -- Frozen Orb
@@ -179,6 +181,7 @@ lib:__RegisterSpells('MAGE', 80000, 1, {
 		  1953, -- Blink
 		212653, -- Shimmer (talent)
 	},
+	[203277] =    133, -- Tinder (Fire honor talent) -> Fireball
 	[205473] =  { -- Icicles (Frost)
 		 30455, -- Ice Lance
 		199786, -- Glacial Spike (Frost talent)
