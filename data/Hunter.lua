@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('HUNTER', 80000, 1, {
+lib:__RegisterSpells('HUNTER', 80000, 2, {
 	COOLDOWN = {
 		    781, -- Disengage
 		  19434, -- Aimed Shot (Marksmanship)
@@ -94,6 +94,11 @@ lib:__RegisterSpells('HUNTER', 80000, 1, {
 				 203233, -- Aspect of the Cheetah (honor talent)
 				 248519, -- Interlope (Beast Mastery honor talent)
 				[212640] = 'DISPEL DISEASE POISON', -- Mending Bandage (Survival honor talent) -- NOTE: Bleeds too
+				RAIDBUFF = {
+					 264667, -- Primal Rage (ferocity pets)
+					 272678, -- Primal Rage NOTE: Command Pet with ferocity pet
+					[264689] = 'INVERT_AURA', -- Fatigued
+				},
 			},
 			PERSONAL = {
 				  5384, -- Feign Death
