@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('SHAMAN', 80000, 1, {
+lib:__RegisterSpells('SHAMAN', 80000, 2, {
 	COOLDOWN = {
 		   8143, -- Tremor Totem
 		  17364, -- Stormstrike (Enhancement)
@@ -72,6 +72,14 @@ lib:__RegisterSpells('SHAMAN', 80000, 1, {
 				BURST = {
 					204361, -- Bloodlust (Enhancement honor talent)
 					208963, -- Skyfury Totem (honor talent)
+				},
+				RAIDBUFF = {
+					 2825, -- Bloodlust (horde)
+					32182, -- Heroism (alliance)
+					INVERT_AURA = {
+						57723, -- Exhaustion (alliance)
+						57724, -- Sated (horde)
+					},
 				},
 				SURVIVAL = {
 					 98007, -- Spirit Link Totem (Restoration)
