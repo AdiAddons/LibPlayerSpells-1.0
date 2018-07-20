@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('DRUID', 80000, 1, {
+lib:__RegisterSpells('DRUID', 80000, 2, {
 	COOLDOWN = {
 		  18562, -- Swiftmend
 		  18960, -- Teleport: Moonglade
@@ -148,6 +148,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	AURA = {
 		HARMFUL = {
 			  1079, -- Rip
+			155625, -- Moonfire (Feral talent)
 			155722, -- Rake
 			164815, -- Sunfire
 			200947, -- Encroaching Vines (Restoration honor talent)
@@ -208,13 +209,14 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 	[127797] = 102793, -- Ursol's Vortex (Restoration)
 	[135700] =  16864, -- Clearcasting <- Omen of Clarity (Feral)
 	[145152] = 155672, -- Bloodtalons (Feral talent)
+	[155625] = 155580, -- Moonfire <- Lunar Inspiration (Feral talent)
 	[155722] = { -- Rake
 		  1822, -- Rake
 		203242, -- Rip and Tear (Feral honor talent)
 	},
 	[155777] = 155675, -- Rejuvenation (Germination) <- Germination (Restoration talent)
-	[158792] =  80313, -- Pulverize (Guardian talent)
 	[157982] =    740, -- Tranquility (Restoration)
+	[158792] =  80313, -- Pulverize (Guardian talent)
 	[163505] = 231052, -- Rake <- Rake (Rank 2) (Feral)
 	[164545] = { -- Solar Empowerment
 		197626, -- Starsurge (from Balance Affinity)
@@ -289,6 +291,7 @@ lib:__RegisterSpells('DRUID', 80000, 1, {
 		106830, -- Thrash (cat)
 		202028, -- Brutal Slash (Feral talent)
 	},
+	[155625] = 155625, -- Moonfire (Feral talent)
 	[155777] =    774, -- Rejuvenation (Germination) (Restoration talent) -> Rejuvenation
 	[163505] =   1822, -- Rake (Feral)
 	[164545] = { -- Solar Empowerment
