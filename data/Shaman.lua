@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('SHAMAN', 80000, 2, {
+lib:__RegisterSpells('SHAMAN', 80000, 3, {
 	COOLDOWN = {
 		   8143, -- Tremor Totem
 		  17364, -- Stormstrike (Enhancement)
@@ -99,6 +99,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 2, {
 				173184, -- Elemental Blast: Mastery (Elemental talent)
 				187878, -- Crash Lightning (Enhancement)
 				194084, -- Flametongue (Enhancement)
+				198300, -- Gathering Storms (Enhancement)
 				202004, -- Landslide (Enhancement talent)
 				210714, -- Icefury (Elemental talent)
 				211400, -- Static Cling (Enhancement honor talent)
@@ -204,6 +205,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 2, {
 	[192082] = 192077, -- Wind Rush <- Wind Rush Totem (talent)
 	[194084] = 193796, -- Flametongue (Enhancement)
 	[197385] = 197211, -- Fury of Air (Enhancement talent)
+	[198300] = 187874, -- Gathering Storms <- Crash Lightning (Enhancement)
 	[201633] = 198838, -- Earthen Wall <- Earthen Wall Totem (Restoraton talent)
 	[201846] = 201845, -- Stormbringer (Enhancement)
 	[202004] = 197992, -- Landslide (Enhancement talent)
@@ -257,6 +259,7 @@ lib:__RegisterSpells('SHAMAN', 80000, 2, {
 		188196, -- Lighting Bolt
 		188443, -- Chain Lightning
 	},
+	[198300] =  17364, -- Gathering Storms -> Stormstrike (Enhancement)
 	[201846] =  {-- Landslide (Enhancement talent)
 		 17364, -- Stormstrike
 		115356, -- Windstrike (Enhancement talent) NOTE: when Ascendance is active
