@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('ROGUE', 80000, 1, {
+lib:__RegisterSpells('ROGUE', 80000, 2, {
 	COOLDOWN = {
 		   1725, -- Distract
 		 195457, -- Grappling Hook (Outlaw)
@@ -44,7 +44,6 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				[248744] = 'SNARE', -- Shiv (honor talent)
 				BURST = {
 					 79140, -- Vendetta (Assassination)
-					121471, -- Shadow Blades (Subtlety)
 					137619, -- Marked for Death (talent)
 				},
 				CROWD_CTRL = {
@@ -80,6 +79,7 @@ lib:__RegisterSpells('ROGUE', 80000, 1, {
 				[196980] = 'POWER_REGEN', -- Master of Shadows (Subtlety)
 				BURST = {
 					  13750, -- Adrenalin Rush (Outlaw)
+					 121471, -- Shadow Blades (Subtlety)
 					[212283] = 'POWER_REGEN', -- Symbols of Death (Subtlety)
 				},
 				SURVIVAL = {
