@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
+lib:__RegisterSpells("DEMONHUNTER", 80000, 3, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike (Vengeance)
@@ -41,6 +41,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 				206649, -- Eye of Leotheras (Havoc honor talent)
 				206891, -- Intimidated (Vengeance honor talent)
 				207744, -- Fiery Brand (Vengeance)
+				207771, -- Fiery Brand (Vengeance talent)
 				258860, -- Dark Slash (Havoc talent)
 				258883, -- Trail of Ruin (Havoc talent)
 				[204490] = 'INTERRUPT', -- Sigil of Silence (Vengeance)
@@ -150,6 +151,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 	[207685] = 207684, -- Sigil of Misery (Vengeance)
 	[207693] = 207697, -- Feast of Souls (Vengeance talent)
 	[207744] = 204021, -- Fiery Brand (Vengeance)
+	[207771] = 207739, -- Fiery Brand <- Burning Alive (Vengeance talent)
 	[208579] = 206491, -- Nemesis (Demons) (Havoc talent)
 	[208605] = 206491, -- Nemesis (Humanoids) (Havoc talent)
 	[208607] = 206491, -- Nemesis (Aberrations) (Havoc talent)
@@ -195,6 +197,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 2, {
 		207684, -- Sigil of Misery
 	},
 	[207693] = 228477, -- Feast of Souls (Vengeance talent) -> Soul Cleave
+	[207771] = 204021, -- Fiery Brand (Vengeance talent)
 	[208628] = 195072, -- Momentum (Havoc talent) -> Fel Rush
 	[208796] = 203720, -- Jagged Spikes (Vengeance honor talent) -> Demon Spikes
 	[210003] = 6603, -- Razor Spikes (Vengeance talent) -> Auto Attack
