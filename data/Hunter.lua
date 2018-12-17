@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('HUNTER', 80000, 2, {
+lib:__RegisterSpells('HUNTER', 80100, 1, {
 	COOLDOWN = {
 		    781, -- Disengage
 		  19434, -- Aimed Shot (Marksmanship)
@@ -48,6 +48,7 @@ lib:__RegisterSpells('HUNTER', 80000, 2, {
 				203268, -- Sticky Tar (Survival honor talent)
 				208684, -- Dire Beast: Hawk (Beast Mastery honor talent)
 				209967, -- Dire Beast: Basilisk (Beast Mastery honor talent)
+				212431, -- Explosive Shot (Marksmanship talent)
 				217200, -- Barbed Shot (Beast Mastery)
 				259277, -- Kill Command (Survival talent)
 				269747, -- Wildfire Bomb (Survival)
@@ -83,7 +84,9 @@ lib:__RegisterSpells('HUNTER', 80000, 2, {
 					263423, -- Lock Jaw (dog)
 					263446, -- Acid Spit (worm)
 					263840, -- Furious Bite (wolf)
+					263841, -- Petrifying Gaze (basilisk)
 					263852, -- Talon Rend (bird of prey)
+					288962, -- Blood Bolt (blood beast)
 				},
 			},
 			HELPFUL = {
@@ -118,9 +121,9 @@ lib:__RegisterSpells('HUNTER', 80000, 2, {
 				269576, -- Master Marksman (Marksmanship talent)
 				BURST = {
 					 19574, -- Bestial Wrath (Beast Mastery)
-					193526, -- Trueshot (Marksmanship)
 					193530, -- Aspect of the Wild (Beast Mastery)
 					266779, -- Coordinated Assault (Survival)
+					288613, -- Trueshot (Marksmanship)
 				},
 				POWER_REGEN = {
 					194407, -- Spitting Cobra (Beast Mastery talent)
@@ -149,7 +152,6 @@ lib:__RegisterSpells('HUNTER', 80000, 2, {
 				SURVIVAL = {
 					 26064, -- Shell Shield (turtle)
 					 90339, -- Harden Carapace (beetle)
-					159733, -- Stone Scales (Basilisk)
 					160011, -- Agile Reflexes (fox)
 					160044, -- Primal Agility (monkey)
 					160063, -- Solid Shell (shale spider)
@@ -160,7 +162,9 @@ lib:__RegisterSpells('HUNTER', 80000, 2, {
 					263887, -- Dragons Guile (dragonhawk)
 					263892, -- Catlike Reflexes (cat)
 					263904, -- Serpent's Swiftness (serpent)
+					263916, -- Feather Flurry (feathermane)
 					264360, -- Winged Agility (wind serpent)
+					279336, -- Swarm of Flies (toad)
 					279410, -- Bulwark (krolusk)
 				},
 			},
@@ -209,9 +213,7 @@ lib:__RegisterSpells('HUNTER', 80000, 2, {
 			194594, -- Lock and Load (Marksmanship talent)
 			257622, -- Trick Shots (Marksmanship)
 			259388, -- Mongoose Bite (Survival talent)
-			260395, -- Lethal Shots (Marksmanship)
 			268552, -- Viper's Venom (Survival talent)
-			269502, -- Lethal Shots (Marksmanship talent)
 		},
 		PET = {
 			126311, -- Surface Trot (water strider)
@@ -280,7 +282,6 @@ lib:__RegisterSpells('HUNTER', 80000, 2, {
 	[260242] = 260240, -- Precise Shots (Marksmanship)
 	[260249] = 260248, -- Predator (Survival talent) <- Bloodseeker
 	[260286] = 260285, -- Tip of the Spear (Survival talent)
-	[260395] = 260393, -- Lethal Shots (Marksmanship talent)
 	[263920] = 263921, -- Gruff (goat)
 	[263926] = 263934, -- Thick Fur (bear)
 	[263938] = 263939, -- Silverback (gorilla)
@@ -291,7 +292,6 @@ lib:__RegisterSpells('HUNTER', 80000, 2, {
 	},
 	[265898] = 265895, -- Terms of Engagement (Survival talent)
 	[268552] = 268501, -- Viper's Venom (Survival talent)
-	[269502] = 260393, -- Lethal Shots (Marksmanship talent)
 	[269576] = 260309, -- Master Marksman (Marksmanship talent)
 	[269747] = 259495, -- Wildfire Bomb (Survival)
 	[270332] = 271014, -- Scorching Pheromones (Survival talent) <- Wildfire Infusion
@@ -321,14 +321,12 @@ lib:__RegisterSpells('HUNTER', 80000, 2, {
 	},
 	[260249] = 259489, -- Predator (Survival talent) -> Kill Command
 	[260286] = 186270, -- Tip of the Spear (Survival talent) -> Raptor Strike
-	[260395] = 257044, -- Lethal Shots (Marksmanship talent) -> Rapid Fire
 	[260402] = { -- Double Tap (Marksmanship talent)
 		 19434, -- Aimed Shot
 		257044, -- Rapid Fire
 	},
 	[265898] = 190925, -- Terms of Engagement (Survival talent) -> Harpoon
 	[268552] = 259491, -- Viper's Venom (Survival talent) -> Serpent Sting
-	[269502] =  19434, -- Lethal Shots (Marksmanship talent) -> Aimed Shot
 	[269576] = { -- Master Marksman (Marksmanship talent)
 		185358, -- Arcane Shot
 		267620, -- Multi-Shot
