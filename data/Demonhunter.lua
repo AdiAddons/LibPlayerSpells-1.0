@@ -20,13 +20,12 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 80000, 3, {
+lib:__RegisterSpells("DEMONHUNTER", 80100, 1, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike (Vengeance)
 		 195072, -- Fel Rush (Havoc)
 		 198013, -- Eye Beam (Havoc)
-		 203704, -- Mana Break (Havoc honor talent)
 		 212084, -- Fel Devastation (Vengeance talent)
 		 235903, -- Mana Rift (Havon honor talent)
 		 258925, -- Fel Barrage (Havoc talent)
@@ -36,10 +35,11 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 3, {
 				[209426] = 'SURVIVAL', -- Darkness (Havoc)
 			},
 			HARMFUL = {
+				203704, -- Mana Break (Havoc honor talent)
 				204598, -- Sigil of Flame (Vengeance)
 				206491, -- Nemesis (Havoc talent)
 				206649, -- Eye of Leotheras (Havoc honor talent)
-				206891, -- Intimidated (Vengeance honor talent)
+				206891, -- Focused Assault (Vengeance honor talent)
 				207744, -- Fiery Brand (Vengeance)
 				207771, -- Fiery Brand (Vengeance talent)
 				258860, -- Dark Slash (Havoc talent)
@@ -147,7 +147,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 3, {
 	[204598] = 188499, -- Sigil of Flame (Vengeance)
 	[204843] = 202138, -- Sigil of Chains (Vengeance talent)
 	[206804] = 206803, -- Rain from Above (gliding) (Havoc honor talent)
-	[206891] = 198589, -- Intimidated (Vengeance honor talent) <- Tormentor
+	[206891] = 198589, -- Focused Assault (Vengeance honor talent) <- Tormentor
 	[207685] = 207684, -- Sigil of Misery (Vengeance)
 	[207693] = 207697, -- Feast of Souls (Vengeance talent)
 	[207744] = 204021, -- Fiery Brand (Vengeance)
@@ -191,7 +191,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80000, 3, {
 		204596, -- Sigil of Flame
 	},
 	[205630] = 208173, -- Illidan's Grasp (Vengeance honor talent) -> Illidan's Grasp: Throw
-	[206891] = 207029, -- Intimidated (Vengeance honor talent) <- Tormentor
+	[206891] = 207029, -- Focused Assault (Vengeance honor talent) -> Tormentor
 	[207685] = { -- Sigil of Misery (Vengeance)
 		202140, -- Sigil of Misery (with Concentrated Sigils talent)
 		207684, -- Sigil of Misery
