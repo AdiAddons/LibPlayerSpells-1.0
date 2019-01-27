@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('DRUID', 80000, 2, {
+lib:__RegisterSpells('DRUID', 80100, 1, {
 	COOLDOWN = {
 		  18562, -- Swiftmend
 		  18960, -- Teleport: Moonglade
@@ -50,12 +50,10 @@ lib:__RegisterSpells('DRUID', 80000, 2, {
 					[  6795] = 'TAUNT', -- Growl
 					DISORIENT = {
 						209753, -- Cyclone (Balance/Restoration honor talent)
-						236748, -- Intimidating Roar (Guardian talent)
 					},
 					INCAPACITATE = {
 						    99, -- Incapacitating Roar (Guardian)
 						  2637, -- Hibernate -- TODO: category
-						236025, -- Enraged Maim (Feral honor talent)
 					},
 					ROOT = {
 						   339, -- Entangling Roots
@@ -73,7 +71,7 @@ lib:__RegisterSpells('DRUID', 80000, 2, {
 				SNARE = {
 					 50259, -- Dazed (talent - cat)
 					 61391, -- Typhoon (talent)
-					127797, -- Ursol's Vortex (Restoration)
+					127797, -- Ursol's Vortex (Restoration, Guargian talent)
 				}
 			},
 			HELPFUL = {
@@ -177,12 +175,14 @@ lib:__RegisterSpells('DRUID', 80000, 2, {
 			158792, -- Pulverize (Guardian talent)
 			191034, -- Starfall (Balance)
 			202461, -- Stellar Drift (Balance talent)
+			203059, -- King of the Jungle (Feral honor talent)
 			207640, -- Abundance (Restoration talent)
 			209731, -- Protector of the Grove (Balance/Feral honor talent)
 			213708, -- Galactic Guardian (Guardian talent)
 			236187, -- Master Shapeshifter (Guardian honor talent)
 			279709, -- Starfond (Balance talent)
 			279943, -- Sharpened Claws (Guardian honor talent)
+			285646, -- Scent of Blood (Feral talent)
 			SURVIVAL = {
 				192081, -- Ironfur
 			},
@@ -193,6 +193,7 @@ lib:__RegisterSpells('DRUID', 80000, 2, {
 	[  1079] = {
 		  1079, -- Rip
 		203242, -- Rip and Tear (Feral honor talent)
+		285381, -- Primal Wrath (Feral talent)
 	},
 	[ 16870] = 113043, -- Clearcasting <- Omen of Clarity (Restoration)
 	[ 45334] = 102401, -- Immobilized <- Wild Charge (talent - bear)
@@ -206,7 +207,7 @@ lib:__RegisterSpells('DRUID', 80000, 2, {
 	[102416] = 102401, -- Wild Charge (talent - aquatic)
 	[114108] = 158478, -- Soul of the Forest (Restoration talent)
 	[117679] =  33891, -- Incarnation: Tree of Life (Restoration talent)
-	[127797] = 102793, -- Ursol's Vortex (Restoration)
+	[127797] = 102793, -- Ursol's Vortex (Restoration, Guardian talent)
 	[135700] =  16864, -- Clearcasting <- Omen of Clarity (Feral)
 	[145152] = 155672, -- Bloodtalons (Feral talent)
 	[155625] = 155580, -- Moonfire <- Lunar Inspiration (Feral talent)
@@ -236,6 +237,7 @@ lib:__RegisterSpells('DRUID', 80000, 2, {
 	[200947] = 200931, -- Encroaching Vines (Restoration honor talent)
 	[202244] = 202246, -- Overrun (Guardian honor talent)
 	[202461] = 202354, -- Stellar Drift (Balance talent)
+	[203059] = 203052, -- King of the Jungle (Feral honor talent)
 	[203123] =  22570, -- Maim (Feral)
 	[203407] = 203399, -- Revitalize (Restoration honor talent)
 	[203554] = 203553, -- Focused Growth (Restoration honor talent)
@@ -243,19 +245,22 @@ lib:__RegisterSpells('DRUID', 80000, 2, {
 	[206891] = 207017, -- Intimidated <- Alpha Chalenge (Guardian honor talent)
 	[207386] = 207385, -- Spring Blossoms (Restoration talent)
 	[207640] = 207383, -- Abundance (Restoration talent)
-	[209731] = 209730, -- Protector of the Grove (Balance/Feral honor talent)
+	[209731] = { -- Protector of the Grove (Balance honor talent)
+		209730, -- Protector of the Grove (Balance honor talent)
+		236019, -- Heart of the Wild (Feral honor talent)
+	},
 	[209746] = 209740, -- Moonkin Aura (Balance honor talent)
 	[213680] = 155578, -- Guardian of Elune (Guardian talent)
 	[213708] = 203964, -- Galactic Guardian (Guardian talent)
 	[234084] = 233750, -- Moon and Stars (Balance honor talent)
 	[236021] = 236020, -- Ferocious Wound (Feral honor talent)
-	[236025] = 236026, -- Enraged Maim (Feral honor talent)
 	[236185] = 236144, -- Master Shapeshifter (Guardian honor talent)
 	[236187] = 236144, -- Master Shapeshifter (Guardian honor talent)
 	[252071] = 102543, -- Jungle Stalker <- Incarnation: King of the Jungle (Feral talent)
 	[274838] = 274837, -- Feral Frenzy (Feral talent)
 	[279709] = 202345, -- Starfond (Balance talent)
 	[279943] = 202110, -- Sharpened Claws (Guardian honor talent)
+	[285646] = 285564, -- Scent of Blood (Feral talent)
 }, {
 	-- map aura to modified spell(s)
 	[ 16870] =   8936, -- Clearcasting (Restoration) -> Regrowth
@@ -306,6 +311,11 @@ lib:__RegisterSpells('DRUID', 80000, 2, {
 	[200947] =    339, -- Encroaching Vines (Restoration honor talent) -> Entangling Roots
 	[202425] = 194153, -- Warrior of Elune (Balance talent) -> Lunar Strike
 	[202461] = 191034, -- Stellar Drift (Balance talent) -> Starfall
+	[203059] = { -- King of the Jungle (Feral honor talent)
+		  1079, -- Rip
+		203242, -- Rip and Tear (Feral honor talent)
+		285381, -- Primal Wrath (Feral talent)
+	},
 	[203407] =    774, -- Revitalize (Restoration honor talent) -> Rejuventation
 	[203554] =  33763, -- Focused Growth (Restoration honor talent) -> Lifebloom
 	[203975] = { -- Earthwarden (Guardian talent)
@@ -327,11 +337,16 @@ lib:__RegisterSpells('DRUID', 80000, 2, {
 	},
 	[236021] =  22568, -- Ferocious Wound (Feral honor talent) -> Ferocious Bite
 	[236185] =  18562, -- Master Shapeshifter (Guardian honor talent) -> Swiftmend
-	[236187] = 197625, -- Master Shapeshifter (Guardian honor talent) -> Moonkin Form
+	[236187] = { -- Master Shapeshifter (Guardian honor talent)
+		197626, -- Starsurge
+		197628, -- Lunar Strike
+		197629, -- Solor Wrath
+	},
 	[252071] = 102547, -- Jungle Stalker (Feral talent) -> Prowl
 	[279709] = { -- Starfond (Balance talent)
 		 78674, -- Starsurge
 		191034, -- Starfall
 	},
 	[279943] =   6807, -- Sharpened Claws (Guardian honor talent) -> Maul
+	[285646] = 106830, -- Scent of Blood (Feral talent) -> Thrash
 })
