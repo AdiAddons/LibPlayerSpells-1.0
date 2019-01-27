@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells("DEMONHUNTER", 80100, 1, {
+lib:__RegisterSpells("DEMONHUNTER", 80100, 2, {
 	COOLDOWN = {
 		 185123, -- Throw Glaive (Havoc)
 		 189110, -- Infernal Strike (Vengeance)
@@ -71,7 +71,7 @@ lib:__RegisterSpells("DEMONHUNTER", 80100, 1, {
 				},
 			},
 			PERSONAL = {
-				188499, -- Blade Dance (Havoc) -- NOTE: somehow the same id as Sigil of Flame
+				188499, -- Blade Dance (Havoc)
 				188501, -- Spectral Sight
 				205629, -- Demonic Trample (Vengeance honor talent)
 				206803, -- Rain from Above (launching) (Havoc honor talent)
@@ -143,12 +143,21 @@ lib:__RegisterSpells("DEMONHUNTER", 80100, 1, {
 		203782, -- Shear
 		264632, -- Fracture (talent)
 	},
-	[204490] = 202137, -- Sigil of Silence (Vengeange)
-	[204598] = 188499, -- Sigil of Flame (Vengeance)
+	[204490] = { -- Sigil of Silence (Vengeange)
+		202137, -- Sigil of Silence
+		207682, -- Sigil of Silence (with Concentrated Sigils talent)
+	},
+	[204598] = { -- Sigil of Flame (Vengeance)
+		204513, -- Sigil of Flame (with Concentrated Sigils talent)
+		204596, -- Sigil of Flame
+	},
 	[204843] = 202138, -- Sigil of Chains (Vengeance talent)
 	[206804] = 206803, -- Rain from Above (gliding) (Havoc honor talent)
 	[206891] = 198589, -- Focused Assault (Vengeance honor talent) <- Tormentor
-	[207685] = 207684, -- Sigil of Misery (Vengeance)
+	[207685] = { -- Sigil of Misery (Vengeance)
+		202140, -- Sigil of Misery (with Concentrated Sigils talent)
+		207684, -- Sigil of Misery
+	},
 	[207693] = 207697, -- Feast of Souls (Vengeance talent)
 	[207744] = 204021, -- Fiery Brand (Vengeance)
 	[207771] = 207739, -- Fiery Brand <- Burning Alive (Vengeance talent)
@@ -182,20 +191,8 @@ lib:__RegisterSpells("DEMONHUNTER", 80100, 1, {
 		247454, -- Soul Bomb (talent)
 		263648, -- Soul Barrier (talent)
 	},
-	[204490] = { -- Sigil of Silence (Vengeange)
-		202137, -- Sigil of Silence
-		207682, -- Sigil of Silence (with Concentrated Sigils talent)
-	},
-	[204598] = { -- Sigil of Flame (Vengeance)
-		204513, -- Sigil of Flame (with Concentrated Sigils talent)
-		204596, -- Sigil of Flame
-	},
 	[205630] = 208173, -- Illidan's Grasp (Vengeance honor talent) -> Illidan's Grasp: Throw
 	[206891] = 207029, -- Focused Assault (Vengeance honor talent) -> Tormentor
-	[207685] = { -- Sigil of Misery (Vengeance)
-		202140, -- Sigil of Misery (with Concentrated Sigils talent)
-		207684, -- Sigil of Misery
-	},
 	[207693] = 228477, -- Feast of Souls (Vengeance talent) -> Soul Cleave
 	[207771] = 204021, -- Fiery Brand (Vengeance talent)
 	[208628] = 195072, -- Momentum (Havoc talent) -> Fel Rush
