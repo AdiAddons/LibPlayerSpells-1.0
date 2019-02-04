@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('WARRIOR', 80000, 1, {
+lib:__RegisterSpells('WARRIOR', 80100, 1, {
 	COOLDOWN = {
 			845, -- Cleave (Arms talent)
 		   5308, -- Execute (Fury)
@@ -34,7 +34,7 @@ lib:__RegisterSpells('WARRIOR', 80000, 1, {
 				 115804, -- Mortal Wounds (Arms)
 				 198819, -- Mortal Strike (Arms honor talent)
 				 198912, -- Shield Bash (Protection honor talent)
-				 206891, -- Intimidated (Protection honor talent)
+				 206891, -- Focused Assault (Protection honor talent)
 				 236077, -- Disarm (honor talent)
 				 236273, -- Duel (Arms honor talent)
 				 275335, -- Punish (Protection talent)
@@ -64,7 +64,6 @@ lib:__RegisterSpells('WARRIOR', 80000, 1, {
 			HELPFUL = {
 				  97463, -- Rallying Cry (Protection)
 				 147833, -- Intervene (Protection)
-				 199038, -- Leave No Man Behind (Protection honor talent)
 				 223658, -- Safeguard (Protection talent)
 				 236321, -- War Banner (Arms honor talent)
 				[213871] = 'SURVIVAL', -- Bodyguard (Protection honor talent)
@@ -156,7 +155,6 @@ lib:__RegisterSpells('WARRIOR', 80000, 1, {
 	[147833] = 198304, -- Intervene (Protection) <- Intercept
 	[184362] = 184361, -- Enrage (Fury)
 	[198819] = 198817, -- Mortal Strike <- Sharpen Blade (Arms honor talent)
-	[199038] = 199037, -- Leave No Man Behind (Protection honor talent)
 	[199042] = 199045, -- Thunderstruck (Protection honor talent)
 	[199095] = 198096, -- Warpath (Protection honor talent)
 	[199203] = 199202, -- Thirst for Battle (Fury honor talent)
@@ -167,7 +165,7 @@ lib:__RegisterSpells('WARRIOR', 80000, 1, {
 	[202574] = 202572, -- Vengeance: Ignore Pain <- Vengeance (Protection talent)
 	[213858] = 213857, -- Battle Trance (Fury honor talent)
 	[215572] = 215571, -- Frothing Berserker (Fury talent)
-	[206891] = 205800, -- Intimidated (Protection honor talent)
+	[206891] = 205800, -- Focused Assault <- Oppresor (Protection honor talent)
 	[208086] = { -- Colossus Smash (Arms)
 		167105, -- Colossus Smash
 		262161, -- Warbreaker (Arms talent)
@@ -195,7 +193,6 @@ lib:__RegisterSpells('WARRIOR', 80000, 1, {
 	},
 	[197690] = 212520, -- Defensive Stance (Arms talent)
 	[198819] =  12294, -- Mortal Strike (Arms honor talent) -> Mortal Strike
-	[199038] = 198304, -- Leave No Man Behind (Protection honor talent) -> Intercept
 	[199042] =   6343, -- Thunderstruck (Protection honor talent) -> Thunder Clap
 	[199095] =   6544, -- Warpath (Protection honor talent) -> Heroic Leap
 	[199203] =  23881, -- Thirst for Battle (Fury honor talent) -> Bloodthirst
