@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
+lib:__RegisterSpells('DEATHKNIGHT', 80100, 1, {
 	COOLDOWN = {
 		  46584, -- Raise Dead (Unholy)
 		  49206, -- Summon Gargoyle (Unholy talent)
@@ -31,6 +31,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 		 210764, -- Rune Strike (Blood talent)
 		 274156, -- Consumption (Blood talent)
 		 275699, -- Apocalypse (Unholy)
+		 288853, -- Raise Abomination (Unholy honor talent)
 		[ 47528] = 'INTERRUPT', -- Mind Freeze
 		[108199] = 'KNOCKBACK', -- Gorefiend's Grasp (Blood)
 		AURA = {
@@ -41,22 +42,23 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 				115994, -- Unholy Blight (Unholy talent)
 				130736, -- Soul Reaper (Unholy talent)
 				203173, -- Death Chain (Blood honor talent)
-				206891, -- Intimidated (Blood honor talent)
+				206891, -- Focused Assault (Blood honor talent)
 				206931, -- Blooddrinker (Blood talent)
 				206940, -- Mark of Blood (Blood talent)
 				211794, -- Winter is Comming (Frost talent)
 				212610, -- Walking Dead (Blood honor talent)
+				288849, -- Crypt Fever (Unholy honor talent)
 				CROWD_CTRL = {
 					[207167] = 'DISORIENT', -- Blinding Sleet (Frost talent)
 					ROOT = {
 						 91807, -- Shambling Rush (Ghoul) (Unholy)
-						233395, -- Frozen Center (Frost honor talent)
 					},
 					STUN = {
 						 91797, -- Monstrous Blow (Ghoul) (Unholy)
 						 91800, -- Gnaw (Ghoul) (Unholy)
 						108194, -- Asphyxiate (Unholy talent)
 						221562, -- Asphyxiate (Blood)
+						287254, -- Dead of Winter (Frost honor talent)
 					},
 					TAUNT = {
 						51399, -- Death Grip (Blood)
@@ -98,6 +100,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 				POWER_REGEN = {
 					 47568, -- Empower Rune Weapon (Frost)
 					219809, -- Tombstone (Blood talent)
+					288977, -- Transfusion (Frost/Unholy honor talent)
 				},
 				SURVIVAL = {
 					 48707, -- Anti-Magic Shell
@@ -105,6 +108,7 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 					 55233, -- Vampiric Blood (Blood)
 					 81256, -- Dancing Rune Weapon (Blood)
 					194679, -- Rune Tap (Blood talent)
+					287081, -- Lichborne (Frost/Unholy honor talent)
 				},
 			},
 			PET = {
@@ -126,7 +130,6 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			191587, -- Virulent Plague (Unholy)
 			194310, -- Festering Wound (Unholy)
 			196782, -- Outbreak (Unholy)
-			199969, -- Wandering Plague (Unholy honor talent)
 			223929, -- Necrotic Wound (Unholy honor talent)
 			233397, -- Delirium (Frost honor talent)
 			CROWD_CTRL = {
@@ -138,7 +141,6 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 			},
 			SNARE = {
 				 45524, -- Chains of Ice (Frost/Unholy)
-				200646, -- Unholy Mutation (Unholy honor talent)
 			},
 		},
 		HELPFUL = {
@@ -194,10 +196,8 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[204085] = 204080, -- Deathchill (Frost honor talent)
 	[211793] = 196770, -- Remorsless Winter (Frost)
 	[196782] =  77575, -- Outbreak (Unholy)
-	[199969] = 199725, -- Wandering Plague (Unholy honor talent)
-	[200646] = 201934, -- Unholy Mutation (Unholy honor talent)
 	[204206] = 204160, -- Chilled (Frost honor talent) <- Chill Streak
-	[206891] = 207018, -- Intimidated <- Murderous Intent (Blood honor talent)
+	[206891] = 207018, -- Focused Assault <- Murderous Intent (Blood honor talent)
 	[207165] = 207161, -- Abomination's Might (Frost talent)
 	[207203] = 207200, -- Frost Shield <- Permafrost (Frost talent)
 	[210141] = 210128, -- Zombie Explosion <- Reanimation (Unholy honor talent)
@@ -206,7 +206,6 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[215711] = 130736, -- Soul Ripper (Unholy talent)
 	[219788] = 219786, -- Ossuary (Blood talent)
 	[223929] = 223829, -- Necrotic Wound (Unholy honor talent)
-	[233395] = 204135, -- Frozen Center (Frost honor talent)
 	[233397] = 233396, -- Delirium (Frost honor talent)
 	[253595] = 253593, -- Inexorable Assault (Frost talent)
 	[273947] = 273946, -- Hemostasis (Blood talent)
@@ -215,6 +214,8 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[279303] = 279302, -- Frost Breath <- Frostwyrm's Fury (Frost talent)
 	[279942] = 279941, -- Tundra Stalker (Frost honor talent)
 	[281209] = 281208, -- Cold Heart (Frost talent)
+	[287254] = 287250, -- Dead of Winter (Frost honor talent)
+	[288849] = 288848, -- Crypt Fever <- Necromancer's Bargain (Unholy honor talent)
 }, {
 	-- map aura to modified spell(s)
 	[ 51124] = { -- Killing Machine (Frost)
@@ -236,15 +237,16 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 		152279, -- Breath of Sindragosa (Frost talent)
 		194913, -- Glacial Advance (Frost talent)
 	},
-	[199969] =  77575, -- Wandering Plague (Unholy honor talent) -> Outbreak
 	[200646] =  77575, -- Unholy Mutation (Unholy honor talent) -> Outbreak
 	[207165] =  49020, -- Abomination's Might (Frost talent) -> Obliterate
 	[207203] =   6603, -- Frost Shield (Frost talent) -> Auto Attack
-	[204085] =  45524, -- Deathchill (Frost honor talent) -> Chains of Ice
+	[204085] = { -- Deathchill (Frost honor talent)
+		 45524, -- Chains of Ice
+		196770, -- Remorseless Winter
+	},
 	[211794] = 196170, -- Winter is Comming (Frost talent) -> Remorseless Winter
 	[212610] =  49576, -- Walking Dead (Blood honor talent) -> Death Grip
 	[219788] = 195182, -- Ossuary (Blood talent) -> Marrowrend
-	[233395] = 196770, -- Frozen Center (Frost honor talent) -> Remorseless Winter
 	[233397] = { -- Delirium (Frost honor talent)
 		49143, -- Frost Strike
 		49184, -- Howling Blast
@@ -255,4 +257,6 @@ lib:__RegisterSpells('DEATHKNIGHT', 80000, 1, {
 	[274009] =  49998, -- Voracious (Blood talent) -> Death Strike
 	[279942] =  49143, -- Tundra Stalker (Frost honor talent) -> Frost Strike
 	[281209] =  45524, -- Cold Heart (Frost talent) -> Chains of Ice
+	[287254] = 196770, -- Dead of Winter (Frost honor talent) -> Remorseless Winter
+	[288849] = 275699, -- Crypt Fever (Unholy honor talent) -> Apocalypse
 })
