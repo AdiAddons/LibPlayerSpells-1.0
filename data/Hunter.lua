@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('HUNTER', 80100, 1, {
+lib:__RegisterSpells('HUNTER', 80100, 2, {
 	COOLDOWN = {
 		    781, -- Disengage
 		  19434, -- Aimed Shot (Marksmanship)
@@ -37,24 +37,25 @@ lib:__RegisterSpells('HUNTER', 80100, 1, {
 		[236776] = 'KNOCKBACK', -- Hi-Explosive Trap (honor talent)
 		AURA = {
 			HARMFUL = {
-				115804, -- Mortal Wounds (scorpid)
-				117405, -- Binding Shot (talent)
-				131894, -- A Murder of Crows (talent)
-				132951, -- Flare
-				162487, -- Steel Trap (Survival talent)
-				202797, -- Viper Sting (honor talent)
-				202900, -- Scorpid Sting (honor talent)
-				202914, -- Spider Sting (honor talent)
-				203268, -- Sticky Tar (Survival honor talent)
-				208684, -- Dire Beast: Hawk (Beast Mastery honor talent)
-				209967, -- Dire Beast: Basilisk (Beast Mastery honor talent)
-				212431, -- Explosive Shot (Marksmanship talent)
-				217200, -- Barbed Shot (Beast Mastery)
-				259277, -- Kill Command (Survival talent)
-				269747, -- Wildfire Bomb (Survival)
-				270332, -- Scorching Pheromones (Survival talent)
-				270339, -- Scorching Shrapnel (Survival talent)
-				271049, -- Volatile Wildfire (Survival talent)
+				 115804, -- Mortal Wounds (scorpid)
+				 117405, -- Binding Shot (talent)
+				 131894, -- A Murder of Crows (talent)
+				 132951, -- Flare
+				 162487, -- Steel Trap (Survival talent)
+				 202797, -- Viper Sting (honor talent)
+				 202900, -- Scorpid Sting (honor talent)
+				 202914, -- Spider Sting (honor talent)
+				 203268, -- Sticky Tar (Survival honor talent)
+				 208684, -- Dire Beast: Hawk (Beast Mastery honor talent)
+				 209967, -- Dire Beast: Basilisk (Beast Mastery honor talent)
+				 212431, -- Explosive Shot (Marksmanship talent)
+				 217200, -- Barbed Shot (Beast Mastery)
+				 259277, -- Kill Command (Survival talent)
+				 269747, -- Wildfire Bomb (Survival)
+				 270332, -- Scorching Pheromones (Survival talent)
+				 270339, -- Scorching Shrapnel (Survival talent)
+				 271049, -- Volatile Wildfire (Survival talent)
+				[257044] = 'POWER_REGEN', -- Rapid Fire (Marksmanship)
 				CROWD_CTRL = {
 					[ 2649] = 'TAUNT', --Growl (pet)
 					[24394] = 'STUN', -- Intimidation (Beast Mastery/Survival)
@@ -192,7 +193,6 @@ lib:__RegisterSpells('HUNTER', 80100, 1, {
 		},
 		POWER_REGEN = {
 			 53209, -- Chimaera Shot (Beast Mastery talent)
-			257044, -- Rapid Fire (Marksmanship)
 			259489, -- Kill Command (Survival)
 			269751, -- Flanking Strike (Survival talent)
 		},
