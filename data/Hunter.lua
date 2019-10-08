@@ -20,74 +20,28 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('HUNTER', 80100, 2, {
+lib:__RegisterSpells('HUNTER', 11320, 2, {
 	COOLDOWN = {
 		    781, -- Disengage
 		  19434, -- Aimed Shot (Marksmanship)
-		  34026, -- Kill Command (Beast Mastery)
-		 109304, -- Exhilaration
-		 120360, -- Barrage (Beast Mastery/Marksmanship talent)
-		 120679, -- Dire Beast (Beast Mastery talent)
-		 198670, -- Piercing Shot (Marksmanship talent)
-		 201430, -- Stampede (Beast Mastery talent)
-		 212431, -- Explosive Shot (Marksmanship talent)
-		 212436, -- Butchery (Survival talent)
-		 259391, -- Chakrams (Survival talent)
-		 267922, -- Eternal Guardian (quilen)
-		[236776] = 'KNOCKBACK', -- Hi-Explosive Trap (honor talent)
 		AURA = {
 			HARMFUL = {
-				 115804, -- Mortal Wounds (scorpid)
-				 117405, -- Binding Shot (talent)
-				 131894, -- A Murder of Crows (talent)
-				 132951, -- Flare
-				 162487, -- Steel Trap (Survival talent)
-				 202797, -- Viper Sting (honor talent)
+				  13554, -- Serpent String
+				   1543, -- Flare
+				  14279, -- Viper Sting (honor talent)
 				 202900, -- Scorpid Sting (honor talent)
-				 202914, -- Spider Sting (honor talent)
-				 203268, -- Sticky Tar (Survival honor talent)
-				 208684, -- Dire Beast: Hawk (Beast Mastery honor talent)
-				 209967, -- Dire Beast: Basilisk (Beast Mastery honor talent)
-				 212431, -- Explosive Shot (Marksmanship talent)
-				 217200, -- Barbed Shot (Beast Mastery)
-				 259277, -- Kill Command (Survival talent)
-				 269747, -- Wildfire Bomb (Survival)
-				 270332, -- Scorching Pheromones (Survival talent)
-				 270339, -- Scorching Shrapnel (Survival talent)
-				 271049, -- Volatile Wildfire (Survival talent)
-				[257044] = 'POWER_REGEN', -- Rapid Fire (Marksmanship)
 				CROWD_CTRL = {
 					[ 2649] = 'TAUNT', --Growl (pet)
-					[24394] = 'STUN', -- Intimidation (Beast Mastery/Survival)
+					[19577] = 'STUN', -- Intimidation (Beast Mastery/Survival)
 					INCAPACITATE = {
 						  3355, -- Freezing Trap
 						203337, -- Freezing Trap (Survival honor talent)
 						213691, -- Scatter Shot (Marksmanship honor talent)
 					},
-					ROOT = {
-						117526, -- Binding Shot (talent)
-						162480, -- Steel Trap (Survival talent)
-						190927, -- Harpoon (Survival)
-						212638, -- Tracker's Net (Survival honor talent)
-					},
+					ROOT = {},
 				},
 				SNARE = {
 					  5116, -- Concussive Shot (Marksmanship)
-					 35346, -- Warp Time (warp stalker)
-					 50245, -- Pin (crab)
-					 50285, -- Dust Cloud (tallstrider)
-					 50433, -- Ankle Crack (crocolisk)
-					 54644, -- Frost Breath (chimaera)
-					135299, -- Tar Trap (Marksmanship)
-					160065, -- Tendon Rip (silithid)
-					160067, -- Web Spray (spider)
-					186387, -- Bursting Shot (Marksmanship)
-					263423, -- Lock Jaw (dog)
-					263446, -- Acid Spit (worm)
-					263840, -- Furious Bite (wolf)
-					263841, -- Petrifying Gaze (basilisk)
-					263852, -- Talon Rend (bird of prey)
-					288962, -- Blood Bolt (blood beast)
 				},
 			},
 			HELPFUL = {
@@ -105,110 +59,42 @@ lib:__RegisterSpells('HUNTER', 80100, 2, {
 				},
 			},
 			PERSONAL = {
+				  3045, -- Rapid Fire
 				  5384, -- Feign Death
-				 35079, -- Misdirection
-				118922, -- Posthaste (talent)
-				186257, -- Aspect of the Cheetah (90%)
-				186258, -- Aspect of the Cheetah (30%)
-				186289, -- Aspect of the Eagle (Survival)
-				199483, -- Camouflage (talent)
-				202748, -- Survival Tactics (honor talent)
-				203155, -- Sniper Shot (Marksmanship honor talent)
-				257946, -- Thrill of the Hunt (Beast Mastery talent)
-				260242, -- Precise Shots (Marksmanship)
-				260249, -- Predator (Survival talent)
-				260286, -- Tip of the Spear (Survival talent)
-				260402, -- Double Tap (Marksmanship talent)
-				269576, -- Master Marksman (Marksmanship talent)
 				BURST = {
 					 19574, -- Bestial Wrath (Beast Mastery)
-					193530, -- Aspect of the Wild (Beast Mastery)
-					266779, -- Coordinated Assault (Survival)
-					288613, -- Trueshot (Marksmanship)
 				},
-				POWER_REGEN = {
-					194407, -- Spitting Cobra (Beast Mastery talent)
-					246152, -- Barbed Shot (Beast Mastery)
-					265898, -- Terms of Engagement (Survival talent)
-				},
-				SURVIVAL = {
-					186265, -- Aspect of the Turtle
-					264735, -- Survival of the Fittest (Tanacity pet)
-					281195, -- Survival of the Fittest (Marksmanship - Lone Wolf ability)
-				},
+				POWER_REGEN = {},
+				SURVIVAL = {},
 			},
 			PET = {
-				   136, -- Mend Pet
+				 13542, -- Mend Pet
 				 19577, -- Intimidation (Beast Mastery/Survival)
 				 24450, -- Prowl (cat)
-				 61684, -- Dash (Ferocity/Cunning pet)
-				 62305, -- Master's Call (Cunning pet)
-				 90328, -- Spirit Walk (spirit beast)
-				 93433, -- Burrow Attack (worm)
-				118455, -- Beast Cleave (Beast Mastery)
-				159786, -- Molten Hide (core hound)
-				159954, -- Feast (devilsaur)
-				186254, -- Bestial Wrath (Beast Mastery)
-				272790, -- Frenzy (Beast Mastery)
-				SURVIVAL = {
-					 26064, -- Shell Shield (turtle)
-					 90339, -- Harden Carapace (beetle)
-					160011, -- Agile Reflexes (fox)
-					160044, -- Primal Agility (monkey)
-					160063, -- Solid Shell (shale spider)
-					263865, -- Scale Shield (scalehide)
-					263867, -- Obsidian Skin (core hound)
-					263868, -- Defense Matrix (mechanical)
-					263869, -- Bristle (boar)
-					263887, -- Dragons Guile (dragonhawk)
-					263892, -- Catlike Reflexes (cat)
-					263904, -- Serpent's Swiftness (serpent)
-					263916, -- Feather Flurry (feathermane)
-					264360, -- Winged Agility (wind serpent)
-					279336, -- Swarm of Flies (toad)
-					279410, -- Bulwark (krolusk)
-				},
+				 23019, -- Dash (Ferocity/Cunning pet)
+				SURVIVAL = {},
 			},
 		},
-		DISPEL = {
-			[202746] = 'PERSONAL MAGIC', -- Survival Tactics (honor talent) -- NOTE: Feign Death is the dispel
-			HARMFUL = {
-				MAGIC = {
-					ENRAGE = {
-						264028, -- Chi-Ji's Tranquility (crane)
-						264055, -- Serenity Dust (moth)
-						264056, -- Spore Cloud (sporebat)
-						264262, -- Soothing Water (water strider)
-						264263, -- Sonic Blast (bat)
-						264264, -- Nether Shock (nether ray)
-						264265, -- Spirit Shock (spirit beast)
-						264266, -- Nature's Grace (stag)
-					},
-				},
-			},
-		},
-		INTERRUPT = {
-			147362, -- Counter Shot (Beast Mastery/Marksmanship)
-			187707, -- Muzzle (Survival)
-		},
-		POWER_REGEN = {
-			 53209, -- Chimaera Shot (Beast Mastery talent)
-			259489, -- Kill Command (Survival)
-			269751, -- Flanking Strike (Survival talent)
-		},
+		DISPEL = {},
+		INTERRUPT = {},
+		POWER_REGEN = {},
 	},
 	AURA = {
 		HARMFUL = {
 			   1462, -- Beast Lore -- NOTE: HELPFUL on player controlled pets
 			   1515, -- Tame Beast
-			 257284, -- Hunter's Mark (Marksmanship talent)
-			 259491, -- Serpent Sting (Survival)
-			 270343, -- Internal Bleeding (Survival talent)
-			 271788, -- Serpent Sting (Marksmanship talent)
-			[195645] = 'SNARE', -- Wing Clip (Survival)
+			  14324, -- Hunter's Mark (Marksmanship talent)
+			  13554, -- Serpent Sting (Survival)
+			   5116, -- Concussive Shot
+			  14267, -- Wing Clip
 		},
 		PERSONAL = {
+			  3045, -- Rapid Fire
 			  6197, -- Eagle Eye
+			5118, -- Aspect of the Cheetah
+			13163, -- Aspect of the Monkey
+			14321, -- Aspect of the Hawk
+			13159, -- Aspect of the Pack
 			193534, -- Steady Focus (Marksmanship talent)
 			194594, -- Lock and Load (Marksmanship talent)
 			257622, -- Trick Shots (Marksmanship)
@@ -218,6 +104,7 @@ lib:__RegisterSpells('HUNTER', 80100, 2, {
 		PET = {
 			126311, -- Surface Trot (water strider)
 			160007, -- Updraft (feathermane/rylak/pterrordax)
+			19574,
 		}
 	},
 	POWER_REGEN = {
@@ -225,7 +112,10 @@ lib:__RegisterSpells('HUNTER', 80100, 2, {
 	}
 }, {
 	-- map aura to provider(s)
-	[  3355] = 187650, -- Freezing Trap
+	[  3355] = { -- Freezing Trap
+		  1499, -- Freezing Trap
+		 14310,
+	},
 	[ 24394] =  19577, -- Intimidation (Beast Mastery/Survival)
 	[ 35079] =  34477, -- Misdirection
 	[ 54216] = { -- Master's Call (Cunning pet)
