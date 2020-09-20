@@ -189,7 +189,7 @@ lib:__RegisterSpells('PRIEST', 80200, 1, {
 	[204213] = 204197, -- Purge the Wicked (Discipline talent)
 	[205364] = 205367, -- Mind Control <- Dominant Mind (Discipline talent)
 	[208772] = 231682, -- Smite (Discipline) <- Smite (Rank 2)
-	[215769] = 215782, -- Spirit of Redemption <- Spirit of the Redeemer (Holy honor talent)
+	[215769] = 215982, -- Spirit of Redemption <- Spirit of the Redeemer (Holy honor talent)
 	[215962] = 215960, -- Inspiration <- Greater Heal (Holy honor talent)
 	[219521] = 204065, -- Shadow Covenant (Discipline talent)
 	[226943] = 205369, -- Mind Bomb (Shadow talent)
