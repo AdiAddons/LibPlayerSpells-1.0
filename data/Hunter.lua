@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('HUNTER', 80100, 2, {
+lib:__RegisterSpells('HUNTER', 80100, 3, {
 	COOLDOWN = {
 		    781, -- Disengage
 		  19434, -- Aimed Shot (Marksmanship)
@@ -150,6 +150,16 @@ lib:__RegisterSpells('HUNTER', 80100, 2, {
 				159954, -- Feast (devilsaur)
 				186254, -- Bestial Wrath (Beast Mastery)
 				272790, -- Frenzy (Beast Mastery)
+				DISPEL = {
+					[344347] = 'DISEASE MAGIC POISON', -- Spore Cloud (sporebat)
+					[344346] = 'DISEASE MAGIC POISON', -- Soothing Water (water strider)
+					[344348] = 'DISEASE MAGIC POISON', -- Sonic Screech (bat)
+					[344349] = 'DISEASE MAGIC POISON', -- Nether Energy (ray)
+					[344350] = 'DISEASE MAGIC POISON', -- Chi-Ji's Tranquility (crane)
+					[344351] = 'DISEASE MAGIC POISON', -- Spirit Pulse (spirit beast)
+					[344352] = 'DISEASE MAGIC POISON', -- Nature's Grace (stag)
+					[344353] = 'DISEASE MAGIC POISON', -- Serenity Dust (moth)
+				},
 				SURVIVAL = {
 					 26064, -- Shell Shield (turtle)
 					 90339, -- Harden Carapace (beetle)
@@ -171,21 +181,8 @@ lib:__RegisterSpells('HUNTER', 80100, 2, {
 			},
 		},
 		DISPEL = {
+			[ 19801] = 'HARMFUL MAGIC ENRAGE', -- Tranquilizing Shot
 			[202746] = 'PERSONAL MAGIC', -- Survival Tactics (honor talent) -- NOTE: Feign Death is the dispel
-			HARMFUL = {
-				MAGIC = {
-					ENRAGE = {
-						264028, -- Chi-Ji's Tranquility (crane)
-						264055, -- Serenity Dust (moth)
-						264056, -- Spore Cloud (sporebat)
-						264262, -- Soothing Water (water strider)
-						264263, -- Sonic Blast (bat)
-						264264, -- Nether Shock (nether ray)
-						264265, -- Spirit Shock (spirit beast)
-						264266, -- Nature's Grace (stag)
-					},
-				},
-			},
 		},
 		INTERRUPT = {
 			147362, -- Counter Shot (Beast Mastery/Marksmanship)
