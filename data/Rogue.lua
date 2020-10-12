@@ -20,14 +20,13 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('ROGUE', 80000, 2, {
+lib:__RegisterSpells('ROGUE', 80000, 3, {
 	COOLDOWN = {
 		   1725, -- Distract
 		 195457, -- Grappling Hook (Outlaw)
 		 200806, -- Exsanguinate (Assassination talent)
 		 280719, -- Secret Technique (Subtlety talent)
 		[  1766] = 'INTERRUPT', -- Kick
-		[248744] = 'DISPEL HARMFUL ENRAGE', -- Shiv (honor talent)
 		AURA = {
 			HARMFUL = {
 				    703, -- Garrote (Assassination)
