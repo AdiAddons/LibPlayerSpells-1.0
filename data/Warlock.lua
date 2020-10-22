@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('WARLOCK', 90001, 1, {
+lib:__RegisterSpells('WARLOCK', 90001, 2, {
 	COOLDOWN = {
 		   698, -- Ritual of Summoning
 		  6353, -- Soul Fire (Destruction talent)
@@ -82,6 +82,7 @@ lib:__RegisterSpells('WARLOCK', 90001, 1, {
 				265273, -- Demonic Power (Demonology)
 				266091, -- Grimoire of Supremacy (Destruction talent)
 				267218, -- Nether Portal (Demonology talent)
+				333889, -- Fel Domination
 				BURST = {
 					113858, -- Dark Soul: Instability (Destruction talent)
 					113860, -- Dark Soul: Misery (Affliction talent)
