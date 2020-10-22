@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('WARLOCK', 80000, 1, {
+lib:__RegisterSpells('WARLOCK', 90001, 1, {
 	COOLDOWN = {
 		   698, -- Ritual of Summoning
 		  6353, -- Soul Fire (Destruction talent)
@@ -39,10 +39,9 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 		267211, -- Bilescourge Bombers (Demonology talent)
 		AURA = {
 			HARMFUL = {
+				   603, -- Doom (Demonology talent)
 				 48181, -- Haunt (Affliction talent)
 				 80240, -- Havoc (Destruction)
-				199890, -- Curse of Tongues (honor talent)
-				199892, -- Curse of Weakness (honor talent)
 				199954, -- Curse of Fragility (honor talent)
 				200548, -- Bane of Havoc (Destruction honor talent)
 				205179, -- Phantom Singularity (Affliction talent)
@@ -68,6 +67,7 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 				SNARE = {
 					  6360, -- Whiplash (succubus)
 					278350, -- Vile Taint (Affliction talent)
+					334275, -- Curse of Exhaustion
 				},
 			},
 			HELPFUL = {
@@ -120,7 +120,9 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 	},
 	AURA = {
 		HARMFUL = {
+			   702, -- Curse of Weakness
 			   980, -- Agony (Affliction)
+			  1714, -- Curse of Tongues
 			 27243, -- Seed of Corruption (Affliction)
 			 30213, -- Legion Strike (felguard) (Demonology)
 			 32390, -- Shadow Embrace (Affliction talent)
@@ -131,11 +133,7 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 			198590, -- Drain Soul (Affliction talent)
 			200587, -- Fel Fissure (Destruction honor talent)
 			221715, -- Essence Drain (honor talent)
-			233490, -- Unstable Affliction (Affliction)
-			233496, -- Unstable Affliction (Affliction)
-			233497, -- Unstable Affliction (Affliction)
-			233498, -- Unstable Affliction (Affliction)
-			233499, -- Unstable Affliction (Affliction)
+			316099, -- Unstable Affliction (Affliction)
 			234153, -- Drain Life (Destruction)
 			265412, -- Doom (Demonology talent)
 			267997, -- Bile Spit (Demonology talent)
@@ -196,11 +194,6 @@ lib:__RegisterSpells('WARLOCK', 80000, 1, {
 	[213688] = 212459, -- Fel Cleave (fel lord) (Demonology honor talent) <- Call Fel Lord (Demonology talent)
 	[221705] = 221703, -- Casting Circle (honor talent)
 	[221715] = 221711, -- Essence Drain (honor talent)
-	[233490] =  30108, -- Unstable Affliction (Affliction)
-	[233496] =  30108, -- Unstable Affliction (Affliction)
-	[233497] =  30108, -- Unstable Affliction (Affliction)
-	[233498] =  30108, -- Unstable Affliction (Affliction)
-	[233499] =  30108, -- Unstable Affliction (Affliction)
 	[233582] = 233581, -- Entrenced in Flame (Destruction honor talent)
 	[236471] = 212356, -- Soulshatter (Affliction honor talent)
 	[261589] = 108503, -- Seduction <- Grimoire of Sacrifice (Destruction talent)
