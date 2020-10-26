@@ -22,8 +22,8 @@ local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
 lib:__RegisterSpells('DEATHKNIGHT', 80100, 2, {
 	COOLDOWN = {
-		  46585, -- Raise Dead
 		  46584, -- Raise Dead (Rank 2 - Unholy)
+		  46585, -- Raise Dead
 		  49206, -- Summon Gargoyle (Unholy talent)
 		  49576, -- Death Grip
 		  50977, -- Death Gate
@@ -106,10 +106,10 @@ lib:__RegisterSpells('DEATHKNIGHT', 80100, 2, {
 				SURVIVAL = {
 					 48707, -- Anti-Magic Shell
 					 48792, -- Icebound Fortitude
+					 49039, -- Lichborne
 					 55233, -- Vampiric Blood (Blood)
 					 81256, -- Dancing Rune Weapon (Blood)
 					194679, -- Rune Tap (Blood)
-					 49039, -- Lichborne
 				},
 			},
 			PET = {
@@ -184,8 +184,8 @@ lib:__RegisterSpells('DEATHKNIGHT', 80100, 2, {
 	[ 91837] =  63560, -- Putrid Bulwark (Ghoul) (Unholy) <- Dark Transformation
 	[ 91838] =  47484, -- Huddle (Ghoul) (Unholy)
 	[101568] = 178819, -- Dark Succor (Frost/Unholy)
-	[145629] =  51052, -- Anti-Magic Zone
 	[115994] = 115989, -- Unholy Blight (Unholy talent)
+	[145629] =  51052, -- Anti-Magic Zone
 	[188290] = { -- Death and Decay (Blood/Unholy)
 		 43265, -- Death and Decay (Blood/Unholy)
 		152280, -- Defile (Unholy talent)
