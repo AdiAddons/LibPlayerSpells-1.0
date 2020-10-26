@@ -134,7 +134,7 @@ lib:__RegisterSpells('WARLOCK', 90001, 2, {
 			198590, -- Drain Soul (Affliction talent)
 			200587, -- Fel Fissure (Destruction honor talent)
 			221715, -- Essence Drain (honor talent)
-			316099, -- Unstable Affliction (Affliction)
+			342938, -- Unstable Affliction (Affliction)
 			234153, -- Drain Life (Destruction)
 			265412, -- Doom (Demonology talent)
 			267997, -- Bile Spit (Demonology talent)
