@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('WARLOCK', 90001, 2, {
+lib:__RegisterSpells('WARLOCK', 90001, 3, {
 	COOLDOWN = {
 		   698, -- Ritual of Summoning
 		  6353, -- Soul Fire (Destruction talent)
@@ -134,10 +134,11 @@ lib:__RegisterSpells('WARLOCK', 90001, 2, {
 			198590, -- Drain Soul (Affliction talent)
 			200587, -- Fel Fissure (Destruction honor talent)
 			221715, -- Essence Drain (honor talent)
-			316099, -- Unstable Affliction (Affliction)
 			234153, -- Drain Life (Destruction)
 			265412, -- Doom (Demonology talent)
 			267997, -- Bile Spit (Demonology talent)
+			316099, -- Unstable Affliction (Affliction)
+			342938, -- Unstable Affliction (Affliction honor talent)
 			CROWD_CTRL = {
 				[   710] = 'INCAPACITATE', -- Banish
 				[118699] = 'DISORIENT', -- Fear
@@ -206,6 +207,7 @@ lib:__RegisterSpells('WARLOCK', 90001, 2, {
 	[267218] = 267217, -- Nether Portal (Demonology talent)
 	[267997] = 264119, -- Bile Spit (Demonology talent)
 	[270569] = 267171, -- From the Shadows (Demonology talent)
+	[342938] = 335052, -- Unstable Affliction <- Rampant Afflictions (Affliction honor talent)
 }, {
 	-- map aura to modified spell(s)
 	[ 32390] =  232670, -- Shadow Embrace (Affliction talent) -> Shadow Bolt
@@ -225,4 +227,5 @@ lib:__RegisterSpells('WARLOCK', 90001, 2, {
 	[265931] =  17962, -- Conflagrate (Destruction talent)
 	[266091] = 116858, -- Grimoire of Supremacy (Destruction talent) -> Chaos Bolt
 	[270569] = 104316, -- From the Shadows (Demonology talent) -> Call Dreadstalkers
+	[342938] = 342938, -- Unstable Affliction (Affliction honor talent)
 })
