@@ -32,7 +32,6 @@ lib:__RegisterSpells('RACIAL', 90001, 1, {
 		255661, -- Cantrips (Nightborne)
 		259930, -- Forge of Light (Lightforged Draenei)
 		327611, -- Fae Guardians (Night Fae Covenant)
-		325013, -- Boon of the Ascended (Kyrian Covenant)
 		DISPEL = {
 			PERSONAL = {
 				[ 20594] = 'CURSE DISEASE MAGIC POISON', -- Stoneform (Dwarf) -- NOTE: bleeds currently not tracked
@@ -78,6 +77,7 @@ lib:__RegisterSpells('RACIAL', 90001, 1, {
 				 59547, -- Gift of the Naaru (Draenei Shaman)
 				 59548, -- Gift of the Naaru (Draenei Mage)
 				121093, -- Gift of the Naaru (Draenei Monk)
+				325013, -- Boon of the Ascended (Kyrian Covenant)
 			},
 			HARMFUL = {
 				[260369] = 'SNARE', -- Arcane Pulse (Nightborne)
