@@ -31,6 +31,8 @@ lib:__RegisterSpells('RACIAL', 90001, 1, {
 		255647, -- Light's Judgement (Lightforged Draenei)
 		255661, -- Cantrips (Nightborne)
 		259930, -- Forge of Light (Lightforged Draenei)
+		327611, -- Fae Guardians (Night Fae Covenant)
+		325013, -- Boon of the Ascended (Kyrian Covenant)
 		DISPEL = {
 			PERSONAL = {
 				[ 20594] = 'CURSE DISEASE MAGIC POISON', -- Stoneform (Dwarf) -- NOTE: bleeds currently not tracked
@@ -79,6 +81,8 @@ lib:__RegisterSpells('RACIAL', 90001, 1, {
 			},
 			HARMFUL = {
 				[260369] = 'SNARE', -- Arcane Pulse (Nightborne)
+				323673, -- Mindgames (Venthyr Covenant)
+				324724, -- Unholy Nova (Necrolord Covenant)
 				CROWD_CTRL = {
 					[107079] = 'INCAPACITATE', -- Quaking Palm (Monk)
 					STUN = {
