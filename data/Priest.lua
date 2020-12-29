@@ -121,6 +121,7 @@ lib:__RegisterSpells('PRIEST', 80200, 2, {
 			 48045, -- Mind Sear (Shadow)
 			204213, -- Purge the Wicked (Discipline talent)
 			208772, -- Smite (Discipline)
+			335467, -- Devouring Plague (Shadow)
 			CROWD_CTRL = {
 				[ 605] = 'DISORIENT', -- Mind Control
 				[9484] = 'INCAPACITATE', -- Shackle Undead
