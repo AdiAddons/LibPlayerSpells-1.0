@@ -23,7 +23,7 @@ if not lib then return end
 lib:__RegisterSpells('PRIEST', 90002, 3, {
 	COOLDOWN = {
 		   2050, -- Holy Word: Serenity (Holy)
-		   8092, -- Mind Blast (Shadow)
+		   8092, -- Mind Blast 
 		  32379, -- Shadow Word: Death
 		  34433, -- Shadowfiend (Discipline/Shadow)
 		  34861, -- Holy Word: Sanctify (Holy)
