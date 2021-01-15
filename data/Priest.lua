@@ -42,6 +42,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 		 265202, -- Holy Word: Salvation (Holy talent)
 		 280711, -- Dark Ascension (Shadow talent)
 		 305498, -- Premonition (Discipline honor talent)
+		 341374, -- Damnation (Shadow talent)
 		[ 15487] = 'INTERRUPT', -- Silence (Shadow)
 		AURA = {
 			HARMFUL = {
