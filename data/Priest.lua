@@ -149,6 +149,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 			198069, -- Power of the Dark Side (Discipline)
 			232698, -- Shadowform (Shadow)
 			247776, -- Mind Trauma (Shadow honor talent)
+			341205, -- Dark Thoughts (Shadow)
 		},
 	},
 	DISPEL = {
@@ -198,6 +199,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 	[247776] = 199445, -- Mind Trauma (Shadow honor talent)
 	[263406] = 193223, -- Surrendered to Madness <- Surrender to Madness (Shadow talent)
 	[289655] = 289657, -- Holy Word: Concentration (Holy honor talent)
+	[341207] = 341205, -- Dark Thoughts (Shadow)
 }, { -- map aura(s) to modified spell(s)
 	[ 65081] = { -- Body and Soul (Discipline/Shadow talent)
 		   17, -- Power Word: Shield (Discipline/Shadow)
@@ -228,4 +230,5 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 	[215769] = 215769, -- Spirit of Redemption (Holy honor talent)
 	[215962] =   2060, -- Inspiration (Holy honor talent) -> Heal
 	[247776] =  15407, -- Mind Trauma (Shadow honor talent) -> Mind Flay
+	[341207] =   8092, -- Dark Thoughts (Shadow) -> Mind Blast
 })
