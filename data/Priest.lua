@@ -102,7 +102,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 					197871, -- Dark Archangel (Discipline honor talent)
 				},
 				SURVIVAL = {
-					 19236, -- Desperate Prayer (Discipline/Holy)
+					 19236, -- Desperate Prayer 
 					 47585, -- Dispersion (Shadow)
 					196773, -- Inner Focus (Holy honor talent)
 					213602, -- Greater Fade (Holy/Shadow honor talent)
