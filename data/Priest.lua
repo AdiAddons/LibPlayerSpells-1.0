@@ -68,6 +68,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 			},
 			HELPFUL = {
 				     17, -- Power Word: Shield (Discipline/Shadow)
+				  10060, -- Power Infusion
 				  41635, -- Prayer of Mending (Holy)
 				  64844, -- Divine Hymn (Holy)
 				 121557, -- Angelic Feather (Discipline/Holy talent)
