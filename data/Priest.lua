@@ -45,6 +45,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 		[ 15487] = 'INTERRUPT', -- Silence (Shadow)
 		AURA = {
 			HARMFUL = {
+				   453, -- Mind Soothe
 				 14914, -- Holy Fire (Holy)
 				205369, -- Mind Bomb (Shadow talent)
 				214621, -- Schism (Discipline talent)
