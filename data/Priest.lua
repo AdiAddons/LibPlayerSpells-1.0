@@ -33,7 +33,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 		 120517, -- Halo (Discipline/Holy talent)
 		 123040, -- Mindbender (Discipline talent)
 		 129250, -- Power Word: Solace (Discipline talent)
-		 204883, -- Circle of Healing (Holy talent)
+		 204883, -- Circle of Healing 
 		 205351, -- Shadow Word: Void (Shadow talent)
 		 205385, -- Shadow Crash (Shadow talent)
 		 205448, -- Void Bolt (Shadow)
