@@ -119,7 +119,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 	},
 	AURA = {
 		HARMFUL = {
-			   589, -- Shadow Word: Pain (Discipline/Shadow)
+			   589, -- Shadow Word: Pain 
 			 34914, -- Vampiric Touch (Shadow)
 			 48045, -- Mind Sear (Shadow)
 			204213, -- Purge the Wicked (Discipline talent)
@@ -166,8 +166,8 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 		},
 	},
 }, { -- map aura to provider(s)
-	[   589] = { -- Shadow Word: Pain (Discipline/Shadow)
-		   589, -- Shadow Word: Pain (Discipline/Shadow)
+	[   589] = { -- Shadow Word: Pain 
+		   589, -- Shadow Word: Pain 
 		263346, -- Dark Void (Shadow talent)
 	},
 	[  6788] =     17, -- Weakened Soul <- Power Word: shield
