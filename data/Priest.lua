@@ -89,7 +89,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 					 33206, -- Pain Suppression (Discipline)
 					 47788, -- Guardian Spirit (Holy)
 					 81782, -- Power Word: Barrier (Discipline)
-					271466, -- Luminous Barrier (Discipline talent)
+					109964, -- Spirit Shell (Discipline talent)
 				},
 			},
 			PERSONAL = {
