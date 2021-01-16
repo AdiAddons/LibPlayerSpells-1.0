@@ -23,7 +23,7 @@ if not lib then return end
 lib:__RegisterSpells('PRIEST', 90002, 3, {
 	COOLDOWN = {
 		   2050, -- Holy Word: Serenity (Holy)
-		   8092, -- Mind Blast 
+		   8092, -- Mind Blast
 		  32379, -- Shadow Word: Death
 		  34433, -- Shadowfiend (Discipline/Shadow)
 		  34861, -- Holy Word: Sanctify (Holy)
@@ -33,7 +33,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 		 120517, -- Halo (Discipline/Holy talent)
 		 123040, -- Mindbender (Discipline talent)
 		 129250, -- Power Word: Solace (Discipline talent)
-		 204883, -- Circle of Healing 
+		 204883, -- Circle of Healing
 		 205351, -- Shadow Word: Void (Shadow talent)
 		 205385, -- Shadow Crash (Shadow talent)
 		 205448, -- Void Bolt (Shadow)
@@ -106,7 +106,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 					197871, -- Dark Archangel (Discipline honor talent)
 				},
 				SURVIVAL = {
-					 19236, -- Desperate Prayer 
+					 19236, -- Desperate Prayer
 					 47585, -- Dispersion (Shadow)
 					196773, -- Inner Focus (Holy honor talent)
 					213602, -- Greater Fade (Holy/Shadow honor talent)
@@ -120,7 +120,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 	},
 	AURA = {
 		HARMFUL = {
-			   589, -- Shadow Word: Pain 
+			   589, -- Shadow Word: Pain
 			 34914, -- Vampiric Touch (Shadow)
 			 48045, -- Mind Sear (Shadow)
 			204213, -- Purge the Wicked (Discipline talent)
@@ -167,8 +167,8 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 		},
 	},
 }, { -- map aura to provider(s)
-	[   589] = { -- Shadow Word: Pain 
-		   589, -- Shadow Word: Pain 
+	[   589] = { -- Shadow Word: Pain
+		   589, -- Shadow Word: Pain
 		263346, -- Dark Void (Shadow talent)
 	},
 	[  6788] =     17, -- Weakened Soul <- Power Word: shield
