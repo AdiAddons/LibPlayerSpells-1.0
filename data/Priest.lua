@@ -51,6 +51,7 @@ lib:__RegisterSpells('PRIEST', 90002, 3, {
 				205369, -- Mind Bomb (Shadow talent)
 				214621, -- Schism (Discipline talent)
 				263165, -- Void Torrent (Shadow talent)
+				323673, -- Mindgames (Venthyr covenant ability)
 				CROWD_CTRL = {
 					[200196] = 'INCAPACITATE', -- Holy Word: Chastise
 					DISORIENT = {
