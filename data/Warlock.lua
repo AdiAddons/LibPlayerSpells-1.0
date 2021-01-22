@@ -210,7 +210,10 @@ lib:__RegisterSpells('WARLOCK', 90001, 3, {
 	[342938] = 335052, -- Unstable Affliction <- Rampant Afflictions (Affliction honor talent)
 }, {
 	-- map aura to modified spell(s)
-	[ 32390] =  232670, -- Shadow Embrace (Affliction talent) -> Shadow Bolt
+	[ 32390] = { -- Shadow Embrace (Affliction)
+		232670, -- Shadow Bolt
+		198590, -- Drain Soul (Affliction talent)
+	},
 	[117828] = { -- Backdraft (Destruction)
 		 29722, -- Incinerate
 		116858, -- Chaos Bolt
