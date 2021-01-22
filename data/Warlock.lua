@@ -211,8 +211,8 @@ lib:__RegisterSpells('WARLOCK', 90001, 3, {
 }, {
 	-- map aura to modified spell(s)
 	[ 32390] = { -- Shadow Embrace (Affliction)
-		232670, -- Shadow Bolt
 		198590, -- Drain Soul (Affliction talent)
+		232670, -- Shadow Bolt
 	},
 	[117828] = { -- Backdraft (Destruction)
 		 29722, -- Incinerate
