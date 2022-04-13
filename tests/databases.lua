@@ -19,7 +19,7 @@ along with LibPlayerSpells-1.0.  If not, see <http://www.gnu.org/licenses/>.
 --]]
 
 package.path = package.path .. ";./wowmock/?.lua"
-local LuaUnit = require('luaunit')
+local lu = require('luaunit')
 local mockagne = require('mockagne')
 local wowmock = require('wowmock')
 
@@ -58,7 +58,7 @@ local sources = {
 
 for i, source in ipairs(sources) do
 	local source = source
-	testDatabases["test"..source] = function()
+	testDatabases["test"..source] = function ()
 		wowmock("../data/"..source..".lua", G)
 	end
 end
@@ -69,4 +69,4 @@ function testDatabases:testAllAtOnce()
 	end
 end
 
-os.exit(LuaUnit:Run())
+os.exit(lu.LuaUnit.run())
