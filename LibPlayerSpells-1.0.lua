@@ -552,7 +552,7 @@ function lib:__RegisterSpells(category, interface, minor, newSpells, newProvider
 				crowd_ctrl[spellId] = band(flags, CROWD_CTRL_TYPE)
 				-- clear the crowd control flags
 				flags = band(flags, NOT_CC_TYPE)
-			elseif band(flags, TYPE) == DISPEL then
+			elseif math.abs(band(flags, TYPE)) == DISPEL then -- use math.abs to counter signed int luabitop in tests
 				dispels[spellId] = band(flags, DISPEL_TYPE)
 				-- clear the dispel flags
 				flags = band(flags, NOT_DISPEL_TYPE)

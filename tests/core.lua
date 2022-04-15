@@ -177,16 +177,21 @@ function testRegisterSpells:test_database_conflict()
 	lu.assertEquals(msg == nil, true)
 end
 
---[[ Ignored until I figure out how to work around luabitop using signed 32-bit integers.
--- WoW embeds bitlib, which uses unsigned integers, whereas I only have luabitop handy.
-function testRegisterSpells:test_raidbuff()
+function testRegisterSpells:test_crowd_ctrl()
 	when(G.GetSpellInfo(any())).thenAnswer("link")
-	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "RAIDBUFF STAMINA" })
-	local c, bor = lib.constants, bor
-	lu.assertEquals(lib.__specials.RAIDBUFF[4], c.STAMINA)
-	lu.assertEquals(lib.__categories.HUNTER[4], bor(c.HELPFUL, c.UNIQUE_AURA, c.AURA, c.HUNTER))
+	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "AURA HARMFUL CROWD_CTRL STUN" })
+	local c = lib.constants
+	lu.assertEquals(lib.__specials.CROWD_CTRL[4], c.STUN)
+	lu.assertEquals(lib.__categories.HUNTER[4], bor(c.HARMFUL, c.AURA, c.HUNTER, c.CROWD_CTRL))
 end
-]]
+
+function testRegisterSpells:test_dispel()
+	when(G.GetSpellInfo(any())).thenAnswer("link")
+	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "DISPEL HARMFUL MAGIC" })
+	local c = lib.constants
+	lu.assertEquals(lib.__specials.DISPEL[4], c.MAGIC)
+	lu.assertEquals(lib.__categories.HUNTER[4], bor(c.DISPEL, c.HARMFUL, c.HUNTER))
+end
 
 testFilterParsing = { setup = setup }
 
