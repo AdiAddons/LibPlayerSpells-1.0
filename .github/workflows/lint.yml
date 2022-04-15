@@ -1,0 +1,19 @@
+name: lint
+
+on:
+  push:
+    paths:
+      - '**.lua'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Lint
+        uses: nebularg/actions-luacheck@v1
+        with:
+          annotate: warning
+          args: --no-color
