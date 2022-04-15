@@ -56,15 +56,14 @@ local sources = {
 	"Warrior",
 }
 
-for i, source in ipairs(sources) do
-	local source = source
+for _, source in ipairs(sources) do
 	testDatabases["test"..source] = function ()
 		wowmock("../data/"..source..".lua", G)
 	end
 end
 
 function testDatabases:testAllAtOnce()
-	for i, source in ipairs(sources) do
+	for _, source in ipairs(sources) do
 		wowmock("../data/"..source..".lua", G)
 	end
 end

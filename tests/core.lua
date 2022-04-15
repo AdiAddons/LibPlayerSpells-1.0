@@ -161,7 +161,7 @@ function testRegisterSpells:test_multipart_string()
 end
 
 function testRegisterSpells:test_invalid_data()
-	local success, msg = pcall(lib.__RegisterSpells, lib, "HUNTER", 1, 1, { [4] = function() end })
+	local success = pcall(lib.__RegisterSpells, lib, "HUNTER", 1, 1, { [4] = function() end })
 	lu.assertEquals(success, false)
 end
 
