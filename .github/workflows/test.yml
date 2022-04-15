@@ -1,0 +1,33 @@
+name: test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Install Lua
+        uses: leafo/gh-actions-lua@v9
+        with:
+          luaVersion: '5.1'
+
+      - name: Install LuaRocks
+        uses: leafo/gh-actions-luarocks@v4
+
+      - name: Install Dependencies
+        run: |
+          luarocks install luaunit
+          luarocks install mockagne
+          luarocks install luabitop
+
+      - name: Test
+        run: |
+          cd ./tests
+          lua core.lua
+          lua databases.lua
