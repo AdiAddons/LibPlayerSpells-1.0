@@ -49,6 +49,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - name: Prepare Packager Arguments
         id: packager-args
         if: github.base_ref || github.ref_type != 'tag'
