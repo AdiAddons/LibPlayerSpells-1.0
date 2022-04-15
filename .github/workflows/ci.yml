@@ -1,31 +1,37 @@
-name: test
+name: lint
 
-on: [push]
+on: push
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Lint
+        uses: nebularg/actions-luacheck@v1
+        with:
+          annotate: warning
+          args: --no-color
   test:
     runs-on: ubuntu-latest
-
+    needs: lint
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: true
-
       - name: Install Lua
         uses: leafo/gh-actions-lua@v9
         with:
           luaVersion: '5.1'
-
       - name: Install LuaRocks
         uses: leafo/gh-actions-luarocks@v4
-
       - name: Install Dependencies
         run: |
           luarocks install luaunit
           luarocks install mockagne
           luarocks install luabitop
-
       - name: Test
         run: |
           cd ./tests
