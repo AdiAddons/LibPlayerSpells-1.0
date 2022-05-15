@@ -42,11 +42,11 @@ lib:__RegisterSpells('DRUID', 90200, 1, {
 				 106830, -- Thrash (cat)
 				 164812, -- Moonfire (Guardian)
 				 192090, -- Thrash (bear)
-				[201664] = 'SURVIVAL', -- Demoralizing Roar (Guardian honor talent)
 				 206891, -- Intimidated (Guardian honor talent)
 				 209749, -- Faerie Swarm (Balance honor talent)
 				 274838, -- Feral Frenzy (Feral talent)
 				 325733, -- Adaptive Swarm (Necrolord covenant ability)
+				[201664] = 'SURVIVAL', -- Demoralizing Roar (Guardian honor talent)
 				CROWD_CTRL = {
 					[  6795] = 'TAUNT', -- Growl
 					[205644] = 'TAUNT', -- Force of Nature
@@ -88,9 +88,9 @@ lib:__RegisterSpells('DRUID', 90200, 1, {
 				 157982, -- Tranquility (Restoration)
 				 203554, -- Focused Growth (Restoration honor talent)
 				 305497, -- Thorns (Balance/Feral/Restoration honor talent)
-				[102342] = 'SURVIVAL', -- Ironbark (Balance)
 				 325748, -- Adaptive Swarm (Necrolord covenant ability)
 				 354704, -- Grove Protection (Guardian honor talent)
+				[102342] = 'SURVIVAL', -- Ironbark (Balance)
 			},
 			PERSONAL = {
 				  1850, -- Dash
@@ -209,25 +209,25 @@ lib:__RegisterSpells('DRUID', 90200, 1, {
 	[ 58180] =  1822,  -- Infected Wounds (Feral)
 	[ 61391] = 132469, -- Typhoon (Guardian talent)
 	[ 69369] =  16974, -- Predatory Swiftness (Feral)
-	[ 77764] = {  -- Stampeding Roar
-	   77761,
-	   77764,
-		106898,
+	[ 77761] = { -- Stampeding Roar (Bear form)
+		 77761, -- Stampeding Roar (Bear form)
+		 77764, -- Stampeding Roar (Cat form)
+		106898, -- Stampeding Roar
 	},
-	[ 77761] = {  -- Stampeding Roar
-	   77761,
-	   77764,
-		106898,
-	},
-	[106898] = {  -- Stampeding Roar
-	   77761,
-	   77764,
-		106898,
+	[ 77764] = { -- Stampeding Roar (Cat form)
+		 77761, -- Stampeding Roar (Bear form)
+		 77764, -- Stampeding Roar (Cat form)
+		106898, -- Stampeding Roar
 	},
 	[ 81261] =  78675, -- Solar Beam (Balance)
 	[ 93622] = 210706, -- Gore (Guardian)
 	[102352] = 102351, -- Cenarion Ward (Restoration talent - HoT)
 	[102416] = 102401, -- Wild Charge (talent - aquatic)
+	[106898] = { -- Stampeding Roar
+		 77761, -- Stampeding Roar (Bear form)
+		 77764, -- Stampeding Roar (Cat form)
+		106898, -- Stampeding Roar
+	},
 	[108294] = 319454, -- Heart of the Wild (talent)
 	[114108] = 158478, -- Soul of the Forest (Restoration talent)
 	[117679] =  33891, -- Incarnation: Tree of Life (Restoration talent)
@@ -242,6 +242,7 @@ lib:__RegisterSpells('DRUID', 90200, 1, {
 	[155625] = 155580, -- Moonfire <- Lunar Inspiration (Feral talent)
 	[155722] =   1822, -- Rake
 	[155777] = 155675, -- Rejuvenation (Germination) <- Germination (Restoration talent)
+	[157228] = 33786,  -- Owlkin Frenzy <- Cyclone
 	[157982] =    740, -- Tranquility (Restoration)
 	[158792] =  80313, -- Pulverize (Guardian talent)
 	[163505] = 231052, -- Rake <- Rake (Rank 2) (Feral)
@@ -261,7 +262,6 @@ lib:__RegisterSpells('DRUID', 90200, 1, {
 	[192090] =  77758, -- Thrash (bear)
 	[200389] = 200390, -- Cultivation (Restoration talent)
 	[200947] = 33786,  -- High Winds <- Cyclone
-	[157228] = 33786,  -- Owlkin Frenzy <- Cyclone
 	[202244] = 202246, -- Overrun (Guardian honor talent)
 	[202461] = 202354, -- Stellar Drift (Balance talent)
 	[203059] = 203052, -- King of the Jungle (Feral honor talent)
