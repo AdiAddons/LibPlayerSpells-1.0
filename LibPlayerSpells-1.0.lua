@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 12
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 13
 if LibStub then
 	local oldMinor
 	lib, oldMinor = LibStub:NewLibrary(MAJOR, MINOR)
@@ -71,6 +71,7 @@ lib.constants = {
 	WARLOCK      = 0x00000400,
 	WARRIOR      = 0x00000800,
 	RACIAL       = 0x00001000, -- Racial trait
+	EVOKER       = 0x00002000,
 
 	-- Crowd control types, *requires* CROWD_CTRL, else this messes up sources
 	DISORIENT    = 0x00000001,
@@ -140,6 +141,7 @@ lib.masks = {
 		constants.DEATHKNIGHT,
 		constants.DEMONHUNTER,
 		constants.DRUID,
+		constants.EVOKER,
 		constants.HUNTER,
 		constants.MAGE,
 		constants.MONK,
@@ -154,6 +156,7 @@ lib.masks = {
 		constants.DEATHKNIGHT,
 		constants.DEMONHUNTER,
 		constants.DRUID,
+		constants.EVOKER,
 		constants.HUNTER,
 		constants.MAGE,
 		constants.MONK,
@@ -201,6 +204,7 @@ lib.__categories = lib.__categories or {
 	DEATHKNIGHT = {},
 	DEMONHUNTER = {},
 	DRUID       = {},
+	EVOKER      = {},
 	HUNTER      = {},
 	MAGE        = {},
 	MONK        = {},
