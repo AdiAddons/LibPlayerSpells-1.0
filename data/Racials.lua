@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0', true)
 if not lib then return end
-lib:__RegisterSpells('RACIAL', 90200, 1, {
+lib:__RegisterSpells('RACIAL', 100000, 1, {
 	COOLDOWN = {
 		  7744, -- Will of the Forsaken (Undead)
 		 20589, -- Escape Artist (Gnome)
@@ -31,6 +31,8 @@ lib:__RegisterSpells('RACIAL', 90200, 1, {
 		255647, -- Light's Judgement (Lightforged Draenei)
 		255661, -- Cantrips (Nightborne)
 		259930, -- Forge of Light (Lightforged Draenei)
+		357214, -- Wing Buffet (Drachtyr)
+		368970, -- Tail Swipe (Drachtyr)
 		DISPEL = {
 			PERSONAL = {
 				[ 20594] = 'CURSE DISEASE MAGIC POISON', -- Stoneform (Dwarf) -- NOTE: bleeds currently not tracked
@@ -71,6 +73,7 @@ lib:__RegisterSpells('RACIAL', 90200, 1, {
 				323524, -- Ultimate Form (Necrolord covenant ability)
 				324631, -- Fleshcraft (Necrolord signature ability)
 				331868, -- Fancy Footwork (Ventyr coventant ability)
+				369536, -- Soar (Drachtyr)
 			},
 			HELPFUL = {
 				 28880, -- Gift of the Naaru (Draenei Warrior)
@@ -97,7 +100,8 @@ lib:__RegisterSpells('RACIAL', 90200, 1, {
 	},
 	AURA = {
 		PERSONAL = {
-			87840, -- Running Wild (Worgen)
+			 87840, -- Running Wild (Worgen)
+			372014, -- Visage (Drachtyr)
 		},
 	},
 }, {
@@ -115,6 +119,7 @@ lib:__RegisterSpells('RACIAL', 90200, 1, {
 	[323524] = 323095, -- Ultimate Form (Necrolord ability)
 	[331866] = 331576, -- Agent of Chaos (Venthyr Door of Shadows)
 	[331868] = 331577, -- Fancy Footwork (Venthyr Ability)
+	[372014] = 351239, -- Visage (Drachtyr)
 }, {
 	-- map aura to modified spell(s)
 	[256948] = 257040, -- Spatial Rift (Void elf)

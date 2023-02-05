@@ -5,6 +5,7 @@
 	<Script file="data\Deathknight.lua"/>
 	<Script file="data\Demonhunter.lua"/>
 	<Script file="data\Druid.lua"/>
+	<Script file="data\Evoker.lua"/>
 	<Script file="data\Hunter.lua"/>
 	<Script file="data\Mage.lua"/>
 	<Script file="data\Monk.lua"/>
