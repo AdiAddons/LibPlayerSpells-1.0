@@ -22,7 +22,7 @@ local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then
 	return
 end
-lib:__RegisterSpells('EVOKER', 100000, 1, {
+lib:__RegisterSpells('EVOKER', 100005, 1, {
 	COOLDOWN = {
 		[351338] = 'INTERRUPT', -- Quell
 		AURA = {
@@ -33,7 +33,11 @@ lib:__RegisterSpells('EVOKER', 100000, 1, {
 				},
 			},
 			HELPFUL = {
-				[381748] = 'RAIDBUFF', -- Blessing of the Bronze
+				RAIDBUFF = {
+					 381748, -- Blessing of the Bronze
+					 390386, -- Fury of the Aspects
+					[390435] = 'INVERT_AURA', -- Exhaustion
+				},
 			},
 			PERSONAL = {
 				357210, -- Deep Breath
@@ -42,7 +46,7 @@ lib:__RegisterSpells('EVOKER', 100000, 1, {
 				370901, -- Leaping Flames (talent)
 				371807, -- Recall
 				BURST = {
-					375087, -- Dragonrage (devastation talent)
+					375087, -- Dragonrage (Devastation talent)
 				},
 				SURVIVAL = {
 					363916, -- Obsidian Scales (talent)
@@ -54,10 +58,21 @@ lib:__RegisterSpells('EVOKER', 100000, 1, {
 	AURA = {
 		HARMFUL = {
 			356995, -- Disintegrate
+			361500, -- Living Flame
 		},
+		HELPFUL = {
+			361509, -- Living Flame
+		},
+		PERSONAL = {
+			359618, -- Essence Burst (Devastation)
+			370454, -- Charged Blast (Devastation talent)
+		}
 	},
 	DISPEL = {
 		COOLDOWN = {
+			HARMFUL = {
+				[372048] = 'ENRAGE', -- Oppressing Roar (talent; only with Overawe)
+			},
 			HELPFUL = {
 				[360823] = 'MAGIC POISON', -- Naturalize
 				[365585] = 'POISON', -- Expunge (talent)
@@ -67,12 +82,23 @@ lib:__RegisterSpells('EVOKER', 100000, 1, {
 	},
 }, {
 	-- map aura to provider(s)
-	[357209] = 382266, -- Fire Breath
 	[355689] = 358385, -- Landslide
+	[357209] = 382266, -- Fire Breath
+	[359618] = 359565, -- Essence Burst (Devastation)
+	[361500] = 365937, -- Living Flame <- Ruby Embers (Devastation talent)
+	[361509] = 365937, -- Living Flame <- Ruby Embers (Devastation talent)
+	[370454] = 370455, -- Charged Blast (Devastation talent)
 	[370901] = 369939, -- Leaping Flames (talent)
 	[371807] = 357210, -- Recall
 	[381748] = 364342, -- Blessing of the Bronze
 }, {
 	-- map aura to modified spell(s)
+	[359618] = { -- Essence Burst (Devastation)
+		356995, -- Desintegrate
+		357211, -- Pyre
+	},
+	[361500] = 361469, -- Living Flame
+	[361509] = 361469, -- Living Flame
+	[370454] = 357211, -- Charged Blast (Devastation talent) -> Pyre
 	[370901] = 361469, -- Leaping Flames (talent) -> Living Flame
 })
