@@ -18,14 +18,14 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 13
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 14
 if LibStub then
 	local oldMinor
 	lib, oldMinor = LibStub:NewLibrary(MAJOR, MINOR)
 	if not lib then return end
 
-	if oldMinor and oldMinor < 8 then
-		-- The internal data changed at minor 8, wipe anything coming from the previous version
+	if oldMinor and oldMinor < 14 then
+		-- Evoker was added as 13 and not picked up
 		_G.wipe(lib)
 	end
 else
