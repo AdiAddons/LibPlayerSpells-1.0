@@ -20,7 +20,7 @@ along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 
 local lib = LibStub('LibPlayerSpells-1.0')
 if not lib then return end
-lib:__RegisterSpells('DRUID', 90200, 1, {
+lib:__RegisterSpells('DRUID', 90200, 2, {
 	COOLDOWN = {
 		  18562, -- Swiftmend
 		  18960, -- Teleport: Moonglade
@@ -46,6 +46,7 @@ lib:__RegisterSpells('DRUID', 90200, 1, {
 				 209749, -- Faerie Swarm (Balance honor talent)
 				 274838, -- Feral Frenzy (Feral talent)
 				 325733, -- Adaptive Swarm (Necrolord covenant ability)
+				 405233, -- Thrash (cat) 106830
 				[201664] = 'SURVIVAL', -- Demoralizing Roar (Guardian honor talent)
 				CROWD_CTRL = {
 					[  6795] = 'TAUNT', -- Growl
@@ -289,6 +290,7 @@ lib:__RegisterSpells('DRUID', 90200, 1, {
 	[338825] =  78674, -- Primordial Arcanic Pulsar (Balance Legendary) <- Starsurge
 	[354704] = 354654, -- Grove Protection (Guardian honor talent)
 	[355315] = 323546, -- Ravenous Frenzy (Venthyr covenant ability)
+	[405233] = 106830, -- Thrash (cat)
 }, {
 	-- map aura to modified spell(s)
 	[ 16870] =   8936, -- Clearcasting (Restoration) -> Regrowth
