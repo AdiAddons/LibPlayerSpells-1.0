@@ -36,7 +36,7 @@ local LibPlayerSpells = LibStub('LibPlayerSpells-1.0')
 
 You can then obtain information about a given spell with GetSpellInfo:
 ```
-local flags, providers, modifiedSpells[, moreFlags] = LibPlayerSpells:GetSpellinfo(spellId)
+local flags, providers, modifiedSpells[, moreFlags] = LibPlayerSpells:GetSpellInfo(spellId)
 ```
 Where:
 
