@@ -18,7 +18,7 @@ You should have received a copy of the GNU General Public License
 along with LibPlayerSpells-1.0. If not, see <http://www.gnu.org/licenses/>.
 --]]
 
-local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 14
+local MAJOR, MINOR, lib = "LibPlayerSpells-1.0", 15
 if LibStub then
 	local oldMinor
 	lib, oldMinor = LibStub:NewLibrary(MAJOR, MINOR)
@@ -39,7 +39,7 @@ end
 
 local floor = _G.floor
 local format = _G.format
-local GetSpellInfo = _G.GetSpellInfo
+local GetSpellInfo = _G.C_Spell.GetSpellInfo
 local gsub = _G.string.gsub
 local strsplit = _G.strsplit
 local strtrim = _G.strtrim
