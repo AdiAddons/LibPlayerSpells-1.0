@@ -33,6 +33,8 @@ lib:__RegisterSpells('EVOKER', 100005, 1, {
 				},
 			},
 			HELPFUL = {
+				374227, -- Zephyr (talent)
+				363534, -- Rewind (Preservation talent)
 				RAIDBUFF = {
 					 381748, -- Blessing of the Bronze
 					 390386, -- Fury of the Aspects
@@ -45,6 +47,7 @@ lib:__RegisterSpells('EVOKER', 100005, 1, {
 				370553, -- Tip the Scales (talent)
 				370901, -- Leaping Flames (talent)
 				371807, -- Recall
+				370960, -- Emerald Communion (Preservation talent)
 				BURST = {
 					375087, -- Dragonrage (Devastation talent)
 				},
@@ -62,10 +65,18 @@ lib:__RegisterSpells('EVOKER', 100005, 1, {
 		},
 		HELPFUL = {
 			361509, -- Living Flame
+			357170, -- Time Dilation
+			373267, -- Lifebind (Preservation talent)
+			370889, -- Twin Guardian (talent)
+			373862, -- Temporal Anomaly
+			366155, -- Reversion
+			364343, -- Echo
+			355936, -- Dream Breath
 		},
 		PERSONAL = {
 			359618, -- Essence Burst (Devastation)
 			370454, -- Charged Blast (Devastation talent)
+			370537, -- Stasis (Preservation talent)
 		}
 	},
 	DISPEL = {
@@ -86,11 +97,12 @@ lib:__RegisterSpells('EVOKER', 100005, 1, {
 	[357209] = 382266, -- Fire Breath
 	[359618] = 359565, -- Essence Burst (Devastation)
 	[361500] = 365937, -- Living Flame <- Ruby Embers (Devastation talent)
-	[361509] = 365937, -- Living Flame <- Ruby Embers (Devastation talent)
 	[370454] = 370455, -- Charged Blast (Devastation talent)
 	[370901] = 369939, -- Leaping Flames (talent)
 	[371807] = 357210, -- Recall
 	[381748] = 364342, -- Blessing of the Bronze
+	[355941] = 355936, -- Dream Breath
+	[373267] = 373270, -- Lifebind (Preservation talent)
 }, {
 	-- map aura to modified spell(s)
 	[359618] = { -- Essence Burst (Devastation)
