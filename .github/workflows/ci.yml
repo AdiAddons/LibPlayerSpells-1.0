@@ -24,37 +24,35 @@ jobs:
     needs: lint
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           submodules: true
       - name: Install Lua
-        uses: leafo/gh-actions-lua@v9
+        uses: leafo/gh-actions-lua@v10
         with:
-          luaVersion: '5.1'
+          luaVersion: '5.1.5'
       - name: Install LuaRocks
         uses: leafo/gh-actions-luarocks@v4
       - name: Install Dependencies
         run: |
-          luarocks install luaunit
-          luarocks install mockagne
           luarocks install luabitop
+          luarocks install busted
       - name: Test
         run: |
           cd ./tests
-          lua core.lua
-          lua databases.lua
+          busted -o TAP .
   release:
     runs-on: ubuntu-latest
     needs: test
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Prepare Packager Arguments
         id: packager-args
         if: github.base_ref || github.ref_type != 'tag'
-        run: echo '::set-output name=args::-d'
+        run: echo "{args}={-d}" >> $GITHUB_OUTPUT
       - name: Package and Release
         uses: BigWigsMods/packager@v2
         with:
