@@ -102,32 +102,32 @@ function testRegisterSpells:test_unknown_flag()
 end
 
 function testRegisterSpells:test_unknown_spell()
-	when(G.GetSpellInfo(4)).thenAnswer(false)
+	when(G.C_Spell.GetSpellInfo(4)).thenAnswer(false)
 	local success, msg = pcall(lib.__RegisterSpells, lib, "HUNTER", 1, 1, { [4] = "AURA" })
 	lu.assertEquals(success, true)
 	lu.assertEquals(msg, 1)
-	verify(G.GetSpellInfo(4))
+	verify(G.C_Spell.GetSpellInfo(4))
 end
 
 function testRegisterSpells:test_consistent_data()
-	when(G.GetSpellInfo(any())).thenAnswer("link")
+	when(G.C_Spell.GetSpellInfo(any())).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, {[4] = "AURA", [5] = "AURA"}, {[4] = 8}, {[5] = 6})
 end
 
 function testRegisterSpells:test_known_spell()
-	when(G.GetSpellInfo(4)).thenAnswer("link")
+	when(G.C_Spell.GetSpellInfo(4)).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "AURA" })
-	verify(G.GetSpellInfo(4))
+	verify(G.C_Spell.GetSpellInfo(4))
 end
 
 function testRegisterSpells:test_key_id_value_flag()
-	when(G.GetSpellInfo(4)).thenAnswer("link")
+	when(G.C_Spell.GetSpellInfo(4)).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "AURA" })
 	lu.assertEquals(lib.__categories.HUNTER[4], bor(lib.constants.AURA, lib.constants.HUNTER))
 end
 
 function testRegisterSpells:test_spell_list()
-	when(G.GetSpellInfo(any())).thenAnswer("link")
+	when(G.C_Spell.GetSpellInfo(any())).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, { AURA = { 4, 5 } })
 	local db, c = lib.__categories.HUNTER, lib.constants
 	lu.assertEquals(db[4], bor(c.AURA, c.HUNTER))
@@ -135,7 +135,7 @@ function testRegisterSpells:test_spell_list()
 end
 
 function testRegisterSpells:test_nested()
-	when(G.GetSpellInfo(any())).thenAnswer("link")
+	when(G.C_Spell.GetSpellInfo(any())).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, {
 		AURA = {
 			4,
@@ -154,7 +154,7 @@ function testRegisterSpells:test_nested()
 end
 
 function testRegisterSpells:test_multipart_string()
-	when(G.GetSpellInfo(4)).thenAnswer("link")
+	when(G.C_Spell.GetSpellInfo(4)).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "HELPFUL AURA" })
 	local db, c = lib.__categories.HUNTER, lib.constants
 	lu.assertEquals(db[4], bor(c.AURA, c.HELPFUL, c.HUNTER))
@@ -166,7 +166,7 @@ function testRegisterSpells:test_invalid_data()
 end
 
 function testRegisterSpells:test_database_conflict()
-	when(G.GetSpellInfo(4)).thenAnswer("link")
+	when(G.C_Spell.GetSpellInfo(4)).thenAnswer("link")
 	when(G.GetBuildInfo()).thenAnswer({4,4,4,4})
 	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "AURA" })
 	local msg
@@ -178,7 +178,7 @@ function testRegisterSpells:test_database_conflict()
 end
 
 function testRegisterSpells:test_crowd_ctrl()
-	when(G.GetSpellInfo(any())).thenAnswer("link")
+	when(G.C_Spell.GetSpellInfo(any())).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "AURA HARMFUL CROWD_CTRL STUN" })
 	local c = lib.constants
 	lu.assertEquals(lib.__specials.CROWD_CTRL[4], c.STUN)
@@ -186,7 +186,7 @@ function testRegisterSpells:test_crowd_ctrl()
 end
 
 function testRegisterSpells:test_dispel()
-	when(G.GetSpellInfo(any())).thenAnswer("link")
+	when(G.C_Spell.GetSpellInfo(any())).thenAnswer("link")
 	lib:__RegisterSpells("HUNTER", 1, 1, { [4] = "DISPEL HARMFUL MAGIC" })
 	local c = lib.constants
 	lu.assertEquals(lib.__specials.DISPEL[4], c.MAGIC)
