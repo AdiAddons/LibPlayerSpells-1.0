@@ -29,7 +29,7 @@ describe('Imports', function ()
 		'Warrior',
 	} do
 		it(source, function ()
-			G.LibStub = function (what) return lib end
+			G.LibStub = function () return lib end
 
 			wowmock('../data/' .. source .. '.lua', G)
 		end)

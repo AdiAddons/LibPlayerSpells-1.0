@@ -7,19 +7,9 @@ exclude_files = {
 	'tests/wowmock/**',
 }
 
-files['tests/core.lua'] = {
+files['tests/core_spec.lua'] = {
 	globals = {
-		'AdiDebug',
-		'LibStub',
-		'testFlagTester',
-		'testFilterParsing',
-		'testRegisterSpells',
-	},
-}
-
-files['tests/databases.lua'] = {
-	globals = {
-		'testDatabases',
+		'bit'
 	},
 }
 

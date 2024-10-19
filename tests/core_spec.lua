@@ -89,7 +89,7 @@ describe('Core', function ()
 	end)
 
 	it('ignores unknown spells', function ()
-		G.C_Spell.GetSpellInfo = function (id) return nil end
+		G.C_Spell.GetSpellInfo = function (_id) return nil end
 		spy.on(G.C_Spell, 'GetSpellInfo')
 		lib = wowmock('../LibPlayerSpells-1.0.lua', G)
 
