@@ -52,7 +52,7 @@ jobs:
       - name: Prepare Packager Arguments
         id: packager-args
         if: github.base_ref || github.ref_type != 'tag'
-        run: echo '::set-output name=args::-d'
+        run: echo "{args}={-d}" >> $GITHUB_OUTPUT
       - name: Package and Release
         uses: BigWigsMods/packager@v2
         with:
