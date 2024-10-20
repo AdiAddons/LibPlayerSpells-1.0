@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - '**.lua'
+      - '.github/workflows/**.yml'
     tags:
       - '[0-9]+.[0-9]+.[0-9]+'
   pull_request:
@@ -13,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Lint
         uses: nebularg/actions-luacheck@v1
         with:
@@ -52,7 +53,7 @@ jobs:
       - name: Prepare Packager Arguments
         id: packager-args
         if: github.base_ref || github.ref_type != 'tag'
-        run: echo "{args}={-d}" >> $GITHUB_OUTPUT
+        run: echo "args=-d" >> $GITHUB_OUTPUT
       - name: Package and Release
         uses: BigWigsMods/packager@v2
         with:
